@@ -93,6 +93,7 @@ msgid "My Odoo.com Account Url"
 msgstr "我的帐户链接"
 
 #. module: app_my_odoo_customize
+#. openerp-web
 #: code:addons/app_my_odoo_customize/static/src/xml/customize_user_menu.xml
 #, python-format
 msgid "Developer Manual"

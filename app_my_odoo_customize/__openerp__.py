@@ -22,6 +22,7 @@ App My Odoo Customize(Debranding Title,Language,Documentation,Quick Debug)
 9.Customize "My odoo.com account" button
 10.Standalone setting panel, easy to setup.
 11.Provide 236 country flags.
+12.Multi-language Support.
 
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.

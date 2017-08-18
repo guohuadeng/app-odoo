@@ -10,11 +10,15 @@
                         <button string="Apply" type="object" name="execute" class="oe_highlight"/>
                         <button string="Cancel" type="object" name="cancel" class="oe_link" special="cancel"/>
                     </header>
-                    <separator string="White Label Setting" groups="app.group_theme"/>
+                    <separator string="White Label Setting"/>
                     <group string="System Name">
                         <label for="app_system_name"/>
                         <div>
                             <field name="app_system_name"/>
+                        </div>
+                        <label string="Online Support"/>
+                        <div>
+                            <a href="http://www.sunpop.cn" target="_blank">Visit our website for more apps. >>Sunpop.cn</a>
                         </div>
                     </group>
                     <group string="User Menu">

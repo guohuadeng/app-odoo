@@ -13,7 +13,7 @@
                 <a href="#" data-menu="quitdebug">Deactivate the developer mode</a>
             </li>
             <li>
-                <a href="#" data-menu="documentation_dev" groups="base.group_multi_company">Developer Manual</a>
+                <a href="#" data-menu="documentation_dev">Developer Manual</a>
             </li>
             <li class="divider"/>
         </t>
