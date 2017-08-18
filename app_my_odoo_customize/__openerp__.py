@@ -46,5 +46,7 @@ The user can get the help document just by one click.
     'qweb': [
         'static/src/xml/customize_user_menu.xml',
     ],
+    'currency': 'USD',
+    'price': 3.9,
 }
 
