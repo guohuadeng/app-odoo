@@ -1,0 +1,131 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* app_my_odoo_customize
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-07 08:57+0000\n"
+"PO-Revision-Date: 2017-08-07 08:57+0000\n"
+"Last-Translator: Ivan Deng <300883@qq.com>, 2017\n"
+"Language-Team: http://www.sunpop.cn \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: app_my_odoo_customize
+#: model:ir.ui.view,arch_db:app_my_odoo_customize.view_app_theme_config_settings
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_system_name
+msgid "System Name"
+msgstr "系统名称"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_show_lang
+msgid "Show Quick Language Switcher"
+msgstr "显示快速多语言切换"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_show_debug
+msgid "Show Quick Debug"
+msgstr "显示快速调试"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_show_documentation
+msgid "Show Documentation"
+msgstr "显示文档"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_show_documentation_dev
+msgid "Show Developer Documentation"
+msgstr "显示开发者文档"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_show_support
+msgid "Show Support"
+msgstr "显示支持"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_show_account
+msgid "Show My Account"
+msgstr "显示我的帐户"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_show_enterprise
+msgid "Show Enterprise Tag"
+msgstr "显示升级企业版标签提醒"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_show_share
+msgid "Show Share Dashboard"
+msgstr "显示分享Odoo"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_show_poweredby
+msgid "Show Powered by Odoo"
+msgstr "显示Powered by Odoo"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_documentation_url
+msgid "Documentation Url"
+msgstr "文档链接"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_documentation_dev_url
+msgid "Developer Documentation Url"
+msgstr "开发者手册链接"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_support_url
+msgid "Support Url"
+msgstr "支持链接"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_account_title
+msgid "My Odoo.com Account Title"
+msgstr "我的帐户显示标题"
+
+#. module: app_my_odoo_customize
+#: model:ir.model.fields,field_description:app_my_odoo_customize.field_app_theme_config_settings_app_account_url
+msgid "My Odoo.com Account Url"
+msgstr "我的帐户链接"
+
+#. module: app_my_odoo_customize
+#: code:addons/app_my_odoo_customize/static/src/xml/customize_user_menu.xml
+#, python-format
+msgid "Developer Manual"
+msgstr "开发者手册"
+
+#. module: app_my_odoo_customize
+#: model:ir.ui.view,arch_db:app_my_odoo_customize.view_app_theme_config_settings
+msgid "Apply"
+msgstr "应用"
+
+#. module: app_my_odoo_customize
+#: model:ir.ui.view,arch_db:app_my_odoo_customize.view_app_theme_config_settings
+msgid "Cancel"
+msgstr "取消"
+
+#. module: app_my_odoo_customize
+#: model:ir.actions.act_window,name:app_my_odoo_customize.action_app_theme_config
+#: model:ir.ui.menu,name:app_my_odoo_customize.menu_app_theme_config
+#: model:ir.ui.view,arch_db:app_my_odoo_customize.view_app_theme_config_settings
+msgid "odooApp Settings"
+msgstr "odooApp 设置"
+
+#. module: app_my_odoo_customize
+#: model:ir.ui.view,arch_db:app_my_odoo_customize.view_app_theme_config_settings
+msgid "User Menu"
+msgstr "用户菜单"
+
+#. module: app_my_odoo_customize
+#: model:ir.ui.view,arch_db:app_my_odoo_customize.view_app_theme_config_settings
+msgid "Item to Show	"
+msgstr "显示/隐藏菜单项"
+
+#. module: app_my_odoo_customize
+#: model:ir.ui.view,arch_db:app_my_odoo_customize.view_app_theme_config_settings
+msgid "User Menu Content"
+msgstr "菜单项具体操作设置"
