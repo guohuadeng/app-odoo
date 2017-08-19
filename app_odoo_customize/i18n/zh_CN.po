@@ -23,6 +23,11 @@ msgid "System Name"
 msgstr "系统名称"
 
 #. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Online Support"
+msgstr "系统支持"
+
+#. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_app_show_lang
 msgid "Show Quick Language Switcher"
 msgstr "显示快速多语言切换"
@@ -92,12 +97,25 @@ msgstr "我的帐户显示标题"
 msgid "My Odoo.com Account Url"
 msgstr "我的帐户链接"
 
+
 #. module: app_odoo_customize
 #. openerp-web
-#: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml
+#: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:16
 #, python-format
 msgid "Developer Manual"
 msgstr "开发者手册"
+
+#. module: app_odoo_customize
+#: model:ir.actions.act_window,name:app_odoo_customize.action_app_theme_config
+#: model:ir.ui.menu,name:app_odoo_customize.menu_app_theme_config
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "odooApp Settings"
+msgstr "odooApp 设置"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "White Label Setting"
+msgstr "个性化Odoo设置"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -108,13 +126,6 @@ msgstr "应用"
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Cancel"
 msgstr "取消"
-
-#. module: app_odoo_customize
-#: model:ir.actions.act_window,name:app_odoo_customize.action_app_theme_config
-#: model:ir.ui.menu,name:app_odoo_customize.menu_app_theme_config
-#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "odooApp Settings"
-msgstr "odooApp 设置"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
