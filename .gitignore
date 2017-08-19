@@ -2,4 +2,4 @@
 # http://www.jetbrains.com/pycharm/webhelp/project.html
 .idea
 .iml
-/app_my_odoo_customize/_resource
+/app_odoo_customize/_resource
