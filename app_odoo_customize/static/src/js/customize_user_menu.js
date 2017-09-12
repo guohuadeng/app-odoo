@@ -112,6 +112,6 @@ odoo.define('app_odoo_customize.customize_user_menu', function (require) {
                 if (show.length >= 1 && (show[0]['value'] == "False"))
                     $('.o_sub_menu_footer').hide();
             });
-        }, 2000);
+        }, 2500);
     });
 })

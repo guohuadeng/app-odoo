@@ -44,6 +44,6 @@ odoo.define('app_odoo_customize.switch_language', function (require) {
                     });
                 }
             });
-        }, 2000);
+        }, 2500);
     });
 });

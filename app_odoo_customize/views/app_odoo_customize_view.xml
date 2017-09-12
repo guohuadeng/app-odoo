@@ -6,7 +6,7 @@
                 <link rel="stylesheet" href="/app_odoo_customize/static/src/css/app.css"/>
                 <script type="text/javascript" src="/app_odoo_customize/static/src/js/switch_language.js"></script>
                 <script type="text/javascript" src="/app_odoo_customize/static/src/js/customize_user_menu.js"></script>
-                <script type="text/javascript" src="/app_odoo_customize/static/src/js/app_system_name.js"/>
+                <script type="text/javascript" src="/app_odoo_customize/static/src/js/app_window_title.js"/>
             </xpath>
         </template>
     </data>

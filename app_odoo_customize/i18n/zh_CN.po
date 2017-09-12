@@ -92,6 +92,18 @@ msgstr "支持链接"
 msgid "My Odoo.com Account Title"
 msgstr "我的帐户显示标题"
 
+#. module: Base
+#: model:ir.config_parameter,value:app_odoo_customize.app_account_title
+#, python-format
+msgid "My Online Account"
+msgstr "我的帐号"
+
+#. module: app_odoo_customize
+#: model:ir.config_parameter,value:app_odoo_customize.app_account_title
+#, python-format
+msgid "My Online Account"
+msgstr "我的帐号"
+
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_app_account_url
 msgid "My Odoo.com Account Url"
