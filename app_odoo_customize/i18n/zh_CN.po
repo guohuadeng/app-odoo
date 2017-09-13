@@ -153,3 +153,8 @@ msgstr "显示/隐藏菜单项"
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "User Menu Content"
 msgstr "菜单项具体操作设置"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.replace_login
+msgid "Powered by <span>odooApp</span>"
+msgstr "技术支持 <span>odooApp</span>"
