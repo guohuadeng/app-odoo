@@ -1,15 +1,4 @@
-
-{
-    'name': 'App Odoo Customize(Backend Debranding Title,Language,Documentation,Quick Debug)',
-    'version': '10.0.1.0',
-    'author': 'odooapp.cn',
-    'category': 'Productivity',
-    'website': 'http://www.sunpop.cn',
-    'sequence': 2,
-    'summary': 'Quick customize and debranding your own Odoo. Quick debug, Language Switcher, Online Documentation Access.',
-    'description': """
-
-App Odoo Customize(Debranding Title,Language,Documentation,Quick Debug)
+##App Odoo Customize(Debranding Title,Language,Documentation,Quick Debug)
 ============
 White label odoo.
 You can config odoo, make it look like your own platform.
@@ -31,23 +20,18 @@ This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.
 The user can get the help document just by one click.
 
-    """,
-    'images': ['static/description/banner.png'],
-    'depends': ['web'],
-    'data': [
-        'views/app_odoo_customize_view.xml',
-        'views/app_theme_config_settings_view.xml',
-        # data
-        'data/ir_config_parameter.xml',
-    ],
-    'demo': [],
-    'test': [
-    ],
-    'installable': True,
-    'application': True,
-    'auto_install': False,
-    'qweb': [
-        'static/src/xml/customize_user_menu.xml',
-    ],
-}
-
+## 去除odoo版权信息，自定义你的odoo
+可完全自行设置下列 odoo 选项，让 odoo 看上去像是你的软件产品
+1.删除菜单导航页脚的 Odoo 标签
+2.将弹出窗口中 "Odoo" 设置为自定义名称
+3.自定义用户菜单中的 Documentation, Support, About 的链接
+4.在用户菜单中增加快速切换开发模式
+5.在用户菜单中增加快速切换多国语言
+6.对语言菜单进行美化，设置国旗图标
+7.在用户菜单中增加中/英文用户手册，可以不用翻墙加速了
+8.在用户菜单中增加开发者手册，含python教程，jquery参考，Jinja2模板，PostgresSQL参考
+9.在用户菜单中自定义"My odoo.com account"
+10.单独设置面板，每个选项都可以自定义
+11.提供236个国家的国旗文件（部份需要自行设置文件名）
+12.多语言版本
+13.自定义登陆界面中的 Powered by Odoo
