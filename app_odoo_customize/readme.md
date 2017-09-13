@@ -20,6 +20,9 @@ This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.
 The user can get the help document just by one click.
 
+For more support
+http://www.sunpop.cn
+
 ## 去除odoo版权信息，自定义你的odoo
 可完全自行设置下列 odoo 选项，让 odoo 看上去像是你的软件产品
 1.删除菜单导航页脚的 Odoo 标签
@@ -35,3 +38,15 @@ The user can get the help document just by one click.
 11.提供236个国家的国旗文件（部份需要自行设置文件名）
 12.多语言版本
 13.自定义登陆界面中的 Powered by Odoo
+
+使用方法：将解压后的 app_odoo_customize 放到 odoo的 addons目录下，激活开发者模式，应用-->更新应用列表，找到 "App odoo Customize"模块，安装即可。
+
+## 其它技术资源：
+#### odoo10-windows64位高性能最新绿色版下载及制作方法-提速50%
+http://www.sunpop.cn/odoo10_fast_x64_download/
+#### Odoo10离线中文用户手册下载
+http://www.sunpop.cn/odoo10_user_manual_document_offline/
+#### Odoo10离线开发手册下载-含python教程，jquery参考，Jinja2模板，PostgresSQL参考（odoo开发必备）
+http://www.sunpop.cn/odoo10_developer_document_offline/
+
+
