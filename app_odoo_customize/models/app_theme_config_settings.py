@@ -6,16 +6,19 @@ from openerp import api, fields, models, _
 
 _logger = logging.getLogger(__name__)
 
+
 class AppThemeConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
     _name = 'app.theme.config.settings'
 
     _description = u"App Odoo Customize settings"
     app_system_name = fields.Char('System Name', help=u"Setup System Name,which replace Odoo")
-    app_show_lang = fields.Boolean('Show Quick Language Switcher', help=u"When enable,User can quick switch language in user menu")
+    app_show_lang = fields.Boolean('Show Quick Language Switcher',
+                                   help=u"When enable,User can quick switch language in user menu")
     app_show_debug = fields.Boolean('Show Quick Debug', help=u"When enable,everyone login can see the debug menu")
     app_show_documentation = fields.Boolean('Show Documentation', help=u"When enable,User can visit user manual")
-    app_show_documentation_dev = fields.Boolean('Show Developer Documentation', help=u"When enable,User can visit development documentation")
+    app_show_documentation_dev = fields.Boolean('Show Developer Documentation',
+                                                help=u"When enable,User can visit development documentation")
     app_show_support = fields.Boolean('Show Support', help=u"When enable,User can vist your support site")
     app_show_account = fields.Boolean('Show My Account', help=u"When enable,User can login to your website")
     app_show_enterprise = fields.Boolean('Show Enterprise Tag', help=u"Uncheck to hide the Enterprise tag")
@@ -27,7 +30,6 @@ class AppThemeConfigSettings(models.TransientModel):
     app_support_url = fields.Char('Support Url')
     app_account_title = fields.Char('My Odoo.com Account Title')
     app_account_url = fields.Char('My Odoo.com Account Url')
-
 
     @api.model
     def get_default_all(self, fields):
@@ -44,8 +46,10 @@ class AppThemeConfigSettings(models.TransientModel):
         app_show_share = True if ir_config.get_param('app_show_share') == "True" else False
         app_show_poweredby = True if ir_config.get_param('app_show_poweredby') == "True" else False
 
-        app_documentation_url = ir_config.get_param('app_documentation_url', default='http://www.sunpop.cn/documentation/user/10.0/en/index.html')
-        app_documentation_dev_url = ir_config.get_param('app_documentation_dev_url', default='http://www.sunpop.cn/documentation/10.0/index.html')
+        app_documentation_url = ir_config.get_param('app_documentation_url',
+                                                    default='http://www.sunpop.cn/documentation/user/10.0/en/index.html')
+        app_documentation_dev_url = ir_config.get_param('app_documentation_dev_url',
+                                                        default='http://www.sunpop.cn/documentation/10.0/index.html')
         app_support_url = ir_config.get_param('app_support_url', default='http://www.sunpop.cn/trial/')
         app_account_title = ir_config.get_param('app_account_title', default='My Online Account')
         app_account_url = ir_config.get_param('app_account_url', default='http://www.sunpop.cn/my-account/')
@@ -82,10 +86,175 @@ class AppThemeConfigSettings(models.TransientModel):
         ir_config.set_param("app_show_share", self.app_show_share or "False")
         ir_config.set_param("app_show_poweredby", self.app_show_share or "False")
 
-        ir_config.set_param("app_documentation_url", self.app_documentation_url or "http://www.sunpop.cn/documentation/user/10.0/en/index.html")
-        ir_config.set_param("app_documentation_dev_url", self.app_documentation_dev_url or "http://www.sunpop.cn/documentation/10.0/index.html")
+        ir_config.set_param("app_documentation_url",
+                            self.app_documentation_url or "http://www.sunpop.cn/documentation/user/10.0/en/index.html")
+        ir_config.set_param("app_documentation_dev_url",
+                            self.app_documentation_dev_url or "http://www.sunpop.cn/documentation/10.0/index.html")
         ir_config.set_param("app_support_url", self.app_support_url or "http://www.sunpop.cn/trial/")
         ir_config.set_param("app_account_title", self.app_account_title or "My Online Account")
         ir_config.set_param("app_account_url", self.app_account_url or "http://www.sunpop.cn/my-account/")
-        
+
+        return True
+
+    @api.multi
+    def remove_sales(self):
+        to_removes = [
+            # 清除销售单据
+            ['sale.order.line', ],
+            ['sale.order', ],
+        ]
+        try:
+            for line in to_removes :
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj and obj._table_exist:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute( sql)
+        except Exception, e:
+            raise Warning(e)
+        return True
+
+    @api.multi
+    def remove_pos(self):
+        to_removes = [
+            # 清除POS单据
+            ['pos.order.line', ],
+            ['pos.order', ],
+        ]
+        try:
+            for line in to_removes :
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj and obj._table_exist:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute( sql)
+        except Exception, e:
+            raise Warning(e)
+        return True
+
+    @api.multi
+    def remove_purchase(self):
+        to_removes = [
+            # 清除采购单据
+            ['purchase.order.line', ],
+            ['purchase.order', ],
+        ]
+        try:
+            for line in to_removes :
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj and obj._table_exist:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute( sql)
+        except Exception, e:
+            raise Warning(e)
+        return True
+
+    @api.multi
+    def remove_mrp(self):
+        to_removes = [
+            # 清除生产单据
+            ['mrp.production.workcenter.line', ],
+            ['mrp.production', ],
+            ['mrp.production.product.line', ],
+        ]
+        try:
+            for line in to_removes :
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj and obj._table_exist:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute( sql)
+        except Exception, e:
+            raise Warning(e)
+        return True
+
+    @api.multi
+    def remove_inventory(self):
+        to_removes = [
+            # 清除库存单据
+            ['procurement.order', ],
+            ['stock.quant', ],
+            ['stock.move', ],
+            ['stock.pack.operation', ],
+            ['stock.picking', ],
+            ['stock.inventory.line', ],
+            ['stock.inventory', ],
+            ['stock.quant.package', ],
+            ['stock.quant.move.rel', ],
+            ['stock.production.lot', ],
+            ['stock.fixed.putaway.strat', ],
+        ]
+        try:
+            for line in to_removes :
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj and obj._table_exist:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute( sql)
+        except Exception, e:
+            raise Warning(e)
+        return True
+
+    @api.multi
+    def remove_account(self):
+        to_removes = [
+            # 清除财务会计单据
+            ['account.voucher.line', ],
+            ['account.voucher', ],
+            ['account.bank.statement', ],
+            ['account.bank.statement.line', ],
+            ['account.payment', ],
+            ['account.analytic.line', ],
+            ['account.invoice.line', ],
+            ['account.invoice', ],
+            ['account.partial.reconcile', ],
+            ['account.move.line', ],
+            ['account.move', ],
+        ]
+        try:
+            for line in to_removes :
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj and obj._table_exist:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute( sql)
+        except Exception, e:
+            raise Warning(e)
+        return True
+
+    @api.multi
+    def remove_message(self):
+        to_removes = [
+            # 清除消息数据
+            ['mail.message', ],
+        ]
+        try:
+            for line in to_removes :
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj and obj._table_exist:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute( sql)
+        except Exception, e:
+            raise Warning(e)
+        return True
+
+    @api.multi
+    def remove_workflow(self):
+        to_removes = [
+            # 清除工作流
+            ['wkf.workitem', ],
+            ['wkf.instance', ],
+        ]
+        try:
+            for line in to_removes :
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj and obj._table_exist:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute( sql)
+
+        except Exception, e:
+            raise Warning(e)
         return True

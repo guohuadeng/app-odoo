@@ -96,18 +96,13 @@ msgstr "菜单项具体操作设置"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Visit our website for more apps and Support. &gt;&gt;Sunpop.cn"
-msgstr "访问我们的网站获取更多支持. &gt;&gt;Sunpop.cn"
+msgid "Visit our website for more apps and Support. http://www.sunpop.cn"
+msgstr "请访问我们的网站获取更多支持. http://www.sunpop.cn"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "White Label Setting"
 msgstr "个性化Odoo设置"
-
-#. module: app_odoo_customize
-#: model:ir.model,name:app_odoo_customize.model_ir_ui_view
-msgid "ir.ui.view"
-msgstr "ir.ui.view"
 
 #. module: app_odoo_customize
 #: model:ir.actions.act_window,name:app_odoo_customize.action_app_theme_config
@@ -162,9 +157,99 @@ msgid "Show Powered by Odoo"
 msgstr "显示Powered by Odoo"
 
 #. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_app_documentation_url
-msgid "Documentation Url"
-msgstr "文档链接"
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Data Clearing (Be careful to do that!)"
+msgstr "数据清理（请谨慎操作！）"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Sales"
+msgstr "销售"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "POS"
+msgstr "POS门店"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Purchase"
+msgstr "采购"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "MRP"
+msgstr "生产"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Inventory"
+msgstr "库存"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Accounting"
+msgstr "会计"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Base Models"
+msgstr "基础模型数据"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All Sales Order"
+msgstr "删除所有报价单、销售单"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All POS Order"
+msgstr "删除所有POS订单"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All Purchase Order"
+msgstr "删除所有采购单"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All Manufacturing Order"
+msgstr "删除所有生产单"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All Move/Picking/Package/Lot"
+msgstr "删除所有库存调拨/拣货/包装/批次数据"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All Voucher/Invoice/Bill"
+msgstr "删除所有收据/发票/账单"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All Message"
+msgstr "删除所有消息"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All Workflow"
+msgstr "删除所有工作流"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Please Confirm to delete the select data?"
+msgstr "确认删除指定数据?"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Please confirm to delete the select data?"
+msgstr "确认删除指定数据?"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Please confirm to delete the select data?"
+msgstr "Please confirm to delete the select data?"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_app_documentation_dev_url

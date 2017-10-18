@@ -15,6 +15,7 @@ You can config odoo, make it look like your own platform.
 11.Provide 236 country flags.
 12.Multi-language Support.
 13.Change Powered by Odoo in login screen.(Please change '../views/app_odoo_customize_view.xml' #15)
+14.Quick delete test data in Apps: Sales/POS/Purchase/MRP/Inventory/Accounting/Message/Workflow etc.
 
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.
@@ -38,6 +39,7 @@ http://www.sunpop.cn
 11.提供236个国家的国旗文件（部份需要自行设置文件名）
 12.多语言版本
 13.自定义登陆界面中的 Powered by Odoo
+14.快速删除测试数据，支持模块包括：销售/POS门店/采购/生产/库存/会计/消息与工作流等.
 
 使用方法：将解压后的 app_odoo_customize 放到 odoo的 addons目录下，激活开发者模式，应用-->更新应用列表，找到 "App odoo Customize"模块，安装即可。
 
