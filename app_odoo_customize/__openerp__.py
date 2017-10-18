@@ -1,12 +1,12 @@
 
 {
-    'name': 'App Odoo Customize(Backend Debranding Title,Language,Documentation,Quick Debug)',
+    'name': 'App Odoo Customize(Backend Debranding Title,Language,Documentation,Quick Debug,Delete clear)',
     'version': '10.0.1.0',
     'author': 'odooapp.cn',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',
     'sequence': 2,
-    'summary': 'Quick customize and debranding your own Odoo. Quick debug, Language Switcher, Online Documentation Access.',
+    'summary': 'Quick customize and debranding your own Odoo. Quick debug, Language Switcher, Online Documentation Access,Delete test data.',
     'description': """
 
 App Odoo Customize(Debranding Title,Language,Documentation,Quick Debug)
