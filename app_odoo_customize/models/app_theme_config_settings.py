@@ -157,6 +157,25 @@ class AppThemeConfigSettings(models.TransientModel):
             ['mrp.production.workcenter.line', ],
             ['mrp.production', ],
             ['mrp.production.product.line', ],
+            ['mrp.unbuild', ],
+        ]
+        try:
+            for line in to_removes :
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj and obj._table_exist:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute( sql)
+        except Exception, e:
+            raise Warning(e)
+        return True
+
+    @api.multi
+    def remove_mrp_bom(self):
+        to_removes = [
+            # 清除生产BOM
+            ['mrp.bom.line', ],
+            ['mrp.bom', ],
         ]
         try:
             for line in to_removes :

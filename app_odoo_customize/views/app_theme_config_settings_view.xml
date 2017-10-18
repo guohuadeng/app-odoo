@@ -103,6 +103,9 @@
                         <div>
                             <button string="Delete All Manufacturing Order" type="object" name="remove_mrp"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                            |
+                            <button string="Delete All BOM" type="object" name="remove_mrp_bom"
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <label string="Inventory"/>
                         <div>

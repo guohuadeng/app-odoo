@@ -1,4 +1,4 @@
-##App Odoo Customize(Debranding Title,Language,Documentation,Quick Debug)
+##App Odoo Customize(Debranding Title,Language,Documentation,Quick Debug,Quick Data Clear)
 ============
 White label odoo.
 You can config odoo, make it look like your own platform.
@@ -24,7 +24,7 @@ The user can get the help document just by one click.
 For more support
 http://www.sunpop.cn
 
-## 去除odoo版权信息，自定义你的odoo
+## 在符合odoo开源协议的前提下，去除odoo版权信息，自定义你的odoo
 可完全自行设置下列 odoo 选项，让 odoo 看上去像是你的软件产品
 1.删除菜单导航页脚的 Odoo 标签
 2.将弹出窗口中 "Odoo" 设置为自定义名称

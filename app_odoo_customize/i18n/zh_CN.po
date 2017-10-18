@@ -218,6 +218,11 @@ msgstr "删除所有生产单"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All BOM"
+msgstr "删除所有物料清单"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Delete All Move/Picking/Package/Lot"
 msgstr "删除所有库存调拨/拣货/包装/批次数据"
 
