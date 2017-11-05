@@ -2,7 +2,7 @@
 {
     'name': 'App Search By Date or Number Range',
     'version': '10.0.1.0',
-    'author': 'odooapp.cn',
+    'author': 'Sunpop.cn',
     'category': 'web',
     'website': 'http://www.sunpop.cn',
     'sequence': 2,
