@@ -2,7 +2,7 @@
 <odoo>
     <data noupdate="0">
         <!-- 更新序号规则 Auto Internal Reference. -->
-        <!-- 所有的 Dapeng All Products. -->
+        <!-- 所有的 All Products. -->
         <record id="seq_product_auto" model="ir.sequence">
             <field name="name">Sequence for All Products</field>
             <field name="code">product.product</field>
@@ -11,7 +11,7 @@
             <field name="company_id" eval="False"/>
             <field name="initial">True</field>
         </record>
-        <!-- 制造的成品 Dapeng manufactured Products. -->
+        <!-- 制造的成品 manufactured Products. -->
         <record id="seq_manufacture" model="ir.sequence">
             <field name="name">Sequence for Manufactured Product</field>
             <field name="code">product.product</field>
