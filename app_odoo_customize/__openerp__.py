@@ -2,7 +2,7 @@
 {
     'name': 'App Odoo Customize(Backend Debranding Title,Language,Documentation,Quick Debug,Delete clear)',
     'version': '10.0.1.0',
-    'author': 'odooapp.cn',
+    'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',
     'sequence': 2,
