@@ -114,6 +114,40 @@ class AppThemeConfigSettings(models.TransientModel):
             raise Warning(e)
         return True
 
+    def remove_product(self):
+        to_removes = [
+            # 清除产品数据
+            ['product.product', ],
+            ['product.template', ],
+        ]
+        try:
+            for line in to_removes :
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj and obj._table_exist:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute( sql)
+        except Exception, e:
+            raise Warning(e)
+        return True
+
+    def remove_product_attribute(self):
+        to_removes = [
+            # 清除产品属性
+            ['product.attribute.value', ],
+            ['product.attribute', ],
+        ]
+        try:
+            for line in to_removes :
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj and obj._table_exist:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute( sql)
+        except Exception, e:
+            raise Warning(e)
+        return True
+
     @api.multi
     def remove_pos(self):
         to_removes = [
@@ -154,6 +188,8 @@ class AppThemeConfigSettings(models.TransientModel):
     def remove_mrp(self):
         to_removes = [
             # 清除生产单据
+            ['mrp.workcenter.productivity', ],
+            ['mrp.workorder', ],
             ['mrp.production.workcenter.line', ],
             ['mrp.production', ],
             ['mrp.production.product.line', ],

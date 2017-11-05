@@ -89,6 +89,12 @@
                         <div>
                             <button string="Delete All Sales Order" type="object" name="remove_sales"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                            |
+                            <button string="Delete All Product" type="object" name="remove_product"
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                            |
+                            <button string="Delete All Product Attribute" type="object" name="remove_product_attribute"
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <label string="POS"/>
                         <div>

@@ -1,0 +1,131 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* app_product_sequence
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e-20171014\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-05 12:11+0000\n"
+"PO-Revision-Date: 2017-11-05 12:11+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_product_sequence
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_internal_type_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: app_product_sequence
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_internal_type_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: app_product_sequence
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_internal_type_description
+msgid "Description"
+msgstr "说明"
+
+#. module: app_product_sequence
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_internal_type_display_name
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_internal_type_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: app_product_sequence
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_internal_type_id
+msgid "ID"
+msgstr "ID"
+
+#. module: app_product_sequence
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_product_default_code_index
+msgid "Internal Reference Index"
+msgstr "Varient序号"
+
+#. module: app_product_sequence
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_product_default_code_stored
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_template_default_code_stored
+msgid "Internal Reference Stored"
+msgstr "主产品编码"
+
+#. module: app_product_sequence
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_product_internal_type
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_template_internal_type
+msgid "Internal Type"
+msgstr "编码类型"
+
+#. module: app_product_sequence
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_internal_type___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: app_product_sequence
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_internal_type_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: app_product_sequence
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_internal_type_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: app_product_sequence
+#: model:ir.model.fields,field_description:app_product_sequence.field_product_internal_type_link_sequence
+msgid "Link Sequence"
+msgstr "使用的序列"
+
+#. module: app_product_sequence
+#: code:addons/app_product_sequence/models/product_template.py:38
+#, python-format
+msgid "Please save product first before adding varients!"
+msgstr "增加产品变体前，请先保存当前产品！"
+
+#. module: app_product_sequence
+#: model:ir.model.fields,help:app_product_sequence.field_product_internal_type_sequence_prefix
+msgid "Prefix value of the record for the sequence"
+msgstr "序列记录的前缀"
+
+#. module: app_product_sequence
+#: model:ir.model,name:app_product_sequence.model_product_product
+msgid "Product"
+msgstr "产品"
+
+#. module: app_product_sequence
+#: model:ir.actions.act_window,name:app_product_sequence.internal_type_action
+#: model:ir.ui.menu,name:app_product_sequence.menu_internal_type_action_sale
+#: model:ir.ui.menu,name:app_product_sequence.menu_internal_type_action_stock
+#: model:ir.ui.menu,name:app_product_sequence.menu_internal_type_action_sys
+#: model:ir.ui.view,arch_db:app_product_sequence.product_internal_type_tree_view
+msgid "Product Internal Type"
+msgstr "产品编码类型"
+
+#. module: app_product_sequence
+#: model:ir.model,name:app_product_sequence.model_product_template
+msgid "Product Template"
+msgstr "产品模板"
+
+#. module: app_product_sequence
+#: code:addons/app_product_sequence/models/product_product.py:80
+#, python-format
+msgid "Product varient can only create in Product view!"
+msgstr "请在产品管理页面增加产品的多属性!"
+
+#. module: app_product_sequence
+#: sql_constraint:product.internal.type:0
+msgid "The Link Sequence must be unique"
+msgstr "使用的序列不可重复！"
+
+#. module: app_product_sequence
+#: sql_constraint:product.product:0
+msgid "The reference must be unique"
+msgstr "产品内部编码不可重复！"
+
+#. module: app_product_sequence
+#: model:ir.model,name:app_product_sequence.model_product_internal_type
+msgid "product.internal.type"
+msgstr "product.internal.type"
+
