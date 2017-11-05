@@ -203,6 +203,16 @@ msgstr "删除所有报价单、销售单"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All Product"
+msgstr "删除所有产品及变体"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All Product Attribute"
+msgstr "删除所有产品属性"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Delete All POS Order"
 msgstr "删除所有POS订单"
 
