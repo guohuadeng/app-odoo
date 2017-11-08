@@ -50,6 +50,8 @@
                 ],
     'data': [
         # 视图
+        "security/ir.model.access.csv",
+        "security/security.xml",
         'views/product_template_view.xml',
         'views/product_product_view.xml',
         'views/product_internal_type_view.xml',

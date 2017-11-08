@@ -28,6 +28,7 @@ class ProductInternalType(models.Model):
         'ir.sequence', 'Link Sequence',
         auto_join=True, required=True, domain="[('code', '=', 'product.product')]")
     sequence_prefix = fields.Char(u'Sequence Prefix', related='link_sequence.prefix', readonly=True, store=False)
+    company_id = fields.Many2one('res.company')
 
     # _sql_constraints = [
     #     ('uniq_link_sequence',
