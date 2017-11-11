@@ -40,6 +40,11 @@
         </record>
 
         <!-- internal_type 数据-->
+        <record id="internal_type_sourced" model="product.internal.type">
+            <field name="name">Sourced Product</field>
+            <field name="description">Set prefix as "S" in link sequence</field>
+            <field name="link_sequence" ref="seq_sourced"/>
+        </record>
         <record id="internal_type_manufacture" model="product.internal.type">
             <field name="name">Manufactured Product</field>
             <field name="description">Set prefix as "D" in link sequence</field>
@@ -50,10 +55,15 @@
             <field name="description">Set prefix as "C" in link sequence</field>
             <field name="link_sequence" ref="seq_component"/>
         </record>
-        <record id="internal_type_sourced" model="product.internal.type">
-            <field name="name">Sourced Product</field>
-            <field name="description">Set prefix as "S" in link sequence</field>
-            <field name="link_sequence" ref="seq_sourced"/>
+
+        <!--设置产品默认值为外购产品-->
+        <record id="product_internal_type_default" model="ir.values">
+            <field name="name">internal_type</field>
+            <field name="model">product.template</field>
+            <field name="key">default</field>
+            <field name="key2"></field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="value" eval="'I' + str(ref('app_product_sequence.internal_type_sourced'))+'\n.'"/>
         </record>
     </data>
 </odoo>
