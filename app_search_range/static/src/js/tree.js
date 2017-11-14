@@ -68,32 +68,35 @@ ListView.include({
 
         self.$buttons.find('.app-search').remove();
 
-        // Tim kiem theo khoang thoi gian
-
         var app_fields = [];
         _.each(self.columns, function(value, key, list){
             if (value.store && value.type === "datetime" || value.type === "date") {
                 app_fields.push([value.name, value.string]);
             }
         });
-        if (app_fields.length > 0) {
-            self.$search_button = $(QWeb.render('odooApp.buttons', {'app_fields': app_fields}))
-            self.$search_button.find('.app_start_date').datetimepicker(datepickers_options);
-            self.$search_button.find('.app_end_date').datetimepicker(datepickers_options);
-            // self.$search_button.find('.app_search_date_rate').click(function() {
-            //     self.tgl_search();
-            // });
-            self.$search_button.find('.app_start_date').on('change', function() {
-                self.tgl_search();
-            });
-            self.$search_button.find('.app_end_date').on('change', function() {
-                self.tgl_search();
-            });
-            self.$search_button.find('.app_select_field').on('change', function() {
-                self.tgl_search();
-            });
-            self.$search_button.appendTo(self.$buttons);
-        }        
+        // 增加参数控制app_show_search_date
+        new Model('ir.config_parameter').call('search_read', [[['key', '=', 'app_show_search_date']], ['value']]).then(function (show) {
+            if (show.length >= 1 && (show[0]['value'] == "True")) {
+                if (app_fields.length > 0) {
+                    self.$search_button = $(QWeb.render('odooApp.buttons', {'app_fields': app_fields}))
+                    self.$search_button.find('.app_start_date').datetimepicker(datepickers_options);
+                    self.$search_button.find('.app_end_date').datetimepicker(datepickers_options);
+                    // self.$search_button.find('.app_search_date_rate').click(function() {
+                    //     self.tgl_search();
+                    // });
+                    self.$search_button.find('.app_start_date').on('change', function () {
+                        self.tgl_search();
+                    });
+                    self.$search_button.find('.app_end_date').on('change', function () {
+                        self.tgl_search();
+                    });
+                    self.$search_button.find('.app_select_field').on('change', function () {
+                        self.tgl_search();
+                    });
+                    self.$search_button.appendTo(self.$buttons);
+                }
+            }
+        });
 
 
         app_fields = [];
@@ -109,22 +112,27 @@ ListView.include({
             }
         }
 
-        if (app_fields.length > 0) {
-            self.$search_range = $(QWeb.render('odooApp.SearchRange', {'app_fields': app_fields}))
-            // self.$search_range.find('.app_search_date_range').click(function() {
-            //     self.tgl_search();
-            // });
-            self.$search_range.find('.app_select_range_field').on('change', function() {
-                self.tgl_search();
-            });
-            self.$search_range.find('.app_start_range').on('change', function() {
-                self.tgl_search();
-            });
-            self.$search_range.find('.app_end_range').on('change', function() {
-                self.tgl_search();
-            });
-            self.$search_range.appendTo(self.$buttons);
-        }    
+        // 增加参数控制app_show_search_number
+        new Model('ir.config_parameter').call('search_read', [[['key', '=', 'app_show_search_number']], ['value']]).then(function (show) {
+            if (show.length >= 1 && (show[0]['value'] == "True")) {
+                if (app_fields.length > 0) {
+                    self.$search_range = $(QWeb.render('odooApp.SearchRange', {'app_fields': app_fields}))
+                    // self.$search_range.find('.app_search_date_range').click(function() {
+                    //     self.tgl_search();
+                    // });
+                    self.$search_range.find('.app_select_range_field').on('change', function () {
+                        self.tgl_search();
+                    });
+                    self.$search_range.find('.app_start_range').on('change', function () {
+                        self.tgl_search();
+                    });
+                    self.$search_range.find('.app_end_range').on('change', function () {
+                        self.tgl_search();
+                    });
+                    self.$search_range.appendTo(self.$buttons);
+                }
+            }
+        });
 
         // Dropdown list cho phep chon nhieu
         _.each(this.ts_context, function(item){

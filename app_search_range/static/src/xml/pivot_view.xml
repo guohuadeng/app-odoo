@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-
+<!--日期类型搜索-->
     <t t-name="odooApp.buttons">
         <div class="app-search btn-group btn-group-sm" >
             <!-- <div style="margin-left: 10px; margin-top: 2px;"> -->
@@ -27,7 +27,7 @@
         </div>
         <!-- <br></br> -->
     </t>
-
+<!--数值范围搜索-->
     <t t-name="odooApp.SearchRange">
         <div class="app-search btn-group btn-group-sm" >
             <!-- <div style="margin-left: 10px; margin-top: 2px;"> -->

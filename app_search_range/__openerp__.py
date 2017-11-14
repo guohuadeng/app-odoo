@@ -16,6 +16,8 @@ Search by date or number range in List view and Pivot view
     'depends': ['web'],
     'data': [
         'views/template_view.xml',
+        # data
+        'data/ir_config_parameter.xml',
     ],
     'qweb': [
         'static/src/xml/*.xml',
