@@ -109,7 +109,15 @@ class AppThemeConfigSettings(models.TransientModel):
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
-                    self._cr.execute( sql)
+                    self._cr.execute(sql)
+            # 更新序号
+            seqs = self.env['ir.sequence'].search([('code', '=', 'sale.order')])
+            for seq in seqs:
+                seq.write({
+                    'number_next': 1,
+                })
+            sql = "update ir_sequence set number_next=1 where code ='sale.order';"
+            self._cr.execute(sql)
         except Exception, e:
             raise Warning(e)
         return True
@@ -126,7 +134,15 @@ class AppThemeConfigSettings(models.TransientModel):
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
-                    self._cr.execute( sql)
+                    self._cr.execute(sql)
+            # 更新序号,针对自动产品编号
+            seqs = self.env['ir.sequence'].search([('code', '=', 'product.product')])
+            for seq in seqs:
+                seq.write({
+                    'number_next': 1,
+                })
+            sql = "update ir_sequence set number_next=1 where code ='product.product';"
+            self._cr.execute(sql)
         except Exception, e:
             raise Warning(e)
         return True
@@ -143,7 +159,7 @@ class AppThemeConfigSettings(models.TransientModel):
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
-                    self._cr.execute( sql)
+                    self._cr.execute(sql)
         except Exception, e:
             raise Warning(e)
         return True
@@ -161,7 +177,15 @@ class AppThemeConfigSettings(models.TransientModel):
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
-                    self._cr.execute( sql)
+                    self._cr.execute(sql)
+            # 更新序号
+            seqs = self.env['ir.sequence'].search([('code', '=', 'pos.order')])
+            for seq in seqs:
+                seq.write({
+                    'number_next': 1,
+                })
+            sql = "update ir_sequence set number_next=1 where code ='pos.order';"
+            self._cr.execute(sql)
         except Exception, e:
             raise Warning(e)
         return True
@@ -179,7 +203,15 @@ class AppThemeConfigSettings(models.TransientModel):
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
-                    self._cr.execute( sql)
+                    self._cr.execute(sql)
+            # 更新序号
+            seqs = self.env['ir.sequence'].search([('code', '=', 'purchase.order')])
+            for seq in seqs:
+                seq.write({
+                    'number_next': 1,
+                })
+            sql = "update ir_sequence set number_next=1 where code ='purchase.order';"
+            self._cr.execute(sql)
         except Exception, e:
             raise Warning(e)
         return True
@@ -201,7 +233,15 @@ class AppThemeConfigSettings(models.TransientModel):
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
-                    self._cr.execute( sql)
+                    self._cr.execute(sql)
+            # 更新序号
+            seqs = self.env['ir.sequence'].search(['|', ('code', '=', 'mrp.production'), ('code', '=', 'mrp.unbuild')])
+            for seq in seqs:
+                seq.write({
+                    'number_next': 1,
+                })
+            sql = "update ir_sequence set number_next=1 where (code ='mrp.production' or code ='mrp.unbuild');"
+            self._cr.execute(sql)
         except Exception, e:
             raise Warning(e)
         return True
@@ -219,7 +259,7 @@ class AppThemeConfigSettings(models.TransientModel):
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
-                    self._cr.execute( sql)
+                    self._cr.execute(sql)
         except Exception, e:
             raise Warning(e)
         return True
@@ -230,13 +270,14 @@ class AppThemeConfigSettings(models.TransientModel):
             # 清除库存单据
             ['procurement.order', ],
             ['stock.quant', ],
+            ['stock.quant.package', ],
+            ['stock.quant.move.rel', ],
             ['stock.move', ],
             ['stock.pack.operation', ],
             ['stock.picking', ],
+            ['stock.scrap', ],
             ['stock.inventory.line', ],
             ['stock.inventory', ],
-            ['stock.quant.package', ],
-            ['stock.quant.move.rel', ],
             ['stock.production.lot', ],
             ['stock.fixed.putaway.strat', ],
         ]
@@ -246,7 +287,42 @@ class AppThemeConfigSettings(models.TransientModel):
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
-                    self._cr.execute( sql)
+                    self._cr.execute(sql)
+            # 更新序号
+            seqs = self.env['ir.sequence'].search([
+                '|', ('code', '=', 'stock.lot.serial'),
+                '|', ('code', '=', 'stock.lot.tracking'),
+                '|', ('code', '=', 'stock.orderpoint'),
+                '|', ('code', '=', 'stock.picking'),
+                '|', ('code', '=', 'stock.quant.package'),
+                '|', ('code', '=', 'stock.scrap'),
+                '|', ('code', '=', 'stock.picking'),
+                '|', ('prefix', '=', 'WH/IN/'),
+                '|', ('prefix', '=', 'WH/INT/'),
+                '|', ('prefix', '=', 'WH/OUT/'),
+                '|', ('prefix', '=', 'WH/PACK/'),
+                ('prefix', '=', 'WH/PICK/')
+            ])
+
+            for seq in seqs:
+                seq.write({
+                    'number_next': 1,
+                })
+            sql = "update ir_sequence set number_next=1 where (" \
+                  "code ='stock.lot.serial' " \
+                  "or code ='stock.lot.tracking' " \
+                  "or code ='stock.orderpoint'" \
+                  "or code ='stock.picking'" \
+                  "or code ='stock.quant.package'" \
+                  "or code ='stock.scrap'" \
+                  "or code ='stock.picking'" \
+                  "or prefix ='WH/IN/'" \
+                  "or prefix ='WH/INT/'" \
+                  "or prefix ='WH/OUT/'" \
+                  "or prefix ='WH/PACK/'" \
+                  "or prefix ='WH/PICK/'" \
+                  ");"
+            self._cr.execute(sql)
         except Exception, e:
             raise Warning(e)
         return True
@@ -273,7 +349,30 @@ class AppThemeConfigSettings(models.TransientModel):
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
-                    self._cr.execute( sql)
+                    self._cr.execute(sql)
+
+                    # 更新序号
+                    seqs = self.env['ir.sequence'].search([
+                        '|', ('code', '=', 'account.reconcile'),
+                        '|', ('code', '=', 'account.payment.customer.invoice'),
+                        '|', ('code', '=', 'account.payment.customer.refund'),
+                        '|', ('code', '=', 'account.payment.supplier.invoice'),
+                        '|', ('code', '=', 'account.payment.supplier.refund'),
+                        ('code', '=', 'account.payment.transfer')
+                    ])
+
+                    for seq in seqs:
+                        seq.write({
+                            'number_next': 1,
+                        })
+                    sql = "update ir_sequence set number_next=1 where (" \
+                          "code ='account.reconcile' " \
+                          "or code ='account.payment.customer.invoice' " \
+                          "or code ='account.payment.customer.refund' " \
+                          "or code ='account.payment.supplier.invoice' " \
+                          "or code ='account.payment.supplier.refund' " \
+                          ");"
+                    self._cr.execute(sql)
         except Exception, e:
             raise Warning(e)
         return True
@@ -290,7 +389,7 @@ class AppThemeConfigSettings(models.TransientModel):
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
-                    self._cr.execute( sql)
+                    self._cr.execute(sql)
         except Exception, e:
             raise Warning(e)
         return True
@@ -308,7 +407,7 @@ class AppThemeConfigSettings(models.TransientModel):
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
-                    self._cr.execute( sql)
+                    self._cr.execute(sql)
 
         except Exception, e:
             raise Warning(e)
