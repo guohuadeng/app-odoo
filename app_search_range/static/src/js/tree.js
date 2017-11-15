@@ -69,14 +69,14 @@ ListView.include({
         self.$buttons.find('.app-search').remove();
 
         var app_fields = [];
-        _.each(self.columns, function(value, key, list){
-            if (value.store && value.type === "datetime" || value.type === "date") {
-                app_fields.push([value.name, value.string]);
-            }
-        });
         // 增加参数控制app_show_search_date
         new Model('ir.config_parameter').call('search_read', [[['key', '=', 'app_show_search_date']], ['value']]).then(function (show) {
             if (show.length >= 1 && (show[0]['value'] == "True")) {
+                _.each(self.columns, function (value, key, list) {
+                    if (value.store && value.type === "datetime" || value.type === "date") {
+                        app_fields.push([value.name, value.string]);
+                    }
+                });
                 if (app_fields.length > 0) {
                     self.$search_button = $(QWeb.render('odooApp.buttons', {'app_fields': app_fields}))
                     self.$search_button.find('.app_start_date').datetimepicker(datepickers_options);
