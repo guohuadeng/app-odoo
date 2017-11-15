@@ -8,7 +8,7 @@
                 <span style="float: left;">
                   
                     <select class="app_select_field form-control" style="height: 30px;" >
-                        <option t-foreach="date_fields" t-as="field" t-att-value="field[0]">
+                        <option t-foreach="date_fields" t-as="field" t-att-value="field[0]" t-att-type="field[2]">
                             <t t-esc="field[1]"/>
                         </option> 
                     </select>
