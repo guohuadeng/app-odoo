@@ -226,6 +226,7 @@ ListView.include({
             _.each(self.columns, function (value, key, list) {
                 if (value.name == field) {
                     field_type = value.type;
+                    return false;
                 }
             });
 
@@ -240,7 +241,7 @@ ListView.include({
                     //日期时间，处理utc
                     start_date = moment(moment(start_date, time.strftime_to_moment_format(l10n.date_format))).format('YYYY-MM-DD 00:00:00');
                     start_utc = moment(start_date)
-                    domain.push([field, '>=', start_utc]);
+                    domain.push([field, '<=', start_utc]);
                 }
             }
             if (end_date) {
