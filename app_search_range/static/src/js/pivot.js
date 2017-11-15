@@ -188,31 +188,49 @@ PivotView.include({
                 }
 
             }
-            // if (value) {
-            //     value_tmp = parseInt(value);
-            //     if (value_tmp != 0) {
-            //         domain.push([field,'=',value_tmp]);
-            //     } else {
-            //         domain.push([field,'!=', false]);
-            //     }
-            // }
         });
 
+// 注意，date和datetime型的处理是不同的，已处理完
         if (self.$search_button) {
             var start_date  = self.$search_button.find('.app_start_date').val(),
                 end_date    = self.$search_button.find('.app_end_date').val(),
-                field       = self.$search_button.find('.app_select_field').val();
-            
+                field       = self.$search_button.find('.app_select_field').val(),
+                field_type  = 'datetime';
+            var tz = session.user_context.tz,
+                start_utc,
+                end_utc;
+
+            _.each(self.columns, function (value, key, list) {
+                if (value.name == field) {
+                    field_type = value.type;
+                    return false;
+                }
+            });
+
+            moment.locale(tz);
             var l10n = _t.database.parameters;
             if (start_date) {
-                start_date = moment(moment(start_date, time.strftime_to_moment_format(l10n.date_format))).format('YYYY-MM-DD');
-                domain.push([field, '>=', start_date]);
+                if (field_type  = 'date')   {
+                    //日期类型，无须utc处理
+                    start_date = moment(moment(start_date, time.strftime_to_moment_format(l10n.date_format))).format('YYYY-MM-DD');
+                    domain.push([field, '>=', start_date]);
+                }   else {
+                    //日期时间，处理utc
+                    start_date = moment(moment(start_date, time.strftime_to_moment_format(l10n.date_format))).format('YYYY-MM-DD 00:00:00');
+                    start_utc = moment(start_date)
+                    domain.push([field, '<=', start_utc]);
+                }
             }
             if (end_date) {
-                end_date = moment(moment(end_date, time.strftime_to_moment_format(l10n.date_format))).format('YYYY-MM-DD');
-                domain.push([field, '<=', end_date]);
+                if (field_type  = 'date')   {
+                    end_date = moment(moment(end_date, time.strftime_to_moment_format(l10n.date_format))).format('YYYY-MM-DD');
+                    domain.push([field, '>=', end_date]);
+                }   else {
+                    end_date = moment(moment(end_date, time.strftime_to_moment_format(l10n.date_format))).format('YYYY-MM-DD 00:00:00');
+                    end_utc = moment(end_date)
+                    domain.push([field, '<=', end_utc]);
+                }
             }
-
         }
 
         if (self.$search_range) {

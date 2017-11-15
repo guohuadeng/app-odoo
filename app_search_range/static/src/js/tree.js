@@ -204,16 +204,8 @@ ListView.include({
                 }
 
             }
-            // if (value) {
-            //     value_tmp = parseInt(value);
-            //     if (value_tmp != 0) {
-            //         domain.push([field,'=',value_tmp]);
-            //     } else {
-            //         domain.push([field,'!=', false]);
-            //     }
-            // }
         });
-// todo: 注意，date和datetime型的处理是不同的，已处理完datetime类型，还有date类型
+// 注意，date和datetime型的处理是不同的，已处理完
         if (self.$search_button) {
             var start_date  = self.$search_button.find('.app_start_date').val(),
                 end_date    = self.$search_button.find('.app_end_date').val(),
