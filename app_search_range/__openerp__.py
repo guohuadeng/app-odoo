@@ -15,7 +15,7 @@
 # http://www.sunpop.cn/odoo10_developer_document_offline/
 # description:
 {
-    'name': 'App Search By Date or Number Range',
+    'name': 'App Search By Date (Datetime) or Number Range',
     'version': '10.0.1.0',
     'author': 'Sunpop.cn',
     'category': 'web',
@@ -45,5 +45,5 @@ Search by date or number range in List view and Pivot view
 
     'installable': True,
     'auto_install': False,
-    'application': False,
+    'application': True,
 }
