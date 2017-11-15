@@ -13,7 +13,7 @@ Search by date or number range in List view and Pivot view
 --------------------------------------------------
 
     """,
-    'depends': ['web'],
+    'depends': ['web','app_odoo_customize'],
     'data': [
         'views/template_view.xml',
         # data

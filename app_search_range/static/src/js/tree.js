@@ -52,7 +52,7 @@ ListView.include({
 
         var l10n = _t.database.parameters;
         var datepickers_options = {
-            pickTime: false,
+            pickTime: true,
             startDate: moment({ y: 1900 }),
             endDate: moment().add(200, "y"),
             calendarWeeks: true,
@@ -134,7 +134,7 @@ ListView.include({
             }
         });
 
-        // Dropdown list cho phep chon nhieu
+        // Dropdown list
         _.each(this.ts_context, function(item){
             var field = _.find(self.columns, function(column){
                 return column.type == 'many2one' && column.relation && column.name === item.name;
@@ -213,7 +213,7 @@ ListView.include({
             //     }
             // }
         });
-
+// todo: 时区处理
         if (self.$search_button) {
             var start_date  = self.$search_button.find('.app_start_date').val(),
                 end_date    = self.$search_button.find('.app_end_date').val(),

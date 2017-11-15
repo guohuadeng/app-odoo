@@ -67,68 +67,14 @@ PivotView.include({
             format : time.strftime_to_moment_format(l10n.date_format),
         }
 
-        // self.$buttons.find('.app-search').remove();
-
-        var app_fields = [];
-        _.each(self.fields, function(value, key, list){
-            if (value.store && value.type === "datetime" || value.type === "date") {
-                app_fields.push([key, value.string]);
-            }
-        });
-
-        if (app_fields.length > 0) {
-            self.$search_button = $(QWeb.render('odooApp.buttons', {'app_fields': app_fields}))
-            self.$search_button.find('.app_start_date').datetimepicker(datepickers_options);
-            self.$search_button.find('.app_end_date').datetimepicker(datepickers_options);
-            self.$search_button.find('.app_start_date').on('change', function() {
-                self.tgl_search();
-            });
-            self.$search_button.find('.app_end_date').on('change', function() {
-                self.tgl_search();
-            });
-            self.$search_button.find('.app_select_field').on('change', function() {
-                self.tgl_search();
-            });
-            self.$search_button.appendTo($node);
-        }     
-
-        app_fields = [];
-        _.each(self.fields, function(value, key, list){
-            if (value.string && value.string.length > 1 && value.store && (value.type === "integer" || value.type === "float" || value.type === "monetary")) {
-                app_fields.push([key, value.string]);
-            }
-        });
-
-
-        if (app_fields.length > 0) {
-            self.$search_range = $(QWeb.render('odooApp.SearchRange', {'app_fields': app_fields}))
-            self.$search_range.find('.app_select_range_field').on('change', function() {
-                self.tgl_search();
-            });
-            self.$search_range.find('.app_start_range').on('change', function() {
-                self.tgl_search();
-            });
-            self.$search_range.find('.app_end_range').on('change', function() {
-                self.tgl_search();
-            });
-            self.$search_range.appendTo($node);
-        }    
-
-        // Dropdown list cho phep chon nhieu
+        // Dropdown list
 
         $(QWeb.render("TGL.TreeSearch.Placeholder", {})).appendTo($node);
 
         _.each(ts_context, function(item){
-
             var field = _.find(self.fields, function(value, key, list){
                 return value.type == 'many2one' && value.relation && key === item.name;
             });
-
-        //     _.each(self.fields, function(value, key, list){
-        //     if (value.string && value.string.length > 1 && value.store && (value.type === "integer" || value.type === "float")) {
-        //         app_fields.push([value.name, value.string]);
-        //     }
-        // });
 
             if (field) {
                 self.ts_fields.push(item.name);
@@ -143,15 +89,73 @@ PivotView.include({
 
                     $multi_search.find('li').click(self.tgl_on_button_click.bind(self));
 
-                    setTimeout(function(){ 
-                        $multi_search.appendTo($('.treesearch_placeholder')); 
-                    }, 3000);
-
-                   
+                    setTimeout(function(){
+                        $multi_search.appendTo($('.treesearch_placeholder'));
+                    }, 2000);
                 });
             }
         });
+        // self.$buttons.find('.app-search').remove();
 
+        var date_fields = [];
+        // 增加参数控制app_show_search_date
+        new Model('ir.config_parameter').call('search_read', [[['key', '=', 'app_show_search_date']], ['value']]).then(function (show) {
+            if (show.length >= 1 && (show[0]['value'] == "True")) {
+                _.each(self.fields, function (value, key, list) {
+                    if (value.store && value.type === "datetime" || value.type === "date") {
+                        date_fields.push([key, value.string]);
+                    }
+                });
+
+                if (date_fields.length > 0) {
+                    self.$search_button = $(QWeb.render('odooApp.buttons', {'date_fields': date_fields}))
+                    self.$search_button.find('.app_start_date').datetimepicker(datepickers_options);
+                    self.$search_button.find('.app_end_date').datetimepicker(datepickers_options);
+                    self.$search_button.find('.app_start_date').on('change', function () {
+                        self.tgl_search();
+                    });
+                    self.$search_button.find('.app_end_date').on('change', function () {
+                        self.tgl_search();
+                    });
+                    self.$search_button.find('.app_select_field').on('change', function () {
+                        self.tgl_search();
+                    });
+                    setTimeout(function () {
+                        self.$search_button.insertBefore($('.treesearch_placeholder'));
+                    }, 500);
+                }
+            }
+        });
+
+        var number_fields = [];
+
+        // 增加参数控制app_show_search_number
+        new Model('ir.config_parameter').call('search_read', [[['key', '=', 'app_show_search_number']], ['value']]).then(function (show) {
+            if (show.length >= 1 && (show[0]['value'] == "True")) {
+                number_fields = [];
+                _.each(self.fields, function (value, key, list) {
+                    if (value.string && value.string.length > 1 && value.store && (value.type === "integer" || value.type === "float" || value.type === "monetary")) {
+                        number_fields.push([key, value.string]);
+                    }
+                });
+
+                if (number_fields.length > 0) {
+                    self.$search_range = $(QWeb.render('odooApp.SearchRange', {'number_fields': number_fields}))
+                    self.$search_range.find('.app_select_range_field').on('change', function () {
+                        self.tgl_search();
+                    });
+                    self.$search_range.find('.app_start_range').on('change', function () {
+                        self.tgl_search();
+                    });
+                    self.$search_range.find('.app_end_range').on('change', function () {
+                        self.tgl_search();
+                    });
+                    setTimeout(function () {
+                        self.$search_range.insertBefore($('.treesearch_placeholder'));
+                    }, 500);
+                }
+            }
+        });
     },  
 
     do_search: function(domain, context, group_by) {        
