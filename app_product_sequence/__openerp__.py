@@ -22,7 +22,7 @@
     'author': 'Sunpop.cn',
     'website': 'http://www.sunpop.cn',
     'license': 'AGPL-3',
-    'sequence': 0,
+    'sequence': 2,
     'installable': True,
     'auto_install': False,
     'application': True,
