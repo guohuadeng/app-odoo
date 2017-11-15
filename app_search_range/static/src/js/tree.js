@@ -225,7 +225,7 @@ ListView.include({
             moment.locale(tz);
             var l10n = _t.database.parameters;
             if (start_date) {
-                if (field_type  = 'date')   {
+                if (field_type  === 'date')   {
                     //日期类型，无须utc处理
                     start_date = moment(moment(start_date, time.strftime_to_moment_format(l10n.date_format))).format('YYYY-MM-DD');
                     domain.push([field, '>=', start_date]);
@@ -233,13 +233,13 @@ ListView.include({
                     //日期时间，处理utc
                     start_date = moment(moment(start_date, time.strftime_to_moment_format(l10n.date_format))).format('YYYY-MM-DD 00:00:00');
                     start_utc = moment(start_date)
-                    domain.push([field, '<=', start_utc]);
+                    domain.push([field, '>=', start_utc]);
                 }
             }
             if (end_date) {
-                if (field_type  = 'date')   {
+                if (field_type  === 'date')   {
                     end_date = moment(moment(end_date, time.strftime_to_moment_format(l10n.date_format))).format('YYYY-MM-DD');
-                    domain.push([field, '>=', end_date]);
+                    domain.push([field, '<=', end_date]);
                 }   else {
                     end_date = moment(moment(end_date, time.strftime_to_moment_format(l10n.date_format))).format('YYYY-MM-DD 00:00:00');
                     end_utc = moment(end_date)
