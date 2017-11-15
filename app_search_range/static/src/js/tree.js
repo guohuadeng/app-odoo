@@ -68,17 +68,17 @@ ListView.include({
 
         self.$buttons.find('.app-search').remove();
 
-        var app_fields = [];
+        var date_fields = [];
         // 增加参数控制app_show_search_date
         new Model('ir.config_parameter').call('search_read', [[['key', '=', 'app_show_search_date']], ['value']]).then(function (show) {
             if (show.length >= 1 && (show[0]['value'] == "True")) {
                 _.each(self.columns, function (value, key, list) {
                     if (value.store && value.type === "datetime" || value.type === "date") {
-                        app_fields.push([value.name, value.string]);
+                        date_fields.push([value.name, value.string]);
                     }
                 });
-                if (app_fields.length > 0) {
-                    self.$search_button = $(QWeb.render('odooApp.buttons', {'app_fields': app_fields}))
+                if (date_fields.length > 0) {
+                    self.$search_button = $(QWeb.render('odooApp.buttons', {'date_fields': date_fields}))
                     self.$search_button.find('.app_start_date').datetimepicker(datepickers_options);
                     self.$search_button.find('.app_end_date').datetimepicker(datepickers_options);
                     // self.$search_button.find('.app_search_date_rate').click(function() {
@@ -99,24 +99,24 @@ ListView.include({
         });
 
 
-        app_fields = [];
-        _.each(self.columns, function(value, key, list){
-            if (value.string && value.string.length > 1 && value.store && (value.type === "integer" || value.type === "float" || value.type === "monetary")) {
-                app_fields.push([value.name, value.string]);
-            }
-        });
-
-        if (app_fields.length == 0) {
-            if (self.fields_range) {
-                app_fields = self.fields_range;
-            }
-        }
+        var number_fields = [];
 
         // 增加参数控制app_show_search_number
         new Model('ir.config_parameter').call('search_read', [[['key', '=', 'app_show_search_number']], ['value']]).then(function (show) {
             if (show.length >= 1 && (show[0]['value'] == "True")) {
-                if (app_fields.length > 0) {
-                    self.$search_range = $(QWeb.render('odooApp.SearchRange', {'app_fields': app_fields}))
+                _.each(self.columns, function (value, key, list) {
+                    if (value.string && value.string.length > 1 && value.store && (value.type === "integer" || value.type === "float" || value.type === "monetary")) {
+                        number_fields.push([value.name, value.string]);
+                    }
+                });
+
+                if (number_fields.length == 0) {
+                    if (self.fields_range) {
+                        number_fields = self.fields_range;
+                    }
+                }
+                if (number_fields.length > 0) {
+                    self.$search_range = $(QWeb.render('odooApp.SearchRange', {'number_fields': number_fields}))
                     // self.$search_range.find('.app_search_date_range').click(function() {
                     //     self.tgl_search();
                     // });
@@ -170,11 +170,7 @@ ListView.include({
                 });
             }
         });
-// {'tree_search': [{'string': 'Địa điểm', 'name': 'location_id', 'domain': [('usage', '=', 'internal')]}, {'string': 'Nhóm sản phẩm', 'name': 'categ_id', 'domain': []}]}        
-// {'search_default_sales': 1, 'tree_search': [{'string': 'Địa điểm', 'name': 'location_id', 'domain': [('usage', '=', 'internal')]}, {'string': 'NV bán hàng', 'name': 'user_id', 'domain': []}]}        
-// {'tree_search': [{'string': 'Địa điểm', 'name': 'location_id', 'domain': [('usage', '=', 'internal')]}]}
-        // var a = $(QWeb.render('odooApp.selection', {'class_name': 'abc','fields': [['1', '1'], ['2', '2']]}));
-        // a.appendTo(self.$buttons);
+
 
     },  
 
