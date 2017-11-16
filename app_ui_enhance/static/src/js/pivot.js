@@ -67,35 +67,7 @@ PivotView.include({
             format : time.strftime_to_moment_format(l10n.date_format),
         }
 
-        // Dropdown list
-
-        $(QWeb.render("TGL.TreeSearch.Placeholder", {})).appendTo($node);
-
-        _.each(ts_context, function(item){
-            var field = _.find(self.fields, function(value, key, list){
-                return value.type == 'many2one' && value.relation && key === item.name;
-            });
-
-            if (field) {
-                self.ts_fields.push(item.name);
-
-                new Model(field.relation).query(['id', 'display_name']).filter(new data.CompoundDomain(item.domain, field.domain)).context(new data.CompoundContext()).order_by('app_sequence').all().then(function (result) {
-                    var $multi_search = $(QWeb.render("TGL.TreeSearch.Item", {'widget': {
-                        'string': item.string,
-                        'key': item.name,
-                        'class_name': 'app_multi_item_' + item.name,
-                        'fields': result,
-                    }}))
-
-                    $multi_search.find('li').click(self.tgl_on_button_click.bind(self));
-
-                    setTimeout(function(){
-                        $multi_search.appendTo($('.treesearch_placeholder'));
-                    }, 2000);
-                });
-            }
-        });
-        // self.$buttons.find('.app-search').remove();
+        $(QWeb.render("odooApp.TreeSearch.Placeholder", {})).appendTo($node);
 
         var date_fields = [];
         // 增加参数控制app_ui_show_search_date
@@ -108,21 +80,18 @@ PivotView.include({
                 });
 
                 if (date_fields.length > 0) {
-                    self.$search_button = $(QWeb.render('odooApp.buttons', {'date_fields': date_fields}))
-                    self.$search_button.find('.app_start_date').datetimepicker(datepickers_options);
-                    self.$search_button.find('.app_end_date').datetimepicker(datepickers_options);
-                    self.$search_button.find('.app_start_date').on('change', function () {
-                        self.tgl_search();
+                    self.$search_date = $(QWeb.render('odooApp.SearchDate', {'date_fields': date_fields}))
+                    self.$search_date.find('.app_start_date').datetimepicker(datepickers_options);
+                    self.$search_date.find('.app_end_date').datetimepicker(datepickers_options);
+
+                    self.$search_date.find('.app_start_date').on('keypress', function (e) {
+                        self.do_keypress(e);
                     });
-                    self.$search_button.find('.app_end_date').on('change', function () {
-                        self.tgl_search();
+                    self.$search_date.find('.app_end_date').on('keypress', function (e) {
+                        self.do_keypress(e);
                     });
-                    self.$search_button.find('.app_select_field').on('change', function () {
-                        self.tgl_search();
-                    });
-                    setTimeout(function () {
-                        self.$search_button.insertBefore($('.treesearch_placeholder'));
-                    }, 500);
+                    self.$search_date.appendTo($('.o_cp_buttons'));
+                    self.set_search_btn(1);
                 }
             }
         });
@@ -140,23 +109,38 @@ PivotView.include({
                 });
 
                 if (number_fields.length > 0) {
-                    self.$search_range = $(QWeb.render('odooApp.SearchRange', {'number_fields': number_fields}))
-                    self.$search_range.find('.app_select_range_field').on('change', function () {
-                        self.tgl_search();
+                    self.$search_number = $(QWeb.render('odooApp.SearchNumber', {'number_fields': number_fields}))
+
+                    self.$search_number.find('.app_start_number').on('keypress', function (e) {
+                        self.do_keypress(e);
                     });
-                    self.$search_range.find('.app_start_range').on('change', function () {
-                        self.tgl_search();
+                    self.$search_number.find('.app_end_number').on('keypress', function (e) {
+                        self.do_keypress(e);
                     });
-                    self.$search_range.find('.app_end_range').on('change', function () {
-                        self.tgl_search();
-                    });
-                    setTimeout(function () {
-                        self.$search_range.insertBefore($('.treesearch_placeholder'));
-                    }, 500);
+                    self.$search_number.appendTo($('.o_cp_buttons'));
+                    self.set_search_btn(1);
                 }
             }
         });
-    },  
+
+        //显示搜索键，因为pivot特殊，故要单独处理
+    },
+
+    set_search_btn: function (show) {
+        var self = this;
+        if (self.$search_btn) {
+            self.$search_btn.remove();
+        }
+        if (show) {
+            self.$search_btn = $(QWeb.render("odooApp.odooapp-btn", {})).appendTo($('.o_cp_buttons'));
+            self.$search_btn.children('.odooapp-search-btn').on('click', function () {
+                self.tgl_search();
+            });
+            self.$search_btn.children('.odooapp-clear-btn').on('click', function () {
+                self.do_clear();
+            });
+        }
+    },
 
     do_search: function(domain, context, group_by) {        
         var self = this;
@@ -164,6 +148,26 @@ PivotView.include({
         this.last_context = context;
         this.last_group_by = group_by;
         this.old_search = _.bind(this._super, this);
+        return self.tgl_search();
+    },
+
+    do_keypress: function(e) {
+        var self = this;
+        var keynum = window.event ? e.keyCode : e.which;
+        if (keynum==13)
+            return self.tgl_search();
+    },
+
+    do_clear: function() {
+        var self = this;
+        if (self.$search_date) {
+            self.$search_date.find('.app_start_date').val('');
+            self.$search_date.find('.app_end_date').val('');
+        }
+        if (self.$search_number) {
+            self.$search_number.find('.app_start_number').val('');
+            self.$search_number.find('.app_end_number').val('');
+        }
         return self.tgl_search();
     },
 
@@ -191,10 +195,10 @@ PivotView.include({
         });
 
 // 注意，date和datetime型的处理是不同的，已处理完
-        if (self.$search_button) {
-            var start_date  = self.$search_button.find('.app_start_date').val(),
-                end_date    = self.$search_button.find('.app_end_date').val(),
-                field       = self.$search_button.find('.app_select_field').val(),
+        if (self.$search_date) {
+            var start_date  = self.$search_date.find('.app_start_date').val(),
+                end_date    = self.$search_date.find('.app_end_date').val(),
+                field       = self.$search_date.find('.app_select_field').val(),
                 field_type  = 'datetime';
             var tz = session.user_context.tz,
                 start_utc,
@@ -233,10 +237,10 @@ PivotView.include({
             }
         }
 
-        if (self.$search_range) {
-            var start_range  = self.$search_range.find('.app_start_range').val(),
-                end_range    = self.$search_range.find('.app_end_range').val(),
-                range_field  = self.$search_range.find('.app_select_range_field').val();
+        if (self.$search_number) {
+            var start_range  = self.$search_number.find('.app_start_number').val(),
+                end_range    = self.$search_number.find('.app_end_number').val(),
+                range_field  = self.$search_number.find('.app_select_range_field').val();
 
             if (start_range) {
                 domain.push([range_field, '>=', parseInt(start_range)]);

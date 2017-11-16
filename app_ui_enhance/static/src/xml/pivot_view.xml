@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
 <!--日期类型搜索-->
-    <t t-name="odooApp.buttons">
+    <t t-name="odooApp.SearchDate">
         <div class="app-search btn-group btn-group-sm" >
             <!-- <div style="margin-left: 10px; margin-top: 2px;"> -->
-            <div style="margin-left: 0px; margin-top: 2px; padding-right: 10px;">
+            <div style="margin-left: 2px; margin-top: 2px; padding-right: 10px;">
                 <span style="float: left;">
                   
                     <select class="app_select_field form-control" style="height: 30px;" >
@@ -15,23 +15,21 @@
                 </span>
 
                 <span style="float: left; margin-left: 2px;">
-                    <input style="height: 30px;" class="app_start_date form-control" size="15" placeholder="Start date" type="text" />
+                    <input style="height: 30px;" class="app_start_date form-control" size="15" placeholder="Start date" type="text" title="Press Enter to search"/>
                 </span>
 
                 <span style="float: left; margin-left: 2px;">
-                    <input style="height: 30px;" class="app_end_date form-control" size="15" placeholder="End date" type="text" />
+                    <input style="height: 30px;" class="app_end_date form-control" size="15" placeholder="End date" type="text" title="Press Enter to search" />
                 </span>
-
-                <!-- <button style="margin-left: 2px; padding: 5px 10px;" class="app_search_date_rate btn btn-primary" title="Field">Lọc</button> -->
             </div>
         </div>
         <!-- <br></br> -->
     </t>
-<!--数值范围搜索-->
-    <t t-name="odooApp.SearchRange">
+    <!--数值范围搜索-->
+    <t t-name="odooApp.SearchNumber">
         <div class="app-search btn-group btn-group-sm" >
             <!-- <div style="margin-left: 10px; margin-top: 2px;"> -->
-            <div style="margin-left: 0px; margin-top: 2px; padding-right: 10px;">
+            <div style="margin-left: 2px; margin-top: 2px; padding-right: 10px;">
                 <span style="float: left;">
                   
                     <select class="app_select_range_field form-control" style="height: 30px;" >
@@ -42,22 +40,25 @@
                 </span>
 
                 <span style="float: left; margin-left: 2px;">
-                    <input style="height: 30px;" class="app_start_range form-control" size="6" placeholder="From" type="text" />
+                    <input style="height: 30px;" class="app_start_number form-control" size="6" placeholder="From" type="text" title="Press Enter to search"/>
                 </span>
 
                 <span style="float: left; margin-left: 2px;">
-                    <input style="height: 30px;" class="app_end_range form-control" size="6" placeholder="To" type="text" />
+                    <input style="height: 30px;" class="app_end_number form-control" size="6" placeholder="To" type="text" title="Press Enter to search"/>
                 </span>
-
-                <!-- <button style="margin-left: 2px; padding: 5px 10px;" class="app_search_date_range btn btn-primary" title="Field">Lọc</button> -->
             </div>
         </div>
-        <br></br>
     </t>
 
     <t t-name="odooApp.after_control_panel">
         <!-- <div class="after_control_panel" style="width: 100%; text-align: center;" /> -->
-        <div class="after_control_panel" />
+    </t>
+    <t t-name="odooApp.odooapp-btn">
+        <!-- <div class="after_control_panel" style="width: 100%; text-align: center;" /> -->
+        <span class="odooapp-btn">
+            <button type="button" class="btn btn-icon fa fa-lg fa-search odooapp-search-btn"></button>
+            <button type="button" class="btn btn-icon fa fa-lg fa-remove odooapp-clear-btn"></button>
+        </span>
     </t>
 
     <t t-name="odooApp.selection">
@@ -78,11 +79,11 @@
         </div>
     </t>
 
-    <t t-name="TGL.TreeSearch.Placeholder">
-        <div class="treesearch_placeholder" />
+    <t t-name="odooApp.TreeSearch.Placeholder">
+        <span class="treesearch_placeholder" />
     </t>
 
-    <t t-name="TGL.TreeSearch.Item">
+    <t t-name="odooApp.TreeSearch.Item">
         <div class="btn-group btn-group-sm tree_search_item" style="padding-right: 2px;">
             <button class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">
                <t t-esc="widget.string" /> <span class="caret"></span>
