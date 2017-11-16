@@ -5,7 +5,7 @@
             <field name="name">App Odoo Customize Settings</field>
             <field name="model">app.theme.config.settings</field>
             <field name="arch" type="xml">
-                <form string="odooApp Settings" class="oe_form_configuration">
+                <form string="odooApp Customize Settings" class="oe_form_configuration">
                     <header>
                         <button string="Apply" type="object" name="execute" class="oe_highlight"/>
                         <button string="Cancel" type="object" name="cancel" class="oe_link" special="cancel"/>
@@ -137,7 +137,7 @@
         </record>
 
         <record id="action_app_theme_config" model="ir.actions.act_window">
-            <field name="name">odooApp Settings</field>
+            <field name="name">odoo Customize</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">app.theme.config.settings</field>
             <field name="view_mode">form</field>
@@ -145,8 +145,14 @@
         </record>
 
         <menuitem
-                id="menu_app_theme_config"
+                id="menu_app_group"
+                name="odooApp"
                 parent="base.menu_administration"
+                sequence="1"
+                groups="base.group_system"/>
+        <menuitem
+                id="menu_app_theme_config"
+                parent="menu_app_group"
                 sequence="1"
                 action="action_app_theme_config"
                 groups="base.group_system"/>

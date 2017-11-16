@@ -322,37 +322,37 @@ msgstr "请访问我们的网站获取更多支持. http://www.sunpop.cn"
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_account
 msgid "When enable,User can login to your website"
-msgstr "When enable,User can login to your website"
+msgstr "启用后，会显示登录到你的网站"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_lang
 msgid "When enable,User can quick switch language in user menu"
-msgstr "When enable,User can quick switch language in user menu"
+msgstr "启用后，会显示快速语言切换菜单"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_documentation_dev
 msgid "When enable,User can visit development documentation"
-msgstr "When enable,User can visit development documentation"
+msgstr "启用后，会显示开发手册链接"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_documentation
 msgid "When enable,User can visit user manual"
-msgstr "When enable,User can visit user manual"
+msgstr "启用后，会显示用户手册链接"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_support
 msgid "When enable,User can vist your support site"
-msgstr "When enable,User can vist your support site"
+msgstr "启用后，会显示在线支持链接"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_debug
 msgid "When enable,everyone login can see the debug menu"
-msgstr "When enable,everyone login can see the debug menu"
+msgstr "启用后，会显示快速调试菜单"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "White Label Setting"
-msgstr "个性化Odoo设置"
+msgstr "个性化odoo设置"
 
 #. module: app_odoo_customize
 #: model:ir.model,name:app_odoo_customize.model_ir_ui_view
@@ -364,5 +364,5 @@ msgstr "ir.ui.view"
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_theme_config
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "odooApp Settings"
-msgstr "odooApp 设置"
+msgstr "个性化odoo设置"
 

@@ -84,7 +84,7 @@ class AppThemeConfigSettings(models.TransientModel):
         ir_config.set_param("app_show_account", self.app_show_account or "False")
         ir_config.set_param("app_show_enterprise", self.app_show_enterprise or "False")
         ir_config.set_param("app_show_share", self.app_show_share or "False")
-        ir_config.set_param("app_show_poweredby", self.app_show_share or "False")
+        ir_config.set_param("app_show_poweredby", self.app_show_poweredby or "False")
 
         ir_config.set_param("app_documentation_url",
                             self.app_documentation_url or "http://www.sunpop.cn/documentation/user/10.0/en/index.html")
