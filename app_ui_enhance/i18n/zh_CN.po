@@ -17,8 +17,8 @@ msgstr ""
 
 #. module: app_ui_enhance
 #. openerp-web
-#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:70
-#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:91
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:71
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:92
 #, python-format
 msgid "All"
 msgstr "全部"
@@ -62,7 +62,7 @@ msgstr "结束日期"
 
 #. module: app_ui_enhance
 #. openerp-web
-#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:45
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:43
 #, python-format
 msgid "From"
 msgstr "从"
@@ -91,6 +91,16 @@ msgstr "最后更新人"
 #: model:ir.model.fields,field_description:app_ui_enhance.field_app_ui_config_settings_write_date
 msgid "Last Updated on"
 msgstr "最后更新时间"
+
+#. module: app_ui_enhance
+#. openerp-web
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:18
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:22
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:43
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:47
+#, python-format
+msgid "Press Enter to search"
+msgstr "直接按回车即可搜索"
 
 #. module: app_ui_enhance
 #: model:ir.ui.view,arch_db:app_ui_enhance.view_app_ui_config_settings
@@ -122,7 +132,7 @@ msgstr "开始日期"
 
 #. module: app_ui_enhance
 #. openerp-web
-#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:49
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:47
 #, python-format
 msgid "To"
 msgstr "至"
