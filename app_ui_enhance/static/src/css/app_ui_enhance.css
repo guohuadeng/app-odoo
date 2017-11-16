@@ -1,0 +1,11 @@
+.tree_search_item {
+    cursor: pointer;
+}
+
+.tree_search_item .selected a:before {
+    font-family: FontAwesome;
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    content: "";
+}

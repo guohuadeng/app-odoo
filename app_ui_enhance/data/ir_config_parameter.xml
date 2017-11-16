@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+        <record id="app_ui_show_search_date" model="ir.config_parameter">
+            <field name="key">app_ui_show_search_date</field>
+            <field name="value">True</field>
+        </record>
+        <record id="app_ui_show_search_number" model="ir.config_parameter">
+            <field name="key">app_ui_show_search_number</field>
+            <field name="value">True</field>
+        </record>
+    </data>
+</openerp>
