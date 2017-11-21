@@ -358,19 +358,34 @@ class AppThemeConfigSettings(models.TransientModel):
                         '|', ('code', '=', 'account.payment.customer.refund'),
                         '|', ('code', '=', 'account.payment.supplier.invoice'),
                         '|', ('code', '=', 'account.payment.supplier.refund'),
-                        ('code', '=', 'account.payment.transfer')
+                        '|', ('code', '=', 'account.payment.transfer'),
+                        '|', ('prefix', 'like', 'BNK1/'),
+                        '|', ('prefix', 'like', 'CSH1/'),
+                        '|', ('prefix', 'like', 'INV/'),
+                        '|', ('prefix', 'like', 'EXCH/'),
+                        '|', ('prefix', 'like', 'MISC/'),
+                        '|', ('prefix', 'like', u'账单/'),
+                        ('prefix', 'like', u'杂项/')
                     ])
 
                     for seq in seqs:
                         seq.write({
                             'number_next': 1,
                         })
+                    #     todo: 帐单 or BILL/%
                     sql = "update ir_sequence set number_next=1 where (" \
                           "code ='account.reconcile' " \
                           "or code ='account.payment.customer.invoice' " \
                           "or code ='account.payment.customer.refund' " \
                           "or code ='account.payment.supplier.invoice' " \
                           "or code ='account.payment.supplier.refund' " \
+                          "or prefix like 'BNK1/%'" \
+                          "or prefix like 'CSH1/%'" \
+                          "or prefix like 'INV/%'" \
+                          "or prefix like 'EXCH/%'" \
+                          "or prefix like 'MISC/%'" \
+                          "or prefix like '账单/%'" \
+                          "or prefix like '杂项/%'" \
                           ");"
                     self._cr.execute(sql)
         except Exception, e:
