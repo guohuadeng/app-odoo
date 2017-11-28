@@ -41,6 +41,7 @@
         4.Define different product type, each product type use own rule of sequence.可自定义产品类型，不同产品类型使用不同编码规则。
         5.Quick access in sale , inventory, system menu.可以在销售、库存、系统菜单中快速定义。
         6.Multi language support.<br/>多语种支持。
+        7.Setup default Auto Sequence for each product category
     """,
     'pre_init_hook': 'pre_init_hook',
     'depends': [
@@ -54,6 +55,7 @@
         # "security/security.xml",
         'views/product_template_view.xml',
         'views/product_product_view.xml',
+        'views/product_category_view.xml',
         'views/product_internal_type_view.xml',
         'data/product_sequence.xml',
     ],

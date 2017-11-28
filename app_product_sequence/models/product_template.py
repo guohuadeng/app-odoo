@@ -58,3 +58,7 @@ class ProductTemplate(models.Model):
         if len(self.product_variant_ids) == 1:
             self.product_variant_ids.default_code = self.default_code_stored
 
+    @api.onchange('categ_id')
+    def _onchange_cate_id(self):
+        if self.categ_id and self.categ_id.internal_type:
+            self.internal_type = self.categ_id.internal_type
