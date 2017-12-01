@@ -17,7 +17,7 @@ You can config odoo, make it look like your own platform.
 13. Change Powered by Odoo in login screen.(Please change '../views/app_odoo_customize_view.xml' #15)
 14. Quick delete test data in Apps: Sales/POS/Purchase/MRP/Inventory/Accounting/Message/Workflow etc.
 15. Reset All the Sequence to beginning of 1: SO/PO/MO/Invoice...
-
+16. Fix odoo reload module translation bug while enable english language
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.
 The user can get the help document just by one click.
@@ -42,6 +42,7 @@ http://www.sunpop.cn
 13. 自定义登陆界面中的 Powered by Odoo
 14. 快速删除测试数据，支持模块包括：销售/POS门店/采购/生产/库存/会计/消息与工作流等.
 15. 将各类单据的序号重置，从1开始，包括：SO/PO/MO/Invoice 等
+16. 修复odoo启用英文后模块显示的Bug
 
 使用方法：将解压后的 app_odoo_customize 放到 odoo的 addons目录下，激活开发者模式，应用-->更新应用列表，
 找到 "App odoo Customize"模块，安装即可。

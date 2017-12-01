@@ -8,7 +8,7 @@
             <field name="code">product.product</field>
             <field name="prefix">P%(y)s%(month)s</field>
             <field name="padding">5</field>
-            <!--<field name="company_id" ref="base.main_company"/>-->
+            <field name="company_id" eval="False"/>
             <field name="initial">True</field>
         </record>
         <!-- 制造的成品 manufactured Products. -->
@@ -17,6 +17,7 @@
             <field name="code">product.product</field>
             <field name="prefix">D%(y)s%(month)s</field>
             <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
             <field name="initial">True</field>
         </record>
         <!-- 制造的原料 Components.-->
@@ -25,6 +26,7 @@
             <field name="code">product.product</field>
             <field name="prefix">C%(y)s%(month)s</field>
             <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
             <field name="initial">True</field>
         </record>
         <!-- 采购的成品  Sourced Products.-->
@@ -33,6 +35,7 @@
             <field name="code">product.product</field>
             <field name="prefix">S%(y)s%(month)s</field>
             <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
             <field name="initial">True</field>
         </record>
 
