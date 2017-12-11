@@ -84,7 +84,7 @@
                             <field name="app_account_url"/>
                         </div>
                     </group>
-                    <group string="Data Clearing (Be careful to do that!)">
+                    <group name="data-clean" string="Data Cleaning (Be careful to do that!)">
                         <label string="Sales"/>
                         <div>
                             <button string="Delete All Sales Order" type="object" name="remove_sales"
