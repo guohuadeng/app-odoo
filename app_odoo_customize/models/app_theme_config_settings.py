@@ -226,6 +226,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['mrp.production', ],
             ['mrp.production.product.line', ],
             ['mrp.unbuild', ],
+            ['change.production.qty', ],
         ]
         try:
             for line in to_removes :
