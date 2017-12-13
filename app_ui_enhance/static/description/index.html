@@ -62,6 +62,39 @@
         </div>
     </div>
 </section>
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="max-width: 800px;">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Web list View Background Color</h2>
+            <div class="oe_demo" style=" margin: 30px auto 0; padding: 0 15px 0 0; border:none; width: 96%;">
+                <p>This module changes the line color of records based on condition like state of a record and helps distinguish between different sets of
+                    records based on condition.</p>
+                <a href="http://www.sunpop.cn" target="_blank">
+                    <img src="web_bg_color_change.png" width="100%">
+                    <p>Set Backgroud color to filed in list view based on condition same as colors and style attributes of tree view.</p>
+                </a>
+                <h3># Instructions for Activating List background color property</h3>
+                <p>
+                    Just add tree attribute like style and colors with condition you want.
+                </p>
+                <pre>bg_colors="grey:state=='cancel';green:state=='draft';blue:state in ('done');red:state in ('waiting')"</pre>
+                <h3>eg.</h3>
+                <pre class="">
+    &lt;record id="view_demo_tree" model="ir.ui.view"&gt;
+        &lt;field name="name"&gt;demo.tree&lt;/field&gt;
+        &lt;field name="model"&gt;demo.model&lt;/field&gt;
+        &lt;field name="arch" type="xml"&gt;
+            &lt;tree bg_colors="grey:state=='cancel';green:state=='draft';blue:state in ('done');red:state in ('waiting')" name="demo_tree"&gt;
+                &lt;field name="name" string="Appointment" /&gt;
+                &lt;field name="state" /&gt;
+            &lt;/tree&gt;
+        &lt;/field&gt;
+    &lt;/record&gt;
+                </pre>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="oe_container oe_dark">
     <div class="oe_row oe_spaced text-center">

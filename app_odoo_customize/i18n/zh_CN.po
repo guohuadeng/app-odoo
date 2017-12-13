@@ -89,7 +89,7 @@ msgstr "删除所有生产单"
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Delete All Message"
-msgstr "删除所有消息"
+msgstr "删除所有消息与关注"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings

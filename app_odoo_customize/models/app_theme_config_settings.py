@@ -398,6 +398,7 @@ class AppThemeConfigSettings(models.TransientModel):
         to_removes = [
             # 清除消息数据
             ['mail.message', ],
+            ['mail.followers', ],
         ]
         try:
             for line in to_removes :

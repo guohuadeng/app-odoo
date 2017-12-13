@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="FieldMask">
+        <span t-if="widget.get('effective_readonly')"
+              t-att-contenteditable="widget.node.attrs.contenteditable"
+              t-att="widget.node.attrs.contenteditable ? widget.attributes: undefined"/>
+
+        <input t-if="!widget.get('effective_readonly')" class="o_form_input"
+               t-att-barcode_events="widget.options.barcode_events"
+               type="text"
+               t-att-id="widget.id_for_label"
+               t-att-tabindex="widget.node.attrs.tabindex"
+               t-att-autofocus="widget.node.attrs.autofocus"
+               t-att-placeholder="widget.node.attrs.placeholder"
+               t-att-autocomplete="widget.node.attrs.autocomplete"
+               t-att-maxlength="widget.field.size"
+               t-att="widget.attributes"
+        />
+    </t>
+    <span t-name="Widget.mask"
+          t-att="widget.attributes"
+          contenteditable="true"/>
+</templates> 

@@ -25,7 +25,27 @@
     'summary': 'UI Enhance for Odoo',
     'description': """
 
-Search by date or number range in List view and Pivot view
+1.Search by date or number range in List view and Pivot view
+--------------------------------------------------
+2.Instructions for Activating List background color property
+
+Just add tree attribute like style and colors with condition you want.
+
+bg_colors="grey:state=='cancel';green:state=='draft';blue:state in ('done');red:state in ('waiting')"
+
+
+eg.
+
+    <record id="view_demo_tree" model="ir.ui.view">
+        <field name="name">demo.tree</field>
+        <field name="model">demo.model</field>
+        <field name="arch" type="xml">
+            <tree bg_colors="grey:state=='cancel';green:state=='draft';blue:state in ('done');red:state in ('waiting')" name="demo_tree">
+                <field name="name" string="Appointment" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
 --------------------------------------------------
 
     """,
@@ -33,6 +53,7 @@ Search by date or number range in List view and Pivot view
     'data': [
         'views/app_ui_config_settings_view.xml',
         'views/template_view.xml',
+        'views/web_list_bg_color_view.xml',
         # data
         'data/ir_config_parameter.xml',
     ],
