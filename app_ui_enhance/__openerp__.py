@@ -53,7 +53,6 @@ eg.
     'data': [
         'views/app_ui_config_settings_view.xml',
         'views/template_view.xml',
-        'views/web_list_bg_color_view.xml',
         # data
         'data/ir_config_parameter.xml',
     ],
