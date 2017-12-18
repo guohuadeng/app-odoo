@@ -73,7 +73,8 @@ class ProductProduct(models.Model):
             else:
                 # create from product_product
                 sequence = self.env['product.internal.type'].search([('id', '=', vals['internal_type'])], limit=1)
-                vals['default_code'] = sequence.link_sequence.next_by_id()
+                if sequence:
+                    vals['default_code'] = sequence.link_sequence.next_by_id()
         return super(ProductProduct, self).create(vals)
 
     @api.multi

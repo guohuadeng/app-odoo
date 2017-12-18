@@ -49,53 +49,35 @@
         </record>
 
         <!-- internal_type 数据-->
-        <!--[(4, ref('purchase.route_warehouse0_buy')),(4, ref('mrp.route_warehouse0_manufacture')),(4, ref('stock.route_warehouse0_mto'))]-->
         <!--成品-->
         <record id="internal_type_mrp_product" model="product.internal.type">
-            <field name="name">制造的成品</field>
+            <field name="name">Manufactured Product</field>
             <field name="ref">cp</field>
-            <field name="type">product</field>
-            <field name="sale_ok">1</field>
-            <field name="purchase_ok">0</field>
-            <field name="route_ids" eval="[(6,0, [ref('mrp.route_warehouse0_manufacture'),ref('stock.route_warehouse0_mto')])]"/>
             <field name="description">Set prefix as "CP" in link sequence</field>
             <field name="link_sequence" ref="seq_mrp_product"/>
         </record>
         <!--板件-->
         <record id="internal_type_mrp_component" model="product.internal.type">
-            <field name="name">制造的板件</field>
+            <field name="name">Manufactured Components</field>
             <field name="ref">bj</field>
-            <field name="type">product</field>
-            <field name="sale_ok">0</field>
-            <field name="purchase_ok">0</field>
-            <field name="route_ids" eval="[(6,0, [ref('mrp.route_warehouse0_manufacture'),ref('stock.route_warehouse0_mto')])]"/>
             <field name="description">Set prefix as "BJ" in link sequence</field>
             <field name="link_sequence" ref="seq_mrp_component"/>
         </record>
         <!--纯制造原材料，板材-->
         <record id="internal_type_sourced_material" model="product.internal.type">
-            <field name="name">制造用原材料(板材)</field>
+            <field name="name">Sourced Material</field>
             <field name="ref">bc</field>
-            <field name="type">product</field>
-            <field name="sale_ok">0</field>
-            <field name="purchase_ok">1</field>
-            <field name="route_ids" eval="[(6,0, [ref('purchase.route_warehouse0_buy'),ref('stock.route_warehouse0_mto')])]"/>
             <field name="description">Set prefix as "BC" in link sequence</field>
             <field name="link_sequence" ref="seq_sourced_material"/>
         </record>
         <!--其它外购品，如五金-->
         <record id="internal_type_sourced_product" model="product.internal.type">
-            <field name="name">外购成品(五金等)</field>
+            <field name="name">Sourced Product</field>
             <field name="ref">cl</field>
-            <field name="type">product</field>
-            <field name="sale_ok">1</field>
-            <field name="purchase_ok">1</field>
-            <field name="route_ids" eval="[(6,0, [ref('purchase.route_warehouse0_buy'),ref('stock.route_warehouse0_mto')])]"/>
-            <field name="description">Set prefix as "CL" in link sequence</field>
+            <field name="description">Set prefix as "cl" in link sequence</field>
             <field name="link_sequence" ref="seq_sourced_product"/>
         </record>
 
-        <!--这个默认值可以不用，因为在onchange事件会设置很多值-->
         <!--设置产品默认值为制造成品-->
         <record id="product_internal_type_default" model="ir.values">
             <field name="name">internal_type</field>

@@ -15,7 +15,7 @@
 # http://www.sunpop.cn/odoo10_developer_document_offline/
 # description:
 {
-    'name': 'App Product Auto Sequence, Auto Code(Variants Supported)',
+    'name': 'App Product Internal Type,Auto Sequence, Auto Code(Variants Supported)',
     'summary': 'Auto Internal Reference.',
     "version": '10.0.2.2',
     'category': 'Sales',
@@ -46,8 +46,10 @@
     'pre_init_hook': 'pre_init_hook',
     'depends': [
         'product',
-        'sale',
         'stock',
+        'sale',
+        'purchase',
+        'mrp',
                 ],
     'data': [
         # 视图

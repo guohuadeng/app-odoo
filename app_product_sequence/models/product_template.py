@@ -22,6 +22,7 @@ class ProductTemplate(models.Model):
     _name = "product.template"
     _inherit = ['product.template']
 
+    # auto_join只要搜索product.template，自动会join。如果经常用到 internal_type 效率会高。
     internal_type = fields.Many2one(
         'product.internal.type', 'Internal Type',
         auto_join=True, required=True)
@@ -58,6 +59,17 @@ class ProductTemplate(models.Model):
         if len(self.product_variant_ids) == 1:
             self.product_variant_ids.default_code = self.default_code_stored
 
+    # 当内部类型变化时，改变产品模板的各默认值
+    @api.onchange('internal_type')
+    def _onchange_internal_type(self):
+        if self.internal_type:
+            self.type = self.internal_type.type
+            self.rental = self.internal_type.rental
+            self.sale_ok = self.internal_type.sale_ok
+            self.purchase_ok = self.internal_type.purchase_ok
+            self.route_ids = self.internal_type.route_ids
+
+    # 分类变动时，如果分类绑定了内部类型则联动
     @api.onchange('categ_id')
     def _onchange_cate_id(self):
         if self.categ_id and self.categ_id.internal_type:
