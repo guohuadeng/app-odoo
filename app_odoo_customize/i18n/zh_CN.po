@@ -113,8 +113,8 @@ msgstr "删除所有产品属性"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Delete All Purchase Order"
-msgstr "删除所有采购单"
+msgid "Delete All Purchase Order and Requisition"
+msgstr "删除所有采购单及协议"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings

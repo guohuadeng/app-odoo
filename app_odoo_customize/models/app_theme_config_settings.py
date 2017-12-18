@@ -196,6 +196,8 @@ class AppThemeConfigSettings(models.TransientModel):
             # 清除采购单据
             ['purchase.order.line', ],
             ['purchase.order', ],
+            ['purchase.requisition.line', ],
+            ['purchase.requisition', ],
         ]
         try:
             for line in to_removes :
