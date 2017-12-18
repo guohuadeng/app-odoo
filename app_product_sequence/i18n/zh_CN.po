@@ -65,8 +65,8 @@ msgstr "默认产品内部类型"
 
 #. module: app_product_sequence
 #: model:ir.ui.view,arch_db:app_product_sequence.product_internal_type_form_view
-msgid "Default Product value"
-msgstr "自动设置产品默认参数"
+msgid "Auto Set Product's Value To:"
+msgstr "自动设置产品默认参数为："
 
 #. module: app_product_sequence
 #: model:ir.model.fields,help:app_product_sequence.field_product_internal_type_route_ids

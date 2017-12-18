@@ -44,22 +44,14 @@
                             <field name="link_sequence"/>
                             <field name="sequence_prefix"/>
                         </group>
-                        <group string="Default Product value">
+                        <group string="Auto Set Product's Value To:">
                             <group>
                                 <field name="type"/>
                                 <field name="route_ids" widget="many2many_checkboxes"/>
                             </group>
                             <group>
-                                <div name="options" groups="base.group_user">
-                                    <div>
-                                        <field name="sale_ok"/>
-                                        <label for="sale_ok"/>
-                                    </div>
-                                    <div>
-                                        <field name="purchase_ok"/>
-                                        <label for="purchase_ok"/>
-                                    </div>
-                                </div>
+                                <field name="sale_ok"/>
+                                <field name="purchase_ok"/>
                             </group>
                         </group>
                     </sheet>

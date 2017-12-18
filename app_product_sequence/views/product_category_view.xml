@@ -9,7 +9,6 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='display_name']" position="after">
                     <field name="internal_type"/>
-                    <field name="name"/>
                 </xpath>
             </field>
         </record>
