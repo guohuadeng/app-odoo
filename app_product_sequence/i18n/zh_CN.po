@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0-20171107\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-18 10:50+0000\n"
-"PO-Revision-Date: 2017-12-18 10:50+0000\n"
+"POT-Creation-Date: 2017-12-18 19:02+0000\n"
+"PO-Revision-Date: 2017-12-18 19:02+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -128,7 +128,7 @@ msgid "Link Sequence"
 msgstr "使用的序列"
 
 #. module: app_product_sequence
-#: code:addons/app_product_sequence/models/product_template.py:40
+#: code:addons/app_product_sequence/models/product_template.py:41
 #, python-format
 msgid "Please save product first before adding varients!"
 msgstr "增加产品变体前，请先保存当前产品！"
@@ -156,7 +156,7 @@ msgstr "产品类别"
 #: model:ir.ui.view,arch_db:app_product_sequence.product_internal_type_form_view
 #: model:ir.ui.view,arch_db:app_product_sequence.product_internal_type_tree_view
 msgid "Product Internal Type"
-msgstr "内部类型(编码)"
+msgstr "产品内部(编码)类型"
 
 #. module: app_product_sequence
 #: model:ir.model,name:app_product_sequence.model_product_template
