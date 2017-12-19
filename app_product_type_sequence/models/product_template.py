@@ -28,21 +28,26 @@ class ProductTemplate(models.Model):
         auto_join=True, required=True)
 
     default_code = fields.Char(
-        'Internal Reference', compute='_compute_default_code',
-        inverse='_set_default_code', store=True, readonly=True,
-        default='New', copy=False)
+        'Internal Reference',
+        compute='_compute_default_code',
+        inverse='_set_default_code',
+        store=True,
+        default=lambda self: _('New'), copy=False)
     # 因为default_code有odoo的处理方式，影响面大，故会将其另存到 default_code_stored
-    default_code_stored = fields.Char('Internal Reference Stored',default='New')
+    default_code_stored = fields.Char('Internal Reference Stored',default=lambda self: _('New'))
 
     @api.model
     def create(self, vals):
         if 'attribute_line_ids' in vals:
             if len(vals['attribute_line_ids'])>0:
                 raise exceptions.ValidationError(_('Please save product first before adding varients!'))
-        if 'default_code' not in vals or vals['default_code'] == 'New':
-            sequence = self.env['product.internal.type'].search([('id', '=', vals['internal_type'])], limit=1)
-            vals['default_code'] = sequence.link_sequence.next_by_id()
-        vals['default_code_stored'] = vals['default_code']
+
+        if not (self.env.context.get('create_product_product')):
+            # 当从产品模板界面建立时（如果从产品界面建立，则已经生成了编码，不需要再处理）
+            if 'default_code' not in vals or vals['default_code'] == _('New'):
+                sequence = self.env['product.internal.type'].search([('id', '=', vals['internal_type'])], limit=1)
+                vals['default_code'] = sequence.link_sequence.next_by_id()
+                vals['default_code_stored'] = vals['default_code']
         return super(ProductTemplate, self).create(vals)
 
     @api.depends('product_variant_ids', 'product_variant_ids.default_code')
@@ -50,6 +55,7 @@ class ProductTemplate(models.Model):
         unique_variants = self.filtered(lambda template: len(template.product_variant_ids) == 1)
         for template in unique_variants:
             template.default_code = template.product_variant_ids.default_code
+            template.default_code_store = template.default_code
         for template in (self):
             if len(template.product_variant_ids)>1:
                 template.default_code = ''

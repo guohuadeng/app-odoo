@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0-20171107\n"
+"Project-Id-Version: Odoo Server 10.0+e-20171107\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-18 19:02+0000\n"
-"PO-Revision-Date: 2017-12-18 19:02+0000\n"
+"POT-Creation-Date: 2017-12-19 13:34+0000\n"
+"PO-Revision-Date: 2017-12-19 13:34+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -27,6 +27,11 @@ msgstr "A stockable product is a product for which you manage stock. The \"Inven
 "A digital content is a non-material product you sell online. The files attached to the products are the one that are sold on the e-commerce such as e-books, music, pictures,... The \"Digital Product\" module has to be installed."
 
 #. module: app_product_type_sequence
+#: model:ir.ui.view,arch_db:app_product_type_sequence.product_internal_type_form_view
+msgid "Auto Set Product's Value To:"
+msgstr "自动设置产品默认参数为："
+
+#. module: app_product_type_sequence
 #: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_purchase_ok
 msgid "Can be Purchased"
 msgstr "可用于采购"
@@ -40,6 +45,11 @@ msgstr "可用于出租"
 #: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_sale_ok
 msgid "Can be Sold"
 msgstr "可用于销售"
+
+#. module: app_product_type_sequence
+#: model:product.internal.type,name:app_product_type_sequence.internal_type_sourced_material
+msgid "Components Product"
+msgstr "原材料"
 
 #. module: app_product_type_sequence
 #: code:addons/app_product_type_sequence/models/product_internal_type.py:34
@@ -62,11 +72,6 @@ msgstr "创建时间"
 #: model:ir.model.fields,field_description:app_product_type_sequence.field_product_category_internal_type
 msgid "Default Internal Type"
 msgstr "默认产品内部类型"
-
-#. module: app_product_type_sequence
-#: model:ir.ui.view,arch_db:app_product_type_sequence.product_internal_type_form_view
-msgid "Auto Set Product's Value To:"
-msgstr "自动设置产品默认参数为："
 
 #. module: app_product_type_sequence
 #: model:ir.model.fields,help:app_product_type_sequence.field_product_internal_type_route_ids
@@ -105,7 +110,7 @@ msgstr "主产品编码"
 #: model:ir.model.fields,field_description:app_product_type_sequence.field_product_product_internal_type
 #: model:ir.model.fields,field_description:app_product_type_sequence.field_product_template_internal_type
 msgid "Internal Type"
-msgstr "内部(编码)类型"
+msgstr "内部类型"
 
 #. module: app_product_type_sequence
 #: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type___last_update
@@ -126,6 +131,18 @@ msgstr "最后更新时间"
 #: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_link_sequence
 msgid "Link Sequence"
 msgstr "使用的序列"
+
+#. module: app_product_type_sequence
+#: model:product.internal.type,name:app_product_type_sequence.internal_type_mrp_product
+msgid "Manufactured Product"
+msgstr "制造成品"
+
+#. module: app_product_type_sequence
+#: code:addons/app_product_type_sequence/models/product_product.py:23
+#: code:addons/app_product_type_sequence/models/product_template.py:33
+#, python-format
+msgid "New"
+msgstr "新建"
 
 #. module: app_product_type_sequence
 #: code:addons/app_product_type_sequence/models/product_template.py:41
@@ -150,13 +167,14 @@ msgstr "产品类别"
 
 #. module: app_product_type_sequence
 #: model:ir.actions.act_window,name:app_product_type_sequence.internal_type_action
+#: model:ir.ui.menu,name:app_product_type_sequence.menu_internal_type_action_purchase
 #: model:ir.ui.menu,name:app_product_type_sequence.menu_internal_type_action_sale
 #: model:ir.ui.menu,name:app_product_type_sequence.menu_internal_type_action_stock
 #: model:ir.ui.menu,name:app_product_type_sequence.menu_internal_type_action_sys
 #: model:ir.ui.view,arch_db:app_product_type_sequence.product_internal_type_form_view
 #: model:ir.ui.view,arch_db:app_product_type_sequence.product_internal_type_tree_view
 msgid "Product Internal Type"
-msgstr "产品内部(编码)类型"
+msgstr "产品编码类型"
 
 #. module: app_product_type_sequence
 #: model:ir.model,name:app_product_type_sequence.model_product_template
@@ -190,6 +208,11 @@ msgstr "编号前缀"
 #, python-format
 msgid "Service"
 msgstr "服务"
+
+#. module: app_product_type_sequence
+#: model:product.internal.type,name:app_product_type_sequence.internal_type_sourced_product
+msgid "Sourced Product"
+msgstr "外购成品"
 
 #. module: app_product_type_sequence
 #: model:ir.model.fields,help:app_product_type_sequence.field_product_internal_type_sale_ok

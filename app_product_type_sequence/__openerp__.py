@@ -59,7 +59,7 @@
         'views/product_product_view.xml',
         'views/product_category_view.xml',
         'views/product_internal_type_view.xml',
-        'data/product_sequence.xml',
+        'data/product_sequence_dp.xml',
     ],
     'demo': [
     ],

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="0">
+    <data noupdate="1">
         <!-- 更新序号规则 Auto Internal Reference. -->
         <!-- 所有的 All Products. -->
         <record id="seq_product_auto" model="ir.sequence">
@@ -38,7 +38,8 @@
             <field name="company_id" eval="False"/>
             <field name="initial">True</field>
         </record>
-
+    </data>
+    <data noupdate="0">
         <!-- internal_type 数据-->
         <record id="internal_type_mrp_product" model="product.internal.type">
             <field name="name">Manufactured Product</field>

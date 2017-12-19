@@ -20,7 +20,7 @@ from openerp import models, fields, api, exceptions,  _
 class ProductProduct(models.Model):
     _inherit = 'product.product'
 
-    default_code = fields.Char('Internal Reference', index=True, readonly=True,  default=lambda self: _('New'), copy=False)
+    default_code = fields.Char('Internal Reference', index=True, default=lambda self: _('New'), copy=False)
     default_code_index = fields.Integer('Internal Reference Index',  readonly=True)
 
     _sql_constraints = [
@@ -31,15 +31,15 @@ class ProductProduct(models.Model):
 
     @api.model
     def create(self, vals):
-        # todo: but 先建空白产品后，编辑给2个以上变体，序号会少个 -1
+        # todo: but 先建空白产品后，编辑2个以上变体，序号会少个 -1
         # code_index: 当没有变体现时，值为0，有变体时，为该变体序号
-        if 'default_code' not in vals or vals['default_code'] == 'New':
+        if 'default_code' not in vals or vals['default_code'] == _('New'):
             code_index = 0
             if 'product_tmpl_id' in vals:
                 template = self.env['product.template'].search([('id', '=', vals['product_tmpl_id'])], limit=1)
                 mylen = len(template.product_variant_ids)
-            # created from product_template
             if 'product_tmpl_id' in vals:
+            # created from product_template
                 template = self.env['product.template'].search([('id', '=', vals['product_tmpl_id'])], limit=1)
                 attr = vals['attribute_value_ids'][0][2]
                 if not(attr):
@@ -75,6 +75,10 @@ class ProductProduct(models.Model):
                 sequence = self.env['product.internal.type'].search([('id', '=', vals['internal_type'])], limit=1)
                 if sequence:
                     vals['default_code'] = sequence.link_sequence.next_by_id()
+        else:
+            sequence = self.env['product.internal.type'].search([('id', '=', vals['internal_type'])], limit=1)
+            if sequence:
+                vals['default_code'] = sequence.link_sequence.next_by_id()
         return super(ProductProduct, self).create(vals)
 
     @api.multi
@@ -82,3 +86,19 @@ class ProductProduct(models.Model):
         if len(self.product_tmpl_id.product_variant_ids)>1 :
             raise exceptions.ValidationError(_('Product varient can only create in Product view!'))
         return super(ProductProduct, self).copy(default=None)
+
+    # 当内部类型变化时，改变产品模板的各默认值
+    @api.onchange('internal_type')
+    def _onchange_internal_type(self):
+        if self.internal_type:
+            self.type = self.internal_type.type
+            self.rental = self.internal_type.rental
+            self.sale_ok = self.internal_type.sale_ok
+            self.purchase_ok = self.internal_type.purchase_ok
+            self.route_ids = self.internal_type.route_ids
+
+    # 分类变动时，如果分类绑定了内部类型则联动
+    @api.onchange('categ_id')
+    def _onchange_cate_id(self):
+        if self.categ_id and self.categ_id.internal_type:
+            self.internal_type = self.categ_id.internal_type
