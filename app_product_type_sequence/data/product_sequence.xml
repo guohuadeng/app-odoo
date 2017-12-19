@@ -29,7 +29,7 @@
             <field name="company_id" eval="False"/>
             <field name="initial">True</field>
         </record>
-        <!-- 生产原材料，采购的板材，如"16mm中纤板" Components.-->
+        <!-- 制造原材料，采购的板材，如"16mm中纤板" Components.-->
         <record id="seq_sourced_material" model="ir.sequence">
             <field name="name">Sequence for Sourced Material</field>
             <field name="code">product.product</field>
@@ -52,46 +52,46 @@
         <!--[(4, ref('purchase.route_warehouse0_buy')),(4, ref('mrp.route_warehouse0_manufacture')),(4, ref('stock.route_warehouse0_mto'))]-->
         <!--成品-->
         <record id="internal_type_mrp_product" model="product.internal.type">
-            <field name="name">成品</field>
+            <field name="name">Manufactured Product</field>
             <field name="ref">cp</field>
             <field name="type">product</field>
             <field name="sale_ok">1</field>
             <field name="purchase_ok">0</field>
             <field name="route_ids" eval="[(6,0, [ref('mrp.route_warehouse0_manufacture'),ref('stock.route_warehouse0_mto')])]"/>
-            <field name="description">制造的成品。如：床，桌子</field>
+            <field name="description">Set prefix as "CP" in link sequence</field>
             <field name="link_sequence" ref="seq_mrp_product"/>
         </record>
         <!--板件-->
         <record id="internal_type_mrp_component" model="product.internal.type">
-            <field name="name">板件</field>
+            <field name="name">Manufactured Components</field>
             <field name="ref">bj</field>
             <field name="type">product</field>
             <field name="sale_ok">0</field>
             <field name="purchase_ok">0</field>
             <field name="route_ids" eval="[(6,0, [ref('mrp.route_warehouse0_manufacture'),ref('stock.route_warehouse0_mto')])]"/>
-            <field name="description">制造的半成品。如：床的左侧板，柜子的顶板</field>
+            <field name="description">Set prefix as "BJ" in link sequence</field>
             <field name="link_sequence" ref="seq_mrp_component"/>
         </record>
         <!--纯制造原材料，板材-->
         <record id="internal_type_sourced_material" model="product.internal.type">
-            <field name="name">原材料(板材)</field>
+            <field name="name">Components Product</field>
             <field name="ref">bc</field>
             <field name="type">product</field>
             <field name="sale_ok">0</field>
             <field name="purchase_ok">1</field>
             <field name="route_ids" eval="[(6,0, [ref('purchase.route_warehouse0_buy'),ref('stock.route_warehouse0_mto')])]"/>
-            <field name="description">制造所需的原材料，不可直接销售。如：中纤板(厚14mm)</field>
+            <field name="description">Set prefix as "BC" in link sequence</field>
             <field name="link_sequence" ref="seq_sourced_material"/>
         </record>
         <!--其它外购品，如五金-->
         <record id="internal_type_sourced_product" model="product.internal.type">
-            <field name="name">外购成品</field>
+            <field name="name">Sourced Product</field>
             <field name="ref">cl</field>
             <field name="type">product</field>
             <field name="sale_ok">1</field>
             <field name="purchase_ok">1</field>
             <field name="route_ids" eval="[(6,0, [ref('purchase.route_warehouse0_buy'),ref('stock.route_warehouse0_mto')])]"/>
-            <field name="description">采购后可直接销售，也可当原材料的成品。如：门把手</field>
+            <field name="description">Set prefix as "CL" in link sequence</field>
             <field name="link_sequence" ref="seq_sourced_product"/>
         </record>
 

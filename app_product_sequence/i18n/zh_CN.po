@@ -105,7 +105,7 @@ msgstr "主产品编码"
 #: model:ir.model.fields,field_description:app_product_sequence.field_product_product_internal_type
 #: model:ir.model.fields,field_description:app_product_sequence.field_product_template_internal_type
 msgid "Internal Type"
-msgstr "内部(编码)类型"
+msgstr "内部类型(编码)"
 
 #. module: app_product_sequence
 #: model:ir.model.fields,field_description:app_product_sequence.field_product_internal_type___last_update
@@ -156,7 +156,7 @@ msgstr "产品类别"
 #: model:ir.ui.view,arch_db:app_product_sequence.product_internal_type_form_view
 #: model:ir.ui.view,arch_db:app_product_sequence.product_internal_type_tree_view
 msgid "Product Internal Type"
-msgstr "产品内部(编码)类型"
+msgstr "内部类型(编码)"
 
 #. module: app_product_sequence
 #: model:ir.model,name:app_product_sequence.model_product_template

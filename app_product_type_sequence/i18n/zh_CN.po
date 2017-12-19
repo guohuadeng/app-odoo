@@ -1,0 +1,221 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* app_product_type_sequence
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0-20171107\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-18 19:02+0000\n"
+"PO-Revision-Date: 2017-12-18 19:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,help:app_product_type_sequence.field_product_internal_type_type
+msgid "A stockable product is a product for which you manage stock. The \"Inventory\" app has to be installed.\n"
+"A consumable product, on the other hand, is a product for which stock is not managed.\n"
+"A service is a non-material product you provide.\n"
+"A digital content is a non-material product you sell online. The files attached to the products are the one that are sold on the e-commerce such as e-books, music, pictures,... The \"Digital Product\" module has to be installed."
+msgstr "A stockable product is a product for which you manage stock. The \"Inventory\" app has to be installed.\n"
+"A consumable product, on the other hand, is a product for which stock is not managed.\n"
+"A service is a non-material product you provide.\n"
+"A digital content is a non-material product you sell online. The files attached to the products are the one that are sold on the e-commerce such as e-books, music, pictures,... The \"Digital Product\" module has to be installed."
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_purchase_ok
+msgid "Can be Purchased"
+msgstr "可用于采购"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_rental
+msgid "Can be Rent"
+msgstr "可用于出租"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_sale_ok
+msgid "Can be Sold"
+msgstr "可用于销售"
+
+#. module: app_product_type_sequence
+#: code:addons/app_product_type_sequence/models/product_internal_type.py:34
+#: selection:product.internal.type,type:0
+#, python-format
+msgid "Consumable"
+msgstr "可消耗"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_category_internal_type
+msgid "Default Internal Type"
+msgstr "默认产品内部类型"
+
+#. module: app_product_type_sequence
+#: model:ir.ui.view,arch_db:app_product_type_sequence.product_internal_type_form_view
+msgid "Auto Set Product's Value To:"
+msgstr "自动设置产品默认参数为："
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,help:app_product_type_sequence.field_product_internal_type_route_ids
+msgid "Depending on the modules installed, this will allow you to define the route of the product: whether it will be bought, manufactured, MTO/MTS,..."
+msgstr "取决于安装的模块，它允许在产品定义路线：购买，制造，MTO/MTS，等等..."
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_description
+msgid "Description"
+msgstr "说明"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_display_name
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_name
+#: model:ir.ui.view,arch_db:app_product_type_sequence.product_internal_type_form_view
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_id
+msgid "ID"
+msgstr "ID"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_product_default_code_index
+msgid "Internal Reference Index"
+msgstr "Varient序号"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_product_default_code_stored
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_template_default_code_stored
+msgid "Internal Reference Stored"
+msgstr "主产品编码"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_product_internal_type
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_template_internal_type
+msgid "Internal Type"
+msgstr "内部(编码)类型"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_link_sequence
+msgid "Link Sequence"
+msgstr "使用的序列"
+
+#. module: app_product_type_sequence
+#: code:addons/app_product_type_sequence/models/product_template.py:41
+#, python-format
+msgid "Please save product first before adding varients!"
+msgstr "增加产品变体前，请先保存当前产品！"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,help:app_product_type_sequence.field_product_internal_type_sequence_prefix
+msgid "Prefix value of the record for the sequence"
+msgstr "序列记录的前缀"
+
+#. module: app_product_type_sequence
+#: model:ir.model,name:app_product_type_sequence.model_product_product
+msgid "Product"
+msgstr "产品"
+
+#. module: app_product_type_sequence
+#: model:ir.model,name:app_product_type_sequence.model_product_category
+msgid "Product Category"
+msgstr "产品类别"
+
+#. module: app_product_type_sequence
+#: model:ir.actions.act_window,name:app_product_type_sequence.internal_type_action
+#: model:ir.ui.menu,name:app_product_type_sequence.menu_internal_type_action_sale
+#: model:ir.ui.menu,name:app_product_type_sequence.menu_internal_type_action_stock
+#: model:ir.ui.menu,name:app_product_type_sequence.menu_internal_type_action_sys
+#: model:ir.ui.view,arch_db:app_product_type_sequence.product_internal_type_form_view
+#: model:ir.ui.view,arch_db:app_product_type_sequence.product_internal_type_tree_view
+msgid "Product Internal Type"
+msgstr "产品内部(编码)类型"
+
+#. module: app_product_type_sequence
+#: model:ir.model,name:app_product_type_sequence.model_product_template
+msgid "Product Template"
+msgstr "产品模板"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_type
+msgid "Product Type"
+msgstr "产品类型"
+
+#. module: app_product_type_sequence
+#: code:addons/app_product_type_sequence/models/product_product.py:83
+#, python-format
+msgid "Product varient can only create in Product view!"
+msgstr "请在产品管理页面增加产品的多属性!"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_route_ids
+msgid "Routes"
+msgstr "路线"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_sequence_prefix
+msgid "Sequence Prefix"
+msgstr "编号前缀"
+
+#. module: app_product_type_sequence
+#: code:addons/app_product_type_sequence/models/product_internal_type.py:35
+#: selection:product.internal.type,type:0
+#, python-format
+msgid "Service"
+msgstr "服务"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,help:app_product_type_sequence.field_product_internal_type_sale_ok
+msgid "Specify if the product can be selected in a sales order line."
+msgstr "如果产品能在销售单明细在被选择，则指定。"
+
+#. module: app_product_type_sequence
+#: code:addons/app_product_type_sequence/models/product_internal_type.py:36
+#: selection:product.internal.type,type:0
+#, python-format
+msgid "Stockable Product"
+msgstr "可库存产品"
+
+#. module: app_product_type_sequence
+#: sql_constraint:product.internal.type:0
+#: sql_constraint:product.product:0
+msgid "The reference must be unique"
+msgstr "产品内部编码不可重复！"
+
+#. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_ref
+msgid "Unique Code"
+msgstr "唯一编码"
+
+#. module: app_product_type_sequence
+#: model:ir.model,name:app_product_type_sequence.model_product_internal_type
+msgid "product.internal.type"
+msgstr "product.internal.type"
+

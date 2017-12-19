@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--产品内部类型list-->
+        <record id="product_internal_type_tree_view" model="ir.ui.view">
+            <field name="name">product.internal.type.tree</field>
+            <field name="model">product.internal.type</field>
+            <field name="arch" type="xml">
+                <tree string="Product Internal Type">
+                    <field name="name"/>
+                    <field name="ref"/>
+                    <field name="type"/>
+                    <field name="sale_ok"/>
+                    <field name="purchase_ok"/>
+                    <field name="route_ids" widget="many2many_tags"/>
+                    <field name="link_sequence" context="{'default_code': 'product.product'}"/>
+                    <field name="sequence_prefix"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+        <!--产品内部类型from-->
+        <record id="product_internal_type_form_view" model="ir.ui.view">
+            <field name="name">product.internal.type.form</field>
+            <field name="model">product.internal.type</field>
+            <field name="arch" type="xml">
+                <form string="Product Internal Type">
+                    <sheet>
+                        <div class="oe_title">
+                            <label class="oe_edit_only" for="name" string="Display Name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="ref"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="link_sequence"/>
+                            <field name="sequence_prefix"/>
+                        </group>
+                        <group string="Auto Set Product's Value To:">
+                            <group>
+                                <field name="type"/>
+                                <field name="route_ids" widget="many2many_checkboxes"/>
+                            </group>
+                            <group>
+                                <field name="sale_ok"/>
+                                <field name="purchase_ok"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="internal_type_action" model="ir.actions.act_window">
+            <field name="name">Product Internal Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.internal.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem action="app_product_type_sequence.internal_type_action" id="menu_internal_type_action_sys" parent="base.next_id_5"/>
+
+        <menuitem action="app_product_type_sequence.internal_type_action" id="menu_internal_type_action_sale"
+                  parent="sale.prod_config_main" sequence="6" groups="base.group_no_one"/>
+
+        <menuitem action="app_product_type_sequence.internal_type_action" id="menu_internal_type_action_stock"
+                  parent="stock.menu_product_in_config_stock" sequence="3" groups="base.group_no_one"/>
+    </data>
+</openerp>
