@@ -9,7 +9,6 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='type']" position="before">
                     <field name="internal_type"/>
-                    <field name="id"/>
                 </xpath>
             </field>
         </record>
@@ -23,7 +22,7 @@
                     <div>
                         <h4>
                             <label class="oe_edit_only" for="internal_type"/>
-                            <field name="internal_type" options="{'no_create': True,'no_open': True}"/>
+                            <field name="internal_type" options="{'no_create': True,'no_open': True}" required="1"/>
                         </h4>
                     </div>
                 </xpath>

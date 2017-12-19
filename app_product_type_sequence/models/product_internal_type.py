@@ -51,9 +51,9 @@ class ProductInternalType(models.Model):
         domain=[('product_selectable', '=', True)],
         help="Depending on the modules installed, this will allow you to define the route of the product: whether it will be bought, manufactured, MTO/MTS,...")
 
-    # company_id = fields.Many2one(
-    #     'res.company', 'Company',
-    #     default=lambda self: self.env.user.company_id.id, index=1)
+    company_id = fields.Many2one(
+        'res.company', 'Company',
+        default=lambda self: self.env.user.company_id.id, index=1)
 
     _sql_constraints = [
         ('uniq_ref',
