@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0+e-20171107\n"
+"Project-Id-Version: Odoo Server 10.0+e-20171014\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-15 22:58+0000\n"
-"PO-Revision-Date: 2017-11-15 22:58+0000\n"
+"POT-Creation-Date: 2017-12-19 20:57+0000\n"
+"PO-Revision-Date: 2017-12-19 20:57+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "取消"
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_create_uid
 msgid "Created by"
-msgstr "创建人"
+msgstr "创建者"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_create_date
@@ -66,7 +66,7 @@ msgstr "创建时间"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Data Clearing (Be careful to do that!)"
+msgid "Data Cleaning (Be careful to do that!)"
 msgstr "数据清理（请谨慎操作！）"
 
 #. module: app_odoo_customize
@@ -89,7 +89,7 @@ msgstr "删除所有生产单"
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Delete All Message"
-msgstr "删除所有消息与关注"
+msgstr "删除所有消息"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -114,7 +114,7 @@ msgstr "删除所有产品属性"
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Delete All Purchase Order and Requisition"
-msgstr "删除所有采购单及协议"
+msgstr "删除所有询价单、采购单，采购招标"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -151,7 +151,7 @@ msgstr "显示名称"
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_app_documentation_url
 msgid "Documentation Url"
-msgstr "用户手册链接"
+msgstr "文档链接"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_id
@@ -159,9 +159,14 @@ msgid "ID"
 msgstr "ID"
 
 #. module: app_odoo_customize
+#: model:ir.model,name:app_odoo_customize.model_base_language_install
+msgid "Install Language"
+msgstr "安装语言"
+
+#. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Inventory"
-msgstr "库存"
+msgstr "仓库"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -292,17 +297,17 @@ msgstr "系统名称"
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_enterprise
 msgid "Uncheck to hide the Enterprise tag"
-msgstr "Uncheck to hide the Enterprise tag"
+msgstr "不勾选则不显示企业版标签"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_share
 msgid "Uncheck to hide the Odoo Share Dashboard"
-msgstr "Uncheck to hide the Odoo Share Dashboard"
+msgstr "不勾选则不显示odoo分享"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_poweredby
 msgid "Uncheck to hide the Powered by text"
-msgstr "Uncheck to hide the Powered by text"
+msgstr "不勾选则不显示Powered by字样"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -352,7 +357,7 @@ msgstr "启用后，会显示快速调试菜单"
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "White Label Setting"
-msgstr "个性化odoo设置"
+msgstr "个性化Odoo设置"
 
 #. module: app_odoo_customize
 #: model:ir.model,name:app_odoo_customize.model_ir_ui_view
@@ -362,7 +367,16 @@ msgstr "ir.ui.view"
 #. module: app_odoo_customize
 #: model:ir.actions.act_window,name:app_odoo_customize.action_app_theme_config
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_theme_config
+msgid "odoo Customize"
+msgstr "odoo 定制"
+
+#. module: app_odoo_customize
+#: model:ir.ui.menu,name:app_odoo_customize.menu_app_group
+msgid "odooApp"
+msgstr "odooApp"
+
+#. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "odooApp Settings"
-msgstr "个性化odoo设置"
+msgid "odooApp Customize Settings"
+msgstr "odooApp 定制化设置"
 
