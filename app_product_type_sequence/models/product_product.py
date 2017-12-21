@@ -20,20 +20,22 @@ from openerp import models, fields, api, exceptions,  _
 class ProductProduct(models.Model):
     _inherit = 'product.product'
 
-    default_code = fields.Char('Internal Reference', index=True, default=lambda self: _('New'), copy=False)
+    default_code = fields.Char('Internal Reference', index=True, default='New', copy=False)
     default_code_index = fields.Integer('Internal Reference Index',  readonly=True)
 
-    _sql_constraints = [
-        ('uniq_default_code',
-         'unique(default_code)',
-         'The reference must be unique'),
-    ]
+    # todo: 检查数据，要保证数据唯一性
+    # 为免报错，不限制唯一性
+    # _sql_constraints = [
+    #     ('uniq_default_code',
+    #      'unique(default_code)',
+    #      'The reference must be unique'),
+    # ]
 
     @api.model
     def create(self, vals):
         # todo: but 先建空白产品后，编辑2个以上变体，序号会少个 -1
         # code_index: 当没有变体现时，值为0，有变体时，为该变体序号
-        if 'default_code' not in vals or vals['default_code'] == _('New'):
+        if 'default_code' not in vals or vals['default_code'] == 'New':
             code_index = 0
             if 'product_tmpl_id' in vals:
                 template = self.env['product.template'].search([('id', '=', vals['product_tmpl_id'])], limit=1)
@@ -73,12 +75,16 @@ class ProductProduct(models.Model):
             else:
                 # create from product_product
                 sequence = self.env['product.internal.type'].search([('id', '=', vals['internal_type'])], limit=1)
+                if not sequence:
+                    sequence = self.env.ref('app_product_type_sequence.internal_type_mrp_product', raise_if_not_found=False)
                 if sequence:
                     vals['default_code'] = sequence.link_sequence.next_by_id()
         else:
-            sequence = self.env['product.internal.type'].search([('id', '=', vals['internal_type'])], limit=1)
-            if sequence:
-                vals['default_code'] = sequence.link_sequence.next_by_id()
+            # 如果有自己输入 ref，则不需要自运输生成
+            # sequence = self.env['product.internal.type'].search([('id', '=', vals['internal_type'])], limit=1)
+            # if sequence:
+            #     vals['default_code'] = sequence.link_sequence.next_by_id()
+            pass
         return super(ProductProduct, self).create(vals)
 
     @api.multi

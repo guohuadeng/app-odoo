@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--产品Form-->
+        <record id="felive_product_template_form_view" model="ir.ui.view">
+            <field name="name">product.template.common.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="felive_core.felive_product_template_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='options']" position="before">
+                    <div>
+                        <h4>
+                            <label class="oe_edit_only" for="internal_type"/>
+                            <field name="internal_type" options="{'no_create': True,'no_open': True}" required="1"/>
+                        </h4>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

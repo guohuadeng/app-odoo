@@ -53,6 +53,7 @@
         <record id="internal_type_mrp_product" model="product.internal.type">
             <field name="name">Manufactured Product</field>
             <field name="ref">d</field>
+            <field name="sequence">1</field>
             <field name="type">product</field>
             <field name="sale_ok">1</field>
             <field name="purchase_ok">0</field>
@@ -63,6 +64,7 @@
         <record id="internal_type_sourced_material" model="product.internal.type">
             <field name="name">Components Product</field>
             <field name="ref">c</field>
+            <field name="sequence">2</field>
             <field name="type">product</field>
             <field name="sale_ok">0</field>
             <field name="purchase_ok">1</field>
@@ -73,6 +75,7 @@
         <record id="internal_type_sourced_product" model="product.internal.type">
             <field name="name">Sourced Product</field>
             <field name="ref">s</field>
+            <field name="sequence">3</field>
             <field name="type">product</field>
             <field name="sale_ok">1</field>
             <field name="purchase_ok">1</field>
@@ -83,6 +86,7 @@
         <record id="internal_type_service" model="product.internal.type">
             <field name="name">Service</field>
             <field name="ref">v</field>
+            <field name="sequence">4</field>
             <field name="type">service</field>
             <field name="sale_ok">1</field>
             <field name="purchase_ok">1</field>

@@ -20,7 +20,9 @@ from openerp import api, fields, models, _
 
 class ProductInternalType(models.Model):
     _name = "product.internal.type"
+    _order = 'sequence, name'
 
+    sequence = fields.Integer('Sequence', default=9)
     name = fields.Char('Display Name', default='Normal', translate=True)
     description = fields.Char('Description')
     ref = fields.Char('Unique Code', required=True)

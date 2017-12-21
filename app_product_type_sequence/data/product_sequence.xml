@@ -6,7 +6,7 @@
         <record id="seq_product_auto" model="ir.sequence">
             <field name="name">Sequence for All Products</field>
             <field name="code">product.product</field>
-            <field name="prefix">P%(y)s%(month)s</field>
+            <field name="prefix">PR%(y)s%(month)s</field>
             <field name="padding">5</field>
             <field name="company_id" eval="False"/>
             <field name="initial">True</field>
@@ -54,6 +54,7 @@
         <record id="internal_type_mrp_product" model="product.internal.type">
             <field name="name">Manufactured Product</field>
             <field name="ref">cp</field>
+            <field name="sequence">1</field>
             <field name="type">product</field>
             <field name="sale_ok">1</field>
             <field name="purchase_ok">0</field>
@@ -65,6 +66,7 @@
         <record id="internal_type_mrp_component" model="product.internal.type">
             <field name="name">Manufactured Components</field>
             <field name="ref">bj</field>
+            <field name="sequence">2</field>
             <field name="type">product</field>
             <field name="sale_ok">0</field>
             <field name="purchase_ok">0</field>
@@ -76,6 +78,7 @@
         <record id="internal_type_sourced_material" model="product.internal.type">
             <field name="name">Components Product</field>
             <field name="ref">bc</field>
+            <field name="sequence">3</field>
             <field name="type">product</field>
             <field name="sale_ok">0</field>
             <field name="purchase_ok">1</field>
@@ -87,12 +90,35 @@
         <record id="internal_type_sourced_product" model="product.internal.type">
             <field name="name">Sourced Product</field>
             <field name="ref">cl</field>
+            <field name="sequence">4</field>
             <field name="type">product</field>
             <field name="sale_ok">1</field>
             <field name="purchase_ok">1</field>
             <field name="route_ids" eval="[(6,0, [ref('purchase.route_warehouse0_buy'),ref('stock.route_warehouse0_mto')])]"/>
             <field name="description">Set prefix as "CL" in link sequence</field>
             <field name="link_sequence" ref="seq_sourced_product"/>
+        </record>
+        <!-- 服务与费用 Service-->
+        <record id="internal_type_service" model="product.internal.type">
+            <field name="name">Service</field>
+            <field name="ref">fw</field>
+            <field name="sequence">5</field>
+            <field name="type">service</field>
+            <field name="sale_ok">1</field>
+            <field name="purchase_ok">1</field>
+            <field name="description">Set prefix as "PR" in link sequence</field>
+            <field name="link_sequence" ref="seq_product_auto"/>
+        </record>
+        <!-- 消耗品，无限库存 Consu-->
+        <record id="internal_type_consu" model="product.internal.type">
+            <field name="name">Consumer</field>
+            <field name="ref">xh</field>
+            <field name="sequence">6</field>
+            <field name="type">consu</field>
+            <field name="sale_ok">1</field>
+            <field name="purchase_ok">1</field>
+            <field name="description">Set prefix as "PR" in link sequence</field>
+            <field name="link_sequence" ref="seq_product_auto"/>
         </record>
 
         <!--这个默认值可以不用，因为在onchange事件会设置很多值-->

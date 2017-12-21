@@ -32,9 +32,9 @@ class ProductTemplate(models.Model):
         compute='_compute_default_code',
         inverse='_set_default_code',
         store=True,
-        default=lambda self: _('New'), copy=False)
+        default='New', copy=False)
     # 因为default_code有odoo的处理方式，影响面大，故会将其另存到 default_code_stored
-    default_code_stored = fields.Char('Internal Reference Stored',default=lambda self: _('New'))
+    default_code_stored = fields.Char('Internal Reference Stored',default='New')
 
     @api.model
     def create(self, vals):
@@ -44,8 +44,10 @@ class ProductTemplate(models.Model):
 
         if not (self.env.context.get('create_product_product')):
             # 当从产品模板界面建立时（如果从产品界面建立，则已经生成了编码，不需要再处理）
-            if 'default_code' not in vals or vals['default_code'] == _('New'):
+            if 'default_code' not in vals or vals['default_code'] == 'New':
                 sequence = self.env['product.internal.type'].search([('id', '=', vals['internal_type'])], limit=1)
+                if not sequence:
+                    sequence = self.env.ref('app_product_type_sequence.internal_type_mrp_product', raise_if_not_found=False)
                 vals['default_code'] = sequence.link_sequence.next_by_id()
                 vals['default_code_stored'] = vals['default_code']
         return super(ProductTemplate, self).create(vals)
