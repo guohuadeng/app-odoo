@@ -25,21 +25,27 @@ class ProductProduct(models.Model):
 
     # todo: 检查数据，要保证数据唯一性
     # 为免报错，不限制唯一性
-    # _sql_constraints = [
-    #     ('uniq_default_code',
-    #      'unique(default_code)',
-    #      'The reference must be unique'),
-    # ]
+    _sql_constraints = [
+        ('uniq_default_code',
+         'unique(default_code)',
+         'The reference must be unique'),
+    ]
 
     @api.model
     def create(self, vals):
         # todo: but 先建空白产品后，编辑2个以上变体，序号会少个 -1
         # code_index: 当没有变体现时，值为0，有变体时，为该变体序号
+        code_index = 0
         if 'default_code' not in vals or vals['default_code'] == _('New'):
-            code_index = 0
             if 'product_tmpl_id' in vals:
             # 按产品模板创建产品，有多种情况
                 template = self.env['product.template'].search([('id', '=', vals['product_tmpl_id'])], limit=1)
+                if template.default_code and template.default_code != '':
+                    code_stored = template.default_code
+                else:
+                    code_stored = template.default_code_stored
+                if not code_stored:
+                    code_stored = ''
                 mylen = len(template.product_variant_ids)
                 try:
                     attr = vals['attribute_value_ids'][0][2]
@@ -52,12 +58,12 @@ class ProductProduct(models.Model):
                     # 没有属性值，则是单规格产品。attribute_value_ids格式为[6,0,[]]。多规格时，attribute_value_ids格式为[6,0,[x]]
                     code_index = 0
                     vals['default_code_index'] = code_index
-                    vals['default_code'] = template.default_code_stored
+                    vals['default_code'] = code_stored
                 elif mylen == 0:
                     # 有属性值了，自己是第一个规格
                     code_index = 1
                     vals['default_code_index'] = code_index
-                    vals['default_code'] = template.default_code_stored + '-%03d'%(code_index)
+                    vals['default_code'] = code_stored + '-%03d'%(code_index)
                 elif mylen == 1:
                     # 已存在1个，当存在的1个有属性时，要改已存在的product值
                     code_index = template.product_variant_ids[:1].default_code_index
@@ -65,24 +71,24 @@ class ProductProduct(models.Model):
                         if code_index == 0:
                             code_index = 1
                         template.product_variant_ids[:1].default_code_index = code_index
-                        template.product_variant_ids[:1].default_code = template.default_code_stored + '-%03d'%(code_index)
+                        template.product_variant_ids[:1].default_code = code_stored + '-%03d'%(code_index)
                     # 接着改当前操作的product值
                     code_index = code_index + 1
                     vals['default_code_index'] = code_index
-                    vals['default_code'] = template.default_code_stored + '-%03d'%(code_index)
+                    vals['default_code'] = code_stored + '-%03d'%(code_index)
                 elif mylen > 1:
                     # 找到最大的序号
                     variant_max = max(template.product_variant_ids,key=lambda x: x['default_code_index'])
                     code_index = variant_max['default_code_index'] + 1
                     vals['default_code_index'] = code_index
-                    vals['default_code'] = template.default_code_stored + '-%03d'%(code_index)
+                    vals['default_code'] = code_stored + '-%03d'%(code_index)
                 else:
                     # 当按模板
                     # 此条件常规不出现，但特殊项目会有
                     variant_max = max(template.product_variant_ids,key=lambda x: x['default_code_index'])
                     code_index = variant_max['default_code_index'] + 1
                     vals['default_code_index'] = code_index
-                    vals['default_code'] = template.default_code_stored + '-%03d'%(code_index)
+                    vals['default_code'] = code_stored + '-%03d'%(code_index)
             else:
                 # create from product_product
                 # 默认使用制造成品的编码
