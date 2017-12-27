@@ -22,7 +22,7 @@
     'website': 'http://www.sunpop.cn',
     'license': 'AGPL-3',
     'sequence': 2,
-    'summary': 'UI Enhance for Odoo',
+    'summary': 'UI Enhance for Odoo. 1.Search by date or number range in List view and Pivot view. 2.Instructions for Activating List background color property',
     'description': """
 
 1.Search by date or number range in List view and Pivot view

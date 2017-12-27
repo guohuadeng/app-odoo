@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    
+    <template id="assets_backend" inherit_id="web.assets_backend">
+      <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css" href="/search_by_range/static/src/css/main.css"/>
+          <script type="text/javascript" src="/search_by_range/static/src/js/pivot.js"></script>
+          <script type="text/javascript" src="/search_by_range/static/src/js/tree.js"></script>
+      </xpath>
+    </template>
+
+</data>
+</odoo>
