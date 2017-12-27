@@ -24,7 +24,7 @@
     'license': 'AGPL-3',
     'sequence': 2,
     'installable': True,
-    'auto_install': False,
+    'auto_install': True,
     'application': True,
     'images': ['static/description/set2.jpg'],
     'currency': 'EUR',
@@ -59,7 +59,7 @@
         'views/product_product_view.xml',
         'views/product_category_view.xml',
         'views/product_internal_type_view.xml',
-        'data/product_sequence_dp.xml',
+        'data/product_sequence.xml',
     ],
     'demo': [
     ],
