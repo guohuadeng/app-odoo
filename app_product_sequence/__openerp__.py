@@ -46,6 +46,10 @@
     'pre_init_hook': 'pre_init_hook',
     'depends': [
         'product',
+        'stock',
+        'sale',
+        'purchase',
+        'mrp',
                 ],
     'data': [
         # 视图

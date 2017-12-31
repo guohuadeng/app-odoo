@@ -68,10 +68,10 @@
 
         <menuitem action="app_product_sequence.internal_type_action" id="menu_internal_type_action_sys" parent="base.next_id_5"/>
 
-        <!--<menuitem action="app_product_sequence.internal_type_action" id="menu_internal_type_action_sale"-->
-                  <!--parent="sale.prod_config_main" sequence="6" groups="base.group_no_one"/>-->
+        <menuitem action="app_product_sequence.internal_type_action" id="menu_internal_type_action_sale"
+                  parent="sale.prod_config_main" sequence="6" groups="base.group_no_one"/>
 
-        <!--<menuitem action="app_product_sequence.internal_type_action" id="menu_internal_type_action_stock"-->
-                  <!--parent="stock.menu_product_in_config_stock" sequence="3" groups="base.group_no_one"/>-->
+        <menuitem action="app_product_sequence.internal_type_action" id="menu_internal_type_action_stock"
+                  parent="stock.menu_product_in_config_stock" sequence="3" groups="base.group_no_one"/>
     </data>
 </openerp>
