@@ -203,6 +203,11 @@ msgid "Sequence Prefix"
 msgstr "编号前缀"
 
 #. module: app_product_type_sequence
+#: model:ir.model.fields,field_description:app_product_type_sequence.field_product_internal_type_sequence
+msgid "Sequence"
+msgstr "显示顺序"
+
+#. module: app_product_type_sequence
 #: code:addons/app_product_type_sequence/models/product_internal_type.py:35
 #: selection:product.internal.type,type:0
 #, python-format
