@@ -6,7 +6,7 @@
         <record id="seq_product_auto" model="ir.sequence">
             <field name="name">Sequence for All Products</field>
             <field name="code">product.product</field>
-            <field name="prefix">P%(y)s%(month)s</field>
+            <field name="prefix">PR%(y)s%(month)s</field>
             <field name="padding">5</field>
             <field name="company_id" eval="False"/>
             <field name="initial">True</field>
@@ -42,7 +42,7 @@
         <record id="seq_sourced_product" model="ir.sequence">
             <field name="name">Sequence for Sourced Product</field>
             <field name="code">product.product</field>
-            <field name="prefix">CL%(y)s%(month)s</field>
+            <field name="prefix">WL%(y)s%(month)s</field>
             <field name="padding">5</field>
             <field name="company_id" eval="False"/>
             <field name="initial">True</field>
@@ -86,12 +86,12 @@
         <!--其它外购品，如五金-->
         <record id="internal_type_sourced_product" model="product.internal.type">
             <field name="name">Sourced Product</field>
-            <field name="ref">cl</field>
+            <field name="ref">wl</field>
             <field name="type">product</field>
             <field name="sale_ok">1</field>
             <field name="purchase_ok">1</field>
             <field name="route_ids" eval="[(6,0, [ref('purchase.route_warehouse0_buy'),ref('stock.route_warehouse0_mto')])]"/>
-            <field name="description">Set prefix as "CL" in link sequence</field>
+            <field name="description">Set prefix as "WL" in link sequence</field>
             <field name="link_sequence" ref="seq_sourced_product"/>
         </record>
 

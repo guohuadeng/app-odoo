@@ -21,6 +21,8 @@
     'name': "App widget extra(Inputmask Widget)",
     'author': "Sunpop.cn",
     'website': 'http://www.sunpop.cn',
+    'currency': 'EUR',
+    'price': 38,
 
     'summary': """
    A Widget to make masks on form fields""",
