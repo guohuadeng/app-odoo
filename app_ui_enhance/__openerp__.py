@@ -40,7 +40,7 @@ eg.
         <field name="name">demo.tree</field>
         <field name="model">demo.model</field>
         <field name="arch" type="xml">
-            <tree bg_colors="grey:state=='cancel';green:state=='draft';blue:state in ('done');red:state in ('waiting')" name="demo_tree">
+            <tree bg_colors="grey:state=='cancel';green:state=='draft';blue:state in ('done');red:state in ('sale')" name="demo_tree">
                 <field name="name" string="Appointment" />
                 <field name="state" />
             </tree>

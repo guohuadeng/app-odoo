@@ -61,7 +61,7 @@ class ProductTemplate(models.Model):
         # 设置default_code
         for template in unique_variants:
             template.default_code = template.product_variant_ids.default_code
-        for template in (self):
+        for template in (self - unique_variants):
             if len(template.product_variant_ids)>1:
                 template.default_code = ''
 
