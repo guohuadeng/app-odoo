@@ -278,6 +278,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['stock.move', ],
             ['stock.pack.operation', ],
             ['stock.picking', ],
+            ['stock.picking.wave', ],
             ['stock.scrap', ],
             ['stock.inventory.line', ],
             ['stock.inventory', ],
@@ -297,9 +298,9 @@ class AppThemeConfigSettings(models.TransientModel):
                 '|', ('code', '=', 'stock.lot.tracking'),
                 '|', ('code', '=', 'stock.orderpoint'),
                 '|', ('code', '=', 'stock.picking'),
+                '|', ('code', '=', 'picking.wave'),
                 '|', ('code', '=', 'stock.quant.package'),
                 '|', ('code', '=', 'stock.scrap'),
-                '|', ('code', '=', 'stock.picking'),
                 '|', ('prefix', '=', 'WH/IN/'),
                 '|', ('prefix', '=', 'WH/INT/'),
                 '|', ('prefix', '=', 'WH/OUT/'),
@@ -319,6 +320,7 @@ class AppThemeConfigSettings(models.TransientModel):
                   "or code ='stock.quant.package'" \
                   "or code ='stock.scrap'" \
                   "or code ='stock.picking'" \
+                  "or code ='picking.wave'" \
                   "or prefix ='WH/IN/'" \
                   "or prefix ='WH/INT/'" \
                   "or prefix ='WH/OUT/'" \
