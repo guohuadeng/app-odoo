@@ -50,7 +50,7 @@ class ProductTemplate(models.Model):
         else:
             pass
 
-        if 'default_code' in vals and vals['default_code']:
+        if vals['default_code']:
             vals['default_code_stored'] = vals['default_code']
 
         return super(ProductTemplate, self).create(vals)
