@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Created on 2017-11-05
+# Created on 2017-01-09
 # author: 广州尚鹏，http://www.sunpop.cn
 # email: 300883@qq.com
 # resource of Sunpop
@@ -24,7 +24,6 @@ class ProductProduct(models.Model):
     default_code_index = fields.Integer('Internal Reference Index',  readonly=True)
 
     # todo: 检查数据，要保证数据唯一性
-    # 为免报错，不限制唯一性
     _sql_constraints = [
         ('uniq_default_code',
          'unique(default_code)',
@@ -63,7 +62,7 @@ class ProductProduct(models.Model):
                     # 有属性值了，自己是第一个规格
                     code_index = 1
                     vals['default_code_index'] = code_index
-                    vals['default_code'] = code_stored + '-%03d'%(code_index)
+                    vals['default_code'] = code_stored + '#%03d'%(code_index)
                 elif mylen == 1:
                     # 已存在1个，当存在的1个有属性时，要改已存在的product值
                     code_index = template.product_variant_ids[:1].default_code_index
@@ -71,24 +70,24 @@ class ProductProduct(models.Model):
                         if code_index == 0:
                             code_index = 1
                         template.product_variant_ids[:1].default_code_index = code_index
-                        template.product_variant_ids[:1].default_code = code_stored + '-%03d'%(code_index)
+                        template.product_variant_ids[:1].default_code = code_stored + '#%03d'%(code_index)
                     # 接着改当前操作的product值
                     code_index = code_index + 1
                     vals['default_code_index'] = code_index
-                    vals['default_code'] = code_stored + '-%03d'%(code_index)
+                    vals['default_code'] = code_stored + '#%03d'%(code_index)
                 elif mylen > 1:
                     # 找到最大的序号
                     variant_max = max(template.product_variant_ids,key=lambda x: x['default_code_index'])
                     code_index = variant_max['default_code_index'] + 1
                     vals['default_code_index'] = code_index
-                    vals['default_code'] = code_stored + '-%03d'%(code_index)
+                    vals['default_code'] = code_stored + '#%03d'%(code_index)
                 else:
                     # 当按模板
                     # 此条件常规不出现，但特殊项目会有
                     variant_max = max(template.product_variant_ids,key=lambda x: x['default_code_index'])
                     code_index = variant_max['default_code_index'] + 1
                     vals['default_code_index'] = code_index
-                    vals['default_code'] = code_stored + '-%03d'%(code_index)
+                    vals['default_code'] = code_stored + '#%03d'%(code_index)
             else:
                 # create from product_product
                 # 默认使用制造成品的编码

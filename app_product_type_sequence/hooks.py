@@ -24,7 +24,7 @@ def pre_init_hook(cr):
     :return: void
     """
     cr.execute("UPDATE product_product "
-               "SET default_code = '!!DP!!' || id "
+               "SET default_code = '!!PR!!' || id "
                "WHERE default_code IS NULL OR default_code = 'New';")
 
     cr.execute("UPDATE product_template "
