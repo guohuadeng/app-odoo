@@ -31,6 +31,20 @@ class ProductProduct(models.Model):
     ]
 
     @api.model
+    def default_get(self, fields):
+        context = self._context or {}
+        res = super(ProductProduct, self).default_get(fields)
+        # 内部编码类型默认值的录入
+        if context.get("default_internal_type"):
+            self._onchange_internal_type()
+        elif context.get("default_internal_type_ref"):
+            types = self.env['product.internal.type'].search_read([('ref', '=', context.get("default_internal_type_ref"))], limit=1)
+            if types:
+                res.update({'internal_type':types[0]['id']})
+                self._onchange_internal_type()
+        return res
+
+    @api.model
     def create(self, vals):
         # todo: but 先建空白产品后，编辑2个以上变体，序号会少个 -1
         # code_index: 当没有变体现时，值为0，有变体时，为该变体序号
