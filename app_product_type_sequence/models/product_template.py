@@ -37,6 +37,20 @@ class ProductTemplate(models.Model):
         default=lambda self: _('New'))
 
     @api.model
+    def default_get(self, fields):
+        context = self._context or {}
+        res = super(ProductTemplate, self).default_get(fields)
+        # 内部编码类型默认值的录入
+        if context.get("default_internal_type"):
+            self._onchange_internal_type()
+        elif context.get("default_internal_type_ref"):
+            types = self.env['product.internal.type'].search_read([('ref', '=', context.get("default_internal_type_ref"))], limit=1)
+            if types:
+                res.update({'internal_type':types[0]['id']})
+                self._onchange_internal_type()
+        return res
+
+    @api.model
     def create(self, vals):
         if 'attribute_line_ids' in vals:
             if len(vals['attribute_line_ids'])>0:

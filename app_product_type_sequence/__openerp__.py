@@ -15,7 +15,7 @@
 # http://www.sunpop.cn/odoo10_developer_document_offline/
 # description:
 {
-    'name': 'App Product Internal Type,Auto Sequence, Auto Code(Variants Supported)',
+    'name': 'App Product Internal Type,Auto Sequence, Auto Code(Variants Supported), Auto Attributes',
     'summary': 'Auto Internal Reference.',
     "version": '10.0.2.2',
     'category': 'Sales',
@@ -30,7 +30,7 @@
     'currency': 'EUR',
     'price': 98,
     'description': u"""
-        App Product Auto Sequence, Auto Code(Variants Supported)
+        App Product Auto Sequence, Auto Code(Variants Supported), Auto Attributes
     
         This module allows to associate a sequence to the product reference.<br/>
         The reference (default code) is unique (SQL constraint) and required.<br/>
@@ -41,7 +41,8 @@
         4.Define different product type, each product type use own rule of sequence.可自定义产品类型，不同产品类型使用不同编码规则。
         5.Quick access in sale , inventory, system menu.可以在销售、库存、系统菜单中快速定义。
         6.Multi language support.<br/>多语种支持。
-        7.Setup default Auto Sequence for each product category
+        7.Setup default Auto Sequence for each product category，自动设置每个产品目录使用的产品编码规则
+        8.Auto setup product attribute lik Sale/Purchase, Stockable/Consumable/Service, Stock Routes. 自动设置产品的销售/采购，可库存产品/服务/消耗品，购买/制造/按订单生成等库存路线
     """,
     'pre_init_hook': 'pre_init_hook',
     'depends': [
