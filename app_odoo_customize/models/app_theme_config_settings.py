@@ -24,6 +24,7 @@ class AppThemeConfigSettings(models.TransientModel):
     app_show_enterprise = fields.Boolean('Show Enterprise Tag', help=u"Uncheck to hide the Enterprise tag")
     app_show_share = fields.Boolean('Show Share Dashboard', help=u"Uncheck to hide the Odoo Share Dashboard")
     app_show_poweredby = fields.Boolean('Show Powered by Odoo', help=u"Uncheck to hide the Powered by text")
+    app_stop_subscribe = fields.Boolean('Stop Odoo Subscribe(Performance Improve)', help=u"Check to stop Odoo Subscribe function")
 
     app_documentation_url = fields.Char('Documentation Url')
     app_documentation_dev_url = fields.Char('Developer Documentation Url')
@@ -45,6 +46,7 @@ class AppThemeConfigSettings(models.TransientModel):
         app_show_enterprise = True if ir_config.get_param('app_show_enterprise') == "True" else False
         app_show_share = True if ir_config.get_param('app_show_share') == "True" else False
         app_show_poweredby = True if ir_config.get_param('app_show_poweredby') == "True" else False
+        app_stop_subscribe = True if ir_config.get_param('app_stop_subscribe') == "True" else False
 
         app_documentation_url = ir_config.get_param('app_documentation_url',
                                                     default='http://www.sunpop.cn/documentation/user/10.0/en/index.html')
@@ -64,6 +66,8 @@ class AppThemeConfigSettings(models.TransientModel):
             app_show_enterprise=app_show_enterprise,
             app_show_share=app_show_share,
             app_show_poweredby=app_show_poweredby,
+            app_stop_subscribe=app_stop_subscribe,
+            
             app_documentation_url=app_documentation_url,
             app_documentation_dev_url=app_documentation_dev_url,
             app_support_url=app_support_url,
@@ -85,6 +89,7 @@ class AppThemeConfigSettings(models.TransientModel):
         ir_config.set_param("app_show_enterprise", self.app_show_enterprise or "False")
         ir_config.set_param("app_show_share", self.app_show_share or "False")
         ir_config.set_param("app_show_poweredby", self.app_show_poweredby or "False")
+        ir_config.set_param("app_stop_subscribe", self.app_stop_subscribe or "False")
 
         ir_config.set_param("app_documentation_url",
                             self.app_documentation_url or "http://www.sunpop.cn/documentation/user/10.0/en/index.html")
