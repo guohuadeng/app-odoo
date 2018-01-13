@@ -44,7 +44,13 @@ odoo.define('web.inputmask_widget', function (require) {
         is_valid: function () {
             var musk = this.attributes['data-inputmask-regex'] ? this.attributes['data-inputmask-regex'] : this.attributes['data-inputmask'] ;
             var reg = new RegExp (musk,"g");
-            var value = this.$input.val();
+            //当状态变化成只读时，则默认全部通过
+            try {
+                var value = this.$input.val();
+            } catch(err) {
+                return true;
+            }
+
             if (!this.get('required') && this.is_false())   {
                 return true;
             }   else if (reg.test(value)) {
