@@ -44,6 +44,8 @@ You can config odoo, make it look like your own platform.
 13. Change Powered by Odoo in login screen.(Please change '../views/app_odoo_customize_view.xml' #15)
 14. Quick delete test data in Apps: Sales/POS/Purchase/MRP/Inventory/Accounting/Message/Workflow etc.
 15. Reset All the Sequence to beginning of 1: SO/PO/MO/Invoice...
+16. Fix odoo reload module translation bug while enable english language
+17. Stop Odoo Auto Subscribe(Performance Improve)
 
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.
@@ -51,7 +53,7 @@ The user can get the help document just by one click.
 
     """,
     'images': ['static/description/banner.png'],
-    'depends': ['web'],
+    'depends': ['web','mail'],
     'data': [
         'views/app_odoo_customize_view.xml',
         'views/app_theme_config_settings_view.xml',
