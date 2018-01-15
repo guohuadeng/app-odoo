@@ -25,6 +25,9 @@
                             </div>
                         </div>
                     </group>
+                    <group string="Report Setting">
+                        <field name="app_ui_force_barcode"/>
+                    </group>
                 </form>
             </field>
         </record>

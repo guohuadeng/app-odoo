@@ -30,15 +30,50 @@ class AppUiConfigSettings(models.TransientModel):
     app_ui_show_search_date = fields.Boolean('Show date range search in tree/pivot view', help=u"Set 'True' to show, Set 'False' to hide")
     app_ui_show_search_number = fields.Boolean('Show number range search tree/pivot view', help=u"Set 'True' to show, Set 'False' to hide")
 
+    """Contoller able to render barcode images thanks to reportlab.
+    Samples:
+        <img t-att-src="'/report/barcode/QR/%s' % o.name"/>
+        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %
+            ('QR', o.name, 200, 200)"/>
+
+    :param type: Accepted types: 'Codabar', 'Code11', 'Code128', 'EAN13', 'EAN8', 'Extended39',
+    'Extended93', 'FIM', 'I2of5', 'MSI', 'POSTNET', 'QR', 'Standard39', 'Standard93',
+    'UPCA', 'USPS_4State'
+    :param humanreadable: Accepted values: 0 (default) or 1. 1 will insert the readable value
+    at the bottom of the output image
+    """
+    
+    app_ui_force_barcode = fields.Selection([
+        ('Default', 'Odoo Default'),
+        ('Code128', 'Code128'),
+        ('Standard39', 'Standard39'),
+        ('EAN13', 'EAN13'),
+        ('QR', 'QR'),
+        ('Codabar', 'Codabar'),
+        ('Code11', 'Code11'),
+        ('Extended39', 'Extended39'),
+        ('EAN8', 'EAN8'),
+        ('Extended93', 'Extended93'),
+        ('FIM', 'FIM'),
+        ('I2of5', 'I2of5'),
+        ('MSI', 'MSI'),
+        ('POSTNET', 'POSTNET'),
+        ('Standard93', 'Standard93'),
+        ('UPCA', 'UPCA'),
+        ('USPS_4State', 'USPS_4State'),
+    ], string='Force all Odoo Barcode to:', help=u"Set Odoo Default to use the barcode odoo define in report(EAN13).")
+
     @api.model
     def get_default_all(self, fields):
         ir_config = self.env['ir.config_parameter']
         app_ui_show_search_date = True if ir_config.get_param('app_ui_show_search_date') == "True" else False
         app_ui_show_search_number = True if ir_config.get_param('app_ui_show_search_number') == "True" else False
+        app_ui_force_barcode = ir_config.get_param('app_ui_force_barcode')
 
         return dict(
             app_ui_show_search_date=app_ui_show_search_date,
-            app_ui_show_search_number=app_ui_show_search_number
+            app_ui_show_search_number=app_ui_show_search_number,
+            app_ui_force_barcode=app_ui_force_barcode
         )
 
     @api.multi
@@ -47,4 +82,5 @@ class AppUiConfigSettings(models.TransientModel):
         ir_config = self.env['ir.config_parameter']
         ir_config.set_param("app_ui_show_search_date", self.app_ui_show_search_date or "False")
         ir_config.set_param("app_ui_show_search_number", self.app_ui_show_search_number or "False")
+        ir_config.set_param("app_ui_force_barcode", self.app_ui_force_barcode or "Default")
         return True

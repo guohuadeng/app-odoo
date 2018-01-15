@@ -9,5 +9,9 @@
             <field name="key">app_ui_show_search_number</field>
             <field name="value">False</field>
         </record>
+        <record id="app_ui_force_barcode" model="ir.config_parameter">
+            <field name="key">app_ui_force_barcode</field>
+            <field name="value">Code128</field>
+        </record>
     </data>
 </openerp>

@@ -35,7 +35,7 @@ class AppThemeConfigSettings(models.TransientModel):
     @api.model
     def get_default_all(self, fields):
         ir_config = self.env['ir.config_parameter']
-        app_system_name = ir_config.get_param('app.window_title', default='odooApp')
+        app_system_name = ir_config.get_param('app_system_name', default='odooApp')
 
         app_show_lang = True if ir_config.get_param('app_show_lang') == "True" else False
         app_show_debug = True if ir_config.get_param('app_show_debug') == "True" else False
@@ -283,7 +283,6 @@ class AppThemeConfigSettings(models.TransientModel):
             ['stock.move', ],
             ['stock.pack.operation', ],
             ['stock.picking', ],
-            ['stock.picking.wave', ],
             ['stock.scrap', ],
             ['stock.inventory.line', ],
             ['stock.inventory', ],
@@ -303,9 +302,9 @@ class AppThemeConfigSettings(models.TransientModel):
                 '|', ('code', '=', 'stock.lot.tracking'),
                 '|', ('code', '=', 'stock.orderpoint'),
                 '|', ('code', '=', 'stock.picking'),
-                '|', ('code', '=', 'picking.wave'),
                 '|', ('code', '=', 'stock.quant.package'),
                 '|', ('code', '=', 'stock.scrap'),
+                '|', ('code', '=', 'stock.picking'),
                 '|', ('prefix', '=', 'WH/IN/'),
                 '|', ('prefix', '=', 'WH/INT/'),
                 '|', ('prefix', '=', 'WH/OUT/'),
@@ -325,7 +324,6 @@ class AppThemeConfigSettings(models.TransientModel):
                   "or code ='stock.quant.package'" \
                   "or code ='stock.scrap'" \
                   "or code ='stock.picking'" \
-                  "or code ='picking.wave'" \
                   "or prefix ='WH/IN/'" \
                   "or prefix ='WH/INT/'" \
                   "or prefix ='WH/OUT/'" \
