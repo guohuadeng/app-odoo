@@ -180,7 +180,7 @@ msgstr "报表"
 #. module: app_ui_enhance
 #: model:ir.ui.view,arch_db:app_ui_enhance.view_app_ui_config_settings
 msgid "Report Setting"
-msgstr "Report Setting"
+msgstr "报表输出设置"
 
 #. module: app_ui_enhance
 #: model:ir.ui.view,arch_db:app_ui_enhance.view_app_ui_config_settings
