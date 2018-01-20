@@ -288,6 +288,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['stock.inventory', ],
             ['stock.production.lot', ],
             ['stock.fixed.putaway.strat', ],
+            ['procurement.order', ],
         ]
         try:
             for line in to_removes :
