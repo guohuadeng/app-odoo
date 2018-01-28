@@ -63,17 +63,21 @@ class AppUiConfigSettings(models.TransientModel):
         ('USPS_4State', 'USPS_4State'),
     ], string='Force all Odoo Barcode to:', help=u"Set Odoo Default to use the barcode odoo define in report(EAN13).")
 
+    app_ui_allow_barcode = fields.Char('Allow Barcode, Seperated by ","', help=u"Default Allow QR and Standard39.")
+
     @api.model
     def get_default_all(self, fields):
         ir_config = self.env['ir.config_parameter']
         app_ui_show_search_date = True if ir_config.get_param('app_ui_show_search_date') == "True" else False
         app_ui_show_search_number = True if ir_config.get_param('app_ui_show_search_number') == "True" else False
         app_ui_force_barcode = ir_config.get_param('app_ui_force_barcode')
+        app_ui_allow_barcode = ir_config.get_param('app_ui_allow_barcode')
 
         return dict(
             app_ui_show_search_date=app_ui_show_search_date,
             app_ui_show_search_number=app_ui_show_search_number,
-            app_ui_force_barcode=app_ui_force_barcode
+            app_ui_force_barcode=app_ui_force_barcode,
+            app_ui_allow_barcode=app_ui_allow_barcode
         )
 
     @api.multi
@@ -83,4 +87,5 @@ class AppUiConfigSettings(models.TransientModel):
         ir_config.set_param("app_ui_show_search_date", self.app_ui_show_search_date or "False")
         ir_config.set_param("app_ui_show_search_number", self.app_ui_show_search_number or "False")
         ir_config.set_param("app_ui_force_barcode", self.app_ui_force_barcode or "Default")
+        ir_config.set_param("app_ui_allow_barcode", self.app_ui_allow_barcode or "")
         return True

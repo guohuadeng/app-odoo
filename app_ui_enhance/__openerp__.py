@@ -17,8 +17,8 @@
 {
     'name': 'App Web UI Enhance(Search by date or number range,List background color,Barcode Setting.)',
     'version': '10.0.1.0',
-    'author': 'Sunpop.cn',
     'category': 'web',
+    'author': 'Sunpop.cn',
     'website': 'http://www.sunpop.cn',
     'license': 'AGPL-3',
     'sequence': 2,

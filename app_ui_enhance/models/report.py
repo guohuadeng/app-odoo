@@ -23,7 +23,13 @@ class Report(models.Model):
     def barcode(self, barcode_type, value, width=600, height=100, humanreadable=0):
         ir_config = self.env['ir.config_parameter']
         app_ui_force_barcode = ir_config.get_param('app_ui_force_barcode', default='Default')
-        if app_ui_force_barcode or app_ui_force_barcode == 'Default':
+        app_ui_allow_barcode = ir_config.get_param('app_ui_allow_barcode', default='')
+        allow = app_ui_allow_barcode.strip(',').split(',')
+        allowtype = tuple(allow)
+        if not app_ui_force_barcode or app_ui_force_barcode == 'Default':
+            return super(Report, self).barcode(barcode_type, value, width, height, humanreadable)
+        # 在允许的例外列表内
+        elif barcode_type in allowtype:
             return super(Report, self).barcode(barcode_type, value, width, height, humanreadable)
         else:
             return super(Report, self).barcode(app_ui_force_barcode, value, width, height, humanreadable)

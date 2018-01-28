@@ -10,7 +10,19 @@
     content: "";
 }
 /*
-强制表格滚动，企业版中生效
+list标头不换行
+*/
+.table-responsive {
+    white-space: nowrap !important;
+}
+/*
+sheet全宽
+*/
+.o_form_view .o_form_sheet_bg .o_form_sheet {
+    max-width: 98%!important;
+}
+/*
+强制表格滚动，企业版/社区版中生效
 */
 
 .force_scroll .table-responsive {

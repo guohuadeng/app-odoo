@@ -13,5 +13,10 @@
             <field name="key">app_ui_force_barcode</field>
             <field name="value">Code128</field>
         </record>
+        <!--默认允许QR，Code39-->
+        <record id="app_ui_allow_barcode" model="ir.config_parameter">
+            <field name="key">app_ui_allow_barcode</field>
+            <field name="value">QR,Standard39</field>
+        </record>
     </data>
 </openerp>

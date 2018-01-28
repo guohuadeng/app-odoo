@@ -27,6 +27,7 @@
                     </group>
                     <group string="Report Setting">
                         <field name="app_ui_force_barcode"/>
+                        <field name="app_ui_allow_barcode"/>
                     </group>
                 </form>
             </field>
