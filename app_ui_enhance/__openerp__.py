@@ -27,6 +27,7 @@
     1.Search by date or number range in List view and Pivot view. 
     2.Instructions for Activating List background color property. 
     3.Reset the barcode format.
+    4.Draggable Dialog
     """,
     'description': """
 
@@ -54,7 +55,7 @@ eg.
 --------------------------------------------------
 
     """,
-    'depends': ['web', 'app_odoo_customize'],
+    'depends': ['web', 'report', 'app_odoo_customize'],
     'data': [
         'views/app_ui_config_settings_view.xml',
         'views/template_view.xml',

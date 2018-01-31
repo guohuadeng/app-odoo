@@ -1,0 +1,10 @@
+/* report更紧凑,无边框 */
+.table-tight td {
+    padding: 2px !important;
+    border-top: 0px !important;
+}
+.table-tight > thead > tr > th, .table-tight > tbody > tr > th, .table-tight > tfoot > tr > th,
+.table-tight > thead > tr > td, .table-tight > tbody > tr > td, .table-tight > tfoot > tr > td{
+    padding: 2px !important;
+    border-top: 0px !important;
+}

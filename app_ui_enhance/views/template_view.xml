@@ -3,11 +3,18 @@
 <data>
     <template id="assets_backend" name="app_ui_enhance asset"  inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
-            <link rel="stylesheet" type="text/css" href="/app_ui_enhance/static/src/css/app_ui_enhance.css"/>
+            <link rel="stylesheet" type="text/css" href="/app_ui_enhance/static/src/css/app_web_enhance.css"/>
             <link rel="stylesheet" href="/app_ui_enhance/static/src/css/web_list_bg_color.css"/>
             <script type="text/javascript" src="/app_ui_enhance/static/src/js/pivot.js"></script>
             <script type="text/javascript" src="/app_ui_enhance/static/src/js/tree.js"></script>
             <script type="text/javascript" src="/app_ui_enhance/static/src/js/web_list_bg_color.js"></script>
+            <script type="text/javascript" src="/app_ui_enhance/static/src/js/web_draggable_dialog.js"></script>
+        </xpath>
+    </template>
+
+    <template id="assets_common" name="app_ui_enhance asset"  inherit_id="report.assets_common">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css" href="/app_ui_enhance/static/src/css/app_report_enhance.css"/>
         </xpath>
     </template>
 
