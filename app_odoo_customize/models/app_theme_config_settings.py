@@ -276,7 +276,6 @@ class AppThemeConfigSettings(models.TransientModel):
     def remove_inventory(self):
         to_removes = [
             # 清除库存单据
-            ['procurement.order', ],
             ['stock.quant', ],
             ['stock.quant.package', ],
             ['stock.quant.move.rel', ],
@@ -288,7 +287,9 @@ class AppThemeConfigSettings(models.TransientModel):
             ['stock.inventory', ],
             ['stock.production.lot', ],
             ['stock.fixed.putaway.strat', ],
+            ['make.procurement', ],
             ['procurement.order', ],
+            ['procurement.group', ],
         ]
         try:
             for line in to_removes :
