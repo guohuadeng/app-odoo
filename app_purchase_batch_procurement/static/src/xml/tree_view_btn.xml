@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="ListView.buttons">
+        <t t-jquery="button.o_list_button_add" t-operation="after">
+              <button t-if="widget.model == 'procurement.order'" class="btn btn-primary btn-sm o_list_btn_set_supplier" type="button">
+                  Set Supplier
+              </button>
+              <button t-if="widget.model == 'product.product' | widget.model == 'product.template'" class="btn btn-primary btn-sm o_list_btn_batch_procurement" type="button">
+                  Request Procurements
+              </button>
+        </t>
+    </t>
+</templates>

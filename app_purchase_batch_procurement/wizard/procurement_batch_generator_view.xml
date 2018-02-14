@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="procurement_batch_generator_wiz_form" model="ir.ui.view">
+            <field name="name">procurement.batch.generator.form</field>
+            <field name="model">procurement.batch.generator</field>
+            <field name="arch" type="xml">
+                <form string="Request Procurements">
+                    <group>
+                        <field name="route_ids" widget="many2many_tags" groups="stock.group_adv_location" invisible="1"/>
+                    </group>
+                    <group name="main">
+                        <field name="line_ids" context="{'default_parent_id': active_id}" nolabel="1" colspan="2">
+                            <tree editable="bottom" create="0" delete="0">
+                                <field name="parent_id" invisible="1"/>
+                                <field name="product_id"/>
+                                <!--<field name="qty_available"/>-->
+                                <field name="virtual_available"/>
+                                <field name="uom_id" groups="product.group_uom"/>
+                                <!--<field name="partner_id" readonly="1"/>-->
+                                <field name="procurement_qty"/>
+                                <field name="warehouse_id" options="{'no_open':True,'no_create':True}"/>
+                                <field name="date_planned" widget="date"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button type="object" name="validate"
+                                string="Validate" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="procurement_batch_generator_tree_action"
+                    multi="True"
+                    key2="client_action_multi"
+                    name="Request Procurements"
+                    res_model="procurement.batch.generator"
+                    src_model="product.template"
+                    view_mode="form"
+                    target="new"/>
+        <act_window id="procurement_batch_generator_tree_action2"
+                    multi="True"
+                    key2="client_action_multi"
+                    name="Request Procurements"
+                    res_model="procurement.batch.generator"
+                    src_model="product.product"
+                    view_mode="form"
+                    target="new"/>
+    </data>
+</openerp>

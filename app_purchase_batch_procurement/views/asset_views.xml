@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="felive_purchase asset " inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/app_purchase_batch_procurement/static/src/js/btn_set_supplier.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

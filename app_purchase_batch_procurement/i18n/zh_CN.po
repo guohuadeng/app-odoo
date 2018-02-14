@@ -1,0 +1,305 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* app_purchase_batch_procurement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e-20171107\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-14 10:00+0000\n"
+"PO-Revision-Date: 2018-02-14 10:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_purchase_batch_procurement
+#: code:addons/app_purchase_batch_procurement/wizard/procurement_batch_generator.py:73
+#, python-format
+msgid "All requested quantities are null."
+msgstr "没有要补货的产品，请检查."
+
+#. module: app_purchase_batch_procurement
+#: model:ir.ui.view,arch_db:app_purchase_batch_procurement.procurement_batch_generator_wiz_form
+#: model:ir.ui.view,arch_db:app_purchase_batch_procurement.product_set_supplier_wiz_form
+msgid "Cancel"
+msgstr "取消"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_company_id
+msgid "Company"
+msgstr "公司"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_create_uid
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_create_uid
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_create_date
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_create_date
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_currency_id
+msgid "Currency"
+msgstr "币种"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_delay
+msgid "Delivery Lead Time"
+msgstr "交货周期"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_display_name
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_display_name
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_date_end
+msgid "End Date"
+msgstr "结束日期"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,help:app_purchase_batch_procurement.field_product_set_supplier_wiz_date_end
+msgid "End date for this vendor price"
+msgstr "此供应商价格的结束日期"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_virtual_available
+msgid "Forecast Quantity"
+msgstr "预测数量"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_id
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_id
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_id
+msgid "ID"
+msgstr "ID"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_outgoing_qty
+msgid "Incoming Quantity"
+msgstr "将入库"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator___last_update
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line___last_update
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_write_uid
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_write_uid
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_write_date
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_write_date
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,help:app_purchase_batch_procurement.field_product_set_supplier_wiz_delay
+msgid "Lead time in days between the confirmation of the purchase order and the receipt of the products in your warehouse. Used by the scheduler for automatic computation of the purchase order planning."
+msgstr "提前时间是订单确认到仓库收到货物天数,使用于采购单自动计算规划调度"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model,name:app_purchase_batch_procurement.model_procurement_batch_generator_line
+msgid "Lines of the wizard to request procurements"
+msgstr "即将生成补货单的产品"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_min_qty
+msgid "Minimal Quantity"
+msgstr "最少数量"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_incoming_qty
+msgid "Outgoing Quantity"
+msgstr "将出库"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_parent_id
+msgid "Parent"
+msgstr "上级"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_date_planned
+msgid "Planned Date"
+msgstr "计划的日期"
+
+#. module: app_purchase_batch_procurement
+#: code:addons/app_purchase_batch_procurement/wizard/product_set_supplier_wiz.py:59
+#, python-format
+msgid "Please select valid procurement orders. Only the 'status=Exception' and 'Buy in Inventory Routes' product can be set!"
+msgstr "请选择有效的补货单。 只有 状态=异常 且 路线包含 '购买' 的 '可购买' 产品才可设置！"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_route_ids
+msgid "Preferred Routes"
+msgstr "首选路线"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_price
+msgid "Price"
+msgstr "价格"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_ids
+msgid "Procurement Request Lines"
+msgstr "补货明细"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.ui.view,arch_db:app_purchase_batch_procurement.product_set_supplier_wiz_form
+msgid "Procurement list to setup supplier for the product"
+msgstr "待设置产品供应商的补货单"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_p_ids
+msgid "Procurement to set"
+msgstr "待处理的补货单"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_product_id
+msgid "Product"
+msgstr "产品"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.actions.act_window,name:app_purchase_batch_procurement.purchase_procurement_action
+#: model:ir.ui.menu,name:app_purchase_batch_procurement.felive_menu_purchase_procurement_action
+msgid "Purchase Procurement Orders"
+msgstr "待处理的采购补货"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_qty_available
+msgid "Quantity On Hand"
+msgstr "在手数量"
+
+#. module: app_purchase_batch_procurement
+#. openerp-web
+#: code:addons/app_purchase_batch_procurement/static/src/xml/tree_view_btn.xml:8
+#: model:ir.actions.act_window,name:app_purchase_batch_procurement.procurement_batch_generator_tree_action
+#: model:ir.actions.act_window,name:app_purchase_batch_procurement.procurement_batch_generator_tree_action2
+#: model:ir.ui.view,arch_db:app_purchase_batch_procurement.procurement_batch_generator_wiz_form
+#, python-format
+msgid "Request Procurements"
+msgstr "补货请求"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_procurement_qty
+msgid "Requested Quantity"
+msgstr "补货数量"
+
+#. module: app_purchase_batch_procurement
+#. openerp-web
+#: code:addons/app_purchase_batch_procurement/static/src/xml/tree_view_btn.xml:5
+#: model:ir.actions.act_window,name:app_purchase_batch_procurement.action_product_set_supplier
+#: model:ir.actions.act_window,name:app_purchase_batch_procurement.product_set_supplier_action
+#: model:ir.ui.view,arch_db:app_purchase_batch_procurement.product_set_supplier_wiz_form
+#, python-format
+msgid "Set Supplier"
+msgstr "设置供应商并创建采购询价单"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.ui.view,arch_db:app_purchase_batch_procurement.product_set_supplier_wiz_form
+msgid "Set supplier and run Scheduler"
+msgstr "设定供应商并执行补货计算"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model,name:app_purchase_batch_procurement.model_product_set_supplier_wiz
+msgid "Set supplier for product"
+msgstr "指定相关产品模板的供应商"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_view_po
+msgid "Show relate RFQ after set supplier"
+msgstr "完成后编辑相关采购询价单"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_date_start
+msgid "Start Date"
+msgstr "开始日期"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,help:app_purchase_batch_procurement.field_product_set_supplier_wiz_date_start
+msgid "Start date for this vendor price"
+msgstr "此供应商价格的开始日期"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_partner_id
+msgid "Supplier"
+msgstr "供应商"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,help:app_purchase_batch_procurement.field_product_set_supplier_wiz_min_qty
+msgid "The minimal quantity to purchase from this vendor, expressed in the vendor Product Unit of Measure if not any, in the default unit of measure of the product otherwise."
+msgstr "从供应商采购的最小数量的计量单位在产品的供应商信息中有维护，如果没有维护，那么计量单位就是产品中默认设置的"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,help:app_purchase_batch_procurement.field_product_set_supplier_wiz_price
+msgid "The price to purchase a product"
+msgstr "该价格购买产品"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_uom_id
+msgid "Unit of Measure"
+msgstr "计量单位"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.ui.view,arch_db:app_purchase_batch_procurement.procurement_batch_generator_wiz_form
+msgid "Validate"
+msgstr "确定"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.ui.view,arch_db:app_purchase_batch_procurement.product_set_supplier_wiz_form
+msgid "Validity From"
+msgstr "有效期"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_product_set_supplier_wiz_name
+msgid "Vendor"
+msgstr "供应商"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,help:app_purchase_batch_procurement.field_product_set_supplier_wiz_name
+msgid "Vendor of this product"
+msgstr "这个产品的供应商"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.ui.view,arch_db:app_purchase_batch_procurement.felive_product_template_search_form_view_stock
+msgid "Virtual Available Products"
+msgstr "在途库存>0"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.ui.view,arch_db:app_purchase_batch_procurement.felive_product_template_search_form_view_stock
+msgid "Virtual Exhausted Stock"
+msgstr "在途库存=0"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.ui.view,arch_db:app_purchase_batch_procurement.felive_product_template_search_form_view_stock
+msgid "Virtual Negative Stock"
+msgstr "在途库存<0"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model.fields,field_description:app_purchase_batch_procurement.field_procurement_batch_generator_line_warehouse_id
+msgid "Warehouse"
+msgstr "仓库"
+
+#. module: app_purchase_batch_procurement
+#: model:ir.model,name:app_purchase_batch_procurement.model_procurement_batch_generator
+msgid "Wizard to create procurements from product tree"
+msgstr "补货向导"
+

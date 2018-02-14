@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- search，继承spu -->
+        <record id="felive_product_template_search_form_view_stock" model="ir.ui.view">
+            <field name="name">felive.product.template.search.stock.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="stock.product_template_search_form_view_stock"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='real_stock_negative']" position="after">
+                    <separator/>
+                    <filter name="virtual_stock_available" string="Virtual Available Products" domain="[('virtual_available','&gt;',0)]"/>
+                    <filter name="virtual_stock_exhausted" string="Virtual Exhausted Stock" domain="[('virtual_available','&lt;=',0),('type','not in',('service', 'consu'))]"/>
+                    <filter name="virtual_stock_negative" string="Virtual Negative Stock" domain="[('virtual_available','&lt;',0)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

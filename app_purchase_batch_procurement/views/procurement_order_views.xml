@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="purchase_procurement_action" model="ir.actions.act_window">
+            <field name="name">Purchase Procurement Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">procurement.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('rule_id.action', '=', 'buy')]</field>
+            <field name="context">{'search_default_exceptions': 1}</field>
+        </record>
+    </data>
+</odoo>
