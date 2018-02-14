@@ -36,6 +36,7 @@
     'category': 'Purchase',
     'sequence': 0,
     'pre_init_hook': 'pre_init_hook',
+    'images': ['static/description/banner.png'],
     'depends': ['base', 'stock', 'purchase'],
     'data': [
         'views/asset_views.xml',
