@@ -3,13 +3,13 @@
     <t t-extend="UserMenu">
         <t t-jquery=".dropdown-menu" t-operation="prepend">
             <switch-lang/>
-            <li t-if="widget.session.debug != true">
+            <li>
                 <a href="#" data-menu="debug">Activate the developer mode</a>
             </li>
-            <li t-if="widget.session.debug != 'assets'">
+            <li>
                 <a href="#" data-menu="debugassets">Activate the developer mode (with assets)</a>
             </li>
-            <li t-if="widget.session.debug != false">
+            <li>
                 <a href="#" data-menu="quitdebug">Deactivate the developer mode</a>
             </li>
             <li>

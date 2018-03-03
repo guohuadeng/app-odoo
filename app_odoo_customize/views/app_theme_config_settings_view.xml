@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
         <record id="view_app_theme_config_settings" model="ir.ui.view">
             <field name="name">App Odoo Customize Settings</field>
@@ -60,7 +60,7 @@
                                 <field name="app_show_poweredby"/>
                                 <label for="app_show_poweredby"/>
                             </div>
-                            <div>
+                            <div invisible="1">
                                 <field name="app_stop_subscribe"/>
                                 <label for="app_stop_subscribe"/>
                             </div>
@@ -161,4 +161,4 @@
                 action="action_app_theme_config"
                 groups="base.group_system"/>
     </data>
-</openerp>
+</odoo>

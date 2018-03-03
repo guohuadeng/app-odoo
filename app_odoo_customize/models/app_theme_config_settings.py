@@ -33,7 +33,7 @@ class AppThemeConfigSettings(models.TransientModel):
     app_account_url = fields.Char('My Odoo.com Account Url')
 
     @api.model
-    def get_default_all(self, fields):
+    def get_values(self):
         ir_config = self.env['ir.config_parameter']
         app_system_name = ir_config.get_param('app_system_name', default='odooApp')
 
@@ -76,7 +76,7 @@ class AppThemeConfigSettings(models.TransientModel):
         )
 
     @api.multi
-    def set_default_all(self):
+    def set_values(self):
         self.ensure_one()
         ir_config = self.env['ir.config_parameter']
         ir_config.set_param("app_system_name", self.app_system_name or "")
