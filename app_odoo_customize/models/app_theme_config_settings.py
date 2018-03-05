@@ -124,7 +124,7 @@ class AppThemeConfigSettings(models.TransientModel):
             sql = "update ir_sequence set number_next=1 where code ='sale.order';"
             self._cr.execute(sql)
         except Exception, e:
-            raise Warning(e)
+            pass    #raise Warning(e)
         return True
 
     def remove_product(self):
@@ -149,7 +149,7 @@ class AppThemeConfigSettings(models.TransientModel):
             sql = "update ir_sequence set number_next=1 where code ='product.product';"
             self._cr.execute(sql)
         except Exception, e:
-            raise Warning(e)
+            pass    #raise Warning(e)
         return True
 
     def remove_product_attribute(self):
@@ -166,7 +166,7 @@ class AppThemeConfigSettings(models.TransientModel):
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
         except Exception, e:
-            raise Warning(e)
+            pass    #raise Warning(e)
         return True
 
     @api.multi
@@ -192,7 +192,7 @@ class AppThemeConfigSettings(models.TransientModel):
             sql = "update ir_sequence set number_next=1 where code ='pos.order';"
             self._cr.execute(sql)
         except Exception, e:
-            raise Warning(e)
+            pass    #raise Warning(e)
         return True
 
     @api.multi
@@ -220,7 +220,7 @@ class AppThemeConfigSettings(models.TransientModel):
             sql = "update ir_sequence set number_next=1 where code ='purchase.order';"
             self._cr.execute(sql)
         except Exception, e:
-            raise Warning(e)
+            pass    #raise Warning(e)
         return True
 
     @api.multi
@@ -251,7 +251,7 @@ class AppThemeConfigSettings(models.TransientModel):
             sql = "update ir_sequence set number_next=1 where (code ='mrp.production' or code ='mrp.unbuild');"
             self._cr.execute(sql)
         except Exception, e:
-            raise Warning(e)
+            pass    #raise Warning(e)
         return True
 
     @api.multi
@@ -269,7 +269,7 @@ class AppThemeConfigSettings(models.TransientModel):
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
         except Exception, e:
-            raise Warning(e)
+            pass    #raise Warning(e)
         return True
 
     @api.multi
@@ -334,7 +334,7 @@ class AppThemeConfigSettings(models.TransientModel):
                   ");"
             self._cr.execute(sql)
         except Exception, e:
-            raise Warning(e)
+            pass    #raise Warning(e)
         return True
 
     @api.multi
@@ -399,7 +399,7 @@ class AppThemeConfigSettings(models.TransientModel):
                           ");"
                     self._cr.execute(sql)
         except Exception, e:
-            raise Warning(e)
+            pass    #raise Warning(e)
         return True
 
     @api.multi
@@ -417,7 +417,7 @@ class AppThemeConfigSettings(models.TransientModel):
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
         except Exception, e:
-            raise Warning(e)
+            pass    #raise Warning(e)
         return True
 
     @api.multi
@@ -436,5 +436,5 @@ class AppThemeConfigSettings(models.TransientModel):
                     self._cr.execute(sql)
 
         except Exception, e:
-            raise Warning(e)
+            pass    #raise Warning(e)
         return True
