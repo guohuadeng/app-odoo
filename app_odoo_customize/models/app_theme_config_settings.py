@@ -123,8 +123,8 @@ class AppThemeConfigSettings(models.TransientModel):
                 })
             sql = "update ir_sequence set number_next=1 where code ='sale.order';"
             self._cr.execute(sql)
-        except Exception, e:
-            pass    #raise Warning(e)
+        except Exception as e:
+            raise Warning(e)
         return True
 
     def remove_product(self):
@@ -148,7 +148,7 @@ class AppThemeConfigSettings(models.TransientModel):
                 })
             sql = "update ir_sequence set number_next=1 where code ='product.product';"
             self._cr.execute(sql)
-        except Exception, e:
+        except Exception as e:
             pass    #raise Warning(e)
         return True
 
@@ -165,7 +165,7 @@ class AppThemeConfigSettings(models.TransientModel):
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
-        except Exception, e:
+        except Exception as e:
             pass    #raise Warning(e)
         return True
 
@@ -191,7 +191,7 @@ class AppThemeConfigSettings(models.TransientModel):
                 })
             sql = "update ir_sequence set number_next=1 where code ='pos.order';"
             self._cr.execute(sql)
-        except Exception, e:
+        except Exception as e:
             pass    #raise Warning(e)
         return True
 
@@ -219,7 +219,7 @@ class AppThemeConfigSettings(models.TransientModel):
                 })
             sql = "update ir_sequence set number_next=1 where code ='purchase.order';"
             self._cr.execute(sql)
-        except Exception, e:
+        except Exception as e:
             pass    #raise Warning(e)
         return True
 
@@ -250,7 +250,7 @@ class AppThemeConfigSettings(models.TransientModel):
                 })
             sql = "update ir_sequence set number_next=1 where (code ='mrp.production' or code ='mrp.unbuild');"
             self._cr.execute(sql)
-        except Exception, e:
+        except Exception as e:
             pass    #raise Warning(e)
         return True
 
@@ -268,7 +268,7 @@ class AppThemeConfigSettings(models.TransientModel):
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
-        except Exception, e:
+        except Exception as e:
             pass    #raise Warning(e)
         return True
 
@@ -333,7 +333,7 @@ class AppThemeConfigSettings(models.TransientModel):
                   "or prefix ='WH/PICK/'" \
                   ");"
             self._cr.execute(sql)
-        except Exception, e:
+        except Exception as e:
             pass    #raise Warning(e)
         return True
 
@@ -398,7 +398,7 @@ class AppThemeConfigSettings(models.TransientModel):
                           "or prefix like '杂项/%'" \
                           ");"
                     self._cr.execute(sql)
-        except Exception, e:
+        except Exception as e:
             pass    #raise Warning(e)
         return True
 
@@ -416,7 +416,7 @@ class AppThemeConfigSettings(models.TransientModel):
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
-        except Exception, e:
+        except Exception as e:
             pass    #raise Warning(e)
         return True
 
@@ -435,6 +435,6 @@ class AppThemeConfigSettings(models.TransientModel):
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
 
-        except Exception, e:
+        except Exception as e:
             pass    #raise Warning(e)
         return True
