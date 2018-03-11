@@ -24,11 +24,14 @@
     "category": "Purchase Management",
     "depends": ["purchase"],
     "license": "AGPL-3",
+    'sequence': 3,
     "data": [
         "views/purchase_order_view.xml",
     ],
     'images': ['static/description/set1.jpg'],
     'installable': True,
+    'application': True,
+    'auto_install': False,
     "price": 68.00,
     "currency": "EUR",
     'description': """
