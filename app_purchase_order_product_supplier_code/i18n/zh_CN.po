@@ -18,7 +18,7 @@ msgstr ""
 #. module: app_purchase_order_product_supplier_code
 #: model:ir.model.fields,field_description:app_purchase_order_product_supplier_code.field_purchase_order_line_product_supplier_code
 msgid "Product Supplier Code"
-msgstr "Product Supplier Code"
+msgstr "供应商编码"
 
 #. module: app_purchase_order_product_supplier_code
 #: model:ir.model,name:app_purchase_order_product_supplier_code.model_purchase_order_line
