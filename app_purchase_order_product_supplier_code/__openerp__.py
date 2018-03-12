@@ -26,7 +26,7 @@
     "license": "AGPL-3",
     'sequence': 3,
     "data": [
-        "views/stock_picking_views.xml",
+        "views/purchase_order_views.xml",
     ],
     'images': ['static/description/set1.jpg'],
     'installable': True,
