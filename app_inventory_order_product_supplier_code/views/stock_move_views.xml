@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--tree-->
+    <record model="ir.ui.view" id="app_stock_move_tree">
+        <field name="name">app Stock Moves</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.stock_move_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="product_supplier_code"/>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="app_view_move_tree">
+        <field name="name">app.stock.move.tree</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="product_supplier_code"/>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="app_view_move_picking_tree">
+        <field name="name">app.stock.move.tree</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="product_supplier_code"/>
+            </xpath>
+        </field>
+    </record>
+        <!--tree
+            Receipt Picking (By Stock Move)
+            From stock_partial_move_view
+        -->
+    <record model="ir.ui.view" id="app_view_move_tree_receipt_picking">
+        <field name="name">app.stock.move.tree2</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_tree_receipt_picking"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="product_supplier_code"/>
+            </xpath>
+        </field>
+    </record>
+    <!--form-->
+    <record model="ir.ui.view" id="app_view_move_form">
+        <field name="name">app.stock.move.form</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="product_supplier_code"/>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="app_view_move_picking_form">
+        <field name="name">app.stock.move.form</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="product_supplier_code"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

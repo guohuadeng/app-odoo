@@ -16,17 +16,18 @@
 # description:
 
 {
-    "name": "App Purchase Order with Product Supplier Code",
-    "summary": "This module adds the supplier code defined in the product, to the purchase order line.",
+    "name": "App Inventory Order with Product Supplier Code",
+    "summary": "This module adds the supplier code defined in the product, to the Inventory Order line.",
     "version": "10.0.1",
     "author": "Sunpop.cn",
     "website": "http://www.sunpop.cn",
-    "category": "Purchases",
+    "category": "Warehouse",
     "depends": ["purchase"],
     "license": "AGPL-3",
     'sequence': 3,
     "data": [
         "views/stock_picking_views.xml",
+        "views/stock_move_views.xml",
     ],
     'images': ['static/description/set1.jpg'],
     'installable': True,
@@ -37,17 +38,17 @@
     'description': """
 
 ==============================
-App Purchase Order Product Supplier Code
+App Inventory Order Product Supplier Code
 ==============================
-This module adds the supplier code defined in the product, to the purchase order line.
+This module adds the supplier code defined in the product, to the Inventory Order line.
 
 Usage
 =====
 
 To use this module:
 
-#. Go to 'Purchase' and open a Purchase Order.
-#. If the vendor has defined some code for any purchase order line they will be
+#. Go to 'Inventory' and open a Inventory Order.
+#. If the vendor has defined some code for any Inventory Order line they will be
    displayed in the line under the column 'Product Supplier Code'.
    """,
 }
