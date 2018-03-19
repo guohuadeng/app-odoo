@@ -22,6 +22,8 @@ class Picking(models.Model):
         domain=[('product_id', '>=', 1), ('qty_done', '>=', 1), ('result_package_id', '!=', False)], readonly=True, copy=False)
     # 散件涉及到的包裹列表
     result_package_ids = fields.Many2many('stock.quant.package', string='Relate Packages', readonly=True, copy=False)
+    # 当前操作产品
+    last_op_product = fields.Many2one('product.product', string='Last OP', readonly=True)
 
     # 统计，散件与包裹一起处理的数量
     product_qty_total = fields.Float('To Do Total', compute="_compute_product_qty_total",
@@ -118,3 +120,7 @@ class Picking(models.Model):
                     'weight': op.weight,
                 }])
             self.update({'pack_operation_product_current_ids': ops})
+
+    def _check_product(self, product, qty=1.0):
+        self.last_op_product = product
+        return super(Picking, self)._check_product()

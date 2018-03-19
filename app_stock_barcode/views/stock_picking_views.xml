@@ -22,8 +22,9 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='origin']" position="after">
                 <field name="result_package_ids" widget="many2many_tags" readonly="1"/>
-                <label for=""/>
+                <label for="last_op_product"/>
                 <div>
+                    <strong><field name="last_op_product"/></strong>
                     <button class="btn btn-primary oe_right" name="put_in_pack2" type="object" string="&#8627;放入包裹"
                             attrs="{'invisible': [('state', 'in', ('done', 'cancel'))]}" groups="stock.group_tracking_lot"/>
                     <button class="btn btn-primary oe_right mb4 mr4" name="set_current" type="object" string="刷新扫码视图"
