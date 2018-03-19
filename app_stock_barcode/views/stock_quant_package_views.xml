@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="app_view_quant_package_tree">
+        <field name="name">app.stock.quant.package.tree</field>
+        <field name="model">stock.quant.package</field>
+        <field name="inherit_id" ref="stock.view_quant_package_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='packaging_id']" position="after">
+                <field name="qty_done_total"/>
+                <field name="weight_done_total"/>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="app_view_quant_package_form">
+        <field name="name">app.stock.quant.package.form</field>
+        <field name="model">stock.quant.package</field>
+        <field name="inherit_id" ref="stock.view_quant_package_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='packaging_id']" position="after">
+                <field name="qty_done_total"/>
+                <field name="weight_done_total"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
