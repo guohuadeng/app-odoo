@@ -64,6 +64,10 @@
                                 <field name="app_stop_subscribe"/>
                                 <label for="app_stop_subscribe"/>
                             </div>
+                            <div>
+                                <field name="group_show_author_in_apps"/>
+                                <label for="group_show_author_in_apps"/>
+                            </div>
                         </div>
                     </group>
                     <group string="User Menu Content">

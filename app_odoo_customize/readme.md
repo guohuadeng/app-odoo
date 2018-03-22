@@ -20,6 +20,7 @@ You can config odoo, make it look like your own platform.
 15. Reset All the Sequence to beginning of 1: SO/PO/MO/Invoice...
 16. Fix odoo reload module translation bug while enable english language
 17. Stop Odoo Auto Subscribe(Performance Improve)
+18. Show/Hide Author and Website in Apps Dashboard
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.
 The user can get the help document just by one click.
@@ -46,6 +47,7 @@ http://www.sunpop.cn
 15. 将各类单据的序号重置，从1开始，包括：SO/PO/MO/Invoice 等
 16. 修复odoo启用英文后模块不显示中文的Bug
 17. 可停用odoo自动订阅功能，避免“同样对象关注2次”bug，同时提升性能
+18. 显示/隐藏应用的作者和网站-在应用安装面板中
 
 使用方法：将解压后的 app_odoo_customize 放到 odoo的 addons目录下，激活开发者模式，应用-->更新应用列表，
 找到 "App odoo Customize"模块，安装即可。

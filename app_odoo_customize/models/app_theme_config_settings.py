@@ -25,6 +25,8 @@ class AppThemeConfigSettings(models.TransientModel):
     app_show_share = fields.Boolean('Show Share Dashboard', help=u"Uncheck to hide the Odoo Share Dashboard")
     app_show_poweredby = fields.Boolean('Show Powered by Odoo', help=u"Uncheck to hide the Powered by text")
     app_stop_subscribe = fields.Boolean('Stop Odoo Subscribe(Performance Improve)', help=u"Check to stop Odoo Subscribe function")
+    group_show_author_in_apps = fields.Boolean(string="Show Author and Website in Apps Dashboard", implied_group='app_odoo_customize.group_show_author_in_apps',
+                                               help=u"Uncheck to Hide Author and Website in Apps Dashboard")
 
     app_documentation_url = fields.Char('Documentation Url')
     app_documentation_dev_url = fields.Char('Developer Documentation Url')
@@ -67,7 +69,7 @@ class AppThemeConfigSettings(models.TransientModel):
             app_show_share=app_show_share,
             app_show_poweredby=app_show_poweredby,
             app_stop_subscribe=app_stop_subscribe,
-            
+
             app_documentation_url=app_documentation_url,
             app_documentation_dev_url=app_documentation_dev_url,
             app_support_url=app_support_url,
@@ -90,6 +92,7 @@ class AppThemeConfigSettings(models.TransientModel):
         ir_config.set_param("app_show_share", self.app_show_share or "False")
         ir_config.set_param("app_show_poweredby", self.app_show_poweredby or "False")
         ir_config.set_param("app_stop_subscribe", self.app_stop_subscribe or "False")
+        # ir_config.set_param("group_show_author_in_apps", self.group_show_author_in_apps or "False")
 
         ir_config.set_param("app_documentation_url",
                             self.app_documentation_url or "http://www.sunpop.cn/documentation/user/10.0/en/index.html")
@@ -109,7 +112,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['sale.order', ],
         ]
         try:
-            for line in to_removes :
+            for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
@@ -134,7 +137,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['product.template', ],
         ]
         try:
-            for line in to_removes :
+            for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
@@ -149,7 +152,7 @@ class AppThemeConfigSettings(models.TransientModel):
             sql = "update ir_sequence set number_next=1 where code ='product.product';"
             self._cr.execute(sql)
         except Exception as e:
-            pass    #raise Warning(e)
+            pass  # raise Warning(e)
         return True
 
     def remove_product_attribute(self):
@@ -159,14 +162,14 @@ class AppThemeConfigSettings(models.TransientModel):
             ['product.attribute', ],
         ]
         try:
-            for line in to_removes :
+            for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
         except Exception as e:
-            pass    #raise Warning(e)
+            pass  # raise Warning(e)
         return True
 
     @api.multi
@@ -177,7 +180,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['pos.order', ],
         ]
         try:
-            for line in to_removes :
+            for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
@@ -192,7 +195,7 @@ class AppThemeConfigSettings(models.TransientModel):
             sql = "update ir_sequence set number_next=1 where code ='pos.order';"
             self._cr.execute(sql)
         except Exception as e:
-            pass    #raise Warning(e)
+            pass  # raise Warning(e)
         return True
 
     @api.multi
@@ -205,7 +208,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['purchase.requisition', ],
         ]
         try:
-            for line in to_removes :
+            for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
@@ -220,7 +223,7 @@ class AppThemeConfigSettings(models.TransientModel):
             sql = "update ir_sequence set number_next=1 where code ='purchase.order';"
             self._cr.execute(sql)
         except Exception as e:
-            pass    #raise Warning(e)
+            pass  # raise Warning(e)
         return True
 
     @api.multi
@@ -236,7 +239,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['change.production.qty', ],
         ]
         try:
-            for line in to_removes :
+            for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
@@ -251,7 +254,7 @@ class AppThemeConfigSettings(models.TransientModel):
             sql = "update ir_sequence set number_next=1 where (code ='mrp.production' or code ='mrp.unbuild');"
             self._cr.execute(sql)
         except Exception as e:
-            pass    #raise Warning(e)
+            pass  # raise Warning(e)
         return True
 
     @api.multi
@@ -262,14 +265,14 @@ class AppThemeConfigSettings(models.TransientModel):
             ['mrp.bom', ],
         ]
         try:
-            for line in to_removes :
+            for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
         except Exception as e:
-            pass    #raise Warning(e)
+            pass  # raise Warning(e)
         return True
 
     @api.multi
@@ -292,7 +295,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['procurement.group', ],
         ]
         try:
-            for line in to_removes :
+            for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
@@ -334,7 +337,7 @@ class AppThemeConfigSettings(models.TransientModel):
                   ");"
             self._cr.execute(sql)
         except Exception as e:
-            pass    #raise Warning(e)
+            pass  # raise Warning(e)
         return True
 
     @api.multi
@@ -354,7 +357,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['account.move', ],
         ]
         try:
-            for line in to_removes :
+            for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
@@ -382,7 +385,7 @@ class AppThemeConfigSettings(models.TransientModel):
                         seq.write({
                             'number_next': 1,
                         })
-                    #     todo: 帐单 or BILL/%
+                    # todo: 帐单 or BILL/%
                     sql = "update ir_sequence set number_next=1 where (" \
                           "code ='account.reconcile' " \
                           "or code ='account.payment.customer.invoice' " \
@@ -399,7 +402,7 @@ class AppThemeConfigSettings(models.TransientModel):
                           ");"
                     self._cr.execute(sql)
         except Exception as e:
-            pass    #raise Warning(e)
+            pass  # raise Warning(e)
         return True
 
     @api.multi
@@ -410,14 +413,14 @@ class AppThemeConfigSettings(models.TransientModel):
             ['mail.followers', ],
         ]
         try:
-            for line in to_removes :
+            for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
         except Exception as e:
-            pass    #raise Warning(e)
+            pass  # raise Warning(e)
         return True
 
     @api.multi
@@ -428,7 +431,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['wkf.instance', ],
         ]
         try:
-            for line in to_removes :
+            for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
                 if obj and obj._table_exist:
@@ -436,5 +439,5 @@ class AppThemeConfigSettings(models.TransientModel):
                     self._cr.execute(sql)
 
         except Exception as e:
-            pass    #raise Warning(e)
+            pass  # raise Warning(e)
         return True
