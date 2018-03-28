@@ -33,8 +33,8 @@
     'pre_init_hook': 'pre_init_hook',
     'depends': ['stock'],
     'images': ['static/description/demo1.jpg'],
-    'currency': 'EUR',
-    'price': 38,
+    # 'currency': 'EUR',
+    # 'price': 38,
     'data': [
         'views/stock_picking_type_group_views.xml',
         'views/stock_picking_type_views.xml',
