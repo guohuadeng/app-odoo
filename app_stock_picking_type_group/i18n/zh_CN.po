@@ -1,0 +1,135 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* app_stock_picking_type_group
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e-20180326\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-27 09:13+0000\n"
+"PO-Revision-Date: 2018-03-27 09:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model.fields,field_description:app_stock_picking_type_group.field_stock_picking_type_group_active
+msgid "Active"
+msgstr "有效"
+
+#. module: app_stock_picking_type_group
+#: model:ir.actions.act_window,name:app_stock_picking_type_group.action_picking_type_group_list
+msgid "All Picking Types Group"
+msgstr "作业类型分组"
+
+#. module: app_stock_picking_type_group
+#: model:ir.actions.act_window,help:app_stock_picking_type_group.action_picking_type_group_list
+msgid "Click to define a new picking type group."
+msgstr "点击创建一条新的记录."
+
+#. module: app_stock_picking_type_group
+#: model:ir.model.fields,field_description:app_stock_picking_type_group.field_stock_picking_type_group_color
+msgid "Color"
+msgstr "颜色"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model.fields,field_description:app_stock_picking_type_group.field_stock_picking_type_group_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model.fields,field_description:app_stock_picking_type_group.field_stock_picking_type_group_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model.fields,field_description:app_stock_picking_type_group.field_stock_picking_type_group_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: app_stock_picking_type_group
+#: model:ir.ui.view,arch_db:app_stock_picking_type_group.app_view_pickingtype_filter
+msgid "Group By"
+msgstr "分组"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model,name:app_stock_picking_type_group.model_stock_picking_type_group
+msgid "Group the picking view"
+msgstr "作业类型分组"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model.fields,field_description:app_stock_picking_type_group.field_stock_picking_type_group_id
+msgid "ID"
+msgstr "ID"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model.fields,field_description:app_stock_picking_type_group.field_stock_picking_type_group___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model.fields,field_description:app_stock_picking_type_group.field_stock_picking_type_group_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model.fields,field_description:app_stock_picking_type_group.field_stock_picking_type_group_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: app_stock_picking_type_group
+#: model:stock.picking.type.group,name:app_stock_picking_type_group.stock_picking_type_group_mrp
+msgid "Manufacturing"
+msgstr "制造组"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model.fields,field_description:app_stock_picking_type_group.field_stock_picking_type_picking_type_group_id
+#: model:ir.ui.view,arch_db:app_stock_picking_type_group.app_view_pickingtype_filter
+msgid "Picking Type Group"
+msgstr "作业类型分组"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model.fields,field_description:app_stock_picking_type_group.field_stock_picking_type_group_name
+msgid "Picking Type Group Name"
+msgstr "分组名称"
+
+#. module: app_stock_picking_type_group
+#: model:ir.ui.menu,name:app_stock_picking_type_group.menu_pickingtype_group
+#: model:ir.ui.view,arch_db:app_stock_picking_type_group.app_view_picking_type_group_form
+#: model:ir.ui.view,arch_db:app_stock_picking_type_group.app_view_picking_type_group_tree
+msgid "Picking Types Group"
+msgstr "作业类型分组"
+
+#. module: app_stock_picking_type_group
+#: model:stock.picking.type.group,name:app_stock_picking_type_group.stock_picking_type_group_purchase
+msgid "Purchase"
+msgstr "采购组"
+
+#. module: app_stock_picking_type_group
+#: model:stock.picking.type.group,name:app_stock_picking_type_group.stock_picking_type_group_sale
+msgid "Sales"
+msgstr "销售组"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model.fields,field_description:app_stock_picking_type_group.field_stock_picking_type_group_sequence
+msgid "Sequence"
+msgstr "序号"
+
+#. module: app_stock_picking_type_group
+#: model:stock.picking.type.group,name:app_stock_picking_type_group.stock_picking_type_group_stock
+msgid "Stock"
+msgstr "库存组"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model,name:app_stock_picking_type_group.model_stock_picking_type
+msgid "The picking type determines the picking view"
+msgstr "拣货类型决定拣货视图"
+
+#. module: app_stock_picking_type_group
+#: model:ir.model.fields,help:app_stock_picking_type_group.field_stock_picking_type_group_sequence
+msgid "Used to order the 'All Operations' kanban view"
+msgstr "历史订单的全部作业看板视图"
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="app_view_pickingtype_filter" model="ir.ui.view">
+            <field name="name">stock.picking.type.filter</field>
+            <field name="model">stock.picking.type</field>
+            <field name="inherit_id" ref="stock.view_pickingtype_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <group expand="1" string="Group By">
+                        <filter name="picking_type_group_id" string="Picking Type Group" context="{'group_by':'picking_type_group_id'}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="app_view_picking_type_tree">
+            <field name="name">Picking types</field>
+            <field name="model">stock.picking.type</field>
+            <field name="inherit_id" ref="stock.view_picking_type_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="picking_type_group_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="app_view_picking_type_form">
+            <field name="name">Operation Types</field>
+            <field name="model">stock.picking.type</field>
+            <field name="inherit_id" ref="stock.view_picking_type_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='warehouse_id']" position="after">
+                    <field name="picking_type_group_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="stock.stock_picking_type_action" model="ir.actions.act_window">
+            <field name="name">Inventory</field>
+            <field name="res_model">stock.picking.type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="context">{'search_default_picking_type_group_id': 1}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new picking type.
+              </p><p>
+                The picking type system allows you to assign each stock
+                operation a specific type which will alter its views accordingly.
+                On the picking type you could e.g. specify if packing is needed by default,
+                if it should show the customer.
+              </p>
+            </field>
+        </record>
+
+        <!--<record id="app_stock_picking_type_kanban" model="ir.ui.view">-->
+            <!--<field name="name">app.stock.picking.type.kanban</field>-->
+            <!--<field name="model">stock.picking.type</field>-->
+            <!--<field name="inherit_id" ref="stock.stock_picking_type_kanban"/>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<xpath expr="//kanban" position="attributes">-->
+                    <!--<attribute name="default_group_by">picking_type_group_id</attribute>-->
+                <!--</xpath>-->
+            <!--</field>-->
+        <!--</record>-->
+
+</odoo>
