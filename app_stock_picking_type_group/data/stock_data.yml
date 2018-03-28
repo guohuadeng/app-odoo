@@ -1,0 +1,19 @@
+-
+ !record {model: stock.picking.type.group, id: stock_picking_type_group_mrp}:
+    name: Manufacturing
+    sequence: 3
+-
+ !record {model: stock.picking.type.group, id: stock_picking_type_group_sale}:
+    name: Sales
+    sequence: 4
+
+-
+ !record {model: stock.picking.type.group, id: stock_picking_type_group_purchase}:
+    name: Purchase
+    sequence: 5
+
+-
+ !record {model: stock.picking.type.group, id: stock_picking_type_group_stock}:
+    name: Stock
+    sequence: 5
+
