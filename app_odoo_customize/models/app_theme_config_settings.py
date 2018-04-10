@@ -32,6 +32,15 @@ class AppThemeConfigSettings(models.TransientModel):
     app_account_title = fields.Char('My Odoo.com Account Title')
     app_account_url = fields.Char('My Odoo.com Account Url')
 
+    company_id = fields.Many2one(
+        'res.company', 'Company',
+        default=lambda self: self.env.user.company_id, required=True)
+    app_favicon_backend = fields.Binary(related='company_id.favicon_backend', string="Favicon backend")
+    app_favicon_backend_mimetype = fields.Selection(
+        related='company_id.favicon_backend_mimetype',
+        string='Favicon mimetype',
+        help='Set the mimetype of your file.')
+
     @api.model
     def get_default_all(self, fields):
         ir_config = self.env['ir.config_parameter']
@@ -72,7 +81,10 @@ class AppThemeConfigSettings(models.TransientModel):
             app_documentation_dev_url=app_documentation_dev_url,
             app_support_url=app_support_url,
             app_account_title=app_account_title,
-            app_account_url=app_account_url
+            app_account_url=app_account_url,
+            company_id=self.env.user.company_id.id,
+            app_favicon_backend=self.env.user.company_id.favicon_backend,
+            app_favicon_backend_mimetype=self.env.user.company_id.favicon_backend_mimetype,
         )
 
     @api.multi

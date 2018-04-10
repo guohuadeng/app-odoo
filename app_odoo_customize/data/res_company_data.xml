@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+        <record id="base.main_company" model="res.company">
+            <field name="favicon_backend_mimetype">image/png</field>
+            <field name="image" type="base64" file="app_odoo_customize/static/src/img/icon76red.png"/>
+        </record>
+    </data>
+</openerp>

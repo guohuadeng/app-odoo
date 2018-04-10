@@ -4,3 +4,4 @@ import ir_ui_view
 import app_theme_config_settings
 import base_language_install
 import mail_thread
+import res_company

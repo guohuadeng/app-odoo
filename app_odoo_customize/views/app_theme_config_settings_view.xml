@@ -88,6 +88,16 @@
                             <field name="app_account_url"/>
                         </div>
                     </group>
+                    <group string="System Icon">
+                        <label for="app_favicon_backend"/>
+                        <div>
+                            <field name="app_favicon_backend" widget="image"/>
+                        </div>
+                        <label for="app_favicon_backend_mimetype"/>
+                        <div>
+                            <field name="app_favicon_backend_mimetype" attrs="{'required': [('app_favicon_backend', '!=', False)]}" />
+                        </div>
+                    </group>
                     <group name="data-clean" string="Data Cleaning (Be careful to do that!)">
                         <label string="Sales"/>
                         <div>
