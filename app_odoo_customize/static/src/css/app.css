@@ -2,3 +2,7 @@
     height: 20px;
     margin: 2px;
 }
+li .flag  {
+    max-height: 30px;
+    width: auto;
+}
