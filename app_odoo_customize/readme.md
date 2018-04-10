@@ -20,7 +20,8 @@ You can config odoo, make it look like your own platform.
 15. Reset All the Sequence to beginning of 1: SO/PO/MO/Invoice...
 16. Fix odoo reload module translation bug while enable english language
 17. Stop Odoo Auto Subscribe(Performance Improve)
-18. Show/Hide Author and Website in Apps Dashboard
+18. Show/Hide Author and Website in Apps Dashboard (odoo 11 only)
+19. Set System Icon (odoo 10 only)
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.
 The user can get the help document just by one click.
