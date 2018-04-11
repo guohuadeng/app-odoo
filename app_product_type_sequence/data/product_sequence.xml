@@ -76,7 +76,7 @@
         </record>
         <!--纯制造原材料，板材-->
         <record id="internal_type_sourced_material" model="product.internal.type">
-            <field name="name">Components Product</field>
+            <field name="name">Sourced Material</field>
             <field name="ref">bc</field>
             <field name="sequence">3</field>
             <field name="type">product</field>
