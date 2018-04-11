@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- 更新序号规则 Auto Internal Reference. -->
+        <!-- 所有的 All Products. -->
+        <record id="seq_product_auto" model="ir.sequence">
+            <field name="name">Sequence for All Products</field>
+            <field name="code">product.product</field>
+            <field name="prefix">PR%(y)s%(month)s</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+            <field name="initial">True</field>
+        </record>
+        <!-- 制造的成品，如"床" manufactured Products. -->
+        <record id="seq_mrp_product" model="ir.sequence">
+            <field name="name">Sequence for Manufactured Product</field>
+            <field name="code">product.product</field>
+            <field name="prefix">CP%(y)s%(month)s</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+            <field name="initial">True</field>
+        </record>
+        <!-- 半成品，如"顶板" Components.-->
+        <record id="seq_mrp_component" model="ir.sequence">
+            <field name="name">Sequence for Manufactured Components</field>
+            <field name="code">product.product</field>
+            <field name="prefix">BC%(y)s%(month)s</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+            <field name="initial">True</field>
+        </record>
+        <!-- 制造原材料，采购的板材，如"16mm中纤板" Components.-->
+        <record id="seq_sourced_material" model="ir.sequence">
+            <field name="name">Sequence for Sourced Material</field>
+            <field name="code">product.product</field>
+            <field name="prefix">WL%(y)s%(month)s</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+            <field name="initial">True</field>
+        </record>
+
+        <!-- internal_type 数据-->
+        <!--[(4, ref('purchase.route_warehouse0_buy')),(4, ref('mrp.route_warehouse0_manufacture')),(4, ref('stock.route_warehouse0_mto'))]-->
+        <!--成品-->
+        <record id="internal_type_mrp_product" model="product.internal.type">
+            <field name="name">Manufactured Product</field>
+            <field name="ref">cp</field>
+            <field name="sequence">10</field>
+            <field name="type">product</field>
+            <field name="sale_ok">1</field>
+            <field name="purchase_ok">0</field>
+            <field name="route_ids" eval="[(6,0, [ref('mrp.route_warehouse0_manufacture'),ref('stock.route_warehouse0_mto')])]"/>
+            <field name="description">Set prefix as "CP" in link sequence</field>
+            <field name="link_sequence" ref="seq_mrp_product"/>
+        </record>
+        <!--半成品-->
+        <record id="internal_type_mrp_component" model="product.internal.type">
+            <field name="name">Manufactured Components</field>
+            <field name="ref">bc</field>
+            <field name="sequence">20</field>
+            <field name="type">product</field>
+            <field name="sale_ok">0</field>
+            <field name="purchase_ok">0</field>
+            <field name="route_ids" eval="[(6,0, [ref('mrp.route_warehouse0_manufacture'),ref('stock.route_warehouse0_mto')])]"/>
+            <field name="description">Set prefix as "BC" in link sequence</field>
+            <field name="link_sequence" ref="seq_mrp_component"/>
+        </record>
+        <!--采购原材料-->
+        <record id="internal_type_sourced_material" model="product.internal.type">
+            <field name="name">Sourced Material</field>
+            <field name="ref">wl</field>
+            <field name="sequence">30</field>
+            <field name="type">product</field>
+            <field name="sale_ok">0</field>
+            <field name="purchase_ok">1</field>
+            <field name="route_ids" eval="[(6,0, [ref('purchase.route_warehouse0_buy'),ref('stock.route_warehouse0_mto')])]"/>
+            <field name="description">Set prefix as "WL" in link sequence</field>
+            <field name="link_sequence" ref="seq_sourced_material"/>
+        </record>
+
+        <!-- 服务与费用 Service-->
+        <record id="internal_type_service" model="product.internal.type">
+            <field name="name">Service</field>
+            <field name="ref">fw</field>
+            <field name="sequence">50</field>
+            <field name="type">service</field>
+            <field name="sale_ok">1</field>
+            <field name="purchase_ok">1</field>
+            <field name="description">Set prefix as "PR" in link sequence</field>
+            <field name="link_sequence" ref="seq_product_auto"/>
+        </record>
+        <!-- 消耗品，无限库存 Consu-->
+        <record id="internal_type_consu" model="product.internal.type">
+            <field name="name">Consumer</field>
+            <field name="ref">xh</field>
+            <field name="sequence">60</field>
+            <field name="type">consu</field>
+            <field name="sale_ok">1</field>
+            <field name="purchase_ok">1</field>
+            <field name="description">Set prefix as "PR" in link sequence</field>
+            <field name="link_sequence" ref="seq_product_auto"/>
+        </record>
+    </data>
+</odoo>
