@@ -59,7 +59,7 @@
     ],
     'images': [
     ],
-    "price": 68.00,
+    "price": 168.00,
     "currency": "EUR",
     'installable': True,
     'auto_install': False,
