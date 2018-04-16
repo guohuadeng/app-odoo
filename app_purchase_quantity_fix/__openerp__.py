@@ -46,7 +46,7 @@
     'price': 98.00,
     'currency': 'EUR',
     'depends': ['purchase'],
-    'images': [],
+    'images': ['static/description/bug1.jpg'],
     'data': [
     ],
     'demo': [
