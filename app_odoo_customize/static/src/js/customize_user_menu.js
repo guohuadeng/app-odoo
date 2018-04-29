@@ -68,7 +68,7 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
                     if (val.key == 'app_show_lang' && val.value == "False") {
                         $('switch-lang').hide();
                     }
-                    if (val.key == 'app_show_debug' && val.value == "False") {
+                    if (session.user_context.uid!=1 || (val.key == 'app_show_debug' && val.value == "False")) {
                         $('[data-menu="debug"]').parent().hide();
                         $('[data-menu="debugassets"]').parent().hide();
                         $('[data-menu="quitdebug"]').parent().hide();

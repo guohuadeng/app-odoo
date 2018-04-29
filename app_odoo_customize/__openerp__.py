@@ -55,7 +55,7 @@ The user can get the help document just by one click.
 
     """,
     'images': ['static/description/banner.png'],
-    'depends': ['web', 'mail'],
+    'depends': ['base', 'web', 'mail'],
     'data': [
         'views/app_odoo_customize_view.xml',
         'views/app_theme_config_settings_view.xml',
