@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <form string="odooApp Customize Settings" class="oe_form_configuration">
                     <header>
-                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight mb4"/>
                         <button string="Cancel" type="object" name="cancel" class="oe_link" special="cancel"/>
                     </header>
                     <separator string="White Label Setting"/>
@@ -96,48 +96,48 @@
                         <label string="Sales"/>
                         <div>
                             <button string="Delete All Sales Order" type="object" name="remove_sales"
-                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight mb4"/>
                         </div>
                         <label string="POS"/>
                         <div>
-                            <button string="Delete All POS Order" type="object" name="remove_pos" confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                            <button string="Delete All POS Order" type="object" name="remove_pos" confirm="Please confirm to delete the select data?" class="oe_highlight mb4"/>
                         </div>
                         <label string="Purchase"/>
                         <div>
                             <button string="Delete All Purchase Order and Requisition" type="object" name="remove_purchase"
-                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight mb4"/>
                         </div>
                         <label string="MRP"/>
                         <div>
                             <button string="Delete All Manufacturing Order" type="object" name="remove_mrp"
-                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight mb4"/>
                             |
                             <button string="Delete All BOM" type="object" name="remove_mrp_bom"
-                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight mb4"/>
                         </div>
                         <label string="Inventory"/>
                         <div>
                             <button string="Delete All Move/Picking/Package/Lot" type="object" name="remove_inventory"
-                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight mb4"/>
                         </div>
                         <label string="Accounting"/>
                         <div>
                             <button string="Delete All Voucher/Invoice/Bill" type="object" name="remove_account"
-                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight mb4"/>
                         </div>
                         <label string="Base Models"/>
                         <div>
                             <button string="Delete All Product" type="object" name="remove_product"
-                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight mb4"/>
                             |
                             <button string="Delete All Product Attribute" type="object" name="remove_product_attribute"
-                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight mb4"/>
                             |
                             <button string="Delete All Message" type="object" name="remove_message"
-                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight mb4"/>
                             |
                             <button string="Delete All Workflow" type="object" name="remove_workflow"
-                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight mb4"/>
                         </div>
                     </group>
                 </form>
