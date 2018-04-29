@@ -62,6 +62,7 @@ The user can get the help document just by one click.
         'views/ir_model_view.xml',
         # data
         'data/ir_config_parameter.xml',
+        'data/res_company_data.xml',
         'data/res_groups.xml',
         'security/ir.model.access.csv',
     ],
