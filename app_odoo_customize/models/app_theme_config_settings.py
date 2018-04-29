@@ -115,7 +115,7 @@ class AppThemeConfigSettings(models.TransientModel):
             for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
-                if obj and obj._table_exist:
+                if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
             # 更新序号
@@ -140,7 +140,7 @@ class AppThemeConfigSettings(models.TransientModel):
             for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
-                if obj and obj._table_exist:
+                if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
             # 更新序号,针对自动产品编号
@@ -165,7 +165,7 @@ class AppThemeConfigSettings(models.TransientModel):
             for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
-                if obj and obj._table_exist:
+                if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
         except Exception as e:
@@ -183,7 +183,7 @@ class AppThemeConfigSettings(models.TransientModel):
             for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
-                if obj and obj._table_exist:
+                if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
             # 更新序号
@@ -211,7 +211,7 @@ class AppThemeConfigSettings(models.TransientModel):
             for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
-                if obj and obj._table_exist:
+                if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
             # 更新序号
@@ -242,7 +242,7 @@ class AppThemeConfigSettings(models.TransientModel):
             for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
-                if obj and obj._table_exist:
+                if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
             # 更新序号
@@ -268,7 +268,7 @@ class AppThemeConfigSettings(models.TransientModel):
             for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
-                if obj and obj._table_exist:
+                if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
         except Exception as e:
@@ -298,7 +298,7 @@ class AppThemeConfigSettings(models.TransientModel):
             for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
-                if obj and obj._table_exist:
+                if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
             # 更新序号
@@ -360,7 +360,7 @@ class AppThemeConfigSettings(models.TransientModel):
             for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
-                if obj and obj._table_exist:
+                if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
 
@@ -416,7 +416,7 @@ class AppThemeConfigSettings(models.TransientModel):
             for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
-                if obj and obj._table_exist:
+                if obj and obj._table:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
         except Exception as e:
@@ -434,7 +434,7 @@ class AppThemeConfigSettings(models.TransientModel):
             for line in to_removes:
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)
-                if obj and obj._table_exist:
+                if obj and obj._table:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
 
