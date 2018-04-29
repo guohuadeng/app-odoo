@@ -65,7 +65,6 @@ The user can get the help document just by one click.
         'data/ir_config_parameter.xml',
         'data/res_company_data.xml',
         'security/ir.model.access.csv',
-        'security/security.xml',
     ],
     'demo': [],
     'test': [
