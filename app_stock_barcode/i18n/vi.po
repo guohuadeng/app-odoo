@@ -1,0 +1,219 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* app_stock_barcode
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e-20171107\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-19 21:04+0000\n"
+"PO-Revision-Date: 2018-03-19 21:04+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_create_date
+msgid "Created on"
+msgstr "Tạo ngày"
+
+#. module: app_stock_barcode
+#: model:ir.model,name:app_stock_barcode.model_stock_pack_current
+msgid "Current Packing Operation"
+msgstr "Đóng gói hiện tại"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_result_package_id
+msgid "Destination Package"
+msgstr "Kiện hàng đích"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_qty_done
+msgid "Done"
+msgstr "Hoàn tất"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_qty_done_total
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_quant_package_qty_done_total
+msgid "Done Total"
+msgstr "Tổng hoàn tất"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_id
+msgid "ID"
+msgstr "ID"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,help:app_stock_barcode.field_stock_pack_current_result_package_id
+msgid "If set, the operations are packed into this package"
+msgstr "Nếu thiết lập, các hoạt động được đóng gói trong gói này"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current___last_update
+msgid "Last Modified on"
+msgstr "Chỉnh sửa gần đây"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_last_op_product
+msgid "Last OP"
+msgstr "Hoạt động gần đây"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật bởi"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_write_date
+msgid "Last Updated on"
+msgstr "Cập nhật ngày"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_package_done_count
+msgid "Package Done Total"
+msgstr "Tổng kiện hàng hoàn tất"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_package_count
+msgid "Package Total"
+msgstr "Tổng kiện hàng"
+
+#. module: app_stock_barcode
+#: model:ir.ui.view,arch_db:app_stock_barcode.app_view_picking_form
+msgid "Package："
+msgstr "Gói hàng："
+
+#. module: app_stock_barcode
+#: model:ir.model,name:app_stock_barcode.model_stock_pack_operation
+msgid "Packing Operation"
+msgstr "Hoạt động gói hàng"
+
+#. module: app_stock_barcode
+#: model:ir.actions.act_window,name:app_stock_barcode.picking_2_current_action
+msgid "Packing Package"
+msgstr "Đóng gói kiện hàng"
+
+#. module: app_stock_barcode
+#: model:ir.model,name:app_stock_barcode.model_stock_quant_package
+msgid "Physical Packages"
+msgstr "Kiện hàng"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_product_id
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_pack_operation_product_packed_ids
+msgid "Product packed"
+msgstr "Sản phẩm đã đóng gói"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_pack_operation_product_current_ids
+msgid "Product packing"
+msgstr "Sản phẩm đang đóng gói"
+
+#. module: app_stock_barcode
+#: model:ir.ui.view,arch_db:app_stock_barcode.app_view_picking_form
+msgid "Product："
+msgstr "Sản phẩm："
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_result_package_ids
+msgid "Relate Packages"
+msgstr "Kiện hàng liên quan"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_package_id
+msgid "Source Package"
+msgstr "Kiện hàng nguồn"
+
+#. module: app_stock_barcode
+#: model:ir.ui.view,arch_db:app_stock_barcode.app_view_picking_form
+msgid "Statistics"
+msgstr "Số liệu thống kê"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_picking_id
+msgid "Stock Picking"
+msgstr "Giao nhận kho"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,help:app_stock_barcode.field_stock_pack_current_picking_id
+msgid "The stock operation where the packing has been made"
+msgstr "Các hoạt động kho nơi đóng gói đã được thực hiện"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,help:app_stock_barcode.field_stock_pack_current_weight
+#: model:ir.model.fields,help:app_stock_barcode.field_stock_pack_current_weight_done_subtotal
+#: model:ir.model.fields,help:app_stock_barcode.field_stock_pack_operation_weight
+#: model:ir.model.fields,help:app_stock_barcode.field_stock_pack_operation_weight_done_subtotal
+msgid "The weight of the contents in Kg, not including any packaging, etc."
+msgstr "Trọng lượng của các nội dung trong Kg, không bao gồm bất kỳ bao bì, vv"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_product_qty
+msgid "To Do"
+msgstr "Cần làm"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_product_qty_total
+msgid "To Do Total"
+msgstr "Tổng cần làm"
+
+#. module: app_stock_barcode
+#: model:ir.ui.view,arch_db:app_stock_barcode.app_view_picking_form
+#: model:ir.ui.view,arch_db:app_stock_barcode.app_vpicktree
+msgid "Total"
+msgstr "Tổng"
+
+#. module: app_stock_barcode
+#: model:ir.model,name:app_stock_barcode.model_stock_picking
+msgid "Transfer"
+msgstr "Chuyển khoản"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_product_uom_id
+msgid "Unit of Measure"
+msgstr "Đơn vị"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_weight
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_operation_weight
+msgid "Weight"
+msgstr "Trọng lượng"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_weight_done_subtotal
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_operation_weight_done_subtotal
+msgid "Weight Done Subtotal"
+msgstr "Tổng trọng lượng đã hoàn tẩt"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_weight_done_total
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_quant_package_weight_done_total
+msgid "Weight Done Total(kg)"
+msgstr "Tổng trọng lượng đã hoàn tất (kg)"
+
+#. module: app_stock_barcode
+#: model:ir.ui.view,arch_db:app_stock_barcode.app_view_picking_form
+msgid "Working Product"
+msgstr "Sản phẩm đang làm"
+
+#. module: app_stock_barcode
+#: model:ir.ui.view,arch_db:app_stock_barcode.app_view_pack_current_tree
+msgid "total"
+msgstr "tổng"
