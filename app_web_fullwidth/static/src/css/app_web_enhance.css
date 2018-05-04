@@ -1,0 +1,15 @@
+
+/*
+list标头不换行
+*/
+.table-responsive {
+    white-space: nowrap !important;
+}
+
+/*
+sheet全宽
+*/
+.o_form_view .o_form_sheet_bg .o_form_sheet {
+    max-width: 98% !important;
+    width: 98%;
+}
