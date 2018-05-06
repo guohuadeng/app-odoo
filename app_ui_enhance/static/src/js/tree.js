@@ -94,8 +94,10 @@ ListView.include({
                     self.$search_date.find('.app_end_date').on('keypress', function (e) {
                         self.do_keypress(e);
                     });
-                    self.$search_date.appendTo(self.$buttons);
-                    self.set_search_btn(1);
+                    setTimeout(function(){
+                        self.$search_date.appendTo(self.$buttons);
+                        self.set_search_btn(1);
+                    }, 1000);
                 }
             }
         });
@@ -126,8 +128,10 @@ ListView.include({
                     self.$search_number.find('.app_end_number').on('keypress', function (e) {
                         self.do_keypress(e);
                     });
-                    self.$search_number.appendTo(self.$buttons);
-                    self.set_search_btn(1);
+                    setTimeout(function(){
+                        self.$search_number.appendTo(self.$buttons);
+                        self.set_search_btn(1);
+                    }, 1000);
                 }
             }
         });

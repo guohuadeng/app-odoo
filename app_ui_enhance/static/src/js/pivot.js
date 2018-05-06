@@ -93,8 +93,10 @@ PivotView.include({
                     self.$search_date.find('.app_end_date').on('keypress', function (e) {
                         self.do_keypress(e);
                     });
-                    self.$search_date.appendTo($('.o_cp_buttons'));
-                    self.set_search_btn(1);
+                    setTimeout(function(){
+                        self.$search_date.appendTo($('.o_cp_buttons'));
+                        self.set_search_btn(1);
+                    }, 1000);
                 }
             }
         });
@@ -120,8 +122,10 @@ PivotView.include({
                     self.$search_number.find('.app_end_number').on('keypress', function (e) {
                         self.do_keypress(e);
                     });
-                    self.$search_number.appendTo($('.o_cp_buttons'));
-                    self.set_search_btn(1);
+                    setTimeout(function(){
+                        self.$search_number.appendTo($('.o_cp_buttons'));
+                        self.set_search_btn(1);
+                    }, 1000);
                 }
             }
         });
