@@ -70,15 +70,18 @@ PivotView.include({
         $(QWeb.render("odooApp.TreeSearch.Placeholder", {})).appendTo($node);
 
         var date_fields = [];
-        // 增加参数控制app_ui_show_search_date
+        var canShow = 1;
+        // 增加参数控制app_ui_show_search_date,特殊处理
         new Model('ir.config_parameter').call('search_read', [[['key', '=', 'app_ui_show_search_date']], ['value']]).then(function (show) {
-            if (show.length >= 1 && (show[0]['value'] == "True")) {
+            if (show.length >= 1 && (show[0]['value'] == "False")) {
+                canShow = 0;
+            }
+            if (canShow) {
                 _.each(self.fields, function (value, key, list) {
                     if (value.store && value.type === "datetime" || value.type === "date") {
                         date_fields.push([key, value.string]);
                     }
                 });
-
                 if (date_fields.length > 0) {
                     self.$search_date = $(QWeb.render('odooApp.SearchDate', {'date_fields': date_fields}))
                     self.$search_date.find('.app_start_date').datetimepicker(datepickers_options);
@@ -122,7 +125,6 @@ PivotView.include({
                 }
             }
         });
-
         //显示搜索键，因为pivot特殊，故要单独处理
     },
 

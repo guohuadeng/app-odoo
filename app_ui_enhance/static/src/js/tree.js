@@ -23,6 +23,12 @@ ListView.include({
         this.ts_fields = [];
     },
 
+    willStart: function() {
+        //代码自定义默认每页记录数
+        // the view's number of records per page (|| section)
+        this._limit = 200;
+        return this._super();
+    },
     on_button_click: function (event) {
         var self = this;
         var $target = $(event.target), 

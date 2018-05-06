@@ -15,11 +15,11 @@
                 </span>
 
                 <span style="float: left; margin-left: 2px;">
-                    <input style="height: 30px;" class="app_start_date form-control" size="10" placeholder="Start date" type="text" title="Press Enter to search"/>
+                    <input style="height: 30px;" class="app_start_date form-control" size="15" placeholder="Start date" type="text" title="Press Enter to search"/>
                 </span>
 
                 <span style="float: left; margin-left: 2px;">
-                    <input style="height: 30px;" class="app_end_date form-control" size="10" placeholder="End date" type="text" title="Press Enter to search" />
+                    <input style="height: 30px;" class="app_end_date form-control" size="15" placeholder="End date" type="text" title="Press Enter to search" />
                 </span>
             </div>
         </div>
@@ -95,8 +95,5 @@
                 </li>
             </ul>
         </div>
-
     </t>
-
-
 </templates>

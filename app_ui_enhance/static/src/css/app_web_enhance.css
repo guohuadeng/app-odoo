@@ -25,7 +25,7 @@ sheet全宽
 }
 
 /*
-强制表格滚动，企业版/社区版中生效
+强制表格滚动，企业版/社区版中生效，table加上 class="force_scroll"生效
 */
 
 .force_scroll .table-responsive {
