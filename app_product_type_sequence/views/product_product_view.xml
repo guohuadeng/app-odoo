@@ -12,5 +12,18 @@
                 </xpath>
             </field>
         </record>
+        <!-- search，继承product原视图 -->
+        <record id="app_product_search_form_view" model="ir.ui.view">
+            <field name="name">app.product.product.search</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_search_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_tmpl_id']" position="after">
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter name="internal_type" string="Internal Type" domain="[]" context="{'group_by' : 'internal_type'}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
     </data>
 </openerp>

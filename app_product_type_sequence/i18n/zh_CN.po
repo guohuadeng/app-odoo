@@ -109,6 +109,8 @@ msgstr "主产品编码"
 #. module: app_product_type_sequence
 #: model:ir.model.fields,field_description:app_product_type_sequence.field_product_product_internal_type
 #: model:ir.model.fields,field_description:app_product_type_sequence.field_product_template_internal_type
+#: model:ir.ui.view,arch_db:app_product_type_sequence.app_product_search_form_view
+#: model:ir.ui.view,arch_db:app_product_type_sequence.app_product_template_search_view
 msgid "Internal Type"
 msgstr "内部类型"
 
