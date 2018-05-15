@@ -1,0 +1,74 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* app_stock_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e-20180326\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-22 15:54+0000\n"
+"PO-Revision-Date: 2018-04-22 15:54+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_stock_report
+#: model:ir.ui.view,arch_db:app_stock_report.view_location_kanban
+msgid "Current Stock"
+msgstr "当前库存"
+
+#. module: app_stock_report
+#: model:ir.ui.view,arch_db:app_stock_report.app_view_location_form
+#: model:ir.ui.view,arch_db:app_stock_report.view_location_kanban
+msgid "All Move"
+msgstr "出入库明细"
+
+#. module: app_stock_report
+#: model:ir.ui.view,arch_db:app_stock_report.app_stock_picking_type_kanban
+msgid "All Move Report"
+msgstr "出入库明细"
+
+#. module: app_stock_report
+#: model:ir.ui.view,arch_db:app_stock_report.app_view_location_form
+#: model:ir.ui.view,arch_db:app_stock_report.view_location_kanban
+msgid "Move In"
+msgstr "入库明细"
+
+#. module: app_stock_report
+#: model:ir.ui.view,arch_db:app_stock_report.app_view_location_form
+#: model:ir.ui.view,arch_db:app_stock_report.view_location_kanban
+msgid "Move Out"
+msgstr "出库明细"
+
+#. module: app_stock_report
+#: model:ir.ui.view,arch_db:app_stock_report.view_location_kanban
+msgid "Products"
+msgstr "库存产品"
+
+#. module: app_stock_report
+#: model:ir.ui.view,arch_db:app_stock_report.view_location_kanban
+msgid "Stock Location"
+msgstr "库存位置"
+
+#. module: app_stock_report
+#: model:ir.ui.menu,name:app_stock_report.app_menu_stock_move_report
+msgid "Locations"
+msgstr "按库位统计"
+
+#. module: app_stock_report
+#: model:ir.actions.act_window,name:app_stock_report.act_move_in_location_open
+msgid "Stock Move In"
+msgstr "查看入库明细"
+
+#. module: app_stock_report
+#: model:ir.actions.act_window,name:app_stock_report.act_move_out_location_open
+msgid "Stock Move Out"
+msgstr "查看出库明细"
+
+#. module: app_stock_report
+#: model:ir.ui.view,arch_db:app_stock_report.view_location_kanban
+msgid "Recent 30 days"
+msgstr "最近 30 天统计"

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="app_menu_stock_move_report"
+                  parent="stock.menu_warehouse_report" action="stock.action_location_form"
+                  sequence="3"/>
+    </data>
+</odoo>
