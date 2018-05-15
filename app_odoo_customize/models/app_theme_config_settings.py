@@ -304,6 +304,9 @@ class AppThemeConfigSettings(models.TransientModel):
             ['procurement.group', ],
         ]
         try:
+            # 为优化，增加处理
+            self._cr.execute("update stock_move set split_from=NULL;")
+            self._cr.execute("update stock_move set origin_returned_move_id=NULL;")
             for line in to_removes :
                 obj_name = line[0]
                 obj = self.pool.get(obj_name)

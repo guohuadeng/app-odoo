@@ -36,6 +36,13 @@ class ProductTemplate(models.Model):
     default_code_stored = fields.Char('Internal Reference Stored',
         default=lambda self: _('New'))
 
+    # todo: 检查数据，要保证数据唯一性
+    _sql_constraints = [
+        ('uniq_default_code',
+         'unique(default_code)',
+         'The reference must be unique'),
+    ]
+
     @api.model
     def default_get(self, fields):
         context = self._context or {}
