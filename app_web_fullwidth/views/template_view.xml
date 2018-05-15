@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <template id="assets_backend" name="app_web_fullwidth asset"  inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css" href="/app_web_fullwidth/static/src/css/app_web_enhance.css"/>
+        </xpath>
+    </template>
+</data>
+</odoo>

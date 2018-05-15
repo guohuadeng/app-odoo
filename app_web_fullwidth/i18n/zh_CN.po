@@ -1,0 +1,270 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* app_ui_enhance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e-20171107\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-28 19:12+0000\n"
+"PO-Revision-Date: 2018-01-28 19:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_ui_enhance
+#. openerp-web
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:71
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:92
+#, python-format
+msgid "All"
+msgstr "全部"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,field_description:app_ui_enhance.field_app_ui_config_settings_app_ui_allow_barcode
+msgid "Allow Barcode, Seperated by \",\""
+msgstr "允许的条码，用\",\"分隔"
+
+#. module: app_ui_enhance
+#: model:ir.model,name:app_ui_enhance.model_app_ui_config_settings
+msgid "App Web UI enhance settings"
+msgstr "界面优化设置"
+
+#. module: app_ui_enhance
+#: model:ir.ui.view,arch_db:app_ui_enhance.view_app_ui_config_settings
+msgid "Apply"
+msgstr "应用"
+
+#. module: app_ui_enhance
+#: model:ir.ui.view,arch_db:app_ui_enhance.view_app_ui_config_settings
+msgid "Cancel"
+msgstr "取消"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "Codabar"
+msgstr "Codabar"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "Code11"
+msgstr "Code11"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "Code128"
+msgstr "Code128"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,field_description:app_ui_enhance.field_app_ui_config_settings_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,field_description:app_ui_enhance.field_app_ui_config_settings_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,help:app_ui_enhance.field_app_ui_config_settings_app_ui_allow_barcode
+msgid "Default Allow QR and Standard39."
+msgstr "建议默认输入 QR,Standard39"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,field_description:app_ui_enhance.field_app_ui_config_settings_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "EAN13"
+msgstr "EAN13"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "EAN8"
+msgstr "EAN8"
+
+#. module: app_ui_enhance
+#. openerp-web
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:22
+#, python-format
+msgid "End date"
+msgstr "结束日期"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "Extended39"
+msgstr "Extended39"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "Extended93"
+msgstr "Extended93"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "FIM"
+msgstr "FIM"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,field_description:app_ui_enhance.field_app_ui_config_settings_app_ui_force_barcode
+msgid "Force all Odoo Barcode to:"
+msgstr "强制设置所有Odoo条码格式:"
+
+#. module: app_ui_enhance
+#. openerp-web
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:43
+#, python-format
+msgid "From"
+msgstr "从"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "I2of5"
+msgstr "I2of5"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,field_description:app_ui_enhance.field_app_ui_config_settings_id
+msgid "ID"
+msgstr "ID"
+
+#. module: app_ui_enhance
+#: model:ir.ui.view,arch_db:app_ui_enhance.view_app_ui_config_settings
+msgid "Item to Show"
+msgstr "显示/隐藏菜单项"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,field_description:app_ui_enhance.field_app_ui_config_settings___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,field_description:app_ui_enhance.field_app_ui_config_settings_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,field_description:app_ui_enhance.field_app_ui_config_settings_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "MSI"
+msgstr "MSI"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "Odoo Default"
+msgstr "Odoo 默认"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "POSTNET"
+msgstr "POSTNET"
+
+#. module: app_ui_enhance
+#. openerp-web
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:18
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:22
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:43
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:47
+#, python-format
+msgid "Press Enter to search"
+msgstr "直接按回车即可搜索"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "QR"
+msgstr "QR"
+
+#. module: app_ui_enhance
+#: model:ir.model,name:app_ui_enhance.model_report
+msgid "Report"
+msgstr "报表"
+
+#. module: app_ui_enhance
+#: model:ir.ui.view,arch_db:app_ui_enhance.view_app_ui_config_settings
+msgid "Report Setting"
+msgstr "报表输出设置"
+
+#. module: app_ui_enhance
+#: model:ir.ui.view,arch_db:app_ui_enhance.view_app_ui_config_settings
+msgid "Search Enhance"
+msgstr "搜索增加"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,help:app_ui_enhance.field_app_ui_config_settings_app_ui_show_search_date
+#: model:ir.model.fields,help:app_ui_enhance.field_app_ui_config_settings_app_ui_show_search_number
+msgid "Set 'True' to show, Set 'False' to hide"
+msgstr "设为 'True' 则显示，设为 'False' 则隐藏"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,help:app_ui_enhance.field_app_ui_config_settings_app_ui_force_barcode
+msgid "Set Odoo Default to use the barcode odoo define in report(EAN13)."
+msgstr "设置为'Odoo默认'即使用代码中设置的条码编码(EAN13)"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,field_description:app_ui_enhance.field_app_ui_config_settings_app_ui_show_search_date
+msgid "Show date range search in tree/pivot view"
+msgstr "显示日期搜索，在tree/pivot视图生效"
+
+#. module: app_ui_enhance
+#: model:ir.model.fields,field_description:app_ui_enhance.field_app_ui_config_settings_app_ui_show_search_number
+msgid "Show number range search tree/pivot view"
+msgstr "显示数值搜索，在tree/pivot视图生效"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "Standard39"
+msgstr "Standard39"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "Standard93"
+msgstr "Standard93"
+
+#. module: app_ui_enhance
+#. openerp-web
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:18
+#, python-format
+msgid "Start date"
+msgstr "开始日期"
+
+#. module: app_ui_enhance
+#. openerp-web
+#: code:addons/app_ui_enhance/static/src/xml/pivot_view.xml:47
+#, python-format
+msgid "To"
+msgstr "至"
+
+#. module: app_ui_enhance
+#: model:ir.actions.act_window,name:app_ui_enhance.action_app_ui_config
+#: model:ir.ui.menu,name:app_ui_enhance.menu_app_ui_config
+msgid "UI Enhance"
+msgstr "界面增强"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "UPCA"
+msgstr "UPCA"
+
+#. module: app_ui_enhance
+#: selection:app.ui.config.settings,app_ui_force_barcode:0
+msgid "USPS_4State"
+msgstr "USPS_4State"
+
+#. module: app_ui_enhance
+#: model:ir.ui.view,arch_db:app_ui_enhance.view_app_ui_config_settings
+msgid "odoo UI Enhance"
+msgstr "odoo 界面增强"
+
+#. module: app_ui_enhance
+#: model:ir.ui.view,arch_db:app_ui_enhance.view_app_ui_config_settings
+msgid "odooApp UI Settings"
+msgstr "界面增强设置"
+
