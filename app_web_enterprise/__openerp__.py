@@ -40,7 +40,6 @@
     'price': 98.00,
     'currency': 'EUR',
     'depends': ['web_enterprise'],
-    'images': [],
     'data': [
         'views/webclient_templates.xml',
     ],
