@@ -16,7 +16,7 @@
 # description:
 {
     'name': 'App Web Fullwidth(list, kanban, form view fullwidth)',
-    'version': '11.0.5.4',
+    'version': '10.1.5.16',
     'category': 'web',
     'author': 'Sunpop.cn',
     'website': 'http://www.sunpop.cn',
