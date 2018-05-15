@@ -15,7 +15,7 @@
 # http://www.sunpop.cn/odoo10_developer_document_offline/
 # description:
 {
-    'name': 'App Web Fullwidth(form view fullwidth)',
+    'name': 'App Web Fullwidth(list, kanban, form view fullwidth)',
     'version': '11.0.5.4',
     'category': 'web',
     'author': 'Sunpop.cn',
@@ -26,7 +26,7 @@
     UI Enhance for Odoo. Form view fullwidth
     """,
     'description': """
-    UI Enhance for Odoo. Form view fullwidth
+    UI Enhance for Odoo.  list, kanban, form view fullwidth
     """,
     'depends': ['web', 'app_odoo_customize'],
     'data': [
