@@ -70,5 +70,10 @@ msgstr "查看出库明细"
 
 #. module: app_stock_report
 #: model:ir.ui.view,arch_db:app_stock_report.view_location_kanban
-msgid "Recent 30 days"
-msgstr "最近 30 天统计"
+msgid "Recent "
+msgstr "最近 "
+
+#. module: app_stock_report
+#: model:ir.ui.view,arch_db:app_stock_report.view_location_kanban
+msgid " days"
+msgstr " 天统计"

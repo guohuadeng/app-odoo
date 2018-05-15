@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <record id="</" model="ir.ui.view">
+        <record id="view_app_theme_config_settings" model="ir.ui.view">
             <field name="name">App Odoo Customize Settings</field>
             <field name="model">app.theme.config.settings</field>
             <field name="arch" type="xml">
