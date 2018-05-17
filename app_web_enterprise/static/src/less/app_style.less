@@ -1,0 +1,38 @@
+// Colors
+@odoo-color-silver: #F9F9F9;
+@odoo-color-silver-dark: #E5E5E5;
+@odoo-color-silver-darker: #d9d7d7;
+
+@gray-lighter-dark: @odoo-color-silver-dark;
+@gray-lighter-darker: @odoo-color-silver-darker;
+// Notebooks
+//form_view
+.o_notebook {
+  > ul.nav.nav-tabs {
+    > li {
+      > a {
+        background-color: @gray-lighter;
+      }
+
+      &.active > a {
+        border: 1px solid @gray-lighter-darker;
+        border-bottom: 0;
+
+        &, &:hover, &:focus, &:active {
+          border-top-color: @odoo-brand-primary;
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  &:last-child > .tab-content {
+    border-bottom: none;
+  }
+}
+
+.o_web_client input:focus,
+.o_web_client textarea:focus,
+.o_web_client select:focus {
+  border-color: @odoo-brand-optional;
+}
