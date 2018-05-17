@@ -18,7 +18,7 @@
 
 {
     'name': "App web enterprise enhance, odoo企业版界面增强",
-    'version': '11.0.4.30',
+    'version': '11.0.5.17',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'http://www.sunpop.cn',
