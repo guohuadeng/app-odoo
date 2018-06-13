@@ -26,16 +26,19 @@
     'sequence': 2,
     'summary': """
     odoo enterprise version UI enhance.
+    1. Add dropdown arrow to parent menu.
+    2. Replace the odoo logo to your company logo in main menu.
+    3. Alway show search in main menu.
+    """,
+    'description': """
+    odoo enterprise version UI enhance.
     广州尚鹏，Sunpop.cn 的odoo模块。企业版界面增强。
     1. Add dropdown arrow to parent menu.
     多级菜单中出现箭头。
     2. Replace the odoo logo to your company logo in main menu.
     替换主菜单界面的logo为你公司的logo。
-    3. Alway show search in main menu. 
+    3. Alway show search in main menu.
     在主菜单界面让搜索可见。
-    """,
-    'description': """
-    模块开发模板，目录结构与文件定义。
     """,
     'price': 98.00,
     'currency': 'EUR',
@@ -51,14 +54,13 @@
     'css': [
     ],
     'qweb': [
-        "static/src/xml/*.xml",
+        'static/src/xml/*.xml',
     ],
     'js': [
     ],
     'images': ['static/description/app_web_enterprise_03.jpg'],
     'pre_init_hook': 'pre_init_hook',
     'post_load': None,
-    'pre_init_hook': None,
     'post_init_hook': None,
     'installable': True,
     'application': True,

@@ -14,5 +14,5 @@ http://www.sunpop.cn/odoo10_developer_document_offline/
 
 from . import models
 from . import controllers
-from .hooks import pre_init_hook
+from . import report
 
