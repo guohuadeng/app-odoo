@@ -33,7 +33,7 @@
     """,
     'price': 98.00,
     'currency': 'EUR',
-    'depends': [],
+    'depends': ['purchase'],
     'images': [],
     'data': [
     ],
