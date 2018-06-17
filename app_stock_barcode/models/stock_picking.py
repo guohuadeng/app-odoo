@@ -13,6 +13,11 @@ class Picking(models.Model):
     _name = 'stock.picking'
     _inherit = ['stock.picking', 'barcodes.barcode_events_mixin']
 
+    # 是否在扫码视图
+    is_barcode_view = fields.Boolean('Barcode view', defult=False)
+    # 扫码摘要
+    header_title = fields.Char('Briefing', compute='_compute_briefing')
+
     # 作业,已扫码未装入包操作的记录行
     pack_operation_product_current_ids = fields.One2many(
         'stock.pack.current', 'picking_id', string='Product packing', readonly=True, copy=False)
@@ -21,19 +26,32 @@ class Picking(models.Model):
         'stock.pack.operation', 'picking_id', 'Product packed',
         domain=[('product_id', '>=', 1), ('qty_done', '>=', 1), ('result_package_id', '!=', False)], readonly=True, copy=False)
     # 散件涉及到的包裹列表
-    result_package_ids = fields.Many2many('stock.quant.package', string='Relate Packages', readonly=True, copy=False)
+    result_package_ids = fields.Many2many('stock.quant.package', string='Result Packages', readonly=True, copy=False)
     # 当前操作产品
     last_op_product = fields.Many2one('product.product', string='Last OP', readonly=True)
 
-    # 统计，散件与包裹一起处理的数量
+    # 待办统计，散件与包裹一起处理的数量
     product_qty_total = fields.Float('To Do Total', compute="_compute_product_qty_total",
                                      digits=dp.get_precision('Product Unit of Measure'), readonly=True, store=True)  # 总待办数量
+    # 完成统计，验证后才有
     qty_done_total = fields.Float('Done Total', compute="_compute_done_total",
                                   digits=dp.get_precision('Product Unit of Measure'), readonly=True, store=True)  # 总完成数量
     weight_done_total = fields.Float('Weight Done Total(kg)', digits=dp.get_precision('Stock Weight'),
                                      compute="_compute_done_total", readonly=True, store=True)  # 总完成重量
-    package_count = fields.Integer('Package Total', compute="_compute_package_count",  readonly=True)  # 待处理的包裹数量
+    package_count = fields.Integer('Package Total', compute="_compute_package_count", readonly=True)  # 待处理的包裹数量
     package_done_count = fields.Integer('Package Done Total', compute="_compute_package_done_count", readonly=True, store=True)  # 已处理的包裹数量
+    result_package_count = fields.Integer('Result Package Total', compute="_compute_package_done_count", readonly=True, store=True)  # 放入的包裹数量
+
+    @api.depends('partner_id')
+    def _compute_briefing(self):
+        for rec in self:
+            try:
+                title = '客户:' + rec.partner_id.name
+                if rec.origin:
+                    title += '，源单据：' + rec.origin
+                rec.header_title = title
+            except:
+                pass
 
     @api.depends('pack_operation_product_ids.product_qty', 'pack_operation_pack_ids.product_qty')
     def _compute_product_qty_total(self):
@@ -76,10 +94,9 @@ class Picking(models.Model):
     def _compute_package_done_count(self):
         for rec in self:
             if rec.state == 'done':
-                rec.package_done_count = len(rec.pack_operation_product_packed_ids.mapped('result_package_id').ids)
+                rec.result_package_count = len(rec.pack_operation_product_packed_ids.mapped('result_package_id').ids)
                 pack_packs = rec.pack_operation_pack_ids.filtered(lambda pack: not pack.product_id and pack.qty_done and pack.result_package_id)
-                rec.package_done_count += len(pack_packs.mapped('result_package_id').ids)
-
+                rec.package_done_count += len(pack_packs.mapped('result_package_id').ids) + rec.result_package_count
 
     # 不用于字段compute，在每次放入包裹操作执行，重新计算
     def set_package(self):
@@ -123,4 +140,12 @@ class Picking(models.Model):
 
     def _check_product(self, product, qty=1.0):
         self.last_op_product = product
-        return super(Picking, self)._check_product()
+        return super(Picking, self)._check_product(product, qty)
+
+    def action_see_packages(self):
+        self.ensure_one()
+        action = self.env.ref('stock.action_package_view').read()[0]
+        packages = self.pack_operation_product_ids.mapped('result_package_id')
+        packages += self.pack_operation_pack_ids.mapped('result_package_id')
+        action['domain'] = [('id', 'in', packages.ids)]
+        return action

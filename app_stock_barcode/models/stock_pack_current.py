@@ -13,8 +13,15 @@ class StockPackCurrent(models.Model):
 
     picking_id = fields.Many2one(
         'stock.picking', 'Stock Picking',
-        required=True, ondelete="cascade",
+        # required=True,
+        ondelete="cascade",
         help='The stock operation where the packing has been made')
+
+    operation_id = fields.Many2one(
+        'stock.pack.operation', 'Pack Operation Id',
+        # required=True,
+        ondelete="cascade")
+
     product_id = fields.Many2one('product.product', 'Product', ondelete="cascade")
     product_uom_id = fields.Many2one('product.uom', 'Unit of Measure')
     product_qty = fields.Float('To Do', default=0.0, digits=dp.get_precision('Product Unit of Measure'), required=True)

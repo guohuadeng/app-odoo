@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="app_stock_move_tree">
+        <field name="name">app.stock.move.tree</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.stock_move_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_uom_qty']" position="attributes">
+                <attribute name="sum">Total</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

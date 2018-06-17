@@ -4,16 +4,31 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0+e-20171107\n"
+"Project-Id-Version: Odoo Server 10.0+e-20180326\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-19 21:04+0000\n"
-"PO-Revision-Date: 2018-03-19 21:04+0000\n"
+"POT-Creation-Date: 2018-04-24 17:39+0000\n"
+"PO-Revision-Date: 2018-04-24 17:39+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: app_stock_barcode
+#: model:ir.ui.view,arch_db:app_stock_barcode.app_view_picking_form
+msgid "<span class=\"ml4\">kg</span>"
+msgstr "<span class=\"ml4\">kg</span>"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_is_barcode_view
+msgid "Barcode view"
+msgstr "扫码视图"
+
+#. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_header_title
+msgid "Briefing"
+msgstr "打包摘要"
 
 #. module: app_stock_barcode
 #: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_create_uid
@@ -82,6 +97,11 @@ msgid "Last Updated on"
 msgstr "最后更新时间"
 
 #. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_operation_id
+msgid "Pack Operation Id"
+msgstr "操作Id"
+
+#. module: app_stock_barcode
 #: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_package_done_count
 msgid "Package Done Total"
 msgstr "包裹完成"
@@ -142,11 +162,6 @@ msgid "Source Package"
 msgstr "源包裹"
 
 #. module: app_stock_barcode
-#: model:ir.ui.view,arch_db:app_stock_barcode.app_view_picking_form
-msgid "Statistics"
-msgstr "操作统计"
-
-#. module: app_stock_barcode
 #: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_picking_id
 msgid "Stock Picking"
 msgstr "仓库拣货"
@@ -171,6 +186,7 @@ msgstr "待办"
 
 #. module: app_stock_barcode
 #: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_product_qty_total
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_quant_package_product_qty_total
 msgid "To Do Total"
 msgstr "待办总数"
 
@@ -178,7 +194,7 @@ msgstr "待办总数"
 #: model:ir.ui.view,arch_db:app_stock_barcode.app_view_picking_form
 #: model:ir.ui.view,arch_db:app_stock_barcode.app_vpicktree
 msgid "Total"
-msgstr "总计"
+msgstr "合计"
 
 #. module: app_stock_barcode
 #: model:ir.model,name:app_stock_barcode.model_stock_picking
@@ -210,8 +226,8 @@ msgstr "完成总重量(kg)"
 
 #. module: app_stock_barcode
 #: model:ir.ui.view,arch_db:app_stock_barcode.app_view_picking_form
-msgid "Working Product"
-msgstr "当前操作散件"
+msgid "Weight Total："
+msgstr "总重量："
 
 #. module: app_stock_barcode
 #: model:ir.ui.view,arch_db:app_stock_barcode.app_view_pack_current_tree

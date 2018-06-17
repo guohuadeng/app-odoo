@@ -26,7 +26,7 @@
     'author': 'Sunpop.cn',
     'website': 'http://www.sunpop.cn',
     'license': 'LGPL-3',
-    'category': 'Felive',
+    'category': 'Warehouse',
     'sequence': 0,
     'pre_init_hook': 'pre_init_hook',
     'depends': ['stock_barcode'],

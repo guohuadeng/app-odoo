@@ -34,7 +34,7 @@
                         <t t-if="record.qty_done.value >= 1">
                             <t t-if="record.product_id.value">
                                 <t t-if="record.result_package_id.value==false">
-                                    <div t-attf-class="oe_kanban_card oe_kanban_global_click" style="box-shadow:0px 2px 2px 1px #ccc">
+                                    <div name="app_barcode_card" t-attf-class="oe_kanban_card oe_kanban_global_click" style="box-shadow:0px 2px 2px 1px #ccc">
                                         <t t-esc="record.product_id.value"/>
                                         <t t-if="record.product_qty.value==0">
                                             <span class="pull-right badge oe_kanban_color_9">

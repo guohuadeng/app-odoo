@@ -6,6 +6,9 @@ from odoo.exceptions import UserError, ValidationError
 
 class QuantPackage(models.Model):
     _inherit = 'stock.quant.package'
+    # 待办统计，散件与包裹一起处理的数量
+    product_qty_total = fields.Float('To Do Total',
+                                     digits=dp.get_precision('Product Unit of Measure'), readonly=True, store=True)  # 总待办数量
     qty_done_total = fields.Float('Done Total', default=0.0, store=True,
                                   compute="_compute_done_total",
                                   digits=dp.get_precision('Product Unit of Measure'))  # 总完成数量
@@ -13,7 +16,7 @@ class QuantPackage(models.Model):
                                      digits=dp.get_precision('Stock Weight'),
                                      compute="_compute_done_total", readonly=True)  # 总完成重量
 
-    @api.depends('quant_ids.qty')
+    @api.depends('quant_ids.qty', 'children_ids')
     def _compute_done_total(self):
         for rec in self:
             try:
@@ -21,7 +24,14 @@ class QuantPackage(models.Model):
             except:
                 rec.qty_done_total = 0
             try:
-                rec.weight_done_total = sum(rec.quant_ids.mapped('weight_done_subtotal'))
+                # 不增加quant的计算字段，省资源
+                weight_done_total = 0
+                for q in rec.quant_ids:
+                    weight_done_total += q.qty * q.product_id.weight
+                for c in rec.children_ids:
+                    weight_done_total += c.weight_done_total
+
+                rec.weight_done_total = weight_done_total
             except:
                 rec.weight_done_total = 0
 

@@ -6,6 +6,7 @@
         <field name="inherit_id" ref="stock.view_quant_package_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='packaging_id']" position="after">
+                <field name="product_qty_total"/>
                 <field name="qty_done_total"/>
                 <field name="weight_done_total"/>
             </xpath>
