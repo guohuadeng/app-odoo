@@ -67,17 +67,19 @@
                         <field name="weight_done_total" class="oe_inline o_form_label"/>
                         <span class="ml4">kg</span>
                     </div>
-                    <div class="col-xs-12 col-md-6">
+                </div>
+                <div class="row" readonly="1">
+                    <div class="col-xs-6 col-md-3">
                         <label for="last_op_product"/>
-                        <div>
-                            <strong>
-                                <field name="last_op_product"/>
-                            </strong>
-                            <button class="btn btn-primary oe_right" name="put_in_pack2" type="object" string="&#8627;放入包裹"
-                                    attrs="{'invisible': [('state', 'in', ('done', 'cancel'))]}" groups="stock.group_tracking_lot"/>
-                            <button class="btn btn-primary oe_right mb4 mr4" name="set_current" type="object" string="刷新扫码视图"
-                                    attrs="{'invisible': [('state', 'in', ('done', 'cancel'))]}" icon="fa-refresh"/>
-                        </div>
+                        <field name="last_op_product" class="oe_inline o_form_label"/>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <label for="last_op_package"/>
+                        <field name="last_op_package" class="oe_inline o_form_label"/>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <button class="btn btn-primary oe_right ml4" name="put_in_pack" id="put_in_pack_copy" type="object" string="&#8627;放入包裹"
+                                attrs="{'invisible': [('state', 'in', ('done', 'cancel'))]}" groups="stock.group_tracking_lot"/>
                     </div>
                 </div>
             </xpath>
@@ -86,6 +88,7 @@
                 <page name="current_op" string="Working Product " attrs="{'invisible': [('state', 'in', ('draft', 'confirmed', 'waiting'))]}">
                     <field name="pack_operation_product_current_ids" options="{'reload_on_button': True}"
                            mode="kanban" attrs="{'invisible': [('state', 'in', ('draft', 'confirmed', 'waiting'))]}"
+                           view_id="app_view_pack_current_kanban"
                            context="{'default_picking_id': id}"/>
                 </page>
             </xpath>

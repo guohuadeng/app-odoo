@@ -25,3 +25,4 @@ class PackOperation(models.Model):
     def _compute_weight_done_subtotal(self):
         for rec in self:
             rec.weight_done_subtotal = rec.weight * rec.qty_done
+

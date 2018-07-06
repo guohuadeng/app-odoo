@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e-20180326\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-24 17:39+0000\n"
-"PO-Revision-Date: 2018-04-24 17:39+0000\n"
+"POT-Creation-Date: 2018-06-27 20:21+0000\n"
+"PO-Revision-Date: 2018-06-27 20:21+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,34 +31,9 @@ msgid "Briefing"
 msgstr "打包摘要"
 
 #. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_create_uid
-msgid "Created by"
-msgstr "创建人"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_create_date
-msgid "Created on"
-msgstr "创建时间"
-
-#. module: app_stock_barcode
 #: model:ir.model,name:app_stock_barcode.model_stock_pack_current
 msgid "Current Packing Operation"
 msgstr "当前扫码打包信息 Packing Operation"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_result_package_id
-msgid "Destination Package"
-msgstr "目的包裹"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_display_name
-msgid "Display Name"
-msgstr "显示名称"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_qty_done
-msgid "Done"
-msgstr "完成"
 
 #. module: app_stock_barcode
 #: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_qty_done_total
@@ -67,39 +42,14 @@ msgid "Done Total"
 msgstr "完成总数"
 
 #. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_id
-msgid "ID"
-msgstr "ID"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,help:app_stock_barcode.field_stock_pack_current_result_package_id
-msgid "If set, the operations are packed into this package"
-msgstr "如果设置，此作业即打包到此包裹内"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current___last_update
-msgid "Last Modified on"
-msgstr "最后修改日"
-
-#. module: app_stock_barcode
 #: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_last_op_product
 msgid "Last OP"
 msgstr "当前扫码"
 
 #. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_write_uid
-msgid "Last Updated by"
-msgstr "最后更新人"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_write_date
-msgid "Last Updated on"
-msgstr "最后更新时间"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_operation_id
-msgid "Pack Operation Id"
-msgstr "操作Id"
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_last_op_package
+msgid "Last Package"
+msgstr "最近一次打包"
 
 #. module: app_stock_barcode
 #: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_package_done_count
@@ -113,6 +63,11 @@ msgstr "包裹待办"
 
 #. module: app_stock_barcode
 #: model:ir.ui.view,arch_db:app_stock_barcode.app_view_picking_form
+msgid "Packages"
+msgstr "包裹"
+
+#. module: app_stock_barcode
+#: model:ir.ui.view,arch_db:app_stock_barcode.app_view_picking_form
 msgid "Package："
 msgstr "包裹："
 
@@ -122,19 +77,9 @@ msgid "Packing Operation"
 msgstr "打包作业"
 
 #. module: app_stock_barcode
-#: model:ir.actions.act_window,name:app_stock_barcode.picking_2_current_action
-msgid "Packing Package"
-msgstr "包裹再包装"
-
-#. module: app_stock_barcode
 #: model:ir.model,name:app_stock_barcode.model_stock_quant_package
 msgid "Physical Packages"
 msgstr "物理包裹"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_product_id
-msgid "Product"
-msgstr "产品"
 
 #. module: app_stock_barcode
 #: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_pack_operation_product_packed_ids
@@ -152,37 +97,20 @@ msgid "Product："
 msgstr "散件："
 
 #. module: app_stock_barcode
+#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_result_package_count
+msgid "Result Package Total"
+msgstr "包裹总数"
+
+#. module: app_stock_barcode
 #: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_result_package_ids
-msgid "Relate Packages"
-msgstr "完成包裹"
+msgid "Result Packages"
+msgstr "包裹列表"
 
 #. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_package_id
-msgid "Source Package"
-msgstr "源包裹"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_picking_id
-msgid "Stock Picking"
-msgstr "仓库拣货"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,help:app_stock_barcode.field_stock_pack_current_picking_id
-msgid "The stock operation where the packing has been made"
-msgstr "打包作业执行的库存作业"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,help:app_stock_barcode.field_stock_pack_current_weight
-#: model:ir.model.fields,help:app_stock_barcode.field_stock_pack_current_weight_done_subtotal
 #: model:ir.model.fields,help:app_stock_barcode.field_stock_pack_operation_weight
 #: model:ir.model.fields,help:app_stock_barcode.field_stock_pack_operation_weight_done_subtotal
 msgid "The weight of the contents in Kg, not including any packaging, etc."
 msgstr "以Kg(公斤)表示内容物重量，不包含任何包装等。"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_product_qty
-msgid "To Do"
-msgstr "待办"
 
 #. module: app_stock_barcode
 #: model:ir.model.fields,field_description:app_stock_barcode.field_stock_picking_product_qty_total
@@ -202,18 +130,11 @@ msgid "Transfer"
 msgstr "调拨"
 
 #. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_product_uom_id
-msgid "Unit of Measure"
-msgstr "计量单位"
-
-#. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_weight
 #: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_operation_weight
 msgid "Weight"
 msgstr "重量"
 
 #. module: app_stock_barcode
-#: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_current_weight_done_subtotal
 #: model:ir.model.fields,field_description:app_stock_barcode.field_stock_pack_operation_weight_done_subtotal
 msgid "Weight Done Subtotal"
 msgstr "重量小计"
@@ -230,7 +151,7 @@ msgid "Weight Total："
 msgstr "总重量："
 
 #. module: app_stock_barcode
-#: model:ir.ui.view,arch_db:app_stock_barcode.app_view_pack_current_tree
-msgid "total"
-msgstr "总计"
+#: model:ir.ui.view,arch_db:app_stock_barcode.app_view_picking_form
+msgid "Working Product"
+msgstr "当前操作散件"
 

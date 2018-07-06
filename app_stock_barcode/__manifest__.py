@@ -31,9 +31,10 @@
     'pre_init_hook': 'pre_init_hook',
     'depends': ['stock_barcode'],
     'data': [
-        'views/stock_pack_current_views.xml',
+        'views/stock_pack_operation_views.xml',
         'views/stock_picking_views.xml',
         'views/stock_quant_package_views.xml',
+        'views/app_stock_barcode_templates.xml',
     ],
     'demo': [
     ],

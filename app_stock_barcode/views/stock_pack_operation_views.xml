@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="app_view_pack_operation_current_kanban">
+        <field name="name">app.stock.pack.current.kanban</field>
+        <field name="model">stock.pack.operation</field>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <!--default_group_by="default_pack_rule"-->
+            <kanban quick_create="false" group_create="false" group_delete="false" group_edit="false">
+                <field name="product_id"/>
+                <field name="product_uom_id"/>
+                <field name="weight"/>
+                <field name="package_id"/>
+                <field name="result_package_id"/>
+                <field name="product_qty"/>
+                <field name="qty_done"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <t t-if="record.qty_done.value >= 1">
+                            <t t-if="record.product_id.value">
+                                <t t-if="record.result_package_id.value==false">
+                                    <div name="app_barcode_card" t-attf-class="oe_kanban_card oe_kanban_global_click" style="box-shadow:0px 2px 2px 1px #ccc">
+                                        <div class="text-muted">
+                                            <t t-esc="record.product_id.value"/>
+                                            <t t-if="record.product_qty.value==0">
+                                                <span class="pull-right badge oe_kanban_color_9">
+                                                    <t t-esc="record.qty_done.value" class="ml4 mr4"/>
+                                                    /
+                                                    <t t-esc="record.product_qty.value" class="ml4"/>
+                                                    <t t-esc="record.product_uom_id.value" class="ml4"/>
+                                                </span>
+                                            </t>
+                                            <t t-elif="record.qty_done.value &gt; record.product_qty.value">
+                                                <span class="pull-right badge oe_kanban_color_7">
+                                                    <t t-esc="record.qty_done.value" class="ml4 mr4"/>
+                                                    /
+                                                    <t t-esc="record.product_qty.value" class="ml4"/>
+                                                    <t t-esc="record.product_uom_id.value" class="ml4"/>
+                                                </span>
+                                            </t>
+                                            <t t-elif="record.qty_done.value &lt; record.product_qty.value">
+                                                <span class="pull-right badge oe_kanban_color_6">
+                                                    <t t-esc="record.qty_done.value" class="ml4 mr4"/>
+                                                    /
+                                                    <t t-esc="record.product_qty.value" class="ml4"/>
+                                                    <t t-esc="record.product_uom_id.value" class="ml4"/>
+                                                </span>
+                                            </t>
+                                            <t t-else="">
+                                                <span class="pull-right badge oe_kanban_color_5">
+                                                    <t t-esc="record.qty_done.value" class="ml4 mr4"/>
+                                                    /
+                                                    <t t-esc="record.product_qty.value" class="ml4"/>
+                                                    <t t-esc="record.product_uom_id.value" class="ml4"/>
+                                                </span>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </t>
+                            </t>
+                        </t>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>
