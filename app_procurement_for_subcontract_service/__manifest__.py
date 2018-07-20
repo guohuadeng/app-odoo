@@ -4,16 +4,21 @@
 # base on Camptocamp, Odoo Community Association (OCA)
 
 {
-    "name": 'App procurement for service, Subcontracted service',
-    "summary": 'procurement for service(委外采购), Subcontracted service, base on oca Subcontracted service',
+    "name": 'App procurement for Subcontracted service',
     "version": "11.0.1.0.0",
     "category": "Purchase",
     "website": "http://www.sunpop.cn/",
     "author": "Sunpop.cn",
     "license": "AGPL-3",
     'sequence': 3,
-    "application": False,
-    "installable": True,
+    "summary": 'procurement for  Subcontracted service(委外采购), Subcontracted base module',
+    'description': """
+    """,
+    'price': 68.00,
+    'currency': 'EUR',
+    'installable': True,
+    'application': True,
+    'auto_install': False,
     "depends": [
         "purchase",
     ],

@@ -35,6 +35,11 @@ msgid "Activate the developer mode (with assets)"
 msgstr "激活开发者模式 (assets)"
 
 #. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "All Business"
+msgstr "所有业务"
+
+#. module: app_odoo_customize
 #: model:ir.model,name:app_odoo_customize.model_app_theme_config_settings
 msgid "App Odoo Customize settings"
 msgstr "App Odoo 自定义设置"
@@ -88,6 +93,11 @@ msgstr "删除所有物料清单"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All MRP/Sale/Purchase/Account/MRP/Inventory/Project/Message/Workflow"
+msgstr "清除所有业务数据 MRP/Sale/Purchase/Account/MRP/Inventory/Project/Message/Workflow"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Delete All Manufacturing Order"
 msgstr "删除所有生产单"
 
@@ -115,6 +125,11 @@ msgstr "删除所有产品及变体"
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Delete All Product Attribute"
 msgstr "删除所有产品属性"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All Project/Task/Forecast"
+msgstr "删除所有项目/任务/预测"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -227,6 +242,11 @@ msgstr "POS门店"
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Please confirm to delete the select data?"
 msgstr "确认删除指定数据?"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Project"
+msgstr "项目"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings

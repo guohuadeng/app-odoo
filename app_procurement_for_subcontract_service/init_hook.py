@@ -8,6 +8,9 @@ from odoo.api import Environment
 
 def post_init_hook(cr, pool):
     env = Environment(cr, SUPERUSER_ID, {})
+
+    cr.execute("delete from procurement_rule "
+               "where name like '%Subcontracting%' or name like '%委外%';")
     create_warehouse_procurement_rules(env)
 
 
