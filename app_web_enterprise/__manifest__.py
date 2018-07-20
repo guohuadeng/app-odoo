@@ -59,7 +59,6 @@
     'js': [
     ],
     'images': ['static/description/app_web_enterprise_03.jpg'],
-    'pre_init_hook': 'pre_init_hook',
     'post_load': None,
     'post_init_hook': None,
     'installable': True,

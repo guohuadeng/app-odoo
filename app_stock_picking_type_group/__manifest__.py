@@ -30,7 +30,6 @@
     'description': """
     模块开发模板，目录结构与文件定义。
     """,
-    'pre_init_hook': 'pre_init_hook',
     'depends': ['stock'],
     'images': ['static/description/demo1.jpg'],
     # 'currency': 'EUR',
