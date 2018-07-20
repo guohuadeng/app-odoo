@@ -3,6 +3,8 @@
 .idea
 .iml
 /app_odoo_customize/_resource
+/app_web_enterprise_hack
 /app_web_studio
 /web_studio
-.bat
+*.bat
+*.conf
