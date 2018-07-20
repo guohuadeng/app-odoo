@@ -5,12 +5,13 @@
 
 {
     "name": 'App procurement for service, Subcontracted service',
-    "summary": 'procurement for service, Subcontracted service, base on oca Subcontracted service',
+    "summary": 'procurement for service(委外采购), Subcontracted service, base on oca Subcontracted service',
     "version": "11.0.1.0.0",
     "category": "Purchase",
     "website": "http://www.sunpop.cn/",
     "author": "Sunpop.cn",
     "license": "AGPL-3",
+    'sequence': 3,
     "application": False,
     "installable": True,
     "depends": [

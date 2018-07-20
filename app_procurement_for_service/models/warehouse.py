@@ -2,7 +2,7 @@
 #   (http://www.eficent.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 
 class StockWarehouse(models.Model):
@@ -26,10 +26,11 @@ class StockWarehouse(models.Model):
              ],
             limit=1
         )
-        return {'name': '%s: Subcontracting service rule' % self.name,
+        return {'name': _('%s: Subcontracting service rule' % self.name),
                 'company_id': self.company_id.id,
                 'action': 'buy',
                 'picking_type_id': picking_type.id,
+                'location_id': picking_type.default_location_dest_id.id,
                 'route_id': self._get_buy_route(),
                 }
 
