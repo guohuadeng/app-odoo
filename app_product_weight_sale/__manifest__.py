@@ -3,7 +3,7 @@
 
 {
     'name' : 'App Sales Order Weight',
-    'version' : '11.1.6.17',
+    'version' : '11.1.7.21',
     'summary': 'Add sku weight in Sale Order',
     'sequence': 10,
     'license':'LGPL-3',
