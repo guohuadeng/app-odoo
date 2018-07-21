@@ -233,6 +233,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['mrp.workcenter.productivity', ],
             ['mrp.workorder', ],
             ['mrp.production.workcenter.line', ],
+            ['change.production.qty', ],
             ['mrp.production', ],
             ['mrp.production.product.line', ],
             ['mrp.unbuild', ],
