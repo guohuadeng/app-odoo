@@ -237,6 +237,8 @@ class AppThemeConfigSettings(models.TransientModel):
             ['mrp.production.product.line', ],
             ['mrp.unbuild', ],
             ['change.production.qty', ],
+            ['sale.forecast.indirect', ],
+            ['sale.forecast', ],
         ]
         try:
             for line in to_removes:

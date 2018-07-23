@@ -2,7 +2,7 @@
 # # Copyright 2017 Camptocamp SA
 # # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 #
-from odoo import api, models
+from odoo import api, models, _
 
 
 class ProcurementGroup(models.Model):
@@ -16,7 +16,7 @@ class ProcurementGroup(models.Model):
 
     @api.model
     def _get_rule(self, product_id, location_id, values):
-        res = super()._get_rule(product_id, location_id, values)
+        res = super(ProcurementGroup, self)._get_rule(product_id, location_id, values)
         if not res:
             if self._is_subcontracted_service(product_id):
                 rule_id = location_id.get_warehouse().\
