@@ -48,6 +48,7 @@ You can config odoo, make it look like your own platform.
 16. Fix odoo reload module translation bug while enable english language
 17. Stop Odoo Auto Subscribe(Performance Improve)
 18. Show/Hide Author and Website in Apps Dashboard
+19. One Click to clear all data (Sometime pls click twice)
 
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.
