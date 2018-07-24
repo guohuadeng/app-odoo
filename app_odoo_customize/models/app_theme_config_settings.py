@@ -284,6 +284,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['stock.quant', ],
             ['stock.quant.package', ],
             ['stock.quant.move.rel', ],
+            ['stock.move.line', ],
             ['stock.move', ],
             ['stock.pack.operation', ],
             ['stock.picking', ],
