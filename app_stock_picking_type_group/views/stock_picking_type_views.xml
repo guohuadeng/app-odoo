@@ -6,7 +6,7 @@
             <field name="inherit_id" ref="stock.view_pickingtype_filter"/>
             <field name="arch" type="xml">
                 <xpath expr="//search" position="inside">
-                    <group expand="1" string="Group By">
+                    <group expand="0" string="Group By">
                         <filter name="picking_type_group_id" string="Picking Type Group" context="{'group_by':'picking_type_group_id'}"/>
                         <filter name="warehouse_id" string="Warehouse" context="{'group_by':'warehouse_id'}"/>
                     </group>
@@ -36,34 +36,18 @@
             </field>
         </record>
 
-        <!--<record id="stock.stock_picking_type_action" model="ir.actions.act_window">-->
-            <!--<field name="name">Inventory</field>-->
-            <!--<field name="res_model">stock.picking.type</field>-->
-            <!--<field name="type">ir.actions.act_window</field>-->
-            <!--<field name="view_type">form</field>-->
-            <!--<field name="view_mode">kanban,form</field>-->
-            <!--<field name="context">{'search_default_picking_type_group_id': 1}</field>-->
-            <!--<field name="help" type="html">-->
-              <!--<p class="oe_view_nocontent_create">-->
-                <!--Click to create a new picking type.-->
-              <!--</p><p>-->
-                <!--The picking type system allows you to assign each stock-->
-                <!--operation a specific type which will alter its views accordingly.-->
-                <!--On the picking type you could e.g. specify if packing is needed by default,-->
-                <!--if it should show the customer.-->
-              <!--</p>-->
-            <!--</field>-->
-        <!--</record>-->
-
-        <!--<record id="app_stock_picking_type_kanban" model="ir.ui.view">-->
-            <!--<field name="name">app.stock.picking.type.kanban</field>-->
-            <!--<field name="model">stock.picking.type</field>-->
-            <!--<field name="inherit_id" ref="stock.stock_picking_type_kanban"/>-->
-            <!--<field name="arch" type="xml">-->
-                <!--<xpath expr="//kanban" position="attributes">-->
-                    <!--<attribute name="default_group_by">picking_type_group_id</attribute>-->
-                <!--</xpath>-->
-            <!--</field>-->
-        <!--</record>-->
+        <record id="app_stock_picking_type_kanban" model="ir.ui.view">
+            <field name="name">app.stock.picking.type.kanban</field>
+            <field name="model">stock.picking.type</field>
+            <field name="inherit_id" ref="stock.stock_picking_type_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban" position="attributes">
+                    <attribute name="group_create">0</attribute>
+                    <attribute name="group_edit">0</attribute>
+                    <attribute name="group_delete">0</attribute>
+                    <attribute name="quick_create">0</attribute>
+                </xpath>
+            </field>
+        </record>
 
 </odoo>
