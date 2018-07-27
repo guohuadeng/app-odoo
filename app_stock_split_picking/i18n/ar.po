@@ -1,0 +1,55 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* stock_split_picking
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2018-06-30 05:01+0000\n"
+"Last-Translator: Osoul <baruni@osoul.ly>\n"
+"Language-Team: none\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 3.0.1\n"
+
+#. module: stock_split_picking
+#: model:ir.ui.view,arch_db:stock_split_picking.view_picking_form
+msgid "Are you sure you want to split current picking?"
+msgstr "هل أنت متأكد أنّك تريد تقسيم الشحنة؟"
+
+#. module: stock_split_picking
+#: code:addons/stock_split_picking/models/stock_picking.py:22
+#, python-format
+msgid "Mark as todo this picking please."
+msgstr ""
+
+#. module: stock_split_picking
+#: model:ir.ui.view,arch_db:stock_split_picking.view_picking_form
+msgid "Split"
+msgstr "تقسيم الشحنة"
+
+#. module: stock_split_picking
+#: code:addons/stock_split_picking/models/stock_picking.py:65
+#, python-format
+msgid "The backorder <a href=\"#\" data-oe-model=\"stock.picking\" data-oe-id=\"%d\">%s</a> has been created."
+msgstr ""
+"تم إنشاء الشحنة المؤجّلة <a href=\"#\" data-oe-model=\"stock.picking\" data-"
+"oe-id=\"%d\">%s</a>."
+
+#. module: stock_split_picking
+#: model:ir.model,name:stock_split_picking.model_stock_picking
+msgid "Transfer"
+msgstr "نقل"
+
+#. module: stock_split_picking
+#: code:addons/stock_split_picking/models/stock_picking.py:25
+#, python-format
+msgid "You must enter done quantity in order to split your picking in several ones."
+msgstr ""
+"يجب إدخال الكميات المنتهية لكي تتمكن من تقسيم الشحنة الحالية إلى أكثر من "
+"شحنة."

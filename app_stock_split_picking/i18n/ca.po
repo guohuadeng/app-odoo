@@ -1,0 +1,58 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * stock_split_picking
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: stock-logistics-workflow (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-31 09:53+0000\n"
+"PO-Revision-Date: 2015-10-21 16:34+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Catalan (http://www.transifex.com/oca/OCA-stock-logistics-"
+"workflow-8-0/language/ca/)\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: stock_split_picking
+#: model:ir.ui.view,arch_db:stock_split_picking.view_picking_form
+msgid "Are you sure you want to split current picking?"
+msgstr ""
+
+#. module: stock_split_picking
+#: code:addons/stock_split_picking/models/stock_picking.py:22
+#, python-format
+msgid "Mark as todo this picking please."
+msgstr ""
+
+#. module: stock_split_picking
+#: model:ir.ui.view,arch_db:stock_split_picking.view_picking_form
+msgid "Split"
+msgstr ""
+
+#. module: stock_split_picking
+#: code:addons/stock_split_picking/models/stock_picking.py:65
+#, python-format
+msgid ""
+"The backorder <a href=\"#\" data-oe-model=\"stock.picking\" data-oe-id=\"%d"
+"\">%s</a> has been created."
+msgstr ""
+
+#. module: stock_split_picking
+#: model:ir.model,name:stock_split_picking.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: stock_split_picking
+#: code:addons/stock_split_picking/models/stock_picking.py:25
+#, python-format
+msgid ""
+"You must enter done quantity in order to split your picking in several ones."
+msgstr ""
+
+#~ msgid "Stock Move"
+#~ msgstr "Moure l'estoc"
