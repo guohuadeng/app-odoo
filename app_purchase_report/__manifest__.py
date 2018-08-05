@@ -33,7 +33,7 @@
     """,
     'price': 0.00,
     'currency': 'EUR',
-    'depends': [],
+    'depends': ['purchase'],
     'images': ['static/description/banner.png'],
     'data': [
     ],
