@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_mrpbomstructure_location"
+              inherit_id="mrp.mrp_bom_structure_report">
+        <xpath expr="//thead/tr" position="inside">
+            <th>Location</th>
+        </xpath>
+        <xpath expr="//tbody/t/tr[1]" position="inside">
+            <td>
+                <span t-field="o.location_id.complete_name"/>
+            </td>
+        </xpath>
+
+        <xpath expr="//tbody/t/tr[2]" position="inside">
+            <td>
+                <span t-esc="l['location_name']"/>
+            </td>
+        </xpath>
+    </template>
+</odoo>
