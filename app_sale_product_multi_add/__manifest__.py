@@ -41,7 +41,7 @@
         'app_web_one2many_multi_add',
         'sale_management',
     ],
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/sale1.gif'],
     'data': [
         'views/sale_order_views.xml',
     ],
