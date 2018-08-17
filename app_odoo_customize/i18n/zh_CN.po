@@ -406,7 +406,7 @@ msgid "ir.ui.view"
 msgstr "ir.ui.view"
 
 #. module: app_odoo_customize
-#: model:ir.ui.menu,name:app_odoo_customize.menu_app_group
+#: model:ir.ui.menu,name:base.menu_app_group
 msgid "odooApp"
 msgstr "odooApp"
 
