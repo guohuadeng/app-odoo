@@ -41,7 +41,7 @@
         'app_web_one2many_multi_add',
         'stock',
     ],
-    'images': ['static/description/stock1.gif'],
+    'images': ['static/description/banner.gif'],
     'data': [
         'views/stock_picking_views.xml',
     ],
