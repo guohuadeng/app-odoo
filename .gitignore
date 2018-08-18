@@ -6,5 +6,6 @@
 /app_web_studio
 /web_studio
 /ref
+/_temp
 .conf
 .pyc
