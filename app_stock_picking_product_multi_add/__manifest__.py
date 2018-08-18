@@ -35,8 +35,6 @@
     1. 可以一键快速将多个产品加到库存调拨单中
     2. 可对产品进行过滤、分组，然后批量加入
     """,
-    'price': 0.00,
-    'currency': 'EUR',
     'depends': [
         'app_web_one2many_multi_add',
         'stock',
