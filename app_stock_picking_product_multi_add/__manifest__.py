@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "App Stock Picking Order Product Multi Add, 库存调拨单批量增加产品",
+    'name': "App Stock Picking Order Product Multi Batch Add, 库存调拨单批量增加产品",
     'version': '10.0.8.15',
     'author': 'Sunpop.cn',
     'category': 'Base',
@@ -24,7 +24,7 @@
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
-    App Stock Picking Order Product Multi Add, 库存调拨单批量增加产品.
+    App Stock Picking Order Product Multi Batch Add, 库存调拨单批量增加产品.
     Odoo App of Sunpop.cn
     """,
     'description': """

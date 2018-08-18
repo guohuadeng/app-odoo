@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "App Purchase Order Product Multi Add, 采购订单批量增加产品",
+    'name': "App Purchase Order Product Multi Batch Add, 采购订单批量增加产品",
     'version': '10.0.8.15',
     'author': 'Sunpop.cn',
     'category': 'Base',
@@ -24,7 +24,7 @@
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
-    App Purchase Order Product Multi Add, 采购订单批量增加产品.
+    App Purchase Order Product Multi Batch Add, 采购订单批量增加产品.
     Odoo App of Sunpop.cn
     """,
     'description': """
