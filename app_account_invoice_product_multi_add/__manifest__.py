@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "App Account Invoice Product Multi Add, 客户收据与供应商帐单批量增加产品",
+    'name': "App Account Invoice Product Multi Batch Add, 客户收据与供应商帐单批量增加产品",
     'version': '11.0.8.15',
     'author': 'Sunpop.cn',
     'category': 'Base',
@@ -24,7 +24,7 @@
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
-    App Account Invoice Product Multi Add, 客户收据与供应商帐单批量增加产品.
+    App Account Invoice Product Multi Batch Add, 客户收据与供应商帐单批量增加产品.
     Odoo App of Sunpop.cn
     """,
     'description': """
