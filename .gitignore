@@ -3,9 +3,9 @@
 .idea
 .iml
 /app_odoo_customize/_resource
+/app_web_enterprise_hack
 /app_web_studio
 /web_studio
-/ref
 /_temp
-.conf
-.pyc
+*.bat
+*.conf
