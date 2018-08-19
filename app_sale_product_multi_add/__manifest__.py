@@ -41,7 +41,7 @@
     'currency': 'EUR',
     'depends': [
         'app_web_one2many_multi_add',
-        'sale_management',
+        'sale',
     ],
     'images': ['static/description/banner.gif'],
     'data': [
