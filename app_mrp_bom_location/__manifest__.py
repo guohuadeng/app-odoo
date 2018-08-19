@@ -16,7 +16,7 @@
 # description:
 {
     'name': 'MRP BOM Location for Manufacturing/Unbuild Order',
-    'version': '11.0.7.24',
+    'version': '10.0.7.24',
     'author': 'Sunpop.cn',
     'category': 'Manufacturing',
     'website': 'http://www.sunpop.cn',
