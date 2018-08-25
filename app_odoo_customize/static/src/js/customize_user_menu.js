@@ -11,8 +11,7 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
 
     var UserMenu = require('web.UserMenu');
     //避免错误，要再定义
-    var session2 = require('web.session');
-    var documentation_url = 'http://www.sina.com.cn';
+    var documentation_url = 'http://www.sunpop.cn';
     var documentation_dev_url;
     var support_url;
     var account_title;
@@ -21,7 +20,7 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
     UserMenu.include({
         init: function () {
             this._super.apply(this, arguments);
-            var self = this
+            var self = this;
             var session = this.getSession();
             var lang_list = '';
 

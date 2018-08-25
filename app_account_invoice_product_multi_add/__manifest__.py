@@ -39,7 +39,7 @@
         'app_web_one2many_multi_add',
         'account',
     ],
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/banner.png'],
     'data': [
         'views/account_invoice_views.xml',
     ],
