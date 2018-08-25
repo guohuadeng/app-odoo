@@ -41,7 +41,7 @@
         # 'app_web_one2many_multi_add',
         'mrp',
     ],
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/banner.png'],
     'data': [
         'views/mrp_bom_views.xml',
     ],

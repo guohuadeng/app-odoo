@@ -41,7 +41,7 @@
         # 'app_web_one2many_multi_add',
         'sale',
     ],
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/banner.png'],
     'data': [
         'views/sale_order_views.xml',
     ],
