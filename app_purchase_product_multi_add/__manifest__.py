@@ -23,6 +23,8 @@
     'website': 'http://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
+    'price': 0.00,
+    'currency': 'USD',
     'summary': """
     App Purchase Order Product Multi Batch Add, 采购订单批量增加产品.
     Odoo App of Sunpop.cn
@@ -36,7 +38,7 @@
     2. 可对产品进行过滤、分组，然后批量加入
     """,
     'depends': [
-        'app_web_one2many_multi_add',
+        # 'app_web_one2many_multi_add',
         'purchase',
     ],
     'images': ['static/description/banner.png'],

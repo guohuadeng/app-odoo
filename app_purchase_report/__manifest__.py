@@ -17,7 +17,7 @@
 
 
 {
-    'name': "App Purchase Report Enhance. Add received, invoiced, date planned",
+    'name': "App Purchase Report Enhance. Add received, invoiced, date planned. 采购报告增加计划时间，已收，已付款",
     'version': '11.0.8.05',
     'author': 'Sunpop.cn',
     'category': 'Base',
