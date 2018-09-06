@@ -42,7 +42,7 @@
     """,
     'price': 98.00,
     'currency': 'EUR',
-    'depends': ['app_odoo_customize', 'web_enterprise'],
+    'depends': ['web_enterprise'],
     'images': [],
     'data': [
         'views/webclient_templates.xml',
