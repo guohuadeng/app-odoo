@@ -1,4 +1,4 @@
-odoo.define('app_system_name', function (require) {
+odoo.define('app_odoo_customize.app_system_name', function (require) {
 "use strict";
 
 var WebClient = require('web.WebClient');

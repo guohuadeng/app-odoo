@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0+e-20171107\n"
+"Project-Id-Version: Odoo Server 11.0+e-20180313\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-10 11:41+0000\n"
-"PO-Revision-Date: 2018-01-10 11:41+0000\n"
+"POT-Creation-Date: 2018-03-22 17:49+0000\n"
+"PO-Revision-Date: 2018-03-22 17:49+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -35,6 +35,11 @@ msgid "Activate the developer mode (with assets)"
 msgstr "激活开发者模式 (assets)"
 
 #. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "All Business"
+msgstr "所有业务"
+
+#. module: app_odoo_customize
 #: model:ir.model,name:app_odoo_customize.model_app_theme_config_settings
 msgid "App Odoo Customize settings"
 msgstr "App Odoo 自定义设置"
@@ -57,7 +62,7 @@ msgstr "取消"
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_stop_subscribe
 msgid "Check to stop Odoo Subscribe function"
-msgstr "Check to stop Odoo Subscribe function"
+msgstr "选中可停止odoo内置的用户消息订阅"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_create_uid
@@ -88,6 +93,11 @@ msgstr "删除所有物料清单"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All MRP/Sale/Purchase/Account/MRP/Inventory/Project/Message/Workflow"
+msgstr "清除所有业务数据 MRP/Sale/Purchase/Account/MRP/Inventory/Project/Message/Workflow"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Delete All Manufacturing Order"
 msgstr "删除所有生产单"
 
@@ -115,6 +125,11 @@ msgstr "删除所有产品及变体"
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Delete All Product Attribute"
 msgstr "删除所有产品属性"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All Project/Task/Forecast"
+msgstr "删除所有项目/任务/预测"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -186,12 +201,12 @@ msgstr "显示/隐藏菜单项"
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings___last_update
 msgid "Last Modified on"
-msgstr "最后修改日"
+msgstr "最后修改时间"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_write_uid
 msgid "Last Updated by"
-msgstr "最后更新人"
+msgstr "最后更新者"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_write_date
@@ -229,9 +244,9 @@ msgid "Please confirm to delete the select data?"
 msgstr "确认删除指定数据?"
 
 #. module: app_odoo_customize
-#: model:ir.ui.view,arch_db:app_odoo_customize.replace_login
-msgid "Powered by <span>odooApp</span>"
-msgstr "技术支持 <span>odooApp</span>"
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Project"
+msgstr "项目"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -247,6 +262,12 @@ msgstr "销售"
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_system_name
 msgid "Setup System Name,which replace Odoo"
 msgstr "设置系统名称，取代Odoo"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_group_show_author_in_apps
+#: model:res.groups,name:app_odoo_customize.group_show_author_in_apps
+msgid "Show Author and Website in Apps Dashboard"
+msgstr "显示应用的作者和网站-在应用安装面板中"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_app_show_documentation_dev
@@ -308,6 +329,11 @@ msgstr "支持链接"
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "System Name"
 msgstr "系统名称"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_group_show_author_in_apps
+msgid "Uncheck to Hide Author and Website in Apps Dashboard"
+msgstr "Uncheck to Hide Author and Website in Apps Dashboard"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_enterprise
@@ -380,15 +406,15 @@ msgid "ir.ui.view"
 msgstr "ir.ui.view"
 
 #. module: app_odoo_customize
+#: model:ir.ui.menu,name:base.menu_app_group
+msgid "odooApp"
+msgstr "odooApp"
+
+#. module: app_odoo_customize
 #: model:ir.actions.act_window,name:app_odoo_customize.action_app_theme_config
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_theme_config
 msgid "odooApp Customize"
 msgstr "odooApp 定制"
-
-#. module: app_odoo_customize
-#: model:ir.ui.menu,name:app_odoo_customize.menu_app_group
-msgid "odooApp"
-msgstr "odooApp"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings

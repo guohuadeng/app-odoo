@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
         <record id="view_app_theme_config_settings" model="ir.ui.view">
             <field name="name">App Odoo Customize Settings</field>
@@ -60,9 +60,13 @@
                                 <field name="app_show_poweredby"/>
                                 <label for="app_show_poweredby"/>
                             </div>
-                            <div>
+                            <div invisible="1">
                                 <field name="app_stop_subscribe"/>
                                 <label for="app_stop_subscribe"/>
+                            </div>
+                            <div>
+                                <field name="group_show_author_in_apps"/>
+                                <label for="group_show_author_in_apps"/>
                             </div>
                         </div>
                     </group>
@@ -90,21 +94,21 @@
                     </group>
                     <group name="data-clean" string="Data Cleaning (Be careful to do that!)">
                         <label string="Sales"/>
-                        <div>
+                        <div class="mb4">
                             <button string="Delete All Sales Order" type="object" name="remove_sales"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <label string="POS"/>
-                        <div>
+                        <div class="mb4">
                             <button string="Delete All POS Order" type="object" name="remove_pos" confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <label string="Purchase"/>
-                        <div>
+                        <div class="mb4">
                             <button string="Delete All Purchase Order and Requisition" type="object" name="remove_purchase"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <label string="MRP"/>
-                        <div>
+                        <div class="mb4">
                             <button string="Delete All Manufacturing Order" type="object" name="remove_mrp"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                             |
@@ -112,17 +116,22 @@
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <label string="Inventory"/>
-                        <div>
+                        <div class="mb4">
                             <button string="Delete All Move/Picking/Package/Lot" type="object" name="remove_inventory"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <label string="Accounting"/>
-                        <div>
+                        <div class="mb4">
                             <button string="Delete All Voucher/Invoice/Bill" type="object" name="remove_account"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
+                        <label string="Project"/>
+                        <div class="mb4">
+                            <button string="Delete All Project/Task/Forecast" type="object" name="remove_project"
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                        </div>
                         <label string="Base Models"/>
-                        <div>
+                        <div class="mb4">
                             <button string="Delete All Product" type="object" name="remove_product"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                             |
@@ -133,6 +142,11 @@
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                             |
                             <button string="Delete All Workflow" type="object" name="remove_workflow"
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                        </div>
+                        <label string="All Business"/>
+                        <div class="mb4">
+                            <button string="Delete All MRP/Sale/Purchase/Account/MRP/Inventory/Project/Message/Workflow" type="object" name="remove_all_biz"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                     </group>
@@ -149,16 +163,16 @@
         </record>
 
         <menuitem
-                id="menu_app_group"
+                id="base.menu_app_group"
                 name="odooApp"
                 parent="base.menu_administration"
                 sequence="1"
                 groups="base.group_system"/>
         <menuitem
                 id="menu_app_theme_config"
-                parent="menu_app_group"
+                parent="base.menu_app_group"
                 sequence="1"
                 action="action_app_theme_config"
                 groups="base.group_system"/>
     </data>
-</openerp>
+</odoo>
