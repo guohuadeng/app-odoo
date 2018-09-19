@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-extend="UserMenu">
-        <t t-jquery=".dropdown-menu" t-operation="prepend">
+    <t t-extend="UserMenu.Actions">
+        <t t-jquery="a[data-menu='documentation']" t-operation="before">
             <switch-lang/>
-            <li>
-                <a href="#" data-menu="debug">Activate the developer mode</a>
-            </li>
-            <li>
-                <a href="#" data-menu="debugassets">Activate the developer mode (with assets)</a>
-            </li>
-            <li>
-                <a href="#" data-menu="quitdebug">Deactivate the developer mode</a>
-            </li>
-            <li>
-                <a href="#" data-menu="documentation_dev">Developer Manual</a>
-            </li>
-            <li class="divider"/>
+            <a role="menuitem" href="#" data-menu="debug" class="dropdown-item">Activate the developer mode</a>
+            <a role="menuitem" href="#" data-menu="debugassets" class="dropdown-item">Activate the developer mode (with assets)</a>
+            <a role="menuitem" href="#" data-menu="quitdebug" class="dropdown-item">Deactivate the developer mode</a>
+            <div role="separator" class="dropdown-divider"/>
+            <a role="menuitem" href="#" data-menu="documentation_dev" class="dropdown-item">Developer Manual</a>
         </t>
     </t>
 </templates>

@@ -62,7 +62,7 @@ The user can get the help document just by one click.
     'depends': ['base', 'web', 'mail'],
     'data': [
         'views/app_odoo_customize_view.xml',
-        'views/app_theme_config_settings_view.xml',
+        # 'views/app_theme_config_settings_view.xml',
         'views/ir_model_view.xml',
         # data
         'data/ir_config_parameter.xml',
