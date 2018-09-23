@@ -16,7 +16,7 @@
 # description:
 {
     'name': 'App Odoo Customize(Backend Debranding Title,Language,Documentation,Quick Debug,Clear Data)',
-    'version': '11.0.9.12',
+    'version': '12.0.9.23',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',
@@ -31,7 +31,7 @@
 App Odoo Customize(Debranding Title,Language,Documentation,Quick Debug)
 ============
 White label odoo.
-Support Odoo 11, 10, 9.
+Support Odoo 12, 11, 10, 9.
 You can config odoo, make it look like your own platform.
 1. Deletes Odoo label in footer
 2. Replaces "Odoo" in Windows title
@@ -62,7 +62,7 @@ The user can get the help document just by one click.
     'depends': ['base', 'web', 'mail'],
     'data': [
         'views/app_odoo_customize_view.xml',
-        # 'views/app_theme_config_settings_view.xml',
+        'views/app_theme_config_settings_view.xml',
         'views/ir_model_view.xml',
         # data
         'data/ir_config_parameter.xml',

@@ -46,53 +46,53 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
             })
 
             //取参数
-            // self._rpc({
-            //     model: 'ir.config_parameter',
-            //     method: 'search_read',
-            //     domain: [['key', '=like', 'app_%']],
-            //     fields: ['key', 'value'],
-            //     lazy: false,
-            // }).then(function (res) {
-            //     $.each(res, function (key, val) {
-            //         if (val.key == 'app_documentation_url')
-            //             documentation_url = val.value;
-            //         if (val.key == 'app_documentation_dev_url')
-            //             documentation_dev_url = val.value;
-            //         if (val.key == 'app_support_url')
-            //             support_url = val.value;
-            //         if (val.key == 'app_account_title')
-            //             account_title = val.value;
-            //         if (val.key == 'app_account_url')
-            //             account_url = val.value;
-            //         //  控制显示
-            //         if (val.key == 'app_show_lang' && val.value == "False") {
-            //             $('switch-lang').hide();
-            //         }
-            //         if (session.user_context.uid!=1 || (val.key == 'app_show_debug' && val.value == "False")) {
-            //             $('[data-menu="debug"]').parent().hide();
-            //             $('[data-menu="debugassets"]').parent().hide();
-            //             $('[data-menu="quitdebug"]').parent().hide();
-            //         }
-            //         if (val.key == 'app_show_documentation' && val.value == "False") {
-            //             $('[data-menu="documentation"]').parent().hide();
-            //         }
-            //         if (val.key == 'app_show_documentation_dev' && val.value == "False") {
-            //             $('[data-menu="documentation_dev"]').parent().hide();
-            //         }
-            //         if (val.key == 'app_show_support' && val.value == "False") {
-            //             $('[data-menu="support"]').parent().hide();
-            //         }
-            //         if (val.key == 'app_show_account' && val.value == "False") {
-            //             $('[data-menu="account"]').parent().hide();
-            //         }
-            //         if (val.key == 'app_account_title' && val.value) {
-            //             $('[data-menu="account"]').html(account_title);
-            //         }
-            //         if (val.key == 'app_show_poweredby' && val.value == "False") {
-            //             $('.o_sub_menu_footer').hide();
-            //         }
-            //     });
-            // })
+            self._rpc({
+                model: 'ir.config_parameter',
+                method: 'search_read',
+                domain: [['key', '=like', 'app_%']],
+                fields: ['key', 'value'],
+                lazy: false,
+            }).then(function (res) {
+                $.each(res, function (key, val) {
+                    if (val.key == 'app_documentation_url')
+                        documentation_url = val.value;
+                    if (val.key == 'app_documentation_dev_url')
+                        documentation_dev_url = val.value;
+                    if (val.key == 'app_support_url')
+                        support_url = val.value;
+                    if (val.key == 'app_account_title')
+                        account_title = val.value;
+                    if (val.key == 'app_account_url')
+                        account_url = val.value;
+                    //  控制显示
+                    if (val.key == 'app_show_lang' && val.value == "False") {
+                        $('switch-lang').hide();
+                    }
+                    if (session.user_context.uid!=1 || (val.key == 'app_show_debug' && val.value == "False")) {
+                        $('[data-menu="debug"]').hide();
+                        $('[data-menu="debugassets"]').hide();
+                        $('[data-menu="quitdebug"]').hide();
+                    }
+                    if (val.key == 'app_show_documentation' && val.value == "False") {
+                        $('[data-menu="documentation"]').hide();
+                    }
+                    if (val.key == 'app_show_documentation_dev' && val.value == "False") {
+                        $('[data-menu="documentation_dev"]').hide();
+                    }
+                    if (val.key == 'app_show_support' && val.value == "False") {
+                        $('[data-menu="support"]').hide();
+                    }
+                    if (val.key == 'app_show_account' && val.value == "False") {
+                        $('[data-menu="account"]').hide();
+                    }
+                    if (val.key == 'app_account_title' && val.value) {
+                        $('[data-menu="account"]').html(account_title);
+                    }
+                    if (val.key == 'app_show_poweredby' && val.value == "False") {
+                        $('.o_sub_menu_footer').hide();
+                    }
+                });
+            })
         },
         /**
          * @override
