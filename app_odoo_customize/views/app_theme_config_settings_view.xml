@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record id="view_app_theme_config_settings" model="ir.ui.view">
-            <field name="name">App Odoo Customize Settings</field>
+            <field name="name">Odoo Customize Settings</field>
             <field name="model">app.theme.config.settings</field>
             <field name="arch" type="xml">
                 <form string="odooApp Customize Settings" class="oe_form_configuration">

@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0+e-20180313\n"
+"Project-Id-Version: Odoo Server 12.0alpha1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 17:49+0000\n"
-"PO-Revision-Date: 2018-03-22 17:49+0000\n"
+"POT-Creation-Date: 2018-09-23 05:18+0000\n"
+"PO-Revision-Date: 2018-09-23 05:18+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,32 +17,77 @@ msgstr ""
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Accounting"
+msgid "<span class=\"btn btn-default col-3 col-lg-2 text-left\">Accounting</span>"
 msgstr "会计"
 
 #. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "<span class=\"btn btn-default col-3 col-lg-2 text-left\">All Business</span>"
+msgstr "所有业务"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "<span class=\"btn btn-default col-3 col-lg-2 text-left\">Base Models</span>"
+msgstr "基础模型数据"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "<span class=\"btn btn-default col-3 col-lg-2 text-left\">Inventory</span>"
+msgstr "库存"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "<span class=\"btn btn-default col-3 col-lg-2 text-left\">MRP</span>"
+msgstr "制造"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "<span class=\"btn btn-default col-3 col-lg-2 text-left\">POS</span>"
+msgstr "POS"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "<span class=\"btn btn-default col-3 col-lg-2 text-left\">Project</span>"
+msgstr "项目"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "<span class=\"btn btn-default col-3 col-lg-2 text-left\">Purchase</span>"
+msgstr "采购"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "<span class=\"btn btn-default col-3 col-lg-2 text-left\">Sale</span>"
+msgstr "销售"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__unsplash_access_key
+msgid "Access Key"
+msgstr "Access Key"
+
+#. module: app_odoo_customize
 #. openerp-web
-#: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:7
+#: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:6
 #, python-format
 msgid "Activate the developer mode"
 msgstr "激活开发者模式"
 
 #. module: app_odoo_customize
 #. openerp-web
-#: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:10
+#: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:7
 #, python-format
 msgid "Activate the developer mode (with assets)"
-msgstr "激活开发者模式 (assets)"
+msgstr "激活开发者模式 (前端资源)"
 
 #. module: app_odoo_customize
-#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "All Business"
-msgstr "所有业务"
+#: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings__group_multi_currency
+msgid "Allows to work in a multi currency environment"
+msgstr "允许在多货币环境中使用"
 
 #. module: app_odoo_customize
 #: model:ir.model,name:app_odoo_customize.model_app_theme_config_settings
-msgid "App Odoo Customize settings"
-msgstr "App Odoo 自定义设置"
+msgid "Odoo Customize settings"
+msgstr "Odoo 定制化"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -51,28 +96,24 @@ msgstr "应用"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Base Models"
-msgstr "基础模型数据"
-
-#. module: app_odoo_customize
-#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Cancel"
 msgstr "取消"
 
 #. module: app_odoo_customize
-#: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_stop_subscribe
+#: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings__app_stop_subscribe
 msgid "Check to stop Odoo Subscribe function"
 msgstr "选中可停止odoo内置的用户消息订阅"
 
 #. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_create_uid
-msgid "Created by"
-msgstr "创建人"
+#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__company_id
+msgid "Company"
+msgstr "公司"
 
 #. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_create_date
-msgid "Created on"
-msgstr "创建时间"
+#: model:ir.actions.act_window,name:app_odoo_customize.action_app_theme_config
+#: model:ir.ui.menu,name:app_odoo_customize.menu_app_theme_config
+msgid "Customize Debrand"
+msgstr "定制我的odoo"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -81,8 +122,13 @@ msgstr "数据清理（请谨慎操作！）"
 
 #. module: app_odoo_customize
 #. openerp-web
-#: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:13
+#: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:8
 #, python-format
+msgid "Deactivate the developer mode"
+msgstr "取消激活开发者模式"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__user_default_rights
 msgid "Deactivate the developer mode"
 msgstr "取消激活开发者模式"
 
@@ -169,54 +215,14 @@ msgid "Display Name"
 msgstr "显示名称"
 
 #. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_app_documentation_url
+#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__external_report_layout_id
+msgid "Document Template"
+msgstr "文档模板"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__app_documentation_url
 msgid "Documentation Url"
 msgstr "用户手册链接"
-
-#. module: app_odoo_customize
-#: model:ir.model,name:app_odoo_customize.model_mail_thread
-msgid "Email Thread"
-msgstr "Email线程"
-
-#. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_id
-msgid "ID"
-msgstr "ID"
-
-#. module: app_odoo_customize
-#: model:ir.model,name:app_odoo_customize.model_base_language_install
-msgid "Install Language"
-msgstr "安装语言"
-
-#. module: app_odoo_customize
-#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Inventory"
-msgstr "库存"
-
-#. module: app_odoo_customize
-#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Item to Show"
-msgstr "显示/隐藏菜单项"
-
-#. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings___last_update
-msgid "Last Modified on"
-msgstr "最后修改时间"
-
-#. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_write_uid
-msgid "Last Updated by"
-msgstr "最后更新者"
-
-#. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_write_date
-msgid "Last Updated on"
-msgstr "最后更新时间"
-
-#. module: app_odoo_customize
-#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "MRP"
-msgstr "生产"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_app_account_title
@@ -230,38 +236,13 @@ msgstr "我的帐户链接"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Online Support"
-msgstr "系统支持"
-
-#. module: app_odoo_customize
-#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "POS"
-msgstr "POS门店"
-
-#. module: app_odoo_customize
-#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Please confirm to delete the select data?"
 msgstr "确认删除指定数据?"
 
 #. module: app_odoo_customize
-#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Project"
-msgstr "项目"
-
-#. module: app_odoo_customize
-#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Purchase"
-msgstr "采购"
-
-#. module: app_odoo_customize
-#: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Sales"
-msgstr "销售"
-
-#. module: app_odoo_customize
-#: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_system_name
+#: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings__app_system_name
 msgid "Setup System Name,which replace Odoo"
-msgstr "设置系统名称，取代Odoo"
+msgstr "设置系统名称，取代 Odoo"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_group_show_author_in_apps
@@ -280,7 +261,12 @@ msgid "Show Documentation"
 msgstr "显示文档"
 
 #. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_app_show_enterprise
+#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__show_effect
+msgid "Show Effect"
+msgstr ""
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__app_show_enterprise
 msgid "Show Enterprise Tag"
 msgstr "显示升级企业版标签提醒"
 
@@ -331,19 +317,19 @@ msgid "System Name"
 msgstr "系统名称"
 
 #. module: app_odoo_customize
-#: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_group_show_author_in_apps
+#: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings__group_show_author_in_apps
 msgid "Uncheck to Hide Author and Website in Apps Dashboard"
-msgstr "Uncheck to Hide Author and Website in Apps Dashboard"
+msgstr ""
 
 #. module: app_odoo_customize
-#: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_enterprise
+#: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings__app_show_enterprise
 msgid "Uncheck to hide the Enterprise tag"
-msgstr "Uncheck to hide the Enterprise tag"
+msgstr ""
 
 #. module: app_odoo_customize
-#: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_share
+#: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings__app_show_share
 msgid "Uncheck to hide the Odoo Share Dashboard"
-msgstr "Uncheck to hide the Odoo Share Dashboard"
+msgstr ""
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_poweredby
@@ -403,21 +389,9 @@ msgstr "个性化odoo设置"
 #. module: app_odoo_customize
 #: model:ir.model,name:app_odoo_customize.model_ir_ui_view
 msgid "ir.ui.view"
-msgstr "ir.ui.view"
-
-#. module: app_odoo_customize
-#: model:ir.ui.menu,name:base.menu_app_group
-msgid "odooApp"
-msgstr "odooApp"
-
-#. module: app_odoo_customize
-#: model:ir.actions.act_window,name:app_odoo_customize.action_app_theme_config
-#: model:ir.ui.menu,name:app_odoo_customize.menu_app_theme_config
-msgid "odooApp Customize"
-msgstr "odooApp 定制"
+msgstr ""
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "odooApp Customize Settings"
 msgstr "odooApp 定制化设置"
-

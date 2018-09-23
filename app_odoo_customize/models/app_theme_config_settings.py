@@ -110,6 +110,9 @@ class AppThemeConfigSettings(models.TransientModel):
             # 清除销售单据
             ['sale.order.line', ],
             ['sale.order', ],
+            ['sale.order.template.option', ],
+            ['sale.order.template.line', ],
+            ['sale.order.template', ],
         ]
         try:
             for line in to_removes:

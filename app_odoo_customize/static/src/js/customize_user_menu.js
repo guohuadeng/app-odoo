@@ -68,7 +68,8 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
                     if (val.key == 'app_show_lang' && val.value == "False") {
                         $('switch-lang').hide();
                     }
-                    if (session.user_context.uid!=1 || (val.key == 'app_show_debug' && val.value == "False")) {
+                    //注意， odoo12，主用户id=2, 加了个 __system__
+                    if (session.user_context.uid > 2 || (val.key == 'app_show_debug' && val.value == "False")) {
                         $('[data-menu="debug"]').hide();
                         $('[data-menu="debugassets"]').hide();
                         $('[data-menu="quitdebug"]').hide();
