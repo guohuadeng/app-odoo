@@ -15,6 +15,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. module: base
+#: model:ir.module.module,summary:base.module_app_odoo_customize
+msgid "Keyword: odoo debrand, odoo debranding, customize my odoo. Quick customize and debranding your own Odoo. Quick debug, Language Switcher, Online Documentation Access,Delete test data."
+msgstr "快速定制你的odoo"
+
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "<span class=\"btn btn-default col-3 col-lg-2 text-left\">Accounting</span>"

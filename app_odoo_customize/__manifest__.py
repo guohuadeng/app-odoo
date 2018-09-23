@@ -23,8 +23,7 @@
     'license': 'AGPL-3',
     'sequence': 2,
     'summary': """    
-    Keyword: odoo debrand, odoo debranding, customize my odoo.
-    Quick customize and debranding your own Odoo. Quick debug, Language Switcher, Online Documentation Access,Delete test data.
+    Keyword: odoo debrand, odoo debranding, customize my odoo. Quick customize and debranding your own Odoo. Quick debug, Language Switcher, Online Documentation Access,Delete test data.
     """,
     'description': """
 
