@@ -15,8 +15,8 @@
 # http://www.sunpop.cn/odoo10_developer_document_offline/
 # description:
 {
-    'name': 'App Odoo Customize(Backend Debranding Title,Language,Documentation,Quick Debug,Clear Data)',
-    'version': '11.0.9.12',
+    'name': '12 Ready!! App Odoo Customize(Backend Debranding Title,Language,Documentation,Quick Debug,Clear Data)',
+    'version': '11.0.9.25',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',
@@ -27,11 +27,11 @@
     Quick customize and debranding your own Odoo. Quick debug, Language Switcher, Online Documentation Access,Delete test data.
     """,
     'description': """
-
 App Odoo Customize(Debranding Title,Language,Documentation,Quick Debug)
 ============
 White label odoo.
 Support Odoo 11, 10, 9.
+Now ready for 12, please email to me. guohuadeng@hotmail.com
 You can config odoo, make it look like your own platform.
 1. Deletes Odoo label in footer
 2. Replaces "Odoo" in Windows title
