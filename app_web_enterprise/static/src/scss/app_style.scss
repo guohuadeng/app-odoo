@@ -17,19 +17,19 @@
     > .nav.nav-tabs {
       > .nav-item {
         > .nav-link {
-          border-left-width: 0!important;
+          //border-left-width: 0!important;
           background-color: #fafafa;
           &:hover, &:focus, &:active {
             background-color: white;
           }
           &.active {
             border-top-width: 2px;
-            border-left-width: 1px!important;
-            border-right-width: 1px!important;
+            //border-left-width: 1px!important;
+            //border-right-width: 1px!important;
           }
         }
         &:first-child > .nav-link {
-          border-left-width: 1px!important;
+          //border-left-width: 1px!important;
         }
       }
     }
