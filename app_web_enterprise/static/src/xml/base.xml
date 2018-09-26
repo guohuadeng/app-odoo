@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="HomeMenu.Content">
+        <t t-jquery=".o_home_menu_footer" t-operation="inner">
+            <img src='/web/binary/company_logo' alt="Logo"/>
+        </t>
+    </t>
+
+    <t t-extend="Menu.sections">
+        <t t-jquery=".dropdown-toggle" t-operation="attributes">
+            <attribute name="class">dropdown-toggle o_menu_header_lvl_1</attribute>
+        </t>
+    </t>
+
+</templates>

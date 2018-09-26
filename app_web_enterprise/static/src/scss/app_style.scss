@@ -1,0 +1,39 @@
+//输入焦点时有颜色
+.o_web_client input:focus,
+.o_web_client textarea:focus,
+.o_web_client select:focus {
+  border-color: $o-brand-primary;
+  font-weight: bold;
+}
+//菜单搜索常见
+.o_menu_search {
+    &.o_bar_hidden {
+        opacity: 0.9;
+    }
+}
+// Notebooks ,form_view,移动端优化
+.o_form_view {
+  .o_notebook {
+    > .nav.nav-tabs {
+      > .nav-item {
+        > .nav-link {
+          border-left-width: 0!important;
+          background-color: #fafafa;
+          &:hover, &:focus, &:active {
+            background-color: white;
+          }
+          &.active {
+            border-top-width: 2px;
+            border-left-width: 1px!important;
+            border-right-width: 1px!important;
+          }
+        }
+        &:first-child > .nav-link {
+          border-left-width: 1px!important;
+        }
+      }
+    }
+  }
+
+
+}
