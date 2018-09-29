@@ -7,6 +7,13 @@
         <field name="arch" type="xml">
             <xpath expr="//search" position="attributes">
                 <attribute name="string">hello1</attribute>
+                <attribute name="ztree_search">1</attribute>
+                <attribute name="ztree_field">categ_id</attribute>
+                <attribute name="ztree_model">product.category</attribute>
+                <attribute name="ztree_domain"></attribute>
+                <attribute name="ztree_parent_key">parent_id</attribute>
+                <attribute name="ztree_position">right</attribute>
+                <attribute name="ztitle_search">title s</attribute>
             </xpath>
         </field>
     </record>
