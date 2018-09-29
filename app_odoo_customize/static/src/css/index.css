@@ -1,0 +1,5 @@
+.app .list-group .list-group-item {
+    border: 0;
+    border-bottom: 1px solid #00A09D;
+    padding: 10px;
+}
