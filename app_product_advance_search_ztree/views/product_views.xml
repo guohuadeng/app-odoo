@@ -1,30 +1,12 @@
 <?xml version="1.0"?>
 <odoo>
-
-    <record id="product_template_tree_view_ztree" model="ir.ui.view">
-        <field name="name">product.template.product.tree</field>
+    <record id="product_template_search_view_ztree" model="ir.ui.view">
+        <field name="name">product.template.search.ztree</field>
         <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_tree_view" />
+        <field name="inherit_id" ref="product.product_template_search_view" />
         <field name="arch" type="xml">
-            <xpath expr="//tree" position="attributes">
-                <attribute name="ztree_field">categ_id</attribute>
-                <attribute name="ztree_model">product.category</attribute>
-                <attribute name="ztree_parent_key">parent_id</attribute>
-                <attribute name="ztree_position">left</attribute>
-            </xpath>
-        </field>
-    </record>
-
-    <record id="product_template_kanban_view_ztree" model="ir.ui.view">
-        <field name="name">Product.template.product.kanban</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_kanban_view" />
-        <field name="arch" type="xml">
-            <xpath expr="//kanban" position="attributes">
-                <attribute name="ztree_field">categ_id</attribute>
-                <attribute name="ztree_model">product.category</attribute>
-                <attribute name="ztree_parent_key">parent_id</attribute>
-                <attribute name="ztree_position">right</attribute>
+            <xpath expr="//search" position="attributes">
+                <attribute name="string">hello1</attribute>
             </xpath>
         </field>
     </record>
