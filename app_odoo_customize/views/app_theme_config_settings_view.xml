@@ -17,9 +17,9 @@
                             <field name="app_system_name"/>
                         </div>
                         <label string="Online Support"/>
-                        <div>
-                            <a href="http://www.sunpop.cn" target="_blank">Visit our website for more apps and Support. http://www.sunpop.cn</a>
-                        </div>
+                        <h4>
+                            <a href="http://www.sunpop.cn" class="text-danger" target="_blank">Visit our website for more apps and Support. http://www.sunpop.cn</a>
+                        </h4>
                     </group>
                     <group string="User Menu">
                         <label string="Item to Show"/>
@@ -67,6 +67,10 @@
                             <div>
                                 <field name="group_show_author_in_apps"/>
                                 <label for="group_show_author_in_apps"/>
+                            </div>
+                            <div>
+                                <field name="group_show_quick_upgrade"/>
+                                <label for="group_show_quick_upgrade"/>
                             </div>
                         </div>
                     </group>

@@ -52,6 +52,7 @@ You can config odoo, make it look like your own platform.
 17. Stop Odoo Auto Subscribe(Performance Improve)
 18. Show/Hide Author and Website in Apps Dashboard
 19. One Click to clear all data (Sometime pls click twice)
+20. Show quick upgrade in app dashboard
 
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.

@@ -1,7 +1,7 @@
 ##App Odoo Customize(Debranding Title,Language,Documentation,Quick Debug,Quick Data Clear)
 ============
 White label odoo. 
-Support Odoo 11, 10, 9.
+Support Odoo 12, 11, 10, 9. Including communicate and enterprise version.
 You can config odoo, make it look like your own platform.
 1. Deletes Odoo label in footer
 2. Replaces "Odoo" in Windows title
@@ -21,7 +21,9 @@ You can config odoo, make it look like your own platform.
 16. Fix odoo reload module translation bug while enable english language
 17. Stop Odoo Auto Subscribe(Performance Improve)
 18. Show/Hide Author and Website in Apps Dashboard (odoo 11 only)
-19. Set System Icon (odoo 10 only)
+19. One Click to clear all data (Sometime pls click twice)
+20. Show quick upgrade in app dashboard
+
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.
 The user can get the help document just by one click.
@@ -31,6 +33,7 @@ http://www.sunpop.cn
 
 ## 在符合odoo开源协议的前提下，去除odoo版权信息，自定义你的odoo
 可完全自行设置下列 odoo 选项，让 odoo 看上去像是你的软件产品
+支持odoo 12, 11, 10, 9 版本，社区版企业版通用
 1. 删除菜单导航页脚的 Odoo 标签
 2. 将弹出窗口中 "Odoo" 设置为自定义名称
 3. 自定义用户菜单中的 Documentation, Support, About 的链接
@@ -50,6 +53,7 @@ http://www.sunpop.cn
 17. 可停用odoo自动订阅功能，避免“同样对象关注2次”bug，同时提升性能
 18. 显示/隐藏应用的作者和网站-在应用安装面板中
 19. 一键清除所有数据（视当前数据情况，有时需点击2次）
+20. 在应用面板显示快速升级按键
 
 使用方法：将解压后的 app_odoo_customize 放到 odoo的 addons目录下，激活开发者模式，应用-->更新应用列表，
 找到 "App odoo Customize"模块，安装即可。

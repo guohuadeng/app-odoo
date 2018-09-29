@@ -27,6 +27,8 @@ class AppThemeConfigSettings(models.TransientModel):
     app_stop_subscribe = fields.Boolean('Stop Odoo Subscribe(Performance Improve)', help=u"Check to stop Odoo Subscribe function")
     group_show_author_in_apps = fields.Boolean(string="Show Author and Website in Apps Dashboard", implied_group='app_odoo_customize.group_show_author_in_apps',
                                                help=u"Uncheck to Hide Author and Website in Apps Dashboard")
+    group_show_quick_upgrade = fields.Boolean(string="Show Quick Upgrade in Apps Dashboard", implied_group='app_odoo_customize.group_show_quick_upgrade',
+                                               help=u"Uncheck to show normal install in Apps Dashboard")
 
     app_documentation_url = fields.Char('Documentation Url')
     app_documentation_dev_url = fields.Char('Developer Documentation Url')
@@ -92,7 +94,6 @@ class AppThemeConfigSettings(models.TransientModel):
         ir_config.set_param("app_show_share", self.app_show_share or "False")
         ir_config.set_param("app_show_poweredby", self.app_show_poweredby or "False")
         ir_config.set_param("app_stop_subscribe", self.app_stop_subscribe or "False")
-        # ir_config.set_param("group_show_author_in_apps", self.group_show_author_in_apps or "False")
 
         ir_config.set_param("app_documentation_url",
                             self.app_documentation_url or "http://www.sunpop.cn/documentation/user/10.0/en/index.html")

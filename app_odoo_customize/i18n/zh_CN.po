@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0+e-20180313\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 17:49+0000\n"
-"PO-Revision-Date: 2018-03-22 17:49+0000\n"
+"POT-Creation-Date: 2018-09-29 20:12+0000\n"
+"PO-Revision-Date: 2018-09-29 20:12+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -174,11 +174,6 @@ msgid "Documentation Url"
 msgstr "用户手册链接"
 
 #. module: app_odoo_customize
-#: model:ir.model,name:app_odoo_customize.model_mail_thread
-msgid "Email Thread"
-msgstr "Email线程"
-
-#. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_id
 msgid "ID"
 msgstr "ID"
@@ -305,6 +300,12 @@ msgid "Show Quick Language Switcher"
 msgstr "显示快速多语言切换"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_group_show_quick_upgrade
+#: model:res.groups,name:app_odoo_customize.group_show_quick_upgrade
+msgid "Show Quick Upgrade in Apps Dashboard"
+msgstr "在应用面板显示快速升级按键"
+
+#. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_app_show_share
 msgid "Show Share Dashboard"
 msgstr "显示分享Odoo"
@@ -349,6 +350,21 @@ msgstr "Uncheck to hide the Odoo Share Dashboard"
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_poweredby
 msgid "Uncheck to hide the Powered by text"
 msgstr "不勾选则不显示Odoo Powered by"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_group_show_quick_upgrade
+msgid "Uncheck to show normal install in Apps Dashboard"
+msgstr "Uncheck to show normal install in Apps Dashboard"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.app_module_view_kanban
+msgid "Uninstall"
+msgstr "卸载"
+
+#. module: app_odoo_customize
+#: model:ir.ui.view,arch_db:app_odoo_customize.app_module_view_kanban
+msgid "Upgrade"
+msgstr "升级"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -404,11 +420,6 @@ msgstr "个性化odoo设置"
 #: model:ir.model,name:app_odoo_customize.model_ir_ui_view
 msgid "ir.ui.view"
 msgstr "ir.ui.view"
-
-#. module: app_odoo_customize
-#: model:ir.ui.menu,name:base.menu_app_group
-msgid "odooApp"
-msgstr "odooApp"
 
 #. module: app_odoo_customize
 #: model:ir.actions.act_window,name:app_odoo_customize.action_app_theme_config
