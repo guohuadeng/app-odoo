@@ -26,8 +26,8 @@
                 <xpath expr="//span" position="replace" groups="app_odoo_customize.group_show_quick_upgrade"/>
                 <xpath expr="//div[@class='oe_module_action']" position="after" groups="app_odoo_customize.group_show_quick_upgrade">
                     <div class="row pull-right align_upgrade_uninstall">
-                        <button type="object" class="btn btn-success btn-xs" name="button_immediate_upgrade" states="installed">Upgrade</button>
-                        <button type="object" class="btn btn-default btn-xs" name="button_uninstall_wizard" states="installed">Uninstall</button>
+                        <button type="object" class="btn btn-success btn-sm" name="button_immediate_upgrade" states="installed">Upgrade</button>
+                        <button type="object" class="btn btn-default btn-sm" name="button_uninstall_wizard" states="installed">Uninstall</button>
                     </div>
                 </xpath>
             </field>
