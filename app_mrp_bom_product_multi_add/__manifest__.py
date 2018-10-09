@@ -55,7 +55,6 @@
     ],
     'js': [
     ],
-    'images': ['static/description/banner.png'],
     'post_load': None,
     'post_init_hook': None,
     'installable': True,
