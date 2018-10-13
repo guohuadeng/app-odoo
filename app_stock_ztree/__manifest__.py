@@ -38,7 +38,7 @@
     'depends': [
         'stock',
     ],
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.gif'],
     'data': [
         'views/stock_views.xml',
     ],
