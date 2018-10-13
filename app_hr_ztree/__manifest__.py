@@ -38,7 +38,7 @@
     'depends': [
         'hr',
     ],
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.gif'],
     'data': [
         'views/hr_views.xml',
     ],
