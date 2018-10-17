@@ -29,7 +29,7 @@
     """,
     'description': """
     zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView ,
+    Advance select widget with real parent children tree, ListView or KanbanView ,
     eg: Product category tree ,Department tree, stock location tree.
     超级方便的查询，树状视图。
     """,
