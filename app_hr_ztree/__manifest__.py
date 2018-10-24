@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "app stock location ztree, parent children tree",
+    'name': "app hr department, parent children tree",
     'version': '11.0.10.15',
     'author': 'Sunpop.cn',
     'category': 'Base',
