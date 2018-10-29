@@ -59,8 +59,6 @@
     ],
     'js': [
     ],
-    'images': [
-    ],
     'pre_init_hook': 'pre_init_hook',
     'post_load': None,
     'pre_init_hook': None,
