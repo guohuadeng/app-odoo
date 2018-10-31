@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- 各种默认值 -->
+        <!--设置客户默认国家为中国-->
+        <record id="res_partner_country_id_default" model="ir.default">
+            <field name="field_id" eval="ref('base.field_res_partner_country_id')"/>
+            <field name="json_value" eval="ref('base.cn')"/>
+        </record>
+        <!--设置客户默认省为广东-->
+        <record id="res_partner_state_id_default" model="ir.default">
+            <field name="field_id" eval="ref('base.field_res_partner_state_id')"/>
+            <field name="json_value" eval="ref('l10n_cn.state_GD')"/>
+        </record>
+        <!--设置默认时区为中国，注意select 类型要加 ""-->
+        <record id="res_partner_tz_default" model="ir.default">
+            <field name="field_id" eval="ref('base.field_res_partner_tz')"/>
+            <field name="json_value">"Asia/Shanghai"</field>
+        </record>
+        <!--设置用户email在odoo内提醒-->
+        <record id="res_user_notify_email_default" model="ir.default">
+            <field name="field_id" eval="ref('mail.field_res_users_notification_type')"/>
+            <field name="json_value">"inbox"</field>
+        </record>
+        <!--设置产品默认是可库存产品-->
+        <record id="product_template_type_default" model="ir.default">
+            <field name="field_id" eval="ref('product.field_product_template_type')"/>
+            <field name="json_value">"product"</field>
+        </record>
+    </data>
+</odoo>
