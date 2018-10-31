@@ -41,7 +41,6 @@
     ],
     'images': [],
     'data': [
-        'views/product_category_views.xml',
         'data/ir_value_data.xml',
         'data/ir_sequence_data.xml',
         'data/base_data.xml',
