@@ -32,6 +32,7 @@
     'description': """
     odoo Chinese enhance. 中国化增强-基础
     1. 中文默认值，如国家、时区、货币等。处理模块 base, product.
+    2. 客户加简称，地址显示中文化，编码显示优先
     2. 中文演示数据(只有demo模式才加载)
     """,
     'pre_init_hook': 'pre_init_hook',
@@ -41,6 +42,7 @@
     ],
     'images': [],
     'data': [
+        'views/res_partner_views.xml',
         'data/ir_value_data.xml',
         'data/ir_sequence_data.xml',
         'data/base_data.xml',

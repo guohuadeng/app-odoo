@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Partner Form视图，用继承方式改写2018-11-21,ivan -->
+        <record id="app_view_partner_form" model="ir.ui.view">
+            <field name="name">app.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sales_purchases']//field[@name='ref']" position="replace">
+                </xpath>
+                <!-- 客户编号设计在重要位置，在ui层必填，其它联系人type时不需要填 2017-10-22 -->
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="ref" placeholder="e.g. VIP001" />
+                    <field name="short_name"/>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <!-- 信用额度 -->
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="credit_limit"/>
+                </xpath>
+                <!--res.partner客户 地址中国化 -->
+                <xpath expr="//div[@class='o_address_format']" position="replace">
+                    <div class="o_address_format">
+                        <div class="oe_edit_only">
+                            <button name="open_parent" type="object" string="(edit)" class="oe_link"
+                                    attrs="{'invisible': ['|', ('parent_id', '=', False), ('type', '!=', 'contact')]}"/>
+                        </div>
+                        <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'
+                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                        <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'
+                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" context="{'country_id': country_id, 'zip': zip}"/>
+                        <field name="city" placeholder="City" class="o_address_city"
+                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                        <field name="zip" placeholder="ZIP" class="o_address_zip"
+                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                        <field name="street" placeholder="Street..." class="o_address_street"
+                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                        <field name="street2" invisible="1"/>
+                    </div>
+                </xpath>
+                <!-- res.partner联系人 form -->
+                <!-- 所有类型联系人默认都不是客户，不是供应商-->
+                <xpath expr="//field[@name='child_ids']" position="attributes">
+                    <attribute name="context">
+                        {'default_parent_id': active_id, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id':
+                        state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_supplier': 0, 'default_customer': 0,
+                        'default_lang': lang,}
+                    </attribute>
+                </xpath>
+                <!--联系人，如果是个人类型，不允许其下再有联系人-->
+                <xpath expr="//notebook/page[1]" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_company','!=', True)]}</attribute>
+                </xpath>
+                <!-- 联系人也显示地址，中国格式 -->
+                <xpath expr="//page//form[1]//group//group" position="replace">
+                    <group attrs="">
+                        <label for="street" string="Address"/>
+                        <div>
+                            <div class="o_address_format" name="div_address">
+                                <field name="country_id" placeholder="Country" class="o_address_country"
+                                       options='{"no_open": True, "no_create": True}'/>
+                                <field name="state_id" class="o_address_state" placeholder="State"
+                                       options='{"no_open": True}' context="{'country_id': country_id, 'zip': zip}"/>
+                                <field name="city" placeholder="City" class="o_address_city"/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                <field name="street" placeholder="Street..." class="o_address_street"/>
+                                <field name="street2" invisible="1"/>
+                            </div>
+                        </div>
+                    </group>
+                </xpath>
+                <!-- res.partner联系人 kanban -->
+                <!-- 显示类型和地址等 -->
+                <xpath expr="//page//kanban[1]//templates//div[@class='oe_kanban_details']" position="replace">
+                    <div class="oe_kanban_details">
+                        <div>
+                            [<field name="ref"/>]
+                            <strong>
+                                <field name="name"/>
+                            </strong>
+                        </div>
+                        <div>
+                            <field name="type"/>
+                        </div>
+                        <div t-if="record.function.raw_value">
+                            <field name="function"/>
+                        </div>
+                        <div t-if="record.email.raw_value">
+                            <field name="email"/>
+                        </div>
+                        <div>
+                            <field t-if="record.state_id.raw_value" name="state_id"/>
+                            <div>
+                                <field name="city"/>
+                                <field name="street"/>
+                                <field name="zip" invisible="1"/>
+                            </div>
+                        </div>
+                        <div t-if="record.phone.raw_value">电话:
+                            <field name="phone"/>
+                        </div>
+                        <div t-if="record.mobile.raw_value">手机:
+                            <field name="mobile"/>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Partner tree 视图，公用的，暂时没用 -->
+        <record id="app_view_partner_tree" model="ir.ui.view">
+            <field name="name">app.res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='phone']" position="before">
+                    <field name="short_name"/>
+                    <field name="ref"/>
+                    <field name="mobile"/>
+                </xpath>
+                <xpath expr="//field[@name='email']" position="after">
+                    <field name="state_id"/>
+                    <field name="city"/>
+                    <field name="street"/>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Partner customer tree 视图-->
+        <record id="app_view_partner_customer_tree" model="ir.ui.view">
+            <field name="name">app.res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree string="Customers">
+                    <!--<field name="sale_type"/>-->
+                    <field name="display_name"/>
+                    <field name="ref"/>
+                    <field name="short_name"/>
+                    <field name="mobile"/>
+                    <field name="state_id"/>
+                    <field name="city"/>
+                    <field name="street"/>
+                    <field name="credit_limit"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Partner supplier tree 视图-->
+        <record id="app_view_partner_supplier_tree" model="ir.ui.view">
+            <field name="name">app.res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree string="Vendors">
+                    <field name="display_name"/>
+                    <field name="short_name"/>
+                    <field name="ref"/>
+                    <field name="mobile"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="state_id"/>
+                    <field name="city"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Partner kanban 视图，用继承方式改写2017-11-23,ivan-->
+        <record id="app_res_partner_kanban_view" model="ir.ui.view">
+            <field name="name">app.res.partner.kanban</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//templates" position="before">
+                    <field name="credit_limit"/>
+                </xpath>
+                <xpath expr="//div[@class='oe_kanban_details']/ul" position="inside">
+                    <li t-if="record.mobile.raw_value" class="o_text_overflow">
+                        , <field name="mobile"/>
+                    </li>
+                    <li t-if="record.credit_limit.raw_value">
+                        Credit：<field name="credit_limit"/>
+                    </li>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- 为客户菜单单独增加筛选器 2017-11-13 -->
+        <record id="app_res_partner_view_filter_customer" model="ir.ui.view">
+            <field name="name">app.res.partner.select.customer</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search string="Search Partner">
+                    <field name="name"
+                           filter_domain="['|','|',('display_name','ilike',self),('ref','=',self),('email','ilike',self)]"/>
+                    <!-- 添加手机号查询客户功能 2017-11-13 -->
+                    <field name="mobile"/>
+                    <filter help="My Partners" domain="[('user_id','=',uid)]"/>
+                    <separator/>
+                    <filter string="Persons" name="type_person" domain="[('is_company','=',0)]"/>
+                    <filter string="Companies" name="type_company" domain="[('is_company','=',1)]"/>
+                    <separator/>
+                    <field name="category_id" string="Tag" filter_domain="[('category_id','ilike', self)]"/>
+                    <field name="user_id"/>
+                    <field name="parent_id" domain="[('is_company','=',1)]" operator="child_of"/>
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter name="salesperson" string="Salesperson" domain="[]" context="{'group_by' : 'user_id'}"/>
+                        <filter string="City" context="{'group_by': 'city'}"/>
+                        <!-- 不需要按国家分组 -->
+                        <!-- <filter string="Country" context="{'group_by': 'country_id'}"/> -->
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="app_action_partner_customer_form" model="ir.actions.act_window">
+            <field name="name">Customers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <!-- domain客户 2017-11-19 -->
+            <field name="domain">[('customer', '=', 1),('is_company', '=', 1)]</field>
+            <field name="context">{'default_customer':1,'default_is_company':1}</field>
+            <!-- 指定独立筛选器 2017-11-14 -->
+            <field name="search_view_id" ref="app_res_partner_view_filter_customer"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a contact in your address book.
+                </p>
+                <p>
+                    Odoo helps you easily track all activities related to
+                    a customer: discussions, history of business opportunities,
+                    documents, etc.
+                </p>
+            </field>
+        </record>
+
+        <record id="app_action_customer_form_view1" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="base.res_partner_kanban_view"/>
+            <field name="act_window_id" ref="app_action_partner_customer_form"/>
+        </record>
+        <record id="app_action_customer_form_view2" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="app_view_partner_customer_tree"/>
+            <field name="act_window_id" ref="app_action_partner_customer_form"/>
+        </record>
+        <!--end客户-->
+
+        <!-- 为供应商菜单单独增加筛选器 2017-11-13 -->
+        <record id="app_action_partner_supplier_form" model="ir.actions.act_window">
+            <field name="name">Vendors</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('supplier', '=', 1),('is_company', '=', 1)]</field>
+            <field name="context">{'default_supplier': 1,'default_is_company':1}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a contact in your address book.
+                </p>
+                <p>
+                    Odoo helps you easily track all activities related to
+                    a supplier: discussions, history of purchases,
+                    documents, etc.
+                </p>
+            </field>
+        </record>
+
+        <record id="app_action_supplier_form_view1" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="base.res_partner_kanban_view"/>
+            <field name="act_window_id" ref="app_action_partner_supplier_form"/>
+        </record>
+        <record id="app_action_supplier_form_view2" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="app_view_partner_supplier_tree"/>
+            <field name="act_window_id" ref="app_action_partner_supplier_form"/>
+        </record>
+        <!--end供应商-->
+
+        <!-- 所有合作伙伴 2017-11-13 -->
+        <record id="app_action_partner_form" model="ir.actions.act_window">
+            <field name="name">Partner</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain"></field>
+            <field name="context">{'default_customer': 0,'default_supplier': 0,'default_is_company':1}</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="base.res_partner_kanban_view"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a contact in your address book.
+                </p>
+                <p>
+                    Odoo helps you easily track all activities related to
+                    a supplier: discussions, history of purchases,
+                    documents, etc.
+                </p>
+            </field>
+        </record>
+
+        <record id="app_action_partner_employee_form" model="ir.actions.act_window">
+            <field name="name">Employees</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('employee','=',1)]</field>
+            <field name="context">{'default_customer':0, 'default_supplier':0 , 'default_employee':1}</field>
+            <field name="filter" eval="True"/>
+        </record>
+
+        <record id="app_action_partner_other_form" model="ir.actions.act_window">
+            <field name="name">Other Partners</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('supplier','&lt;&gt;',1),('customer','&lt;&gt;',1)]</field>
+            <field name="filter" eval="True"/>
+        </record>
+
+        <!--&lt;!&ndash; partner 菜单 &ndash;&gt;-->
+        <!--<menuitem id="app_menu_partner" name="Partner" parent="app_home.app_menu_master_data" sequence="3"/>-->
+        <!--&lt;!&ndash; 客户 &ndash;&gt;-->
+        <!--<menuitem id="app_menu_partner_customer_form" action="app_action_partner_customer_form" parent="app_menu_partner" sequence="2"/>-->
+        <!--&lt;!&ndash; 供应商 &ndash;&gt;-->
+        <!--<menuitem id="app_menu_partner_supplier_form" action="app_action_partner_supplier_form" parent="app_menu_partner" sequence="3"/>-->
+        <!--&lt;!&ndash; 所有partner &ndash;&gt;-->
+        <!--<menuitem id="app_menu_partner_form" action="app_action_partner_form" parent="app_menu_partner" sequence="4"/>-->
+        <!--&lt;!&ndash; 联系人分类标签 &ndash;&gt;-->
+        <!--<menuitem id="app_menu_partner_category_form" action="base.action_partner_category_form" name="Contact Tags" sequence="11"-->
+                  <!--parent="app_menu_partner" groups="base.group_no_one"/>-->
+        <!--&lt;!&ndash; 联系人称谓 &ndash;&gt;-->
+        <!--<menuitem id="app_menu_partner_title_contact" action="base.action_partner_title_contact" parent="app_menu_partner" sequence="12"-->
+                  <!--groups="base.group_no_one"/>-->
+
+    </data>
+</odoo>
