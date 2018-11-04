@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Partner Form视图，用继承方式改写2018-11-21,ivan -->
+        <record id="app_view_partner_category_list" model="ir.ui.view">
+            <field name="name">app Contact Tags</field>
+            <field name="model">res.partner.category</field>
+            <field name="inherit_id" ref="base.view_partner_category_list"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='display_name']" position="before">
+                    <field name="sequence" widget="handle"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -33,3 +33,12 @@ class ResPartner(models.Model):
                 name = '[' + partner.ref + ']' + name
             result.append((partner.id, name))
         return result
+
+
+class PartnerCategory(models.Model):
+    _inherit = 'res.partner.category'
+    _order = 'sequence, parent_left, name'
+
+    sequence = fields.Integer('Sequence', help="Used to order partner category")
+
+
