@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Created on 2017-11-05
+# Created on 2018-11-05
 # author: 广州尚鹏，http://www.sunpop.cn
 # email: 300883@qq.com
 # resource of Sunpop
@@ -17,25 +17,25 @@
 
 
 {
-    'name': "App Purchase Report Enhance. Add received, invoiced, date planned. 采购报告增加计划时间，已收，已付款",
-    'version': '11.0.8.05',
+    'name': "App stock putaway show. 单独的上架策略界面及菜单",
+    'version': '11.0.3.24',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'http://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
-    Odoo Purchase Report Enhance. Add received, invoiced, date planned
+    Show stock putaway strategy in stock menu.
     """,
     'description': """
-    Purchase Report Enhance. Add received, invoiced, date planned.
-    采购报告增强。
+    上架策略菜单。
+    广州尚鹏，Sunpop.cn 的odoo模块。
     """,
-    'price': 0.00,
-    'currency': 'EUR',
-    'depends': ['purchase'],
-    'images': ['static/description/banner.png'],
+    'depends': ['stock'],
+    'images': [],
+
     'data': [
+        'views/product_putaway_views.xml',
     ],
     'demo': [
     ],
@@ -47,9 +47,7 @@
     ],
     'js': [
     ],
-    'post_load': None,
-    'post_init_hook': None,
     'installable': True,
     'application': True,
-    'auto_install': False,
+    'auto_install': True,
 }

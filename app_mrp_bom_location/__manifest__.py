@@ -44,8 +44,6 @@
     ],
     'js': [
     ],
-    'images': [
-    ],
     'post_load': None,
     'post_init_hook': None,
     'installable': True,

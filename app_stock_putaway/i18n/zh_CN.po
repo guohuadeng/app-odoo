@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* app_stock_putaway
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20180915\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-04 20:04+0000\n"
+"PO-Revision-Date: 2018-11-04 20:04+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_stock_putaway
+#: model:ir.actions.act_window,help:app_stock_putaway.action_product_putaway
+msgid "Click to define a new picking type group."
+msgstr "点击创建一条新的记录."
+
+#. module: app_stock_putaway
+#: model:ir.ui.view,arch_db:app_stock_putaway.app_view_strock_putaway_tree
+msgid "Stock Put Away Strategy"
+msgstr "上架策略"
+
+#. module: app_stock_putaway
+#: model:ir.actions.act_window,name:app_stock_putaway.action_product_putaway
+#: model:ir.ui.menu,name:app_stock_putaway.menu_putaway
+msgid "Stock Putaway Strategy"
+msgstr "上架策略"
+
