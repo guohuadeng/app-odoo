@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Created on 2018-11-05
+# Created on 2017-11-05
 # author: 广州尚鹏，http://www.sunpop.cn
 # email: 300883@qq.com
 # resource of Sunpop
@@ -17,40 +17,41 @@
 
 
 {
-    'name': "App base chinese，中国化基本模块增强",
-    'version': '11.0.10.31',
+    'name': "App account Chinese，最新中国标准会计科目，会计增强",
+    'version': '11.0.11.06',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'http://www.sunpop.cn',
     'license': 'LGPL-3',
-    'sequence': 2,
-    'summary': """
-    Chinese enhance. Out of the box use in china.
-    Set all chinese default value.
-    Default country, timezone, currency, partner... 
+    'sequence': 12,
+    'summary': """    
+    Chinese enhance. Focus on account.
+    update tax.
+    add account chart group data.
+    Set account group.
+    Set chinese tax.
+    Set chinese account report. 
     """,
     'description': """
-    
-    odoo Chinese Enhance. 中国化增强-基础
-    1. 中文默认值，如国家、时区、货币等。处理模块 base, product.
-    2. 客户加简称，地址显示中文化，客户编码显示优先
-    3. todo:中文演示数据(只有demo模式才加载)
-    
+    中国化财务，主要针对标准会计科目表。
+    中国会计科目表 （财会[2017]14号《企业会计准则》
+    注意，如果是多语种环境需要自行更改翻译，主要体现在16%增值税处理。
+    广州尚鹏，Sunpop.cn
     """,
-    'pre_init_hook': 'pre_init_hook',
+    'price': 0.00,
+    'currency': 'EUR',
     'depends': [
-        'product',
-        'l10n_cn'
+        "account",
+        "account_asset",
+        "account_accountant",
+        "l10n_cn_standard",
     ],
-    'images': ['static/description/banner.jpg'],
+    'images': [],
     'data': [
-        'views/res_partner_category_views.xml',
-        'views/res_partner_views.xml',
-        'data/ir_value_data.xml',
-        'data/ir_sequence_data.xml',
-        'data/base_data.xml',
-        'data/res_currency_data.xml',
-        'data/product_data.xml',
+        'views/account_account_views.xml',
+        'views/account_views.xml',
+        'data/account.group.csv',
+        'data/account_tax_template_data.xml',
     ],
     'demo': [
     ],
@@ -62,6 +63,7 @@
     ],
     'js': [
     ],
+    'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': True,
     'auto_install': True,

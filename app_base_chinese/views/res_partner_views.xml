@@ -331,20 +331,5 @@
             <field name="filter" eval="True"/>
         </record>
 
-        <!--&lt;!&ndash; partner 菜单 &ndash;&gt;-->
-        <!--<menuitem id="app_menu_partner" name="Partner" parent="app_home.app_menu_master_data" sequence="3"/>-->
-        <!--&lt;!&ndash; 客户 &ndash;&gt;-->
-        <!--<menuitem id="app_menu_partner_customer_form" action="app_action_partner_customer_form" parent="app_menu_partner" sequence="2"/>-->
-        <!--&lt;!&ndash; 供应商 &ndash;&gt;-->
-        <!--<menuitem id="app_menu_partner_supplier_form" action="app_action_partner_supplier_form" parent="app_menu_partner" sequence="3"/>-->
-        <!--&lt;!&ndash; 所有partner &ndash;&gt;-->
-        <!--<menuitem id="app_menu_partner_form" action="app_action_partner_form" parent="app_menu_partner" sequence="4"/>-->
-        <!--&lt;!&ndash; 联系人分类标签 &ndash;&gt;-->
-        <!--<menuitem id="app_menu_partner_category_form" action="base.action_partner_category_form" name="Contact Tags" sequence="11"-->
-                  <!--parent="app_menu_partner" groups="base.group_no_one"/>-->
-        <!--&lt;!&ndash; 联系人称谓 &ndash;&gt;-->
-        <!--<menuitem id="app_menu_partner_title_contact" action="base.action_partner_title_contact" parent="app_menu_partner" sequence="12"-->
-                  <!--groups="base.group_no_one"/>-->
-
     </data>
 </odoo>

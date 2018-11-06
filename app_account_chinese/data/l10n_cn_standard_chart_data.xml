@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Chart template -->
+        <record id="l10n_cn_standard.l10n_chart_china_standard_business" model="account.chart.template">
+            <field name="name">中国会计科目表 （财会[2017]14号《企业会计准则》</field>
+        </record>
+    </data>
+</odoo>
