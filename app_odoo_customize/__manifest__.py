@@ -16,14 +16,15 @@
 # description:
 {
     'name': 'App Odoo Customize(Backend Debranding Title,Language,Documentation,Quick Debug,Clear Data)',
-    'version': '12.0.10.10',
+    'version': '12.0.11.08',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',
     'license': 'AGPL-3',
     'sequence': 2,
     'summary': """    
-    Keyword: odoo debrand, odoo debranding, customize my odoo. Quick customize and debranding. Quick debug, Language Switcher, Online Documentation Access,data clearing,Delete data.
+    odoo debrand, odoo debranding, customize my odoo. 
+    Quick customize and debranding. Quick debug, Language Switcher, Online Documentation Access,data clearing,Delete data.reset account chart.
     """,
     'description': """
 
@@ -51,6 +52,8 @@ You can config odoo, make it look like your own platform.
 17. Stop Odoo Auto Subscribe(Performance Improve)
 18. Show/Hide Author and Website in Apps Dashboard
 19. One Click to clear all data (Sometime pls click twice)
+20. Show quick upgrade in app dashboard, click to show module info not go to odoo.com
+21. Can clear and reset account chart. Be cautious.
 
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.

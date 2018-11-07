@@ -2,7 +2,7 @@
 
 import logging
 
-from openerp import api, fields, models, _
+from odoo import api, fields, models, _
 
 _logger = logging.getLogger(__name__)
 
@@ -25,7 +25,7 @@ class AppThemeConfigSettings(models.TransientModel):
     app_show_share = fields.Boolean('Show Share Dashboard', help=u"Uncheck to hide the Odoo Share Dashboard")
     app_show_poweredby = fields.Boolean('Show Powered by Odoo', help=u"Uncheck to hide the Powered by text")
     app_stop_subscribe = fields.Boolean('Stop Odoo Subscribe(Performance Improve)', help=u"Check to stop Odoo Subscribe function")
-    group_show_author_in_apps = fields.Boolean(string="Show Author and Website in Apps Dashboard", implied_group='app_odoo_customize.group_show_author_in_apps',
+    group_show_author_in_apps = fields.Boolean(string="Show Author in Apps Dashboard", implied_group='app_odoo_customize.group_show_author_in_apps',
                                                help=u"Uncheck to Hide Author and Website in Apps Dashboard")
 
     app_documentation_url = fields.Char('Documentation Url')
@@ -410,6 +410,39 @@ class AppThemeConfigSettings(models.TransientModel):
                     self._cr.execute(sql)
         except Exception as e:
             pass  # raise Warning(e)
+        return True
+
+    @api.multi
+    def remove_account_chart(self):
+        to_removes = [
+            # 清除财务科目，用于重设
+            ['account.tax.account.tag', ],
+            ['account.tax', ],
+            ['account.account.account.tag', ],
+            ['wizard_multi_charts_accounts'],
+            ['account.account', ],
+            ['account.journal', ],
+        ]
+        try:
+            for line in to_removes:
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute(sql)
+
+            # reset default tax，不管多公司
+            field1 = self.env['ir.model.fields']._get('product.template', "taxes_id").id
+            field2 = self.env['ir.model.fields']._get('product.template', "supplier_taxes_id").id
+
+            sql = ("delete from ir_default where field_id = %s or field_id = %s") % (field1, field2)
+            self._cr.execute(sql)
+
+            sql = "update res_company set chart_template_id=null ;"
+            self._cr.execute(sql)
+            # 更新序号
+        except Exception as e:
+            pass
         return True
 
     @api.multi
