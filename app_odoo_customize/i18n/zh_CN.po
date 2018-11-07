@@ -18,7 +18,7 @@ msgstr ""
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Accounting"
-msgstr "会计"
+msgstr "财务"
 
 #. module: app_odoo_customize
 #. openerp-web
@@ -266,8 +266,8 @@ msgstr "设置系统名称，取代Odoo"
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_group_show_author_in_apps
 #: model:res.groups,name:app_odoo_customize.group_show_author_in_apps
-msgid "Show Author and Website in Apps Dashboard"
-msgstr "显示应用的作者和网站-在应用安装面板中"
+msgid "Show Author in Apps Dashboard"
+msgstr "显示应用的作者-在安装面板中"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings_app_show_documentation_dev
@@ -339,17 +339,17 @@ msgstr "系统名称"
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_group_show_author_in_apps
 msgid "Uncheck to Hide Author and Website in Apps Dashboard"
-msgstr "Uncheck to Hide Author and Website in Apps Dashboard"
+msgstr "不选中则会隐藏 App 作者及网站"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_enterprise
 msgid "Uncheck to hide the Enterprise tag"
-msgstr "Uncheck to hide the Enterprise tag"
+msgstr "不选中则会隐藏升级到企业版标签"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_share
 msgid "Uncheck to hide the Odoo Share Dashboard"
-msgstr "Uncheck to hide the Odoo Share Dashboard"
+msgstr "不选中则会隐藏odoo分享"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_app_show_poweredby
@@ -359,7 +359,7 @@ msgstr "不勾选则不显示Odoo Powered by"
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_app_theme_config_settings_group_show_quick_upgrade
 msgid "Uncheck to show normal install in Apps Dashboard"
-msgstr "Uncheck to show normal install in Apps Dashboard"
+msgstr "不选中则显示常规安装"
 
 #. module: app_odoo_customize
 #: model:ir.ui.view,arch_db:app_odoo_customize.app_module_view_kanban

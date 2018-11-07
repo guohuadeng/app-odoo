@@ -2,7 +2,7 @@
 # Copyright 2017 Jarvis (www.odoomod.com)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from openerp import api, fields, models, _
+from odoo import api, fields, models, _
 
 
 class MailThread(models.AbstractModel):
