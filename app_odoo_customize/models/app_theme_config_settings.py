@@ -28,7 +28,7 @@ class AppThemeConfigSettings(models.TransientModel):
     group_show_author_in_apps = fields.Boolean(string="Show Author and Website in Apps Dashboard", implied_group='app_odoo_customize.group_show_author_in_apps',
                                                help=u"Uncheck to Hide Author and Website in Apps Dashboard")
     group_show_quick_upgrade = fields.Boolean(string="Show Quick Upgrade in Apps Dashboard", implied_group='app_odoo_customize.group_show_quick_upgrade',
-                                               help=u"Uncheck to show normal install in Apps Dashboard")
+                                              help=u"Uncheck to show normal install in Apps Dashboard")
 
     app_documentation_url = fields.Char('Documentation Url')
     app_documentation_dev_url = fields.Char('Developer Documentation Url')
@@ -53,9 +53,9 @@ class AppThemeConfigSettings(models.TransientModel):
         app_stop_subscribe = True if ir_config.sudo().get_param('app_stop_subscribe') == "True" else False
 
         app_documentation_url = ir_config.sudo().get_param('app_documentation_url',
-                                                    default='http://www.sunpop.cn/documentation/user/10.0/en/index.html')
+                                                           default='http://www.sunpop.cn/documentation/user/10.0/en/index.html')
         app_documentation_dev_url = ir_config.sudo().get_param('app_documentation_dev_url',
-                                                        default='http://www.sunpop.cn/documentation/10.0/index.html')
+                                                               default='http://www.sunpop.cn/documentation/10.0/index.html')
         app_support_url = ir_config.sudo().get_param('app_support_url', default='http://www.sunpop.cn/trial/')
         app_account_title = ir_config.sudo().get_param('app_account_title', default='My Online Account')
         app_account_url = ir_config.sudo().get_param('app_account_url', default='http://www.sunpop.cn/my-account/')
@@ -153,7 +153,7 @@ class AppThemeConfigSettings(models.TransientModel):
             sql = "update ir_sequence set number_next=1 where code ='product.product';"
             self._cr.execute(sql)
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
         return True
 
     def remove_product_attribute(self):
@@ -170,7 +170,7 @@ class AppThemeConfigSettings(models.TransientModel):
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
         return True
 
     @api.multi
@@ -196,7 +196,7 @@ class AppThemeConfigSettings(models.TransientModel):
             sql = "update ir_sequence set number_next=1 where code ='pos.order';"
             self._cr.execute(sql)
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
         return True
 
     @api.multi
@@ -224,7 +224,7 @@ class AppThemeConfigSettings(models.TransientModel):
             sql = "update ir_sequence set number_next=1 where code ='purchase.order';"
             self._cr.execute(sql)
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
         return True
 
     @api.multi
@@ -258,7 +258,7 @@ class AppThemeConfigSettings(models.TransientModel):
             sql = "update ir_sequence set number_next=1 where (code ='mrp.production' or code ='mrp.unbuild');"
             self._cr.execute(sql)
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
         return True
 
     @api.multi
@@ -276,7 +276,7 @@ class AppThemeConfigSettings(models.TransientModel):
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
         return True
 
     @api.multi
@@ -342,7 +342,7 @@ class AppThemeConfigSettings(models.TransientModel):
                   ");"
             self._cr.execute(sql)
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
         return True
 
     @api.multi
@@ -351,8 +351,8 @@ class AppThemeConfigSettings(models.TransientModel):
             # 清除财务会计单据
             ['account.voucher.line', ],
             ['account.voucher', ],
-            ['account.bank.statement', ],
             ['account.bank.statement.line', ],
+            ['account.bank.statement', ],
             ['account.payment', ],
             ['account.analytic.line', ],
             ['account.invoice.line', ],
@@ -407,7 +407,40 @@ class AppThemeConfigSettings(models.TransientModel):
                           ");"
                     self._cr.execute(sql)
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
+        return True
+
+    @api.multi
+    def remove_account_chart(self):
+        to_removes = [
+            # 清除财务科目，用于重设
+            ['account.tax.account.tag', ],
+            ['account.tax', ],
+            ['account.account.account.tag', ],
+            ['wizard_multi_charts_accounts'],
+            ['account.account', ],
+            ['account.journal', ],
+        ]
+        try:
+            for line in to_removes:
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute(sql)
+
+            # reset default tax，不管多公司
+            field1 = self.env['ir.model.fields']._get('product.template', "taxes_id").id
+            field2 = self.env['ir.model.fields']._get('product.template', "supplier_taxes_id").id
+
+            sql = ("delete from ir_default where field_id = %s or field_id = %s") % (field1, field2)
+            self._cr.execute(sql)
+
+            sql = "update res_company set chart_template_id=null ;"
+            self._cr.execute(sql)
+            # 更新序号
+        except Exception as e:
+            pass
         return True
 
     @api.multi
@@ -428,7 +461,7 @@ class AppThemeConfigSettings(models.TransientModel):
                     self._cr.execute(sql)
             # 更新序号
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
         return True
 
     @api.multi
@@ -446,7 +479,7 @@ class AppThemeConfigSettings(models.TransientModel):
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
         return True
 
     @api.multi
@@ -465,7 +498,7 @@ class AppThemeConfigSettings(models.TransientModel):
                     self._cr.execute(sql)
 
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
         return True
 
     @api.multi
@@ -479,5 +512,5 @@ class AppThemeConfigSettings(models.TransientModel):
             self.remove_project()
             self.remove_message()
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
         return True
