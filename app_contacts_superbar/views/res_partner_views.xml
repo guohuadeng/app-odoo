@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+      <!-- contact -->
+    <record id="view_res_partner_filter_superbar" model="ir.ui.view">
+        <field name="name">res.partner.select.superbar</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <superbar view_mode="kanban,tree">
+                    <field name="category_id"/>
+                    <field name="country_id"/>
+                    <field name="parent_id"
+                           widget="ztree_search"
+                           model="res.partner"
+                           domain="[[('is_company', '=', 1)]]"
+                           level="0"/>
+                </superbar>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>
