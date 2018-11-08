@@ -16,8 +16,8 @@
 # description:
 
 {
-    'name': "app product browse by category navigator",
-    'version': '12.0.10.29',
+    'name': "App product browse by category navigator",
+    'version': '11.0.10.15',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'http://www.sunpop.cn',
@@ -25,11 +25,11 @@
     'sequence': 2,
     'summary': """
     Browse Product by category tree. Use for parent children tree list kanban navigator. 
-    ztree widget.
+    ztree widget.Hierarchy Tree.Parent Children relation tree..
     """,
     'description': """
-    Superbar, zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView ,
+    Superbar, zTree widget. 
+    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
     eg: Product category tree ,Department tree, stock location tree.
     超级方便的查询，树状视图。
     """,
