@@ -23,8 +23,9 @@
     'license': 'AGPL-3',
     'sequence': 2,
     'summary': """    
+    Quick customize,debranding,reset data, debug. Language Switcher. 
+    Easy Delete data.reset account chart.
     odoo debrand, odoo debranding, customize my odoo. 
-    Quick customize and debranding. Quick debug, Language Switcher, Online Documentation Access,data clearing,Delete data.reset account chart.
     """,
     'description': """
 
