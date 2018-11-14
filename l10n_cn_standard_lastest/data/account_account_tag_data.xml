@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+        <!-- Account Tax -->
+        <record id="tag1" model="account.account.tag">
+            <field name="name">增值税16%销项税</field>
+            <field name="applicability">taxes</field>
+        </record>
+        <record id="tag2" model="account.account.tag">
+            <field name="name">增值税16%进项税</field>
+            <field name="applicability">taxes</field>
+        </record>
+        <record id="tag3" model="account.account.tag">
+            <field name="name">银行专用</field>
+        </record>
+        <record id="tag4" model="account.account.tag">
+            <field name="name">证券专用</field>
+        </record>
+        <record id="tag5" model="account.account.tag">
+            <field name="name">金融共用</field>
+        </record>
+        <record id="tag6" model="account.account.tag">
+            <field name="name">保险专用</field>
+        </record>
+        <record id="tag7" model="account.account.tag">
+            <field name="name">银行和保险共用</field>
+        </record>
+        <record id="tag8" model="account.account.tag">
+            <field name="name">农业专用</field>
+        </record>
+        <record id="tag9" model="account.account.tag">
+            <field name="name">租赁专用</field>
+        </record>
+        <record id="tag10" model="account.account.tag">
+            <field name="name">石油天然气开采专用</field>
+        </record>
+        <record id="tag11" model="account.account.tag">
+            <field name="name">银行和证券共用</field>
+        </record>
+        <record id="tag12" model="account.account.tag">
+            <field name="name">建造承包商专用</field>
+        </record>
+    </data>
+</odoo>

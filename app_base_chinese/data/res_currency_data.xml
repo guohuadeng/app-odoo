@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Currencies -->
+        <record id="base.USD" model="res.currency">
+            <field name="active" eval="False"/>
+        </record>
+        <record id="base.EUR" model="res.currency">
+            <field name="active" eval="False"/>
+        </record>
+        <record id="base.CNY" model="res.currency">
+            <field name="active" eval="True"/>
+            <field name="currency_unit_label">元</field>
+            <field name="currency_subunit_label">分</field>
+            <field name="position">before</field>
+        </record>
+    </data>
+</odoo>

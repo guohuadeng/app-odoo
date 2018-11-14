@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- product_category 序号器 -->
+        <record id="sequence_product_category_normal" model="ir.sequence">
+            <field name="name">产品目录常规编号规则</field>
+            <field name="code">product.category.seq.normal</field>
+            <field name="prefix">CAT</field>
+            <field name="padding">4</field>
+            <field name="initial">True</field>
+        </record>
+    </data>
+</odoo>

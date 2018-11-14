@@ -1,0 +1,160 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* app_base_chinese
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20180915\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-04 16:22+0000\n"
+"PO-Revision-Date: 2018-11-04 16:22+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
+msgid "(edit)"
+msgstr "(编辑)"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
+msgid "Address"
+msgstr "地址"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_res_partner_view_filter_customer
+#: model:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
+msgid "City"
+msgstr "城市"
+
+#. module: app_base_chinese
+#: model:ir.actions.act_window,help:app_base_chinese.app_action_partner_customer_form
+#: model:ir.actions.act_window,help:app_base_chinese.app_action_partner_form
+#: model:ir.actions.act_window,help:app_base_chinese.app_action_partner_supplier_form
+msgid "Click to add a contact in your address book."
+msgstr "点击在你的地址簿添加联系人。"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_res_partner_view_filter_customer
+msgid "Companies"
+msgstr "公司"
+
+#. module: app_base_chinese
+#: model:ir.model,name:app_base_chinese.model_res_partner
+msgid "Contact"
+msgstr "联系人"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
+msgid "Country"
+msgstr "国家/地区"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_res_partner_kanban_view
+msgid "Credit："
+msgstr "授信额度："
+
+#. module: app_base_chinese
+#: model:ir.actions.act_window,name:app_base_chinese.app_action_partner_customer_form
+#: model:ir.ui.view,arch_db:app_base_chinese.app_view_partner_customer_tree
+msgid "Customers"
+msgstr "客户"
+
+#. module: app_base_chinese
+#: model:ir.actions.act_window,name:app_base_chinese.app_action_partner_employee_form
+msgid "Employees"
+msgstr "员工"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_res_partner_view_filter_customer
+msgid "Group By"
+msgstr "分组"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_res_partner_view_filter_customer
+msgid "My Partners"
+msgstr "我的业务伙伴"
+
+#. module: app_base_chinese
+#: model:ir.actions.act_window,name:app_base_chinese.app_action_partner_other_form
+msgid "Other Partners"
+msgstr "其它业务伙伴"
+
+#. module: app_base_chinese
+#: model:ir.actions.act_window,name:app_base_chinese.app_action_partner_form
+msgid "Partner"
+msgstr "合作伙伴"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_res_partner_view_filter_customer
+msgid "Persons"
+msgstr "个人"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_res_partner_view_filter_customer
+msgid "Salesperson"
+msgstr "销售员"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_res_partner_view_filter_customer
+msgid "Search Partner"
+msgstr "搜索业务伙伴"
+
+#. module: app_base_chinese
+#: model:ir.model.fields,field_description:app_base_chinese.field_res_partner_short_name
+#: model:ir.model.fields,field_description:app_base_chinese.field_res_users_short_name
+msgid "Short Name"
+msgstr "简称"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
+msgid "State"
+msgstr "州/省"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
+msgid "Street..."
+msgstr "街道..."
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_res_partner_view_filter_customer
+msgid "Tag"
+msgstr "标签"
+
+#. module: app_base_chinese
+#: code:addons/app_base_chinese/models/res_partner.py:14
+#: sql_constraint:res.partner:0
+#, python-format
+msgid "The reference must be unique"
+msgstr "编码必须唯一"
+
+#. module: app_base_chinese
+#: code:addons/app_base_chinese/models/res_partner.py:21
+#, python-format
+msgid "The reference must be unique!"
+msgstr "编码必须唯一"
+
+#. module: app_base_chinese
+#: model:ir.actions.act_window,name:app_base_chinese.app_action_partner_supplier_form
+#: model:ir.ui.view,arch_db:app_base_chinese.app_view_partner_supplier_tree
+msgid "Vendors"
+msgstr "供应商"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
+msgid "ZIP"
+msgstr "邮箱"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
+msgid "e.g. VIP001"
+msgstr "例如 VIP001"
+
+#. module: app_base_chinese
+#: model:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
+msgid "手机:"
+msgstr "手机:"

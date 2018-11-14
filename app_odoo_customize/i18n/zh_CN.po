@@ -131,6 +131,11 @@ msgid "Data Cleaning (Be careful to do that!)"
 msgstr "数据清理（请谨慎操作！）"
 
 #. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Please confirm to delete the select data?"
+msgstr "您确认要删除指定数据？"
+
+#. module: app_odoo_customize
 #. openerp-web
 #: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:8
 #, python-format
@@ -289,31 +294,6 @@ msgstr "显示分享Odoo"
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__app_show_support
 msgid "Show Support"
 msgstr "显示支持"
-
-#. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__group_show_line_subtotals_tax_included
-msgid "Show line subtotals with taxes (B2C)"
-msgstr "显示含税明细行在汇总表(B2B)."
-
-#. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__group_show_line_subtotals_tax_excluded
-msgid "Show line subtotals without taxes (B2B)"
-msgstr "明细行汇总含税(B2B)."
-
-#. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__group_product_pricelist
-msgid "Show pricelists On Products"
-msgstr "显示产品的价目表"
-
-#. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__group_pricelist_item
-msgid "Show pricelists to customers"
-msgstr "给客户显示价目表"
-
-#. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__module_product_email_template
-msgid "Specific Email"
-msgstr "特定的电子邮件"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_app_theme_config_settings__app_stop_subscribe

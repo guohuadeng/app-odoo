@@ -17,7 +17,7 @@
 
 
 {
-    'name': "App stock putaway show. 单独的上架策略界面及菜单",
+    'name': "App base chinese，中国化基本模块增强",
     'version': '12.0.11.14',
     'author': 'Sunpop.cn',
     'category': 'Base',
@@ -25,18 +25,33 @@
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
-    Show stock putaway strategy in stock menu.
+    Chinese enhance. Out of the box use in china.
+    Set all chinese default value.
+    Default country, timezone, currency, partner... 
     """,
     'description': """
-    上架策略菜单。
-    广州尚鹏，Sunpop.cn 的odoo模块。
+    
+    odoo Chinese Enhance. 中国化增强-基础
+    1. 中文默认值，如国家、时区、货币等。处理模块 base, product.
+    2. 客户加简称，地址显示中文化，客户编码显示优先
+    3. todo:中文演示数据(只有demo模式才加载)
+    
     """,
-    'depends': ['stock'],
-    'images': [],
-
+    'pre_init_hook': 'pre_init_hook',
+    'depends': [
+        'base',
+        'product',
+        'l10n_cn'
+    ],
+    'images': ['static/description/banner.jpg'],
     'data': [
-        'views/product_putaway_views.xml',
-        'views/stock_procrules_views.xml',
+        'views/res_partner_category_views.xml',
+        'views/res_partner_views.xml',
+        'data/ir_default_data.xml',
+        'data/ir_sequence_data.xml',
+        'data/base_data.xml',
+        'data/res_currency_data.xml',
+        'data/product_data.xml',
     ],
     'demo': [
     ],
