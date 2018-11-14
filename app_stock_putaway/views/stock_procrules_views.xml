@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- 补货规则设置 -->
+        <record id="action_procurement_rule" model="ir.actions.act_window">
+            <field name="name">Global Procurement Rules</field>
+            <field name="res_model">procurement.rule</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a route.
+              </p>
+                <p>You can define here the main routes that run through
+                    your warehouses and that define the flows of your products. These
+                    routes can be assigned to a product, a product category or be fixed
+                    on procurement or sales order. </p>
+            </field>
+        </record>
+        <menuitem id="menu_procurement_rule" parent="stock.menu_warehouse_config" action="action_procurement_rule" sequence="5"/>
+        <!--&lt;!&ndash; 推式规则设置 &ndash;&gt;-->
+        <!--<menuitem id="menu_stock_location_path" name="Global Push Rules" action="stock.stolocpath" parent="felive_menu_stock_config_settings"-->
+                  <!--sequence="70"/>-->
+    </data>
+</odoo>
