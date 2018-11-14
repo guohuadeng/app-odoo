@@ -29,7 +29,7 @@
           <field name="inherit_id" ref="account.view_account_search"/>
           <field name="arch" type="xml">
               <xpath expr="//group" position="inside">
-                  <filter string="Group" domain="" context="{'group_by':'group_id'}"/>
+                  <filter string="Group" name="accountgroup" domain="" context="{'group_by':'group_id'}"/>
               </xpath>
           </field>
       </record>

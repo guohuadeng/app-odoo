@@ -51,7 +51,10 @@
     * 税金模板
 
     """,
-    'depends': ['l10n_cn'],
+    'depends': [
+        'account',
+        'l10n_cn',
+    ],
     'images': ['static/description/banner.png'],
     'data': [
         'views/account_account_views.xml',

@@ -1,34 +1,34 @@
 <odoo>
-  <data>
-            <!-- Product -->
-            <record id="app_product_template_form_view" model="ir.ui.view">
-                <field name="name">app.product.template.form</field>
-                <field name="model">product.template</field>
-                <field name="inherit_id" ref="product.product_template_form_view"/>
-                <field name="arch" type="xml">
-                    <xpath expr="//field[@name='categ_id']" position="attributes">
-                        <!-- Add your fields or attributes here -->
-                      <attribute name="widget">ztree_select</attribute>
-                      <attribute name="ztree_parent_key">parent_id</attribute>
-                      <attribute name="ztree_expend_level">2</attribute>
-                      <attribute name="limit">16</attribute>
-                      <attribute name="order">name</attribute>
-                    </xpath>
-                </field>
-            </record>
-    <record id="app_product_category_form_view" model="ir.ui.view">
-        <field name="name">app.product.category.form</field>
-        <field name="model">product.category</field>
-        <field name="inherit_id" ref="product.product_category_form_view"/>
-        <field name="arch" type="xml">
+    <data>
+        <!-- Product -->
+        <record id="app_product_template_form_view" model="ir.ui.view">
+            <field name="name">app.product.template.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="attributes">
+                    <!-- Add your fields or attributes here -->
+                    <attribute name="widget">ztree_select</attribute>
+                    <attribute name="ztree_parent_key">parent_id</attribute>
+                    <attribute name="ztree_expend_level">2</attribute>
+                    <attribute name="limit">16</attribute>
+                    <attribute name="order">name</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="app_product_category_form_view" model="ir.ui.view">
+            <field name="name">app.product.category.form</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
 
-            <xpath expr="//field[@name='parent_id']" position="attributes">
-                <!-- Add your fields or attributes here -->
-              <attribute name="widget">ztree_select</attribute>
-              <attribute name="ztree_parent_key">parent_id</attribute>
-            </xpath>
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <!-- Add your fields or attributes here -->
+                    <attribute name="widget">ztree_select</attribute>
+                    <attribute name="ztree_parent_key">parent_id</attribute>
+                </xpath>
 
-        </field>
-    </record>
-  </data>
+            </field>
+        </record>
+    </data>
 </odoo>
