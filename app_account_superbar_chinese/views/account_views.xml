@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+      <!-- account.move.line -->
+      <record id="view_account_move_line_filter_superbar" model="ir.ui.view">
+          <field name="name">Journal Items superbar</field>
+          <field name="model">account.move.line</field>
+          <field name="inherit_id" ref="app_account_superbar.view_account_move_line_filter_superbar"/>
+          <field name="arch" type="xml">
+              <xpath expr="//superbar/field[@name='account_id']" position="attributes">
+                  <attribute name="parent_key">parent_id</attribute>
+              </xpath>
+          </field>
+      </record>
+  </data>
+</odoo>

@@ -36,7 +36,6 @@
 
     'data': [
         'views/product_putaway_views.xml',
-        'views/stock_procrules_views.xml',
     ],
     'demo': [
     ],
