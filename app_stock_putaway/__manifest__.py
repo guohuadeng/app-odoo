@@ -17,7 +17,7 @@
 
 
 {
-    'name': "App stock putaway show. 单独的上架策略界面及菜单",
+    'name': "App stock putaway show.单独的上架策略界面及菜单",
     'version': '12.0.11.14',
     'author': 'Sunpop.cn',
     'category': 'Base',

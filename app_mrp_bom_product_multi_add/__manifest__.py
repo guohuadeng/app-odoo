@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "App MRP Bom Product Multi Batch Add, 制造Bom批量增加产品",
+    'name': "App MRP Bom Product Multi Batch Add",
     'version': '12.0.8.15',
     'author': 'Sunpop.cn',
     'category': 'Base',

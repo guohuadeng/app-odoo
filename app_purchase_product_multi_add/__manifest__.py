@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "App Purchase Order Product Multi Batch Add, 采购订单批量增加产品",
+    'name': "App Purchase Order Product Multi Batch Add",
     'version': '12.0.8.15',
     'author': 'Sunpop.cn',
     'category': 'Base',

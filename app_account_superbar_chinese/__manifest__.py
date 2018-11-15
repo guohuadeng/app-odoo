@@ -25,9 +25,7 @@
     'sequence': 2,
     'summary': """
     Browse journal by account chart... Use for parent children tree list kanban navigator. 
-    Browse sale order by partner and sale channel. Use for parent children tree list kanban navigator. 
-    ztree widget.Hierarchy Tree.Parent Children relation tree..
-    Add parent account chart setting.
+    ztree widget.Hierarchy Tree.Parent Children relation tree.
     """,
     'description': """
     树状结构会计科目表导航。

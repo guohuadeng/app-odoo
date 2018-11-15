@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "App Stock Picking Order Product Multi Batch Add, 库存调拨单批量增加产品",
+    'name': "App Stock Picking Order Product Multi Batch Add",
     'version': '12.0.8.15',
     'author': 'Sunpop.cn',
     'category': 'Base',
