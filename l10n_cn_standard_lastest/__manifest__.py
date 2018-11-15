@@ -9,7 +9,7 @@
 # Copyright (C) 2018-11  广州尚鹏 http://www.sunpop.cn
 
 {
-    'name': '2018最新中国企业会计表(营改增).Latest Chinese Accounting.',
+    'name': '2018最新中国企业会计表.Latest Chinese Accounting.',
     'version': '11.0.11.06',
     'author': 'Sunpop.cn',
     'category': 'Localization',
