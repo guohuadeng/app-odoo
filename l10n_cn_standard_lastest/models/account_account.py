@@ -15,8 +15,8 @@
 # http://www.sunpop.cn/odoo10_developer_document_offline/
 # description:
 
-from odoo import api, fields, models, exceptions, _
-
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError, ValidationError
 
 class AccountAccount(models.Model):
     _inherit = ['account.account']
@@ -30,4 +30,15 @@ class AccountAccount(models.Model):
     child_id = fields.One2many('account.account', 'parent_id', 'Child Chart')
     parent_left = fields.Integer('Left Parent', index=1)
     parent_right = fields.Integer('Right Parent', index=1)
+
+    @api.model
+    def _search_new_account_code(self, company, digits, prefix):
+        # 分隔符，金蝶为 "."，用友为""，注意odoo中一级科目，现金默认定义是4位头，银行是6位头
+        delimiter = '.'
+        for num in range(1, 100):
+            new_code = str(prefix.ljust(digits - 1, '0')) + delimiter + '%02d' % (num)
+            rec = self.search([('code', '=', new_code), ('company_id', '=', company.id)], limit=1)
+            if not rec:
+                return new_code
+        raise UserError(_('Cannot generate an unused account code.'))
 

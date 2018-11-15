@@ -21,22 +21,22 @@ msgid "Account"
 msgstr "科目"
 
 #. module: l10n_cn_standard_lastest
-#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account_child_id
-#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account_template_child_id
+#: code:addons/l10n_cn_standard_lastest/models/account_account.py:43
+#: code:addons/l10n_cn_standard_lastest/models/account_chart_template.py:62
+#, python-format
+msgid "Cannot generate an unused account code."
+msgstr "无法创建一个无效科目代码"
+
+#. module: l10n_cn_standard_lastest
+#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account__child_id
+#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account_template__child_id
 msgid "Child Chart"
 msgstr "下级科目"
 
 #. module: l10n_cn_standard_lastest
-#: model:ir.ui.view,arch_db:l10n_cn_standard_lastest.app_view_account_search
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_lastest.app_view_account_search
 msgid "Group"
-msgstr "类别"
-
-#. module: account
-#: model:ir.ui.menu,name:account.menu_finance
-#: model:ir.ui.view,arch_db:account.res_config_settings_view_form
-msgid "Finance"
-msgstr "财务"
-
+msgstr "科目组"
 
 #. module: l10n_cn_standard_lastest
 #: model:ir.ui.menu,name:account.menu_finance
@@ -44,20 +44,26 @@ msgid "Finance"
 msgstr "财务"
 
 #. module: l10n_cn_standard_lastest
-#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account_parent_left
-#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account_template_parent_left
+#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account__parent_left
+#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account_template__parent_left
 msgid "Left Parent"
 msgstr "左父项"
 
 #. module: l10n_cn_standard_lastest
-#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account_parent_id
-#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account_template_parent_id
+#: code:addons/l10n_cn_standard_lastest/models/account_chart_template.py:65
+#, python-format
+msgid "Liquidity Transfer"
+msgstr "流动性转移"
+
+#. module: l10n_cn_standard_lastest
+#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account__parent_id
+#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account_template__parent_id
 msgid "Parent Chart"
 msgstr "上级科目"
 
 #. module: l10n_cn_standard_lastest
-#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account_parent_right
-#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account_template_parent_right
+#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account__parent_right
+#: model:ir.model.fields,field_description:l10n_cn_standard_lastest.field_account_account_template__parent_right
 msgid "Right Parent"
 msgstr "右父项"
 
@@ -66,13 +72,4 @@ msgstr "右父项"
 msgid "Templates for Accounts"
 msgstr "科目模板"
 
-#. module: l10n_cn_standard_lastest
-#: model:account.tax,name:l10n_cn_standard_lastest.1_vatp_standard_business
-msgid "增值税16%进项税"
-msgstr "增值税16%进项税"
-
-#. module: l10n_cn_standard_lastest
-#: model:account.tax,name:l10n_cn_standard_lastest.1_vats_standard_business
-msgid "增值税16%销项税"
-msgstr "增值税16%销项税"
 
