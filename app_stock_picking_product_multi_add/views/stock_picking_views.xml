@@ -5,7 +5,7 @@
             <field name="model">stock.picking</field>
             <field name="inherit_id" ref="stock.view_picking_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//page/field[@name='move_lines']" position="attributes">
+                <xpath expr="//page/field[@name='move_ids_without_package']" position="attributes">
                     <attribute name="widget">multi_select_tree</attribute>
                     <attribute name="res_model">product.product</attribute>
                     <attribute name="res_field">product_id</attribute>
