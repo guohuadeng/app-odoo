@@ -6,8 +6,8 @@
 # resource of Sunpop
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-# Odoo在线中文用户手册（长期更新）
-# http://www.sunpop.cn/documentation/user/10.0/zh_CN/index.html
+# Odoo在线用户手册（长期更新）
+# http://www.sunpop.cn/documentation/user/12.0/en/index.html
 
 # Odoo10离线中文用户手册下载
 # http://www.sunpop.cn/odoo10_user_manual_document_offline/
