@@ -1,6 +1,4 @@
 # Translation of Odoo Server.
-# This file contains the translation of the following modules:
-#	* felive_home
 #
 msgid ""
 msgstr ""
