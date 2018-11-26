@@ -52,6 +52,7 @@
         'data/base_data.xml',
         'data/res_currency_data.xml',
         'data/product_data.xml',
+        'data/product_pricelist_data.xml',
     ],
     'demo': [
     ],
