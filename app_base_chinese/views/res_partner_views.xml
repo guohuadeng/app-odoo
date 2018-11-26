@@ -99,10 +99,10 @@
                                 <field name="zip" invisible="1"/>
                             </div>
                         </div>
-                        <div t-if="record.phone.raw_value">电话:
+                        <div t-if="record.phone.raw_value">Tel:
                             <field name="phone"/>
                         </div>
-                        <div t-if="record.mobile.raw_value">手机:
+                        <div t-if="record.mobile.raw_value">Mobile:
                             <field name="mobile"/>
                         </div>
                     </div>
