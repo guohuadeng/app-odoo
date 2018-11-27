@@ -507,11 +507,11 @@ class AppThemeConfigSettings(models.TransientModel):
     @api.multi
     def remove_all_biz(self):
         try:
-            self.remove_sales()
-            self.remove_purchase()
             self.remove_account()
-            self.remove_mrp()
             self.remove_inventory()
+            self.remove_mrp()
+            self.remove_purchase()
+            self.remove_sales()
             self.remove_project()
             self.remove_message()
         except Exception as e:
