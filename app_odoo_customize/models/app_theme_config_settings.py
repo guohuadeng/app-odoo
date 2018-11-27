@@ -351,8 +351,8 @@ class AppThemeConfigSettings(models.TransientModel):
             # 清除财务会计单据
             ['account.voucher.line', ],
             ['account.voucher', ],
-            ['account.bank.statement', ],
             ['account.bank.statement.line', ],
+            ['account.bank.statement', ],
             ['account.payment', ],
             ['account.analytic.line', ],
             ['account.analytic.account', ],
@@ -361,6 +361,7 @@ class AppThemeConfigSettings(models.TransientModel):
             ['account.invoice', ],
             ['account.partial.reconcile', ],
             ['account.move.line', ],
+            ['hr.expense.sheet', ],
             ['account.move', ],
         ]
         try:
