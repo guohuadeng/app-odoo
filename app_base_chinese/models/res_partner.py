@@ -9,17 +9,7 @@ class ResPartner(models.Model):
 
     short_name = fields.Char('Short Name')  # 简称
 
-    # 在原唯一检查中增加ref唯一
-    _sql_constraints = [
-        ('uniq_ref', 'unique(ref)', _('The reference must be unique')),
-    ]
-
-    @api.constrains('ref')
-    def _check_ref(self):
-        customers = self.search([('ref', '=', self.ref)], limit=2)
-        if len(customers) > 1:
-            raise ValidationError(_('The reference must be unique!'))
-
+    # ref，编码限制在 app_partner_auto_reference
     # 显示[编码]简称
     @api.multi
     def name_get(self):
