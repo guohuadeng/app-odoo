@@ -4,6 +4,9 @@ from odoo import api, fields, models
 
 class ResCurrency(models.Model):
     _inherit = 'res.currency'
+    _order = 'active desc, sequence, name'
+
+    sequence = fields.Integer('Sequence', default=10, help="Determine the display order. Sort ascending.")
 
     def rmb_upper(self, value):
         """
