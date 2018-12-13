@@ -7,15 +7,12 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//page[@name='sales_purchases']//field[@name='ref']" position="replace">
-                </xpath>
-                <!-- 客户编号设计在重要位置，在ui层必填，其它联系人type时不需要填 2017-10-22 -->
+                <!-- 客户编号设计在重要位置 -->
                 <xpath expr="//field[@name='type']" position="after">
-                    <field name="ref" placeholder="e.g. VIP001" />
-                    <field name="short_name"/>
+                    <xpath expr="//field[@name='ref']" position="move"/>
                 </xpath>
-                <xpath expr="//field[@name='website']" position="attributes">
-                    <attribute name="invisible">1</attribute>
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="short_name"/>
                 </xpath>
                 <!-- 信用额度 -->
                 <xpath expr="//field[@name='category_id']" position="after">
