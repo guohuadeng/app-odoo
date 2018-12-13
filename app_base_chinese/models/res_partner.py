@@ -14,13 +14,19 @@ class ResPartner(models.Model):
     @api.multi
     def name_get(self):
         result = []
+        name = ''
         for partner in self:
-            if partner.short_name:
-                name = partner.short_name
-            else:
-                name = partner.name
             if partner.ref:
-                name = '[' + partner.ref + ']' + name
+                try:
+                    name = '[' + partner.ref + ']'
+                except:
+                    name = ''
+            if partner.short_name:
+                name = name + partner.short_name
+            elif partner.name:
+                name = name + partner.name
+            else:
+                name = name
             result.append((partner.id, name))
         return result
 
@@ -30,5 +36,3 @@ class PartnerCategory(models.Model):
     _order = 'sequence, name'
 
     sequence = fields.Integer('Sequence', help="Used to order partner category")
-
-

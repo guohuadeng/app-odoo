@@ -54,8 +54,12 @@
                 <xpath expr="//notebook/page[1]" position="attributes">
                     <attribute name="attrs">{'invisible': [('is_company','!=', True)]}</attribute>
                 </xpath>
+                <!-- 所有类型联系人都要填姓名 -->
+                <xpath expr="//page//field[@name='child_ids']//form[1]//field[@name='name']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
                 <!-- 联系人也显示地址，中国格式 -->
-                <xpath expr="//page//form[1]//group//group" position="replace">
+                <xpath expr="//page//field[@name='child_ids']//form[1]//group//group" position="replace">
                     <group attrs="">
                         <label for="street" string="Address"/>
                         <div>
@@ -74,7 +78,7 @@
                 </xpath>
                 <!-- res.partner联系人 kanban -->
                 <!-- 显示类型和地址等 -->
-                <xpath expr="//page//kanban[1]//templates//div[@class='oe_kanban_details']" position="replace">
+                <xpath expr="//page//field[@name='child_ids']//kanban[1]//templates//div[@class='oe_kanban_details']" position="replace">
                     <div class="oe_kanban_details">
                         <div>
                             [<field name="ref"/>]
