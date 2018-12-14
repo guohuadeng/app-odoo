@@ -26,6 +26,7 @@ class AccountAccountTemplate(models.Model):
     # _rec_name = 'complete_name'
 
     parent_id = fields.Many2one('account.account.template', 'Parent Chart', index=True, ondelete='cascade')
-    child_id = fields.One2many('account.account.template', 'parent_id', 'Child Chart')
+    child_ids = fields.One2many('account.account.template', 'parent_id', 'Child Chart')
+    parent_path = fields.Char(index=True)
 
 

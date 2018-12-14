@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "App Multi Level Account Chart, parent children tree",
+    'name': "App Account Multi Level Chart, parent children tree",
     'version': '12.0.12.14',
     'author': 'Sunpop.cn',
     'category': 'Base',
@@ -37,7 +37,6 @@
     'currency': 'EUR',
     'depends': [
         'account',
-        'l10n_cn_standard_lastest',
     ],
     'images': ['static/description/banner.gif'],
     'data': [
