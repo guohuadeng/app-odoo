@@ -13,10 +13,10 @@ class SaleOrderLine(models.Model):
     # weight_uom_name = fields.Char(string='Weight Measure', related='product_id.weight_uom_id.name', readonly=True)
     weight = fields.Float(string='Weight', related='product_id.weight', store=True, readonly=True)
     weight_subtotal = fields.Float(string='Weight Subtotal', compute='_compute_weight_subtotal',
-                          inverse='_set_weight_subtotal', store=True)
+                                   inverse='_set_weight_subtotal', store=True)
 
     @api.multi
-    @api.depends('product_id', 'product_uom', 'product_uom_qty')
+    @api.depends('product_id', 'weight', 'product_uom', 'product_uom_qty')
     def _compute_weight_subtotal(self):
         for line in self:
             weight_subtotal = 0

@@ -19,24 +19,17 @@
                     <field name="credit_limit"/>
                 </xpath>
                 <!--res.partner客户 地址中国化 -->
-                <xpath expr="//div[@class='o_address_format']" position="replace">
-                    <div class="o_address_format">
-                        <div class="oe_edit_only">
-                            <button name="open_parent" type="object" string="(edit)" class="oe_link"
-                                    attrs="{'invisible': ['|', ('parent_id', '=', False), ('type', '!=', 'contact')]}"/>
-                        </div>
-                        <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'
-                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
-                        <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'
-                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" context="{'country_id': country_id, 'zip': zip}"/>
-                        <field name="city" placeholder="City" class="o_address_city"
-                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
-                        <field name="zip" placeholder="ZIP" class="o_address_zip"
-                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
-                        <field name="street" placeholder="Street..." class="o_address_street"
-                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
-                        <field name="street2" invisible="1"/>
-                    </div>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='country_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='state_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='city']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='zip']" position="move"/>
                 </xpath>
                 <!-- res.partner联系人 form -->
                 <!-- 所有类型联系人默认都不是客户，不是供应商-->
@@ -56,57 +49,101 @@
                     <attribute name="required">1</attribute>
                 </xpath>
                 <!-- 联系人也显示地址，中国格式 -->
-                <xpath expr="//page//field[@name='child_ids']//form[1]//group//group" position="replace">
-                    <group attrs="">
-                        <label for="street" string="Address"/>
-                        <div>
-                            <div class="o_address_format" name="div_address">
-                                <field name="country_id" placeholder="Country" class="o_address_country"
-                                       options='{"no_open": True, "no_create": True}'/>
-                                <field name="state_id" class="o_address_state" placeholder="State"
-                                       options='{"no_open": True}' context="{'country_id': country_id, 'zip': zip}"/>
-                                <field name="city" placeholder="City" class="o_address_city"/>
-                                <field name="zip" placeholder="ZIP" class="o_address_zip"/>
-                                <field name="street" placeholder="Street..." class="o_address_street"/>
-                                <field name="street2" invisible="1"/>
-                            </div>
-                        </div>
-                    </group>
+                <!--res.partner客户 地址中国化 -->
+                <xpath expr="//field[@name='child_ids']//form[1]//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='child_ids']//form[1]//field[@name='country_id']" position="move"/>
                 </xpath>
+                <xpath expr="//field[@name='child_ids']//form[1]//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='child_ids']//form[1]//field[@name='state_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']//form[1]//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='child_ids']//form[1]//field[@name='city']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']//form[1]//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='child_ids']//form[1]//field[@name='zip']" position="move"/>
+                </xpath>                
                 <!-- res.partner联系人 kanban -->
                 <!-- 显示类型和地址等 -->
-                <xpath expr="//page//field[@name='child_ids']//kanban[1]//templates//div[@class='oe_kanban_details']" position="replace">
-                    <div class="oe_kanban_details">
-                        <div>
-                            [<field name="ref"/>]
-                            <strong>
-                                <field name="name"/>
-                            </strong>
-                        </div>
-                        <div>
-                            <field name="type"/>
-                        </div>
-                        <div t-if="record.function.raw_value">
-                            <field name="function"/>
-                        </div>
-                        <div t-if="record.email.raw_value">
-                            <field name="email"/>
-                        </div>
-                        <div>
-                            <field t-if="record.state_id.raw_value" name="state_id"/>
-                            <div>
-                                <field name="city"/>
-                                <field name="street"/>
-                                <field name="zip" invisible="1"/>
-                            </div>
-                        </div>
-                        <div t-if="record.phone.raw_value">Tel:
-                            <field name="phone"/>
-                        </div>
-                        <div t-if="record.mobile.raw_value">Mobile:
-                            <field name="mobile"/>
-                        </div>
-                    </div>
+                <xpath expr="//field[@name='child_ids']//kanban[1]//templates//field[@name='name']" position="before">
+                    <t t-if="record.ref.raw_value">[<field name="ref"/>]</t>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']//kanban[1]//templates//field[@name='name']" position="after">
+                    <div t-if="record.type.raw_value"><field name="type"/></div>
+                </xpath>
+            </field>
+        </record>
+
+        <!--res.partner open地址中国化 -->
+        <record id="app_view_partner_address_form" model="ir.ui.view">
+            <field name="name">app.res.partner.form.address</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_address_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='country_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='state_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='city']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='zip']" position="move"/>
+                </xpath>
+            </field>
+        </record>
+        <!--res.partner open地址中国化 -->
+        <record id="app_view_partner_short_form" model="ir.ui.view">
+            <field name="name">app.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_short_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='country_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='state_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='city']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='zip']" position="move"/>
+                </xpath>
+            </field>
+        </record>
+        <!--res.partner 私人地址中国化 -->
+        <record id="app_res_partner_view_form_private" model="ir.ui.view">
+            <field name="name">app.res.partner.view.form.private</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_view_form_private"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='country_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='state_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='city']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='zip']" position="move"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="app_view_partner_tree" model="ir.ui.view">
+            <field name="name">app.res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='phone']" position="before">
+                    <field name="mobile"/>
+                </xpath>
+                <xpath expr="//field[@name='email']" position="after">
+                    <field name="category_id"/>
                 </xpath>
             </field>
         </record>
