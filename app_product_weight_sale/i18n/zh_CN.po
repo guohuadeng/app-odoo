@@ -21,7 +21,7 @@ msgid "<span> kg</span>"
 msgstr "<span> 公斤</span>"
 
 #. module: app_product_weight_sale
-#: model:ir.model.fields,field_description:app_product_weight_sale.field_sale_order_total_weight
+#: model:ir.model.fields,field_description:app_product_weight_sale.field_sale_order_weight_total
 msgid "Total Weight(kg)"
 msgstr "总重量(kg)"
 

@@ -9,12 +9,13 @@ from odoo import api, fields, models, _
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
-    weight = fields.Float(string='Weight(kg)', compute='_compute_weight',
-                          inverse='_set_weight', store=True)
+    weight = fields.Float(string='Weight', store=True)
+    weight_subtotal = fields.Float(string='Weight Subtotal', compute='_compute_weight_subtotal',
+                          inverse='_set_weight_subtotal', store=True)
 
     @api.multi
     @api.depends('product_id', 'product_uom_qty')
-    def _compute_weight(self):
+    def _compute_weight_subtotal(self):
         for line in self:
             weight = 0
             if line.product_id and line.product_id.weight:
@@ -22,5 +23,5 @@ class SaleOrderLine(models.Model):
             line.weight = weight
 
     @api.one
-    def _set_weight(self):
+    def _set_weight_subtotal(self):
         pass
