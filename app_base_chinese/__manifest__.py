@@ -52,6 +52,7 @@
         'data/ir_default_data.xml',
         'data/ir_sequence_data.xml',
         'data/base_data.xml',
+        'data/res_country_data.xml',
         'data/res_currency_data.xml',
         'data/product_data.xml',
         'data/product_pricelist_data.xml',
