@@ -51,7 +51,6 @@ class AccountChartTemplate(models.Model):
         return {
             'name': _('Liquidity Transfer'),
             'code': new_code,
-            'parent_id': self.id,
             'user_type_id': current_assets_type and current_assets_type.id or False,
             'reconcile': True,
             'chart_template_id': self.id,
