@@ -41,9 +41,11 @@
              	</xpath>
             	<xpath expr="//field[@name='order_line']/tree/field[@name='product_uom']" position="after">
                 	<field name="weight"/>
+                	<field name="weight_subtotal"/>
              	</xpath>
              	<xpath expr="//field[@name='order_line']/form/group/group/field[@name='price_unit']" position="before">
                     <field name="weight"/>
+                    <field name="weight_subtotal"/>
              	</xpath>
 			</field>
 		 </record>  
