@@ -20,9 +20,15 @@
 {
     'name': "App Row Number in tree list view",
     'version': '11.0.9.30',
-    'summary': 'Show row number in tree/list view. list number, list row number',
+    'summary': 'Show row number in tree/list view. list number,list index list row number, tree number, tree index',
     'category': 'Other',
-    'description': """By installing this module, user can see row number in Odoo backend tree view.""",
+    'description':
+        """
+        By installing this module, user can see row number in Odoo backend tree view.
+        Show row number in tree/list view. list number,list index, list sequence, list row number, tree number, tree index, tree sequence.
+        """,
+    'price': 38.00,
+    'currency': 'EUR',
     'author': 'Sunpop.cn',
     "depends": ['web'],
     'data': [
