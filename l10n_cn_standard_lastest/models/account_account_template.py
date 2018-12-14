@@ -24,11 +24,8 @@ class AccountAccountTemplate(models.Model):
     _parent_store = True
     _parent_order = 'code'
     # _rec_name = 'complete_name'
-    _order = 'parent_left'
 
     parent_id = fields.Many2one('account.account.template', 'Parent Chart', index=True, ondelete='cascade')
     child_id = fields.One2many('account.account.template', 'parent_id', 'Child Chart')
-    parent_left = fields.Integer('Left Parent', index=1)
-    parent_right = fields.Integer('Right Parent', index=1)
 
 
