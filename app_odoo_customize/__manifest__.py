@@ -23,7 +23,7 @@
 
 {
     'name': 'App Odoo Customize(Backend Debranding Title,Language,Documentation,Quick Debug,Clear Data)',
-    'version': '12.0.11.25',
+    'version': '12.0.12.25',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',
@@ -68,7 +68,7 @@
     Also helpful for training and support for your odoo end-user.
     The user can get the help document just by one click.
     """,
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.gif'],
     'depends': ['base', 'web', 'mail'],
     'data': [
         'views/app_odoo_customize_view.xml',
