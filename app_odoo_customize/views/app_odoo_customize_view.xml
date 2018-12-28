@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data>
-        <template id="switch_language" name="switch_language assets" inherit_id="web.assets_backend">
+
+        <template id="assets_backend" name="app_odoo_customize assets" inherit_id="web.assets_backend">
             <xpath expr="." position="inside">
-                <link rel="stylesheet" type="text/css" href="/app_odoo_customize/static/src/css/app.css"/>
-                <script type="text/javascript" src="/app_odoo_customize/static/src/js/app_window_title.js"/>
+                <link rel="stylesheet" type="text/scss" href="/app_odoo_customize/static/src/scss/app.scss"/>
+                <script type="text/javascript" src="/app_odoo_customize/static/src/js/app_window_title.js"></script>
                 <script type="text/javascript" src="/app_odoo_customize/static/src/js/customize_user_menu.js"></script>
             </xpath>
         </template>
@@ -14,5 +14,4 @@
                 <!--<a href="https://www.sunpop.cn" target="_blank">Powered by <span>odooApp</span></a>-->
             <!--</xpath>-->
         <!--</template>-->
-    </data>
 </odoo>
