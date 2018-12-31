@@ -8,7 +8,7 @@
     'sequence': 10,
     'license': 'LGPL-3',
     'description': """
-    Add product sku weight in Sale Order.
+    Add product sku weight in Sale Order. Unit of measure auto weight.
     Calculates total weight of a sale order, which is the sum of individual weights of each unit of the products in the order
     """,
     'category': 'Sales',
