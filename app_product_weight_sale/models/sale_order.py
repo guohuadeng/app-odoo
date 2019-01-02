@@ -15,7 +15,7 @@ class SaleOrder(models.Model):
         else:
             return self.env.ref('uom.product_uom_kgm').name
 
-    weight_total = fields.Float(string='Total Weight', compute='_compute_weight_total')
+    weight_total = fields.Float(string='Total Weight', compute='_compute_weight_total', store=True)
     # 重量显示的单位
     weight_uom_name = fields.Char(string='Weight Measure', default=_get_default_weight_uom_name, readonly=True)
 
