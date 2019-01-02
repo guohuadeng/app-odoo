@@ -5,12 +5,6 @@
 //lg: 992px,
 //xl: 1200px,
 //xxl: 1534px,
-/*
-list标头不换行
-*/
-.table-responsive {
-    white-space: nowrap !important;
-}
 
 /*
 sheet全宽
@@ -21,7 +15,6 @@ sheet全宽
     }
 }
 //将原来 768时的 flex 调整为1200才flex
-
 .o_form_view {
     @include media-breakpoint-up(md) {
         display: block;
@@ -35,7 +28,7 @@ sheet全宽
     .o_form_view .o_form_sheet_bg > .o_form_sheet {
         max-width: 98% !important;
     }
-    .o_content .o_view_controller > div, .modal-content .o_view_controller > div    {
+    .o_content .o_view_controller > .o_form_view    {
         flex-direction: column;
     }
 }
