@@ -41,7 +41,7 @@
     "price": 18.00,
     "currency": "EUR",
 
-    'images': ['static/description/list_pivot.png'],
+    'images': ['static/description/banner.png'],
 
     'installable': True,
     'auto_install': False,
