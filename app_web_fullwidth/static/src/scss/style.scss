@@ -28,9 +28,6 @@ sheet全宽
     .o_form_view .o_form_sheet_bg > .o_form_sheet {
         max-width: 98% !important;
     }
-    .o_content .o_view_controller > .o_form_view    {
-        flex-direction: column;
-    }
 }
 @media (min-width: 1200px) {
     .o_form_view .o_form_sheet_bg > .o_form_sheet {

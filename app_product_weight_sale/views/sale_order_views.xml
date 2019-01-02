@@ -8,7 +8,7 @@
 			<field name="model">sale.order</field>
 			<field name="inherit_id" ref="sale.view_order_tree"/>
 			<field name="arch" type="xml">
-			     <xpath expr="//field[@name='state']" position="after">
+			     <xpath expr="//field[@name='amount_total']" position="before">
                      <field name="weight_total"/>
                 </xpath>
 			</field>
@@ -19,7 +19,7 @@
 			<field name="model">sale.order</field>
 			<field name="inherit_id" ref="sale.view_quotation_tree"/>
 			<field name="arch" type="xml">
-			     <xpath expr="//field[@name='state']" position="after">
+			     <xpath expr="//field[@name='amount_total']" position="before">
                      <field name="weight_total"/>
                 </xpath>
 			</field>
@@ -35,7 +35,7 @@
 				<xpath expr="//field[@name='note']" position="before">
 					<div>
 						<label for="weight_total" name="weight_total" string="Total Weight: " class="oe_inline"/>
-	                    <field name="weight_total" class="oe_inline"/><span> kg</span>
+	                    <field name="weight_total" class="oe_inline"/><span> <field name="weight_uom_name" class="oe_inline"/></span>
 	                </div>
 	                <newline/>
              	</xpath>
@@ -43,7 +43,7 @@
                 	<field name="weight"/>
                 	<field name="weight_subtotal"/>
              	</xpath>
-             	<xpath expr="//field[@name='order_line']/form/group/group/field[@name='price_unit']" position="before">
+             	<xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="before">
                     <field name="weight"/>
                     <field name="weight_subtotal"/>
              	</xpath>
