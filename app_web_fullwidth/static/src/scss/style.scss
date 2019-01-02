@@ -1,0 +1,54 @@
+//xs: 0,
+//vsm: 475px,
+//sm: 576px,
+//md: 768px,
+//lg: 992px,
+//xl: 1200px,
+//xxl: 1534px,
+/*
+list标头不换行
+*/
+.table-responsive {
+    white-space: nowrap !important;
+}
+
+/*
+sheet全宽
+*/
+@media (min-width: 576px) {
+    .o_form_view .o_form_sheet_bg > .o_form_sheet {
+        max-width: 98% !important;
+    }
+}
+//将原来 768时的 flex 调整为1200才flex
+
+.o_form_view {
+    @include media-breakpoint-up(md) {
+        display: block;
+    }
+    @include media-breakpoint-up(xl) {
+        display: flex;
+    }
+}
+
+@media (min-width: 768px) {
+    .o_form_view .o_form_sheet_bg > .o_form_sheet {
+        max-width: 98% !important;
+    }
+    .o_content .o_view_controller > div, .modal-content .o_view_controller > div    {
+        flex-direction: column;
+    }
+}
+@media (min-width: 1200px) {
+    .o_form_view .o_form_sheet_bg > .o_form_sheet {
+        max-width: 960px !important;
+    }
+    .o_content .o_view_controller > div, .modal-content .o_view_controller > div    {
+        flex-direction: row;
+    }
+}
+@media (min-width: 1534px) {
+    .o_form_view .o_form_sheet_bg > .o_form_sheet {
+        max-width: 98% !important;
+    }
+}
