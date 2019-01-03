@@ -29,12 +29,14 @@
     """,
     'description': """
     上架策略菜单。
+    每个上架策略只适用于指定位置
     广州尚鹏，Sunpop.cn 的odoo模块。
     """,
     'depends': ['stock'],
     'images': [],
 
     'data': [
+        'views/stock_location_views.xml',
         'views/product_putaway_views.xml',
     ],
     'demo': [

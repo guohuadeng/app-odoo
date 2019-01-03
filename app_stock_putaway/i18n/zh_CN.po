@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0+e-20180915\n"
+"Project-Id-Version: Odoo Server 12.0+e-20181221\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-04 20:04+0000\n"
-"PO-Revision-Date: 2018-11-04 20:04+0000\n"
+"POT-Creation-Date: 2019-01-03 19:28+0000\n"
+"PO-Revision-Date: 2019-01-03 19:28+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,14 +16,24 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: app_stock_putaway
-#: model:ir.actions.act_window,help:app_stock_putaway.action_product_putaway
-msgid "Click to define a new picking type group."
-msgstr "点击创建一条新的记录."
+#: model:ir.model.fields,field_description:app_stock_putaway.field_product_putaway__location_id
+msgid "Location"
+msgstr "适用位置"
 
 #. module: app_stock_putaway
-#: model:ir.ui.view,arch_db:app_stock_putaway.app_view_strock_putaway_tree
-msgid "Stock Put Away Strategy"
+#: model_terms:ir.actions.act_window,help:app_stock_putaway.action_product_putaway
+msgid "Please go to \"Configuration-&gt;Warehouse Management-&gt;Locations\" to Create a Stock Putaway Strategy."
+msgstr "请在 \"配置-&gt;仓库管理-&gt;位置\" 中创建上架策略"
+
+#. module: app_stock_putaway
+#: model:ir.model,name:app_stock_putaway.model_product_putaway
+msgid "Put Away Strategy"
 msgstr "上架策略"
+
+#. module: app_stock_putaway
+#: model_terms:ir.ui.view,arch_db:app_stock_putaway.app_view_strock_putaway_tree
+msgid "Stock Put Away Strategy"
+msgstr "仓库上架策略"
 
 #. module: app_stock_putaway
 #: model:ir.actions.act_window,name:app_stock_putaway.action_product_putaway

@@ -6,8 +6,24 @@
         <field name="arch" type="xml">
             <tree string="Stock Put Away Strategy" create="false">
                 <field name="name"/>
+                <field name="location_id"/>
+                <field name="product_location_ids"/>
                 <field name="fixed_location_ids"/>
             </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="app_view_putaway">
+        <field name="name">app.product.putaway.form</field>
+        <field name="model">product.putaway</field>
+        <field name="inherit_id" ref="stock.view_putaway"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="location_id" required="1" attrs="{'invisible': [('location_id', '!=', False)]}"/>
+            </xpath>
+            <!--<xpath expr="//field[@name='fixed_location_id']" position="attributes">-->
+                <!--<attribute name="domain">[('id', 'child_of', parent.location_id))]</attribute>-->
+            <!--</xpath>-->
         </field>
     </record>
 
