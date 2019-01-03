@@ -38,7 +38,7 @@ msgstr "总重量"
 #. module: app_product_weight_sale
 #: model:ir.model.fields,field_description:app_product_weight_sale.field_sale_order_line__weight
 msgid "Weight"
-msgstr "重量"
+msgstr "单位重量"
 
 #. module: app_product_weight_sale
 #: model:ir.model.fields,field_description:app_product_weight_sale.field_sale_order__weight_uom_name
