@@ -9,7 +9,7 @@
 			<field name="inherit_id" ref="sale.view_order_tree"/>
 			<field name="arch" type="xml">
 			     <xpath expr="//field[@name='amount_total']" position="before">
-                     <field name="weight_total"/>
+                     <field name="weight_total" sum="Total Weight"/>
                 </xpath>
 			</field>
 		</record> 
@@ -20,7 +20,7 @@
 			<field name="inherit_id" ref="sale.view_quotation_tree"/>
 			<field name="arch" type="xml">
 			     <xpath expr="//field[@name='amount_total']" position="before">
-                     <field name="weight_total"/>
+                     <field name="weight_total" sum="Total Weight"/>
                 </xpath>
 			</field>
 		</record> 
@@ -39,7 +39,7 @@
 	                </div>
 	                <newline/>
              	</xpath>
-            	<xpath expr="//field[@name='order_line']/tree/field[@name='product_uom']" position="after">
+            	<xpath expr="//field[@name='order_line']/tree//field[@name='product_uom']" position="after">
                 	<field name="weight"/>
                 	<field name="weight_subtotal"/>
              	</xpath>
