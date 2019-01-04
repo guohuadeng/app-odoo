@@ -6,14 +6,23 @@
 # Copyright (C) 2018 Ivan deng <300883@qq.com>
 #
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).#
+
 {
     'name': "App Web Widget Color",
     'category': "web",
-    'version': "11.0.11.02",
+    'version': "11.0.11.04",
     "author": "Sunpop.cn",
-    'depends': ['base', 'web'],
+    'price': 38.00,
+    'currency': 'EUR',
+    'summary': """
+    Use for quick select color. can be use in product attribute and other color variant. color widget. color pick.
+    """,
+    'depends': [
+        'base',
+        'web',
+    ],
     'data': [
-        'view/web_widget_color_view.xml'
+        'view/web_widget_color_view.xml',
     ],
     'qweb': [
         'static/src/xml/widget.xml',
