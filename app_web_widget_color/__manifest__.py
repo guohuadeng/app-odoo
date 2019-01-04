@@ -17,6 +17,7 @@
     'summary': """
     Use for quick select color. can be use in product attribute and other color variant. color widget. color pick.
     """,
+    'images': ['static/description/banner.png'],
     'depends': [
         'base',
         'web',
