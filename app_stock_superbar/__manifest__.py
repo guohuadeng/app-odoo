@@ -24,7 +24,7 @@
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
-    Use for parent children tree list select navigator. stock location tree.
+    Use for parent children tree list select navigator. stock location tree, filter by parent location.
     ztree widget.
     """,
     'description': """
@@ -40,7 +40,7 @@
     ],
     'images': ['static/description/banner.gif'],
     'data': [
-        'views/stock_views.xml',
+        'views/stock_location_views.xml',
     ],
     'demo': [
     ],

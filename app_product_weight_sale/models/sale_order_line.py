@@ -21,7 +21,10 @@ class SaleOrderLine(models.Model):
             weight = 0
             weight_subtotal = 0
             if line.product_id and line.product_id.weight:
-                weight = line.product_id.weight / line.product_uom.factor
+                try:
+                    weight = line.product_id.weight / line.product_uom.factor
+                except:
+                    weight = line.product_id.weight
                 weight_subtotal += (weight * line.product_uom_qty)
             line.weight = weight
             line.weight_subtotal = weight_subtotal

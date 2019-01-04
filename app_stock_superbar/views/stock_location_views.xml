@@ -1,0 +1,24 @@
+<odoo>
+  <data>
+    <!-- stock -->
+    <record id="view_location_search_superbar" model="ir.ui.view">
+        <field name="name">stock.location.search.superbar</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <superbar view_mode="kanban,tree">
+                    <field name="location_id"
+                           widget="ztree_search"
+                           model="stock.location"
+                           domain="[]"
+                           parent_key="location_id"
+                           level="1"
+                    />
+                    <field name="usage"/>
+                </superbar>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>
