@@ -9,7 +9,6 @@ _logger = logging.getLogger(__name__)
 
 class AppThemeConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
-    _name = 'app.theme.config.settings'
 
     _description = u"App Odoo Customize settings"
     app_system_name = fields.Char('System Name', help=u"Setup System Name,which replace Odoo")
