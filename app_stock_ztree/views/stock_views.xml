@@ -11,7 +11,6 @@
               <attribute name="widget">ztree_select</attribute>
               <attribute name="ztree_parent_key">location_id</attribute>
             </xpath>
-
         </field>
     </record>
   </data>

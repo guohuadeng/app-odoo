@@ -9,7 +9,7 @@
             <xpath expr="//search">
                 <superbar position="right" view_mode="kanban,tree">
                     <field name="categ_id" domain="[]"
-                           parent_key="parent_id" level="2"/>
+                           parent_key="parent_id"/>
                     <field name="type"/>
                 </superbar>
             </xpath>
