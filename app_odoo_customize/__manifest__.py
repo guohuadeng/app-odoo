@@ -23,7 +23,7 @@
 
 {
     'name': 'App Odoo Customize(Backend Debranding Title,Language,Documentation,Quick Debug,Clear Data)',
-    'version': '12.19.1.05',
+    'version': '12.19.1.06',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',
