@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="product.product_template_search_view"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <superbar position="right" view_mode="kanban,tree">
+                <superbar view_mode="kanban,tree">
                     <field name="categ_id" domain="[]"
                            parent_key="parent_id"/>
                     <field name="type"/>

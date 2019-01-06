@@ -7,7 +7,9 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <superbar view_mode="kanban,tree">
-                    <field name="partner_id"/>
+                    <field name="partner_id"
+                           parent_key="parent_id"
+                           domain="[('supplier', '=', True)]"/>
                     <field name="state"/>
                     <field name="invoice_status"/>
                 </superbar>

@@ -12,7 +12,7 @@
                     <field name="partner_id"
                            widget="ztree_search"
                            model="res.partner"
-                           domain="[]"
+                           domain="[('customer', '=', True)]"
                            parent_key="parent_id"
                            level="0"
                     />
@@ -34,7 +34,7 @@
                     <field name="partner_id"
                            widget="ztree_search"
                            model="res.partner"
-                           domain="[]"
+                           domain="[('customer', '=', True)]"
                            parent_key="parent_id"
                            level="0"
                     />
