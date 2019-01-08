@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "App Employee browse by department, hr superbar",
+    'name': "Employee Navigator by department, hr superbar",
     'version': '12.19.01.09',
     'author': 'Sunpop.cn',
     'category': 'Human Resources',
