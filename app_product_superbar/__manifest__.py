@@ -17,7 +17,7 @@
 
 {
     'name': "App product browse by category navigator",
-    'version': '12.0.11.15',
+    'version': '12.19.01.10',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'http://www.sunpop.cn',
@@ -25,6 +25,7 @@
     'sequence': 2,
     'summary': """
     Browse Product by category tree. Use for parent children tree list kanban navigator. 
+    Easy to navigator and browser any data. Support Search more list, kanban, pivot, graph view. 
     ztree widget.Hierarchy Tree.Parent Children relation tree..
     """,
     'description': """
@@ -38,7 +39,7 @@
     'depends': [
         'product',
     ],
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.gif'],
     'data': [
         'views/product_views.xml',
     ],
