@@ -39,7 +39,7 @@
     'depends': [
         'hr',
     ],
-    'images': ['static/description/hr1.gif'],
+    'images': ['static/description/hr.gif'],
     'data': [
         'views/hr_views.xml',
     ],
