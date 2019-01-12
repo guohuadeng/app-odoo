@@ -23,6 +23,11 @@
                 <xpath expr="//div[@class='oe_module_vignette']" position="attributes" groups="app_odoo_customize.group_show_quick_upgrade">
                     <attribute name="class">oe_module_vignette oe_kanban_global_click</attribute>
                 </xpath>
+                <!--让模块名更显眼-->
+                <xpath expr="//div[@class='oe_module_desc']//code" position="replace"/>
+                <xpath expr="//div[@class='oe_module_desc']//h4" position="after">
+                    <code><field name="name"/></code>
+                </xpath>
                 <!--显示快速升级-->
                 <xpath expr="//div[@class='oe_module_action']" position="inside" groups="app_odoo_customize.group_show_quick_upgrade">
                     <button type="object" class="btn btn-default btn-sm float-right" name="button_uninstall_wizard" states="installed">Uninstall</button>
