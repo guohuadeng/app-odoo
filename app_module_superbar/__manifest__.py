@@ -39,7 +39,7 @@
     'depends': [
         'base',
     ],
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/banner.png'],
     'data': [
         'views/module_views.xml',
     ],
