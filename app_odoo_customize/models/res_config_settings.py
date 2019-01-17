@@ -218,7 +218,10 @@ class ResConfigSettings(models.TransientModel):
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
             # 更新序号
-            seqs = self.env['ir.sequence'].search([('code', '=', 'purchase.order')])
+            seqs = self.env['ir.sequence'].search([
+                '|', ('code', '=', 'purchase.order'),
+                '|', ('code', '=', 'purchase.requisition.blanket.order'),
+                ('code', '=', 'purchase.requisition.purchase.tender	')])
             for seq in seqs:
                 seq.write({
                     'number_next': 1,
