@@ -26,7 +26,6 @@
     'summary': """
     Browse Apps by category tree. Browse Module by category. Use for parent children tree list kanban navigator. 
     Easy to navigator and browse any data. Support Search more list, kanban, pivot, graph view. 
-    ztree widget.Hierarchy Tree.Parent Children relation tree..
     """,
     'description': """
     Superbar, zTree widget. 

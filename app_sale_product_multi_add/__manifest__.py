@@ -26,7 +26,7 @@
     'price': 0.00,
     'currency': 'USD',
     'summary': """
-    App Sale Order Product Multi Batch Add, 销售订单批量增加产品.
+    App Sale Order Product Multi Batch Add
     Odoo App of Sunpop.cn
     """,
     'description': """
