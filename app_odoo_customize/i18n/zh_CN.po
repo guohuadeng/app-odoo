@@ -40,7 +40,7 @@ msgid "All Business"
 msgstr "所有业务"
 
 #. module: app_odoo_customize
-#: model:ir.model,name:app_odoo_customize.model_app_theme_config_settings
+#: model:ir.model,name:app_odoo_customize.model_res_config_settings
 msgid "App Odoo Customize settings"
 msgstr "App Odoo 自定义设置"
 
