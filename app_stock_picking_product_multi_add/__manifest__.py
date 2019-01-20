@@ -26,7 +26,7 @@
     'price': 0.00,
     'currency': 'USD',
     'summary': """
-    App Stock Picking Order Product Multi Batch Add, 库存调拨单批量增加产品.
+    App Stock Picking Order Product Multi Batch Add
     Odoo App of Sunpop.cn
     """,
     'description': """

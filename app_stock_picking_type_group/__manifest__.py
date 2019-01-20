@@ -25,10 +25,11 @@
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
-    广州尚鹏，Sunpop.cn 的odoo模块。用于将库存作业分组，UI更方便。
+    Stock picking group in list or kanban view.
     """,
     'description': """
     模块开发模板，目录结构与文件定义。
+    广州尚鹏，Sunpop.cn 的odoo模块。用于将库存作业分组，UI更方便。
     """,
     'depends': ['stock'],
     'images': ['static/description/demo1.jpg'],
