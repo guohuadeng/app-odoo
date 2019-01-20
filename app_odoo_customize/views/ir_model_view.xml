@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
         <!-- Modules -->
+        <record id="app_module_tree" model="ir.ui.view">
+            <field name="name">app.ir.module.module.form</field>
+            <field name="model">ir.module.module</field>
+            <field name="inherit_id" ref="base.module_tree" />
+            <field name="arch" type="xml">
+                <field name="name" position="attributes">
+                    <attribute name="groups"/>
+                </field>
+            </field>
+        </record>
         <record id="app_module_form" model="ir.ui.view">
             <field name="name">app.ir.module.module.form</field>
             <field name="model">ir.module.module</field>

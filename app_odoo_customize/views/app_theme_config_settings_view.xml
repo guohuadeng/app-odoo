@@ -102,22 +102,22 @@
                     <div class="mt16 o_settings_container" name="data-clean">
                         <h2 name="data-clean" class="o_horizontal_separator">Data Cleaning (Be careful to do that!)</h2>
                         <div class="col-12 col-lg-12 mb4">
-                            <span class="btn btn-default col-3 col-lg-2 text-left">Sale</span>
+                            <span class="col-3 col-lg-2 text-left">Sale</span>
                             <button string="Delete All Sales Order" type="object" name="remove_sales"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <div class="col-12 col-lg-12 mb4">
-                            <span class="btn btn-default col-3 col-lg-2 text-left">POS</span>
+                            <span class="col-3 col-lg-2 text-left">POS</span>
                             <button string="Delete All POS Order" type="object" name="remove_pos" confirm="Please confirm to delete the select data?"
                                     class="oe_highlight"/>
                         </div>
                         <div class="col-12 col-lg-12 mb4">
-                            <span class="btn btn-default col-3 col-lg-2 text-left">Purchase</span>
+                            <span class="col-3 col-lg-2 text-left">Purchase</span>
                             <button string="Delete All Purchase Order and Requisition" type="object" name="remove_purchase"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <div class="col-12 col-lg-12 mb4">
-                            <span class="btn btn-default col-3 col-lg-2 text-left">MRP</span>
+                            <span class="col-3 col-lg-2 text-left">MRP</span>
                             <button string="Delete All Manufacturing Order" type="object" name="remove_mrp"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                             |
@@ -125,12 +125,12 @@
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <div class="col-12 col-lg-12 mb4">
-                            <span class="btn btn-default col-3 col-lg-2 text-left">Inventory</span>
+                            <span class="col-3 col-lg-2 text-left">Inventory</span>
                             <button string="Delete All Move/Picking/Package/Lot" type="object" name="remove_inventory"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <div class="col-12 col-lg-12 mb4">
-                            <span class="btn btn-default col-3 col-lg-2 text-left">Accounting</span>
+                            <span class="col-3 col-lg-2 text-left">Accounting</span>
                             <button string="Delete All Voucher/Invoice/Bill" type="object" name="remove_account"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                             |
@@ -138,12 +138,12 @@
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <div class="col-12 col-lg-12 mb4">
-                            <span class="btn btn-default col-3 col-lg-2 text-left">Project</span>
+                            <span class="col-3 col-lg-2 text-left">Project</span>
                             <button string="Delete All Project/Task/Forecast" type="object" name="remove_project"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <div class="col-12 col-lg-12 mb4">
-                            <span class="btn btn-default col-3 col-lg-2 text-left">Base Models</span>
+                            <span class="col-3 col-lg-2 text-left">Base Models</span>
                             <button string="Delete All Product" type="object" name="remove_product"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                             |
@@ -157,7 +157,7 @@
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <div class="col-12 col-lg-12 mb4">
-                            <span class="btn btn-default col-3 col-lg-2 text-left">All Business</span>
+                            <span class="col-3 col-lg-2 text-left">All Business</span>
                             <button string="Delete All MRP/Sale/Purchase/Account/MRP/Inventory/Project/Message/Workflow" type="object" name="remove_all_biz"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
