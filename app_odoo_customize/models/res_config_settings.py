@@ -287,9 +287,10 @@ class ResConfigSettings(models.TransientModel):
         to_removes = [
             # 清除库存单据
             ['stock.quant', ],
-            ['stock.quant.package', ],
-            ['stock.quant.move.rel', ],
             ['stock.move.line', ],
+            ['stock.package.level', ],
+            ['stock.quantity.history', ],
+            ['stock.quant.package', ],
             ['stock.move', ],
             ['stock.pack.operation', ],
             ['stock.picking', ],
@@ -298,8 +299,6 @@ class ResConfigSettings(models.TransientModel):
             ['stock.inventory', ],
             ['stock.production.lot', ],
             ['stock.fixed.putaway.strat', ],
-            ['make.procurement', ],
-            ['procurement.order', ],
             ['procurement.group', ],
         ]
         try:
