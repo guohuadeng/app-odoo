@@ -125,8 +125,6 @@ class ResConfigSettings(models.TransientModel):
                 seq.write({
                     'number_next': 1,
                 })
-            sql = "update ir_sequence set number_next=1 where code ='sale.order';"
-            self._cr.execute(sql)
         except Exception as e:
             raise Warning(e)
         return True
@@ -150,8 +148,6 @@ class ResConfigSettings(models.TransientModel):
                 seq.write({
                     'number_next': 1,
                 })
-            sql = "update ir_sequence set number_next=1 where code ='product.product';"
-            self._cr.execute(sql)
         except Exception as e:
             pass  # raise Warning(e)
         return True
@@ -193,8 +189,6 @@ class ResConfigSettings(models.TransientModel):
                 seq.write({
                     'number_next': 1,
                 })
-            sql = "update ir_sequence set number_next=1 where code ='pos.order';"
-            self._cr.execute(sql)
         except Exception as e:
             pass  # raise Warning(e)
         return True
@@ -218,13 +212,12 @@ class ResConfigSettings(models.TransientModel):
             # 更新序号
             seqs = self.env['ir.sequence'].search([
                 '|', ('code', '=', 'purchase.order'),
-                '|', ('code', '=', 'purchase.requisition.blanket.order'),
-                ('code', '=', 'purchase.requisition.purchase.tender	')])
+                '|', ('code', '=', 'purchase.requisition.purchase.tender'),
+                ('code', '=', 'purchase.requisition.blanket.order')])
             for seq in seqs:
                 seq.write({
                     'number_next': 1,
                 })
-            sql = "update ir_sequence set number_next=1 where code ='purchase.order';"
             self._cr.execute(sql)
         except Exception as e:
             pass  # raise Warning(e)
@@ -253,13 +246,14 @@ class ResConfigSettings(models.TransientModel):
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
             # 更新序号
-            seqs = self.env['ir.sequence'].search(['|', ('code', '=', 'mrp.production'), ('code', '=', 'mrp.unbuild')])
+            seqs = self.env['ir.sequence'].search([
+                '|', ('code', '=', 'mrp.production'),
+                ('code', '=', 'mrp.unbuild'),
+            ])
             for seq in seqs:
                 seq.write({
                     'number_next': 1,
                 })
-            sql = "update ir_sequence set number_next=1 where (code ='mrp.production' or code ='mrp.unbuild');"
-            self._cr.execute(sql)
         except Exception as e:
             pass  # raise Warning(e)
         return True
@@ -323,26 +317,10 @@ class ResConfigSettings(models.TransientModel):
                 '|', ('prefix', '=', 'WH/PACK/'),
                 ('prefix', '=', 'WH/PICK/')
             ])
-
             for seq in seqs:
                 seq.write({
                     'number_next': 1,
                 })
-            sql = "update ir_sequence set number_next=1 where (" \
-                  "code ='stock.lot.serial' " \
-                  "or code ='stock.lot.tracking' " \
-                  "or code ='stock.orderpoint'" \
-                  "or code ='stock.picking'" \
-                  "or code ='stock.quant.package'" \
-                  "or code ='stock.scrap'" \
-                  "or code ='stock.picking'" \
-                  "or prefix ='WH/IN/'" \
-                  "or prefix ='WH/INT/'" \
-                  "or prefix ='WH/OUT/'" \
-                  "or prefix ='WH/PACK/'" \
-                  "or prefix ='WH/PICK/'" \
-                  ");"
-            self._cr.execute(sql)
         except Exception as e:
             pass  # raise Warning(e)
         return True
@@ -387,30 +365,13 @@ class ResConfigSettings(models.TransientModel):
                         '|', ('prefix', 'like', 'INV/'),
                         '|', ('prefix', 'like', 'EXCH/'),
                         '|', ('prefix', 'like', 'MISC/'),
-                        '|', ('prefix', 'like', u'账单/'),
-                        ('prefix', 'like', u'杂项/')
+                        '|', ('prefix', 'like', '账单/'),
+                        ('prefix', 'like', '杂项/')
                     ])
-
                     for seq in seqs:
                         seq.write({
                             'number_next': 1,
                         })
-                    # todo: 帐单 or BILL/%
-                    sql = "update ir_sequence set number_next=1 where (" \
-                          "code ='account.reconcile' " \
-                          "or code ='account.payment.customer.invoice' " \
-                          "or code ='account.payment.customer.refund' " \
-                          "or code ='account.payment.supplier.invoice' " \
-                          "or code ='account.payment.supplier.refund' " \
-                          "or prefix like 'BNK1/%'" \
-                          "or prefix like 'CSH1/%'" \
-                          "or prefix like 'INV/%'" \
-                          "or prefix like 'EXCH/%'" \
-                          "or prefix like 'MISC/%'" \
-                          "or prefix like '账单/%'" \
-                          "or prefix like '杂项/%'" \
-                          ");"
-                    self._cr.execute(sql)
         except Exception as e:
             pass  # raise Warning(e)
         return True
