@@ -11,23 +11,22 @@ class SaleOrderLine(models.Model):
 
     # 显示的单位，影响性能暂时不使用
     # weight_uom_name = fields.Char(string='Weight Measure', related='product_id.weight_uom_id.name', readonly=True)
-    weight = fields.Float(string='Weight', compute='_compute_weight', store=True)
-    weight_subtotal = fields.Float(string='Weight Subtotal', compute='_compute_weight', store=True)
+    # 调整，根据 delivery 模块，将 weight 作为 该行合计，weight_unit 作为该单位的
+    weight_unit = fields.Float(string='Weight Unit', compute='_compute_weight', store=True)
+    weight = fields.Float(string='Weight Subtotal', compute='_compute_weight', store=True)
 
     @api.multi
     @api.depends('product_id', 'product_uom', 'product_uom_qty')
     def _compute_weight(self):
-        for line in self:
+        for line in self.filtered(lambda rec: rec.product_id.weight > 0.00):
             weight = 0
-            weight_subtotal = 0
-            if line.product_id and line.product_id.weight:
-                try:
-                    weight = line.product_id.weight / line.product_uom.factor
-                except:
-                    weight = line.product_id.weight
-                weight_subtotal += (weight * line.product_uom_qty)
+            try:
+                weight_unit = line.product_id.weight / line.product_uom.factor
+            except:
+                weight_unit = line.product_id.weight
+            weight += (weight_unit * line.product_uom_qty)
+            line.weight_unit = weight_unit
             line.weight = weight
-            line.weight_subtotal = weight_subtotal
 
     @api.one
     def _set_weight_subtotal(self):
