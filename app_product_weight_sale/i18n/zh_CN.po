@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0+e-20181221\n"
+"Project-Id-Version: Odoo Server 12.0+e-20190124\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-02 15:10+0000\n"
-"PO-Revision-Date: 2019-01-02 15:10+0000\n"
+"POT-Creation-Date: 2019-01-28 10:38+0000\n"
+"PO-Revision-Date: 2019-01-28 10:38+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,9 @@ msgid "Sales Order Line"
 msgstr "销售订单行"
 
 #. module: app_product_weight_sale
-#: model:ir.model.fields,field_description:app_product_weight_sale.field_sale_order__weight_total
+#: model:ir.model.fields,field_description:app_product_weight_sale.field_sale_order__weight
+#: model_terms:ir.ui.view,arch_db:app_product_weight_sale.sale_quotation_weight_tree
+#: model_terms:ir.ui.view,arch_db:app_product_weight_sale.sale_weight_tree
 msgid "Total Weight"
 msgstr "总重量"
 
@@ -36,22 +38,17 @@ msgid "Total Weight:"
 msgstr "总重量"
 
 #. module: app_product_weight_sale
-#: model:ir.model.fields,field_description:app_product_weight_sale.field_sale_order_line__weight
-msgid "Weight"
-msgstr "单位重量"
-
-#. module: app_product_weight_sale
 #: model:ir.model.fields,field_description:app_product_weight_sale.field_sale_order__weight_uom_name
 msgid "Weight Measure"
-msgstr "重量单位名"
+msgstr "重量单位"
 
 #. module: app_product_weight_sale
-#: model:ir.model.fields,field_description:app_product_weight_sale.field_sale_order_line__weight_subtotal
+#: model:ir.model.fields,field_description:app_product_weight_sale.field_sale_order_line__weight
 msgid "Weight Subtotal"
 msgstr "重量小计"
 
 #. module: app_product_weight_sale
-#: model:ir.model.fields,help:app_product_weight_sale.field_sale_order_line__weight
-msgid "Weight of the product, packaging not included. The unit of measure can be changed in the general settings"
-msgstr "产品重量、包装不包括在内。可以在一般设置中改变测量单位。"
+#: model:ir.model.fields,field_description:app_product_weight_sale.field_sale_order_line__weight_unit
+msgid "Weight Unit"
+msgstr "单位重量"
 
