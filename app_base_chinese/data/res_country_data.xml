@@ -3,7 +3,7 @@
     <data noupdate="1">
         <!-- Country -->
         <record id="base.cn" model="res.country">
-            <field eval="'%(country_name)s，%(state_name)s%(city)s，%(zip)s\n%(street)s\n%(street2)s'" name="address_format" />
+            <field name="address_format"  eval="'%(country_name)s，%(state_name)s%(city)s，%(zip)s\n%(street)s\n%(street2)s'"/>
         </record>
     </data>
 </odoo>

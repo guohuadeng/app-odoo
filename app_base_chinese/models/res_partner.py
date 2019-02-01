@@ -9,9 +9,16 @@ class ResPartner(models.Model):
 
     short_name = fields.Char('Short Name')  # 简称
 
-
-class PartnerCategory(models.Model):
-    _inherit = 'res.partner.category'
-    _order = 'sequence, name'
-
-    sequence = fields.Integer('Sequence', help="Used to order partner category")
+    # 增加地址显示中的手机号与电话号码
+    # 选项 show_address 开启则增加显示手机与电话号
+    def _get_name(self):
+        name = super(ResPartner, self)._get_name() or ''
+        partner = self
+        if self._context.get('show_address'):
+            if partner.mobile and partner.phone:
+                name = name + "\n" + partner.mobile + "," + partner.phone
+            elif partner.mobile:
+                name = name + "\n" + partner.mobile
+            elif partner.phone:
+                name = name + "\n" + partner.phone
+        return name
