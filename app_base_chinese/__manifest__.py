@@ -50,6 +50,7 @@
         'views/res_partner_category_views.xml',
         'views/res_partner_views.xml',
         'views/res_currency_views.xml',
+        'views/ir_default_views.xml',
         'data/ir_default_data.xml',
         'data/ir_sequence_data.xml',
         'data/base_data.xml',

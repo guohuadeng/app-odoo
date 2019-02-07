@@ -2,24 +2,24 @@
 <odoo>
     <data noupdate="0">
         <!-- currency视图, tree -->
-        <record id="app_view_currency_tree" model="ir.ui.view">
-            <field name="name">app.res.currency.tree</field>
-            <field name="model">res.currency</field>
-            <field name="inherit_id" ref="base.view_currency_tree"/>
+        <record id="app_ir_default_tree_view" model="ir.ui.view">
+            <field name="name">app.ir.default tree view</field>
+            <field name="model">ir.default</field>
+            <field name="inherit_id" ref="base.ir_default_tree_view"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='name']" position="before">
-                    <field name="sequence" widget="handle"/>
+                <xpath expr="//field[@name='json_value']" position="after">
+                    <field name="condition"/>
                 </xpath>
             </field>
         </record>
         <!-- currency视图, form -->
-        <record id="app_view_currency_form" model="ir.ui.view">
-            <field name="name">app.res.currency.form</field>
-            <field name="model">res.currency</field>
-            <field name="inherit_id" ref="base.view_currency_form"/>
+        <record id="app_ir_default_form_view" model="ir.ui.view">
+            <field name="name">app.ir.default form view</field>
+            <field name="model">ir.default</field>
+            <field name="inherit_id" ref="base.ir_default_form_view"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='position']" position="after">
-                    <field name="sequence"/>
+                <xpath expr="//field[@name='json_value']" position="after">
+                    <field name="condition"/>
                 </xpath>
             </field>
         </record>

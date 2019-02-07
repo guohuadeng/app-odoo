@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- currency视图, tree -->
+        <record id="app_view_currency_tree" model="ir.ui.view">
+            <field name="name">app.res.currency.tree</field>
+            <field name="model">res.currency</field>
+            <field name="inherit_id" ref="base.view_currency_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="sequence" widget="handle"/>
+                </xpath>
+            </field>
+        </record>
+        <!-- currency视图, form -->
+        <record id="app_view_currency_form" model="ir.ui.view">
+            <field name="name">app.res.currency.form</field>
+            <field name="model">res.currency</field>
+            <field name="inherit_id" ref="base.view_currency_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='position']" position="after">
+                    <field name="sequence"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
