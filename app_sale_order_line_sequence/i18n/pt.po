@@ -1,0 +1,62 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * app_sale_order_line_sequence
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-08 00:49+0000\n"
+"PO-Revision-Date: 2018-08-20 15:43+0000\n"
+"Last-Translator: Pedro Castro Silva <pedrocs@exo.pt>\n"
+"Language-Team: Portuguese (https://www.transifex.com/oca/teams/23907/pt/)\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 3.1.1\n"
+
+#. module: app_sale_order_line_sequence
+#: model_terms:ir.ui.view,arch_db:app_sale_order_line_sequence.report_saleorder_document_sequence
+msgid "<strong>Sequence</strong>"
+msgstr "<strong>Sequência</strong>"
+
+#. module: app_sale_order_line_sequence
+#: model:ir.model.fields,help:app_sale_order_line_sequence.field_sale_order_line__sequence
+#, fuzzy
+msgid "Gives the sequence of this line when displaying the sale order."
+msgstr "Mostra a sequência desta linha na encomenda de venda."
+
+#. module: app_sale_order_line_sequence
+#: model:ir.model.fields,field_description:app_sale_order_line_sequence.field_sale_order_line__sequence2
+msgid "Line Number"
+msgstr ""
+
+#. module: app_sale_order_line_sequence
+#: model:ir.model.fields,field_description:app_sale_order_line_sequence.field_sale_order__max_line_sequence
+msgid "Max sequence in lines"
+msgstr "Sequência máx. na linhas"
+
+#. module: app_sale_order_line_sequence
+#: model:ir.model,name:app_sale_order_line_sequence.model_sale_order
+#, fuzzy
+msgid "Sale Order"
+msgstr "Encomenda de Venda"
+
+#. module: app_sale_order_line_sequence
+#: model:ir.model,name:app_sale_order_line_sequence.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Linha de Encomenda de Venda"
+
+#. module: app_sale_order_line_sequence
+#: model:ir.model.fields,field_description:app_sale_order_line_sequence.field_sale_order_line__sequence
+msgid "Sequence"
+msgstr "Sequência"
+
+#. module: app_sale_order_line_sequence
+#: model:ir.model.fields,help:app_sale_order_line_sequence.field_sale_order_line__sequence2
+msgid "Shows the sequence of this line in the sale order."
+msgstr "Mostra a sequência desta linha na encomenda de venda."

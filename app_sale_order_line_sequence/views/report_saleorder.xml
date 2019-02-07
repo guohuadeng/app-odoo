@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_saleorder_document_sequence" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//table[hasclass('table', 'table-sm')]/thead/tr/th[1]" position="before">
+            <th><strong>#</strong></th>
+            <t t-set="colspan" t-value="colspan+1"/>
+        </xpath>
+        <xpath expr="//table[hasclass('table', 'table-sm')]/tbody/t/tr[1]/t[1]/td[1]" position="before">
+             <td>
+                <span t-field="line.sequence2"/>
+             </td>
+        </xpath>
+    </template>
+
+</odoo>
