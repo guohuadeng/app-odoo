@@ -178,7 +178,7 @@
                 <xpath expr="//templates" position="before">
                     <field name="credit_limit"/>
                 </xpath>
-                <xpath expr="//div[@class='oe_kanban_details']/ul" position="inside">
+                <xpath expr="//div[hasclass('oe_kanban_details')/ul" position="inside">
                     <li t-if="record.mobile.raw_value" class="o_text_overflow">
                         , <field name="mobile"/>
                     </li>
