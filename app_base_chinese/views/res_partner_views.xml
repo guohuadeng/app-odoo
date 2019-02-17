@@ -178,7 +178,7 @@
                 <xpath expr="//templates" position="before">
                     <field name="credit_limit"/>
                 </xpath>
-                <xpath expr="//div[hasclass('oe_kanban_details')/ul" position="inside">
+                <xpath expr="//div[@class='oe_kanban_details']/ul" position="inside">
                     <li t-if="record.mobile.raw_value" class="o_text_overflow">
                         , <field name="mobile"/>
                     </li>
@@ -188,6 +188,7 @@
                 </xpath>
             </field>
         </record>
+        <!--end客户-->
 
         <!-- 为客户菜单单独增加筛选器 2017-11-13 -->
         <record id="app_res_partner_view_filter_customer" model="ir.ui.view">
