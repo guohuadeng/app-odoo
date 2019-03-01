@@ -7,10 +7,10 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-                <!-- 客户编号设计在重要位置 -->
-                <xpath expr="//field[@name='type']" position="after">
-                    <xpath expr="//field[@name='ref']" position="move"/>
-                </xpath>
+                <!-- 客户编号设计在重要位置，放到 app_partner_auto_reference -->
+                <!--<xpath expr="//field[@name='type']" position="after">-->
+                    <!--<xpath expr="//field[@name='ref']" position="move"/>-->
+                <!--</xpath>-->
                 <xpath expr="//field[@name='type']" position="after">
                     <field name="short_name" invisible="1"/>
                 </xpath>
