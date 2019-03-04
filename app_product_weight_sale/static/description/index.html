@@ -1,8 +1,8 @@
 <section class="oe_container oe_dark">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan">Sales Order Weight</h2>
-            <img class="oe_screenshot oe_picture" src="demo_all.png">
+            <h2 class="oe_slogan">Weight in Stock Inventory Operation Picking and Move</h2>
+            <img class="oe_screenshot oe_picture" src="banner_all.png">
         </div>
 
         <div class="alert alert-info" style="padding:8px;font-weight: 300; font-size: 20px;">
@@ -10,62 +10,72 @@
             <ul class="list-unstyled">
                 <li>
                     <i class="fa fa-check-square-o text-primary"></i>
-                    All in one Weight solution for sale, purchase, purchase agreement, stock. Please check follow <strong>Pay</strong> app.
+                    All in one Weight solution for sale, purchase, purchase agreement, mrp, stock. Please check follow <strong>Pay</strong> app.
                 </li>
                 <li>
                     <i class="fa fa-check-square-o text-primary"></i>
                     Product auto weight is ready.
-                    <a href="http://www.odoo.com/apps/modules/12.0/app_product_weight_auto/" target="_blank">
+                    <a href="http://www.odoo.com/apps/modules/11.0/app_product_weight_auto/" target="_blank">
                     <i class="fa fa-download text-warning"></i>Click to download.
                     </a>
                 </li>
                 <li>
                     <i class="fa fa-check-square-o text-primary"></i>
                     Sale order Product weight is ready.
-                    <a href="http://www.odoo.com/apps/modules/12.0/app_product_weight_sale/" target="_blank">
+                    <a href="http://www.odoo.com/apps/modules/11.0/app_product_weight_sale/" target="_blank">
                     <i class="fa fa-download text-warning"></i>Click to download.
                     </a>
                 </li>
                 <li>
                     <i class="fa fa-check-square-o text-primary"></i>
                     Purchase order Product weight is ready.
-                    <a href="http://www.odoo.com/apps/modules/12.0/app_product_weight_purchase/" target="_blank">
+                    <a href="http://www.odoo.com/apps/modules/11.0/app_product_weight_purchase/" target="_blank">
                     <i class="fa fa-download text-warning"></i>Click to download.
                     </a>
                 </li>
                 <li>
                     <i class="fa fa-check-square-o text-primary"></i>
                     Purchase agreement Product weight is ready.
-                    <a href="http://www.odoo.com/apps/modules/12.0/app_product_weight_purchase_requisition/" target="_blank">
+                    <a href="http://www.odoo.com/apps/modules/11.0/app_product_weight_purchase_requisition/" target="_blank">
                     <i class="fa fa-download text-warning"></i>Click to download.
                     </a>
                 </li>
                 <li>
                     <i class="fa fa-check-square-o text-primary"></i>
-                    Stock picking operation Product weight is ready.
-                    <a href="http://www.odoo.com/apps/modules/12.0/app_product_weight_stock/" target="_blank">
+                    MRP Product weight is ready.
+                    <a href="http://www.odoo.com/apps/modules/11.0/app_product_weight_mrp/" target="_blank">
                     <i class="fa fa-download text-warning"></i>Click to download.
                     </a>
                 </li>
                 <li>
                     <i class="fa fa-check-square-o text-primary"></i>
-                    Add product sku weight in Sale Order line.
+                    Stock inventory picking operation Product weight is ready.
+                    <a href="http://www.odoo.com/apps/modules/11.0/app_product_weight_stock/" target="_blank">
+                    <i class="fa fa-download text-warning"></i>Click to download.
+                    </a>
                 </li>
                 <li>
                     <i class="fa fa-check-square-o text-primary"></i>
-                    Calculates total weight of a sale order, which is the sum of individual weights of each unit of the products in the order.
+                    Add product sku weight in  Stock Inventory.
+                </li>
+                <li>
+                    <i class="fa fa-check-square-o text-primary"></i>
+                    Add product sku weight in  Stock picking Operation and stock move.
+                </li>
+                <li>
+                    <i class="fa fa-check-square-o text-primary"></i>
+                    Calculates total weight of a Stock picking.
                 </li>
                 <li>
                     <i class="fa fa-check-square-o text-primary"></i>
                     Support kg(s) or lb(s)
                 </li>
             </ul>
+            <div class="oe_span12">
+                <h2 class="oe_slogan">Multi Language Support</h2>
+                <img class="oe_screenshot oe_picture" src="banner_cn.png">
+            </div>
         </div>
-        <div class="oe_demo oe_screenshot">
-            <img class="oe_screenshot" src="demo.jpg">
-        </div>
-        <p class='oe_mt32'>
-        </p>
         <div class="oe_demo oe_screenshot">
             <h3 class='oe_mt32'>
                 Setup product weight.
@@ -77,23 +87,25 @@
             <h3 class='oe_mt32'>
                 Show product total weight in list view.
             </h3>
-            <img class="oe_screenshot" src="demo2.jpg">
+            <img class="oe_screenshot" src="demo1.jpg">
         </div>
 
         <div class="oe_demo oe_screenshot">
             <h3 class='oe_mt32'>
-                Get product weight and total weight in order.
+                Get product weight and total weight in stock picking.
             </h3>
-            <img class="oe_screenshot" src="demo1.jpg">
+            <img class="oe_screenshot" src="demo.jpg">
         </div>
+
         <p class='oe_span12 oe_mt32'>
             The calculation uses the following formula:
         </p>
-        <p class='oe_mt32'>
-            order_line_net_weight = (line_product_weight / line_product_uom_factor)
-            <br/>
-            weight_total = sum(order_line_net_weight)
-        </p>
+<p class='oe_mt32'>
+order_line_net_weight = (line_product_weight  / line_product_uom_factor)
+<br/>
+weight_total = sum(order_line_net_weight)
+	</p>
+
     </div>
 </section>
 
@@ -113,6 +125,10 @@
         <div class="oe_demo oe_screenshot">
             <img src="demo_sale.jpg">
         </div>
+        <p>Weight in sale report</p>
+        <div class="oe_demo oe_screenshot">
+            <img src="demo_sale2.jpg">
+        </div>
     </div>
 </section>
 
@@ -121,6 +137,10 @@
         <h4 class="oe_slogan">Use in Purcahse Order</h4>
         <div class="oe_demo oe_screenshot">
             <img src="demo_purchase.jpg">
+        </div>
+        <p>Weight in purchase report</p>
+        <div class="oe_demo oe_screenshot">
+            <img src="demo_purchase2.jpg">
         </div>
     </div>
 </section>
@@ -133,6 +153,16 @@
         </div>
     </div>
 </section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h4 class="oe_slogan">Use in MRP Manufacturing</h4>
+        <div class="oe_demo oe_screenshot">
+            <img src="demo_mrp.jpg">
+        </div>
+    </div>
+</section>
+
 <section class="oe_container">
     <div class="oe_row oe_spaced">
         <h4 class="oe_slogan">Use in Stock Picking </h4>
