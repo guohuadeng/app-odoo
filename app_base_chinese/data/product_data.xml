@@ -4,22 +4,11 @@
         <!--
     Resource: product.uom.categ
     -->
-        <record id="product.product_category_all" model="product.category">
-            <field name="name">全部</field>
-        </record>
-        <record id="product.product_category_1" model="product.category">
-            <field name="name">可销售</field>
-        </record>
-
-        <!--
-            Resource: product.uom
-        -->
-        <record id="product.product_uom_kgm" model="product.uom">
-            <field name="name">公斤</field>
-        </record>
-        <record id="product.product_uom_ton" model="product.uom">
-            <field name="name">吨</field>
-        </record>
-
+        <!--<record id="product.product_category_all" model="product.category">-->
+            <!--<field name="name">全部</field>-->
+        <!--</record>-->
+        <!--<record id="product.product_category_1" model="product.category">-->
+            <!--<field name="name">可销售</field>-->
+        <!--</record>-->
     </data>
 </odoo>

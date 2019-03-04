@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '11.0.10.31',
+    'version': '11.19.03.04',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'http://www.sunpop.cn',
@@ -34,11 +34,16 @@
     odoo Chinese Enhance. 中国化增强-基础
     1. 中文默认值，如国家、时区、货币等。处理模块 base, product.
     2. 客户加简称，地址显示中文化，客户编码显示优先
-    3. todo:中文演示数据(只有demo模式才加载)
+    3. 客户地址显示增加手机号与电话号码
+    4. 货币处理，增加排序显示
+    5. 修正产品类别的列表及m2o字段中不显示中文目录名的Bug
+    11. todo:中文演示数据(只有demo模式才加载)
     
     """,
     'pre_init_hook': 'pre_init_hook',
+    'post_init_hook': 'post_init_hook',
     'depends': [
+        'base',
         'product',
         'l10n_cn'
     ],
@@ -46,11 +51,15 @@
     'data': [
         'views/res_partner_category_views.xml',
         'views/res_partner_views.xml',
+        'views/res_currency_views.xml',
+        'views/ir_default_views.xml',
         'data/ir_default_data.xml',
         'data/ir_sequence_data.xml',
         'data/base_data.xml',
+        'data/res_country_data.xml',
         'data/res_currency_data.xml',
         'data/product_data.xml',
+        'data/product_pricelist_data.xml',
     ],
     'demo': [
     ],
@@ -64,5 +73,5 @@
     ],
     'installable': True,
     'application': True,
-    'auto_install': True,
+    'auto_install': False,
 }

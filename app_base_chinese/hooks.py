@@ -15,13 +15,29 @@
 # http://www.sunpop.cn/odoo10_developer_document_offline/
 # description:
 
-from odoo import api, SUPERUSER_ID
+from odoo import api, SUPERUSER_ID, _
 
 def pre_init_hook(cr):
     """
     数据初始化，只在安装时执行，更新时不执行
     """
+    pass
+
+def post_init_hook(cr, registry):
+    """
+    数据初始化，只在安装后执行，更新时不执行
+    """
     try:
+        env = api.Environment(cr, SUPERUSER_ID, {})
+        # oname = env['product.category'].with_context(lang='zh_CN').browse(1).name
+        # if oname:
+        #     env['product.category'].with_context(lang='zh_CN').browse(1).write({
+        #         'name': oname + 'sunpop.cn',
+        #     })
+        #     env['product.category'].with_context(lang='zh_CN').browse(1).write({
+        #         'name': oname,
+        #     })
+        env['product.category'].with_context(lang='zh_CN').browse(1)._compute_complete_name()
         pass
     except Exception as e:
         raise Warning(e)
