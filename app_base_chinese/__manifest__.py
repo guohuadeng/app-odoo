@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '12.19.03.01',
+    'version': '12.19.03.04',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'http://www.sunpop.cn',
@@ -36,10 +36,12 @@
     2. 客户加简称，地址显示中文化，客户编码显示优先
     3. 客户地址显示增加手机号与电话号码
     4. 货币处理，增加排序显示
-    5. todo:中文演示数据(只有demo模式才加载)
+    5. 修正不产品类别的列表及m2o字段中不显示中文目录名的Bug
+    11. todo:中文演示数据(只有demo模式才加载)
     
     """,
     'pre_init_hook': 'pre_init_hook',
+    'post_init_hook': 'post_init_hook',
     'depends': [
         'base',
         'product',

@@ -3,7 +3,7 @@
 
 {
     'name': 'Weight in Sales Order',
-    'version': '12.19.01.29',
+    'version': '12.19.03.04',
     'summary': 'Add Product sku weight in Sale Order, product weight, sale weight, sale order weight, total weight, kg kg(s) lb lb(s) support',
     'sequence': 10,
     'license': 'LGPL-3',
