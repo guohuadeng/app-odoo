@@ -1,4 +1,4 @@
-odoo.define('web_fontawesome5.ListRenderer', function (require) {
+odoo.define('web_fontawesome.ListRenderer', function (require) {
 "use strict";
 
 var ListRenderer = require('web.ListRenderer');

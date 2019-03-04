@@ -1,4 +1,4 @@
-odoo.define('web_fontawesome5.FormRenderer', function (require) {
+odoo.define('web_fontawesome.FormRenderer', function (require) {
 "use strict";
 
 var FormRenderer = require('web.FormRenderer');

@@ -22,6 +22,7 @@
     'depends': ['sale_management'],
     'data': [
         'views/sale_order_views.xml',
+        'report/report_sale_order_views.xml',
     ],
     'demo': [
     ],
