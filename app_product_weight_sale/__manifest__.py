@@ -8,7 +8,7 @@
     'sequence': 10,
     'license': 'LGPL-3',
     'description': """
-    All in one Weight solution for sale, purchase, purchase agreement, stock. Please check follow <strong>Pay</strong> app.
+    All in one Weight solution for sale, purchase, purchase agreement, mrp, stock.
     Add product sku weight in Sale Order. Unit of measure auto weight, kg kg(s) lb lb(s) support. weight sale order.
     Calculates total weight of a sale order, which is the sum of individual weights of each unit of the products in the order。
     Support kg(s) or lb(s)
