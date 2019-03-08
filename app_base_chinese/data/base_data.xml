@@ -14,7 +14,6 @@
 
         <record model="res.partner" id="base.partner_root">
             <field name="name">超管</field>
-            <field name="email">oa@sunpop.cn</field>
         </record>
     </data>
 </odoo>

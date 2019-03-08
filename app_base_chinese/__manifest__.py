@@ -49,7 +49,6 @@
     ],
     'images': ['static/description/banner.jpg'],
     'data': [
-        'views/res_partner_category_views.xml',
         'views/res_partner_views.xml',
         'views/res_currency_views.xml',
         'views/ir_default_views.xml',
