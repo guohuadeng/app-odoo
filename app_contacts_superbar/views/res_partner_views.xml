@@ -9,12 +9,13 @@
             <xpath expr="//search">
                 <superbar view_mode="kanban,tree">
                     <field name="category_id"/>
-                    <field name="commercial_partner_id"
-                           widget="ztree_search"
-                           model="res.partner"
-                           domain="[('is_company', '=', 1)]"
-                           level="0"/>
-                    <field name="country_id"/>
+                    <field name="lang"/>
+                    <!--<field name="country_id"/>-->
+                    <!--<field name="commercial_partner_id"-->
+                           <!--widget="ztree_search"-->
+                           <!--model="res.partner"-->
+                           <!--domain="[('is_company', '=', 1)]"-->
+                           <!--level="0"/>-->
                 </superbar>
             </xpath>
         </field>

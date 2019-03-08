@@ -9,6 +9,7 @@
             <xpath expr="//search">
                     <field name="team_id"/>
                 <superbar view_mode="kanban,tree">
+                    <field name="user_id"/>
                     <field name="partner_id"
                            widget="ztree_search"
                            model="res.partner"
@@ -16,7 +17,6 @@
                            parent_key="parent_id"
                            level="0"
                     />
-                    <field name="user_id"/>
                 </superbar>
             </xpath>
         </field>
