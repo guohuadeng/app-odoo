@@ -49,7 +49,7 @@
 
         <record id="app_documentation_url" model="ir.config_parameter">
             <field name="key">app_documentation_url</field>
-            <field name="value">http://www.sunpop.cn/documentation/user/12.0/en/index.html</field>
+            <field name="value">http://www.sunpop.cn/documentation/user/12.0/zh_CN/index.html</field>
         </record>
         <record id="app_documentation_dev_url" model="ir.config_parameter">
             <field name="key">app_documentation_dev_url</field>
