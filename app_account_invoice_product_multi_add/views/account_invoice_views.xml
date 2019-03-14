@@ -6,10 +6,12 @@
             <field name="model">account.invoice</field>
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//page/field[@name='invoice_line_ids']" position="attributes">
-                    <attribute name="widget">multi_select_tree</attribute>
-                    <attribute name="res_model">product.product</attribute>
-                    <attribute name="res_field">product_id</attribute>
+                <xpath expr="//page/field[@name='invoice_line_ids']/tree/control" position="inside">
+                    <create string="Multi Add Line" context="{
+                        'pro_multi_add': True,
+                        'pro_res_model': 'product.product',
+                        'pro_res_field': 'product_id',
+                        }"/>
                 </xpath>
             </field>
         </record>
@@ -18,10 +20,12 @@
             <field name="model">account.invoice</field>
             <field name="inherit_id" ref="account.invoice_supplier_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//page/field[@name='invoice_line_ids']" position="attributes">
-                    <attribute name="widget">multi_select_tree</attribute>
-                    <attribute name="res_model">product.product</attribute>
-                    <attribute name="res_field">product_id</attribute>
+                <xpath expr="//page/field[@name='invoice_line_ids']/tree/control" position="inside">
+                    <create string="Multi Add Line" context="{
+                        'pro_multi_add': True,
+                        'pro_res_model': 'product.product',
+                        'pro_res_field': 'product_id',
+                        }"/>
                 </xpath>
             </field>
         </record>

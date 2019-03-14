@@ -17,7 +17,7 @@
 
 {
     'name': "App Purchase Order Product Multi Batch Add",
-    'version': '12.0.8.15',
+    'version': '12.19.03.14',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'http://www.sunpop.cn',

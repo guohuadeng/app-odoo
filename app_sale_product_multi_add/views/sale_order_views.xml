@@ -7,10 +7,12 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//page/field[@name='order_line']" position="attributes">
-                    <attribute name="widget">multi_select_tree</attribute>
-                    <attribute name="res_model">product.product</attribute>
-                    <attribute name="res_field">product_id</attribute>
+                <xpath expr="//page/field[@name='order_line']/tree/control" position="inside">
+                    <create string="Multi add product" context="{
+                        'pro_multi_add': True,
+                        'pro_res_model': 'product.product',
+                        'pro_res_field': 'product_id',
+                        }"/>
                 </xpath>
             </field>
         </record>
