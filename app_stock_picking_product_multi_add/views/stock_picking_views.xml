@@ -6,14 +6,15 @@
             <field name="inherit_id" ref="stock.view_picking_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//page/field[@name='move_ids_without_package']/tree/field[1]" position="before">
-                <control>
-                    <create string="Add a line"/>
-                    <create string="Multi add line" context="{
+                    <control>
+                        <create string="Add a line"/>
+                        <create string="Multi add line" context="{
                         'pro_multi_add': True,
                         'pro_res_model': 'product.product',
                         'pro_res_field': 'product_id',
                         }"/>
-                </control>
+                    </control>
+                </xpath>
             </field>
         </record>
     </data>
