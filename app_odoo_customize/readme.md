@@ -23,6 +23,7 @@ You can config odoo, make it look like your own platform.
 18. Show/Hide Author and Website in Apps Dashboard (odoo 11 only)
 19. One Click to clear all data (Sometime pls click twice)
 20. Show quick upgrade in app dashboard
+21. Add reset or clear website blog data
 
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.

@@ -431,6 +431,34 @@ class ResConfigSettings(models.TransientModel):
         return True
 
     @api.multi
+    def remove_website(self):
+        to_removes = [
+            # 清除网站数据，w, w_blog
+            ['blog.tag.category', ],
+            ['blog.tag', ],
+            ['blog.post', ],
+            ['blog.blog', ],
+            ['website.published.multi.mixin', ],
+            ['website.published.mixin', ],
+            ['website.multi.mixin', ],
+            ['website.redirect', ],
+            ['website.seo.metadata', ],
+            ['website.page', ],
+            ['website.menu', ],
+            ['website', ],
+        ]
+        try:
+            for line in to_removes:
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj and obj._table:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute(sql)
+        except Exception as e:
+            pass  # raise Warning(e)
+        return True
+
+    @api.multi
     def remove_message(self):
         to_removes = [
             # 清除消息数据

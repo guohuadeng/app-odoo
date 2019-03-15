@@ -23,7 +23,7 @@
 
 {
     'name': 'Odoo Customize(Debranding, My Odoo)',
-    'version': '12.19.3.12',
+    'version': '12.19.3.15',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',
@@ -61,8 +61,9 @@
     18. Show/Hide Author and Website in Apps Dashboard
     19. One Click to clear all data (Sometime pls click twice)
     20. Show quick upgrade in app dashboard, click to show module info not go to odoo.com
-    21. Can clear and reset account chart. Be cautious.
-    22. Update online manual and developer document to odoo12.
+    21. Can clear and reset account chart. Be cautious
+    22. Update online manual and developer document to odoo12
+    23. Add reset or clear website blog data
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.

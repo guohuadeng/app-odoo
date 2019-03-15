@@ -143,6 +143,11 @@
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <div class="col-12 col-lg-12 mb4">
+                            <span class="col-3 col-lg-2 text-left">Website And Blog</span>
+                            <button string="Delete All Website/Blog" type="object" name="remove_website"
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                        </div>
+                        <div class="col-12 col-lg-12 mb4">
                             <span class="col-3 col-lg-2 text-left">Base Models</span>
                             <button string="Delete All Product" type="object" name="remove_product"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
