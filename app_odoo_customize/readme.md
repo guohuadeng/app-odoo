@@ -16,14 +16,16 @@ You can config odoo, make it look like your own platform.
 11. Provide 236 country flags.
 12. Multi-language Support.
 13. Change Powered by Odoo in login screen.(Please change '../views/app_odoo_customize_view.xml' #15)
-14. Quick delete test data in Apps: Sales/POS/Purchase/MRP/Inventory/Accounting/Message/Workflow etc.
+14. Quick delete test data in Apps: Sales/POS/Purchase/MRP/Inventory/Accounting/Project/Message/Workflow etc.
 15. Reset All the Sequence to beginning of 1: SO/PO/MO/Invoice...
 16. Fix odoo reload module translation bug while enable english language
 17. Stop Odoo Auto Subscribe(Performance Improve)
-18. Show/Hide Author and Website in Apps Dashboard (odoo 11 only)
+18. Show/Hide Author and Website in Apps Dashboard
 19. One Click to clear all data (Sometime pls click twice)
-20. Show quick upgrade in app dashboard
-21. Add reset or clear website blog data
+20. Show quick upgrade in app dashboard, click to show module info not go to odoo.com
+21. Can clear and reset account chart. Be cautious
+22. Update online manual and developer document to odoo12
+23. Add reset or clear website blog data
 
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.
@@ -55,8 +57,10 @@ http://www.sunpop.cn
 17. 可停用odoo自动订阅功能，避免“同样对象关注2次”bug，同时提升性能
 18. 显示/隐藏应用的作者和网站-在应用安装面板中
 19. 一键清除所有数据（视当前数据情况，有时需点击2次）
-20. 在应用面板显示快速升级按键
+20. 在应用面板显示快速升级按键，点击时不会导航至 odoo.com
 21. 清除并重置会计科目表
+22. 全新升级将odoo12用户及开发手册导航至国内网站，或者自己定义的网站
+23. 增加清除网站数据功能
 
 使用方法：将解压后的 app_odoo_customize 放到 odoo的 addons目录下，激活开发者模式，应用-->更新应用列表，
 找到 "App odoo Customize"模块，安装即可。
