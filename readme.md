@@ -54,7 +54,7 @@ App MRP Bom Product Multi Batch Add
 制造Bom批量增加产品.
 
 ## app_odoo_customize
-###Quick customize, debranding,reset data, debug. Language Switcher. 
+### Quick customize, debranding,reset data, debug. Language Switcher. 
     Easy Delete data.reset account chart.
     odoo debrand, odoo debranding, customize my odoo. 
     ============
