@@ -35,7 +35,7 @@
     'price': 0.00,
     'currency': 'EUR',
     'summary': """
-    Use for quick select color. can be use in product attribute and other color variant. color widget. color pick.
+    Use for quick select color. can be use in product attribute and other color variant. color widget. color picker.
     """,
     'images': ['static/description/banner.png'],
     'depends': [
