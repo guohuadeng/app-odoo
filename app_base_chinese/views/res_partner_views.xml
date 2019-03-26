@@ -65,10 +65,10 @@
                 <!-- res.partner联系人 kanban -->
                 <!-- 显示类型和地址等 -->
                 <xpath expr="//field[@name='child_ids']//kanban[1]//templates//field[@name='name']" position="before">
-                    <t t-if="record.ref.raw_value">[<field name="ref"/>]</t>
+                    <t t-if="record.ref and record.ref.raw_value">[<field name="ref"/>]</t>
                 </xpath>
                 <xpath expr="//field[@name='child_ids']//kanban[1]//templates//field[@name='name']" position="after">
-                    <div t-if="record.type.raw_value"><field name="type"/></div>
+                    <div t-if="record.type and record.type.raw_value"><field name="type"/></div>
                 </xpath>
             </field>
         </record>
@@ -158,10 +158,10 @@
                     <field name="credit_limit"/>
                 </xpath>
                 <xpath expr="//div[@class='oe_kanban_details']/ul" position="inside">
-                    <li t-if="record.mobile.raw_value" class="o_text_overflow">
+                    <li t-if="record.mobile and record.mobile.raw_value" class="o_text_overflow">
                         , <field name="mobile"/>
                     </li>
-                    <li t-if="record.credit_limit.raw_value">
+                    <li t-if="record.credit_limit and record.credit_limit.raw_value">
                         Credit：<field name="credit_limit"/>
                     </li>
                 </xpath>
