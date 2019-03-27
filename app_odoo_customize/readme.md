@@ -32,7 +32,7 @@ Also helpful for training and support for your odoo end-user.
 The user can get the help document just by one click.
 
 For more support
-http://www.sunpop.cn
+https://www.sunpop.cn
 
 ## 在符合odoo开源协议的前提下，去除odoo版权信息，自定义你的odoo
 可完全自行设置下列 odoo 选项，让 odoo 看上去像是你的软件产品
@@ -68,10 +68,10 @@ http://www.sunpop.cn
 
 ## 其它技术资源：
 #### odoo10-windows64位高性能最新绿色版下载及制作方法-提速50%
-http://www.sunpop.cn/odoo10_fast_x64_download/
+https://www.sunpop.cn/odoo10_fast_x64_download/
 #### Odoo10离线中文用户手册下载
-http://www.sunpop.cn/odoo10_user_manual_document_offline/
+https://www.sunpop.cn/odoo10_user_manual_document_offline/
 #### Odoo10离线开发手册下载-含python教程，jquery参考，Jinja2模板，PostgresSQL参考（odoo开发必备）
-http://www.sunpop.cn/odoo10_developer_document_offline/
+https://www.sunpop.cn/odoo10_developer_document_offline/
 
 

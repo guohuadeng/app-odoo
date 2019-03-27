@@ -6,14 +6,14 @@
 # Copyright (C) 2012-2012 南京盈通 ccdos@intoerp.com <small business chart>
 # Copyright (C) 2008-now  开阖软件 jeff@osbzr.com    < PM and LTS >
 # Copyright (C) 2017-now  jeffery9@gmail.com
-# Copyright (C) 2018-11  广州尚鹏 http://www.sunpop.cn
+# Copyright (C) 2018-11  广州尚鹏 https://www.sunpop.cn
 
 {
     'name': '2018最新中国企业会计表.Latest Chinese Accounting.',
     'version': '12.0.12.14',
     'author': 'Sunpop.cn',
     'category': 'Localization',
-    'website': 'http://www.sunpop.cn',
+    'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 12,
     'summary': """    

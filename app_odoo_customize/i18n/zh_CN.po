@@ -353,8 +353,8 @@ msgstr "视图"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Visit our website for more apps and Support. http://www.sunpop.cn"
-msgstr "请访问我们的网站获取更多支持. http://www.sunpop.cn"
+msgid "Visit our website for more apps and Support. https://www.sunpop.cn"
+msgstr "请访问我们的网站获取更多支持. https://www.sunpop.cn"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_show_account

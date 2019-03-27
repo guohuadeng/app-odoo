@@ -50,12 +50,12 @@ class ResConfigSettings(models.TransientModel):
         app_stop_subscribe = True if ir_config.get_param('app_stop_subscribe') == "True" else False
 
         app_documentation_url = ir_config.get_param('app_documentation_url',
-                                                    default='http://www.sunpop.cn/documentation/user/12.0/en/index.html')
+                                                    default='https://www.sunpop.cn/documentation/user/12.0/en/index.html')
         app_documentation_dev_url = ir_config.get_param('app_documentation_dev_url',
-                                                        default='http://www.sunpop.cn/documentation/12.0/index.html')
-        app_support_url = ir_config.get_param('app_support_url', default='http://www.sunpop.cn/trial/')
+                                                        default='https://www.sunpop.cn/documentation/12.0/index.html')
+        app_support_url = ir_config.get_param('app_support_url', default='https://www.sunpop.cn/trial/')
         app_account_title = ir_config.get_param('app_account_title', default='My Online Account')
-        app_account_url = ir_config.get_param('app_account_url', default='http://www.sunpop.cn/my-account/')
+        app_account_url = ir_config.get_param('app_account_url', default='https://www.sunpop.cn/my-account/')
         res.update(
             app_system_name=app_system_name,
             app_show_lang=app_show_lang,
@@ -94,12 +94,12 @@ class ResConfigSettings(models.TransientModel):
         ir_config.set_param("app_stop_subscribe", self.app_stop_subscribe or "False")
 
         ir_config.set_param("app_documentation_url",
-                            self.app_documentation_url or "http://www.sunpop.cn/documentation/user/12.0/en/index.html")
+                            self.app_documentation_url or "https://www.sunpop.cn/documentation/user/12.0/en/index.html")
         ir_config.set_param("app_documentation_dev_url",
-                            self.app_documentation_dev_url or "http://www.sunpop.cn/documentation/12.0/index.html")
-        ir_config.set_param("app_support_url", self.app_support_url or "http://www.sunpop.cn/trial/")
+                            self.app_documentation_dev_url or "https://www.sunpop.cn/documentation/12.0/index.html")
+        ir_config.set_param("app_support_url", self.app_support_url or "https://www.sunpop.cn/trial/")
         ir_config.set_param("app_account_title", self.app_account_title or "My Online Account")
-        ir_config.set_param("app_account_url", self.app_account_url or "http://www.sunpop.cn/my-account/")
+        ir_config.set_param("app_account_url", self.app_account_url or "https://www.sunpop.cn/my-account/")
 
     @api.multi
     def remove_sales(self):

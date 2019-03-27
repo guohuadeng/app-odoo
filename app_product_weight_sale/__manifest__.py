@@ -15,7 +15,7 @@
     """,
     'category': 'Sales',
     'author': 'Sunpop.cn',
-    'website': 'http://www.sunpop.cn',
+    'website': 'https://www.sunpop.cn',
     'images': ['static/description/banner.png'],
     'currency': 'EUR',
     'price': 68,
