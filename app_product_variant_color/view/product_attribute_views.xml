@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="sale.product_attribute_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='html_color']" position="attributes">
-                    <attribute name="widget">color</attribute>
+                    <attribute name="widget">colorpicker</attribute>
                 </xpath>
             </field>
         </record>
@@ -19,7 +19,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='html_color']" position="attributes">
-                    <attribute name="widget">color</attribute>
+                    <attribute name="widget">colorpicker</attribute>
                 </xpath>
             </field>
         </record>
@@ -30,7 +30,7 @@
             <field name="inherit_id" ref="sale.product_template_attribute_value_view_tree_inherit"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='html_color']" position="attributes">
-                    <attribute name="widget">color</attribute>
+                    <attribute name="widget">colorpicker</attribute>
                 </xpath>
             </field>
         </record>
@@ -41,7 +41,7 @@
             <field name="inherit_id" ref="sale.product_template_attribute_value_view_form_inherit"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='html_color']" position="attributes">
-                    <attribute name="widget">color</attribute>
+                    <attribute name="widget">colorpicker</attribute>
                 </xpath>
             </field>
         </record>
@@ -52,7 +52,7 @@
             <field name="inherit_id" ref="sale.variants_tree_view"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='html_color']" position="attributes">
-                    <attribute name="widget">color</attribute>
+                    <attribute name="widget">colorpicker</attribute>
                 </xpath>
             </field>
         </record>
