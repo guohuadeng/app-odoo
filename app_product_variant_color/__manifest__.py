@@ -25,14 +25,13 @@
     'category': "Sales",
     'version': "12.19.1.04",
     "author": "Sunpop.cn",
-    'price': 18.00,
+    'price': 0.00,
     'currency': 'EUR',
     'summary': """
     Product color swatch. Use for quick select color. can be use in product attribute and other color variant. color widget. color picker.
     """,
     'images': ['static/description/banner.png'],
     'depends': [
-        'app_web_widget_colorpicker',
         'sale',
     ],
     'data': [
