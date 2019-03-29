@@ -28,11 +28,11 @@
     'price': 18.00,
     'currency': 'EUR',
     'summary': """
-    Use for quick select color. can be use in product attribute and other color variant. color widget. color picker.
+    Product color swatch. Use for quick select color. can be use in product attribute and other color variant. color widget. color picker.
     """,
     'images': ['static/description/banner.png'],
     'depends': [
-        'web_widget_colorpicker',
+        'app_web_widget_colorpicker',
         'sale',
     ],
     'data': [
