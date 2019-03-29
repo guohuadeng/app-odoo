@@ -9,8 +9,8 @@
 # Copyright (C) 2018-11  广州尚鹏 http://www.sunpop.cn
 
 {
-    'name': '2018最新中国企业会计表.Latest Chinese Accounting.',
-    'version': '11.0.11.06',
+    'name': '2019最新中国企业会计表.Latest Chinese Accounting.',
+    'version': '12.19.03.29',
     'author': 'Sunpop.cn',
     'category': 'Localization',
     'website': 'http://www.sunpop.cn',
@@ -27,7 +27,7 @@
     'description': """
     
     最新中国化财务，主要针对标准会计科目表作了优化。
-    1. 2018最新会计科目表，处理营改增后会计科目调整。
+    1. 2019最新会计科目表，处理营改增后会计科目调整。更新至最新税率。
     2. 将菜单中设置为"财务"。
     3. 补充分类及标签信息。
     4. 更新税信息。
@@ -52,6 +52,7 @@
 
     """,
     'depends': [
+        'app_odoo_customize',
         'account',
         'l10n_cn',
     ],
