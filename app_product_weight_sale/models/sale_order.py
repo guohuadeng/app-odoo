@@ -11,9 +11,9 @@ class SaleOrder(models.Model):
         get_param = self.env['ir.config_parameter'].sudo().get_param
         product_weight_in_lbs_param = get_param('product.weight_in_lbs')
         if product_weight_in_lbs_param == '1':
-            return self.env.ref('uom.product_uom_lb').name
+            return self.env.ref('product.product_uom_lb').name
         else:
-            return self.env.ref('uom.product_uom_kgm').name
+            return self.env.ref('product.product_uom_kgm').name
 
     weight = fields.Float(string='Total Weight', compute='_compute_weight')
     # 重量显示的单位
