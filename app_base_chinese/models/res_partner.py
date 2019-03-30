@@ -7,6 +7,7 @@ from odoo.exceptions import UserError, ValidationError
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
+    name = fields.Char(index=True, translate=True)
     short_name = fields.Char('Short Name')  # 简称
 
     # 增加地址显示中的手机号与电话号码
