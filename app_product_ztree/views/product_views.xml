@@ -11,7 +11,6 @@
                     <attribute name="widget">ztree_select</attribute>
                     <attribute name="ztree_parent_key">parent_id</attribute>
                     <attribute name="ztree_expend_level">2</attribute>
-                    <attribute name="limit">16</attribute>
                     <attribute name="order">name</attribute>
                 </xpath>
             </field>
