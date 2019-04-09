@@ -44,7 +44,7 @@ child_all_count: child_all_count field, count of direct and indirect children.
     'price': 0.00,
     'currency': 'EUR',
     'depends': [
-        'web',
+        'product',
     ],
     'images': ['static/description/banner.gif'],
     'data': [
