@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_view_users_form" model="ir.ui.view">
+        <field name="name">app.res.users.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="user_parent_id"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="after">
+                <div id="o_node_container">
+                    <div id="o_node_main">
+                        <span id="add_image"/>
+                        <span id="add_title"/>
+                    </div>
+                    <div id="o_node_right">
+                        <h4 class="o_chart_hierarchy_title mb16 mt0">Hierarchy Chart</h4>
+                        <field name="user_child_ids" widget="web_chart_hierarchy"
+                               string="Please get widget from https://apps.odoo.com/apps/modules/12.0/app_web_chart_hierarchy/"
+                               form_view_ref ='base.view_users_form'
+                               options="{
+                               'image': 'image_small',
+                               'desc': 'login',
+                               'direct_sub': 'user_child_ids',
+                               'child_all_count':'user_child_all_count'}"/>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="app_view_users_form2" model="ir.ui.view">
+        <field name="name">app.res.users.form2</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="app_view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//span[@id='add_image']" position="after">
+                <xpath expr="//field[@name='image']" position="move"/>
+            </xpath>
+            <xpath expr="//span[@id='add_title']" position="after">
+                <xpath expr="//div[@class='oe_title']" position="move"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
