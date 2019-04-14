@@ -5,7 +5,7 @@
         <field name="model">res.users</field>
         <field name="inherit_id" ref="base.view_users_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='parent_id']" position="after">
+            <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="user_parent_id" groups="sales_team.group_sale_manager"/>
                 <field name="sale_team_id"/>
             </xpath>
