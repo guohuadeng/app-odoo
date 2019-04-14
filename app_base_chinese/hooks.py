@@ -29,15 +29,13 @@ def post_init_hook(cr, registry):
     """
     try:
         env = api.Environment(cr, SUPERUSER_ID, {})
-        # oname = env['product.category'].with_context(lang='zh_CN').browse(1).name
-        # if oname:
-        #     env['product.category'].with_context(lang='zh_CN').browse(1).write({
-        #         'name': oname + 'sunpop.cn',
-        #     })
-        #     env['product.category'].with_context(lang='zh_CN').browse(1).write({
-        #         'name': oname,
-        #     })
-        env['product.category'].with_context(lang='zh_CN').browse(1)._compute_complete_name()
-        pass
+        ids = env['product.category'].sudo().with_context(lang='zh_CN').search([
+            ('parent_id', '=', False)
+        ])
+        ids._compute_complete_name()
+        ids = env['stock.location'].sudo().with_context(lang='zh_CN').search([
+            ('location_id', '=', False)
+        ])
+        ids._compute_complete_name()
     except Exception as e:
         raise Warning(e)

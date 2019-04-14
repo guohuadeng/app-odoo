@@ -44,8 +44,7 @@
     'pre_init_hook': 'pre_init_hook',
     'post_init_hook': 'post_init_hook',
     'depends': [
-        'base',
-        'product',
+        'stock',
         'l10n_cn'
     ],
     'images': ['static/description/banner.jpg'],
