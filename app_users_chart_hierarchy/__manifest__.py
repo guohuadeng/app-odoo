@@ -25,7 +25,7 @@
     'name': 'User Alliance Distribution Chart Hierarchy, 多层级用户',
     'version': '12.19.04.14',
     'author': 'Sunpop.cn',
-    'category': 'Stock',
+    'category': 'Sales',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
@@ -44,7 +44,7 @@ child_all_count: child_all_count field, count of direct and indirect children.
     'price': 0.00,
     'currency': 'EUR',
     'depends': [
-        'base',
+        'sales_team',
     ],
     'images': ['static/description/banner.gif'],
     'data': [
