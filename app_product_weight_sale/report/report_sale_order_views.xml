@@ -2,9 +2,10 @@
 <odoo>
     <data>
         <template id="app_report_saleorder_document" inherit_id="sale.report_saleorder_document">
-            <xpath expr="//table[hasclass('table', 'table-sm')]/thead/tr/th[1]" position="before">
-                <t t-set="colspan" t-value="colspan+2"/>
-            </xpath>
+<!--            <xpath expr="//table[hasclass('o_main_table')]/thead/tr/th[1]" position="before">-->
+            <!--注意，odoo12 的 deb 发行版，没有了colspan，只有源码 master版中有-->
+<!--                <t t-set="colspan" t-value="colspan+2"/>-->
+<!--            </xpath>-->
             <!--xpath 特殊处理，因为加载另的插件会影响顺序，要精确定位，可用th[contains(text(), 'Quantity')]-->
             <xpath expr="//div[@class='page']/table[1]/thead/tr/th[@class='text-right'][1]" position="after">
                 <th class="text-right app_sunpop"><strong>Weight Unit</strong></th>
