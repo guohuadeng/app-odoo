@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '12.19.03.04',
+    'version': '12.19.04.15',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -38,6 +38,7 @@
     4. 货币处理，增加排序显示
     6. 用户名支持翻译（可能会增加复杂度，后续看）
     5. 修正产品类别的列表及m2o字段中不显示中文目录名的Bug
+    6. 修正仓库位置的列表及m2o字段中不显示中文目录名的Bug
     11. todo:中文演示数据(只有demo模式才加载)
     
     """,

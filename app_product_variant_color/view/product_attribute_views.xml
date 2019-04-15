@@ -6,8 +6,22 @@
             <field name="model">product.attribute</field>
             <field name="inherit_id" ref="sale.product_attribute_view_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="attributes">
+                    <attribute name="options">{'horizontal': true}</attribute>
+                </xpath>
                 <xpath expr="//field[@name='html_color']" position="attributes">
                     <attribute name="widget">colorpicker</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="app_product_attribute_view_form2" model="ir.ui.view">
+            <field name="name">app.product.attribute.form.inherit2</field>
+            <field name="model">product.attribute</field>
+            <field name="inherit_id" ref="product.product_attribute_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='create_variant']" position="attributes">
+                    <attribute name="options">{'horizontal': true}</attribute>
                 </xpath>
             </field>
         </record>

@@ -23,7 +23,7 @@
 {
     'name': "App Product Attribute Color",
     'category': "Sales",
-    'version': "12.19.1.04",
+    'version': "12.19.04.15",
     "author": "Sunpop.cn",
     'price': 0.00,
     'currency': 'EUR',
