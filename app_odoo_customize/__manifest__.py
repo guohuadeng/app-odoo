@@ -23,7 +23,7 @@
 
 {
     'name': 'Odoo Customize(Debranding, My Odoo)',
-    'version': '12.19.3.15',
+    'version': '12.19.04.17',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -64,19 +64,21 @@
     21. Can clear and reset account chart. Be cautious
     22. Update online manual and developer document to odoo12
     23. Add reset or clear website blog data
+    24. Customize Odoo Native Module(eg. Enterprise) Url
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
     The user can get the help document just by one click.
     """,
     'images': ['static/description/banner.gif'],
-    'depends': ['base', 'web', 'mail'],
+    'depends': ['base', 'web', 'mail', 'web_settings_dashboard'],
     'data': [
         'views/app_odoo_customize_view.xml',
         'views/app_theme_config_settings_view.xml',
         'views/ir_model_view.xml',
         # data
         'data/ir_config_parameter.xml',
+        'data/ir_module_module.xml',
         'data/res_company_data.xml',
         'data/res_groups.xml',
         'security/ir.model.access.csv',

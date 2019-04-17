@@ -31,6 +31,7 @@ class ResConfigSettings(models.TransientModel):
     app_support_url = fields.Char('Support Url')
     app_account_title = fields.Char('My Odoo.com Account Title')
     app_account_url = fields.Char('My Odoo.com Account Url')
+    app_enterprise_url = fields.Char('Customize Module Url(eg. Enterprise)')
 
     @api.model
     def get_values(self):
@@ -56,6 +57,7 @@ class ResConfigSettings(models.TransientModel):
         app_support_url = ir_config.get_param('app_support_url', default='https://www.sunpop.cn/trial/')
         app_account_title = ir_config.get_param('app_account_title', default='My Online Account')
         app_account_url = ir_config.get_param('app_account_url', default='https://www.sunpop.cn/my-account/')
+        app_enterprise_url = ir_config.get_param('app_enterprise_url', default='https://www.sunpop.cn')
         res.update(
             app_system_name=app_system_name,
             app_show_lang=app_show_lang,
@@ -73,7 +75,8 @@ class ResConfigSettings(models.TransientModel):
             app_documentation_dev_url=app_documentation_dev_url,
             app_support_url=app_support_url,
             app_account_title=app_account_title,
-            app_account_url=app_account_url
+            app_account_url=app_account_url,
+            app_enterprise_url=app_enterprise_url
         )
         return res
 
@@ -100,8 +103,15 @@ class ResConfigSettings(models.TransientModel):
         ir_config.set_param("app_support_url", self.app_support_url or "https://www.sunpop.cn/trial/")
         ir_config.set_param("app_account_title", self.app_account_title or "My Online Account")
         ir_config.set_param("app_account_url", self.app_account_url or "https://www.sunpop.cn/my-account/")
+        ir_config.set_param("app_enterprise_url", self.app_enterprise_url or "https://www.sunpop.cn")
 
-    @api.multi
+    def set_module_url(self):
+        sql = "UPDATE ir_module_module SET website = '%s' WHERE license like '%s' and website <> ''" % (self.app_enterprise_url, 'OEEL%')
+        try:
+            self._cr.execute(sql)
+        except Exception as e:
+            pass
+
     def remove_sales(self):
         to_removes = [
             # 清除销售单据

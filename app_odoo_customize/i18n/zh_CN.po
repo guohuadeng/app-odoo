@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0+e-20190301\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-15 10:29+0000\n"
-"PO-Revision-Date: 2019-03-15 10:29+0000\n"
+"POT-Creation-Date: 2019-04-17 05:59+0000\n"
+"PO-Revision-Date: 2019-04-17 05:59+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr "<span class=\"col-3 col-lg-2 text-left\">制造</span>"
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "<span class=\"col-3 col-lg-2 text-left\">POS</span>"
-msgstr "<span class=\"col-3 col-lg-2 text-left\">POS</span>"
+msgstr "<span class=\"col-3 col-lg-2 text-left\">POS收银</span>"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -100,6 +100,11 @@ msgid "Clean and reset Account Chart"
 msgstr "清除会计科目，便于重置"
 
 #. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Click to set"
+msgstr "点击设置"
+
+#. module: app_odoo_customize
 #: model:ir.model,name:app_odoo_customize.model_res_config_settings
 msgid "Config Settings"
 msgstr "配置设定"
@@ -111,6 +116,11 @@ msgid "Customize Debrand"
 msgstr "定制我的odoo"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_enterprise_url
+msgid "Customize Module Url(eg. Enterprise)"
+msgstr "自定义模块链接(如企业版)"
+
+#. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Data Cleaning (Be careful to do that!)"
 msgstr "数据清理（请谨慎操作！）"
@@ -120,7 +130,7 @@ msgstr "数据清理（请谨慎操作！）"
 #: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:8
 #, python-format
 msgid "Deactivate the developer mode"
-msgstr "取消激活开发者模式"
+msgstr "取消开发者模式"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -232,7 +242,7 @@ msgstr "您确认要删除指定数据？"
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_system_name
 msgid "Setup System Name,which replace Odoo"
-msgstr ""
+msgstr "设定系统名称，代替原 Odoo 字样"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__group_show_author_in_apps

@@ -98,6 +98,11 @@
                         <div>
                             <field name="app_account_url"/>
                         </div>
+                        <label for="app_enterprise_url"/>
+                        <div>
+                            <field name="app_enterprise_url" class="oe_inline"/>
+                            <button string="Click to set" type="object" name="set_module_url" class="ml8 oe_highlight"/>
+                        </div>
                     </group>
                     <div class="mt16 o_settings_container" name="data-clean">
                         <h2 name="data-clean" class="o_horizontal_separator">Data Cleaning (Be careful to do that!)</h2>

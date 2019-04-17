@@ -16,8 +16,12 @@
 # description:
 
 def pre_init_hook(cr):
-    pass
-    # cr.execute("")
+    try:
+        # 更新企业版指向
+        sql = "UPDATE ir_module_module SET website = '%s' WHERE license like '%s' and website <> ''" % ('https://www.sunpop.cn', 'OEEL%')
+        cr.execute(sql)
+    except Exception as e:
+        pass
 
 def post_init_hook(cr, registry):
     pass
