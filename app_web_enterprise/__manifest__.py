@@ -18,7 +18,7 @@
 
 {
     'name': "App web enterprise enhance,企业版界面增强",
-    'version': '12.19.04.14',
+    'version': '12.19.04.17',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -42,7 +42,10 @@
     """,
     'price': 68.00,
     'currency': 'EUR',
-    'depends': ['web_enterprise'],
+    'depends': [
+        'web_enterprise',
+        'web_mobile'
+    ],
     'images': [],
     'data': [
         'views/webclient_templates.xml',

@@ -71,7 +71,16 @@
     The user can get the help document just by one click.
     """,
     'images': ['static/description/banner.gif'],
-    'depends': ['base', 'web', 'mail', 'web_settings_dashboard'],
+    'depends': [
+        'base',
+        'web',
+        'mail',
+        'web_settings_dashboard',
+        'iap',
+        # 'digest',
+        # when enterprise
+        # 'web_mobile'
+    ],
     'data': [
         'views/app_odoo_customize_view.xml',
         'views/app_theme_config_settings_view.xml',
@@ -79,6 +88,7 @@
         # data
         'data/ir_config_parameter.xml',
         'data/ir_module_module.xml',
+        # 'data/digest_template_data.xml',
         'data/res_company_data.xml',
         'data/res_groups.xml',
         'security/ir.model.access.csv',
