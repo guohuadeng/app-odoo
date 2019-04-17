@@ -35,7 +35,7 @@
     广州尚鹏，Sunpop.cn 的odoo模块。企业版界面增强。
     1. Add dropdown arrow to parent menu.
     多级菜单中出现箭头。
-    2. Replace the odoo logo to your company logo in main menu.
+    2. Replace the odoo logo or url to your company in menu and page.
     替换主菜单界面的logo为你公司的logo。
     3. Alway show search in main menu.
     在主菜单界面让搜索可见。
