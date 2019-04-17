@@ -16,7 +16,7 @@
 # description:
 {
     'name': '12 Ready!! App Odoo Customize(Backend Debranding Title,Language,Documentation,Quick Debug,Clear Data)',
-    'version': '11.19.1.20',
+    'version': '11.19.04.17',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',
@@ -54,6 +54,9 @@ You can config odoo, make it look like your own platform.
 19. One Click to clear all data (Sometime pls click twice)
 20. Show quick upgrade in app dashboard
 21. Can clear and reset account chart. Be cautious.
+22. Update online manual and developer document to odoo12
+23. Add reset or clear website blog data
+24. Customize Odoo Native Module(eg. Enterprise) Url
 
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.
@@ -61,7 +64,16 @@ The user can get the help document just by one click.
 
     """,
     'images': ['static/description/banner.gif'],
-    'depends': ['base', 'web', 'mail'],
+    'depends': [
+        'base',
+        'web',
+        'mail',
+        'web_settings_dashboard',
+        'iap',
+        # 'digest',
+        # when enterprise
+        # 'web_mobile'
+    ],
     'data': [
         'views/app_odoo_customize_view.xml',
         'views/app_theme_config_settings_view.xml',

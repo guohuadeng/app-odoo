@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-extend="DashboardApps">
+        <t t-jquery=".o_web_settings_dashboard_pills" t-operation="replace">
+            <a href="https://www.sunpop.cn" target="_blank" class="flex-grow-1 w-25"><i class="fa fa-lg fa-rocket text-muted"/> App store</a>
+            <a href="https://www.sunpop.cn" target="_blank" class="flex-grow-1 w-25"><i class="fa fa-lg fa-picture-o text-muted"/> Theme store</a>
+        </t>
+    </t>
+<!--    when enterprise-->
+<!--    <t t-extend="DashboardMain">-->
+<!--        <t t-jquery="a[href='https://play.google.com/store/apps/details?id=com.odoo.mobile']" t-operation="replace">-->
+<!--            <a class="d-block mx-auto" href="https://www.sunpop.cn" target="_blank">-->
+<!--                <img class="d-block mx-auto img img-fluid" src="/web_mobile/static/src/img/google_play.png" alt="On Google Play"/>-->
+<!--            </a>-->
+<!--        </t>-->
+<!--        <t t-jquery="a[href='https://itunes.apple.com/us/app/odoo/id1272543640']" t-operation="replace">-->
+<!--            <a class="d-block mx-auto" href="https://www.sunpop.cn" target="_blank">-->
+<!--                <img class="d-block mx-auto img img-fluid" src="/web_mobile/static/src/img/app_store.png" alt="On Apple Store"/>-->
+<!--            </a>-->
+<!--        </t>-->
+<!--    </t>-->
+</templates>
