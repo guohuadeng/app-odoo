@@ -117,6 +117,8 @@ class ResConfigSettings(models.TransientModel):
             # 清除销售单据
             ['sale.order.line', ],
             ['sale.order', ],
+            # 销售提成，自用
+            ['sale.commission.line', ],
             # 不能删除报价单模板
             # ['sale.order.template.option', ],
             # ['sale.order.template.line', ],
@@ -130,7 +132,9 @@ class ResConfigSettings(models.TransientModel):
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
             # 更新序号
-            seqs = self.env['ir.sequence'].search([('code', '=', 'sale.order')])
+            seqs = self.env['ir.sequence'].search([
+                '|', ('code', '=', 'sale.order'),
+                ('code', '=', 'sale.commission.line')])
             for seq in seqs:
                 seq.write({
                     'number_next': 1,
@@ -224,6 +228,32 @@ class ResConfigSettings(models.TransientModel):
                 '|', ('code', '=', 'purchase.order'),
                 '|', ('code', '=', 'purchase.requisition.purchase.tender'),
                 ('code', '=', 'purchase.requisition.blanket.order')])
+            for seq in seqs:
+                seq.write({
+                    'number_next': 1,
+                })
+            self._cr.execute(sql)
+        except Exception as e:
+            pass  # raise Warning(e)
+        return True
+
+    @api.multi
+    def remove_expense(self):
+        to_removes = [
+            # 清除采购单据
+            ['hr.expense.sheet', ],
+            ['hr.expense', ],
+        ]
+        try:
+            for line in to_removes:
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute(sql)
+            # 更新序号
+            seqs = self.env['ir.sequence'].search([
+                ('code', '=', 'hr.expense.invoice')])
             for seq in seqs:
                 seq.write({
                     'number_next': 1,

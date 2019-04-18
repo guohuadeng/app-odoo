@@ -27,6 +27,7 @@ You can config odoo, make it look like your own platform.
 22. Update online manual and developer document to odoo12
 23. Add reset or clear website blog data
 24. Customize Odoo Native Module(eg. Enterprise) Url
+25. Add remove expense data
 
 This module can help to white label the Odoo.
 Also helpful for training and support for your odoo end-user.
@@ -63,6 +64,7 @@ https://www.sunpop.cn
 22. 全新升级将odoo12用户及开发手册导航至国内网站，或者自己定义的网站
 23. 增加清除网站数据功能
 24. 自定义 odoo 原生模块跳转的url(比如企业版模块)
+25. 增加删除费用
 
 使用方法：将解压后的 app_odoo_customize 放到 odoo的 addons目录下，激活开发者模式，应用-->更新应用列表，
 找到 "App odoo Customize"模块，安装即可。

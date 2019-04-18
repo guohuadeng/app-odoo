@@ -23,7 +23,7 @@
 
 {
     'name': 'Odoo Customize(Debranding, My Odoo)',
-    'version': '12.19.04.17',
+    'version': '12.19.04.18',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -65,6 +65,7 @@
     22. Update online manual and developer document to odoo12
     23. Add reset or clear website blog data
     24. Customize Odoo Native Module(eg. Enterprise) Url
+    25. Add remove expense data
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
