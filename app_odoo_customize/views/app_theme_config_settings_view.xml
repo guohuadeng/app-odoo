@@ -143,9 +143,6 @@
                             <span class="col-3 col-lg-2 text-left">Accounting</span>
                             <button string="Delete All Voucher/Invoice/Bill" type="object" name="remove_account"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
-                            |
-                            <button string="Clean and reset Account Chart" type="object" name="remove_account_chart"
-                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <div class="col-12 col-lg-12 mb4">
                             <span class="col-3 col-lg-2 text-left">Project</span>
@@ -169,6 +166,9 @@
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                             |
                             <button string="Delete All Workflow" type="object" name="remove_workflow"
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                            |
+                            <button string="Clean and reset Account Chart" type="object" name="remove_account_chart"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <div class="col-12 col-lg-12 mb4">
