@@ -28,14 +28,6 @@
                     </div>
                 </div>
             </xpath>
-        </field>
-    </record>
-
-    <record id="app_view_users_form2" model="ir.ui.view">
-        <field name="name">app.res.users.form2</field>
-        <field name="model">res.users</field>
-        <field name="inherit_id" ref="app_view_users_form"/>
-        <field name="arch" type="xml">
             <xpath expr="//span[@id='add_image']" position="after">
                 <xpath expr="//field[@name='image']" position="move"/>
             </xpath>
@@ -74,14 +66,6 @@
                     </div>
                 </div>
             </xpath>
-        </field>
-    </record>
-
-    <record id="app_view_users_simple_form2" model="ir.ui.view">
-        <field name="name">app.res.users.simplified.form2</field>
-        <field name="model">res.users</field>
-        <field name="inherit_id" ref="app_view_users_simple_form"/>
-        <field name="arch" type="xml">
             <xpath expr="//span[@id='add_image']" position="after">
                 <xpath expr="//field[@name='image']" position="move"/>
             </xpath>

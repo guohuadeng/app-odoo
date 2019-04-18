@@ -24,14 +24,6 @@
                     </div>
                 </div>
             </xpath>
-        </field>
-    </record>
-
-    <record id="view_location_form2" model="ir.ui.view">
-        <field name="name">app.stock.location.form2</field>
-        <field name="model">stock.location</field>
-        <field name="inherit_id" ref="app_view_location_form"/>
-        <field name="arch" type="xml">
             <xpath expr="//span[@id='add_group']" position="after">
                 <xpath expr="//group[1]" position="move"/>
             </xpath>

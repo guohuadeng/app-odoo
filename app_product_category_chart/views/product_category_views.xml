@@ -25,14 +25,6 @@
                     </div>
                 </div>
             </xpath>
-        </field>
-    </record>
-
-    <record id="app_product_category_form_view2" model="ir.ui.view">
-        <field name="name">app.product.category.form2</field>
-        <field name="model">product.category</field>
-        <field name="inherit_id" ref="app_product_category_form_view"/>
-        <field name="arch" type="xml">
             <xpath expr="//span[@id='add_title']" position="after">
                 <xpath expr="//div[@class='oe_title']" position="move"/>
             </xpath>
