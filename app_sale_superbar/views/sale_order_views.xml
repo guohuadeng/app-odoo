@@ -15,8 +15,7 @@
                            model="res.partner"
                            domain="[('customer', '=', True)]"
                            parent_key="parent_id"
-                           level="0"
-                    />
+                           level="0"/>
                 </superbar>
             </xpath>
         </field>
@@ -36,8 +35,7 @@
                            model="res.partner"
                            domain="[('customer', '=', True)]"
                            parent_key="parent_id"
-                           level="0"
-                    />
+                           level="0"/>
                     <field name="user_id"/>
                 </superbar>
             </xpath>
