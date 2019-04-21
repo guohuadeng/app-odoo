@@ -29,7 +29,7 @@
     only support one2many field and kanban view.
     """,
     'description': """
-    migrate from odoo13. Support one2many field and kanban view.
+    Feature of odoo13. Support one2many field and kanban view.
     Advance Search, Advance Filter with Parent Children Tree.
     Easy to navigator and browse any data.
     Ready for any odoo module. Like product, partner, sales order, purchase order, account, stock.
