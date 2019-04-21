@@ -44,7 +44,7 @@
     'depends': [
         'product',
     ],
-    'images': ['static/description/purchase.gif'],
+    'images': ['static/description/banner.gif'],
     'data': [
         'views/product_views.xml',
     ],
