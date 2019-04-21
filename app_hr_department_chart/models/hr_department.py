@@ -26,10 +26,9 @@ class Department(models.Model):
 
     manager_name = fields.Char(related="manager_id.name", store=True)
 
-    @api.model_create_multi
-    def create(self, vals_list):
-        for vals in vals_list:
-            tools.image_resize_images(vals)
+    @api.model
+    def create(self, vals):
+        tools.image_resize_images(vals)
         return super(Department, self).create(vals_list)
 
     @api.multi
