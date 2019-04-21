@@ -1,0 +1,19 @@
+<odoo>
+  <data>
+      <!-- sale order -->
+      <!-- sale quotation -->
+    <record id="app_view_sale_order_kanban" model="ir.ui.view">
+        <field name="name">app.sale.order.kanban</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sale_order_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//templates">
+                <searchpanel>
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

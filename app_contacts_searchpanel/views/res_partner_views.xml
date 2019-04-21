@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+      <!-- contact -->
+    <record id="app_res_partner_kanban_view" model="ir.ui.view">
+        <field name="name">app.res.partner.kanban</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="arch" type="xml">
+              <xpath expr="//templates">
+                  <searchpanel>
+                      <field name="user_id"/>
+                      <field name="country_id"/>
+                  </searchpanel>
+              </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

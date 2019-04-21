@@ -1,0 +1,29 @@
+<odoo>
+  <data>
+    <record id="app_view_purchase_order_kanban" model="ir.ui.view">
+        <field name="name">app.purchase.order.kanban</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//templates">
+                <searchpanel>
+                    <field name="partner_id"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+      <!-- price list -->
+    <record id="app_product_supplierinfo_view_kanban" model="ir.ui.view">
+        <field name="name">app.product.supplierinfo.kanban</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//templates">
+                <searchpanel>
+                    <field name="name"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="app_view_location_tree2" model="ir.ui.view">
+        <field name="name">stock.location.tree</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_tree2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='usage']" position="after">
+                <field name="capacity_type"/>
+                <field name="occupied_order"/>
+                <field name="occupied_percent" widget="progressbar"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_location_kanban2" model="ir.ui.view">
+        <field name="name">stock.location.kanban2</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="app_stock_location_kanban.view_location_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="string">Capacity of Stock Location</attribute>>
+            </xpath>
+            <xpath expr="//field[@name='usage']" position="after">
+                <field name="capacity_type"/>
+                <field name="occupied_order"/>
+                <field name="capacity_unit"/>
+                <field name="occupied_unit"/>
+                <field name="occupied_percent"/>
+            </xpath>
+            <xpath expr="//templates//t[@t-name='kanban-box']//div[hasclass('o_kanban_card_content')]" position="inside">
+                <div class="row">
+                    <div class="col-12 o_kanban_primary_bottom bottom_block">
+                        <t t-if="record.capacity_type.raw_value == 'model'">
+                            <div class="mt8">
+                                <field name="occupied_order"/>
+                            </div>
+                        </t>
+                        <t t-if="record.capacity_type.raw_value and record.capacity_type.raw_value != 'model'">
+                            <div class="mt8">
+                                <field name="occupied_percent" widget="progressbar" t-att-title="record.capacity_type.value"
+                                    opeions="{'current_value': 'occupied_unit', 'max_value': 'capacity_unit'}"/>
+                                <!--<field name="occupied_unit" widget="gauge" options="{'max_field': 'capacity_unit', 'label_field': 'capacity_type', 'style': 'width:160px; height: 200px;'}" />-->
+                                <!--<field name="occupied_percent" widget="percentpie"/>-->
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="app_view_location_search2" model="ir.ui.view">
+        <field name="name">app.stock.location.search</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="app_stock_location_kanban.app_view_location_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='group_usage']" position="before">
+                <filter name="group_capacity_type" string="Capacity Type"  context="{'group_by': 'capacity_type'}"/>
+                <separator/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="app_view_location_form" model="ir.ui.view">
+        <field name="name">app.stock.location.form</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_form"/>
+        <field name="arch" type="xml">
+            <!--库存占用-->
+            <xpath expr="//form/group" position="inside">
+                <group string="Capacity" attrs="{'invisible': [('usage', 'not in',  ('internal', 'transit'))]}">
+                    <field name="capacity_type"/>
+                    <field name="occupied_order" readonly="1" attrs="{'invisible': [('capacity_type', '!=', 'model')]}"/>
+                    <field name="capacity_unit" attrs="{'invisible': [('capacity_type', '!=', 'unit')]}"/>
+                    <field name="occupied_unit" attrs="{'invisible': [('capacity_type', '!=', 'unit')]}"/>
+                    <field name="occupied_percent"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
