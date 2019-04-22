@@ -36,7 +36,7 @@
         'mrp',
     ],
     'summary': """
-    Normal APS
+    Normal APS. mrp plan, mrp planning. manufacture plan, producing plan.
     Odoo App of Sunpop.cn
     """,
     'description': """
