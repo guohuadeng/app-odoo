@@ -16,7 +16,7 @@
 # description:
 {
     'name': '12 Ready!! App Odoo Customize(Backend Debranding Title,Language,Documentation,Quick Debug,Clear Data)',
-    'version': '11.19.04.21',
+    'version': '11.19.04.28',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',
@@ -87,10 +87,12 @@ The user can get the help document just by one click.
     'demo': [],
     'test': [
     ],
+    'qweb': [
+        'static/src/xml/*.xml',
+    ],
+    'pre_init_hook': 'pre_init_hook',
+    'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': True,
     'auto_install': False,
-    'qweb': [
-        'static/src/xml/customize_user_menu.xml',
-    ],
 }
