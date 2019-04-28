@@ -17,16 +17,16 @@
 
 {
     'name': "App mrp Manufacturing Orders browse by state workcenter navigator",
-    'version': '12.19.04.22',
+    'version': '12.19.04.28',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
-    Browse mrp order, Manufacturing Orders by Materials Availability, work center. Use for parent children tree list kanban navigator. 
+    Browse mrp order, Manufacturing Orders by Materials Availability, work center.
     Easy to navigator and browse any data. Support Search more list, kanban, pivot, graph view. 
-    ztree widget.Hierarchy Tree.Parent Children relation tree..
+    ztree widget.Hierarchy Tree.
     """,
     'description': """
     Superbar, zTree widget. 

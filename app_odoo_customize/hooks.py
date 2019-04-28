@@ -15,6 +15,9 @@
 # https://www.sunpop.cn/odoo10_developer_document_offline/
 # description:
 
+from odoo import api, SUPERUSER_ID, _
+
+
 def pre_init_hook(cr):
     try:
         # 更新企业版指向
@@ -24,5 +27,16 @@ def pre_init_hook(cr):
         pass
 
 def post_init_hook(cr, registry):
+    # a = check_module_installed(cr, ['app_web_superbar','aaaaa'])
     pass
     # cr.execute("")
+
+def check_module_installed(cr, modules):
+    # modules 输入参数是个 list，如 ['base', 'sale']
+    env = api.Environment(cr, SUPERUSER_ID, {})
+    installed = False
+    m = env['ir.module.module'].sudo().search([('name', 'in', modules), ('state', 'in', ['installed', 'to install', 'to upgrade'])])
+    if len(m) == len(modules):
+        installed = True
+    return len(m)
+
