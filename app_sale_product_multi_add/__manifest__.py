@@ -16,8 +16,8 @@
 # description:
 
 {
-    'name': "App Sale Order Product Multi Batch Add",
-    'version': '12.19.04.07',
+    'name': "Multi Add Sale Product,订单批量加产品",
+    'version': '12.19.04.29',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -26,7 +26,7 @@
     'price': 0.00,
     'currency': 'USD',
     'summary': """
-    App Sale Order Product Multi Batch Add
+    App Sale Order Product Multi Batch Add, mass add
     Odoo App of Sunpop.cn
     """,
     'description': """
