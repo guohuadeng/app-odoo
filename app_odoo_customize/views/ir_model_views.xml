@@ -2,7 +2,7 @@
 <odoo>
         <!-- Modules -->
         <record id="app_module_tree" model="ir.ui.view">
-            <field name="name">app.ir.module.module.form</field>
+            <field name="name">app.ir.module.module.tree</field>
             <field name="model">ir.module.module</field>
             <field name="inherit_id" ref="base.module_tree" />
             <field name="arch" type="xml">
