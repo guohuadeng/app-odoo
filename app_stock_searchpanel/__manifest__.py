@@ -16,8 +16,8 @@
 # description:
 
 {
-    'name': "App stock picking browse by type",
-    'version': '12.19.04.12',
+    'name': "App stock Searchpanel Hierarchy Tree, quick kanban filter",
+    'version': '12.19.04.29',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
