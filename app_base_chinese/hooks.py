@@ -17,11 +17,13 @@
 
 from odoo import api, SUPERUSER_ID, _
 
+
 def pre_init_hook(cr):
     """
     数据初始化，只在安装时执行，更新时不执行
     """
     pass
+
 
 def post_init_hook(cr, registry):
     """
@@ -37,5 +39,10 @@ def post_init_hook(cr, registry):
             ('location_id', '=', False)
         ])
         ids._compute_complete_name()
+        # 超级用户改时区为中国
+        ids = env['res.users'].sudo().with_context(lang='zh_CN').search([
+            ('id', '=', 2)
+        ])
+        ids.write({'tz': "Asia/Shanghai"})
     except Exception as e:
         raise Warning(e)
