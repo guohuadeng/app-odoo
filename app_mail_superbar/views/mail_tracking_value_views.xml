@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+      <record id="app_mail_tracking_value_search" model="ir.ui.view">
+          <field name="name">app.mail.tracking.value.search</field>
+          <field name="model">mail.tracking.value</field>
+          <field name="arch" type="xml">
+              <search string="Search mail.tracking.value">
+                  <field name="field" string="Field"/>
+                  <superbar view_mode="tree">
+                      <field name="create_uid"/>
+                  </superbar>
+              </search>
+          </field>
+      </record>
+  </data>
+</odoo>
