@@ -31,6 +31,12 @@ def post_init_hook(cr, registry):
     pass
     # cr.execute("")
 
+def uninstall_hook(cr, registry):
+    """
+    数据初始化，卸载时执行
+    """
+    pass
+
 def check_module_installed(cr, modules):
     # modules 输入参数是个 list，如 ['base', 'sale']
     env = api.Environment(cr, SUPERUSER_ID, {})

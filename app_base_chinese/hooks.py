@@ -46,3 +46,9 @@ def post_init_hook(cr, registry):
         ids.write({'tz': "Asia/Shanghai"})
     except Exception as e:
         raise Warning(e)
+
+def uninstall_hook(cr, registry):
+    """
+    数据初始化，卸载时执行
+    """
+    pass
