@@ -15,7 +15,7 @@
                     <div id="o_node_right">
                         <h4 class="o_chart_hierarchy_title mb16 mt0">Hierarchy Chart</h4>
                         <field name="child_ids" widget="web_chart_hierarchy"
-                               string="Please get widget from https://apps.odoo.com/apps/modules/12.0/app_web_chart_hierarchy/"
+                               string="Please get widget from https://apps.odoo.com/apps/modules/11.0/app_web_chart_hierarchy/"
                                options="{
                                'image': 'image_small',
                                'desc': 'code',
