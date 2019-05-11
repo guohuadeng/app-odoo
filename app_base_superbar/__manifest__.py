@@ -40,6 +40,7 @@
     ],
     'images': ['static/description/banner.gif'],
     'data': [
+        # 'views/res_groups_views.xml',
         'views/ir_actions_act_window_views.xml',
         'views/ir_actions_actions_views.xml',
         'views/ir_actions_report_views.xml',
