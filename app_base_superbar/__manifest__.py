@@ -38,7 +38,7 @@
     'depends': [
         'web',
     ],
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.gif'],
     'data': [
         'views/ir_actions_act_window_views.xml',
         'views/ir_actions_actions_views.xml',
