@@ -16,8 +16,8 @@
 # description:
 
 {
-    'name': "app hr department, parent children tree",
-    'version': '12.0.10.15',
+    'name': "App HR department ztree, parent children tree",
+    'version': '12.19.05.22',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
