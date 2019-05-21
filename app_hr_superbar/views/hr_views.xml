@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+      <!-- Product -->
+    <record id="view_employee_filter_superbar" model="ir.ui.view">
+        <field name="name">app.hr.employee.search</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <superbar view_mode="kanban,tree">
+                    <field name="department_id" domain="[]"
+                           parent_key="parent_id"/>
+                    <field name="job_id"/>
+                </superbar>
+            </xpath>
+        </field>
+    </record>
+
+  </data>
+</odoo>
