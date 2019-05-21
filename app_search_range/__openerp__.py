@@ -16,7 +16,7 @@
 # description:
 {
     'name': 'App Search By Date (Datetime) or Number Range',
-    'version': '10.0.1.0',
+    'version': '10.19.05.22',
     'author': 'Sunpop.cn',
     'category': 'web',
     'website': 'http://www.sunpop.cn',
