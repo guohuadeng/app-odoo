@@ -10,7 +10,6 @@
                   <superbar view_mode="kanban,tree">
                       <field name="group_id"/>
                       <field name="user_type_id"/>
-                      <field name="company_id"/>
                       <field name="tag_ids"/>
                   </superbar>
               </xpath>
@@ -24,8 +23,11 @@
           <field name="arch" type="xml">
               <xpath expr="//search">
                   <superbar view_mode="kanban,tree">
-                      <field name="partner_id"/>
-                      <field name="company_id"/>
+                      <field name="partner_id"
+                             widget="ztree_search"
+                             model="res.partner"
+                             parent_key="parent_id"
+                             level="0"/>
                       <field name="state"/>
                   </superbar>
               </xpath>
@@ -40,7 +42,11 @@
               <xpath expr="//search">
                   <superbar view_mode="kanban,tree">
                       <field name="journal_id"/>
-                      <field name="partner_id"/>
+                      <field name="partner_id"
+                             widget="ztree_search"
+                             model="res.partner"
+                             parent_key="parent_id"
+                             level="0"/>
                   </superbar>
               </xpath>
           </field>
@@ -55,7 +61,11 @@
                   <superbar view_mode="kanban,tree">
                       <field name="account_id"/>
                       <field name="journal_id"/>
-                      <field name="partner_id"/>
+                      <field name="partner_id"
+                             widget="ztree_search"
+                             model="res.partner"
+                             parent_key="parent_id"
+                             level="0"/>
                   </superbar>
               </xpath>
           </field>

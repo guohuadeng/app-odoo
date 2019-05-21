@@ -17,7 +17,7 @@
 
 {
     'name': "App account superbar navigator",
-    'version': '12.0.11.15',
+    'version': '12.19.05.22',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
