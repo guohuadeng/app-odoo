@@ -1,8 +1,8 @@
 <odoo>
   <data>
       <!-- Product -->
-    <record id="product_template_search_view_superbar" model="ir.ui.view">
-        <field name="name">product.template.search.ztree</field>
+    <record id="app_product_template_search_view" model="ir.ui.view">
+        <field name="name">app.product.template.search</field>
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_search_view"/>
         <field name="arch" type="xml">
@@ -15,17 +15,5 @@
             </xpath>
         </field>
     </record>
-
-      <!--产品list，目录显示短名，不生效停用。需要在action中传context才成-->
-      <!--<record id="app_product_template_tree_view" model="ir.ui.view">-->
-          <!--<field name="name">app.product.template.product.tree</field>-->
-          <!--<field name="model">product.template</field>-->
-          <!--<field name="inherit_id" ref="product.product_template_tree_view"/>-->
-          <!--<field name="arch" type="xml">-->
-              <!--<xpath expr="//field[@name='categ_id']" position="attributes">-->
-                  <!--<attribute name="context">{'category_show_short': True}</attribute>-->
-              <!--</xpath>-->
-          <!--</field>-->
-      <!--</record>-->
   </data>
 </odoo>
