@@ -9,7 +9,6 @@
             <xpath expr="//search">
                 <superbar view_mode="kanban,tree">
                     <field name="state"/>
-                    <field name="author"/>
                     <field name="category_id" domain="[]"
                            parent_key="parent_id"/>
                     <field name="license"/>

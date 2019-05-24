@@ -17,7 +17,7 @@
 
 {
     'name': "Apps Navigator by Category, Module Navigator",
-    'version': '12.19.01.14',
+    'version': '12.19.05.24',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
