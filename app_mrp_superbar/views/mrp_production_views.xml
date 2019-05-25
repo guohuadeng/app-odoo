@@ -8,6 +8,7 @@
     <field name="arch" type="xml">
       <xpath expr="//search" position="inside">
         <superbar view_mode="kanban,tree,graph">
+          <field name="company_id" groups="base.group_multi_company"/>
           <field name="availability"/>
           <field name="procurement_group_id"
                  model="procurement.group"

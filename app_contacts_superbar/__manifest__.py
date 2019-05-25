@@ -16,8 +16,8 @@
 # description:
 
 {
-    'name': "App contacts by company superbar",
-    'version': '12.0.11.09',
+    'name': "App contacts by category company superbar",
+    'version': '12.19.05.25',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

@@ -17,7 +17,7 @@
 
 {
     'name': "Employee Navigator by department, hr superbar",
-    'version': '12.19.01.10',
+    'version': '12.19.05.25',
     'author': 'Sunpop.cn',
     'category': 'Human Resources',
     'website': 'https://www.sunpop.cn',

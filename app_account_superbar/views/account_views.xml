@@ -23,9 +23,9 @@
           <field name="arch" type="xml">
               <xpath expr="//search">
                   <superbar view_mode="kanban,tree">
+                      <field name="company_id" groups="base.group_multi_company"/>
                       <field name="partner_id"
                              widget="ztree_search"
-                             model="res.partner"
                              parent_key="parent_id"
                              level="0"/>
                       <field name="state"/>
@@ -41,6 +41,7 @@
           <field name="arch" type="xml">
               <xpath expr="//search">
                   <superbar view_mode="kanban,tree">
+                      <field name="company_id" groups="base.group_multi_company"/>
                       <field name="journal_id"/>
                       <field name="partner_id"
                              widget="ztree_search"
@@ -59,6 +60,7 @@
           <field name="arch" type="xml">
               <xpath expr="//search">
                   <superbar view_mode="kanban,tree">
+                      <field name="company_id" groups="base.group_multi_company"/>
                       <field name="account_id"/>
                       <field name="journal_id"/>
                       <field name="partner_id"

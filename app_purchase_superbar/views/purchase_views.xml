@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <superbar view_mode="kanban,tree">
+                    <field name="company_id" groups="base.group_multi_company"/>
                     <field name="partner_id"
                            parent_key="parent_id"
                            domain="[('supplier', '=', True)]"/>
@@ -24,6 +25,7 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <superbar view_mode="tree">
+                    <field name="company_id" groups="base.group_multi_company"/>
                     <field name="name"
                            parent_key="parent_id"
                            domain="[('supplier', '=', True)]"/>

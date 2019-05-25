@@ -17,7 +17,7 @@
 
 {
     'name': "App sale order browse by partner and channel",
-    'version': '12.19.04.22',
+    'version': '12.19.05.25',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

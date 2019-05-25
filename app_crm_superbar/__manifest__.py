@@ -17,7 +17,7 @@
 
 {
     'name': "App crm browse by stage and team",
-    'version': '12.19.04.22',
+    'version': '12.19.05.25',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
