@@ -546,6 +546,8 @@ class ResConfigSettings(models.TransientModel):
             self.remove_purchase()
             self.remove_sales()
             self.remove_project()
+            self.remove_pos()
+            self.remove_expense()
             self.remove_message()
         except Exception as e:
             pass  # raise Warning(e)
