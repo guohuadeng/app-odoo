@@ -1,20 +1,5 @@
 <odoo>
   <data>
-      <!-- stock -->
-    <record id="view_picking_internal_search_superbar" model="ir.ui.view">
-        <field name="name">stock.picking.internal.search.superbar</field>
-        <field name="model">stock.picking</field>
-        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
-        <field name="arch" type="xml">
-            <xpath expr="//search">
-                <superbar view_mode="kanban,tree">
-                    <field name="company_id" groups="base.group_multi_company"/>
-                    <field name="picking_type_id"/>
-                    <field name="state"/>
-                </superbar>
-            </xpath>
-        </field>
-    </record>
     <!--库位-->
     <record id="view_location_search_superbar" model="ir.ui.view">
         <field name="name">stock.location.search.superbar</field>
@@ -31,19 +16,5 @@
             </xpath>
         </field>
     </record>
-    <!--作业-->
-    <record id="view_location_search_superbar" model="ir.ui.view">
-        <field name="name">sstock.picking.type.filter.superbar</field>
-        <field name="model">stock.picking.type</field>
-        <field name="inherit_id" ref="stock.view_pickingtype_filter"/>
-        <field name="arch" type="xml">
-            <xpath expr="//search">
-                <superbar view_mode="tree">
-                    <field name="warehouse_id"/>
-                </superbar>
-            </xpath>
-        </field>
-    </record>
-
   </data>
 </odoo>

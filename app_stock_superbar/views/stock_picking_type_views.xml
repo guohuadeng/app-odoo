@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+    <!--作业-->
+    <record id="view_location_search_superbar" model="ir.ui.view">
+        <field name="name">stock.picking.type.filter.superbar</field>
+        <field name="model">stock.picking.type</field>
+        <field name="inherit_id" ref="stock.view_pickingtype_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <superbar view_mode="tree">
+                    <field name="warehouse_id"/>
+                </superbar>
+            </xpath>
+        </field>
+    </record>
+
+  </data>
+</odoo>
