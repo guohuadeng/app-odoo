@@ -1,4 +1,7 @@
-Odoo Addon for 12,11,10
+Odoo Addon for 13,12,11,10
+
+## Todo
+ztree, superbar
 
 ## app_account_invoice_product_multi_add
 Account Invoice Product Multi Batch Add

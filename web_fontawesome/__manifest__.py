@@ -27,7 +27,7 @@
 
 {
     'name': 'App Web Fontawesome',
-    'version': '12.19.1.06',
+    'version': '12.19.05.30',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',

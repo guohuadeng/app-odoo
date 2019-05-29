@@ -23,7 +23,7 @@
 
 {
     'name': "APS Advanced planning and scheduling,高级排产",
-    'version': '12.19.04.18',
+    'version': '13.19.05.32',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
