@@ -17,7 +17,7 @@
 
 {
     'name': "Stock Superbar ztree, parent children tree",
-    'version': '12.19.05.28',
+    'version': '12.19.06.03',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -46,6 +46,7 @@
         'views/stock_warehouse_orderpoint_views.xml',
         'views/stock_rule_views.xml',
         'views/stock_location_route_views.xml',
+        'views/stock_production_lot_views.xml',
     ],
     'demo': [
     ],
