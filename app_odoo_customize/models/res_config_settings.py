@@ -374,7 +374,6 @@ class ResConfigSettings(models.TransientModel):
             ['account.voucher.line', ],
             ['account.voucher', ],
             ['account.bank.statement.line', ],
-            ['account.bank.statement', ],
             ['account.payment', ],
             ['account.analytic.line', ],
             ['account.analytic.account', ],
