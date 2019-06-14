@@ -17,7 +17,7 @@
 
 {
     'name': "App mrp Manufacturing Orders browse by state workcenter navigator",
-    'version': '12.19.05.28',
+    'version': '12.19.06.10',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -37,7 +37,7 @@
     'price': 0.00,
     'currency': 'EUR',
     'depends': [
-        'mrp_workorder',
+        'mrp',
     ],
     'images': ['static/description/banner.gif'],
     'data': [
