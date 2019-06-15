@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <superbar view_mode="kanban,tree">
+                <superbar view_mode="kanban,tree,pivot,graph">
                     <field name="team_id"/>
                     <field name="user_id"/>
                     <field name="partner_id"
