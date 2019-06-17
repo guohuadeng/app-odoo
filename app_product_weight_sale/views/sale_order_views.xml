@@ -40,11 +40,11 @@
 	                <newline/>
              	</xpath>
             	<xpath expr="//field[@name='order_line']/tree//field[@name='product_uom']" position="after">
-                	<field name="weight_unit" invisible="1"/>
+                	<field name="weight_unit"/>
                 	<field name="weight"/>
              	</xpath>
              	<xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="before">
-                	<field name="weight_unit" invisible="1"/>
+                	<field name="weight_unit"/>
                 	<field name="weight"/>
              	</xpath>
 			</field>

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
+from odoo.addons import decimal_precision as dp
+
 from odoo import api, fields, models, _
 
 
@@ -11,7 +13,8 @@ class SaleOrderLine(models.Model):
     # 显示的单位，影响性能暂时不使用
     # weight_uom_name = fields.Char(string='Weight Measure', related='product_id.weight_uom_id.name', readonly=True)
     # 调整，根据 delivery 模块，将 weight 作为 该行合计，weight_unit 作为该单位的
-    weight_unit = fields.Float(string='Weight Unit', compute='_compute_weight', store=True)
+    weight_unit = fields.Float(string='Weight Unit', compute='_compute_weight', digits=dp.get_precision('Stock Weight'),
+                               inverse='_set_weight', store=True)
     weight = fields.Float(string='Weight Subtotal', compute='_compute_weight', store=True)
 
     @api.multi
@@ -30,3 +33,11 @@ class SaleOrderLine(models.Model):
     @api.one
     def _set_weight_subtotal(self):
         pass
+
+    @api.one
+    def _set_weight(self):
+        if self.weight_unit and self.weight_unit > 0:
+            try:
+                self.product_id.weight = self.weight_unit * self.product_uom.factor
+            except:
+                self.product_id.weight = self.weight_unit
