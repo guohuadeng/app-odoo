@@ -203,6 +203,11 @@ class ResConfigSettings(models.TransientModel):
                 seq.write({
                     'number_next': 1,
                 })
+            # 更新要关帐的值，因为 store=true 的计算字段要重置
+            statement = self.env['account.bank.statement'].search([])
+            for s in statement:
+                s._end_balance()
+
         except Exception as e:
             pass  # raise Warning(e)
         return True
