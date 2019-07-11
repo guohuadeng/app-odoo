@@ -203,6 +203,11 @@ class ResConfigSettings(models.TransientModel):
                 seq.write({
                     'number_next': 1,
                 })
+            # 更新要关帐的值，因为 store=true 的计算字段要重置
+            statement = self.env['account.bank.statement'].search([])
+            for s in statement:
+                s._end_balance()
+
         except Exception as e:
             pass  # raise Warning(e)
         return True
@@ -243,6 +248,34 @@ class ResConfigSettings(models.TransientModel):
             # 清除采购单据
             ['hr.expense.sheet', ],
             ['hr.expense', ],
+        ]
+        try:
+            for line in to_removes:
+                obj_name = line[0]
+                obj = self.pool.get(obj_name)
+                if obj:
+                    sql = "delete from %s" % obj._table
+                    self._cr.execute(sql)
+            # 更新序号
+            seqs = self.env['ir.sequence'].search([
+                ('code', '=', 'hr.expense.invoice')])
+            for seq in seqs:
+                seq.write({
+                    'number_next': 1,
+                })
+            self._cr.execute(sql)
+        except Exception as e:
+            pass  # raise Warning(e)
+        return True
+
+    @api.multi
+    def remove_expense(self):
+        to_removes = [
+            # 清除
+            ['hr.expense.sheet', ],
+            ['hr.expense', ],
+            ['hr.payslip', ],
+            ['hr.payslip.run', ],
         ]
         try:
             for line in to_removes:
@@ -374,7 +407,6 @@ class ResConfigSettings(models.TransientModel):
             ['account.voucher.line', ],
             ['account.voucher', ],
             ['account.bank.statement.line', ],
-            ['account.bank.statement', ],
             ['account.payment', ],
             ['account.analytic.line', ],
             ['account.analytic.account', ],
@@ -422,13 +454,63 @@ class ResConfigSettings(models.TransientModel):
     def remove_account_chart(self):
         to_removes = [
             # 清除财务科目，用于重设
+            ['res.partner.bank', ],
+            ['res.bank', ],
+            ['account.move.line'],
+            ['account.invoice'],
+            ['account.payment'],
+            ['account.bank.statement', ],
             ['account.tax.account.tag', ],
+            ['account.tax', ],
             ['account.tax', ],
             ['account.account.account.tag', ],
             ['wizard_multi_charts_accounts'],
             ['account.account', ],
             ['account.journal', ],
         ]
+        # todo: 要做 remove_hr，因为工资表会用到 account
+        # 更新account关联，很多是多公司字段，故只存在 ir_property，故在原模型，只能用update
+        try:
+            # reset default tax，不管多公司
+            field1 = self.env['ir.model.fields']._get('product.template', "taxes_id").id
+            field2 = self.env['ir.model.fields']._get('product.template', "supplier_taxes_id").id
+
+            sql = ("delete from ir_default where field_id = %s or field_id = %s") % (field1, field2)
+            self._cr.execute(sql)
+        except Exception as e:
+            pass  # raise Warning(e)
+        try:
+            rec = self.env['res.partner'].search([])
+            for r in rec:
+                r.write({
+                    'property_account_receivable_id': None,
+                    'property_account_payable_id': None,
+                })
+        except Exception as e:
+            pass  # raise Warning(e)
+        try:
+            rec = self.env['product.category'].search([])
+            for r in rec:
+                r.write({
+                    'property_account_income_categ_id': None,
+                    'property_account_expense_categ_id': None,
+                    'property_account_creditor_price_difference_categ': None,
+                    'property_stock_account_input_categ_id': None,
+                    'property_stock_account_output_categ_id': None,
+                    'property_stock_valuation_account_id': None,
+                })
+        except Exception as e:
+            pass  # raise Warning(e)
+        try:
+            rec = self.env['stock.location'].search([])
+            for r in rec:
+                r.write({
+                    'valuation_in_account_id': None,
+                    'valuation_out_account_id': None,
+                })
+        except Exception as e:
+            pass  # raise Warning(e)
+
         try:
             for line in to_removes:
                 obj_name = line[0]
@@ -437,18 +519,13 @@ class ResConfigSettings(models.TransientModel):
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
 
-            # reset default tax，不管多公司
-            field1 = self.env['ir.model.fields']._get('product.template', "taxes_id").id
-            field2 = self.env['ir.model.fields']._get('product.template', "supplier_taxes_id").id
 
-            sql = ("delete from ir_default where field_id = %s or field_id = %s") % (field1, field2)
-            self._cr.execute(sql)
-
-            sql = "update res_company set chart_template_id=null ;"
+            sql = "update res_company set chart_template_id=null;"
             self._cr.execute(sql)
             # 更新序号
         except Exception as e:
             pass
+
         return True
 
     @api.multi
