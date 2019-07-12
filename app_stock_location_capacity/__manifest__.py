@@ -30,7 +30,7 @@
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
-    Capacity manage for stock location.
+    Capacity manage for stock location.stock Capacity.
     Capacity by quantity and certain order, like sale order.
     set prepare location for sale order. 
     """,
