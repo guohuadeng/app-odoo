@@ -69,7 +69,7 @@
         <field name="inherit_id" ref="stock.view_location_form"/>
         <field name="arch" type="xml">
             <!--库存占用-->
-            <xpath expr="//form/group" position="inside">
+            <xpath expr="//form//group" position="inside">
                 <group string="Capacity" attrs="{'invisible': [('usage', 'not in',  ('internal', 'transit'))]}">
                     <field name="capacity_type"/>
                     <field name="occupied_order" readonly="1" attrs="{'invisible': [('capacity_type', '!=', 'model')]}"/>

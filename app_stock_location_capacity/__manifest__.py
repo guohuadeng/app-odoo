@@ -23,21 +23,22 @@
 
 {
     'name': "Capacity of Stock Location，货架容量管理",
-    'version': '12.19.03.18',
+    'version': '12.19.07.12',
     'author': 'Sunpop.cn',
     'category': 'Warehouse',
     'website': 'http://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
-    Add stock shelf, stock rack, stock slot manager. Shelf Auto Name with XYZ like WH-X1-Y2-Z6.
-    Add shelf menu.
+    Capacity manage for stock location.
+    Capacity by quantity and certain order, like sale order.
+    set prepare location for sale order. 
     """,
     'description': """    
     
     1. 
     """,
-    'price': 68.00,
+    'price': 98.00,
     'currency': 'EUR',
     'depends': [
         'stock',
