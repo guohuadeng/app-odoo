@@ -7,6 +7,7 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     def _get_default_weight_uom_name(self):
+        # todo: 此处没有处理翻译，后续调整
         get_param = self.env['ir.config_parameter'].sudo().get_param
         product_weight_in_lbs_param = get_param('product.weight_in_lbs')
         if product_weight_in_lbs_param == '1':

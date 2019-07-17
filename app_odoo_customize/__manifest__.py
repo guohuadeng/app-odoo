@@ -23,7 +23,7 @@
 
 {
     'name': 'Odoo Customize(Debranding, My Odoo)',
-    'version': '12.19.07.06',
+    'version': '13.19.07.12',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -70,6 +70,7 @@
     26. Add multi uninstall modules
     27. Add odoo 13 support, Just install this app on odoo 13, master branch of odoo github.
     28. Fix pos remove data for account close.
+    29. Fix account reset.
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
