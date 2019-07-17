@@ -9,7 +9,7 @@
             <xpath expr="//search">
                 <superbar view_mode="kanban,tree">
                     <field name="company_id" groups="base.group_multi_company"/>
-                    <field name="warehouse_id"/>
+                    <field name="warehouse_id" groups="stock.group_stock_multi_warehouses"/>
                 </superbar>
             </xpath>
         </field>
