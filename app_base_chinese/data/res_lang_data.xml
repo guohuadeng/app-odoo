@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Country -->
+        <record id="base.lang_zh_CN" model="res.lang">
+            <field name="date_format">%Y-%m-%d</field>
+            <field name="time_format">%H:%M:%S</field>
+        </record>
+    </data>
+</odoo>
