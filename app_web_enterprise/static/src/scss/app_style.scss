@@ -5,6 +5,10 @@
   border-color: $o-brand-primary;
   font-weight: bold;
 }
+//看板
+.o_kanban_view .o_kanban_group:not(.o_column_folded)  {
+  width: $o-kanban-default-record-width;
+}
 //菜单搜索常见
 .o_menu_search {
     &.o_bar_hidden {
@@ -49,6 +53,4 @@
       }
     }
   }
-
-
 }
