@@ -11,6 +11,7 @@
           <field name="company_id" groups="base.group_multi_company"/>
           <field name="availability"/>
           <field name="procurement_group_id"
+                 context="{'show_production':1}"
                  model="procurement.group"
                  parent_key="parent_id"/>
         </superbar>

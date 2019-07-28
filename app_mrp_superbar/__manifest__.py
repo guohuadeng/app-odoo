@@ -17,7 +17,7 @@
 
 {
     'name': "App mrp Manufacturing Orders browse by state workcenter navigator",
-    'version': '12.19.06.10',
+    'version': '12.19.07.29',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
