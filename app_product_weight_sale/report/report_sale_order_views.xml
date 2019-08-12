@@ -8,15 +8,15 @@
 <!--            </xpath>-->
             <!--xpath 特殊处理，因为加载另的插件会影响顺序，要精确定位，可用th[contains(text(), 'Quantity')]-->
             <xpath expr="//div[@class='page']/table[1]/thead/tr/th[@class='text-right'][1]" position="after">
-                <th class="text-right app_sunpop"><strong>Weight Unit</strong></th>
-                <th class="text-right app_sunpop"><strong>Weight Subtotal</strong></th>
+                <th class="text-right app_sunpop" groups="app_product_weight_sale.group_sale_weight_print"><strong>Weight Unit</strong></th>
+                <th class="text-right app_sunpop" groups="app_product_weight_sale.group_sale_weight_print"><strong>Weight Subtotal</strong></th>
             </xpath>
             <xpath expr="//div[@class='page']/table[1]/tbody/t/tr[1]/t/td[@class='text-right'][1]" position="after">
-                <td class="text-right app_sunpop"><span t-field="line.weight_unit"/></td>
-                <td class="text-right app_sunpop"><span t-field="line.weight"/></td>
+                <td class="text-right app_sunpop" groups="app_product_weight_sale.group_sale_weight_print"><span t-field="line.weight_unit"/></td>
+                <td class="text-right app_sunpop" groups="app_product_weight_sale.group_sale_weight_print"><span t-field="line.weight"/></td>
             </xpath>
-            <xpath expr="//div[@class='page']//p[@t-field='doc.note']" position="before">
-                <p>
+            <xpath expr="//div[@class='page']//p[@t-field='doc.note']" position="before" groups="app_product_weight_sale.group_sale_weight_print">
+                <p class="app_sunpop" groups="app_product_weight_sale.group_sale_weight_print">
                     <Strong>Total Weight: </Strong>
                     <span t-field="doc.weight"/> <span t-field="doc.weight_uom_name"/>
                 </p>

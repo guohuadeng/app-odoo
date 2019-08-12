@@ -20,6 +20,8 @@
     'price': 68,
     'depends': ['sale_management'],
     'data': [
+        'security/res_group.xml',
+        'views/sale_config_settings_views.xml',
         'views/sale_order_views.xml',
         'report/report_sale_order_views.xml',
     ],

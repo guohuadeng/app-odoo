@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--自定义打印重量        -->
+        <record id="group_sale_weight_print" model="res.groups">
+            <field name="name">Show Weight in Sale Print</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+        <!--设置 sale 打印重量-->
+        <record id="base.group_user" model="res.groups">
+            <field name="implied_ids"
+                   eval="[
+                   (4, ref('app_product_weight_sale.group_sale_weight_print')),
+                   ]"/>
+        </record>
+    </data>
+</odoo>
