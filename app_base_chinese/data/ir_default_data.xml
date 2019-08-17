@@ -7,11 +7,6 @@
             <field name="field_id" eval="ref('base.field_res_partner__country_id')"/>
             <field name="json_value" eval="ref('base.cn')"/>
         </record>
-        <!--设置客户默认省为广东-->
-        <record id="res_partner_state_id_default" model="ir.default">
-            <field name="field_id" eval="ref('base.field_res_partner__state_id')"/>
-            <field name="json_value" eval="ref('l10n_cn.state_GD')"/>
-        </record>
         <!--设置默认时区为中国，注意select 类型要加 ""-->
         <record id="res_partner_tz_default" model="ir.default">
             <field name="field_id" eval="ref('base.field_res_partner__tz')"/>

@@ -80,7 +80,6 @@ class ResConfigSettings(models.TransientModel):
         )
         return res
 
-    @api.multi
     def set_values(self):
         super(ResConfigSettings, self).set_values()
         ir_config = self.env['ir.config_parameter'].sudo()
@@ -183,7 +182,6 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
         return True
 
-    @api.multi
     def remove_pos(self):
         to_removes = [
             # 清除POS单据
@@ -212,7 +210,6 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
         return True
 
-    @api.multi
     def remove_purchase(self):
         to_removes = [
             # 清除采购单据
@@ -242,7 +239,6 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
         return True
 
-    @api.multi
     def remove_expense(self):
         to_removes = [
             # 清除采购单据
@@ -268,7 +264,6 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
         return True
 
-    @api.multi
     def remove_expense(self):
         to_removes = [
             # 清除
@@ -296,7 +291,6 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
         return True
 
-    @api.multi
     def remove_mrp(self):
         to_removes = [
             # 清除生产单据
@@ -331,7 +325,6 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
         return True
 
-    @api.multi
     def remove_mrp_bom(self):
         to_removes = [
             # 清除生产BOM
@@ -349,7 +342,6 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
         return True
 
-    @api.multi
     def remove_inventory(self):
         to_removes = [
             # 清除库存单据
@@ -400,7 +392,6 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
         return True
 
-    @api.multi
     def remove_account(self):
         to_removes = [
             # 清除财务会计单据
@@ -450,7 +441,6 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
         return True
 
-    @api.multi
     def remove_account_chart(self):
         to_removes = [
             # 清除财务科目，用于重设
@@ -528,7 +518,6 @@ class ResConfigSettings(models.TransientModel):
 
         return True
 
-    @api.multi
     def remove_project(self):
         to_removes = [
             # 清除项目
@@ -549,7 +538,6 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
         return True
 
-    @api.multi
     def remove_website(self):
         to_removes = [
             # 清除网站数据，w, w_blog
@@ -577,7 +565,6 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
         return True
 
-    @api.multi
     def remove_message(self):
         to_removes = [
             # 清除消息数据
@@ -595,7 +582,6 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
         return True
 
-    @api.multi
     def remove_workflow(self):
         to_removes = [
             # 清除工作流
@@ -614,7 +600,6 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
         return True
 
-    @api.multi
     def remove_all_biz(self):
         try:
             self.remove_account()
