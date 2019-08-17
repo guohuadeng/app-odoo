@@ -133,7 +133,7 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
         },
         //增加的方法
         _onMenuDebug: function () {
-            window.location = $.param.querystring(window.location.href, 'debug');
+            window.location = $.param.querystring(window.location.href, 'debug=1');
         },
         _onMenuDebugassets: function () {
             window.location = $.param.querystring(window.location.href, 'debug=assets');
