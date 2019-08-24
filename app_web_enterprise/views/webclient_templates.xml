@@ -7,7 +7,7 @@
     </template>
     <!-- 企业版变色   -->
     <template id="_app_assets_primary_variables" inherit_id="web_enterprise._assets_primary_variables" priority="15">
-        <xpath expr="//link[@href='/web_enterprise/static/src/scss/primary_variables.scss']" position="replace">
+        <xpath expr="//link[last()]" position="after">
             <link rel="stylesheet" type="text/scss" href="/app_web_enterprise/static/src/scss/primary_variables.scss"/>
         </xpath>
     </template>
