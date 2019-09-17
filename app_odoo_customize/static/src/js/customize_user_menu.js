@@ -41,8 +41,10 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
                     lang_list += '<a role="menuitem" href="#" class="dropdown-item" data-lang-menu="lang" data-lang-id="' + lang['code']
                         + '"><img class="flag" src="app_odoo_customize/static/src/img/flags/' + lang['code'] + '.png"/>' + lang['name'] + a + '</a>';
                 });
-                lang_list += '<div role="separator" class="dropdown-divider"/>';
-                $('switch-lang').replaceWith(lang_list);
+                lang_list += '<div role="separator" class="dropdown-divider"/>'
+                setTimeout( function() {
+                    $('switch-lang').replaceWith(lang_list);
+                }, 1000)
             })
 
             //取参数

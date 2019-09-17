@@ -95,7 +95,7 @@
             <field name="email">asusteK@yourcompany.example.com</field>
             <field name="phone">(+886) (02) 4162 2023</field>
             <field name="website">http://www.asustek.com</field>
-            <field name="image" type="base64" file="base/static/img/res_partner_1-image.jpg"/>
+            <field name="image" type="base64" file="app_data_clouth/static/img/res_partner_1-image.jpg"/>
         </record>
         <record id="res_partner_2" model="res.partner">
             <field name="name">Agrolait</field>
@@ -108,7 +108,7 @@
             <field name="email">agrolait@yourcompany.example.com</field>
             <field name="phone">+32 10 588 558</field>
             <field name="website">http://www.agrolait.com</field>
-            <field name="image" type="base64" file="base/static/img/res_partner_2-image.jpg"/>
+            <field name="image" type="base64" file="app_data_clouth/static/img/res_partner_2-image.jpg"/>
         </record>
         <record id="res_partner_3" model="res.partner">
             <field name="name">China Export</field>
@@ -123,7 +123,7 @@
             <field name="email">chinaexport@yourcompany.example.com</field>
             <field name="phone">+86 21 6484 5671</field>
             <field name="website">http://www.chinaexport.com/</field>
-            <field name="image" type="base64" file="base/static/img/res_partner_3-image.png"/>
+            <field name="image" type="base64" file="app_data_clouth/static/img/res_partner_3-image.png"/>
         </record>
         
         <record id="res_partner_4" model="res.partner">
@@ -140,7 +140,7 @@
             <field name="email">deltapc@yourcompany.example.com</field>
             <field name="phone">+1 510 340 2385</field>
             <field name="website">http://www.distribpc.com/</field>
-            <field name="image" type="base64" file="base/static/img/res_partner_4-image.png"/>
+            <field name="image" type="base64" file="app_data_clouth/static/img/res_partner_4-image.png"/>
         </record>
 
         <record id="res_partner_10" model="res.partner">
@@ -154,7 +154,7 @@
             <field name="email">jackson@yourcompany.example.com</field>
             <field name="phone">+1 786 525 0724</field>
             <field name="street">3203 Lamberts Branch Road</field>
-            <field name="image" type="base64" file="base/static/img/res_partner_10-image.jpg"/>
+            <field name="image" type="base64" file="app_data_clouth/static/img/res_partner_10-image.jpg"/>
         </record>
   
         <record id="res_partner_12" model="res.partner">
@@ -170,7 +170,7 @@
             <field name="street">93, Press Avenue</field>
             <field name="email">camptocamp@yourcompany.example.com</field>
             <field name="website">http://www.camptocamp.com</field>
-            <field name="image" type="base64" file="base/static/img/res_partner_12-image.jpg"/>
+            <field name="image" type="base64" file="app_data_clouth/static/img/res_partner_12-image.jpg"/>
         </record>
 
         <record id="res_partner_18" model="res.partner">
@@ -183,7 +183,7 @@
             <field name="country_id" ref="base.uk"/>
             <field name="street">89 Lingfield Tower</field>
             <field name="website">http://www.think-big.com</field>
-            <field name="image" type="base64" file="base/static/img/res_partner_18-image.png"/>
+            <field name="image" type="base64" file="app_data_clouth/static/img/res_partner_18-image.png"/>
         </record>
 
         <record id="res_partner_address_1" model="res.partner">
