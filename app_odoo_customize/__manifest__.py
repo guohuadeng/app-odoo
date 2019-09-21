@@ -103,9 +103,9 @@
     'test': [],
     'css': [],
     'js': [],
-    'pre_init_hook': 'pre_init_hook',
-    'post_init_hook': 'post_init_hook',
+    # 'pre_init_hook': 'pre_init_hook',
+    # 'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': True,
-    'auto_install': True,
+    'auto_install': False,
 }
