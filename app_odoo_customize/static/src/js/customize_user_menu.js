@@ -42,7 +42,9 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
                         + '"><img class="flag" src="app_odoo_customize/static/src/img/flags/' + lang['code'] + '.png"/>' + lang['name'] + a + '</a>';
                 });
                 lang_list += '<div role="separator" class="dropdown-divider"/>';
-                $('switch-lang').replaceWith(lang_list);
+                setTimeout( function() {
+                    $('switch-lang').replaceWith(lang_list);
+                }, 1000);
             })
 
             //取参数
@@ -133,7 +135,7 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
         },
         //增加的方法
         _onMenuDebug: function () {
-            window.location = $.param.querystring(window.location.href, 'debug');
+            window.location = $.param.querystring(window.location.href, 'debug=1');
         },
         _onMenuDebugassets: function () {
             window.location = $.param.querystring(window.location.href, 'debug=assets');

@@ -6,7 +6,6 @@ from odoo import models, fields, api
 class Module(models.Model):
     _inherit = 'ir.module.module'
 
-    @api.multi
     def module_multi_uninstall(self):
         """ Perform the various steps required to uninstall a module completely
             including the deletion of all database structures created by the module:
