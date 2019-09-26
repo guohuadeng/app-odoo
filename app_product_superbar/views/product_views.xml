@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+      <!-- Product -->
+    <record id="app_product_template_search_view" model="ir.ui.view">
+        <field name="name">app.product.template.search</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <superbar>
+                    <!--text表示主显示字段是哪个-->
+                    <field name="categ_id" widget="ztree_select" text="name"/>
+<!--                    <field name="categ_id" select="multi" groupby="parent_id"/>-->
+                    <field name="type"/>
+                </superbar>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>
