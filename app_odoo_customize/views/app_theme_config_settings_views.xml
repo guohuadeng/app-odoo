@@ -202,5 +202,12 @@
                 sequence="1"
                 action="action_app_theme_config"
                 groups="base.group_system"/>
+        <!--增加导入Demo数据-->
+        <menuitem
+                id="menu_app_demo_data"
+                parent="base.menu_app_group"
+                sequence="99"
+                action="base.demo_force_install_action"
+                groups="base.group_system"/>
     </data>
 </odoo>
