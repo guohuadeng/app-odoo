@@ -23,7 +23,7 @@
 
 {
     'name': 'Odoo Customize(Debranding, My Odoo)',
-    'version': '13.19.09.14',
+    'version': '13.19.09.29',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
