@@ -23,7 +23,7 @@
 
 {
     'name': 'Odoo Customize(Debranding, My Odoo)',
-    'version': '13.19.09.29',
+    'version': '13.19.10.05',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -74,7 +74,7 @@
     """,
     'images': ['static/description/banner.gif'],
     'depends': [
-        'base',
+        'base_setup',
         'web',
         'mail',
         'iap',
@@ -85,6 +85,7 @@
     'data': [
         'views/app_odoo_customize_views.xml',
         'views/app_theme_config_settings_views.xml',
+        'views/res_config_settings_views.xml',
         'views/ir_model_views.xml',
         'views/ir_views.xml',
         # data

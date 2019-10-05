@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-extend="res_config_edition">
+        <t t-jquery=".user-heading h3" t-operation="replace">
+            <h3>
+                odooApp <t t-esc="widget.server_version"/> (Sunpop.cn Edition)
+            </h3>
+        </t>
+        <t t-jquery=".user-o_web_settings_compact_subtitle small" t-operation="replace">
+            <small><a target="_blank" href="http://www.gnu.org/licenses/lgpl.html" style="text-decoration: underline;">GNU LGPL Licensed</a></small>
+        </t>
+    </t>
+</templates>
