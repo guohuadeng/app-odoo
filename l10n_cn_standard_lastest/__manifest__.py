@@ -9,7 +9,7 @@
 
 {
     'name': '2019最新中国企业会计表.Latest Chinese Accounting.',
-    'version': '13.19.07.12',
+    'version': '13.19.10.13',
     'author': 'Sunpop.cn',
     'category': 'Localization',
     'website': 'https://www.sunpop.cn',
@@ -60,6 +60,7 @@
         'data/account_account_tag_data.xml',
         'data/account.group.csv',
         'data/account.account.template.csv',
+        'data/account_tax_group_data.xml',
         'data/account_tax_template_data.xml',
         'data/account_chart_template_data.xml',
     ],
