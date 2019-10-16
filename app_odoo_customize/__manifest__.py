@@ -22,15 +22,15 @@
 # description:
 
 {
-    'name': 'Odoo Customize(Debranding, My Odoo)',
-    'version': '13.19.10.05',
+    'name': 'Odoo Customize(Boost,Debranding, My Odoo)',
+    'version': '13.19.10.16',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """    
-    Quick customize, debranding,reset data, debug. Language Switcher. 
+    Quick customize, debranding, boost, reset data, debug. Language Switcher. 
     Easy Delete data.reset account chart.
     odoo debrand, odoo debranding, customize my odoo. 
     """,
@@ -39,7 +39,7 @@
     App Odoo Customize(Debranding Title,Language,Documentation,Quick Debug)
     ============
     White label odoo.
-    Support Odoo 12, 11, 10, 9.
+    Support Odoo 13, 12, 11, 10, 9.
     You can config odoo, make it look like your own platform.
     1. Deletes Odoo label in footer
     2. Replaces "Odoo" in Windows title
@@ -67,6 +67,7 @@
     24. Customize Odoo Native Module(eg. Enterprise) Url
     25. Add remove expense data
     26. Add multi uninstall modules
+    27. Add odoo boost modules link.
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
