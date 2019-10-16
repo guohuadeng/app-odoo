@@ -27,7 +27,7 @@
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
-    'license': 'AGPL-3',
+    'license': 'LGPL-3',
     'sequence': 2,
     'summary': """    
     Quick Customize, Debrand, Reset data, Debug. Language Switcher. 
