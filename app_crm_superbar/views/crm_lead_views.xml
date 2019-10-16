@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <superbar>
+                <superbar view_types="tree,kanban,pivot,graph">
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="team_id"/>
                     <field name="stage_id"/>
@@ -21,7 +21,7 @@
         <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <superbar>
+                <superbar view_types="tree,kanban,pivot,graph">
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="team_id"/>
                     <field name="campaign_id"/>

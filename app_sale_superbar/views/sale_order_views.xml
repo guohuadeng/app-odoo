@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+      <!-- sale quotation -->
+    <record id="sale_order_view_search_inherit_quotation_superbar" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.quotation.superbar</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <superbar view_types="tree,kanban,pivot,graph">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="team_id"/>
+                    <field name="user_id"/>
+                    <field name="partner_id" domain="[('customer_rank','&gt;', 0)]"/>
+                </superbar>
+            </xpath>
+        </field>
+    </record>
+      <!-- sale order -->
+    <record id="sale_order_view_search_inherit_sale_superbar" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.sale.superbar</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <superbar view_types="tree,kanban,pivot,graph">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="invoice_status"/>
+                    <field name="team_id"/>
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                </superbar>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>
