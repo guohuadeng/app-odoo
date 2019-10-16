@@ -20,7 +20,7 @@
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',
-    'license': 'AGPL-3',
+    'license': 'LGPL-3',
     'sequence': 2,
     'summary': """    
     odoo debrand, odoo debranding, customize my odoo. 
