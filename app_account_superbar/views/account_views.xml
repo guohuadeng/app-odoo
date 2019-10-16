@@ -15,6 +15,20 @@
               </xpath>
           </field>
       </record>
+      <!-- account.journal -->
+      <record id="view_account_journal_search_superbar" model="ir.ui.view">
+          <field name="name">account.journal.search.superbar</field>
+          <field name="model">account.journal</field>
+          <field name="inherit_id" ref="account.view_account_journal_search"/>
+          <field name="arch" type="xml">
+              <xpath expr="//search">
+                  <superbar view_mode="kanban,tree">
+                      <field name="company_id" groups="base.group_multi_company"/>
+                      <field name="type"/>
+                  </superbar>
+              </xpath>
+          </field>
+      </record>
       <!-- account.invoice -->
       <record id="view_account_invoice_filter_superbar" model="ir.ui.view">
           <field name="name">account.invoice.select.superbar</field>
