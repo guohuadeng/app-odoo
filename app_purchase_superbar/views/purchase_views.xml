@@ -10,7 +10,21 @@
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="partner_id" domain="[('supplier_rank','&gt;', 0)]"/>
                     <field name="state"/>
+                </superbar>
+            </xpath>
+        </field>
+    </record>
+    <record id="purchase_order_view_search_superbar" model="ir.ui.view">
+        <field name="name">purchase.order.select.superbar</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <superbar view_types="tree,kanban,pivot,graph">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="partner_id" domain="[('supplier_rank','&gt;', 0)]"/>
                     <field name="invoice_status"/>
+                    <field name="state"/>
                 </superbar>
             </xpath>
         </field>
