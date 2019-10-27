@@ -7,7 +7,6 @@
             <field name="code">product.category.seq.normal</field>
             <field name="prefix">CAT</field>
             <field name="padding">4</field>
-            <field name="initial">True</field>
         </record>
     </data>
 </odoo>

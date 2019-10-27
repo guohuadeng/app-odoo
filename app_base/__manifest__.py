@@ -32,14 +32,14 @@
 ##############################################################################
 
 {
-    'name': "Base Pro, 基础增强",
-    'version': '13.19.10.16',
+    'name': "Partner set customer vendor",
+    'version': '13.19.10.28',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'price': 0.00,
+    'price': 18.00,
     'currency': 'EUR',
     'images': ['static/description/banner.png'],
     'depends': [
@@ -47,12 +47,13 @@
         'purchase',
     ],
     'summary': """
+    Add customer, vendor (supplier)  field to partner model and views. 
+    Set and view partner type: customer or vendor.
     Odoo App of Sunpop.cn
     """,
     'description': """    
-    Support Odoo 13，12, 11, Enterprise and Community Edition
-    1. Add customer, supplier field to partner
-    2. 
+    Support Odoo 13， Enterprise and Community Edition
+    1. Add customer, vendor field to partner
     3. Multi-language Support.
     4. Multi-Company Support.
     5. Support Odoo 13，12, 11, Enterprise and Community Edition

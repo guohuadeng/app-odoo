@@ -23,6 +23,14 @@ def pre_init_hook(cr):
     # cr.execute("")
 
 def post_init_hook(cr, registry):
+    try:
+        #
+        sql = "UPDATE res_partner SET customer = TRUE WHERE customer_rank >= 1;"
+        cr.execute(sql)
+        sql = "UPDATE res_partner SET supplier = TRUE WHERE supplier_rank >= 1"
+        cr.execute(sql)
+    except Exception as e:
+        pass
     pass
     # cr.execute("")
 

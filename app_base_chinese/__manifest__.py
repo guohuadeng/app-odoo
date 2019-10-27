@@ -18,12 +18,14 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '13.19.05.17',
+    'version': '13.19.10.28',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
+    'price': 18.00,
+    'currency': 'EUR',
     'summary': """
     Chinese enhance. Out of the box use in china.
     Set all chinese default value.
@@ -46,6 +48,7 @@
     'pre_init_hook': 'pre_init_hook',
     'post_init_hook': 'post_init_hook',
     'depends': [
+        'app_base',
         'stock',
         'l10n_cn'
     ],
