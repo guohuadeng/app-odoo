@@ -1,97 +1,49 @@
-# Translation of Odoo Server.
+1# Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* app_base_chinese
+# 	* app_base
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0+e-20181122\n"
+"Project-Id-Version: Odoo Server 13.0+e-20191027\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 17:02+0000\n"
-"PO-Revision-Date: 2018-11-27 17:02+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2019-10-27 20:43+0000\n"
+"PO-Revision-Date: 2019-10-27 20:43+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: app_base_chinese
-#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
-msgid "(edit)"
-msgstr "(编辑)"
+#. module: app_base
+#: model:ir.model.fields,help:app_base.field_res_partner__customer
+#: model:ir.model.fields,help:app_base.field_res_users__customer
+msgid ""
+"Check this box if this contact is a customer. It can be selected in sales "
+"orders."
+msgstr ""
 
-#. module: app_base_chinese
-#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
-msgid "Address"
-msgstr "地址"
+#. module: app_base
+#: model:ir.model.fields,help:app_base.field_res_partner__supplier
+#: model:ir.model.fields,help:app_base.field_res_users__supplier
+msgid ""
+"Check this box if this contact is a vendor. It can be selected in purchase "
+"orders."
+msgstr ""
 
-#. module: app_base_chinese
-#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
-msgid "City"
-msgstr "城市"
-
-#. module: app_base_chinese
-#: model:ir.model,name:app_base_chinese.model_res_partner
+#. module: app_base
+#: model:ir.model,name:app_base.model_res_partner
 msgid "Contact"
 msgstr "联系人"
 
-#. module: app_base_chinese
-#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
-msgid "Country"
-msgstr "国家/地区"
+#. module: app_base
+#: model:ir.model.fields,field_description:app_base.field_res_partner__customer
+#: model:ir.model.fields,field_description:app_base.field_res_users__customer
+msgid "Is a Customer"
+msgstr "客户"
 
-#. module: app_base_chinese
-#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_res_partner_kanban_view
-msgid "Credit："
-msgstr "信用额度"
-
-#. module: app_base_chinese
-#: model:ir.model,name:app_base_chinese.model_res_partner_category
-msgid "Partner Tags"
-msgstr "业务伙伴标签"
-
-#. module: app_base_chinese
-#: model:ir.model.fields,field_description:app_base_chinese.field_res_partner_category__sequence
-msgid "Sequence"
-msgstr "序号"
-
-#. module: app_base_chinese
-#: model:ir.model.fields,field_description:app_base_chinese.field_res_partner__short_name
-msgid "Short Name"
-msgstr "简称"
-
-#. module: app_base_chinese
-#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
-msgid "State"
-msgstr "省份"
-
-#. module: app_base_chinese
-#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
-msgid "Street..."
-msgstr "街道..."
-
-#. module: app_base_chinese
-#: model:ir.model.fields,help:app_base_chinese.field_res_partner_category__sequence
-msgid "Used to order partner category"
-msgstr "显示排序"
-
-#. module: app_base_chinese
-#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
-msgid "ZIP"
-msgstr "邮编"
-
-#. module: app_base_chinese
-#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
-msgid "e.g. VIP001"
-msgstr ""
-
-#. module: app_base_chinese
-#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
-msgid "手机:"
-msgstr ""
-
-#. module: app_base_chinese
-#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_partner_form
-msgid "电话:"
-msgstr ""
-
+#. module: app_base
+#: model:ir.model.fields,field_description:app_base.field_res_partner__supplier
+#: model:ir.model.fields,field_description:app_base.field_res_users__supplier
+msgid "Is a Vendor"
+msgstr "供应商"
