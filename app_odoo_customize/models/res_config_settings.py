@@ -357,6 +357,7 @@ class ResConfigSettings(models.TransientModel):
             ['stock.picking.batch', ],
             ['stock.inventory.line', ],
             ['stock.inventory', ],
+            ['stock.valuation.layer', ],
             ['stock.production.lot', ],
             # ['stock.fixed.putaway.strat', ],
             ['procurement.group', ],
