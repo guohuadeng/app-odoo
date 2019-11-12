@@ -351,14 +351,14 @@ class ResConfigSettings(models.TransientModel):
             ['stock.quantity.history', ],
             ['stock.quant.package', ],
             ['stock.move', ],
-            ['stock.pack.operation', ],
+            # ['stock.pack.operation', ],
             ['stock.picking', ],
             ['stock.scrap', ],
             ['stock.picking.batch', ],
             ['stock.inventory.line', ],
             ['stock.inventory', ],
             ['stock.production.lot', ],
-            ['stock.fixed.putaway.strat', ],
+            # ['stock.fixed.putaway.strat', ],
             ['procurement.group', ],
         ]
         try:
