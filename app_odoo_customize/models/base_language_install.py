@@ -15,4 +15,5 @@ class BaseLanguageInstall(models.TransientModel):
                 delete from ir_translation
                 where lang=%s
                 """, (self.lang,))
+            self.env.cr.commit()
         return super(BaseLanguageInstall, self).lang_install()

@@ -108,6 +108,7 @@ class ResConfigSettings(models.TransientModel):
         sql = "UPDATE ir_module_module SET website = '%s' WHERE license like '%s' and website <> ''" % (self.app_enterprise_url, 'OEEL%')
         try:
             self._cr.execute(sql)
+            self._cr.commit()
         except Exception as e:
             pass
 
@@ -130,6 +131,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
             # 更新序号
             seqs = self.env['ir.sequence'].search([
                 '|', ('code', '=', 'sale.order'),
@@ -155,6 +157,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
             # 更新序号,针对自动产品编号
             seqs = self.env['ir.sequence'].search([('code', '=', 'product.product')])
             for seq in seqs:
@@ -178,6 +181,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
         except Exception as e:
             pass  # raise Warning(e)
         return True
@@ -185,8 +189,10 @@ class ResConfigSettings(models.TransientModel):
     def remove_pos(self):
         to_removes = [
             # 清除POS单据
+            ['pos.payment', ],
             ['pos.order.line', ],
             ['pos.order', ],
+            ['pos.session', ],
         ]
         try:
             for line in to_removes:
@@ -195,6 +201,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
             # 更新序号
             seqs = self.env['ir.sequence'].search([('code', '=', 'pos.order')])
             for seq in seqs:
@@ -225,6 +232,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
             # 更新序号
             seqs = self.env['ir.sequence'].search([
                 '|', ('code', '=', 'purchase.order'),
@@ -235,6 +243,7 @@ class ResConfigSettings(models.TransientModel):
                     'number_next': 1,
                 })
             self._cr.execute(sql)
+            self._cr.commit()
         except Exception as e:
             pass  # raise Warning(e)
         return True
@@ -252,6 +261,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
             # 更新序号
             seqs = self.env['ir.sequence'].search([
                 ('code', '=', 'hr.expense.invoice')])
@@ -260,6 +270,7 @@ class ResConfigSettings(models.TransientModel):
                     'number_next': 1,
                 })
             self._cr.execute(sql)
+            self._cr.commit()
         except Exception as e:
             pass  # raise Warning(e)
         return True
@@ -279,6 +290,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
             # 更新序号
             seqs = self.env['ir.sequence'].search([
                 ('code', '=', 'hr.expense.invoice')])
@@ -287,6 +299,7 @@ class ResConfigSettings(models.TransientModel):
                     'number_next': 1,
                 })
             self._cr.execute(sql)
+            self._cr.commit()
         except Exception as e:
             pass  # raise Warning(e)
         return True
@@ -312,6 +325,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
             # 更新序号
             seqs = self.env['ir.sequence'].search([
                 '|', ('code', '=', 'mrp.production'),
@@ -338,6 +352,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
         except Exception as e:
             pass  # raise Warning(e)
         return True
@@ -369,6 +384,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
             # 更新序号
             seqs = self.env['ir.sequence'].search([
                 '|', ('code', '=', 'stock.lot.serial'),
@@ -417,6 +433,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
 
                     # 更新序号
                     seqs = self.env['ir.sequence'].search([
@@ -468,6 +485,7 @@ class ResConfigSettings(models.TransientModel):
 
             sql = ("delete from ir_default where field_id = %s or field_id = %s") % (field1, field2)
             self._cr.execute(sql)
+            self._cr.commit()
         except Exception as e:
             pass  # raise Warning(e)
         try:
@@ -509,10 +527,12 @@ class ResConfigSettings(models.TransientModel):
                 if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
 
 
             sql = "update res_company set chart_template_id=null;"
             self._cr.execute(sql)
+            self._cr.commit()
             # 更新序号
         except Exception as e:
             pass
@@ -534,6 +554,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
             # 更新序号
         except Exception as e:
             pass  # raise Warning(e)
@@ -562,6 +583,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj and obj._table:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
         except Exception as e:
             pass  # raise Warning(e)
         return True
@@ -579,6 +601,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj and obj._table:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
         except Exception as e:
             pass  # raise Warning(e)
         return True
@@ -596,6 +619,7 @@ class ResConfigSettings(models.TransientModel):
                 if obj and obj._table:
                     sql = "delete from %s" % obj._table
                     self._cr.execute(sql)
+                    self._cr.commit()
 
         except Exception as e:
             pass  # raise Warning(e)

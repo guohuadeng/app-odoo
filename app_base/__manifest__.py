@@ -33,7 +33,7 @@
 
 {
     'name': "Partner set customer vendor",
-    'version': '13.19.10.28',
+    'version': '13.19.11.13',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

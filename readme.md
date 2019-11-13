@@ -201,6 +201,9 @@ Form view Responsive full width (fullwidth). Ready for small, medium, large, ext
 表单全屏显示。
 
 ## l10n_cn_standard_lastest
+
+## l10n_cn_standard_latest
+
 ### Latest Chinese Accounting 2019
     Multi level account chart. Chinese enhance. Focus on account chart.
     Add account chart group data. Account group, Chinese tax.
