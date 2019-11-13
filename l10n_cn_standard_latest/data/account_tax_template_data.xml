@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+        <!-- Account Tax -->
+        <record id="vats_standard_business" model="account.tax.template">
+            <field name="name">增值税13%销项税</field>
+            <field name="amount_type">percent</field>
+            <field name="amount" eval="13" />
+            <field name="type_tax_use">sale</field>
+            <field name="account_id" ref="account_2221_1_5" />
+            <field name="refund_account_id" ref="account_2221_1_5" />
+            <field name="tag_ids" eval="[(6, 0, [ref('tag_cn13_s')])]" />
+            <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest" />
+        </record>
+        <record id="vatp_standard_business" model="account.tax.template">
+            <field name="name">增值税13%进项税</field>
+            <field name="amount" eval="13" />
+            <field name="type_tax_use">purchase</field>
+            <field name="amount_type">percent</field>
+            <field name="account_id" ref="account_2221_1_1" />
+            <field name="refund_account_id" ref="account_2221_1_1" />
+            <field name="tag_ids" eval="[(6, 0, [ref('tag_cn13_p')])]" />
+            <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest" />
+        </record>
+        <record id="vats_standard_business_cn16_out" model="account.tax.template">
+            <field name="name">增值税16%销项税</field>
+            <field name="amount_type">percent</field>
+            <field name="amount" eval="16" />
+            <field name="type_tax_use">sale</field>
+            <field name="account_id" ref="account_2221_1_5" />
+            <field name="refund_account_id" ref="account_2221_1_5" />
+            <field name="tag_ids" eval="[(6, 0, [ref('tag_cn16_s')])]" />
+            <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest" />
+        </record>
+        <record id="vatp_standard_business_cn16_in" model="account.tax.template">
+            <field name="name">增值税16%进项税</field>
+            <field name="amount" eval="16" />
+            <field name="type_tax_use">purchase</field>
+            <field name="amount_type">percent</field>
+            <field name="account_id" ref="account_2221_1_1" />
+            <field name="refund_account_id" ref="account_2221_1_1" />
+            <field name="tag_ids" eval="[(6, 0, [ref('tag_cn16_p')])]" />
+            <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest" />
+        </record>
+    </data>
+</odoo>

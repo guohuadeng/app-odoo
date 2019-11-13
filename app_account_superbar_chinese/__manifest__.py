@@ -36,7 +36,7 @@
     'price': 0.00,
     'currency': 'EUR',
     'depends': [
-        'l10n_cn_standard_lastest',
+        'l10n_cn_standard_latest',
         'app_account_superbar',
     ],
     'images': ['static/description/banner.png'],
