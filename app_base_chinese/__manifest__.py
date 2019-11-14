@@ -24,7 +24,7 @@
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'price': 18.00,
+    'price': 0,
     'currency': 'EUR',
     'summary': """
     Chinese enhance. Out of the box use in china.
