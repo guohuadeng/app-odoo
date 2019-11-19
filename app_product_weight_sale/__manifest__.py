@@ -17,7 +17,7 @@
     'website': 'https://www.sunpop.cn',
     'images': ['static/description/banner.png'],
     'currency': 'EUR',
-    'price': 68,
+    'price': 38,
     'depends': ['sale_management'],
     'data': [
         'security/res_group.xml',
