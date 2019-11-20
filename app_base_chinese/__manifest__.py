@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '13.19.10.28',
+    'version': '13.19.11.20',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -42,6 +42,7 @@
     6. 修正产品类别的列表及m2o字段中不显示中文目录名的Bug
     7. 修正仓库位置的列表及m2o字段中不显示中文目录名的Bug
     8. 超级用户改时区为 中国
+    9. 时间格式年月日为 2019-12-30，时间为 22:10 
     11. todo:中文演示数据(只有demo模式才加载)
     
     """,
@@ -62,6 +63,7 @@
         'data/base_data.xml',
         'data/res_country_data.xml',
         'data/res_currency_data.xml',
+        'data/res_lang_data.xml',
         'data/product_data.xml',
         'data/product_pricelist_data.xml',
     ],
