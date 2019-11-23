@@ -112,7 +112,7 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
                 });
                 //控制debug显示
                 var mMode = 'normal';
-                if (window.location.href.indexOf('debug') != -1)
+                if (window.location.href.indexOf('debug=1') != -1)
                     mMode = 'debug';
                 if (window.location.href.indexOf('debug=assets') != -1)
                     mMode = 'assets';
@@ -141,7 +141,7 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
             window.location = $.param.querystring(window.location.href, 'debug=assets');
         },
         _onMenuQuitdebug: function () {
-            window.location.search = "?";
+            window.location = $.param.querystring(window.location.href, 'debug=0');
         },
         _onMenuDocumentation_dev: function () {
             window.open(documentation_dev_url, '_blank');
