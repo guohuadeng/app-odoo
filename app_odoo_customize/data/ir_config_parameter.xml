@@ -42,11 +42,6 @@
             <field name="key">app_show_poweredby</field>
             <field name="value">False</field>
         </record>
-        <record id="app_stop_subscribe" model="ir.config_parameter">
-            <field name="key">app_stop_subscribe</field>
-            <field name="value">False</field>
-        </record>
-
         <record id="app_documentation_url" model="ir.config_parameter">
             <field name="key">app_documentation_url</field>
             <field name="value">https://www.sunpop.cn/documentation/user/12.0/zh_CN/index.html</field>

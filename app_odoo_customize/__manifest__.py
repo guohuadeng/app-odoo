@@ -57,7 +57,7 @@
     14. Quick delete test data in Apps: Sales/POS/Purchase/MRP/Inventory/Accounting/Project/Message/Workflow etc.
     15. Reset All the Sequence to beginning of 1: SO/PO/MO/Invoice...
     16. Fix odoo reload module translation bug while enable english language
-    17. Stop Odoo Auto Subscribe(Performance Improve)
+    17. Stop Odoo Auto Subscribe(Moved to app_odoo_boost)
     18. Show/Hide Author and Website in Apps Dashboard
     19. One Click to clear all data (Sometime pls click twice)
     20. Show quick upgrade in app dashboard, click to show module info not go to odoo.com
