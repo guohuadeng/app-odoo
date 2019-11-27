@@ -129,9 +129,7 @@ class ResConfigSettings(models.TransientModel):
                     self._cr.execute(sql)
                     self._cr.commit()
             # 更新序号
-            seqs = self.env['ir.sequence'].search([
-                '|', ('code', '=', 'sale.order'),
-                ('code', '=', 'sale.commission.line')])
+            seqs = self.env['ir.sequence'].search([('code', 'like', 'sale%')])
             for seq in seqs:
                 seq.write({
                     'number_next': 1,
@@ -199,7 +197,7 @@ class ResConfigSettings(models.TransientModel):
                     self._cr.execute(sql)
                     self._cr.commit()
             # 更新序号
-            seqs = self.env['ir.sequence'].search([('code', '=', 'pos.order')])
+            seqs = self.env['ir.sequence'].search([('code', 'like', 'pos.%')])
             for seq in seqs:
                 seq.write({
                     'number_next': 1,
@@ -230,37 +228,7 @@ class ResConfigSettings(models.TransientModel):
                     self._cr.execute(sql)
                     self._cr.commit()
             # 更新序号
-            seqs = self.env['ir.sequence'].search([
-                '|', ('code', '=', 'purchase.order'),
-                '|', ('code', '=', 'purchase.requisition.purchase.tender'),
-                ('code', '=', 'purchase.requisition.blanket.order')])
-            for seq in seqs:
-                seq.write({
-                    'number_next': 1,
-                })
-            self._cr.execute(sql)
-            self._cr.commit()
-        except Exception as e:
-            pass  # raise Warning(e)
-        return True
-
-    def remove_expense(self):
-        to_removes = [
-            # 清除采购单据
-            ['hr.expense.sheet', ],
-            ['hr.expense', ],
-        ]
-        try:
-            for line in to_removes:
-                obj_name = line[0]
-                obj = self.pool.get(obj_name)
-                if obj:
-                    sql = "delete from %s" % obj._table
-                    self._cr.execute(sql)
-                    self._cr.commit()
-            # 更新序号
-            seqs = self.env['ir.sequence'].search([
-                ('code', '=', 'hr.expense.invoice')])
+            seqs = self.env['ir.sequence'].search([('code', 'like', 'purchase.%')])
             for seq in seqs:
                 seq.write({
                     'number_next': 1,
@@ -289,7 +257,7 @@ class ResConfigSettings(models.TransientModel):
                     self._cr.commit()
             # 更新序号
             seqs = self.env['ir.sequence'].search([
-                ('code', '=', 'hr.expense.invoice')])
+                ('code', 'like', 'hr.expense.%')])
             for seq in seqs:
                 seq.write({
                     'number_next': 1,
@@ -323,10 +291,7 @@ class ResConfigSettings(models.TransientModel):
                     self._cr.execute(sql)
                     self._cr.commit()
             # 更新序号
-            seqs = self.env['ir.sequence'].search([
-                '|', ('code', '=', 'mrp.production'),
-                ('code', '=', 'mrp.unbuild'),
-            ])
+            seqs = self.env['ir.sequence'].search([('code', 'like', 'mrp.%')])
             for seq in seqs:
                 seq.write({
                     'number_next': 1,
@@ -383,14 +348,8 @@ class ResConfigSettings(models.TransientModel):
                     self._cr.commit()
             # 更新序号
             seqs = self.env['ir.sequence'].search([
-                '|', ('code', '=', 'stock.lot.serial'),
-                '|', ('code', '=', 'stock.lot.tracking'),
-                '|', ('code', '=', 'stock.orderpoint'),
-                '|', ('code', '=', 'stock.picking'),
-                '|', ('code', '=', 'picking.batch'),
-                '|', ('code', '=', 'stock.quant.package'),
-                '|', ('code', '=', 'stock.scrap'),
-                '|', ('code', '=', 'stock.picking'),
+                '|', ('code', 'like', 'stock.%'),
+                '|', ('code', 'like', 'picking.%'),
                 '|', ('prefix', '=', 'WH/IN/'),
                 '|', ('prefix', '=', 'WH/INT/'),
                 '|', ('prefix', '=', 'WH/OUT/'),
@@ -433,12 +392,7 @@ class ResConfigSettings(models.TransientModel):
 
                     # 更新序号
                     seqs = self.env['ir.sequence'].search([
-                        '|', ('code', '=', 'account.reconcile'),
-                        '|', ('code', '=', 'account.payment.customer.invoice'),
-                        '|', ('code', '=', 'account.payment.customer.refund'),
-                        '|', ('code', '=', 'account.payment.supplier.invoice'),
-                        '|', ('code', '=', 'account.payment.supplier.refund'),
-                        '|', ('code', '=', 'account.payment.transfer'),
+                        '|', ('code', 'like', 'account.%'),
                         '|', ('prefix', 'like', 'BNK1/'),
                         '|', ('prefix', 'like', 'CSH1/'),
                         '|', ('prefix', 'like', 'INV/'),
