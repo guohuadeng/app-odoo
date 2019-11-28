@@ -31,8 +31,8 @@
     'description': """
     Superbar, zTree widget. 
     Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+    Product category tree ,Department tree, stock location tree.
+    超级方便的查询，树状视图
     """,
     'price': 0.00,
     'currency': 'EUR',
