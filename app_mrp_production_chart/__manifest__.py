@@ -22,16 +22,16 @@
 
 
 {
-    'name': 'User Alliance Distribution Chart Hierarchy, 多层级用户',
-    'version': '13.19.11.12',
+    'name': 'MRP Production Chart Hierarchy, 生产单多层级结构图',
+    'version': '13.19.11.29',
     'author': 'Sunpop.cn',
-    'category': 'Sales',
+    'category': 'Base',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
-    Chart Hierarchy Widget. Hierarchy Chart, Hierarchy Tree for multi level Parent Children relation tree.
-    Free for category Hierarchy chart, stock Hierarchy chart. account chart. user multi level chart.
+    Manufacture Order multi level. For Multi level MO MRP Production Order from multi bom.
+    Chart Hierarchy Widget. Hierarchy Chart, Hierarchy Tree for multi level Parent Children relation tree.  
     """,
     'description': """    
 Need extra paid apps https://www.odoo.com/apps/modules/13.0/app_web_chart_hierarchy/ 
@@ -45,11 +45,11 @@ child_all_count: child_all_count field, count of direct and indirect children.
     'price': 0.00,
     'currency': 'EUR',
     'depends': [
-        'sales_team',
+        'mrp',
     ],
     'images': ['static/description/banner.gif'],
     'data': [
-        'views/res_users_views.xml',
+        'views/mrp_production_views.xml',
     ],
     'demo': [
     ],
@@ -68,4 +68,3 @@ child_all_count: child_all_count field, count of direct and indirect children.
     'application': True,
     'auto_install': False,
 }
-
