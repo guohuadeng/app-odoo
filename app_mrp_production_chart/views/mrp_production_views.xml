@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="app_mrp_production_form_view">
+        <field name="name">app.mrp.production.form</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="parent_id" groups="base.group_no_one" readonly="0"/>
+            </xpath>
+
+            <xpath expr="//div[@class='oe_button_box']" position="after">
+                <div id="o_node_container">
+                    <div id="o_node_main">
+                        <field name="image_128" widget="image" class="oe_avatar"
+                               options="{'preview_image': 'image_128', 'size': [90, 90]}"/>
+                        <span id="add_title"/>
+                        <span id="add_group"/>
+                    </div>
+                    <div id="o_node_right">
+                        <h4 class="o_chart_hierarchy_title mb16 mt0">Hierarchy Chart</h4>
+                        <field name="child_ids" widget="web_chart_hierarchy"
+                               string="Please get widget from https://apps.odoo.com/apps/modules/13.0/app_web_chart_hierarchy/"
+                               options="{
+                               'image': 'image_128',
+                               'desc': 'product_name',
+                               'direct_sub': 'child_ids',
+                               'child_all_count':'child_all_count'}"/>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//span[@id='add_title']" position="after">
+                <xpath expr="//div[@class='oe_title']" position="move"/>
+            </xpath>
+            <xpath expr="//span[@id='add_group']" position="after">
+                <xpath expr="//group[1]" position="move"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
