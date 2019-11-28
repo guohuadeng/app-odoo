@@ -30,10 +30,11 @@
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
-    Manufacture Order multi level. For Multi level MO MRP Production Order from multi bom.
+    Manufacture Order multi level. For Multi level MO MRP Production Order from multi bom. MRP Hierarchy. MO hierarchy
     Chart Hierarchy Widget. Hierarchy Chart, Hierarchy Tree for multi level Parent Children relation tree.  
     """,
     'description': """    
+    MRP Hierarchy chart,  MO Hierarchy chart, mrp multi level.
 Need extra paid apps https://www.odoo.com/apps/modules/13.0/app_web_chart_hierarchy/ 
 This module extend to show a Hierarchy chart.
 (N+1, N+2, direct subordinates)
