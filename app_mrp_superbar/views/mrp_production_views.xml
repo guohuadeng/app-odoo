@@ -13,7 +13,6 @@
                     <field name="reservation_state"/>
                     <field name="state"/>
                     <field name="routing_id" groups="mrp.group_mrp_routings"/>
-                    <field name="procurement_group_id" context="{'show_production':1}"/>
                 </superbar>
             </xpath>
         </field>

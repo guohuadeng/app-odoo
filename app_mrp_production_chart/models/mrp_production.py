@@ -34,8 +34,8 @@ class MrpProduction(models.Model):
     def create(self, values):
         # 配置层级关系
         if 'origin' in values and values['origin']:
-            mo = self.env['mrp.production'].search([('name', '=', values['origin'])])
+            mo = self.env['mrp.production'].search([('name', '=', values['origin'])], limit=1, order='id desc')
             if len(mo) == 1:
-                values['parent_id'] = mo.id
+                values['parent_id'] = mo[0].id
         res = super(MrpProduction, self).create(values)
         return res
