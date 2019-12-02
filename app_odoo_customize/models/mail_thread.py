@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Copyright 2017 Jarvis (www.odoomod.com)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 from odoo import api, fields, models, _
@@ -8,32 +7,38 @@ from odoo import api, fields, models, _
 class MailThread(models.AbstractModel):
     _inherit = "mail.thread"
 
-    @api.multi
-    def message_subscribe(self, partner_ids=None, channel_ids=None, subtype_ids=None, force=True):
+    def message_subscribe(self, partner_ids=None, channel_ids=None, subtype_ids=None):
         """ 停用订阅功能. """
         ir_config = self.env['ir.config_parameter']
         app_stop_subscribe = False if ir_config.get_param('app_stop_subscribe') == "True" else False
         if app_stop_subscribe:
-            return
+            return True
         else:
-            return super(MailThread, self).message_subscribe(partner_ids, channel_ids, subtype_ids, force)
+            return super(MailThread, self).message_subscribe(partner_ids, channel_ids, subtype_ids)
 
-    @api.multi
-    def message_auto_subscribe(self, updated_fields, values=None):
+    def _message_subscribe(self, partner_ids=None, channel_ids=None, subtype_ids=None, customer_ids=None):
         """ 停用订阅功能. """
         ir_config = self.env['ir.config_parameter']
         app_stop_subscribe = False if ir_config.get_param('app_stop_subscribe') == "True" else False
         if app_stop_subscribe:
-            return
+            return True
         else:
-            return super(MailThread, self).message_auto_subscribe(updated_fields, values)
+            return super(MailThread, self)._message_subscribe(partner_ids, channel_ids, subtype_ids, customer_ids)
 
-    @api.multi
-    def _message_auto_subscribe_notify(self, partner_ids):
+    def _message_auto_subscribe_followers(self, updated_values, default_subtype_ids):
         """ 停用订阅功能. """
         ir_config = self.env['ir.config_parameter']
         app_stop_subscribe = False if ir_config.get_param('app_stop_subscribe') == "True" else False
         if app_stop_subscribe:
-            return
+            return True
         else:
-            return super(MailThread, self)._message_auto_subscribe_notify(partner_ids)
+            return super(MailThread, self)._message_auto_subscribe_followers(updated_values, default_subtype_ids)
+
+    def _message_auto_subscribe_notify(self, partner_ids, template):
+        """ 停用订阅功能. """
+        ir_config = self.env['ir.config_parameter']
+        app_stop_subscribe = False if ir_config.get_param('app_stop_subscribe') == "True" else False
+        if app_stop_subscribe:
+            return True
+        else:
+            return super(MailThread, self)._message_auto_subscribe_notify( partner_ids, template)
