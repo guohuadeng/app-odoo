@@ -17,7 +17,7 @@
 
 {
     'name': "App product browse by category navigator",
-    'version': '12.19.04.29',
+    'version': '12.19.11.29',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -31,8 +31,8 @@
     'description': """
     Superbar, zTree widget. 
     Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+    Product category tree ,Department tree, stock location tree.
+    超级方便的查询，树状视图
     """,
     'price': 0.00,
     'currency': 'EUR',
