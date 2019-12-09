@@ -5,12 +5,14 @@
   border-color: $o-brand-primary;
   font-weight: bold;
 }
+
 //菜单搜索常见
 .o_menu_search {
-    &.o_bar_hidden {
-        opacity: 0.9;
-    }
+  &.o_bar_hidden {
+    opacity: 0.9;
+  }
 }
+
 //主菜单加箭头
 .dropdown-menu .dropdown-header {
   &::after {
@@ -26,6 +28,7 @@
     border-left: 0.3em solid transparent;
   }
 }
+
 // Notebooks ,form_view,移动端优化
 .o_form_view {
   .o_notebook {
@@ -34,15 +37,18 @@
         > .nav-link {
           //border-left-width: 0!important;
           background-color: #fafafa;
+
           &:hover, &:focus, &:active {
             background-color: white;
           }
+
           &.active {
             border-top-width: 2px;
             //border-left-width: 1px!important;
             //border-right-width: 1px!important;
           }
         }
+
         &:first-child > .nav-link {
           //border-left-width: 1px!important;
         }
@@ -50,5 +56,9 @@
     }
   }
 
+  // 列表自定义显示调整
+  .o_content > .o_list_view > .table-responsive > .table .o_optional_columns_dropdown_toggle {
+    margin-right: 16px;
+  }
 
 }
