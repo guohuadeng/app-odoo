@@ -4,6 +4,9 @@
         <xpath expr="//link[last()]" position="after">
             <link rel="stylesheet" type="text/scss" href="/app_web_enterprise/static/src/scss/app_style.scss"/>
         </xpath>
+        <xpath expr="script[last()]" position="after">
+            <script type="text/javascript" src="/app_web_enterprise/static/src/js/list_renderer.js"></script>
+        </xpath>
     </template>
     <!-- 企业版变色   -->
     <template id="_app_assets_primary_variables" inherit_id="web_enterprise._assets_primary_variables" priority="15">
