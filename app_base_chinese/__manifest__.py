@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '13.19.11.20',
+    'version': '13.19.12.10',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -51,7 +51,6 @@
     'depends': [
         'app_base',
         'stock',
-        'l10n_cn'
     ],
     'images': ['static/description/banner.jpg'],
     'data': [
