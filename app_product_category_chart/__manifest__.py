@@ -23,7 +23,7 @@
 
 {
     'name': 'Category Chart Hierarchy, 产品目录多层级结构图',
-    'version': '12.19.04.19',
+    'version': '13.19.12.21',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
