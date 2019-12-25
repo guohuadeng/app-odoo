@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--产品list，可调整显示顺序-->
+    <record id="view_product_variant_tree_brand" model="ir.ui.view">
+        <field name="name">product variant tree view add brand</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="product_brand_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_product_variant_kanban_brand" model="ir.ui.view">
+        <field name="name">product variant kanban view add brand</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_kanban_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_kanban_details')]/strong[1]" position="after">
+                <div>
+                    <a t-if="record.product_brand_id" type="open">
+                        <field name="product_brand_id"/>
+                    </a>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    </data>
+</openerp>

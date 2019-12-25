@@ -33,9 +33,10 @@
                 </xpath>
                 <!-- res.partner联系人 form -->
                 <!--联系人，如果是个人类型，不允许其下再有联系人-->
-                <xpath expr="//notebook/page[1]" position="attributes">
-                    <attribute name="attrs">{'invisible': [('is_company','!=', True)]}</attribute>
-                </xpath>
+                <!--调整，电商情况，一个人有多个地址-->
+<!--                <xpath expr="//notebook/page[1]" position="attributes">-->
+<!--                    <attribute name="attrs">{'invisible': [('is_company','!=', True)]}</attribute>-->
+<!--                </xpath>-->
                 <!-- 所有类型联系人都要填姓名 -->
                 <xpath expr="//page//field[@name='child_ids']//form[1]//field[@name='name']" position="attributes">
                     <attribute name="required">1</attribute>
