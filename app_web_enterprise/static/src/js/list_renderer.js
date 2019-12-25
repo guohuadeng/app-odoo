@@ -4,9 +4,9 @@ odoo.define('app_web_enterprise.ListRenderer', function (require) {
     var ListRenderer = require('web.ListRenderer');
 
     ListRenderer.include({
-        _renderEmptyRow: function () {
-            return;
-        },
+        // _renderEmptyRow: function () {
+        //     return;
+        // },
     });
 
     return ListRenderer;
