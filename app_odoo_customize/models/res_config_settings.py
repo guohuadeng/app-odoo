@@ -367,6 +367,7 @@ class ResConfigSettings(models.TransientModel):
     def remove_account(self):
         to_removes = [
             # 清除财务会计单据
+            ['payment.transaction', ],
             ['account.voucher.line', ],
             ['account.voucher', ],
             ['account.bank.statement.line', ],
