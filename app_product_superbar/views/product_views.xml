@@ -8,9 +8,7 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <superbar>
-                    <!--text表示主显示字段是哪个-->
                     <field name="categ_id" widget="ztree_select" text="name"/>
-<!--                    <field name="categ_id" select="multi" groupby="parent_id"/>-->
                     <field name="type"/>
                 </superbar>
             </xpath>
