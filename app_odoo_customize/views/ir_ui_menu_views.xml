@@ -15,6 +15,8 @@
                 </filter>
             </field>
         </record>
-
+        <record id="base.grant_menu_access" model="ir.actions.act_window">
+            <field name="context">{'ir.ui.menu.full_list': True, 'search_default_top_menu': 1}</field>
+        </record>
     </data>
 </odoo>
