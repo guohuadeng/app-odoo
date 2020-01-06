@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="app_mrp_workcenter_view" model="ir.ui.view">
+        <field name="name">mrp.workcenter.form</field>
+        <field name="model">mrp.workcenter</field>
+        <field name="inherit_id" ref="mrp.mrp_workcenter_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="parent_id" widget="ztree_select"/>
+            </xpath>
+<!--            <xpath expr="//field[@name='code']" position="after">-->
+<!--                <field name="sequence"/>-->
+<!--            </xpath>-->
+            <xpath expr="//field[@name='name']" position="replace"/>
+            <xpath expr="//field[@name='costs_hour']" position="after">
+                <xpath expr="//field[@name='resource_calendar_id']" position="move"/>
+            </xpath>
+            <!-- 引入树结构图 -->
+            <xpath expr="//group[1]" position="before">
+                <div id="o_node_container">
+                    <div id="o_node_main">
+                        <field name="image_128" widget="image" class="oe_avatar"
+                               options="{'preview_image': 'image_128', 'size': [90, 90]}"/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" placeholder="Work Center Name	" required="True"/>
+                            </h1>
+                        </div>
+                        <span id="add_group"/>
+                        <span id="add_notebook"/>
+                    </div>
+                    <div id="o_node_right">
+                        <h4 class="o_chart_hierarchy_title mb16 mt0">Hierarchy Chart</h4>
+                        <field name="child_ids" widget="web_chart_hierarchy"
+                               string="Please get widget from https://apps.odoo.com/apps/modules/13.0/app_web_chart_hierarchy/"
+                               options="{
+                                   'image': 'image_128',
+                                   'desc': 'code',
+                                   'direct_sub': 'child_ids',
+                                   'child_all_count':'child_all_count'}"/>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//span[@id='add_group']" position="after">
+                <xpath expr="//group[1]" position="move"/>
+            </xpath>
+            <xpath expr="//span[@id='add_notebook']" position="after">
+                <xpath expr="//notebook" position="move"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="app_mrp_workcenter_tree_view" model="ir.ui.view">
+        <field name="name">mrp.workcenter.tree</field>
+        <field name="model">mrp.workcenter</field>
+        <field name="inherit_id" ref="mrp.mrp_workcenter_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="parent_id"/>
+                <field name="note"/>
+            </xpath>
+        </field>
+    </record>
+<!--常规kanban-->
+    <record id="app_mrp_workcenter_view_kanban" model="ir.ui.view">
+        <field name="name">app.mrp.workcenter.kanban1</field>
+        <field name="model">mrp.workcenter</field>
+        <field name="inherit_id" ref="mrp.mrp_workcenter_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="default_group_by">parent_id</attribute>
+            </xpath>
+        </field>
+    </record>
+<!--    工单kanban-->
+    <record id="app_mrp_workcenter_kanban" model="ir.ui.view">
+        <field name="name">app.mrp.workcenter.kanban2</field>
+        <field name="model">mrp.workcenter</field>
+        <field name="inherit_id" ref="mrp.mrp_workcenter_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban/field[1]" position="after">
+                <field name="code"/>
+                <field name="note"/>
+            </xpath>
+            <xpath expr="//templates//field[@name='name']" position="before">
+                <span t-if="record.code.raw_value">[<field name="code"/>]</span>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- 增加字段，superbar   -->
+    <record id="app_view_mrp_workcenter_search" model="ir.ui.view">
+        <field name="name">mrp.workcenter.search</field>
+        <field name="model">mrp.workcenter</field>
+        <field name="inherit_id" ref="mrp.view_mrp_workcenter_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="code" string="code"/>
+            </xpath>
+            <xpath expr="//group" position="inside">
+                <filter string="Parent WC" name="group_by_parent_id" context="{'group_by':'parent_id'}"/>
+            </xpath>
+            <xpath expr="//search" position="inside">
+                <superbar view_types="kanban,tree">
+                    <field name="parent_id" domain="[('child_ids', '!=', False)]"/>
+                </superbar>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mrp.mrp_workcenter_kanban_action" model="ir.actions.act_window">
+        <field name="context">{'search_default_group_by_parent_id':1}</field>
+    </record>
+</odoo>
