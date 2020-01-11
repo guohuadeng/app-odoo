@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="_assets_backend" name="app_base_chinese assets backend" inherit_id="web.assets_backend">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/app_base_chinese/static/src/scss/app_style.scss"/>
+        </xpath>
+    </template>
+</odoo>
