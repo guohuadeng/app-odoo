@@ -518,6 +518,7 @@ class ResConfigSettings(models.TransientModel):
             ['blog.tag', ],
             ['blog.post', ],
             ['blog.blog', ],
+            ['product.wishlist', ],
             ['website.published.multi.mixin', ],
             ['website.published.mixin', ],
             ['website.multi.mixin', ],
@@ -525,6 +526,7 @@ class ResConfigSettings(models.TransientModel):
             ['website.seo.metadata', ],
             ['website.page', ],
             ['website.menu', ],
+            ['website.visitor', ],
             ['website', ],
         ]
         try:
