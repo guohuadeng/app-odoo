@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- VIEWS -->
+
+        <record id="app_view_move_form" model="ir.ui.view">
+            <field name="name">app.account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+<!--                过帐操作-->
+                <xpath expr="//header//button[@name='action_post']" position="attributes">
+                    <attribute name="string">Post Entry</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '13.20.01.13',
+    'version': '13.20.01.18',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -44,20 +44,25 @@
     8. 超级用户改时区为 中国
     9. 时间格式年月日为 2019-12-30，时间为 22:10
     10. 国家增加排序，中国排第一 
-    11. todo:中文演示数据(只有demo模式才加载)    
+    11. 收款相关显示中国习惯    
+    21. todo:中文演示数据(只有demo模式才加载)    
     """,
     'pre_init_hook': 'pre_init_hook',
     'post_init_hook': 'post_init_hook',
     'depends': [
         'app_base',
+        'account',
         'stock',
     ],
     'images': ['static/description/banner.jpg'],
     'data': [
         'views/res_partner_views.xml',
         'views/res_currency_views.xml',
+        'views/sale_order_views.xml',
+        'views/account_move_views.xml',
         'views/ir_default_views.xml',
         'views/templates.xml',
+        'wizard/sale_make_invoice_advance_views.xml',
         'data/ir_default_data.xml',
         'data/ir_sequence_data.xml',
         'data/base_data.xml',
