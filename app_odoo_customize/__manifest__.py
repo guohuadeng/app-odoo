@@ -23,7 +23,7 @@
 
 {
     'name': 'Odoo Customize(Boost,Debranding, My Odoo)',
-    'version': '13.19.12.09',
+    'version': '13.20.01.06',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -68,6 +68,7 @@
     25. Add remove expense data
     26. Add multi uninstall modules
     27. Add odoo boost modules link.
+    28. Easy Menu manager.
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -89,6 +90,7 @@
         'views/res_config_settings_views.xml',
         'views/ir_model_views.xml',
         'views/ir_views.xml',
+        'views/ir_ui_menu_views.xml',
         # data
         'data/ir_config_parameter.xml',
         'data/ir_module_module.xml',
@@ -108,5 +110,5 @@
     # 'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': True,
-    'auto_install': False,
+    'auto_install': True,
 }

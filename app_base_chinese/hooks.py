@@ -44,6 +44,9 @@ def post_init_hook(cr, registry):
             ('id', '=', 2)
         ])
         ids.write({'tz': "Asia/Shanghai"})
+        # 中国排序第一
+        ids = env.ref('base.cn')
+        ids.write({'sequence': 1})
     except Exception as e:
         raise Warning(e)
 

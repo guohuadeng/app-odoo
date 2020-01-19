@@ -367,6 +367,7 @@ class ResConfigSettings(models.TransientModel):
     def remove_account(self):
         to_removes = [
             # 清除财务会计单据
+            ['payment.transaction', ],
             ['account.voucher.line', ],
             ['account.voucher', ],
             ['account.bank.statement.line', ],
@@ -517,6 +518,7 @@ class ResConfigSettings(models.TransientModel):
             ['blog.tag', ],
             ['blog.post', ],
             ['blog.blog', ],
+            ['product.wishlist', ],
             ['website.published.multi.mixin', ],
             ['website.published.mixin', ],
             ['website.multi.mixin', ],
@@ -524,6 +526,7 @@ class ResConfigSettings(models.TransientModel):
             ['website.seo.metadata', ],
             ['website.page', ],
             ['website.menu', ],
+            ['website.visitor', ],
             ['website', ],
         ]
         try:
