@@ -12,6 +12,7 @@
                     <attribute name="ztree_parent_key">parent_id</attribute>
                     <attribute name="ztree_expend_level">2</attribute>
                     <attribute name="order">name</attribute>
+                    <attribute name="limit">1000</attribute>
                 </xpath>
             </field>
         </record>
@@ -25,6 +26,7 @@
                     <!-- Add your fields or attributes here -->
                     <attribute name="widget">ztree_select</attribute>
                     <attribute name="ztree_parent_key">parent_id</attribute>
+                    <attribute name="limit">1000</attribute>
                 </xpath>
 
             </field>
