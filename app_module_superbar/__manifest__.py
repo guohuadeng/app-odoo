@@ -25,7 +25,7 @@
     'sequence': 2,
     'summary': """
     Browse Apps by category tree. Browse Module by category. Use for parent children tree list kanban navigator. 
-    Easy to navigator and browse any data. Support Search more list, kanban, pivot, graph view. 
+    Easy to navigator and browse any data. Support list, kanban, pivot, graph view. 
     """,
     'description': """
     Superbar, zTree widget. 
