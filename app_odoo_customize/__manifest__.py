@@ -69,6 +69,7 @@
     26. Add multi uninstall modules
     27. Add odoo boost modules link.
     28. Easy Menu manager.
+    29. Add Install version in App list. Add Local updatable filter in app list.
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -88,7 +89,7 @@
         'views/app_odoo_customize_views.xml',
         'views/app_theme_config_settings_views.xml',
         'views/res_config_settings_views.xml',
-        'views/ir_model_views.xml',
+        'views/ir_module_module_views.xml',
         'views/ir_views.xml',
         'views/ir_ui_menu_views.xml',
         # data

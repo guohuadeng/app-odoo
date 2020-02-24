@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <!-- Modules -->
+        <!-- Modules list -->
         <record id="app_module_tree" model="ir.ui.view">
             <field name="name">app.ir.module.module.tree</field>
             <field name="model">ir.module.module</field>
@@ -9,6 +9,21 @@
                 <field name="name" position="attributes">
                     <attribute name="groups"/>
                 </field>
+                <field name="installed_version" position="after">
+                    <field name="latest_version"/>
+                    <field name="local_updatable"/>
+                </field>
+            </field>
+        </record>
+        <!-- Modules search-->
+        <record id="app_view_module_filter" model="ir.ui.view">
+            <field name="name">app.ir.module.module.list.select</field>
+            <field name="model">ir.module.module</field>
+            <field name="inherit_id" ref="base.view_module_filter" />
+            <field name="arch" type="xml">
+                <filter name="not_installed" position="after">
+                    <filter name="is_local_updatable" string="Local updatable" domain="[('local_updatable', '=', True)]"/>
+                </filter>
             </field>
         </record>
         <record id="app_module_form" model="ir.ui.view">
