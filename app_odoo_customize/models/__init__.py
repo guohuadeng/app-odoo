@@ -3,5 +3,5 @@
 from . import res_config_settings
 from . import ir_ui_view
 from . import base_language_install
-from . import models
+from . import ir_module_module
 # from . import ir_ui_menu

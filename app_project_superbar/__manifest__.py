@@ -26,7 +26,7 @@
     'summary': """
     Browse project by company / partner / user. Project task by user, tags.
     project superbar.
-    Easy to navigator and browse any data. Support Search more list, kanban, pivot, graph view. 
+    Easy to navigator and browse any data. Support list, kanban, pivot, graph view. 
     ztree widget.Hierarchy Tree.
     """,
     'description': """

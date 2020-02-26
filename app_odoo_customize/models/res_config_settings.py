@@ -135,7 +135,7 @@ class ResConfigSettings(models.TransientModel):
                     'number_next': 1,
                 })
         except Exception as e:
-            raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'sale', e)
         return True
 
     def remove_product(self):
@@ -159,7 +159,7 @@ class ResConfigSettings(models.TransientModel):
                     'number_next': 1,
                 })
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'product', e)
         return True
 
     def remove_product_attribute(self):
@@ -177,7 +177,7 @@ class ResConfigSettings(models.TransientModel):
                     self._cr.execute(sql)
                     self._cr.commit()
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'product_attr', e)
         return True
 
     def remove_pos(self):
@@ -208,7 +208,7 @@ class ResConfigSettings(models.TransientModel):
                 s._end_balance()
 
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'pos', e)
         return True
 
     def remove_purchase(self):
@@ -236,7 +236,7 @@ class ResConfigSettings(models.TransientModel):
             self._cr.execute(sql)
             self._cr.commit()
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'purchase', e)
         return True
 
     def remove_expense(self):
@@ -265,7 +265,7 @@ class ResConfigSettings(models.TransientModel):
             self._cr.execute(sql)
             self._cr.commit()
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'expense', e)
         return True
 
     def remove_mrp(self):
@@ -297,7 +297,7 @@ class ResConfigSettings(models.TransientModel):
                     'number_next': 1,
                 })
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'mrp', e)
         return True
 
     def remove_mrp_bom(self):
@@ -315,7 +315,7 @@ class ResConfigSettings(models.TransientModel):
                     self._cr.execute(sql)
                     self._cr.commit()
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'mrp_bom', e)
         return True
 
     def remove_inventory(self):
@@ -361,7 +361,7 @@ class ResConfigSettings(models.TransientModel):
                     'number_next': 1,
                 })
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'inventory', e)
         return True
 
     def remove_account(self):
@@ -407,7 +407,7 @@ class ResConfigSettings(models.TransientModel):
                             'number_next': 1,
                         })
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'account', e)
         return True
 
     def remove_account_chart(self):
@@ -447,7 +447,7 @@ class ResConfigSettings(models.TransientModel):
                     'property_account_payable_id': None,
                 })
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'account_chart', e)
         try:
             rec = self.env['product.category'].search([])
             for r in rec:
@@ -508,7 +508,7 @@ class ResConfigSettings(models.TransientModel):
                     self._cr.commit()
             # 更新序号
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'project', e)
         return True
 
     def remove_website(self):
@@ -538,7 +538,7 @@ class ResConfigSettings(models.TransientModel):
                     self._cr.execute(sql)
                     self._cr.commit()
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'website', e)
         return True
 
     def remove_message(self):
@@ -556,7 +556,7 @@ class ResConfigSettings(models.TransientModel):
                     self._cr.execute(sql)
                     self._cr.commit()
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'message', e)
         return True
 
     def remove_workflow(self):
@@ -575,20 +575,17 @@ class ResConfigSettings(models.TransientModel):
                     self._cr.commit()
 
         except Exception as e:
-            pass  # raise Warning(e)
+            _logger.error('remove data error: %s,%s', 'workflow', e)
         return True
 
     def remove_all_biz(self):
-        try:
-            self.remove_account()
-            self.remove_inventory()
-            self.remove_mrp()
-            self.remove_purchase()
-            self.remove_sales()
-            self.remove_project()
-            self.remove_pos()
-            self.remove_expense()
-            self.remove_message()
-        except Exception as e:
-            pass  # raise Warning(e)
+        self.remove_account()
+        self.remove_inventory()
+        self.remove_mrp()
+        self.remove_purchase()
+        self.remove_sales()
+        self.remove_project()
+        self.remove_pos()
+        self.remove_expense()
+        self.remove_message()
         return True
