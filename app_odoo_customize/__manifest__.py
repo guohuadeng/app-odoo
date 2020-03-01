@@ -29,10 +29,10 @@
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """    
-    Quick customize, set brand, boost, reset data, debug. Language Switcher. 
+    'summary': """
+    Default keep odoo Logo. For quick developer. Quick customize, set brand, boost, reset data, debug. Language Switcher. 
     Easy Delete data.reset account chart.
-    odoo oem, white label customize my odoo. 
+    customize my odoo. 
     """,
     'description': """
     
