@@ -22,21 +22,21 @@
 # description:
 
 {
-    'name': 'Odoo Customize(Boost,Debranding, My Odoo)',
-    'version': '13.20.02.25',
+    'name': 'Customize odoo OEM (Boost, My Odoo)',
+    'version': '13.20.03.01',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """    
-    Quick customize, debranding, boost, reset data, debug. Language Switcher. 
+    Quick customize, set brand, boost, reset data, debug. Language Switcher. 
     Easy Delete data.reset account chart.
-    odoo debrand, odoo debranding, customize my odoo. 
+    odoo oem, white label customize my odoo. 
     """,
     'description': """
     
-    App Odoo Customize(Debranding Title,Language,Documentation,Quick Debug)
+    App Customize Odoo (Change Title,Language,Documentation,Quick Debug)
     ============
     White label odoo.
     Support Odoo 13, 12, 11, 10, 9.
