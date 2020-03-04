@@ -22,25 +22,23 @@
 # description:
 
 {
-    'name': 'Odoo Customize(Debranding, My Odoo)',
-    'version': '12.19.12.02',
+    'name': 'Customize odoo OEM (Boost, My Odoo)',
+    'version': '12.20.03.01',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """    
-    Quick Customize, Debrand, Reset data, Debug. Language Switcher. 
-    odoo 13,12,11,10,9 support.
+    Default keep odoo Logo. For quick developer. Quick customize, set brand, boost, reset data, debug. Language Switcher. 
     Easy Delete data.reset account chart.
-    odoo debrand, odoo debranding, customize my odoo. 
+    customize my odoo. 
     """,
     'description': """
-    
-    App Odoo Customize(Debranding Title,Language,Documentation,Quick Debug)
+    App Customize Odoo (Change Title,Language,Documentation,Quick Debug)
     ============
     White label odoo.
-    Support Odoo 13, 12, 11, 10, 9.communicate and enterprise 
+    Support Odoo 13, 12, 11, 10, 9.
     You can config odoo, make it look like your own platform.
     1. Deletes Odoo label in footer
     2. Replaces "Odoo" in Windows title
@@ -58,7 +56,7 @@
     14. Quick delete test data in Apps: Sales/POS/Purchase/MRP/Inventory/Accounting/Project/Message/Workflow etc.
     15. Reset All the Sequence to beginning of 1: SO/PO/MO/Invoice...
     16. Fix odoo reload module translation bug while enable english language
-    17. Stop Odoo Auto Subscribe(Performance Improve)
+    17. Stop Odoo Auto Subscribe(Moved to app_odoo_boost)
     18. Show/Hide Author and Website in Apps Dashboard
     19. One Click to clear all data (Sometime pls click twice)
     20. Show quick upgrade in app dashboard, click to show module info not go to odoo.com
@@ -68,9 +66,9 @@
     24. Customize Odoo Native Module(eg. Enterprise) Url
     25. Add remove expense data
     26. Add multi uninstall modules
-    27. Add odoo 13 support, Just install this app on odoo 13, master branch of odoo github.
-    28. Fix pos remove data for account close.
-    29. Fix account reset.
+    27. Add odoo boost modules link.
+    28. Easy Menu manager.
+    29. Add Install version in App list. Add Local updatable filter in app list.
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.

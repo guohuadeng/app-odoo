@@ -191,14 +191,14 @@
         </record>
 
         <menuitem
-                id="base.menu_app_group"
+                id="app_odoo_customize.menu_app_group"
                 name="odooApp"
                 parent="base.menu_administration"
                 sequence="1"
                 groups="base.group_system"/>
         <menuitem
                 id="menu_app_theme_config"
-                parent="base.menu_app_group"
+                parent="app_odoo_customize.menu_app_group"
                 sequence="1"
                 action="action_app_theme_config"
                 groups="base.group_system"/>
