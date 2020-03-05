@@ -62,7 +62,7 @@
             </field>
         </record>
     <!--默认打开可更新模块-->
-        <record id="base.open_module_tree" model="ir.module.module">
+        <record id="base.open_module_tree" model="ir.actions.act_window">
             <field name="context">{'search_default_is_local_updatable':1}</field>
         </record>
 </odoo>

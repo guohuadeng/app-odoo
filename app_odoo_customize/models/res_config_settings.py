@@ -421,11 +421,10 @@ class ResConfigSettings(models.TransientModel):
             ['account.bank.statement', ],
             ['account.tax.account.tag', ],
             ['account.tax', ],
-            ['account.tax', ],
             ['account.account.account.tag', ],
             ['wizard_multi_charts_accounts'],
-            ['account.account', ],
             ['account.journal', ],
+            ['account.account', ],
         ]
         # todo: 要做 remove_hr，因为工资表会用到 account
         # 更新account关联，很多是多公司字段，故只存在 ir_property，故在原模型，只能用update
@@ -435,7 +434,9 @@ class ResConfigSettings(models.TransientModel):
             field2 = self.env['ir.model.fields']._get('product.template', "supplier_taxes_id").id
 
             sql = ("delete from ir_default where field_id = %s or field_id = %s") % (field1, field2)
+            sql2 = ("update account_journal set bank_account_id=NULL;")
             self._cr.execute(sql)
+            self._cr.execute(sql2)
             self._cr.commit()
         except Exception as e:
             pass  # raise Warning(e)
