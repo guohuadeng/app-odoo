@@ -3,6 +3,14 @@
 
     <data noupdate="1">
         <!-- Account Tax -->
+        <record id="tag_cn0_s" model="account.account.tag">
+            <field name="name">不计销项税</field>
+            <field name="applicability">taxes</field>
+        </record>
+        <record id="tag_cn0_p" model="account.account.tag">
+            <field name="name">不计进项税</field>
+            <field name="applicability">taxes</field>
+        </record>
         <record id="tag_cn13_s" model="account.account.tag">
             <field name="name">增值税13%销项税</field>
             <field name="applicability">taxes</field>
