@@ -55,6 +55,7 @@
                 </xpath>
                 <!--显示快速升级-->
                 <xpath expr="//div[@class='oe_module_action']" position="inside" groups="app_odoo_customize.group_show_quick_upgrade">
+                    <button type="object" class="btn btn-default btn-sm float-right" name="button_get_po" states="installed">Export Translation</button>
                     <button type="object" class="btn btn-default btn-sm float-right" name="button_uninstall_wizard" states="installed">Uninstall</button>
                     <button type="object" class="btn btn-success btn-sm float-right" name="button_immediate_upgrade" states="installed">Upgrade</button>
                 </xpath>
