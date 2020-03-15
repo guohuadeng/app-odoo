@@ -89,8 +89,8 @@
         'views/app_odoo_customize_views.xml',
         'views/app_theme_config_settings_views.xml',
         'views/res_config_settings_views.xml',
-        'views/ir_module_module_views.xml',
         'views/ir_views.xml',
+        'views/ir_module_module_views.xml',
         'views/ir_ui_menu_views.xml',
         # data
         'data/ir_config_parameter.xml',
