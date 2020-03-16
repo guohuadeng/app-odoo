@@ -24,6 +24,13 @@ class IrModule(models.Model):
         modules = self.browse(self.env.context.get('active_ids'))
         [module.button_immediate_uninstall() for module in modules if module not in ['base', 'web']]
 
+    def button_get_po(self):
+        self.ensure_one()
+        action = self.env.ref('app_odoo_customize.action_server_module_multi_get_po').read()[0]
+        action['context'].update({
+                'default_lang': self.env.user.lang,
+            })
+        return action
 
     @api.depends('name')
     def _get_latest_version(self):
