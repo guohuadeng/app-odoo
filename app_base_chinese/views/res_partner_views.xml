@@ -12,7 +12,7 @@
                     <!--<xpath expr="//field[@name='ref']" position="move"/>-->
                 <!--</xpath>-->
                 <xpath expr="//field[@name='type']" position="after">
-                    <field name="short_name" invisible="1"/>
+                    <field name="short_name"/>
                 </xpath>
                 <!-- 信用额度 -->
                 <xpath expr="//field[@name='category_id']" position="after">

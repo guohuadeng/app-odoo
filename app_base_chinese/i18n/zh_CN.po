@@ -91,4 +91,4 @@ msgstr "单号规则"
 #: model:ir.model.fields,field_description:app_base_chinese.field_res_partner__short_name
 #: model:ir.model.fields,field_description:app_base_chinese.field_res_users__short_name
 msgid "Short Name"
-msgstr "缩写"
+msgstr "简称"
