@@ -14,7 +14,8 @@ class IrModule(models.Model):
     # installed_version = fields.Char('Latest Version', compute='_get_latest_version')
     # latest_version = fields.Char('Installed Version', readonly=True)
 
-    local_updatable = fields.Boolean('Local updatable', compute='_get_latest_version', default=False, store=True)
+    local_updatable = fields.Boolean('Local updatable', compute='_get_latest_version',
+                                     compute_sudo=True, default=False, store=True)
 
     def module_multi_uninstall(self):
         """ Perform the various steps required to uninstall a module completely
@@ -34,8 +35,9 @@ class IrModule(models.Model):
 
     @api.depends('name')
     def _get_latest_version(self):
-        super(IrModule, self)._get_latest_version()
-        for rec in self:
-            rec.local_updatable = False
-            if rec.installed_version and rec.latest_version and operator.gt(rec.installed_version, rec.latest_version):
-                rec.local_updatable = True
+        default_version = modules.adapt_version('1.0')
+        for module in self:
+            module.installed_version = self.get_module_info(module.name).get('version', default_version)
+            if module.installed_version and module.latest_version and operator.gt(module.installed_version, module.latest_version):
+                module.local_updatable = True
+
