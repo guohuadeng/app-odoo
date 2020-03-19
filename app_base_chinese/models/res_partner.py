@@ -9,6 +9,7 @@ class ResPartner(models.Model):
 
     name = fields.Char(index=True, translate=True)
     short_name = fields.Char('Short Name')  # 简称
+    fax = fields.Char('Fax')  # 简称
 
     # 增加地址显示中的手机号与电话号码
     # 选项 show_address 开启则增加显示手机与电话号
