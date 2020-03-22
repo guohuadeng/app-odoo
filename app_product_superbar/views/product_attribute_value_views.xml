@@ -7,6 +7,7 @@
             <field name="arch" type="xml">
                 <tree string="Variant Values" editable="bottom">
                     <field name="sequence" widget="handle"/>
+                    <field name="id" groups="base.group_no_one"/>
                     <field name="attribute_id"/>
                     <field name="name"/>
                     <field name="display_name" readonly="1"/>
