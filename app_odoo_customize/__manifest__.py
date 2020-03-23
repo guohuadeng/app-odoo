@@ -23,7 +23,7 @@
 
 {
     'name': 'Customize odoo OEM (Boost, My Odoo)',
-    'version': '13.20.03.19',
+    'version': '13.20.03.23',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -69,7 +69,8 @@
     26. Add multi uninstall modules
     27. Add odoo boost modules link.
     28. Easy Menu manager.
-    29. Add Install version in App list. Add Local updatable filter in app list.
+    29. Apps version compare. Add Install version in App list. Add Local updatable filter in app list.
+    30. 1 key export app translate file like .po file.
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
