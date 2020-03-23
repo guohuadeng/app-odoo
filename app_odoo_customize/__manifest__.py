@@ -30,7 +30,7 @@
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
-    Default keep odoo Logo. For quick developer. Quick customize, set brand, boost, reset data, debug. Language Switcher. 
+    1 click customize odoo, reset data. For quick develop. Set brand, boost, reset data, debug. Language Switcher. 
     Easy Delete data.reset account chart.
     customize my odoo. 
     """,
