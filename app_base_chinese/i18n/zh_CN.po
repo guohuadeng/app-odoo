@@ -80,7 +80,7 @@ msgstr "过帐"
 #. module: app_base_chinese
 #: model:ir.model,name:app_base_chinese.model_product_category
 msgid "Product Category"
-msgstr "产品类别"
+msgstr "品类"
 
 #. module: app_base_chinese
 #: model:ir.model.fields,field_description:app_base_chinese.field_res_currency__sequence
