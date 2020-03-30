@@ -28,15 +28,16 @@
                 </search>
             </field>
         </record>
-        <record id="variants_action" model="ir.actions.act_window">
-            <field name="name">Attribute Values</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">product.attribute.value</field>
-            <field name="view_mode">tree</field>
-        </record>
+        <!--以下功能放到 app_product_variant_pro -->
+        <!--<record id="variants_action" model="ir.actions.act_window">-->
+            <!--<field name="name">Attribute Values</field>-->
+            <!--<field name="type">ir.actions.act_window</field>-->
+            <!--<field name="res_model">product.attribute.value</field>-->
+            <!--<field name="view_mode">tree</field>-->
+        <!--</record>-->
 
-        <menuitem
-                action="variants_action" id="menu_variants_action"
-                parent="stock.menu_product_in_config_stock" sequence="5" groups="product.group_product_variant"/>
+        <!--<menuitem-->
+                <!--action="variants_action" id="menu_variants_action"-->
+                <!--parent="stock.menu_product_in_config_stock" sequence="5" groups="product.group_product_variant"/>-->
     </data>
 </odoo>
