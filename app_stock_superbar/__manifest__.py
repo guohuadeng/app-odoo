@@ -17,7 +17,7 @@
 
 {
     'name': "Stock Superbar ztree, parent children tree",
-    'version': '13.19.10.16',
+    'version': '13.20.03.30',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

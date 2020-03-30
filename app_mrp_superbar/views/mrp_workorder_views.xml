@@ -7,10 +7,10 @@
         <field name="inherit_id" ref="mrp.view_mrp_production_workorder_form_view_filter"/>
         <field name="arch" type="xml">
             <xpath expr="//search" position="inside">
-                <superbar>
+                <searchpanel>
                     <field name="workcenter_id"/>
                     <field name="state"/>
-                </superbar>
+                </searchpanel>
             </xpath>
         </field>
     </record>

@@ -22,9 +22,9 @@
                 <search string="Search product.attribute.value">
                     <field name="name" string="Value"/>
                     <field name="attribute_id" string="Attribute"/>
-                    <superbar>
+                    <searchpanel>
                         <field name="attribute_id"/>
-                    </superbar>
+                    </searchpanel>
                 </search>
             </field>
         </record>

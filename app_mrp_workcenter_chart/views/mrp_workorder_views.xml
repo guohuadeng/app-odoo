@@ -6,7 +6,7 @@
     <field name="model">mrp.workorder</field>
     <field name="inherit_id" ref="app_mrp_superbar.app_view_mrp_production_workorder_form_view_filter"/>
     <field name="arch" type="xml">
-      <xpath expr="//superbar//field[@name='workcenter_id']" position="replace">
+      <xpath expr="//searchpanel//field[@name='workcenter_id']" position="replace">
           <field name="workcenter_id" options="{'ztree_parent_key': 'parent_id','ztree_expend_level': '1', 'ztree_name_field': 'name'}"/>
       </xpath>
     </field>

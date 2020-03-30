@@ -7,10 +7,10 @@
         <field name="inherit_id" ref="product.product_template_search_view"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <superbar>
+                <searchpanel>
                     <field name="categ_id" widget="ztree_select" text="name"/>
                     <field name="type"/>
-                </superbar>
+                </searchpanel>
             </xpath>
         </field>
     </record>
