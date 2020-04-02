@@ -23,7 +23,6 @@
             <field name="arch" type="xml">
                 <field name="categ_id" position="after">
                     <field name="product_brand_id" placeholder="Brand"/>
-                    <div/>
                 </field>
             </field>
         </record>
