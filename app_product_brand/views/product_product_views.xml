@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
         <!--产品list，可调整显示顺序-->
     <record id="view_product_variant_tree_brand" model="ir.ui.view">
@@ -29,4 +29,4 @@
     </record>
 
     </data>
-</openerp>
+</odoo>
