@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="account.view_move_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//page/field[@name='invoice_line_ids']/tree/control" position="inside">
-                    <create string="Multi Add Line" context="{
+                    <create name="multi_add_line" string="Multi Add Line" context="{
                     'pro_multi_add': True,
                     'pro_res_model': 'product.product',
                     'pro_res_field': 'product_id',

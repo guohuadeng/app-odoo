@@ -6,7 +6,7 @@
             <field name="inherit_id" ref="purchase.purchase_order_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//page/field[@name='order_line']/tree/control" position="inside">
-                    <create string="Multi Add Product" context="{
+                    <create name="multi_add_line" string="Multi Add Product" context="{
                     'pro_multi_add': True,
                     'pro_res_model': 'product.product',
                     'pro_res_field': 'product_id',
