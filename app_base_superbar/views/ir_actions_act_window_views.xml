@@ -6,10 +6,10 @@
         <field name="inherit_id" ref="base.view_window_action_search"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <superbar view_types="kanban,tree">
+                <searchpanel view_types="kanban,tree">
                     <field name="binding_type"/>
                     <field name="target"/>
-                </superbar>
+                </searchpanel>
             </xpath>
         </field>
     </record>

@@ -6,10 +6,10 @@
         <field name="inherit_id" ref="base.view_view_search"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <superbar view_types="kanban,tree">
+                <searchpanel view_types="kanban,tree">
                     <field name="type"/>
                     <field name="model_data_id"/>
-                </superbar>
+                </searchpanel>
             </xpath>
         </field>
     </record>
