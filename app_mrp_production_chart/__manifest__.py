@@ -23,7 +23,7 @@
 
 {
     'name': 'MRP Production Chart Hierarchy, 生产单多层级结构图',
-    'version': '12.19.11.29',
+    'version': '12.20.04.08',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

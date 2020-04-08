@@ -21,7 +21,7 @@ class MrpProduction(models.Model):
     child_all_count = fields.Integer('Indirect Surbordinates Count', store=False,
                                      compute='_compute_child_all_count')
 
-    image_128 = fields.Image(related='product_id.image_128', readonly=True)
+    image_128 = fields.Binary(related='product_id.image_small', readonly=True)
     product_name = fields.Char(related='product_id.name', readonly=True)
     parent_path = fields.Char(index=True)
 
