@@ -8,7 +8,7 @@ class AccountInvoiceReport(models.Model):
     _inherit = "account.invoice.report"
 
     product_brand_id = fields.Many2one(
-        comodel_name='product.brand',
+        comodel_name='product.product_brand_id',
         string='Brand',
     )
 

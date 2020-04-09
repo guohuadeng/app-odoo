@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="product.product_template_search_view"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <searchpanel>
+                <searchpanel view_types="tree,kanban,search">
                     <field name="categ_id" widget="ztree_select" text="name"/>
                     <field name="type"/>
                 </searchpanel>

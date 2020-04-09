@@ -39,12 +39,3 @@ class ProductBrand(models.Model):
         for brand in self:
             brand.products_count = len(brand.product_ids)
 
-
-class ProductTemplate(models.Model):
-    _inherit = 'product.template'
-
-    product_brand_id = fields.Many2one(
-        'product.brand',
-        string='Brand',
-        help='Select a brand for this product'
-    )
