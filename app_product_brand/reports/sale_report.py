@@ -7,10 +7,7 @@ from odoo import fields, models
 class SaleReport(models.Model):
     _inherit = "sale.report"
 
-    product_brand_id = fields.Many2one(
-        comodel_name='product.brand',
-        string='Brand',
-    )
+    product_brand_id = fields.Many2one('product.brand', string='Brand')
 
     # pylint:disable=dangerous-default-value
     def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
