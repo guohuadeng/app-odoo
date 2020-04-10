@@ -7,12 +7,12 @@
           <field name="inherit_id" ref="account.view_account_search"/>
           <field name="arch" type="xml">
               <xpath expr="//search/searchpanel" position="replace">
-                  <superbar>
+                  <searchpanel>
                       <field name="user_type_id"/>
                       <!--<field name="tag_ids"/>-->
                       <field name="group_id"/>
                       <field name="root_id" icon="fa-filter"/>
-                  </superbar>
+                  </searchpanel>
               </xpath>
           </field>
       </record>
@@ -23,11 +23,11 @@
           <field name="inherit_id" ref="account.view_account_invoice_filter"/>
           <field name="arch" type="xml">
               <xpath expr="//search">
-                  <superbar>
+                  <searchpanel>
                       <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                       <field name="partner_id"/>
                       <field name="state"/>
-                  </superbar>
+                  </searchpanel>
               </xpath>
           </field>
       </record>
@@ -38,11 +38,11 @@
           <field name="inherit_id" ref="account.view_account_move_filter"/>
           <field name="arch" type="xml">
               <xpath expr="//search">
-                  <superbar>
+                  <searchpanel>
                       <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                       <field name="journal_id"/>
                       <field name="partner_id"/>
-                  </superbar>
+                  </searchpanel>
               </xpath>
           </field>
       </record>
@@ -53,12 +53,12 @@
           <field name="inherit_id" ref="account.view_account_move_line_filter"/>
           <field name="arch" type="xml">
               <xpath expr="//search">
-                  <superbar>
+                  <searchpanel>
                       <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                       <field name="journal_id"/>
                       <field name="partner_id"/>
                       <field name="account_id"/>
-                  </superbar>
+                  </searchpanel>
               </xpath>
           </field>
       </record>

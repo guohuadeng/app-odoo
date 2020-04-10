@@ -7,10 +7,10 @@
     <field name="inherit_id" ref="project.view_task_search_form"/>
     <field name="arch" type="xml">
       <xpath expr="//search" position="inside">
-        <superbar view_types="kanban,tree,graph,pivot">
+        <searchpanel view_types="kanban,tree,graph,pivot">
           <field name="user_id"/>
           <field name="stage_id"/>
-        </superbar>
+        </searchpanel>
       </xpath>
     </field>
   </record>
