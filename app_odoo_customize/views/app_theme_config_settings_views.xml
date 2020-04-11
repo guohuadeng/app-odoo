@@ -66,6 +66,10 @@
                                     <field name="group_show_author_in_apps"/>
                                     <label for="group_show_author_in_apps"/>
                                 </div>
+                                <div>
+                                    <field name="module_odoo_referral" widget="upgrade_boolean"/>
+                                    <label for="module_odoo_referral"/>
+                                </div>
                             </div>
                         </div>
                     </group>
