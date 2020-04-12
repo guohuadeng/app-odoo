@@ -7,10 +7,10 @@
               <search string="Search ir.model.constraint">
                   <field name="name" string="Name"/>
                   <field name="module" string="Module"/>
-                  <superbar view_types="tree">
+                  <searchpanel view_types="tree">
                       <field name="module"/>
                       <field name="model"/>
-                  </superbar>
+                  </searchpanel>
               </search>
           </field>
       </record>

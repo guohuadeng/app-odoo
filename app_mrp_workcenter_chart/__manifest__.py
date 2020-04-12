@@ -33,7 +33,7 @@
 
 {
     'name': "MRP Workcenter Parent Child Hierarchy,工作中心分级",
-    'version': '13.20.01.06',
+    'version': '13.20.03.30',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

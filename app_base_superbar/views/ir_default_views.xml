@@ -7,9 +7,9 @@
         <field name="groups_id" eval="[(4, ref('base.group_multi_company'))]"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <superbar view_types="kanban,tree">
+                <searchpanel view_types="kanban,tree">
                     <field name="company_id"/>
-                </superbar>
+                </searchpanel>
             </xpath>
         </field>
     </record>

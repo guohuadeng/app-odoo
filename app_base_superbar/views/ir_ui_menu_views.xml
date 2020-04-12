@@ -6,9 +6,9 @@
         <field name="inherit_id" ref="base.edit_menu_access_search"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <superbar view_types="kanban,tree">
-                    <field name="parent_id" domain="[('child_id', '!=', False)]"/>
-                </superbar>
+                <searchpanel view_types="kanban,tree">
+                    <field name="parent_id" filter_domain="[['child_id', '!=', False]]"/>
+                </searchpanel>
             </xpath>
         </field>
     </record>

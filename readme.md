@@ -30,7 +30,7 @@ Default country, timezone, currency, partner...
 2. 客户加简称，地址显示中文化，客户编码显示优先
 3. 客户地址显示增加手机号与电话号码
 4. 货币处理，增加排序显示
-5. 修正产品类别的列表及m2o字段中不显示中文目录名的Bug
+5. 修正品类的列表及m2o字段中不显示中文目录名的Bug
 
 ## app_contacts_superbar
 Browse contacts by company. Use for parent children tree list kanban navigator. 

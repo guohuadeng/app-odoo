@@ -7,10 +7,7 @@ from odoo import fields, models
 class AccountInvoiceReport(models.Model):
     _inherit = "account.invoice.report"
 
-    product_brand_id = fields.Many2one(
-        comodel_name='product.brand',
-        string='Brand',
-    )
+    product_brand_id = fields.Many2one('product.brand', string='Brand')
 
     def _select(self):
         select_str = super()._select()

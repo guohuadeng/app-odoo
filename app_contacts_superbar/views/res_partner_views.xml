@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="base.view_res_partner_filter"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <superbar>
+                <searchpanel>
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <!--<field name="category_id"/>-->
                     <!--<field name="is_company"/>-->
@@ -19,7 +19,7 @@
                            <!--model="res.partner"-->
                            <!--domain="[('is_company', '=', 1)]"-->
                            <!--level="0"/>-->
-                </superbar>
+                </searchpanel>
             </xpath>
         </field>
     </record>

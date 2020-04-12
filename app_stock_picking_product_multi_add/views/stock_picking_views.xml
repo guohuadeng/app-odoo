@@ -7,8 +7,8 @@
             <field name="arch" type="xml">
                 <xpath expr="//page/field[@name='move_ids_without_package']/tree/field[1]" position="before">
                     <control>
-                        <create string="Add a line"/>
-                        <create string="Multi add line" context="{
+                        <create name="add_line" string="Add a line"/>
+                        <create name="multi_add_line" string="Multi add line" context="{
                         'pro_multi_add': True,
                         'pro_res_model': 'product.product',
                         'pro_res_field': 'product_id',

@@ -24,6 +24,7 @@ class ResConfigSettings(models.TransientModel):
     app_show_poweredby = fields.Boolean('Show Powered by Odoo', help="Uncheck to hide the Powered by text")
     group_show_author_in_apps = fields.Boolean(string="Show Author in Apps Dashboard", implied_group='app_odoo_customize.group_show_author_in_apps',
                                                help="Uncheck to Hide Author and Website in Apps Dashboard")
+    module_odoo_referral = fields.Boolean('Show Odoo Referral', help="Uncheck to remove the Odoo Referral")
 
     app_documentation_url = fields.Char('Documentation Url')
     app_documentation_dev_url = fields.Char('Developer Documentation Url')

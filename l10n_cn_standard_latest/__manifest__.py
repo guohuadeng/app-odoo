@@ -9,7 +9,7 @@
 
 {
     'name': '2020最新中国企业会计表.Latest Chinese Accounting.',
-    'version': '13.20.03.05',
+    'version': '13.20.04.11',
     'author': 'Sunpop.cn',
     'category': 'Localization',
     'website': 'https://www.sunpop.cn',
@@ -67,5 +67,5 @@
     'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': True,
-    'auto_install': True,
+    'auto_install': False,
 }

@@ -9,9 +9,6 @@
             <xpath expr="//field[@name='name']" position="after">
                 <field name="parent_id" widget="ztree_select"/>
             </xpath>
-<!--            <xpath expr="//field[@name='code']" position="after">-->
-<!--                <field name="sequence"/>-->
-<!--            </xpath>-->
             <xpath expr="//field[@name='name']" position="replace"/>
             <xpath expr="//field[@name='costs_hour']" position="after">
                 <xpath expr="//field[@name='resource_calendar_id']" position="move"/>
@@ -103,9 +100,9 @@
                 <filter string="Parent WC" name="group_by_parent_id" context="{'group_by':'parent_id'}"/>
             </xpath>
             <xpath expr="//search" position="inside">
-                <superbar view_types="kanban,tree">
-                    <field name="parent_id" domain="[('child_ids', '!=', False)]"/>
-                </superbar>
+                <searchpanel view_types="kanban,tree">
+                    <field name="parent_id" filter_domain="[('child_ids', '!=', False)]"/>
+                </searchpanel>
             </xpath>
         </field>
     </record>

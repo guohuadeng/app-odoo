@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '13.20.03.19',
+    'version': '13.20.04.11',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -29,6 +29,7 @@
     'summary': """
     Chinese enhance. Out of the box use in china.
     Set all chinese default value.
+    Add quick set of english name.
     Default country, timezone, currency, partner... 
     """,
     'description': """
@@ -39,13 +40,14 @@
     3. 客户地址显示增加手机号与电话号码
     4. 货币处理，增加排序显示
     5. 用户名支持翻译（可能会增加复杂度，后续看）
-    6. 修正产品类别的列表及m2o字段中不显示中文目录名的Bug
+    6. 修正品类的列表及m2o字段中不显示中文目录名的Bug
     7. 修正仓库位置的列表及m2o字段中不显示中文目录名的Bug
     8. 超级用户改时区为 中国
     9. 时间格式年月日为 2019-12-30，时间为 22:10
     10. 国家增加排序，中国排第一 
     11. 收款相关显示中国习惯    
-    12. 翻译导出默认中文，默认po    
+    12. 翻译导出默认中文，默认po
+    13. 在 base 模型增加 name_en_US 字段，赋值后同时改翻译值
     21. todo:中文演示数据(只有demo模式才加载)    
     """,
     'pre_init_hook': 'pre_init_hook',
@@ -65,7 +67,6 @@
         'views/templates.xml',
         'wizard/sale_make_invoice_advance_views.xml',
         'data/ir_default_data.xml',
-        'data/ir_sequence_data.xml',
         'data/base_data.xml',
         'data/res_country_data.xml',
         'data/res_currency_data.xml',

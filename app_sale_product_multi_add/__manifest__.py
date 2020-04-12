@@ -17,7 +17,7 @@
 
 {
     'name': "Multi Add Sale Product,订单批量加产品",
-    'version': '12.19.04.29',
+    'version': '13.20.04.06',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

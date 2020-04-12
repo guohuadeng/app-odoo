@@ -7,11 +7,11 @@
         <field name="inherit_id" ref="point_of_sale.view_report_pos_order_search"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <superbar>
+                <searchpanel>
                     <field name="config_id"/>
                     <field name="state"/>
                     <field name="user_id"/>
-                </superbar>
+                </searchpanel>
             </xpath>
         </field>
     </record>
