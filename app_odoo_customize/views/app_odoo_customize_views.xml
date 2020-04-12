@@ -9,9 +9,9 @@
             </xpath>
         </template>
         <!-- some odoo version not support, please remove this if you are using odoo9 -->
-        <!--<template id="replace_login" name="Login Layout" inherit_id="web.login_layout">-->
-            <!--<xpath expr="//a[@target='_blank']" position="replace">-->
-                <!--<a href="https://www.sunpop.cn" target="_blank">Powered by <span>odooApp</span></a>-->
-            <!--</xpath>-->
-        <!--</template>-->
+        <template id="replace_login" name="Login Layout" inherit_id="web.login_layout">
+            <xpath expr="//a[@target='_blank']" position="replace">
+                <a href="https://www.sunpop.cn" target="_blank">Powered by <span>odooApp</span></a>
+            </xpath>
+        </template>
 </odoo>
