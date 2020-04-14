@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '13.20.04.11',
+    'version': '13.20.04.13',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -48,6 +48,7 @@
     11. 收款相关显示中国习惯    
     12. 翻译导出默认中文，默认po
     13. 在 base 模型增加 name_en_US 字段，赋值后同时改翻译值
+    14. 常用小数精度调整
     21. todo:中文演示数据(只有demo模式才加载)    
     """,
     'pre_init_hook': 'pre_init_hook',
@@ -68,6 +69,7 @@
         'wizard/sale_make_invoice_advance_views.xml',
         'data/ir_default_data.xml',
         'data/base_data.xml',
+        'data/decimal_precision_data.xml',
         'data/res_country_data.xml',
         'data/res_currency_data.xml',
         'data/res_lang_data.xml',

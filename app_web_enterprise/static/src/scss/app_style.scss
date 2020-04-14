@@ -28,7 +28,27 @@
     border-left: 0.3em solid transparent;
   }
 }
-
+//列表左右显示边框
+.o_list_view .table-responsive .o_list_table > thead > tr:first-child > th  {
+  border-left: 1px solid #dfdfdf;;
+  border-right: 1px solid #dfdfdf;;
+}
+//内容显示边框
+.o_list_view .table-responsive .o_list_table .o_data_row > .o_data_cell {
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+}
+.o_list_view .table-responsive .o_list_table .o_data_row:not(.o_selected_row) > .o_data_cell:not(.o_readonly_modifier):not(:last-child) {
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+}
+//选择列icon，避免被滚动条挡
+.o_content > .o_list_view > .table-responsive > .table .o_optional_columns_dropdown_toggle  {
+  padding: 8px 20px 8px 10px;
+}
+.o_list_view .table-responsive .o_optional_columns_dropdown_toggle  {
+  padding: 0 20px 0 5px;
+}
 // Notebooks ,form_view,移动端优化
 .o_form_view {
   .o_notebook {
