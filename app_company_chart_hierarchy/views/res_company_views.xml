@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <record id="app_view_company_tree" model="ir.ui.view">
+        <field name="name">app.res.company.tree</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="parent_id"/>
+            </xpath>
+        </field>
+    </record>
+
     <record id="app_view_company_form" model="ir.ui.view">
         <field name="name">app.res.company.form</field>
         <field name="model">res.company</field>
