@@ -166,6 +166,8 @@
                             |
                             <button string="Clean and reset Account Chart" type="object" name="remove_account_chart"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                            |
+                            <button string="Reset Category And Location Complete Name" type="object" name="reset_cat_loc_name" class="oe_highlight"/>
                         </div>
                         <div class="col-12 col-lg-12 mb4">
                             <span class="col-3 col-lg-2 text-left">All Business</span>

@@ -591,3 +591,23 @@ class ResConfigSettings(models.TransientModel):
         self.remove_expense()
         self.remove_message()
         return True
+
+    def reset_cat_loc_name(self):
+        ids = self.env['product.category'].search([
+            ('parent_id', '!=', False)
+        ], order='complete_name')
+        for rec in ids:
+            try:
+                rec._compute_complete_name()
+            except:
+                pass
+        ids = self.env['stock.location'].search([
+            ('location_id', '!=', False),
+            ('usage', '!=', 'views'),
+        ], order='complete_name')
+        for rec in ids:
+            try:
+                rec._compute_complete_name()
+            except:
+                pass
+        return True

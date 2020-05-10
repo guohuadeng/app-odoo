@@ -23,7 +23,7 @@
 
 {
     'name': 'Customize odoo OEM (Boost, My Odoo)',
-    'version': '13.20.04.12',
+    'version': '13.20.05.10',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -72,6 +72,7 @@
     29. Apps version compare. Add Install version in App list. Add Local updatable filter in app list.
     30. 1 key export app translate file like .po file.
     31. Show or hide odoo Referral in the top menu.
+    32. Fix odoo bug of complete name bug of product category and stock location..
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -110,6 +111,7 @@
     29. App版本比较，快速查看可本地更新的模块
     30. 一键导出翻译文件 po
     31. 显示或去除 odoo 推荐
+    32. 增加修复品类及区位名的操作 
     """,
     'images': ['static/description/banner.gif'],
     'depends': [

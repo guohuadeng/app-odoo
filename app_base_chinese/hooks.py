@@ -32,17 +32,18 @@ def post_init_hook(cr, registry):
     try:
         env = api.Environment(cr, SUPERUSER_ID, {})
         ids = env['product.category'].sudo().with_context(lang='zh_CN').search([
-            ('parent_id', '=', False)
-        ])
-        ids._compute_complete_name()
+            ('parent_id', '!=', False)
+        ], order='complete_name')
+        for rec in ids:
+            rec._compute_complete_name()
         ids = env['stock.location'].sudo().with_context(lang='zh_CN').search([
-            ('location_id', '=', False)
-        ])
-        ids._compute_complete_name()
+            ('location_id', '!=', False),
+            ('usage', '!=', 'views'),
+        ], order='complete_name')
+        for rec in ids:
+            rec._compute_complete_name()
         # 超级用户改时区为中国
-        ids = env['res.users'].sudo().with_context(lang='zh_CN').search([
-            ('id', '=', 2)
-        ])
+        ids = env['res.users'].sudo().with_context(lang='zh_CN').browse([1, 2])
         ids.write({'tz': "Asia/Shanghai"})
     except Exception as e:
         raise Warning(e)
