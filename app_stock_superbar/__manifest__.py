@@ -37,11 +37,13 @@
     'currency': 'EUR',
     'depends': [
         'stock',
+        'stock_picking_batch',
     ],
     'images': ['static/description/banner.gif'],
     'data': [
         'views/stock_location_views.xml',
         'views/stock_picking_views.xml',
+        'views/stock_picking_batch_views.xml',
         'views/stock_picking_type_views.xml',
         'views/stock_warehouse_orderpoint_views.xml',
         'views/stock_rule_views.xml',
