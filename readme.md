@@ -126,7 +126,7 @@ ztree widget.Hierarchy Tree.Parent Children relation tree..
 
 ## app_product_variant_color
 Use for quick select color. can be use in product attribute and other color variant. color widget. color picker.
-产品变体颜色选择器
+单品Sku颜色选择器
 
 ## app_product_weight_sale
 Add Product sku weight in Sale Order, product weight, sale weight, sale order weight, total weight, kg kg(s) lb lb(s) support

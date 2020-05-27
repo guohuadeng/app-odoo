@@ -117,7 +117,7 @@ msgstr "产品品牌"
 #. module: app_product_brand
 #: model:ir.model,name:app_product_brand.model_product_template
 msgid "Product Template"
-msgstr "产品模板"
+msgstr "产品"
 
 #. module: app_product_brand
 #: model_terms:ir.ui.view,arch_db:app_product_brand.view_product_brand_form
