@@ -54,6 +54,11 @@
                         <field name="description" nolabel="1"/>
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
             </form>
         </field>
     </record>
@@ -106,7 +111,7 @@
     <record model="ir.actions.act_window" id="action_product_brand">
         <field name="name">Brand</field>
         <field name="res_model">product.brand</field>
-        <field name="view_mode">kanban,form,tree</field>
+        <field name="view_mode">tree,kanban,form</field>
     </record>
 
     <menuitem

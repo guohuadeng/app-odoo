@@ -11,6 +11,8 @@ from odoo import api, fields, models, _
 
 class ProductBrand(models.Model):
     _name = 'product.brand'
+    
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Product Brand"
     _order = 'sequence, name'
 
