@@ -129,6 +129,7 @@
         'views/res_config_settings_views.xml',
         'views/ir_views.xml',
         'views/ir_module_module_views.xml',
+        'views/ir_translation_views.xml',
         'views/ir_ui_menu_views.xml',
         # data
         'data/ir_config_parameter.xml',
