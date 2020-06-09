@@ -548,6 +548,7 @@ class ResConfigSettings(models.TransientModel):
             # 清除消息数据
             ['mail.message', ],
             ['mail.followers', ],
+            ['mail.activity', ],
         ]
         try:
             for line in to_removes:
