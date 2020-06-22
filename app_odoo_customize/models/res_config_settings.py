@@ -524,11 +524,11 @@ class ResConfigSettings(models.TransientModel):
             ['website.published.multi.mixin', ],
             ['website.published.mixin', ],
             ['website.multi.mixin', ],
+            ['website.visitor', ],
             ['website.redirect', ],
             ['website.seo.metadata', ],
             ['website.page', ],
             ['website.menu', ],
-            ['website.visitor', ],
             ['website', ],
         ]
         try:
