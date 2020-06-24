@@ -34,7 +34,7 @@ class ProductBrand(models.Model):
         string='Number of products',
         compute='_compute_products_count',
     )
-    sequence = fields.Integer('Sequence', help="Determine the display order")
+    sequence = fields.Integer('Sequence', help="Determine the display order", default=10)
 
     @api.depends('product_ids')
     def _compute_products_count(self):

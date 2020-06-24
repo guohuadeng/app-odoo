@@ -49,6 +49,11 @@
 .o_list_view .table-responsive .o_optional_columns_dropdown_toggle  {
   padding: 0 20px 0 5px;
 }
+.o_content {
+  .o_controller_with_searchpanel .o_renderer_with_searchpanel {
+    overflow: unset;
+  }
+}
 // Notebooks ,form_view,移动端优化
 .o_form_view {
   .o_notebook {
