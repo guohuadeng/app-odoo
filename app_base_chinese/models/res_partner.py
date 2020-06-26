@@ -8,7 +8,6 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     name = fields.Char(index=True, translate=True)
-    name_en_US = fields.Char('English Name')
     short_name = fields.Char('Short Name')  # 简称
     fax = fields.Char('Fax')  # 简称
 

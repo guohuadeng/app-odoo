@@ -13,7 +13,6 @@
                 <!--</xpath>-->
                 <xpath expr="//field[@name='type']" position="after">
                     <field name="short_name"/>
-                    <field name="name_en_US"/>
                 </xpath>
                 <!-- 信用额度 -->
                 <xpath expr="//field[@name='category_id']" position="after">
