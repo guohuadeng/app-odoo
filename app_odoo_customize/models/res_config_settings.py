@@ -527,9 +527,9 @@ class ResConfigSettings(models.TransientModel):
             ['website.visitor', ],
             ['website.redirect', ],
             ['website.seo.metadata', ],
-            ['website.page', ],
-            ['website.menu', ],
-            ['website', ],
+            # ['website.page', ],
+            # ['website.menu', ],
+            # ['website', ],
         ]
         try:
             for line in to_removes:
