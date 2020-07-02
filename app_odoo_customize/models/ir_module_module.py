@@ -36,8 +36,9 @@ class IrModule(models.Model):
     def _get_latest_version(self):
         default_version = modules.adapt_version('1.0')
         for module in self:
-            module.local_updatable = False
             module.installed_version = self.get_module_info(module.name).get('version', default_version)
             if module.installed_version and module.latest_version and operator.gt(module.installed_version, module.latest_version):
                 module.local_updatable = True
+            else:
+                module.local_updatable = False
 
