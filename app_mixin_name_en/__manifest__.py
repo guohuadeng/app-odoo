@@ -38,8 +38,6 @@
     1. mixin, 增加英文名字段, 自动设定lang=en_US的名称为英文名  
     2
     """,
-    'pre_init_hook': 'pre_init_hook',
-    'post_init_hook': 'post_init_hook',
     'depends': [
         'base',
     ],

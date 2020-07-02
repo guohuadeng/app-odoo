@@ -29,24 +29,7 @@ def post_init_hook(cr, registry):
     """
     数据初始化，只在安装后执行，更新时不执行
     """
-    try:
-        env = api.Environment(cr, SUPERUSER_ID, {})
-        ids = env['product.category'].sudo().with_context(lang='zh_CN').search([
-            ('parent_id', '!=', False)
-        ], order='complete_name')
-        for rec in ids:
-            rec._compute_complete_name()
-        ids = env['stock.location'].sudo().with_context(lang='zh_CN').search([
-            ('location_id', '!=', False),
-            ('usage', '!=', 'views'),
-        ], order='complete_name')
-        for rec in ids:
-            rec._compute_complete_name()
-        # 超级用户改时区为中国
-        ids = env['res.users'].sudo().with_context(lang='zh_CN').browse([1, 2])
-        ids.write({'tz': "Asia/Shanghai"})
-    except Exception as e:
-        raise Warning(e)
+    pass
 
 def uninstall_hook(cr, registry):
     """

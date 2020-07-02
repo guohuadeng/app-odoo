@@ -7,4 +7,4 @@ from odoo.exceptions import UserError, ValidationError
 class ResPartner(models.Model):
     _name = 'res.partner'
 
-    _inherit = ['mixin.name.en']
+    _inherit = ['res.partner', 'mixin.name.en']
