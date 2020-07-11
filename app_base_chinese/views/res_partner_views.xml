@@ -133,7 +133,7 @@
             <field name="inherit_id" ref="base.view_partner_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='email']" position="after">
-                    <field name="category_id" optional="hide"/>
+                    <field name="category_id" optional="show"/>
                 </xpath>
             </field>
         </record>
