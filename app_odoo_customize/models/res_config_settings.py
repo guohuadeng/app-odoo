@@ -32,6 +32,7 @@ class ResConfigSettings(models.TransientModel):
     app_account_title = fields.Char('My Odoo.com Account Title')
     app_account_url = fields.Char('My Odoo.com Account Url')
     app_enterprise_url = fields.Char('Customize Module Url(eg. Enterprise)')
+    app_ribbon_name = fields.Char('Show Demo Ribbon')
 
     @api.model
     def get_values(self):
@@ -57,6 +58,7 @@ class ResConfigSettings(models.TransientModel):
         app_account_title = ir_config.get_param('app_account_title', default='My Online Account')
         app_account_url = ir_config.get_param('app_account_url', default='https://www.sunpop.cn/my-account/')
         app_enterprise_url = ir_config.get_param('app_enterprise_url', default='https://www.sunpop.cn')
+        app_ribbon_name = ir_config.get_param('app_ribbon_name', default='*Sunpop.cn')
         res.update(
             app_system_name=app_system_name,
             app_show_lang=app_show_lang,
@@ -74,7 +76,8 @@ class ResConfigSettings(models.TransientModel):
             app_support_url=app_support_url,
             app_account_title=app_account_title,
             app_account_url=app_account_url,
-            app_enterprise_url=app_enterprise_url
+            app_enterprise_url=app_enterprise_url,
+            app_ribbon_name=app_ribbon_name
         )
         return res
 
@@ -100,6 +103,7 @@ class ResConfigSettings(models.TransientModel):
         ir_config.set_param("app_account_title", self.app_account_title or "My Online Account")
         ir_config.set_param("app_account_url", self.app_account_url or "https://www.sunpop.cn/my-account/")
         ir_config.set_param("app_enterprise_url", self.app_enterprise_url or "https://www.sunpop.cn")
+        ir_config.set_param("app_ribbon_name", self.app_ribbon_name or "*Sunpop.cn")
 
     def set_module_url(self):
         sql = "UPDATE ir_module_module SET website = '%s' WHERE license like '%s' and website <> ''" % (self.app_enterprise_url, 'OEEL%')

@@ -94,6 +94,10 @@
                         <div>
                             <field name="app_account_url"/>
                         </div>
+                        <label for="app_ribbon_name"/>
+                        <div>
+                            <field name="app_ribbon_name"/>
+                        </div>
                         <label for="app_enterprise_url"/>
                         <div>
                             <field name="app_enterprise_url" class="oe_inline"/>

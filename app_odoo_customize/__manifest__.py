@@ -23,7 +23,7 @@
 
 {
     'name': 'Customize odoo OEM (Boost, My Odoo)',
-    'version': '13.20.05.10',
+    'version': '13.20.07.13',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -73,6 +73,7 @@
     30. 1 key export app translate file like .po file.
     31. Show or hide odoo Referral in the top menu.
     32. Fix odoo bug of complete name bug of product category and stock location..
+    33. Add Demo Ribbon Setting.
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -112,6 +113,7 @@
     30. 一键导出翻译文件 po
     31. 显示或去除 odoo 推荐
     32. 增加修复品类及区位名的操作 
+    33. 增加 Demo 的显示设置 
     """,
     'images': ['static/description/banner.gif'],
     'depends': [

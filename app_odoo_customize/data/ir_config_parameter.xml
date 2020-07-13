@@ -62,5 +62,20 @@
             <field name="key">app_account_url</field>
             <field name="value">https://www.sunpop.cn/my-account</field>
         </record>
+        <!--测试环境，from oca/web-->
+        <record id="app_ribbon_name" model="ir.config_parameter">
+            <field name="key">app_ribbon_name</field>
+            <field name="value"><![CDATA[Sunpop Test<br/>({db_name})]]></field>
+        </record>
+        <!-- Add ribbon color configuration parameter -->
+        <record id="app_ribbon_color" model="ir.config_parameter">
+            <field name="key">app_ribbon_color</field>
+            <field name="value">#f0f0f0</field>
+        </record>
+        <!-- Add ribbon background color configuration parameter -->
+        <record id="app_ribbon_background_color" model="ir.config_parameter">
+            <field name="key">app_ribbon_background_color</field>
+            <field name="value">rgba(255,0,0,.4)</field>
+        </record>
     </data>
 </openerp>
