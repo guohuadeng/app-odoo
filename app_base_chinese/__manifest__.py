@@ -83,6 +83,7 @@
     'css': [
     ],
     'qweb': [
+        'static/src/xml/*.xml',
     ],
     'js': [
     ],
