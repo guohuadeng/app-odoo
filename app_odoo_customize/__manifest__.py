@@ -134,11 +134,11 @@
         'views/ir_translation_views.xml',
         'views/ir_ui_menu_views.xml',
         # data
-        'data/ir_config_parameter.xml',
-        'data/ir_module_module.xml',
+        'data/ir_config_parameter_data.xml',
+        'data/ir_module_module_data.xml',
         # 'data/digest_template_data.xml',
         'data/res_company_data.xml',
-        'data/res_groups.xml',
+        'security/res_groups.xml',
         'security/ir.model.access.csv',
     ],
     'qweb': [
