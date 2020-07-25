@@ -97,6 +97,9 @@
                         <label for="app_ribbon_name"/>
                         <div>
                             <field name="app_ribbon_name"/>
+                            <div>
+                                <span>Set to False to hide</span>
+                            </div>
                         </div>
                         <label for="app_enterprise_url"/>
                         <div>
