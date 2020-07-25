@@ -23,7 +23,7 @@
 
 {
     'name': 'Customize odoo OEM (Boost, My Odoo)',
-    'version': '13.20.07.13',
+    'version': '13.20.07.24',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -133,6 +133,8 @@
         'views/ir_module_module_views.xml',
         'views/ir_translation_views.xml',
         'views/ir_ui_menu_views.xml',
+        'views/ir_ui_view_views.xml',
+        'views/ir_model_fields_views.xml',
         # data
         'data/ir_config_parameter_data.xml',
         'data/ir_module_module_data.xml',

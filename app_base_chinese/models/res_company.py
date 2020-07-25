@@ -7,7 +7,7 @@ from odoo.exceptions import UserError, ValidationError
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
-    short_name = fields.Char('Short Name', related='partner_id.short_name', readonly=False, store=True)
+    short_name = fields.Char('Short Name', related='partner_id.short_name', readonly=False)
 
     # 当传参 show_short_name 时，只显示简称
     def name_get(self):
