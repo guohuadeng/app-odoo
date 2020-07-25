@@ -1,0 +1,28 @@
+<odoo>
+  <data>
+      <!-- sale quotation -->
+    <record id="sale_order_view_search_inherit_quotation_superbarpro" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.quotation.superbarpro</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="app_sale_superbar.sale_order_view_search_inherit_quotation_superbar"/>
+        <field name="arch" type="xml">
+            <xpath expr="//searchpanel//field[@name='team_id']" position="before">
+                <field name="date_order"/>
+                <field name="amount_total"/>
+            </xpath>
+        </field>
+    </record>
+      <!-- sale order -->
+    <record id="sale_order_view_search_inherit_sale_superbarpro" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.sale.superbarpro</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="app_sale_superbar.sale_order_view_search_inherit_sale_superbar"/>
+        <field name="arch" type="xml">
+            <xpath expr="//searchpanel//field[@name='team_id']" position="before">
+                <field name="date_order"/>
+                <field name="amount_total"/>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

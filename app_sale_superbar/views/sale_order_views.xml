@@ -8,10 +8,10 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <searchpanel view_types="tree,kanban,pivot,graph">
-                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="team_id"/>
                     <field name="user_id"/>
                     <field name="partner_id" filter_domain="[('customer_rank','&gt;', 0)]"/>
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                 </searchpanel>
             </xpath>
         </field>
@@ -24,11 +24,11 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <searchpanel view_types="tree,kanban,pivot,graph">
-                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="invoice_status"/>
                     <field name="team_id"/>
-                    <field name="partner_id" filter_domain="[('customer_rank','&gt;', 0)]"/>
                     <field name="user_id"/>
+                    <field name="partner_id" filter_domain="[('customer_rank','&gt;', 0)]"/>
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                 </searchpanel>
             </xpath>
         </field>
