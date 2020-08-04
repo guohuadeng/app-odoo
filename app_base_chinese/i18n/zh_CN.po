@@ -106,7 +106,7 @@ msgstr "品类"
 #. module: app_base_chinese
 #: model:ir.model.fields,field_description:app_base_chinese.field_res_currency__sequence
 msgid "Sequence"
-msgstr "单号规则"
+msgstr "排序"
 
 #. module: app_base_chinese
 #: model:ir.model.fields,help:app_base_chinese.field_account_tax_group__active

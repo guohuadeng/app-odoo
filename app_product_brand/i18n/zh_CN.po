@@ -139,7 +139,7 @@ msgstr "为品牌选择一个供应商"
 #. module: app_product_brand
 #: model:ir.model.fields,field_description:app_product_brand.field_product_brand__sequence
 msgid "Sequence"
-msgstr "单号规则"
+msgstr "排序"
 
 #. module: app_product_brand
 #: model_terms:ir.ui.view,arch_db:app_product_brand.view_product_brand_tree
