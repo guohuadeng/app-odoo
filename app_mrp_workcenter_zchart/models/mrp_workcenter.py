@@ -8,8 +8,7 @@ _logger = logging.getLogger(__name__)
 
 
 class MrpWorkCenter(models.Model):
-    _name = 'mrp.workcenter'
-    _inherit = ['mrp.workcenter', 'image.mixin']
+    _inherit = 'mrp.workcenter'
 
     # 建立层级关系
     _parent_name = "parent_id"
@@ -22,7 +21,7 @@ class MrpWorkCenter(models.Model):
     child_all_count = fields.Integer(
         'Indirect Surbordinates Count',
         compute='_compute_child_all_count', store=False)
-    level = fields.Integer('级别', compute='_compute_level', inverse='_set_level', default=0, store=True)
+    level = fields.Integer('Level', compute='_compute_level', inverse='_set_level', default=0, store=True)
 
     @api.depends('child_ids.child_all_count')
     def _compute_child_all_count(self):
