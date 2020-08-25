@@ -24,3 +24,10 @@ class ResPartner(models.Model):
             elif partner.phone:
                 name = name + "\n" + partner.phone
         return name
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        for values in vals_list:
+            if 'lang' not in values:
+                values['lang'] = 'zh_CN'
+        return super(ResPartner, self).create(vals_list)
