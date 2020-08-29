@@ -156,6 +156,9 @@
                             <span class="col-3 col-lg-2 text-left">Quality</span>
                             <button string="Delete All Quality" type="object" name="remove_quality"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
+                            |
+                            <button string="Delete All Quality Setting" type="object" name="remove_quality_setting"
+                                    confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
                         <div class="col-12 col-lg-12 mb4">
                             <span class="col-3 col-lg-2 text-left">Website And Blog</span>

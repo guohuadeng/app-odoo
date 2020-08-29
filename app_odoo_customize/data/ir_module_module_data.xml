@@ -37,10 +37,6 @@
             <field name="website">https://www.sunpop.cn</field>
         </record>
 
-        <record model="ir.module.module" id="base.module_project_forecast">
-            <field name="website">https://www.sunpop.cn</field>
-        </record>
-
         <record model="ir.module.module" id="base.module_sale_subscription">
             <field name="website">https://www.sunpop.cn</field>
         </record>

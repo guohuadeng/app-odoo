@@ -115,25 +115,32 @@ class ResConfigSettings(models.TransientModel):
 
     # 清数据，o=对象, s=序列 
     def remove_app_data(self, o, s=[]):
-        try:
-            for line in o:
-                obj_name = line
-                obj = self.pool.get(obj_name)
-                if obj:
-                    sql = "delete from %s" % obj._table
-                    self._cr.execute(sql)
-                    self._cr.commit()
-            self._cr.execute(sql)
-            self._cr.commit()
-            # 更新序号            
-            for line in s:
-                domain = [('code', '=ilike', '%s' % line)]
+        for line in o:
+            obj_name = line
+            obj = self.pool.get(obj_name)
+            if not obj:
+                # 有时安装出错数据乱，没有 obj 但有 table
+                t_name = obj_name.replace('.', '_')
+            else:
+                t_name = obj._table
+
+            sql = "delete from %s" % t_name
+            try:
+                self._cr.execute(sql)
+                self._cr.commit()
+            except Exception as e:
+                _logger.error('remove data error: %s,%s', line, e)
+        # 更新序号
+        for line in s:
+            domain = [('code', '=ilike', line + '%')]
+            try:
                 seqs = self.env['ir.sequence'].search(domain)
-                seqs.write({
-                    'number_next': 1,
-                })
-        except Exception as e:
-            _logger.error('remove data error: %s,%s', o, e)
+                if seqs.exists():
+                    seqs.write({
+                        'number_next': 1,
+                    })
+            except Exception as e:
+                _logger.error('reset sequence data error: %s,%s', line, e)
         return True
     
     def remove_sales(self):
@@ -149,7 +156,7 @@ class ResConfigSettings(models.TransientModel):
             # 'sale.order.template',
         ]
         seqs = [
-            'sale%',
+            'sale',
         ]
         return self.remove_app_data(to_removes, seqs)
 
@@ -182,7 +189,7 @@ class ResConfigSettings(models.TransientModel):
             'pos.session',
         ]
         seqs = [
-            'pos.%',
+            'pos.',
         ]
         res = self.remove_app_data(to_removes, seqs)
 
@@ -202,7 +209,7 @@ class ResConfigSettings(models.TransientModel):
             'purchase.requisition',
         ]
         seqs = [
-            'purchase.%',
+            'purchase.',
         ]
         return self.remove_app_data(to_removes, seqs)
 
@@ -215,7 +222,7 @@ class ResConfigSettings(models.TransientModel):
             'hr.payslip.run',
         ]
         seqs = [
-            'hr.expense.%',
+            'hr.expense.',
         ]
         return self.remove_app_data(to_removes, seqs)
 
@@ -234,7 +241,7 @@ class ResConfigSettings(models.TransientModel):
             'sale.forecast',
         ]
         seqs = [
-            'mrp.%',
+            'mrp.',
         ]
         return self.remove_app_data(to_removes, seqs)
 
@@ -268,9 +275,9 @@ class ResConfigSettings(models.TransientModel):
             'procurement.group',
         ]
         seqs = [
-            'stock.%',
-            'picking.%',
-            'WH/%',
+            'stock.',
+            'picking.',
+            'WH/',
         ]
         return self.remove_app_data(to_removes, seqs)
 
@@ -405,6 +412,18 @@ class ResConfigSettings(models.TransientModel):
             # 'quality.point',
         ]
         return self.remove_app_data(to_removes, seqs)
+
+    def remove_quality_setting(self):
+        to_removes = [
+            # 清除质检设置
+            'quality.point',
+            'quality.alert.stage',
+            'quality.alert.team',
+            'quality.point.test_type',
+            'quality.reason',
+            'quality.tag',
+        ]
+        return self.remove_app_data(to_removes)
 
     def remove_website(self):
         to_removes = [

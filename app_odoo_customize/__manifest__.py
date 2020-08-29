@@ -23,7 +23,7 @@
 
 {
     'name': 'Customize odoo OEM (Boost, My Odoo)',
-    'version': '13.20.08.21',
+    'version': '13.20.08.29',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -75,6 +75,7 @@
     32. Fix odoo bug of complete name bug of product category and stock location..
     33. Add Demo Ribbon Setting.
     34. Add Remove all quality data.
+    35. Fixed for odoo 14.
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -116,6 +117,7 @@
     32. 增加修复品类及区位名的操作 
     33. 增加 Demo 的显示设置 
     34. 增加清除质检数据 
+    35. 优化至odoo14适用 
     """,
     'images': ['static/description/banner.gif'],
     'depends': [
