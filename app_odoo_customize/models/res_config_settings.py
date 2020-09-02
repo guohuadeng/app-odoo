@@ -134,7 +134,7 @@ class ResConfigSettings(models.TransientModel):
         for line in s:
             domain = [('code', '=ilike', line + '%')]
             try:
-                seqs = self.env['ir.sequence'].search(domain)
+                seqs = self.env['ir.sequence'].sudo().search(domain)
                 if seqs.exists():
                     seqs.write({
                         'number_next': 1,
@@ -149,7 +149,7 @@ class ResConfigSettings(models.TransientModel):
             'sale.order.line',
             'sale.order',
             # 销售提成，自用
-            'sale.commission.line',
+            # 'sale.commission.line',
             # 不能删除报价单模板
             # 'sale.order.template.option',
             # 'sale.order.template.line',
@@ -194,11 +194,14 @@ class ResConfigSettings(models.TransientModel):
         res = self.remove_app_data(to_removes, seqs)
 
         # 更新要关帐的值，因为 store=true 的计算字段要重置
-        statement = self.env['account.bank.statement'].search([])
-        for s in statement:
-            s._end_balance()
-        return res
 
+        try:
+            statement = self.env['account.bank.statement'].sudo().search([])
+            for s in statement:
+                s._end_balance()
+        except Exception as e:
+            _logger.error('reset sequence data error: %s', e)
+        return res
 
     def remove_purchase(self):
         to_removes = [
@@ -299,11 +302,10 @@ class ResConfigSettings(models.TransientModel):
             'hr.expense.sheet',
             'account.move',
         ]
-        seqs = []
-        res = self.remove_app_data(to_removes, seqs)
+        res = self.remove_app_data(to_removes, [])
 
         # extra 更新序号
-        seqs = self.env['ir.sequence'].search([
+        domain = [
             '|', ('code', '=ilike', 'account.%'),
             '|', ('prefix', '=ilike', 'BNK1/%'),
             '|', ('prefix', '=ilike', 'CSH1/%'),
@@ -312,10 +314,15 @@ class ResConfigSettings(models.TransientModel):
             '|', ('prefix', '=ilike', 'MISC/%'),
             '|', ('prefix', '=ilike', '账单/%'),
             ('prefix', '=ilike', '杂项/%')
-        ])
-        seqs.write({
-            'number_next': 1,
-        })
+        ]
+        try:
+            seqs = self.env['ir.sequence'].search(domain)
+            if seqs.exists():
+                seqs.write({
+                    'number_next': 1,
+                })
+        except Exception as e:
+            _logger.error('reset sequence data error: %s,%s', domain, e)
         return res
 
     def remove_account_chart(self):
