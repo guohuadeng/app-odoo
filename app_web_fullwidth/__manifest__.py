@@ -26,7 +26,7 @@
     'category': 'web',
     'author': 'Sunpop.cn',
     'website': 'https://www.sunpop.cn',
-    'license': 'AGPL-3',
+    'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
     Form view Responsive full width (fullwidth). Ready for small, medium, large, extra large screen.Ready for enterprise and communicate version.
