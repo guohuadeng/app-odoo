@@ -22,4 +22,4 @@
 # http://www.sunpop.cn/odoo10_developer_document_offline/
 # description:
 
-from . import models
+from . import base
