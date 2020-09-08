@@ -22,8 +22,8 @@
 # description:
 
 {
-    'name': 'Customize odoo OEM (Boost, My Odoo)',
-    'version': '13.20.08.29',
+    'name': 'odoo14,13 Customize OEM(Boost, Data reset)',
+    'version': '13.20.09.09',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
