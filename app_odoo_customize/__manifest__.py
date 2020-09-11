@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo 14,13 Customize OEM(Boost, Data reset)',
-    'version': '13.20.09.09',
+    'version': '13.20.09.10',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -76,6 +76,7 @@
     33. Add Demo Ribbon Setting.
     34. Add Remove all quality data.
     35. Fixed for odoo 14.
+    36. Add refresh translate for multi module.
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -118,6 +119,7 @@
     33. 增加 Demo 的显示设置 
     34. 增加清除质检数据 
     35. 优化至odoo14适用 
+    36. 可为多个模块强制更新翻译 
     """,
     'images': ['static/description/banner.gif'],
     'depends': [

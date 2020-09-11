@@ -10,4 +10,14 @@
             </field>
         </field>
     </record>
+    <record id="app_view_translation_search" model="ir.ui.view">
+        <field name="name">app.ir.translation.search</field>
+        <field name="model">ir.translation</field>
+        <field name="inherit_id" ref="base.view_translation_search"/>
+        <field name="arch" type="xml">
+            <field name="value" position="after">
+                <field name="module"/>
+            </field>
+        </field>
+    </record>
 </odoo>

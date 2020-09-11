@@ -24,6 +24,20 @@ class IrModule(models.Model):
         modules = self.browse(self.env.context.get('active_ids'))
         [module.button_immediate_uninstall() for module in modules if module not in ['base', 'web']]
 
+    # 更新翻译，当前语言
+    def module_multi_refresh_po(self):
+        lang = self.env.user.lang
+        modules = self.browse(self.env.context.get('active_ids'))
+        # 先清理, odoo原生经常清理不干净
+        for rec in modules:
+            translate = self.env['ir.translation'].search([
+                ('lang', '=', lang),
+                ('module', '=', rec.name)
+            ])
+            translate.sudo().unlink()
+        # 再重载
+        self.sudo().with_context(overwrite=True)._update_translations(lang)
+
     def button_get_po(self):
         self.ensure_one()
         action = self.env.ref('app_odoo_customize.action_server_module_multi_get_po').read()[0]
