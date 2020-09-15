@@ -127,9 +127,9 @@ class ResConfigSettings(models.TransientModel):
             sql = "delete from %s" % t_name
             try:
                 self._cr.execute(sql)
-                self._cr.commit()
             except Exception as e:
                 _logger.error('remove data error: %s,%s', line, e)
+        self._cr.commit()
         # 更新序号
         for line in s:
             domain = [('code', '=ilike', line + '%')]
@@ -288,15 +288,15 @@ class ResConfigSettings(models.TransientModel):
         to_removes = [
             # 清除财务会计单据
             'payment.transaction',
-            'account.voucher.line',
-            'account.voucher',
+            # 'account.voucher.line',
+            # 'account.voucher',
+            # 'account.invoice.line',
+            # 'account.invoice.refund',
+            # 'account.invoice',
             'account.bank.statement.line',
             'account.payment',
             'account.analytic.line',
             'account.analytic.account',
-            'account.invoice.line',
-            'account.invoice.refund',
-            'account.invoice',
             'account.partial.reconcile',
             'account.move.line',
             'hr.expense.sheet',

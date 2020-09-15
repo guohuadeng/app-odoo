@@ -4,7 +4,7 @@
         <!-- 时间格式 -->
         <record id="base.lang_zh_CN" model="res.lang">
             <field name="date_format">%Y-%m-%d</field>
-            <field name="time_format">%H:%M</field>
+            <field name="time_format">%H:%M:%S</field>
         </record>
     </data>
 </odoo>

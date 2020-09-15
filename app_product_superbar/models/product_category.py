@@ -22,7 +22,7 @@ class ProductCategory(models.Model):
 
     # 更新 complete_name 算法，当有context: show_short =1 时，只显示短名
     def name_get(self):
-        if self._context.get('show_short'):
+        if self._context.get('show_short_category'):
             new_res = []
             for category in self:
                 name = category.name
