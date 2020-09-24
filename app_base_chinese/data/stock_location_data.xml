@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="stock.removal_fifo" model="product.removal">
+            <field name="name">先进先出(FIFO)</field>
+        </record>
+        <record id="stock.removal_lifo" model="product.removal">
+            <field name="name">后进先出(LIFO)</field>
+        </record>
+    </data>
+    <data noupdate="1">
+        <record id="stock.stock_location_locations" model="stock.location">
+            <field name="name">物理区位</field>
+        </record>
+        <record id="stock.stock_location_locations_partner" model="stock.location">
+            <field name="name">往来单位</field>
+        </record>
+        <record id="stock.stock_location_locations_virtual" model="stock.location">
+            <field name="name">虚拟区位</field>
+        </record>
+        <record id="stock.stock_location_suppliers" model="stock.location">
+            <field name="name">供应商区位</field>
+        </record>
+        <record id="stock.stock_location_customers" model="stock.location">
+            <field name="name">客户区位</field>
+        </record>
+        <record id="stock.stock_location_inter_wh" model="stock.location">
+            <field name="name">内部中转区位</field>
+        </record>
+    </data>
+</odoo>

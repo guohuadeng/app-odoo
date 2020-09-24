@@ -316,6 +316,11 @@ msgid "Powered by <span>odooApp</span>"
 msgstr "技术支持 <span>Sunpop.cn</span>"
 
 #. module: app_odoo_customize
+#: model:ir.actions.act_window,name:app_odoo_customize.action_server_module_multi_refresh_po
+msgid "Refresh Module Translation"
+msgstr "更新模块翻译"
+
+#. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Reset Category And Location Complete Name"
 msgstr "重置品类及区位显示名"
