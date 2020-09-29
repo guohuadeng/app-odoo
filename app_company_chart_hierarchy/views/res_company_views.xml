@@ -39,7 +39,7 @@
                 <xpath expr="//field[@name='logo']" position="move"/>
             </xpath>
             <xpath expr="//span[@id='add_title']" position="after">
-                <xpath expr="//div[@class='oe_title']" position="move"/>
+                <xpath expr="//div[hasclass('oe_title')]" position="move"/>
             </xpath>
             <xpath expr="//span[@id='add_notebook']" position="after">
                 <xpath expr="//notebook" position="move"/>
