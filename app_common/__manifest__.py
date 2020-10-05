@@ -32,8 +32,8 @@
 ##############################################################################
 
 {
-    'name': "Sunpop Odooapp Common Func",
-    'version': '13.20.09.05',
+    'name': "Sunpop Odooapp Common Function",
+    'version': '14.20.10.05',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -46,16 +46,17 @@
         'web',
     ],
     'summary': '''
-    Core for common use
+    Core for common use.
+    Add get m2o default method
     基础核心
     ''',
     'description': '''    
-    Support Odoo 13，12, Enterprise and Community Edition
-    1. 
+    Support Odoo 14,13,12, Enterprise and Community Edition
+    1. Easy get default 1st record of m2o list.
     2. 
     3. Multi-language Support.
     4. Multi-Company Support.
-    5. Support Odoo 13，12, Enterprise and Community Edition
+    5. Support Odoo 14,13,12, Enterprise and Community Edition
     ==========
     1. 
     2. 

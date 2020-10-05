@@ -1,3 +1,10 @@
+#个人文件目录，不传到git，每个人将个人文件放到 _s 目录下
+_s/
+addons_ent_remove/
+addons_odoo/
+app-dev/
+myconf/
+z/
 /.idea
 .idea/
 \.idea
@@ -121,7 +128,3 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
-/app_odoo_customize/_resource
-/app_web_studio
-/web_studio
