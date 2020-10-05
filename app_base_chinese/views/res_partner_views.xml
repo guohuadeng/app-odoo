@@ -86,26 +86,6 @@
                 </xpath>
             </field>
         </record>
-        <!--res.partner open地址中国化 -->
-        <record id="app_view_partner_short_form" model="ir.ui.view">
-            <field name="name">app.res.partner.form</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_short_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='street']" position="before">
-                    <xpath expr="//field[@name='country_id']" position="move"/>
-                </xpath>
-                <xpath expr="//field[@name='street']" position="before">
-                    <xpath expr="//field[@name='state_id']" position="move"/>
-                </xpath>
-                <xpath expr="//field[@name='street']" position="before">
-                    <xpath expr="//field[@name='city']" position="move"/>
-                </xpath>
-                <xpath expr="//field[@name='street']" position="before">
-                    <xpath expr="//field[@name='zip']" position="move"/>
-                </xpath>
-            </field>
-        </record>
         <!--res.partner 私人地址中国化 -->
         <record id="app_res_partner_view_form_private" model="ir.ui.view">
             <field name="name">app.res.partner.view.form.private</field>
