@@ -54,7 +54,7 @@
     Odoo App of Sunpop.cn
     """,
     'description': """    
-    Support Odoo 12, 11, Enterprise and Community Edition
+    Support Odoo 14,13,12,11, Enterprise and Community Edition
     1. D
     2.     
     11. Multi-language Support.

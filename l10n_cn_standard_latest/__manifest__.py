@@ -8,8 +8,8 @@
 # Copyright (C) 2018-11  广州尚鹏 https://www.sunpop.cn
 
 {
-    'name': '2020最新中国企业会计表.Latest Chinese Accounting.',
-    'version': '13.20.04.11',
+    'name': '2021最新中国企业会计表.Latest Chinese Accounting.',
+    'version': '14.20.10.05',
     'author': 'Sunpop.cn',
     'category': 'Localization',
     'website': 'https://www.sunpop.cn',
