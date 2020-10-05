@@ -509,7 +509,7 @@ msgstr "启用后，会显示快速调试菜单"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "White Label Setting"
+msgid "Odoo Customize Setting"
 msgstr "个性化odoo设置"
 
 #. module: app_odoo_customize
