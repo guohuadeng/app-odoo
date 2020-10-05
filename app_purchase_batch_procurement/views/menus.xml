@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data>
-        <!--采购补货异常-->
-        <menuitem id="felive_menu_purchase_procurement_action" action="purchase_procurement_action" parent="purchase.menu_procurement_management"
-                  sequence="10"/>
-    </data>
-</odoo>
