@@ -11,7 +11,7 @@
                         <button string="Apply" type="object" name="execute" class="oe_highlight"/>
                         <button string="Cancel" type="object" name="cancel" class="oe_link" special="cancel"/>
                     </header>
-                    <h2>White Label Setting</h2>
+                    <h2>Odoo Customize Setting</h2>
                     <group string="System Name">
                         <label for="app_system_name"/>
                         <div>
@@ -67,7 +67,7 @@
                                     <label for="group_show_author_in_apps"/>
                                 </div>
                                 <div>
-                                    <field name="module_odoo_referral" widget="upgrade_boolean"/>
+                                    <field name="module_odoo_referral"/>
                                     <label for="module_odoo_referral"/>
                                 </div>
                             </div>

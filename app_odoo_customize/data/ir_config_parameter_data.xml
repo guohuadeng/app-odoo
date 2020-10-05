@@ -3,7 +3,7 @@
     <data noupdate="1">
         <record id="app_system_name" model="ir.config_parameter">
             <field name="key">app_system_name</field>
-            <field name="value">odooApp13</field>
+            <field name="value">odooApp14</field>
         </record>
 
         <record id="app_show_lang" model="ir.config_parameter">
