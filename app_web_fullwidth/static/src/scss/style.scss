@@ -75,3 +75,13 @@ sheet全宽
         width: auto;
     }
 }
+
+//debug model 时处理
+.modal-lg {
+    .o_debug_manager {
+        .dropdown-menu-right {
+            right: auto;
+            left: 0;
+        }
+    }
+}
