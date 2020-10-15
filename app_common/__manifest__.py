@@ -33,7 +33,7 @@
 
 {
     'name': "Sunpop Odooapp Common Func",
-    'version': '13.20.09.05',
+    'version': '13.20.10.15',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -46,8 +46,8 @@
         'web',
     ],
     'summary': '''
-    Core for common use
-    基础核心
+    Core for common use sunpop apps.
+    基础核心，必须没有要被依赖字段及视图等，实现auto_install
     ''',
     'description': '''    
     Support Odoo 13，12, Enterprise and Community Edition
@@ -79,5 +79,5 @@
     # 'uninstall_hook': 'uninstall_hook',
     'installable': True,
     'application': True,
-    'auto_install': False,
+    'auto_install': True,
 }
