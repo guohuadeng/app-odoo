@@ -5,7 +5,7 @@
         <field name="model">product.category</field>
         <field name="inherit_id" ref="product.product_category_form_view"/>
         <field name="arch" type="xml">
-            <xpath expr="//div[@class='oe_button_box']" position="after">
+            <xpath expr="//div[hasclass('oe_button_box')]" position="after">
                 <div id="o_node_container">
                     <div id="o_node_main">
                         <span id="add_title"/>

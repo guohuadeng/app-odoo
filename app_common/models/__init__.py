@@ -23,3 +23,5 @@
 # description:
 
 from . import base
+from . import fields
+
