@@ -39,7 +39,7 @@
     'depends': [
         'product',
     ],
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/superbar.gif'],
     'data': [
         'views/product_views.xml',
         'views/product_attribute_value_views.xml',

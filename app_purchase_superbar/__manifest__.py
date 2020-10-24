@@ -38,7 +38,7 @@
     'depends': [
         'purchase',
     ],
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/superbar.gif'],
     'data': [
         'views/purchase_views.xml',
     ],

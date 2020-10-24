@@ -38,7 +38,7 @@
     'depends': [
         'sale_management',
     ],
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/superbar.gif'],
     'data': [
         'views/sale_order_views.xml',
     ],
