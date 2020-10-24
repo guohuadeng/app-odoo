@@ -40,7 +40,7 @@
     'depends': [
         'project',
     ],
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/superbar.gif'],
     'data': [
         'views/project_project_views.xml',
         'views/project_task_views.xml',
