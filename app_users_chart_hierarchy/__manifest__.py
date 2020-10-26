@@ -23,7 +23,7 @@
 
 {
     'name': 'User Alliance Distribution Chart Hierarchy, 多层级用户',
-    'version': '13.19.11.12',
+    'version': '14.19.11.12',
     'author': 'Sunpop.cn',
     'category': 'Sales',
     'website': 'https://www.sunpop.cn',

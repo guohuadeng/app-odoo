@@ -23,7 +23,7 @@
 
 {
     'name': 'Stock Location Chart Hierarchy, 仓库库位多层级结构图',
-    'version': '13.19.11.12',
+    'version': '14.19.11.12',
     'author': 'Sunpop.cn',
     'category': 'Stock',
     'website': 'https://www.sunpop.cn',

@@ -33,7 +33,7 @@
 
 {
     'name': "MRP Workcenter zChart Parent Child Hierarchy,工作中心分级",
-    'version': '13.20.08.20',
+    'version': '14.20.08.20',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

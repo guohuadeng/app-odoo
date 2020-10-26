@@ -18,7 +18,7 @@
 
 {
     'name': "mixin english name，增加英文名字段",
-    'version': '13.20.05.11',
+    'version': '14.20.05.11',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

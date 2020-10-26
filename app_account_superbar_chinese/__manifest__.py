@@ -17,7 +17,7 @@
 
 {
     'name': "App account superbar navigator for chinese account.",
-    'version': '13.19.10.16',
+    'version': '14.19.10.16',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

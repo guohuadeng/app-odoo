@@ -17,7 +17,7 @@
 
 {
     'name': "Advance sale order navigator by partner and channel",
-    'version': '13.20.07.26',
+    'version': '14.20.07.26',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

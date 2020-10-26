@@ -23,7 +23,7 @@
 
 {
     'name': 'Hr Department Chart Hierarchy, 员工部门多层级结构图',
-    'version': '13.19.11.12',
+    'version': '14.19.11.12',
     'author': 'Sunpop.cn',
     'category': 'Account',
     'website': 'https://www.sunpop.cn',

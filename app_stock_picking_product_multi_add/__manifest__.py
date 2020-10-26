@@ -17,7 +17,7 @@
 
 {
     'name': "App Stock Picking Order Product Multi Batch Add",
-    'version': '13.19.11.19',
+    'version': '14.19.11.19',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

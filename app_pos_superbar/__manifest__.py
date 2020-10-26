@@ -17,7 +17,7 @@
 
 {
     'name': "App Pos order browse by store salesperson status",
-    'version': '13.20.04.11',
+    'version': '14.20.04.11',
     'author': 'Sunpop.cn',
     'category': 'Point of Sale',
     'website': 'https://www.sunpop.cn',

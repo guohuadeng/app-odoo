@@ -17,7 +17,7 @@
 
 {
     'name': "App purchase search browse by partner",
-    'version': '13.19.10.22',
+    'version': '14.19.10.22',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

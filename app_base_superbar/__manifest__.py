@@ -17,7 +17,7 @@
 
 {
     'name': "Easy Admin navigator, quick search filter",
-    'version': '13.20.04.06',
+    'version': '14.20.04.06',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
