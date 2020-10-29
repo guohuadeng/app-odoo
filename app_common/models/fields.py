@@ -7,6 +7,7 @@ import logging
 
 _logger = logging.getLogger(__name__)
 
+# 此处用猴子补丁，热更新，不影响后续继承
 class Selection(Field):
     def _setup_attrs_app(self, model, name):
         Field._setup_attrs(self, model, name)
