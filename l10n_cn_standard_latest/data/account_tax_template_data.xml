@@ -199,39 +199,7 @@
         ]"/>
     </record>
 
-    <record id="l10n_cn_standard_sale_included_3" model="account.tax.template">
-        <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest"/>
-        <field name="name">3%销项税(含)</field>
-        <field name="description">增值税销项税3%，单价含税</field>
-        <field name="amount">3</field>
-        <field name="amount_type">percent</field>
-        <field name="type_tax_use">sale</field>
-        <field name="price_include" eval="1"/>
-        <field name="tax_group_id" ref="l10n_cn.l10n_cn_tax_group_vat_3"/>
-        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
-            (0,0, {
-                'factor_percent': 100,
-                'repartition_type': 'base',
-            }),
-            (0,0, {
-                'factor_percent': 100,
-                'repartition_type': 'tax',
-                'account_id': ref('account_2221_1_5'),
-            }),
-        ]"/>
-        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
-            (0,0, {
-                'factor_percent': 100,
-                'repartition_type': 'base',
-            }),
-            (0,0, {
-                'factor_percent': 100,
-                'repartition_type': 'tax',
-                'account_id': ref('account_2221_1_5'),
-            }),
-        ]"/>
-    </record>
-        <!-- sale tax excluded -->
+    <!-- sale tax excluded -->
     <record id="l10n_cn_standard_sale_excluded_13" model="account.tax.template">
         <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest"/>
         <field name="name">13%销项税</field>
@@ -340,39 +308,6 @@
         <field name="type_tax_use">sale</field>
         <field name="price_include" eval="0"/>
         <field name="tax_group_id" ref="l10n_cn.l10n_cn_tax_group_vat_6"/>
-        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
-            (0,0, {
-                'factor_percent': 100,
-                'repartition_type': 'base',
-            }),
-            (0,0, {
-                'factor_percent': 100,
-                'repartition_type': 'tax',
-                'account_id': ref('account_2221_1_5'),
-            }),
-        ]"/>
-        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
-            (0,0, {
-                'factor_percent': 100,
-                'repartition_type': 'base',
-            }),
-            (0,0, {
-                'factor_percent': 100,
-                'repartition_type': 'tax',
-                'account_id': ref('account_2221_1_5'),
-            }),
-        ]"/>
-    </record>
-
-    <record id="l10n_cn_standard_sale_excluded_3" model="account.tax.template">
-        <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest"/>
-        <field name="name">3%销项税</field>
-        <field name="description">增值税销项税3%，单价不含税</field>
-        <field name="amount">3</field>
-        <field name="amount_type">percent</field>
-        <field name="type_tax_use">sale</field>
-        <field name="price_include" eval="0"/>
-        <field name="tax_group_id" ref="l10n_cn.l10n_cn_tax_group_vat_3"/>
         <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
                 'factor_percent': 100,
@@ -530,36 +465,4 @@
         ]"/>
     </record>
 
-    <record id="l10n_cn_standard_purchase_excluded_3" model="account.tax.template">
-        <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest"/>
-        <field name="name">3%进项税</field>
-        <field name="description">增值税进项税3%，单价不含税</field>
-        <field name="amount">3</field>
-        <field name="amount_type">percent</field>
-        <field name="type_tax_use">purchase</field>
-        <field name="price_include" eval="0"/>
-        <field name="tax_group_id" ref="l10n_cn.l10n_cn_tax_group_vat_3"/>
-        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
-            (0,0, {
-                'factor_percent': 100,
-                'repartition_type': 'base',
-            }),
-            (0,0, {
-                'factor_percent': 100,
-                'repartition_type': 'tax',
-                'account_id': ref('account_2221_1_1'),
-            }),
-        ]"/>
-        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
-            (0,0, {
-                'factor_percent': 100,
-                'repartition_type': 'base',
-            }),
-            (0,0, {
-                'factor_percent': 100,
-                'repartition_type': 'tax',
-                'account_id': ref('account_2221_1_1'),
-            }),
-        ]"/>
-    </record>
 </odoo>

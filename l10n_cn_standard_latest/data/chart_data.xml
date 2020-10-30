@@ -4,7 +4,7 @@
     <data noupdate="1">
         <!-- Chart template -->
         <record id="l10n_chart_china_standard_business_latest" model="account.chart.template">
-            <field name="name">2020中国企业会计科目表</field>
+            <field name="name">2021中国企业会计科目表-odoo14</field>
             <field name="code_digits" eval="4" />
             <field name="currency_id" ref="base.CNY" />
             <field name="cash_account_code_prefix">1001</field>

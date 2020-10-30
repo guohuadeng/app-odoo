@@ -127,9 +127,9 @@ class ResConfigSettings(models.TransientModel):
             sql = "delete from %s" % t_name
             try:
                 self._cr.execute(sql)
+                self._cr.commit()
             except Exception as e:
                 _logger.error('remove data error: %s,%s', line, e)
-        self._cr.commit()
         # 更新序号
         for line in s:
             domain = [('code', '=ilike', line + '%')]
@@ -354,7 +354,14 @@ class ResConfigSettings(models.TransientModel):
             self._cr.execute(sql2)
             self._cr.commit()
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
+        try:
+            # 增加对 pos的处理
+            sql = ("update pos_config set journal_id=NULL;")
+            self._cr.execute(sql)
+            self._cr.commit()
+        except Exception as e:
+            pass
         try:
             rec = self.env['res.partner'].search([])
             for r in rec:
@@ -376,7 +383,7 @@ class ResConfigSettings(models.TransientModel):
                     'property_stock_valuation_account_id': None,
                 })
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
         try:
             rec = self.env['stock.location'].search([])
             for r in rec:
@@ -385,7 +392,7 @@ class ResConfigSettings(models.TransientModel):
                     'valuation_out_account_id': None,
                 })
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
 
         seqs = []
         return self.remove_app_data(to_removes, seqs)
