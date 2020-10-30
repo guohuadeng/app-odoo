@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-21 06:23+0000\n"
-"PO-Revision-Date: 2020-08-21 06:23+0000\n"
+"POT-Creation-Date: 2020-10-30 22:13+0000\n"
+"PO-Revision-Date: 2020-10-30 22:13+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,6 @@ msgstr ""
 
 #. module: app_odoo_customize
 #. openerp-web
-#: code:addons/app_common13/app_odoo_customize/static/src/xml/res_config_edition.xml:0
 #: code:addons/app_odoo_customize/static/src/xml/res_config_edition.xml:0
 #, python-format
 msgid "(Sunpop.cn Professional Edition)"
@@ -90,7 +89,6 @@ msgstr "<span>设置为 False 则不显示</span>"
 
 #. module: app_odoo_customize
 #. openerp-web
-#: code:addons/app_common13/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #, python-format
 msgid "Activate the developer mode"
@@ -98,7 +96,6 @@ msgstr "激活开发者模式"
 
 #. module: app_odoo_customize
 #. openerp-web
-#: code:addons/app_common13/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #, python-format
 msgid "Activate the developer mode (with assets)"
@@ -147,7 +144,6 @@ msgstr "数据清理（请谨慎操作！）"
 
 #. module: app_odoo_customize
 #. openerp-web
-#: code:addons/app_common13/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #, python-format
 msgid "Deactivate the developer mode"
@@ -213,7 +209,12 @@ msgstr "删除所有询价单、采购单，采购招标"
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Delete All Quality"
-msgstr ""
+msgstr "删除所有质检单据"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All Quality Setting"
+msgstr "删除所有质检设置"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -242,7 +243,6 @@ msgstr "开发者手册链接"
 
 #. module: app_odoo_customize
 #. openerp-web
-#: code:addons/app_common13/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #, python-format
 msgid "Developer Manual"
@@ -307,6 +307,11 @@ msgstr "我的帐户链接"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Odoo Customize Setting"
+msgstr "个性化odoo设置"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Please confirm to delete the select data?"
 msgstr "您确认要删除指定数据？"
 
@@ -316,9 +321,9 @@ msgid "Powered by <span>odooApp</span>"
 msgstr "技术支持 <span>Sunpop.cn</span>"
 
 #. module: app_odoo_customize
-#: model:ir.actions.act_window,name:app_odoo_customize.action_server_module_multi_refresh_po
-msgid "Refresh Module Translation"
-msgstr "更新模块翻译"
+#: model:ir.actions.server,name:app_odoo_customize.action_server_module_multi_refresh_po
+msgid "Refresh Translation"
+msgstr "刷新翻译"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -508,13 +513,7 @@ msgid "When enable,everyone login can see the debug menu"
 msgstr "启用后，会显示快速调试菜单"
 
 #. module: app_odoo_customize
-#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Odoo Customize Setting"
-msgstr "个性化odoo设置"
-
-#. module: app_odoo_customize
 #. openerp-web
-#: code:addons/app_common13/app_odoo_customize/static/src/xml/res_config_edition.xml:0
 #: code:addons/app_odoo_customize/static/src/xml/res_config_edition.xml:0
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_group
 #, python-format

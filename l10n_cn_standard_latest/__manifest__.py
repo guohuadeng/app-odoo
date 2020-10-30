@@ -9,7 +9,7 @@
 
 {
     'name': '2020最新中国企业会计表.Latest Chinese Accounting.',
-    'version': '13.20.04.11',
+    'version': '13.20.10.30',
     'author': 'Sunpop.cn',
     'category': 'Localization',
     'website': 'https://www.sunpop.cn',
@@ -50,7 +50,7 @@
     """,
     'depends': [
         'account',
-        'l10n_cn',
+        'app_odoo_customize',
     ],
     'images': ['static/description/banner.png'],
     'data': [

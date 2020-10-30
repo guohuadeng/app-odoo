@@ -43,6 +43,7 @@
     'currency': 'EUR',
     'images': ['static/description/banner.png'],
     'depends': [
+        'base',
         'web',
     ],
     'summary': '''
@@ -67,7 +68,7 @@
         # 'security/*.xml',
         # 'security/ir.model.access.csv',
         # 'data/.xml',
-        # 'views/.xml',
+        # 'views/ir_module_module_views.xml',
         # 'report/.xml',
     ],
     'qweb': [

@@ -127,9 +127,9 @@ class ResConfigSettings(models.TransientModel):
             sql = "delete from %s" % t_name
             try:
                 self._cr.execute(sql)
+                self._cr.commit()
             except Exception as e:
                 _logger.error('remove data error: %s,%s', line, e)
-        self._cr.commit()
         # 更新序号
         for line in s:
             domain = [('code', '=ilike', line + '%')]
