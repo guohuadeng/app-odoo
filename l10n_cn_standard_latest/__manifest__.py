@@ -50,7 +50,7 @@
     """,
     'depends': [
         'account',
-        'l10n_cn',
+        'app_odoo_customize',
     ],
     'images': ['static/description/banner.png'],
     'data': [
