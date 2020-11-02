@@ -22,8 +22,8 @@
 # description:
 
 {
-    'name': 'odoo 14,13 Customize OEM(Boost, Data reset)',
-    'version': '14.20.10.05',
+    'name': 'odoo 14 Customize OEM(Boost, Data reset)',
+    'version': '14.20.11.03',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
