@@ -11,7 +11,7 @@
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="user_id"/>
                     <field name="state"/>
-                    <field name="picking_type_id"/>
+                    <!--<field name="picking_type_id"/>-->
                 </searchpanel>
             </xpath>
         </field>

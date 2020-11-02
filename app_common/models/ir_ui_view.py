@@ -33,7 +33,6 @@ def app_relaxng(view_type):
             except Exception:
                 _logger.exception('Failed to load RelaxNG XML schema for views validation')
                 _relaxng_cache[view_type] = None
-            _logger.error('==================new rng: %s' % _file)
     return _relaxng_cache[view_type]
 
 def app_reset_valid_view(view_type):
