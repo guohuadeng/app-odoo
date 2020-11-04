@@ -116,6 +116,9 @@ class ResConfigSettings(models.TransientModel):
     # 清数据，o=对象, s=序列 
     def remove_app_data(self, o, s=[]):
         for line in o:
+            # 检查是否存在
+            if not self.env['ir.model']._get(line):
+                continue
             obj_name = line
             obj = self.pool.get(obj_name)
             if not obj:
@@ -127,9 +130,9 @@ class ResConfigSettings(models.TransientModel):
             sql = "delete from %s" % t_name
             try:
                 self._cr.execute(sql)
-                self._cr.commit()
+                # self._cr.commit()
             except Exception as e:
-                _logger.error('remove data error: %s,%s', line, e)
+                _logger.warning('remove data error: %s,%s', line, e)
         # 更新序号
         for line in s:
             domain = [('code', '=ilike', line + '%')]
@@ -140,7 +143,7 @@ class ResConfigSettings(models.TransientModel):
                         'number_next': 1,
                     })
             except Exception as e:
-                _logger.error('reset sequence data error: %s,%s', line, e)
+                _logger.warning('reset sequence data error: %s,%s', line, e)
         return True
     
     def remove_sales(self):

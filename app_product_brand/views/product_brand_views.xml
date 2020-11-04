@@ -11,20 +11,23 @@
         </field>
     </record>
 
-    <act_window
-        id="action_open_brand_products"
-        name="Brand Products"
-        res_model="product.template"
-        view_mode="kanban,form,tree"
-        domain="[('product_brand_id', '=', active_id)]"/>
+    <!--action-->
+    <record id="action_open_brand_products" model="ir.actions.act_window">
+        <field name="name">Brand Products</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">kanban,form,tree</field>
+        <field name="domain">[('product_brand_id', '=', active_id)]</field>
+    </record>
 
-    <act_window
-        id="action_open_single_product_brand"
-        name="Product Brand"
-        res_model="product.brand"
-        view_mode="kanban,form,tree"
-        target="current"
-        domain="[('product_ids', 'in', active_id)]"/>
+    <record id="action_open_single_product_brand" model="ir.actions.act_window">
+        <field name="name">Product Brand</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.brand</field>
+        <field name="view_mode">kanban,form,tree</field>
+        <field name="target">current</field>
+        <field name="domain">[('product_ids', 'in', active_id)]</field>
+    </record>
 
     <record id="view_product_brand_form" model="ir.ui.view">
         <field name="name">product.brand.form</field>
