@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo 14 Customize OEM(Boost, Data reset)',
-    'version': '14.20.11.03',
+    'version': '14.20.11.06',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -132,6 +132,8 @@
         # 'web_mobile'
     ],
     'data': [
+        'security/res_groups.xml',
+        'security/ir.model.access.csv',
         'views/app_odoo_customize_views.xml',
         'views/app_theme_config_settings_views.xml',
         'views/res_config_settings_views.xml',
@@ -146,8 +148,6 @@
         'data/ir_module_module_data.xml',
         # 'data/digest_template_data.xml',
         'data/res_company_data.xml',
-        'security/res_groups.xml',
-        'security/ir.model.access.csv',
     ],
     'qweb': [
         'static/src/xml/*.xml',
