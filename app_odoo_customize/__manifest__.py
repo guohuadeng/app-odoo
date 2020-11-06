@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo 14,13 Customize OEM(Boost, Data reset)',
-    'version': '13.20.11.04',
+    'version': '13.20.11.06',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -77,6 +77,7 @@
     34. Add Remove all quality data.
     35. Fixed for odoo 14.
     36. Add refresh translate for multi module.
+    37. Easy noupdate manage for External Identifiers(xml_id)
     
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -120,6 +121,7 @@
     34. 增加清除质检数据 
     35. 优化至odoo14适用 
     36. 可为多个模块强制更新翻译 
+    37. noupdate字段的快速管理，主要针对 xml_id 
     """,
     'images': ['static/description/banner.gif'],
     'depends': [
@@ -141,6 +143,7 @@
         'views/ir_ui_menu_views.xml',
         'views/ir_ui_view_views.xml',
         'views/ir_model_fields_views.xml',
+        'views/ir_model_data_views.xml',
         # data
         'data/ir_config_parameter_data.xml',
         'data/ir_module_module_data.xml',
