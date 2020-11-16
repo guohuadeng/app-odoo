@@ -8,11 +8,11 @@
         <field name="arch" type="xml">
             <xpath expr="//search" position="inside">
                 <searchpanel view_types="tree,kanban,pivot,graph">
-                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="priority"/>
                     <field name="reservation_state"/>
                     <field name="state"/>
                     <field name="routing_id" groups="mrp.group_mrp_routings"/>
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                 </searchpanel>
             </xpath>
         </field>

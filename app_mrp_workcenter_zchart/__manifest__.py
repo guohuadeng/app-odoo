@@ -33,7 +33,7 @@
 
 {
     'name': "MRP Workcenter zChart Parent Child Hierarchy,工作中心分级",
-    'version': '13.20.08.20',
+    'version': '13.20.11.10',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -44,7 +44,6 @@
     'images': ['static/description/banner.png'],
     'depends': [
         'mrp_workorder',
-        'app_mrp_superbar',
     ],
     # 不要误装别的，避免冲突
     'excludes': [
@@ -70,7 +69,6 @@
         # 'security/ir.model.access.csv.csv',
         # 'data/*.xml',
         'views/mrp_workcenter_views.xml',
-        'views/mrp_workorder_views.xml',
     ],
     'qweb': [
         'static/src/xml/*.xml',

@@ -8,7 +8,6 @@
             <xpath expr="//search">
                 <searchpanel view_types="kanban,tree">
                     <field name="type"/>
-                    <field name="model_data_id"/>
                 </searchpanel>
             </xpath>
         </field>

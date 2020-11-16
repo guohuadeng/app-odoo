@@ -54,36 +54,32 @@
     overflow: unset;
   }
 }
-// Notebooks ,form_view,移动端优化
-.o_form_view {
-  .o_notebook {
-    > .nav.nav-tabs {
-      > .nav-item {
-        > .nav-link {
-          //border-left-width: 0!important;
-          background-color: #fafafa;
-
-          &:hover, &:focus, &:active {
-            background-color: white;
-          }
-
-          &.active {
-            border-top-width: 2px;
-            //border-left-width: 1px!important;
-            //border-right-width: 1px!important;
-          }
-        }
-
-        &:first-child > .nav-link {
-          //border-left-width: 1px!important;
-        }
-      }
-    }
+// Notebooks ,form_view,pc端优化
+.o_form_view .o_notebook > .o_notebook_headers > .nav.nav-tabs > .nav-item > .nav-link {
+  background-color: #f9f9f9;
+  &.active {
+    background-color: white;
+    border-top-width: 2px;
+    margin-top: -1px;
+    border-left-color: $o-enterprise-color;
+    border-left-width: 1px !important;
+    border-right-color: $o-enterprise-color;
+    border-right-width: 1px !important;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
   }
-
-  // 列表自定义显示调整
-  .o_content > .o_list_view > .table-responsive > .table .o_optional_columns_dropdown_toggle {
-    margin-right: 16px;
+  &:hover, &:focus, &:active {
+    background-color: white;
+  }
+}
+// Notebooks ,form_view,移动端优化
+@media (max-width: 768px) {
+  .o_form_view .o_notebook > .o_notebook_headers > .nav.nav-tabs > .nav-item > .nav-link {
+    &.active {
+      margin-top: 0px;
+      margin-bottom: -1px;
+      padding-bottom: 0px;
+    }
   }
 }
 

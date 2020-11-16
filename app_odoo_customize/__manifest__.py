@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo 14,13 Customize OEM(Boost, Data reset)',
-    'version': '13.20.11.06',
+    'version': '13.20.11.10',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -35,7 +35,7 @@
     customize my odoo. 
     """,
     'description': """
-    
+
     App Customize Odoo (Change Title,Language,Documentation,Quick Debug)
     ============
     White label odoo.
@@ -78,7 +78,8 @@
     35. Fixed for odoo 14.
     36. Add refresh translate for multi module.
     37. Easy noupdate manage for External Identifiers(xml_id)
-    
+    38. Add Draggable Dialog enable.
+
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
     The user can get the help document just by one click.
@@ -122,6 +123,7 @@
     35. 优化至odoo14适用 
     36. 可为多个模块强制更新翻译 
     37. noupdate字段的快速管理，主要针对 xml_id 
+    38. 对话框可拖拽 
     """,
     'images': ['static/description/banner.gif'],
     'depends': [
@@ -134,6 +136,8 @@
         # 'web_mobile'
     ],
     'data': [
+        'security/res_groups.xml',
+        'security/ir.model.access.csv',
         'views/app_odoo_customize_views.xml',
         'views/app_theme_config_settings_views.xml',
         'views/res_config_settings_views.xml',
@@ -149,8 +153,6 @@
         'data/ir_module_module_data.xml',
         # 'data/digest_template_data.xml',
         'data/res_company_data.xml',
-        'security/res_groups.xml',
-        'security/ir.model.access.csv',
     ],
     'qweb': [
         'static/src/xml/*.xml',

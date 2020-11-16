@@ -4,11 +4,13 @@
             <xpath expr="//link[last()]" position="after">
                 <link rel="stylesheet" type="text/scss" href="/app_odoo_customize/static/src/scss/app.scss"/>
                 <link rel="stylesheet" type="text/scss" href="/app_odoo_customize/static/src/scss/ribbon.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/app_odoo_customize/static/src/scss/dialog.scss"/>
             </xpath>
             <xpath expr="script[last()]" position="after">
                 <script type="text/javascript" src="/app_odoo_customize/static/src/js/app_window_title.js"></script>
                 <script type="text/javascript" src="/app_odoo_customize/static/src/js/customize_user_menu.js"></script>
                 <script type="text/javascript" src="/app_odoo_customize/static/src/js/ribbon.js"></script>
+                <script type="text/javascript" src="/app_odoo_customize/static/src/js/dialog.js"></script>
             </xpath>
         </template>
 
