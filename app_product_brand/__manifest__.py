@@ -41,7 +41,7 @@
 
 {
     'name': 'Product Brand Manager',
-    'version': '14.20.04.11',
+    'version': '14.20.11.18',
     'author': 'Sunpop.cn',
     'category': 'Product',
     'website': 'https://www.sunpop.cn',
@@ -54,15 +54,15 @@
         'sale',
     ],
     'summary': """
-    Odoo App of Sunpop.cn
+    Product brand manager. Odoo App of Sunpop.cn
     """,
     'description': """    
-    Support Odoo 14,13,12, 11, Enterprise and Community Edition
+    Support Odoo 13，12, 11, Enterprise and Community Edition
     1. 
     2. 
     3. Multi-language Support.
     4. Multi-Company Support.
-    5. Support Odoo 14,13,12, 11, Enterprise and Community Edition
+    5. Support Odoo 13，12, 11, Enterprise and Community Edition
     ==========
     1. 
     2. 
