@@ -54,7 +54,7 @@
         'sale',
     ],
     'summary': """
-    Odoo App of Sunpop.cn
+    Product brand manager. Odoo App of Sunpop.cn
     """,
     'description': """    
     Support Odoo 13，12, 11, Enterprise and Community Edition
