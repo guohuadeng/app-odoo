@@ -22,7 +22,7 @@
 # description:
 
 {
-    'name': 'odoo 14 Customize OEM(Boost, Data reset)',
+    'name': 'odoo Customize OEM(Boost, Data reset)',
     'version': '14.20.11.06',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
@@ -32,7 +32,7 @@
     'summary': """
     1 click customize odoo, reset data. For quick develop. Set brand, boost, reset data, debug. Language Switcher. 
     Easy Delete data.reset account chart.
-    customize my odoo. 
+    customize my odoo. odoo customize, odoo oem.
     """,
     'description': """
     
