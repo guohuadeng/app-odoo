@@ -32,7 +32,7 @@
     'summary': """
     1 click customize odoo, reset data. For quick develop. Set brand, boost, reset data, debug. Language Switcher. 
     Easy Delete data.reset account chart.
-    customize my odoo. 
+    customize my odoo. odoo customize, odoo oem.
     """,
     'description': """
 
