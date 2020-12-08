@@ -135,7 +135,7 @@ class ResConfigSettings(models.TransientModel):
                 _logger.warning('remove data error: %s,%s', line, e)
         # 更新序号
         for line in s:
-            domain = [('code', '=ilike', line + '%')]
+            domain = ['|', ('code', '=ilike', line + '%'), ('prefix', '=ilike', line + '%')]
             try:
                 seqs = self.env['ir.sequence'].sudo().search(domain)
                 if seqs.exists():
@@ -265,7 +265,7 @@ class ResConfigSettings(models.TransientModel):
             # 清除库存单据
             'stock.quant',
             'stock.move.line',
-            'stock.package.level',
+            'stock.package_level',
             'stock.quantity.history',
             'stock.quant.package',
             'stock.move',
@@ -283,6 +283,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'stock.',
             'picking.',
+            'procurement.group',
             'WH/',
         ]
         return self.remove_app_data(to_removes, seqs)
@@ -477,14 +478,14 @@ class ResConfigSettings(models.TransientModel):
 
     def remove_all_biz(self):
         self.remove_account()
+        self.remove_quality()
         self.remove_inventory()
-        self.remove_mrp()
         self.remove_purchase()
+        self.remove_mrp()
         self.remove_sales()
         self.remove_project()
         self.remove_pos()
         self.remove_expense()
-        self.remove_quality()
         self.remove_message()
         return True
 

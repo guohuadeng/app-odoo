@@ -25,9 +25,8 @@
         <field name="inherit_id" ref="mrp.mrp_workcenter_tree_view"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
-                <field name="parent_id"/>
-                <field name="level"/>
-                <field name="note"/>
+                <field name="parent_id" optional="show"/>
+                <field name="level" optional="hide"/>
             </xpath>
         </field>
     </record>
