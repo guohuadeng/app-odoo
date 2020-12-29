@@ -18,7 +18,7 @@
 
 {
     'name': "App web enterprise enhance,企业版界面增强",
-    'version': '13.19.12.10',
+    'version': '13.19.12.29',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -39,6 +39,8 @@
     替换主菜单界面的logo为你公司的logo。
     3. Alway show search in main menu.
     在主菜单界面让搜索可见。
+    4. Fix view bug like graph shake.
+    修正原生样式bug，如Graph会抖动。
     """,
     'price': 68.00,
     'currency': 'EUR',
