@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo Customize OEM(Boost, Data reset)',
-    'version': '14.20.11.06',
+    'version': '14.20.12.29',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -72,10 +72,10 @@
     29. Apps version compare. Add Install version in App list. Add Local updatable filter in app list.
     30. 1 key export app translate file like .po file.
     31. Show or hide odoo Referral in the top menu.
-    32. Fix odoo bug of complete name bug of product category and stock location..
+    32. Fix odoo bug of complete name bug of product category and stock location.
     33. Add Demo Ribbon Setting.
-    34. Add Remove all quality data.
-    35. Fixed for odoo 14.
+    34. Add Remove all quality data(for odoo Enterprise).
+    35. Add odoo 14 Support.
     36. Add refresh translate for multi module.
     
     This module can help to white label the Odoo.
@@ -117,7 +117,7 @@
     31. 显示或去除 odoo 推荐
     32. 增加修复品类及区位名的操作 
     33. 增加 Demo 的显示设置 
-    34. 增加清除质检数据 
+    34. 增加清除质检数据 (企业版)
     35. 优化至odoo14适用 
     36. 可为多个模块强制更新翻译 
     """,
