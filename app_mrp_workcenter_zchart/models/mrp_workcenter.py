@@ -21,7 +21,7 @@ class MrpWorkCenter(models.Model):
     child_all_count = fields.Integer(
         'Indirect Surbordinates Count',
         compute='_compute_child_all_count', store=False)
-    level = fields.Integer('Level', compute='_compute_level', inverse='_set_level', default=0, store=True)
+    level = fields.Integer('Level', compute='_compute_level', inverse=False, default=0, readonly=True, store=True)
 
     @api.depends('child_ids.child_all_count')
     def _compute_child_all_count(self):

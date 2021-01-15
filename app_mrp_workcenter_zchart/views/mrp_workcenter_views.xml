@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
                 <field name="parent_id" widget="ztree_select"/>
-                <field name="level"/>
+                <field name="level" force_save="1"/>
             </xpath>
             <!-- 引入树结构图 -->
             <xpath expr="//group[1]" position="inside">

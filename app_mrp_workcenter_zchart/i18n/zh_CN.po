@@ -18,7 +18,7 @@ msgstr ""
 #. module: app_mrp_workcenter_zchart
 #: model:ir.model.fields,field_description:app_mrp_workcenter_zchart.field_mrp_workcenter__child_ids
 msgid "Child WCs"
-msgstr "下级"
+msgstr "层次结构"
 
 #. module: app_mrp_workcenter_zchart
 #: model:ir.model.fields,field_description:app_mrp_workcenter_zchart.field_mrp_workcenter__child_all_count
