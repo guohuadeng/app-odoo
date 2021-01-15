@@ -12,7 +12,6 @@
                     <field name="priority"/>
                     <field name="reservation_state"/>
                     <field name="state"/>
-                    <field name="routing_id" groups="mrp.group_mrp_routings"/>
                 </searchpanel>
             </xpath>
         </field>
