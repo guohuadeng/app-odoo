@@ -41,7 +41,7 @@
     ],
     'images': ['static/description/banner.gif'],
     'data': [
-        'data/ir_data.xml',
+        # 'data/ir_data.xml',
         'views/mrp_production_views.xml',
         'views/mrp_workorder_views.xml',
         'views/mrp_bom_views.xml',

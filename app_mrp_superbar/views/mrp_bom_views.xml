@@ -10,7 +10,6 @@
                 <searchpanel>
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="type"/>
-                    <field name="routing_id" groups="mrp.group_mrp_routings"/>
                 </searchpanel>
             </xpath>
         </field>
