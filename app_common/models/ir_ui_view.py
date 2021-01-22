@@ -21,9 +21,9 @@ def app_valid_field_in_tree(arch, **kwargs):
 def app_relaxng(view_type):
     """ Return a validator for the given view type, or None. """
     if view_type not in _relaxng_cache:
-        # tree 特殊
-        if view_type == 'tree':
-            _file = get_resource_path('app_common', 'rng', 'tree_view.rng')
+        # tree, search 特殊
+        if view_type in ['tree', 'search']:
+            _file = get_resource_path('app_common', 'rng', '%s_view.rng' % view_type)
         else:
             _file = get_resource_path('base', 'rng', '%s_view.rng' % view_type)
         with tools.file_open(_file) as frng:

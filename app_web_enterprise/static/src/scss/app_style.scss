@@ -103,4 +103,7 @@
     height: 99.5%;
   }
 }
-
+//m2o字段，只读情况下也可换行
+.o_list_view .o_list_table tbody > tr > td.o_readonly_modifier {
+  white-space: pre-wrap!important;
+}

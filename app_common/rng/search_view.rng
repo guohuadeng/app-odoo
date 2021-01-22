@@ -12,6 +12,19 @@
             <rng:ref name="overload"/>
             <rng:optional><rng:attribute name="view_types"/></rng:optional>
             <rng:optional><rng:attribute name="class"/></rng:optional>
+            <rng:optional><rng:attribute name="options"/></rng:optional>
+            <rng:zeroOrMore>
+                <rng:ref name="field" />
+            </rng:zeroOrMore>
+        </rng:element>
+    </rng:define>
+
+    <rng:define name="superbar">
+        <rng:element name="superbar">
+            <rng:ref name="overload"/>
+            <rng:optional><rng:attribute name="view_types"/></rng:optional>
+            <rng:optional><rng:attribute name="class"/></rng:optional>
+            <rng:optional><rng:attribute name="options"/></rng:optional>
             <rng:zeroOrMore>
                 <rng:ref name="field" />
             </rng:zeroOrMore>
@@ -29,7 +42,9 @@
                     <rng:ref name="separator"/>
                     <rng:ref name="filter"/>
                     <rng:element name="newline"><rng:empty/></rng:element>
+                    <rng:optional><rng:attribute name="options"/></rng:optional>
                     <rng:ref name="searchpanel"/>
+                    <rng:ref name="superbar"/>
                 </rng:choice>
             </rng:zeroOrMore>
         </rng:element>
