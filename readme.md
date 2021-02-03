@@ -62,7 +62,7 @@ App MRP Bom Product Multi Batch Add
     odoo debrand, odoo debranding, customize my odoo. 
     ============
     White label odoo.
-    Support Odoo 13,12, 11, 10, 9.
+    Support Odoo 14,13,12, 11, 10, 9.
     You can config odoo, make it look like your own platform.
     1. Deletes Odoo label in footer
     2. Replaces "Odoo" in Windows title
