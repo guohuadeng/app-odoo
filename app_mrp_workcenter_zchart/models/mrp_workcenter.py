@@ -31,7 +31,7 @@ class MrpWorkCenter(models.Model):
 
     @api.onchange('parent_id')
     def _onchange_level(self):
-        level = 0
+        level = 1
         if self.parent_id:
             level = self.parent_id.level + 1
         self.level = level
@@ -39,7 +39,7 @@ class MrpWorkCenter(models.Model):
     @api.depends('parent_id', 'parent_id.level')
     def _compute_level(self):
         for rec in self:
-            level = 0
+            level = 1
             if rec.parent_id:
                 level = rec.parent_id.level + 1
             rec.level = level

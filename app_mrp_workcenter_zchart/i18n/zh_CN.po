@@ -50,3 +50,9 @@ msgstr "编码"
 #: model:ir.model.fields,field_description:app_mrp_workcenter_zchart.field_mrp_workcenter__level
 msgid "Level"
 msgstr "级别"
+
+
+#. module: app_mrp_workcenter_zchart
+#: model:ir.actions.server,name:app_mrp_workcenter_zchart.action_mrp_workcenter_compute_level
+msgid "Reset Work Center Level"
+msgstr "重置工作中心级别"

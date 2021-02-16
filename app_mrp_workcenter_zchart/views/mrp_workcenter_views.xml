@@ -80,4 +80,13 @@
     <record id="mrp.mrp_workcenter_kanban_action" model="ir.actions.act_window">
         <field name="context">{'search_default_group_by_parent_id':1}</field>
     </record>
+    <!--重置级别-->
+    <record id="action_mrp_workcenter_compute_level" model="ir.actions.server">
+        <field name="name">Reset Work Center Level</field>
+        <field name="model_id" ref="mrp.model_mrp_workcenter"/>
+        <field name="binding_model_id" ref="mrp.model_mrp_workcenter"/>
+        <field name="binding_view_types">form,list</field>
+        <field name="state">code</field>
+        <field name="code">action = records._compute_level()</field>
+    </record>
 </odoo>
