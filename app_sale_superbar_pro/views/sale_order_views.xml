@@ -6,6 +6,10 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="app_sale_superbar.sale_order_view_search_inherit_quotation_superbar"/>
         <field name="arch" type="xml">
+            <!--使用 lazy 模式-->
+            <xpath expr="//searchpanel" position="attributes">
+                <attribute name="options">'is_lazy':1}</attribute>
+            </xpath>
             <xpath expr="//searchpanel//field[@name='team_id']" position="before">
                 <field name="date_order"/>
                 <field name="amount_total"/>
