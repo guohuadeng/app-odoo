@@ -20,10 +20,13 @@ sheet全宽
         display: block;
     }
     @include media-breakpoint-up(xl) {
-        display: flex;
+        display: block;
     }
 }
-
+//max 时也处理为全屏
+.o_form_view.o_xxl_form_view {
+        display: block;
+}
 @media (min-width: 768px) {
     .o_form_view .o_form_sheet_bg > .o_form_sheet {
         max-width: 98% !important;
@@ -41,6 +44,9 @@ sheet全宽
     .o_form_view .o_form_sheet_bg > .o_form_sheet {
         max-width: 98% !important;
     }
+}
+.o_form_view.o_xxl_form_view > .o_form_sheet_bg {
+    width: auto;
 }
 //xs: 0,
 //vsm: 475px,
@@ -73,5 +79,15 @@ sheet全宽
     }
     .o_form_sheet_bg {
         width: auto;
+    }
+}
+
+//debug model 时处理
+.modal-lg {
+    .o_debug_manager {
+        .dropdown-menu-right {
+            right: auto;
+            left: 0;
+        }
     }
 }
