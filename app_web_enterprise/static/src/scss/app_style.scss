@@ -49,9 +49,10 @@
 .o_list_view .table-responsive .o_optional_columns_dropdown_toggle  {
   padding: 0 20px 0 5px;
 }
+//会导致searchpanel 不固顶
 .o_view_controller {
   .o_controller_with_searchpanel .o_renderer_with_searchpanel {
-    overflow: unset;
+    overflow: auto;
   }
 }
 // Notebooks ,form_view,移动端优化
