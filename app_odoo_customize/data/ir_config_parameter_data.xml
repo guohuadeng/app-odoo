@@ -44,11 +44,11 @@
         </record>
         <record id="app_documentation_url" model="ir.config_parameter">
             <field name="key">app_documentation_url</field>
-            <field name="value">https://www.sunpop.cn/documentation/user/12.0/zh_CN/index.html</field>
+            <field name="value">https://www.sunpop.cn/documentation/user/13.0/zh_CN/index.html</field>
         </record>
         <record id="app_documentation_dev_url" model="ir.config_parameter">
             <field name="key">app_documentation_dev_url</field>
-            <field name="value">https://www.sunpop.cn/documentation/12.0/index.html</field>
+            <field name="value">https://www.sunpop.cn/documentation/13.0/index.html</field>
         </record>
         <record id="app_support_url" model="ir.config_parameter">
             <field name="key">app_support_url</field>
