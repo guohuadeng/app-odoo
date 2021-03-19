@@ -107,3 +107,6 @@
 .o_list_view .o_list_table tbody > tr > td.o_readonly_modifier {
   white-space: pre-wrap!important;
 }
+.o_list_view .o_list_table .o_list_many2one {
+  white-space: pre-wrap!important;
+}
