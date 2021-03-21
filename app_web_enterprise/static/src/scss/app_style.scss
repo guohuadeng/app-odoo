@@ -103,10 +103,10 @@
     height: 99.5%;
   }
 }
-//m2o字段，只读情况下也可换行
+//m2o字段，只读情况下才可换行
 .o_list_view .o_list_table tbody > tr > td.o_readonly_modifier {
   white-space: pre-wrap!important;
 }
-.o_list_view .o_list_table .o_list_many2one {
+.o_form_readonly .o_list_view .o_list_table .o_list_many2one {
   white-space: pre-wrap!important;
 }
