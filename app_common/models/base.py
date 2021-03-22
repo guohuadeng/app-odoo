@@ -24,10 +24,12 @@ class Base(models.AbstractModel):
         """
         if not value:
             return value
-        # 默认中国时区
-        user_tz = pytz.timezone(self.env.user.tz or 'Etc/GMT+8')
-        dt_local = pytz.utc.localize(value).astimezone(user_tz)
-        return dt_local.strftime(return_format)
+        if isinstance(value, datetime):
+            value = value.strftime(return_format)
+        dt = datetime.strptime(value, return_format)
+        pytz_timezone = pytz.timezone(self.env.user.tz or 'Etc/GMT-8')
+        dt = dt.replace(tzinfo=pytz.timezone('UTC'))
+        return dt.astimezone(pytz_timezone).strftime(return_format)
 
     def _app_dt2utc(self, value, return_format=DEFAULT_SERVER_DATETIME_FORMAT):
         """

@@ -44,7 +44,7 @@ def post_init_hook(cr, registry):
             rec._compute_complete_name()
         # 超级用户改时区为中国
         ids = env['res.users'].sudo().with_context(lang='zh_CN').browse([1, 2])
-        ids.write({'tz': "Asia/Shanghai"})
+        ids.write({'tz': "Etc/GMT-8"})
     except Exception as e:
         raise Warning(e)
 
