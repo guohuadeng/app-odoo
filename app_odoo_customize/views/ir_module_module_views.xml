@@ -64,6 +64,7 @@
                 <!--显示导出翻译-->
                 <xpath expr="//div[hasclass('dropdown-menu')]" position="inside">
                     <a t-if="installed" name="%(app_odoo_customize.action_server_module_multi_get_po)d" type="action" role="menuitem" class="dropdown-item">Export Translation</a>
+                    <a t-if="installed" name="%(app_odoo_customize.action_server_module_multi_refresh_po)d" type="action" role="menuitem" class="dropdown-item">Refresh Translation</a>
                 </xpath>
                 <xpath expr="//div[hasclass('oe_module_action')]/a[@target='_blank']" position="replace" groups="app_odoo_customize.group_show_quick_upgrade"/>
             </field>
