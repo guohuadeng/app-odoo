@@ -350,7 +350,6 @@ class ResConfigSettings(models.TransientModel):
             'account.tax',
             'account.account.account.tag',
             'wizard_multi_charts_accounts',
-            'pos.payment.method',
             'account.journal',
             'account.account',
         ]
