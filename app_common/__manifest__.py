@@ -32,8 +32,8 @@
 ##############################################################################
 
 {
-    'name': "Sunpop Odooapp Common Function",
-    'version': '14.20.10.05',
+    'name': "Sunpop Odooapp Common Func",
+    'version': '14.21.01.27',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -43,20 +43,20 @@
     'currency': 'EUR',
     'images': ['static/description/banner.png'],
     'depends': [
+        'base',
         'web',
     ],
     'summary': '''
-    Core for common use.
-    Add get m2o default method
-    基础核心
+    Core for common use sunpop apps.
+    基础核心，必须没有要被依赖字段及视图等，实现auto_install
     ''',
     'description': '''    
-    Support Odoo 14,13,12, Enterprise and Community Edition
-    1. Easy get default 1st record of m2o list.
+    Support Odoo 13，12, Enterprise and Community Edition
+    1. 
     2. 
     3. Multi-language Support.
     4. Multi-Company Support.
-    5. Support Odoo 14,13,12, Enterprise and Community Edition
+    5. Support Odoo 13，12, Enterprise and Community Edition
     ==========
     1. 
     2. 
@@ -68,7 +68,7 @@
         # 'security/*.xml',
         # 'security/ir.model.access.csv',
         # 'data/.xml',
-        # 'views/.xml',
+        # 'views/ir_module_module_views.xml',
         # 'report/.xml',
     ],
     'qweb': [
@@ -80,5 +80,5 @@
     # 'uninstall_hook': 'uninstall_hook',
     'installable': True,
     'application': True,
-    'auto_install': False,
+    'auto_install': True,
 }

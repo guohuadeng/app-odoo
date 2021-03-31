@@ -10,7 +10,7 @@
         <!--设置默认时区为中国，注意select 类型要加 ""-->
         <record id="res_partner_tz_default" model="ir.default">
             <field name="field_id" eval="ref('base.field_res_partner__tz')"/>
-            <field name="json_value">"Asia/Shanghai"</field>
+            <field name="json_value">"Etc/GMT-8"</field>
         </record>
         <!--设置用户email在odoo内提醒-->
         <record id="res_user_notify_email_default" model="ir.default">

@@ -16,7 +16,7 @@ class ResCurrency(models.Model):
         :return 返回值是对应阿拉伯数字的绝对值的中文数字
         """
         if self.name != 'CNY':
-            return;
+            return
         rmbmap = [u"零", u"壹", u"贰", u"叁", u"肆", u"伍", u"陆", u"柒", u"捌", u"玖"]
         unit = [u"分", u"角", u"元", u"拾", u"佰", u"仟", u"万", u"拾", u"佰", u"仟", u"亿",
                 u"拾", u"佰", u"仟", u"万", u"拾", u"佰", u"仟", u"兆"]

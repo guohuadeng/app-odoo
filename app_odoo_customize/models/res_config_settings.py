@@ -3,6 +3,7 @@
 import logging
 
 from odoo import api, fields, models, _
+from odoo.exceptions import UserError, ValidationError
 
 _logger = logging.getLogger(__name__)
 
@@ -337,6 +338,7 @@ class ResConfigSettings(models.TransientModel):
         return res
 
     def remove_account_chart(self):
+        # todo: 安装会计模块后，会有问题，后续处理
         company_id = self.env.company.id
         self = self.with_context(force_company=company_id, company_id=company_id)
         to_removes = [
