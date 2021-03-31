@@ -317,6 +317,7 @@ msgstr "技术支持 <span>Sunpop.cn</span>"
 
 #. module: app_odoo_customize
 #: model:ir.actions.server,name:app_odoo_customize.action_server_module_multi_refresh_po
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.app_module_view_kanban
 msgid "Refresh Translation"
 msgstr "刷新翻译"
 
