@@ -17,7 +17,7 @@
 
 {
     'name': "App sale order browse by partner and channel",
-    'version': '13.20.02.29',
+    'version': '13.21.03.31',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -41,6 +41,7 @@
     'images': ['static/description/banner.png'],
     'data': [
         'views/sale_order_views.xml',
+        'report/sale_report_views.xml',
     ],
     'demo': [
     ],
