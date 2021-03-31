@@ -364,9 +364,18 @@ class ResConfigSettings(models.TransientModel):
             sql2 = "update account_journal set bank_account_id=NULL where company_id=%d;" % company_id
             self._cr.execute(sql)
             self._cr.execute(sql2)
+
             self._cr.commit()
         except Exception as e:
             _logger.error('remove data error: %s,%s', 'account_chart: set tax and account_journal', e)
+
+        # 增加对 pos的处理
+        if self.env['ir.model']._get('pos.config'):
+            self.env['pos.config'].write({
+                'journal_id': False,
+            })
+        #     todo: 以下处理参考 res.partner的合并，将所有m2o的都一次处理，不需要次次找模型
+        # partner 处理
         try:
             rec = self.env['res.partner'].search([])
             for r in rec:
@@ -376,6 +385,7 @@ class ResConfigSettings(models.TransientModel):
                 })
         except Exception as e:
             _logger.error('remove data error: %s,%s', 'account_chart', e)
+        # 品类处理
         try:
             rec = self.env['product.category'].search([])
             for r in rec:
@@ -388,7 +398,18 @@ class ResConfigSettings(models.TransientModel):
                     'property_stock_valuation_account_id': None,
                 })
         except Exception as e:
-            pass  # raise Warning(e)
+            pass
+        # 产品处理
+        try:
+            rec = self.env['product.template'].search([])
+            for r in rec:
+                r.write({
+                    'property_account_income_id': None,
+                    'property_account_expense_id': None,
+                })
+        except Exception as e:
+            pass
+        # 库存计价处理
         try:
             rec = self.env['stock.location'].search([])
             for r in rec:
