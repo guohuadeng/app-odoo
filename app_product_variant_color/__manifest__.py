@@ -40,7 +40,7 @@
     'qweb': [
         'static/src/xml/widget.xml',
     ],
-    'license': 'AGPL-3',
+    'license': 'LGPL-3',
     'auto_install': True,
     'installable': True,
 }
