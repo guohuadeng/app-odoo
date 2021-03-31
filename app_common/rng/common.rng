@@ -411,11 +411,16 @@
     <rng:define name="create">
         <rng:element name="create">
             <rng:ref name="overload"/>
+            <rng:ref name="access_rights"/>
             <rng:attribute name="string"/>
             <rng:attribute name="context"/>
             <rng:ref name="modifiable"/>
             <rng:optional><rng:attribute name="attrs"/></rng:optional>
             <rng:optional><rng:attribute name="invisible"/></rng:optional>
+            <rng:optional><rng:attribute name="special" /></rng:optional>
+            <rng:optional><rng:attribute name="help"/></rng:optional>
+            <rng:optional><rng:attribute name="class"/></rng:optional>
+            <rng:optional><rng:attribute name="title"/></rng:optional>
         </rng:element>
     </rng:define>
 
