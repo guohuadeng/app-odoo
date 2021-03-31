@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <searchpanel view_types="tree,kanban,search">
-                    <field name="parent_id" filter_domain="[('child_id', '!=', False)]"/>
+                    <field name="parent_id" filter_domain="[('child_id', '!=', False)]" text="name"/>
                 </searchpanel>
             </xpath>
         </field>

@@ -17,7 +17,7 @@
 
 {
     'name': "App product browse by category navigator",
-    'version': '13.20.09.04',
+    'version': '13.21.03.31',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
