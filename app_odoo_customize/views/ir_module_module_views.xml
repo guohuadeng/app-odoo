@@ -10,8 +10,11 @@
                     <attribute name="groups"/>
                 </field>
                 <field name="installed_version" position="after">
-                    <field name="latest_version"/>
-                    <field name="local_updatable"/>
+                    <field name="latest_version" optional="hide"/>
+                    <field name="local_updatable" optional="show"/>
+                </field>
+                <field name="website" position="attributes">
+                    <attribute name="optional">hide</attribute>
                 </field>
             </field>
         </record>

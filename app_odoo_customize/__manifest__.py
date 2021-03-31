@@ -22,8 +22,8 @@
 # description:
 
 {
-    'name': 'odoo Customize OEM(Boost, Data reset)',
-    'version': '14.21.03.03',
+    'name': 'odoo 14,13 Customize OEM(Boost, Data reset)',
+    'version': '14.21.03.31',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -35,7 +35,7 @@
     customize my odoo. odoo customize, odoo oem.
     """,
     'description': """
-    
+
     App Customize Odoo (Change Title,Language,Documentation,Quick Debug)
     ============
     White label odoo.
@@ -72,12 +72,14 @@
     29. Apps version compare. Add Install version in App list. Add Local updatable filter in app list.
     30. 1 key export app translate file like .po file.
     31. Show or hide odoo Referral in the top menu.
-    32. Fix odoo bug of complete name bug of product category and stock location.
+    32. Fix odoo bug of complete name bug of product category and stock location..
     33. Add Demo Ribbon Setting.
-    34. Add Remove all quality data(for odoo Enterprise).
-    35. Add odoo 14 Support.
+    34. Add Remove all quality data.
+    35. Fixed for odoo 14.
     36. Add refresh translate for multi module.
-    
+    37. Easy noupdate manage for External Identifiers(xml_id)
+    38. Add Draggable Dialog enable.
+
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
     The user can get the help document just by one click.
@@ -117,9 +119,11 @@
     31. 显示或去除 odoo 推荐
     32. 增加修复品类及区位名的操作 
     33. 增加 Demo 的显示设置 
-    34. 增加清除质检数据 (企业版)
+    34. 增加清除质检数据 
     35. 优化至odoo14适用 
     36. 可为多个模块强制更新翻译 
+    37. noupdate字段的快速管理，主要针对 xml_id 
+    38. 对话框可拖拽 
     """,
     'images': ['static/description/banner.gif'],
     'depends': [
@@ -143,6 +147,7 @@
         'views/ir_ui_menu_views.xml',
         'views/ir_ui_view_views.xml',
         'views/ir_model_fields_views.xml',
+        'views/ir_model_data_views.xml',
         # data
         'data/ir_config_parameter_data.xml',
         'data/ir_module_module_data.xml',

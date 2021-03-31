@@ -1,7 +1,7 @@
 ##App Odoo Customize(Debranding Title,Language,Documentation,Quick Debug,Quick Data Clear)
 ============
 White label odoo. 
-Support Odoo 14,13,12, 11, 10, 9. Including communicate and enterprise version.
+Support Odoo 13,12, 11, 10, 9. Including communicate and enterprise version.
 You can config odoo, make it look like your own platform.
 1. Deletes Odoo label in footer
 2. Replaces "Odoo" in Windows title

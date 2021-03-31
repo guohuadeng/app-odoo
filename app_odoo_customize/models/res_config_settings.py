@@ -116,6 +116,9 @@ class ResConfigSettings(models.TransientModel):
     # 清数据，o=对象, s=序列 
     def remove_app_data(self, o, s=[]):
         for line in o:
+            # 检查是否存在
+            if not self.env['ir.model']._get(line):
+                continue
             obj_name = line
             obj = self.pool.get(obj_name)
             if not obj:
@@ -125,14 +128,20 @@ class ResConfigSettings(models.TransientModel):
                 t_name = obj._table
 
             sql = "delete from %s" % t_name
+            # 增加多公司处理
+            if hasattr(self.env[obj_name], 'company_id'):
+                field = self.env[obj_name]._fields['company_id']
+                if not field.related or field.store:
+                    sql = "%s where company_id=%d" % (sql, self.env.company.id)
+                    _logger.warning('remove_app_data where add company_id: %s' % obj_name)
             try:
                 self._cr.execute(sql)
-                self._cr.commit()
+                # self._cr.commit()
             except Exception as e:
                 _logger.error('remove data error: %s,%s', line, e)
         # 更新序号
         for line in s:
-            domain = [('code', '=ilike', line + '%')]
+            domain = ['|', ('code', '=ilike', line + '%'), ('prefix', '=ilike', line + '%')]
             try:
                 seqs = self.env['ir.sequence'].sudo().search(domain)
                 if seqs.exists():
@@ -262,7 +271,7 @@ class ResConfigSettings(models.TransientModel):
             # 清除库存单据
             'stock.quant',
             'stock.move.line',
-            'stock.package.level',
+            'stock.package_level',
             'stock.quantity.history',
             'stock.quant.package',
             'stock.move',
@@ -280,6 +289,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'stock.',
             'picking.',
+            'procurement.group',
             'WH/',
         ]
         return self.remove_app_data(to_removes, seqs)
@@ -306,6 +316,7 @@ class ResConfigSettings(models.TransientModel):
 
         # extra 更新序号
         domain = [
+            ('company_id', '=', self.env.company.id),
             '|', ('code', '=ilike', 'account.%'),
             '|', ('prefix', '=ilike', 'BNK1/%'),
             '|', ('prefix', '=ilike', 'CSH1/%'),
@@ -326,10 +337,11 @@ class ResConfigSettings(models.TransientModel):
         return res
 
     def remove_account_chart(self):
+        company_id = self.env.company.id
+        self = self.with_context(force_company=company_id, company_id=company_id)
         to_removes = [
             # 清除财务科目，用于重设
             'res.partner.bank',
-            'res.bank',
             'account.move.line',
             'account.invoice',
             'account.payment',
@@ -344,17 +356,18 @@ class ResConfigSettings(models.TransientModel):
         # todo: 要做 remove_hr，因为工资表会用到 account
         # 更新account关联，很多是多公司字段，故只存在 ir_property，故在原模型，只能用update
         try:
-            # reset default tax，不管多公司
             field1 = self.env['ir.model.fields']._get('product.template', "taxes_id").id
             field2 = self.env['ir.model.fields']._get('product.template', "supplier_taxes_id").id
 
-            sql = ("delete from ir_default where field_id = %s or field_id = %s") % (field1, field2)
-            sql2 = ("update account_journal set bank_account_id=NULL;")
+            sql = "delete from ir_default where (field_id = %s or field_id = %s) and company_id=%d" \
+                  % (field1, field2, company_id)
+            sql2 = "update account_journal set bank_account_id=NULL where company_id=%d;" % company_id
             self._cr.execute(sql)
             self._cr.execute(sql2)
             self._cr.commit()
         except Exception as e:
-            pass
+            _logger.error('remove data error: %s,%s', 'account_chart: set tax and account_journal', e)
+
         try:
             # 增加对 pos的处理
             sql = ("update pos_config set journal_id=NULL;")
@@ -383,7 +396,7 @@ class ResConfigSettings(models.TransientModel):
                     'property_stock_valuation_account_id': None,
                 })
         except Exception as e:
-            pass
+            pass  # raise Warning(e)
         try:
             rec = self.env['stock.location'].search([])
             for r in rec:
@@ -392,10 +405,12 @@ class ResConfigSettings(models.TransientModel):
                     'valuation_out_account_id': None,
                 })
         except Exception as e:
-            pass
+            pass  # raise Warning(e)
 
         seqs = []
-        return self.remove_app_data(to_removes, seqs)
+        res = self.remove_app_data(to_removes, seqs)
+        self.env.company.write({'chart_template_id': False})
+        return res
 
     def remove_project(self):
         to_removes = [
@@ -481,14 +496,14 @@ class ResConfigSettings(models.TransientModel):
 
     def remove_all_biz(self):
         self.remove_account()
+        self.remove_quality()
         self.remove_inventory()
-        self.remove_mrp()
         self.remove_purchase()
+        self.remove_mrp()
         self.remove_sales()
         self.remove_project()
         self.remove_pos()
         self.remove_expense()
-        self.remove_quality()
         self.remove_message()
         return True
 
