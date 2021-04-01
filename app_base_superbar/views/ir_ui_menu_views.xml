@@ -1,5 +1,8 @@
 <odoo>
   <data>
+    <record id="base.grant_menu_access" model="ir.actions.act_window">
+        <field name="context">{'ir.ui.menu.full_list': True}</field>
+    </record>
     <record id="app_edit_menu_access_search" model="ir.ui.view">
         <field name="name">app.ir.ui.menu.search</field>
         <field name="model">ir.ui.menu</field>
