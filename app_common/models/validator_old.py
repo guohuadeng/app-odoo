@@ -62,7 +62,7 @@ with tools.file_open(get_resource_path('app_common', 'rng', 'tree_view.rng')) as
         _relaxng_cache['tree'] = etree.RelaxNG(tmp_doc)
         _logger.warning('=========new tree done: %s' % _relaxng_cache['tree'])
     except Exception as error:
-        _logger.exception('Failed to load RelaxNG XML schema for views validation, {error}'.format(
+        _logger.error('Failed to load RelaxNG XML schema for views validation, {error}'.format(
             error=error))
         _relaxng_cache['tree'] = None
 
