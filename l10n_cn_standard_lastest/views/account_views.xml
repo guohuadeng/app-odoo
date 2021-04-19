@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data>
-        <!-- Top menu item -->
-        <menuitem name="Finance"
-            id="account.menu_finance"/>
-    </data>
-</odoo>
