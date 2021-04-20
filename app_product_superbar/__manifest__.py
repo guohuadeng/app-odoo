@@ -30,7 +30,7 @@
     """,
     'description': """
     Superbar, zTree widget. 
-    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
+    Advance Search panel, search bar. with real parent children tree, ListView or KanbanView. parent tree, children tree,
     Product category tree ,Department tree, stock location tree.
     超级方便的查询，树状视图
     """,
