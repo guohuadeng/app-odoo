@@ -117,7 +117,11 @@ class ResConfigSettings(models.TransientModel):
     def remove_app_data(self, o, s=[]):
         for line in o:
             # 检查是否存在
-            if not self.env['ir.model']._get(line):
+            try:
+                if not self.env['ir.model']._get(line):
+                    continue
+            except Exception as e:
+                _logger.warning('remove data error get ir.model: %s,%s', line, e)
                 continue
             obj_name = line
             obj = self.pool.get(obj_name)
