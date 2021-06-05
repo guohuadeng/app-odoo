@@ -2,6 +2,8 @@
 from odoo import models, fields, api, _
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
 
+from ..controllers import main as imgc
+
 from datetime import date, datetime, time
 import pytz
 
@@ -43,3 +45,8 @@ class Base(models.AbstractModel):
         user_tz = pytz.timezone(self.env.user.tz or 'Etc/GMT+8')
         dt = dt.replace(tzinfo=pytz.timezone('UTC'))
         return dt.astimezone(user_tz).strftime(return_format)
+
+    @api.model
+    def get_image_from_url(self, url):
+        res = imgc.ImageController.get_image_from_url(url)
+        return res
