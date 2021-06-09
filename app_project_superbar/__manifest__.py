@@ -17,7 +17,7 @@
 
 {
     'name': "Project and task browse by partner,user, stage navigator",
-    'version': '13.19.12.03',
+    'version': '13.21.06.09',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
