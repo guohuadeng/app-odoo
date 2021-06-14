@@ -48,5 +48,5 @@ class Base(models.AbstractModel):
 
     @api.model
     def get_image_from_url(self, url):
-        res = imgc.ImageController.get_image_from_url(url)
+        res = imgc.AppController.get_image_from_url(url)
         return res
