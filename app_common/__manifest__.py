@@ -64,9 +64,6 @@
         'base',
         'web',
     ],
-    'external_dependencies': {
-        'python': ['pyyaml', 'ua-parser', 'user-agents'],
-    },
     'data': [
         # 'security/*.xml',
         # 'security/ir.model.access.csv',

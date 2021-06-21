@@ -3,7 +3,7 @@
 import base64
 from io import BytesIO
 import requests
-from user_agents import parse
+from ..lib.user_agents import parse
 
 from odoo import api, http, SUPERUSER_ID, _
 from odoo import http, exceptions
