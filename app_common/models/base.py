@@ -2,7 +2,9 @@
 from odoo import models, fields, api, _
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
 
-from ..controllers import main as imgc
+import requests
+import base64
+from io import BytesIO
 
 from datetime import date, datetime, time
 import pytz
@@ -48,5 +50,11 @@ class Base(models.AbstractModel):
 
     @api.model
     def get_image_from_url(self, url):
-        res = imgc.AppController.get_image_from_url(url)
-        return res
+        if not url:
+            return None
+        try:
+            response = requests.get(url)  # 将这个图片保存在内存
+        except Exception as e:
+            return None
+        # 返回这个图片的base64编码
+        return base64.b64encode(BytesIO(response.content).read())

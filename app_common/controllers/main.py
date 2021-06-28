@@ -3,6 +3,8 @@
 import base64
 from io import BytesIO
 import requests
+from math import radians, cos, sin, asin, sqrt
+
 from ..lib.user_agents import parse
 
 from odoo import api, http, SUPERUSER_ID, _
@@ -69,5 +71,25 @@ class AppController(http.Controller):
         elif 'cn.erpapp.o20sticks.App' in ua:
             # 安卓app
             utype = 'native_android'
-        _logger.warning('=========get ua %s,%s' % (utype, ua))
+        # _logger.warning('=========get ua %s,%s' % (utype, ua))
         return utype
+
+
+def haversine(lon1, lat1, lon2, lat2):
+    # 计算地图上两点的距离
+    # in:经度1，纬度1，经度2，纬度2 （十进制度数）
+    # out: 距离（米）
+    """
+    Calculate the great circle distance between two points
+    on the earth (specified in decimal degrees)
+    """
+    # 将十进制度数转化为弧度
+    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+    
+    # haversine公式
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+    a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+    c = 2 * asin(sqrt(a))
+    r = 6371  # 地球平均半径，单位为公里
+    return c * r * 1000
