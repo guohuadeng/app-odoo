@@ -22,7 +22,7 @@
 
 {
     'name': 'App Web Responsive Fullwidth (form view full width)',
-    'version': '14.21.02.20',
+    'version': '14.21.06.30',
     'category': 'web',
     'author': 'Sunpop.cn',
     'website': 'https://www.sunpop.cn',
