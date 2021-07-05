@@ -1,5 +1,22 @@
 <odoo>
     <data>
+        <record id="view_stock_move_line_detailed_operation_tree_multiline_add" model="ir.ui.view">
+            <field name="name">app.stock.move.line.multiline.add</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_stock_move_line_detailed_operation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[1]" position="before">
+                    <control>
+                        <create string="Add a line" context="{}"/>
+                        <create string="Multi add line" context="{
+                        'pro_multi_add': True,
+                        'pro_res_model': 'product.product',
+                        'pro_res_field': 'product_id',
+                        }"/>
+                    </control>
+                </xpath>
+            </field>
+        </record>
         <record id="app_view_picking_form" model="ir.ui.view">
             <field name="name">app.stock.picking.form</field>
             <field name="model">stock.picking</field>
@@ -7,8 +24,8 @@
             <field name="arch" type="xml">
                 <xpath expr="//page/field[@name='move_ids_without_package']/tree/field[1]" position="before">
                     <control>
-                        <create name="add_line" string="Add a line"/>
-                        <create name="multi_add_line" string="Multi add line" context="{
+                        <create string="Add a line" context="{}"/>
+                        <create string="Multi add line" context="{
                         'pro_multi_add': True,
                         'pro_res_model': 'product.product',
                         'pro_res_field': 'product_id',
