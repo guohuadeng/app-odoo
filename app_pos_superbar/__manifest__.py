@@ -17,7 +17,7 @@
 
 {
     'name': "App Pos order browse by store salesperson status",
-    'version': '13.20.04.11',
+    'version': '13.21.07.06',
     'author': 'Sunpop.cn',
     'category': 'Point of Sale',
     'website': 'https://www.sunpop.cn',
@@ -37,13 +37,14 @@
     'price': 0.00,
     'currency': 'EUR',
     'depends': [
-        'point_of_sale',
+        'pos_sale',
         'app_product_superbar',
     ],
     'images': ['static/description/superbar.gif'],
     'data': [
         'views/product_views.xml',
         'views/pos_order_views.xml',
+        'views/pos_config_views.xml',
         'views/report_pos_order_views.xml',
     ],
     'demo': [
