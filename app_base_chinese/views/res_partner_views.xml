@@ -54,7 +54,10 @@
                 </xpath>
                 <xpath expr="//field[@name='child_ids']//form[1]//field[@name='street']" position="before">
                     <xpath expr="//field[@name='child_ids']//form[1]//field[@name='zip']" position="move"/>
-                </xpath>                
+                </xpath>
+                <xpath expr="//field[@name='child_ids']//form[1]//field[@name='email']" position="before">
+                    <field name="category_id" widget="many2many_tags"/>
+                </xpath>
                 <!-- res.partner联系人 kanban -->
                 <!-- 显示类型和地址等 -->
                 <xpath expr="//field[@name='child_ids']//kanban[1]//templates//field[@name='name']" position="before">
@@ -62,6 +65,7 @@
                 </xpath>
                 <xpath expr="//field[@name='child_ids']//kanban[1]//templates//field[@name='name']" position="after">
                     <div t-if="record.type and record.type.raw_value"><field name="type"/></div>
+                    <div t-if="record.category_id and record.category_id.raw_value"><field name="category_id" widget="many2many_tags"/></div>
                 </xpath>
             </field>
         </record>
@@ -83,6 +87,9 @@
                 </xpath>
                 <xpath expr="//field[@name='street']" position="before">
                     <xpath expr="//field[@name='zip']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="category_id" widget="many2many_tags"/>
                 </xpath>
             </field>
         </record>
@@ -133,7 +140,7 @@
             <field name="inherit_id" ref="base.view_partner_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='email']" position="after">
-                    <field name="category_id" optional="show"/>
+                    <field name="category_id" widget="many2many_tags" optional="show"/>
                 </xpath>
             </field>
         </record>

@@ -140,7 +140,7 @@ class ResConfigSettings(models.TransientModel):
                     _logger.warning('remove_app_data where add company_id: %s' % obj_name)
             try:
                 self._cr.execute(sql)
-                # self._cr.commit()
+                self._cr.commit()
             except Exception as e:
                 _logger.warning('remove data error: %s,%s', line, e)
         # 更新序号
