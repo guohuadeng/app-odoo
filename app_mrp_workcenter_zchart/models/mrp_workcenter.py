@@ -14,14 +14,15 @@ class MrpWorkCenter(models.Model):
     _parent_name = "parent_id"
     _parent_store = True
     _parent_order = 'code'
+    _order = 'parent_path, code'
 
-    parent_id = fields.Many2one('mrp.workcenter', 'Parent WC', index=True, ondelete='cascade')
+    parent_id = fields.Many2one('mrp.workcenter', 'Parent WC', index=True, ondelete='restrict')
     parent_path = fields.Char(index=True)
     child_ids = fields.One2many('mrp.workcenter', 'parent_id', 'Child WCs')
     child_all_count = fields.Integer(
         'Indirect Surbordinates Count',
         compute='_compute_child_all_count', store=False)
-    level = fields.Integer('Level', compute='_compute_level', inverse=False, default=0, readonly=True, store=True)
+    level = fields.Integer('Level', compute='_compute_level', inverse=False, readonly=True, store=True)
 
     @api.depends('child_ids.child_all_count')
     def _compute_child_all_count(self):
