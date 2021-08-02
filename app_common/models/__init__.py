@@ -24,6 +24,6 @@
 
 from . import base
 from . import fields
-# from . import validator
+from . import view_validation
 from . import ir_ui_view
 
