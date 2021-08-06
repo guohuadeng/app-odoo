@@ -3,9 +3,9 @@
     <t t-extend="UserMenu.Actions">
         <t t-jquery="a[data-menu='documentation']" t-operation="before">
             <switch-lang/>
-            <a role="menuitem" href="#" data-menu="debug" class="dropdown-item">Activate the developer mode</a>
-            <a role="menuitem" href="#" data-menu="debugassets" class="dropdown-item">Activate the developer mode (with assets)</a>
-            <a role="menuitem" href="#" data-menu="quitdebug" class="dropdown-item">Deactivate the developer mode</a>
+            <a t-if="widget.is_manager" role="menuitem" href="#" data-menu="debug" class="dropdown-item">Activate the developer mode</a>
+            <a t-if="widget.is_manager" role="menuitem" href="#" data-menu="debugassets" class="dropdown-item">Activate the developer mode (with assets)</a>
+            <a t-if="widget.is_manager" role="menuitem" href="#" data-menu="quitdebug" class="dropdown-item">Deactivate the developer mode</a>
             <div role="separator" class="dropdown-divider"/>
             <a role="menuitem" href="#" data-menu="documentation_dev" class="dropdown-item">Developer Manual</a>
         </t>

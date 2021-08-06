@@ -9,6 +9,7 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
      * editing its preferences, accessing the documentation, logging out...
      */
 
+    const session = require('web.session');
     var UserMenu = require('web.UserMenu');
     //避免错误，要再定义
     var documentation_url = 'https://www.sunpop.cn';
@@ -23,6 +24,7 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
             var self = this;
             var session = this.getSession();
             var lang_list = '';
+            this.is_manager = false;
 
             self._rpc({
                 model: 'res.lang',
@@ -101,6 +103,10 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
          * @override
          * 由于odoo11 没传ev到事件，所以要重载
          */
+        async willStart() {
+            await this._super(...arguments);
+            this.is_manager = await session.user_has_group('base.group_erp_manager');
+        },
         start: function () {
             var self = this;
             return this._super.apply(this, arguments).then(function () {

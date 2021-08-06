@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo 14,13 Customize OEM(Boost, Data reset)',
-    'version': '13.21.07.27',
+    'version': '13.21.08.04',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -79,6 +79,7 @@
     36. Add refresh translate for multi module.
     37. Easy noupdate manage for External Identifiers(xml_id)
     38. Add Draggable Dialog enable.
+    39. Only erp manager can see debug menu..
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -124,6 +125,7 @@
     36. 可为多个模块强制更新翻译 
     37. noupdate字段的快速管理，主要针对 xml_id 
     38. 对话框可拖拽 
+    39. 只有系统管理员可以操作快速debug
     """,
     'images': ['static/description/banner.gif'],
     'depends': [
