@@ -132,12 +132,7 @@ class ResConfigSettings(models.TransientModel):
                 t_name = obj._table
 
             sql = "delete from %s" % t_name
-            # 增加多公司处理, 要删除无公司的
-            if hasattr(self.env[obj_name], 'company_id'):
-                field = self.env[obj_name]._fields['company_id']
-                if not field.related or field.store:
-                    sql = "%s where company_id=%d or company_id isnull" % (sql, self.env.company.id)
-                    _logger.warning('remove_app_data where add company_id: %s' % obj_name)
+            # 增加多公司处理
             try:
                 self._cr.execute(sql)
                 self._cr.commit()
