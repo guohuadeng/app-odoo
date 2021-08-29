@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo 14,13 Customize OEM(Boost, Data reset)',
-    'version': '13.21.08.04',
+    'version': '13.21.08.30',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -80,6 +80,7 @@
     37. Easy noupdate manage for External Identifiers(xml_id)
     38. Add Draggable Dialog enable.
     39. Only erp manager can see debug menu..
+    40. Fix support for enterprise version.
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
