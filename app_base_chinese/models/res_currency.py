@@ -26,7 +26,7 @@ class ResCurrency(models.Model):
             xflag = value
             value = abs(value)
         # 先把value 数字进行格式化保留两位小数，转成字符串然后去除小数点
-        nums = map(int, list(str('%0.2f' % value).replace('.', '')))
+        nums = list(map(int, list(str('%0.2f' % value).replace('.', ''))))
         words = []
         zflag = 0  # 标记连续0次数，以删除万字，或适时插入零字
         start = len(nums) - 3

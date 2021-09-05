@@ -33,7 +33,7 @@
 
 {
     'name': "Sunpop Odooapp Common Func",
-    'version': '13.21.08.26',
+    'version': '13.21.09.03',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -68,7 +68,7 @@
         # 'security/*.xml',
         # 'security/ir.model.access.csv',
         # 'data/.xml',
-        # 'views/ir_module_module_views.xml',
+        'views/ir_cron_views.xml',
         # 'report/.xml',
     ],
     'qweb': [
