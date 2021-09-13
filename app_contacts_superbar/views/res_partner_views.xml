@@ -9,10 +9,10 @@
                 <xpath expr="//search">
                     <searchpanel view_types="tree,kanban,search">
                         <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
-                        <!--<field name="category_id"/>-->
+                        <field name="category_id" select="multi"/>
                         <!--<field name="is_company"/>-->
                         <field name="industry_id"/>
-                        <field name="lang"/>
+<!--                        <field name="lang"/>-->
                         <!--<field name="country_id"/>-->
                         <!--<field name="commercial_partner_id"-->
                         <!--widget="ztree_search"-->
