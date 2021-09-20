@@ -215,14 +215,17 @@
                 id="menu_app_theme_config"
                 parent="menu_app_group"
                 sequence="1"
-                action="action_app_theme_config"
-                groups="base.group_system"/>
+                action="action_app_theme_config"/>
+        <menuitem
+                id="menu_ir_cron"
+                parent="menu_app_group"
+                sequence="98"
+                action="base.ir_cron_act"/>
         <!--增加导入Demo数据-->
         <menuitem
                 id="menu_app_demo_data"
                 parent="menu_app_group"
                 sequence="99"
-                action="base.demo_force_install_action"
-                groups="base.group_system"/>
+                action="base.demo_force_install_action"/>
     </data>
 </odoo>
