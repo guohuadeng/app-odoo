@@ -289,6 +289,7 @@ class ResConfigSettings(models.TransientModel):
             'stock.',
             'picking.',
             'procurement.group',
+            'product.tracking.default',
             'WH/',
         ]
         return self.remove_app_data(to_removes, seqs)

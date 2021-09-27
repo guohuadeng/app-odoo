@@ -18,7 +18,7 @@
 
 {
     'name': "App web enterprise enhance,企业版界面增强",
-    'version': '13.21.04.22',
+    'version': '13.21.09.22',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

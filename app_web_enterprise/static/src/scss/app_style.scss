@@ -110,3 +110,8 @@
 .o_form_readonly .o_list_view .o_list_table .o_list_many2one {
   white-space: pre-wrap!important;
 }
+
+//主菜单的 menu 图标
+.o_main_navbar > .o_menu_toggle.fa-th:before {
+  content: "\f26a";
+}
