@@ -53,10 +53,6 @@
             <field name="website">https://www.sunpop.cn</field>
         </record>
 
-        <record model="ir.module.module" id="base.module_website_calendar">
-            <field name="website">https://www.sunpop.cn</field>
-        </record>
-
         <record model="ir.module.module" id="base.module_mrp_workorder">
             <field name="website">https://www.sunpop.cn</field>
         </record>
