@@ -22,7 +22,7 @@
 # description:
 
 {
-    'name': 'odoo 14,13 Customize OEM(Boost, Data reset)',
+    'name': 'Odoo 15,14,13 Customize OEM(Boost, Data reset)',
     'version': '14.21.03.31',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
@@ -39,7 +39,7 @@
     App Customize Odoo (Change Title,Language,Documentation,Quick Debug)
     ============
     White label odoo.
-    Support Odoo 14, 13, 12, 11, 10, 9.
+    Support Odoo 15,14, 13, 12, 11, 10, 9.
     You can config odoo, make it look like your own platform.
     1. Deletes Odoo label in footer
     2. Replaces "Odoo" in Windows title
@@ -85,7 +85,7 @@
     The user can get the help document just by one click.
     ## 在符合odoo开源协议的前提下，去除odoo版权信息，自定义你的odoo
     可完全自行设置下列 odoo 选项，让 odoo 看上去像是你的软件产品
-    支持Odoo 14,13,12, 11, 10, 9 版本，社区版企业版通用    
+    支持Odoo 15,14,13,12, 11, 10, 9 版本，社区版企业版通用    
     1. 删除菜单导航页脚的 Odoo 标签
     2. 将弹出窗口中 "Odoo" 设置为自定义名称
     3. 自定义用户菜单中的 Documentation, Support, About 的链接
