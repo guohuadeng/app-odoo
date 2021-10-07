@@ -46,7 +46,7 @@ class IrModule(models.Model):
             })
         return action
 
-    @api.depends('name', 'state')
+    @api.depends('name', 'latest_version', 'state')
     def _get_latest_version(self):
         default_version = modules.adapt_version('1.0')
         for module in self:

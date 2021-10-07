@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-extend="UserMenu.Actions">
+    <!--owl 处理继承继承-->
+    <t t-name="UserMenu" t-inherit="web.UserMenu" t-inherit-mode="extension" owl="1">
+        <xpath expr="//td[hasclass('client-line-email')]" position="after">
         <t t-jquery="a[data-menu='documentation']" t-operation="before">
             <switch-lang/>
             <a role="menuitem" href="#" data-menu="debug" class="dropdown-item">Activate the developer mode</a>

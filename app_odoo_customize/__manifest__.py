@@ -23,17 +23,65 @@
 
 {
     'name': 'odoo 15 Customize OEM(Boost, Data reset)',
-    'version': '15.21.10.07',
+    'version': '15.21.10.08',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
+    'images': ['static/description/banner.gif'],
     'summary': """
-    1 click customize odoo, reset data. For quick develop. Set brand, boost, reset data, debug. Language Switcher. 
+    1 click customize odoo, reset data. For quick develop. Set brand, boost, reset data, debug. Language Switcher.
     Easy Delete data.reset account chart.
-    customize my odoo. 
+    customize my odoo.
     """,
+    'depends': [
+        'base_setup',
+        'web',
+        'mail',
+        'iap',
+        # 'digest',
+        # when enterprise
+        # 'web_mobile'
+    ],
+    'data': [
+        'security/res_groups.xml',
+        'security/ir.model.access.csv',
+        'views/app_odoo_customize_views.xml',
+        'views/app_theme_config_settings_views.xml',
+        'views/res_config_settings_views.xml',
+        'views/ir_views.xml',
+        'views/ir_module_module_views.xml',
+        'views/ir_translation_views.xml',
+        'views/ir_ui_menu_views.xml',
+        'views/ir_ui_view_views.xml',
+        'views/ir_model_fields_views.xml',
+        'views/ir_model_data_views.xml',
+        # data
+        'data/ir_config_parameter_data.xml',
+        'data/ir_module_module_data.xml',
+        # 'data/digest_template_data.xml',
+        'data/res_company_data.xml',
+    ],
+    # 'qweb': [
+    #     'static/src/xml/*.xml',
+    # ],
+    'assets': {
+        'web.assets_backend': [
+            'app_odoo_customize/static/src/scss/app.scss',
+            'app_odoo_customize/static/src/scss/ribbon.scss',
+            'app_odoo_customize/static/src/scss/dialog.scss',
+            'app_odoo_customize/static/src/js/app_window_title.js',
+            'app_odoo_customize/static/src/js/user_menu.js',
+            # 'app_odoo_customize/static/src/js/ribbon.js',
+            'app_odoo_customize/static/src/js/dialog.js',
+        ],
+    },
+    'pre_init_hook': 'pre_init_hook',
+    'post_init_hook': 'post_init_hook',
+    'installable': True,
+    'application': True,
+    'auto_install': True,
     'description': """
 
     App Customize Odoo (Change Title,Language,Documentation,Quick Debug)
@@ -87,7 +135,7 @@
     The user can get the help document just by one click.
     ## 在符合odoo开源协议的前提下，去除odoo版权信息，自定义你的odoo
     可完全自行设置下列 odoo 选项，让 odoo 看上去像是你的软件产品
-    支持odoo 15,14,13,12, 11, 10, 9 版本，社区版企业版通用    
+    支持odoo 15,14,13,12, 11, 10, 9 版本，社区版企业版通用
     1. 删除菜单导航页脚的 Odoo 标签
     2. 将弹出窗口中 "Odoo" 设置为自定义名称
     3. 自定义用户菜单中的 Documentation, Support, About 的链接
@@ -119,61 +167,13 @@
     29. App版本比较，快速查看可本地更新的模块
     30. 一键导出翻译文件 po
     31. 显示或去除 odoo 推荐
-    32. 增加修复品类及区位名的操作 
-    33. 增加 Demo 的显示设置 
-    34. 增加清除质检数据 
-    35. 优化至odoo14适用 
-    36. 可为多个模块强制更新翻译 
-    37. noupdate字段的快速管理，主要针对 xml_id 
-    38. 对话框可拖拽 
+    32. 增加修复品类及区位名的操作
+    33. 增加 Demo 的显示设置
+    34. 增加清除质检数据
+    35. 优化至odoo14适用
+    36. 可为多个模块强制更新翻译
+    37. noupdate字段的快速管理，主要针对 xml_id
+    38. 对话框可拖拽
     39. 只有系统管理员可以操作快速debug
     """,
-    'images': ['static/description/banner.gif'],
-    'depends': [
-        'base_setup',
-        'web',
-        'mail',
-        'iap',
-        # 'digest',
-        # when enterprise
-        # 'web_mobile'
-    ],
-    'data': [
-        'security/res_groups.xml',
-        'security/ir.model.access.csv',
-        'views/app_odoo_customize_views.xml',
-        'views/app_theme_config_settings_views.xml',
-        'views/res_config_settings_views.xml',
-        'views/ir_views.xml',
-        'views/ir_module_module_views.xml',
-        'views/ir_translation_views.xml',
-        'views/ir_ui_menu_views.xml',
-        'views/ir_ui_view_views.xml',
-        'views/ir_model_fields_views.xml',
-        'views/ir_model_data_views.xml',
-        # data
-        'data/ir_config_parameter_data.xml',
-        'data/ir_module_module_data.xml',
-        # 'data/digest_template_data.xml',
-        'data/res_company_data.xml',
-    ],
-    'qweb': [
-        'static/src/xml/*.xml',
-    ],
-    'assets': {
-        'web.assets_backend': [
-            'app_odoo_customize/static/src/scss/app.scss',
-            'app_odoo_customize/static/src/scss/ribbon.scss',
-            'app_odoo_customize/static/src/scss/dialog.scss',
-            'app_odoo_customize/static/src/js/app_window_title.js',
-            'app_odoo_customize/static/src/js/customize_user_menu.js',
-            'app_odoo_customize/static/src/js/ribbon.js',
-            'app_odoo_customize/static/src/js/dialog.js',
-        ],
-    },
-    'pre_init_hook': 'pre_init_hook',
-    'post_init_hook': 'post_init_hook',
-    'installable': True,
-    'application': True,
-    'auto_install': True,
 }
