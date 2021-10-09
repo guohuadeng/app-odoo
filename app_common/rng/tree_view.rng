@@ -28,6 +28,7 @@
             <rng:optional><rng:attribute name="delete"/></rng:optional>
             <rng:optional><rng:attribute name="edit"/></rng:optional>
             <rng:optional><rng:attribute name="multi_edit"/></rng:optional>
+            <rng:optional><rng:attribute name="multi_group_select"/></rng:optional>
             <rng:optional><rng:attribute name="export_xlsx"/></rng:optional>
             <rng:optional><rng:attribute name="duplicate"/></rng:optional>
             <rng:optional><rng:attribute name="import"/></rng:optional>
@@ -45,6 +46,16 @@
             <rng:optional><rng:attribute name="decoration-primary"/></rng:optional>
             <rng:optional><rng:attribute name="decoration-success"/></rng:optional>
             <rng:optional><rng:attribute name="decoration-warning"/></rng:optional>
+            <rng:optional><rng:attribute name="decoration-black"/></rng:optional>
+            <rng:optional><rng:attribute name="decoration-white"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-danger"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-info"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-muted"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-primary"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-success"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-warning"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-black"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-white"/></rng:optional>
             <rng:optional><rng:attribute name="banner_route"/></rng:optional>
             <rng:optional><rng:attribute name="sample"/></rng:optional>
             <rng:optional>

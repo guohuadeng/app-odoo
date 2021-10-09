@@ -33,7 +33,7 @@
 
 {
     'name': "Sunpop Odooapp Common Func",
-    'version': '14.21.01.27',
+    'version': '14.21.10.03',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -42,10 +42,6 @@
     'price': 0.00,
     'currency': 'EUR',
     'images': ['static/description/banner.png'],
-    'depends': [
-        'base',
-        'web',
-    ],
     'summary': '''
     Core for common use sunpop apps.
     基础核心，必须没有要被依赖字段及视图等，实现auto_install
@@ -64,11 +60,15 @@
     4. 多公司支持
     5. Odoo 13, 12, 企业版，社区版，多版本支持
     ''',
+    'depends': [
+        'base',
+        'web',
+    ],
     'data': [
         # 'security/*.xml',
         # 'security/ir.model.access.csv',
         # 'data/.xml',
-        # 'views/ir_module_module_views.xml',
+        'views/ir_cron_views.xml',
         # 'report/.xml',
     ],
     'qweb': [

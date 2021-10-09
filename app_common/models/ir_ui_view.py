@@ -22,7 +22,7 @@ def app_relaxng(view_type):
     """ Return a validator for the given view type, or None. """
     if view_type not in _relaxng_cache:
         # tree, search 特殊
-        if view_type in ['tree', 'search']:
+        if view_type in ['tree', 'search', 'pivot']:
             _file = get_resource_path('app_common', 'rng', '%s_view.rng' % view_type)
         else:
             _file = get_resource_path('base', 'rng', '%s_view.rng' % view_type)
@@ -31,7 +31,7 @@ def app_relaxng(view_type):
                 relaxng_doc = etree.parse(frng)
                 _relaxng_cache[view_type] = etree.RelaxNG(relaxng_doc)
             except Exception:
-                _logger.exception('Failed to load RelaxNG XML schema for views validation')
+                _logger.error('Failed to load RelaxNG XML schema for views validation')
                 _relaxng_cache[view_type] = None
     return _relaxng_cache[view_type]
 

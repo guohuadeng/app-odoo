@@ -12,3 +12,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: app_common
+#: model:ir.model.fields,field_description:app_common.field_ir_cron__trigger_user_id
+msgid "Last Trigger User"
+msgstr "手动运行用户"
+
+#. module: app_common
+#: model:ir.model,name:app_common.model_ir_cron
+msgid "Scheduled Actions"
+msgstr "安排的动作"
+
+#. module: app_common
+#: model:ir.model,name:app_common.model_ir_ui_view
+msgid "View"
+msgstr "查看"

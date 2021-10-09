@@ -23,7 +23,10 @@
 # description:
 
 from . import base
-# from . import fields
-# from . import validator
-# from . import ir_ui_view
+from . import fields
+from . import view_validation
+from . import ir_ui_view
+from . import ir_cron
+from . import res_users
+
 
