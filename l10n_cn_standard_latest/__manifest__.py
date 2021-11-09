@@ -9,9 +9,9 @@
 
 {
     'name': '2021最新中国企业会计表.Latest Chinese Accounting.',
-    'version': '14.21.11.07',
+    'version': '14.21.11.09',
     'author': 'Sunpop.cn',
-    'category': 'Localization',
+    'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 12,
