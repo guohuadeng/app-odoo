@@ -144,8 +144,7 @@
                         </div>
                         <div class="col-12 col-lg-12 mb4">
                             <span class="col-3 col-lg-2 text-left">
-                                Accounting
-                                <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." groups="base.group_multi_company"/>
+                                Accounting <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." groups="base.group_multi_company"/>
                             </span>
                             <button string="Delete All Voucher/Invoice/Bill" type="object" name="remove_account"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
@@ -217,6 +216,12 @@
                 parent="menu_app_group"
                 sequence="1"
                 action="action_app_theme_config"
+                groups="base.group_system"/>
+        <menuitem
+                id="menu_ir_cron"
+                parent="menu_app_group"
+                sequence="98"
+                action="base.ir_cron_act"
                 groups="base.group_system"/>
         <!--增加导入Demo数据-->
         <menuitem
