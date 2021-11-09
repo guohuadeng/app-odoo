@@ -342,6 +342,7 @@ class ResConfigSettings(models.TransientModel):
         to_removes = [
             # 清除财务科目，用于重设
             'res.partner.bank',
+            'pos.payment.method',
             'account.move.line',
             'account.invoice',
             'account.payment',
@@ -371,17 +372,18 @@ class ResConfigSettings(models.TransientModel):
         
         # 增加对 pos的处理
         try:
-            rec = self.env['pos.config'].search([])
+            rec = self.env['pos.config'].with_context(active_test=False).search([])
             rec.write({
                 'journal_id': None,
                 'invoice_journal_id': None,
+                'payment_method_ids': None,
             })
         except Exception as e:
             _logger.error('remove data error: %s,%s', 'account_chart', e)
         #     todo: 以下处理参考 res.partner的合并，将所有m2o的都一次处理，不需要次次找模型
         # partner 处理
         try:
-            rec = self.env['res.partner'].search([])
+            rec = self.env['res.partner'].with_context(active_test=False).search([])
             rec.write({
                 'property_account_receivable_id': None,
                 'property_account_payable_id': None,
@@ -390,7 +392,7 @@ class ResConfigSettings(models.TransientModel):
             _logger.error('remove data error: %s,%s', 'account_chart', e)
         # 品类处理
         try:
-            rec = self.env['product.category'].search([])
+            rec = self.env['product.category'].with_context(active_test=False).search([])
             rec.write({
                 'property_account_income_categ_id': None,
                 'property_account_expense_categ_id': None,
@@ -403,7 +405,7 @@ class ResConfigSettings(models.TransientModel):
             pass
         # 产品处理
         try:
-            rec = self.env['product.template'].search([])
+            rec = self.env['product.template'].with_context(active_test=False).search([])
             rec.write({
                 'property_account_income_id': None,
                 'property_account_expense_id': None,
@@ -412,7 +414,7 @@ class ResConfigSettings(models.TransientModel):
             pass
         # 库存计价处理
         try:
-            rec = self.env['stock.location'].search([])
+            rec = self.env['stock.location'].with_context(active_test=False).search([])
             rec.write({
                 'valuation_in_account_id': None,
                 'valuation_out_account_id': None,
@@ -423,8 +425,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = []
         res = self.remove_app_data(to_removes, seqs)
         self._cr.commit()
-        if self.env.company.chart_template_id:
-            self.env.company.sudo().write({'chart_template_id': False})
+        self.env.company.sudo().write({'chart_template_id': None})
         return res
 
     def remove_project(self):
