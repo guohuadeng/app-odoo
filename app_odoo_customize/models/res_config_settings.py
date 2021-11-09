@@ -358,71 +358,73 @@ class ResConfigSettings(models.TransientModel):
         try:
             field1 = self.env['ir.model.fields']._get('product.template', "taxes_id").id
             field2 = self.env['ir.model.fields']._get('product.template', "supplier_taxes_id").id
-
+            
             sql = "delete from ir_default where (field_id = %s or field_id = %s) and company_id=%d" \
                   % (field1, field2, company_id)
             sql2 = "update account_journal set bank_account_id=NULL where company_id=%d;" % company_id
             self._cr.execute(sql)
             self._cr.execute(sql2)
-
+            
             self._cr.commit()
         except Exception as e:
             _logger.error('remove data error: %s,%s', 'account_chart: set tax and account_journal', e)
-
+        
         # 增加对 pos的处理
-        if self.env['ir.model']._get('pos.config'):
-            self.env['pos.config'].write({
-                'journal_id': False,
+        try:
+            rec = self.env['pos.config'].search([])
+            rec.write({
+                'journal_id': None,
+                'invoice_journal_id': None,
             })
+        except Exception as e:
+            _logger.error('remove data error: %s,%s', 'account_chart', e)
         #     todo: 以下处理参考 res.partner的合并，将所有m2o的都一次处理，不需要次次找模型
         # partner 处理
         try:
             rec = self.env['res.partner'].search([])
-            for r in rec:
-                r.write({
-                    'property_account_receivable_id': None,
-                    'property_account_payable_id': None,
-                })
+            rec.write({
+                'property_account_receivable_id': None,
+                'property_account_payable_id': None,
+            })
         except Exception as e:
             _logger.error('remove data error: %s,%s', 'account_chart', e)
         # 品类处理
         try:
             rec = self.env['product.category'].search([])
-            for r in rec:
-                r.write({
-                    'property_account_income_categ_id': None,
-                    'property_account_expense_categ_id': None,
-                    'property_account_creditor_price_difference_categ': None,
-                    'property_stock_account_input_categ_id': None,
-                    'property_stock_account_output_categ_id': None,
-                    'property_stock_valuation_account_id': None,
-                })
+            rec.write({
+                'property_account_income_categ_id': None,
+                'property_account_expense_categ_id': None,
+                'property_account_creditor_price_difference_categ': None,
+                'property_stock_account_input_categ_id': None,
+                'property_stock_account_output_categ_id': None,
+                'property_stock_valuation_account_id': None,
+            })
         except Exception as e:
             pass
         # 产品处理
         try:
             rec = self.env['product.template'].search([])
-            for r in rec:
-                r.write({
-                    'property_account_income_id': None,
-                    'property_account_expense_id': None,
-                })
+            rec.write({
+                'property_account_income_id': None,
+                'property_account_expense_id': None,
+            })
         except Exception as e:
             pass
         # 库存计价处理
         try:
             rec = self.env['stock.location'].search([])
-            for r in rec:
-                r.write({
-                    'valuation_in_account_id': None,
-                    'valuation_out_account_id': None,
-                })
+            rec.write({
+                'valuation_in_account_id': None,
+                'valuation_out_account_id': None,
+            })
         except Exception as e:
             pass  # raise Warning(e)
-
+        
         seqs = []
         res = self.remove_app_data(to_removes, seqs)
-        self.env.company.write({'chart_template_id': False})
+        self._cr.commit()
+        if self.env.company.chart_template_id:
+            self.env.company.sudo().write({'chart_template_id': False})
         return res
 
     def remove_project(self):

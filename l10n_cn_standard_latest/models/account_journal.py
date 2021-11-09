@@ -9,17 +9,6 @@ class AccountJournal(models.Model):
 
     @api.model
     def _prepare_liquidity_account(self, name, company, currency_id, type):
-        '''
-        This function prepares the value to use for the creation of the default debit and credit accounts of a
-        liquidity journal (created through the wizard of generating COA from templates for example).
-
-        :param name: name of the bank account
-        :param company: company for which the wizard is running
-        :param currency_id: ID of the currency in which is the bank account
-        :param type: either 'cash' or 'bank'
-        :return: mapping of field names and values
-        :rtype: dict
-        '''
         digits = 6
         chart = self.company_id.chart_template_id
         if chart:
@@ -30,6 +19,8 @@ class AccountJournal(models.Model):
         else:
             account_code_prefix = company.cash_account_code_prefix or company.bank_account_code_prefix or ''
         digits = len(account_code_prefix)
+        # 获取上级
+        p_account = self.env['account.account'].search([('code', '=', account_code_prefix), ('company_id', '=', company.id)], limit=1)
 
         liquidity_type = self.env.ref('account.data_account_type_liquidity')
         return {
@@ -37,5 +28,8 @@ class AccountJournal(models.Model):
             'currency_id': currency_id or False,
             'code': self.env['account.account']._search_new_account_code(company, digits, account_code_prefix),
             'user_type_id': liquidity_type and liquidity_type.id or False,
+            'parent_id': p_account and p_account.id or False,
+            'group_id': p_account and p_account.group_id and p_account.group_id.id or False,
             'company_id': company.id,
         }
+
