@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Partner Form视图，用继承方式改写2018-11-21,ivan -->
+        <record id="app_view_partner_form" model="ir.ui.view">
+            <field name="name">app.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- 客户编号设计在重要位置，放到 app_partner_auto_reference -->
+                <!--<xpath expr="//field[@name='type']" position="after">-->
+                    <!--<xpath expr="//field[@name='ref']" position="move"/>-->
+                <!--</xpath>-->
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="short_name"/>
+                </xpath>
+                <!-- 信用额度 -->
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="credit_limit"/>
+                </xpath>
+                <!--res.partner客户 地址中国化 -->
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='country_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='state_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='city']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='zip']" position="move"/>
+                </xpath>
+                <!-- res.partner联系人 form -->
+                <!--联系人，如果是个人类型，不允许其下再有联系人-->
+                <!--调整，电商情况，一个人有多个地址-->
+<!--                <xpath expr="//notebook/page[1]" position="attributes">-->
+<!--                    <attribute name="attrs">{'invisible': [('is_company','!=', True)]}</attribute>-->
+<!--                </xpath>-->
+                <!-- 所有类型联系人都要填姓名 -->
+                <xpath expr="//page//field[@name='child_ids']//form[1]//field[@name='name']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <!-- 联系人也显示地址，中国格式 -->
+                <!--res.partner客户 地址中国化 -->
+                <xpath expr="//field[@name='child_ids']//form[1]//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='child_ids']//form[1]//field[@name='country_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']//form[1]//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='child_ids']//form[1]//field[@name='state_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']//form[1]//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='child_ids']//form[1]//field[@name='city']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']//form[1]//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='child_ids']//form[1]//field[@name='zip']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']//form[1]//field[@name='email']" position="before">
+                    <field name="category_id" widget="many2many_tags"/>
+                </xpath>
+                <!-- res.partner联系人 kanban -->
+                <!-- 显示类型和地址等 -->
+                <xpath expr="//field[@name='child_ids']//kanban[1]//templates//field[@name='name']" position="before">
+                    <t t-if="record.ref and record.ref.raw_value">[<field name="ref"/>]</t>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']//kanban[1]//templates//field[@name='name']" position="after">
+                    <div t-if="record.type and record.type.raw_value"><field name="type"/></div>
+                    <div t-if="record.category_id and record.category_id.raw_value"><field name="category_id" widget="many2many_tags"/></div>
+                </xpath>
+            </field>
+        </record>
+
+        <!--res.partner open地址中国化 -->
+        <record id="app_view_partner_address_form" model="ir.ui.view">
+            <field name="name">app.res.partner.form.address</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_address_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='country_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='state_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='city']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='zip']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="category_id" widget="many2many_tags"/>
+                </xpath>
+            </field>
+        </record>
+        <!--res.partner open地址中国化 -->
+        <record id="app_view_partner_short_form" model="ir.ui.view">
+            <field name="name">app.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_short_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='country_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='state_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='city']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='zip']" position="move"/>
+                </xpath>
+            </field>
+        </record>
+        <!--res.partner 私人地址中国化 -->
+        <record id="app_res_partner_view_form_private" model="ir.ui.view">
+            <field name="name">app.res.partner.view.form.private</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_view_form_private"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='country_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='state_id']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='city']" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//field[@name='zip']" position="move"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="app_view_partner_tree" model="ir.ui.view">
+            <field name="name">app.res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='email']" position="after">
+                    <field name="category_id" widget="many2many_tags" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--Partner kanban 视图，用继承方式改写2017-11-23,ivan-->
+        <record id="app_res_partner_kanban_view" model="ir.ui.view">
+            <field name="name">app.res.partner.kanban</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//templates" position="before">
+                    <field name="credit_limit"/>
+                </xpath>
+                <xpath expr="//div[hasclass('oe_kanban_details')]/ul" position="inside">
+                    <li t-if="record.credit_limit and record.credit_limit.raw_value">
+                        Credit：<field name="credit_limit"/>
+                    </li>
+                </xpath>
+            </field>
+        </record>
+        <!--end客户-->
+
+        <!-- 为供应商菜单单独增加筛选器 2017-11-13 -->
+        <!--end供应商-->
+
+        <!-- 所有合作伙伴 2017-11-13 -->
+    </data>
+</odoo>

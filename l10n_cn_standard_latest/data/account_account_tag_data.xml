@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+        <!-- Account Tax -->
+        <record id="tag_cn0_s" model="account.account.tag">
+            <field name="name">不计销项税</field>
+            <field name="applicability">taxes</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag_cn0_p" model="account.account.tag">
+            <field name="name">不计进项税</field>
+            <field name="applicability">taxes</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag_cn13_s" model="account.account.tag">
+            <field name="name">增值税13%销项税</field>
+            <field name="applicability">taxes</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag_cn13_p" model="account.account.tag">
+            <field name="name">增值税13%进项税</field>
+            <field name="applicability">taxes</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag_cn09_ex" model="account.account.tag">
+            <field name="name">9%出口退税</field>
+            <field name="applicability">taxes</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag_cn11_dept" model="account.account.tag">
+            <field name="name">11%离境退税</field>
+            <field name="applicability">taxes</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag_cn08_dept" model="account.account.tag">
+            <field name="name">8%离境退税</field>
+            <field name="applicability">taxes</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag_cn16_p" model="account.account.tag">
+            <field name="name">增值税16%进项税</field>
+            <field name="applicability">taxes</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag_cn16_s" model="account.account.tag">
+            <field name="name">增值税16%销项税</field>
+            <field name="applicability">taxes</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag21" model="account.account.tag">
+            <field name="name">银行专用</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag22" model="account.account.tag">
+            <field name="name">证券专用</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag23" model="account.account.tag">
+            <field name="name">金融共用</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag24" model="account.account.tag">
+            <field name="name">保险专用</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag25" model="account.account.tag">
+            <field name="name">银行和保险共用</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag26" model="account.account.tag">
+            <field name="name">农业专用</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag27" model="account.account.tag">
+            <field name="name">租赁专用</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag28" model="account.account.tag">
+            <field name="name">石油天然气开采专用</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag29" model="account.account.tag">
+            <field name="name">银行和证券共用</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+        <record id="tag30" model="account.account.tag">
+            <field name="name">建造承包商专用</field>
+            <field name="country_id" ref="base.cn"/>
+        </record>
+    </data>
+</odoo>
