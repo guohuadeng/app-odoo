@@ -26,7 +26,7 @@
     'description': """
     模块开发模板，目录结构与文件定义。
     """,
-    'price': 0.00,
+    'price': 38.00,
     'currency': 'EUR',
     'depends': ['mrp'],
     'images': ['static/description/banner.png'],
