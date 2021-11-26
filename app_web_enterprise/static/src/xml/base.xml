@@ -6,11 +6,11 @@
             <img src='/web/binary/company_logo' alt="Logo"/>
         </t>
     </t>
-
-    <t t-extend="Menu.sections">
-        <t t-jquery=".dropdown-toggle" t-operation="attributes">
-            <attribute name="class">dropdown-toggle o_menu_header_lvl_1</attribute>
-        </t>
+    <!--    菜单有下拉箭头-->
+    <t t-inherit="web.Dropdown" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o-dropdown')]" position="attributes">
+            <attribute name="t-att-class">{show: state.open}</attribute>
+        </xpath>
     </t>
 
 </templates>

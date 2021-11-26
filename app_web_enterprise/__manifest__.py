@@ -53,7 +53,7 @@
     ],
     'assets': {
         'web.assets_qweb': [
-            'app_web_enterprise/static/src/**/*.xml',
+            'app_web_enterprise/static/src/xml/*.xml',
         ],
         'web._assets_primary_variables': [
             'app_web_enterprise/static/src/scss/primary_variables.scss',
