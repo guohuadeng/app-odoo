@@ -1,0 +1,117 @@
+//输入焦点时有颜色
+.o_web_client input:focus,
+.o_web_client textarea:focus,
+.o_web_client select:focus {
+  border-color: $o-brand-primary;
+  font-weight: bold;
+}
+
+//菜单搜索常见
+.o_menu_search {
+  &.o_bar_hidden {
+    opacity: 0.9;
+  }
+}
+
+//主菜单加箭头
+.dropdown-menu .dropdown-header {
+  &::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+  }
+}
+
+//列表左右显示边框
+.o_list_view .table-responsive .o_list_table > thead > tr:first-child > th {
+  border-left: 1px solid #dfdfdf;;
+  border-right: 1px solid #dfdfdf;;
+}
+
+//内容显示边框
+.o_list_view .table-responsive .o_list_table .o_data_row > .o_data_cell {
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+}
+
+.o_list_view .table-responsive .o_list_table .o_data_row:not(.o_selected_row) > .o_data_cell:not(.o_readonly_modifier):not(:last-child) {
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+}
+
+//选择列icon，避免被滚动条挡
+.o_content > .o_list_view > .table-responsive > .table .o_optional_columns_dropdown_toggle {
+  padding: 8px 20px 8px 10px;
+}
+
+.o_list_view .table-responsive .o_optional_columns_dropdown_toggle {
+  padding: 0 20px 0 5px;
+}
+
+.o_view_controller {
+  .o_controller_with_searchpanel .o_renderer_with_searchpanel {
+    overflow: unset;
+  }
+}
+
+// Notebooks ,form_view,pc端优化
+.o_form_view .o_notebook > .o_notebook_headers > .nav.nav-tabs > .nav-item > .nav-link {
+  background-color: #f9f9f9;
+  &.active {
+    background-color: white;
+    border-top-width: 2px;
+    margin-top: -1px;
+    border-left-color: $o-enterprise-color;
+    border-left-width: 1px !important;
+    border-right-color: $o-enterprise-color;
+    border-right-width: 1px !important;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+  }
+  &:hover, &:focus, &:active {
+    background-color: white;
+  }
+}
+
+// Notebooks ,form_view,移动端优化
+@media (max-width: 768px) {
+  .o_form_view .o_notebook > .o_notebook_headers > .nav.nav-tabs > .nav-item > .nav-link {
+    &.active {
+      margin-top: 0px;
+      margin-bottom: -1px;
+      padding-bottom: 0px;
+    }
+  }
+}
+
+//  Kanban
+
+.o_kanban_view.o_kanban_grouped .o_kanban_record {
+  margin-bottom: 4px;
+}
+
+//  Graph，fix抖动
+.o_graph_controller {
+  .o_graph_renderer {
+    height: 99.5%;
+  }
+}
+//m2o字段，只读情况下才可换行
+.o_list_view .o_list_table tbody > tr > td.o_list_char.o_readonly_modifier {
+  white-space: pre-wrap!important;
+}
+.o_form_readonly .o_list_view .o_list_table .o_list_many2one {
+  white-space: pre-wrap!important;
+}
+
+//主菜单的 menu 图标
+.o_main_navbar > .o_menu_toggle.fa-th:before {
+  content: "\f26a";
+}
