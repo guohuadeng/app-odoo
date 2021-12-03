@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--产品list，可调整显示顺序-->
+        <record id="app_product_product_tree_view" model="ir.ui.view">
+            <field name="name">app.product.product.tree</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="abc_classification" widget="label_selection"
+                    options="{'classes': {'a': 'danger', 'b': 'primary', 'c': 'default'}}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_product_action" model="ir.actions.act_window">
+            <field name="name">Product Manager</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
