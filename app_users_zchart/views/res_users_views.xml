@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_view_users_simple_form" model="ir.ui.view">
+        <field name="name">app.res.users.simplified.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_simple_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='phone']" position="before">
+                <field name="user_parent_id" groups="sales_team.group_sale_manager"/>
+                <field name="sale_team_id"/>
+            </xpath>
+            <xpath expr="//field[@name='image_1920']" position="before">
+                <div id="o_node_container">
+                    <div id="o_node_main">
+                        <span id="add_image"/>
+                        <span id="add_title"/>
+                        <span id="add_group"/>
+                    </div>
+                    <div id="o_node_right">
+                        <field name="user_child_ids" widget="ztree_chart" nolabel="1"
+                               context="{'form_view_ref':'base.view_users_form'}"/>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//span[@id='add_image']" position="after">
+                <xpath expr="//field[@name='image_1920']" position="move"/>
+            </xpath>
+            <xpath expr="//span[@id='add_title']" position="after">
+                <xpath expr="//div[hasclass('oe_title')]" position="move"/>
+            </xpath>
+            <xpath expr="//span[@id='add_group']" position="after">
+                <xpath expr="//group" position="move"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="app_view_users_form" model="ir.ui.view">
+        <field name="name">app.res.users.base.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]//field[@name='partner_id']" position="after">
+                <field name="user_parent_id" groups="sales_team.group_sale_manager"/>
+                <field name="sale_team_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
