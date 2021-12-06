@@ -1,0 +1,67 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* app_product_category_chart
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e-20190301\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-09 00:38+0000\n"
+"PO-Revision-Date: 2019-04-09 00:38+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_product_category_chart
+#: model_terms:ir.ui.view,arch_db:app_product_category_chart.app_product_category_form_view
+msgid "Hierarchy Chart"
+msgstr "目录结构图"
+
+#. module: app_product_category_chart
+#: model:ir.model.fields,field_description:app_product_category_chart.field_product_category__image
+msgid "Image"
+msgstr "图像"
+
+#. module: app_product_category_chart
+#: model:ir.model.fields,field_description:app_product_category_chart.field_product_category__child_all_count
+msgid "Indirect Surbordinates Count"
+msgstr "非直接下属数量"
+
+#. module: app_product_category_chart
+#: model:ir.model.fields,field_description:app_product_category_chart.field_product_category__image_medium
+msgid "Medium-sized image"
+msgstr "中等尺寸图像"
+
+#. module: app_product_category_chart
+#: model:ir.model.fields,help:app_product_category_chart.field_product_category__image_medium
+msgid "Medium-sized image of this Category. It is automatically resized as a 128x128px image, with aspect ratio preserved. Use this field in form views or some kanban views."
+msgstr ""
+
+#. module: app_product_category_chart
+#: model_terms:ir.ui.view,arch_db:app_product_category_chart.app_product_category_form_view
+msgid "Please get widget from https://apps.odoo.com/apps/modules/13.0/app_web_chart_hierarchy/"
+msgstr ""
+
+#. module: app_product_category_chart
+#: model:ir.model,name:app_product_category_chart.model_product_category
+msgid "Product Category"
+msgstr "产品种类"
+
+#. module: app_product_category_chart
+#: model:ir.model.fields,field_description:app_product_category_chart.field_product_category__image_small
+msgid "Small-sized image"
+msgstr "小尺寸图像"
+
+#. module: app_product_category_chart
+#: model:ir.model.fields,help:app_product_category_chart.field_product_category__image_small
+msgid "Small-sized image of this Category. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr ""
+
+#. module: app_product_category_chart
+#: model:ir.model.fields,help:app_product_category_chart.field_product_category__image
+msgid "This field holds the image used as avatar for this category, limited to 1024x1024px"
+msgstr "目录图像最大为 1024x1024px"
+

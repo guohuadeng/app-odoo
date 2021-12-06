@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!--搜索加 superbar-->
+  <record model="ir.ui.view" id="app_view_mrp_production_workorder_form_view_filter">
+    <field name="name">app.mrp.production.work.order.select</field>
+    <field name="model">mrp.workorder</field>
+    <field name="inherit_id" ref="app_mrp_superbar.app_view_mrp_production_workorder_form_view_filter"/>
+    <field name="arch" type="xml">
+      <xpath expr="//searchpanel//field[@name='workcenter_id']" position="replace">
+          <field name="workcenter_id"/>
+      </xpath>
+    </field>
+  </record>
+</odoo>
