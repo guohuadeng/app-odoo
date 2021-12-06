@@ -17,7 +17,7 @@
 
 {
     'name': "App Product category ztree, parent children tree",
-    'version': '14.20.05.03',
+    'version': '15.21.12.06',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

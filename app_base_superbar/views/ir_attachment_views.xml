@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <record id="app_view_attachment_search" model="ir.ui.view">
+        <field name="name">app.ir.attachment.search</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="base.view_attachment_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="kanban,tree">
+                    <field name="type"/>
+                    <field name="create_uid"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

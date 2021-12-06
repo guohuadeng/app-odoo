@@ -1,0 +1,19 @@
+<odoo>
+  <data>
+      <!-- stock -->
+    <record id="app_stock_picking_batch_filter" model="ir.ui.view">
+        <field name="name">stock.picking.batch.search.superbar</field>
+        <field name="model">stock.picking.batch</field>
+        <field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="kanban,tree">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="user_id"/>
+                    <field name="state"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

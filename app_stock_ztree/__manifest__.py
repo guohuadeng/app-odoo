@@ -17,7 +17,7 @@
 
 {
     'name': "App Stock location ztree, parent children tree",
-    'version': '14.19.10.16',
+    'version': '15.21.12.06',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',

@@ -1,0 +1,19 @@
+<odoo>
+  <data>
+      <!-- Product -->
+    <record id="view_employee_filter_superbar" model="ir.ui.view">
+        <field name="name">app.hr.employee.search</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//searchpanel" position="replace">
+                <searchpanel>
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="department_id"/>
+                    <field name="job_id"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

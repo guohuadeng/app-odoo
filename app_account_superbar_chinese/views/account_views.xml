@@ -1,0 +1,26 @@
+<odoo>
+  <data>
+      <!-- account.account -->
+      <record id="view_account_search_superbar" model="ir.ui.view">
+          <field name="name">account.account.search.superbar</field>
+          <field name="model">account.account</field>
+          <field name="inherit_id" ref="account.view_account_search"/>
+          <field name="arch" type="xml">
+              <xpath expr="//superbar/field[@name='root_id']" position="replace">
+                  <field name="parent_id"/>
+              </xpath>
+          </field>
+      </record>
+
+      <!--<record id="view_account_move_line_filter_superbar" model="ir.ui.view">-->
+          <!--<field name="name">Journal Items superbar</field>-->
+          <!--<field name="model">account.move.line</field>-->
+          <!--<field name="inherit_id" ref="app_account_superbar.view_account_search_superbar"/>-->
+          <!--<field name="arch" type="xml">-->
+              <!--<xpath expr="//superbar//field[@name='group_id']" position="after">-->
+                  <!--<field name="parent_id"/>-->
+              <!--</xpath>-->
+          <!--</field>-->
+      <!--</record>-->
+  </data>
+</odoo>

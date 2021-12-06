@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+      <record id="app_mail_channel_partner_view_search" model="ir.ui.view">
+          <field name="name">app.mail.channel.partner.search</field>
+          <field name="model">mail.channel.partner</field>
+          <field name="arch" type="xml">
+              <search string="Search mail.channel.partner">
+                  <field name="partner_id" string="Partner"/>
+                  <searchpanel view_types="tree">
+                      <field name="channel_id"/>
+                      <field name="partner_id"/>
+                  </searchpanel>
+              </search>
+          </field>
+      </record>
+  </data>
+</odoo>
