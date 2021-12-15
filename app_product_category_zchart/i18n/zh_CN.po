@@ -42,7 +42,7 @@ msgstr ""
 
 #. module: app_product_category_chart
 #: model_terms:ir.ui.view,arch_db:app_product_category_chart.app_product_category_form_view
-msgid "Please get widget from https://apps.odoo.com/apps/modules/13.0/app_web_chart_hierarchy/"
+msgid "Please get widget from https://apps.odoo.com/apps/modules/14.0/app_web_chart_hierarchy/"
 msgstr ""
 
 #. module: app_product_category_chart
