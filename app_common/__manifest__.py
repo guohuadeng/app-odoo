@@ -33,7 +33,7 @@
 
 {
     'name': "Sunpop Odooapp Common Func",
-    'version': '13.21.09.03',
+    'version': '13.21.12.20',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -48,11 +48,16 @@
     ''',
     'description': '''    
     Support Odoo 13，12, Enterprise and Community Edition
-    1. 
-    2. 
-    3. Multi-language Support.
-    4. Multi-Company Support.
-    5. Support Odoo 13，12, Enterprise and Community Edition
+    1. Base function add timezone convert
+    2. Remove select add warning
+    3. Cron add user log
+    4. Rng file add extra function
+    5. User add index
+    6. Add bg-xxx class like bg-danger
+    7. Add ali iconfont support, more icon
+    11. Multi-language Support.
+    12. Multi-Company Support.
+    13. Support Odoo 13，12, Enterprise and Community Edition
     ==========
     1. 
     2. 
@@ -61,7 +66,6 @@
     5. Odoo 13, 12, 企业版，社区版，多版本支持
     ''',
     'depends': [
-        'base',
         'web',
     ],
     'data': [
@@ -69,6 +73,7 @@
         # 'security/ir.model.access.csv',
         # 'data/.xml',
         'views/ir_cron_views.xml',
+        'views/webclient_templates.xml',
         # 'report/.xml',
     ],
     'qweb': [
