@@ -247,7 +247,6 @@ class ResConfigSettings(models.TransientModel):
             'mrp.production',
             'mrp.production.product.line',
             'mrp.unbuild',
-            'change.production.qty',
             'sale.forecast.indirect',
             'sale.forecast',
         ]
