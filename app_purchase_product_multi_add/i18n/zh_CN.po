@@ -22,6 +22,12 @@ msgstr "添加产品"
 
 #. module: app_purchase_product_multi_add
 #: model_terms:ir.ui.view,arch_db:app_purchase_product_multi_add.app_purchase_order_form
+msgid "Advance Add"
+msgstr "高级添加"
+
+
+#. module: app_purchase_product_multi_add
+#: model_terms:ir.ui.view,arch_db:app_purchase_product_multi_add.app_purchase_order_form
 msgid "Multi Add Product"
 msgstr "批量添加"
 

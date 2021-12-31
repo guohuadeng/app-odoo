@@ -13,6 +13,9 @@
                         'pro_res_model': 'product.product',
                         'pro_res_field': 'product_id',
                         }"/>
+                    <create name="single_add_line" string="Advance Add" context="{
+                    'pro_single_add': True,
+                    }"/>
                 </xpath>
             </field>
         </record>

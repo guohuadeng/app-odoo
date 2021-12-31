@@ -20,3 +20,9 @@ msgstr ""
 msgid "Multi add product"
 msgstr "批量添加"
 
+
+#. module: app_sale_product_multi_add
+#: model_terms:ir.ui.view,arch_db:app_sale_product_multi_add.app_view_order_form
+msgid "Advance Add"
+msgstr "高级添加"
+

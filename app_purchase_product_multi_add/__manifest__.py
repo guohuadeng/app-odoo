@@ -17,7 +17,7 @@
 
 {
     'name': "Multi Add Purchase Product,采购订单批量加产品",
-    'version': '13.19.11.19',
+    'version': '13.21.12.30',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -33,9 +33,11 @@
     App Purchase Order Product Multi Add. 
     1. One Click to add multi product to Purchase Order.
     2. All the product can filter and group.
+    3. Pop a detail form to add purchase line with detail.
     采购订单批量增加产品
     1. 可以一键快速将多个产品加到采购订单中
     2. 可对产品进行过滤、分组，然后批量加入
+    3. 可以弹出一个明细录入界面添加，便于同时支持列表添加及表单添加
     """,
     'depends': [
         # 'app_web_one2many_multi_add',
