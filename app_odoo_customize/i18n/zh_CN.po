@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0+e-20200628\n"
+"Project-Id-Version: Odoo Server 13.0+e-20211210\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-02 08:16+0000\n"
-"PO-Revision-Date: 2020-11-02 08:16+0000\n"
+"POT-Creation-Date: 2022-01-19 06:51+0000\n"
+"PO-Revision-Date: 2022-01-19 06:51+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,8 +32,6 @@ msgstr ""
 "<span class=\"col-3 col-lg-2 text-left\">\n"
 "                                财务 <span class=\"fa fa-lg fa-building-o\" title=\"只处理当前公司的数据.\" groups=\"base.group_multi_company\"/>\n"
 "                            </span>"
-
-
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -314,6 +312,16 @@ msgid "My Odoo.com Account Url"
 msgstr "我的帐户链接"
 
 #. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.app_view_model_data_search
+msgid "No Updatable"
+msgstr "不可更新的"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Odoo Customize Setting"
+msgstr "定制化我的odoo"
+
+#. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Please confirm to delete the select data?"
 msgstr "您确认要删除指定数据？"
@@ -333,6 +341,11 @@ msgstr "刷新翻译"
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Reset Category And Location Complete Name"
 msgstr "重置品类及区位显示名"
+
+#. module: app_odoo_customize
+#: model:ir.ui.menu,name:app_odoo_customize.menu_ir_cron
+msgid "Scheduled Actions"
+msgstr "安排的自动化动作"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_system_name
@@ -515,11 +528,6 @@ msgstr "启用后，会显示在线支持链接"
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_show_debug
 msgid "When enable,everyone login can see the debug menu"
 msgstr "启用后，会显示快速调试菜单"
-
-#. module: app_odoo_customize
-#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "White Label Setting"
-msgstr "个性化odoo设置"
 
 #. module: app_odoo_customize
 #. openerp-web
