@@ -146,6 +146,7 @@ class ResConfigSettings(models.TransientModel):
                 if seqs.exists():
                     seqs.write({
                         'number_next': 1,
+                        'date_range_ids': [(5)],
                     })
             except Exception as e:
                 _logger.warning('reset sequence data error: %s,%s', line, e)
