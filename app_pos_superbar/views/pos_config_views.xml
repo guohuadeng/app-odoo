@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- pos.config search View -->
+    <record id='app_view_pos_config_search' model='ir.ui.view'>
+        <field name='name'>app.pos.config.search.view</field>
+        <field name='model'>pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_config_search"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//search" position="inside">
+				<searchpanel>
+                    <field name='company_id' groups="base.group_multi_company"/>
+                    <field name='crm_team_id' select="multi"/>
+				</searchpanel>
+            </xpath>
+        </field>
+    </record>
+</odoo>

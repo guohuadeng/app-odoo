@@ -9,7 +9,7 @@
             <xpath expr="//search">
                 <searchpanel view_types="tree,kanban,pivot">
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
-                    <field name="config_id"/>
+                    <field name="session_id"/>
                     <field name="state"/>
                     <field name="user_id"/>
                 </searchpanel>
