@@ -23,7 +23,7 @@
 
 {
     'name': 'Odoo 15,14,13 Customize OEM(Boost, Data reset)',
-    'version': '14.21.11.09',
+    'version': '14.22.02.25',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
