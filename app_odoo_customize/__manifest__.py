@@ -23,7 +23,7 @@
 
 {
     'name': 'Customize odoo OEM (Boost, My Odoo)',
-    'version': '12.20.03.01',
+    'version': '12.22.03.01',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',

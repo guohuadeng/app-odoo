@@ -355,7 +355,7 @@ class ResConfigSettings(models.TransientModel):
             # 清除库存单据
             ['stock.quant', ],
             ['stock.move.line', ],
-            ['stock.package.level', ],
+            'stock.package_level',
             ['stock.quantity.history', ],
             ['stock.quant.package', ],
             ['stock.move', ],
