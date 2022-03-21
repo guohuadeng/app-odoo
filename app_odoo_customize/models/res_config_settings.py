@@ -298,11 +298,6 @@ class ResConfigSettings(models.TransientModel):
         to_removes = [
             # 清除财务会计单据
             'payment.transaction',
-            # 'account.voucher.line',
-            # 'account.voucher',
-            # 'account.invoice.line',
-            # 'account.invoice.refund',
-            # 'account.invoice',
             'account.bank.statement.line',
             'account.payment',
             'account.analytic.line',
