@@ -8,8 +8,8 @@
         <field name="arch" type="xml">
             <xpath expr="//searchpanel" position="replace">
                 <searchpanel>
+                    <field name="department_id" widget="ztree_select" text="name"/>
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
-                    <field name="department_id"/>
                     <field name="job_id"/>
                 </searchpanel>
             </xpath>

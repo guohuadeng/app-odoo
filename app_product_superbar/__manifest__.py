@@ -17,7 +17,7 @@
 
 {
     'name': "App product browse by category navigator",
-    'version': '13.21.03.31',
+    'version': '13.22.03.25',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -41,7 +41,7 @@
     ],
     'images': ['static/description/superbar.gif'],
     'data': [
-        'views/product_views.xml',
+        'views/product_template_views.xml',
         'views/product_category_views.xml',
     ],
     'demo': [

@@ -41,7 +41,7 @@
 
 {
     'name': 'Product Brand Manager',
-    'version': '13.20.04.11',
+    'version': '13.22.03.28',
     'author': 'Sunpop.cn',
     'category': 'Product',
     'website': 'https://www.sunpop.cn',

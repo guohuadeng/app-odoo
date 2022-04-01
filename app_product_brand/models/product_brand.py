@@ -22,7 +22,7 @@ class ProductBrand(models.Model):
         'res.partner',
         string='Partner',
         help='Select a partner for this brand if any.',
-        ondelete='restrict'
+        ondelete='set null'
     )
     logo = fields.Binary('Logo File', attachment=True)
     product_ids = fields.One2many(
