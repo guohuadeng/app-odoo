@@ -112,6 +112,17 @@ class ResConfigSettings(models.TransientModel):
             self._cr.commit()
         except Exception as e:
             pass
+    
+    def clear_table(self, t_name):
+        sql = "delete from %s" % t_name
+        # 增加多公司处理
+        try:
+            self._cr.execute(sql)
+            self._cr.commit()
+            return True
+        except Exception as e:
+            _logger.warning('remove data error: %s,%s', t_name, e)
+            return False
 
     # 清数据，o=对象, s=序列 
     def remove_app_data(self, o, s=[]):
@@ -130,14 +141,9 @@ class ResConfigSettings(models.TransientModel):
                 t_name = obj_name.replace('.', '_')
             else:
                 t_name = obj._table
-
-            sql = "delete from %s" % t_name
-            # 增加多公司处理
-            try:
-                self._cr.execute(sql)
-                self._cr.commit()
-            except Exception as e:
-                _logger.warning('remove data error: %s,%s', line, e)
+            # todo: 每个项目具体优化
+            self.clear_table(t_name)
+            
         # 更新序号
         for line in s:
             domain = ['|', ('code', '=ilike', line + '%'), ('prefix', '=ilike', line + '%')]
