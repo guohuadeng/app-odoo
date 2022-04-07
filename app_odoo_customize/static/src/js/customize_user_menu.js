@@ -25,7 +25,7 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
             var session = this.getSession();
             var lang_list = '';
             self.is_manager = false;
-            self.show_debug = false;
+            self.show_debug = true;
 
             self._rpc({
                 model: 'res.lang',
@@ -47,7 +47,7 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
                 lang_list += '<div role="separator" class="dropdown-divider"/>';
                 setTimeout( function() {
                     $('switch-lang').replaceWith(lang_list);
-                }, 1000);
+                }, 1200);
             })
 
             //取参数
@@ -74,8 +74,8 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
                         $('switch-lang').hide();
                     }
                     //注意， odoo12，主用户id=2, 加了个 __system__
-                    if (val.key == 'app_show_debug' && val.value == "True") {
-                        self.show_debug = true;
+                    if (val.key == 'app_show_debug' && val.value != "True") {
+                        self.show_debug = false;
                     }
                     if (val.key == 'app_show_documentation' && val.value == "False") {
                         $('[data-menu="documentation"]').hide();
@@ -130,32 +130,8 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
                         $('[data-menu="debug"]').hide();
                         $('[data-menu="debugassets"]').hide();
                         $('[data-menu="quitdebug"]').hide();
-                    }, 500)
+                    }, 1000);
                 }
-                // if (self.is_manager) {
-                //     //控制debug显示
-                //     var mMode = 'normal';
-                //     if (window.location.href.indexOf('debug=1') != -1)
-                //         mMode = 'debug';
-                //     if (window.location.href.indexOf('debug=assets') != -1)
-                //         mMode = 'assets';
-                //
-                //     if (mMode == 'normal')  {
-                //         $('[data-menu="debug"]').show();
-                //         $('[data-menu="debugassets"]').show();
-                //         $('[data-menu="quitdebug"]').hide();
-                //     }
-                //     if (mMode == 'debug'){
-                //         $('[data-menu="debug"]').hide();
-                //         $('[data-menu="debugassets"]').show();
-                //         $('[data-menu="quitdebug"]').show();
-                //     }
-                //     if (mMode == 'assets')  {
-                //         $('[data-menu="debug"]').show();
-                //         $('[data-menu="debugassets"]').hide();
-                //         $('[data-menu="quitdebug"]').show();
-                //     }
-                // }
             });
         },
         _onMenuAccount: function () {
