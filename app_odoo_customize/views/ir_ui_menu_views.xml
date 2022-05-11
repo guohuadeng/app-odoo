@@ -16,6 +16,7 @@
                 <field name="complete_name" position="after">
                     <field name="name"/>
                     <field name="parent_id"/>
+                    <field name="sequence"/>
                     <field name="active" groups="base.group_no_one"/>
                 </field>
             </field>
