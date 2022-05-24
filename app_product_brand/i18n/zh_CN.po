@@ -100,7 +100,7 @@ msgstr "产品数量"
 #. module: app_product_brand
 #: model:ir.model.fields,field_description:app_product_brand.field_product_brand__partner_id
 msgid "Partner"
-msgstr "供应商"
+msgstr "业务伙伴"
 
 #. module: app_product_brand
 #: model:ir.actions.act_window,name:app_product_brand.action_open_single_product_brand
