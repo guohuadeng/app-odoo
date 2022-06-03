@@ -501,6 +501,7 @@ class ResConfigSettings(models.TransientModel):
             'mail.followers',
             'mail.activity',
             'mail.tracking.value',
+            'bus.bus',
         ]
         seqs = []
         return self.remove_app_data(to_removes, seqs)
