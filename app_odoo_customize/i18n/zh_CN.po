@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0+e-20211210\n"
+"Project-Id-Version: Odoo Server 13.0+e-20220602\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-19 06:51+0000\n"
-"PO-Revision-Date: 2022-01-19 06:51+0000\n"
+"POT-Creation-Date: 2022-06-08 09:39+0000\n"
+"PO-Revision-Date: 2022-06-08 09:39+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -98,14 +98,14 @@ msgstr "<span>设置为 False 则不显示</span>"
 #: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #, python-format
 msgid "Activate the developer mode"
-msgstr "激活开发者模式"
+msgstr "启用开发者模式"
 
 #. module: app_odoo_customize
 #. openerp-web
 #: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #, python-format
 msgid "Activate the developer mode (with assets)"
-msgstr "激活开发者模式 (assets)"
+msgstr "启用开发者模式 (assets)"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -428,6 +428,11 @@ msgstr "支持链接"
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "System Name"
 msgstr "系统名称"
+
+#. module: app_odoo_customize
+#: model:ir.ui.menu,name:app_odoo_customize.menu_ir_config_list
+msgid "System Parameters"
+msgstr "系统参数"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.app_edit_menu_access_search

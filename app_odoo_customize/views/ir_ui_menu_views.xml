@@ -71,6 +71,7 @@
                 groups="base.group_system"/>
         <menuitem
                 id="menu_ir_config_list"
+                name="System Parameters"
                 parent="menu_app_group"
                 sequence="93"
                 action="base.ir_config_list_action"
