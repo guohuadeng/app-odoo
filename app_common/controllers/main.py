@@ -73,7 +73,26 @@ class AppController(http.Controller):
             utype = 'native_android'
         # _logger.warning('=========get ua %s,%s' % (utype, ua))
         return utype
-
+    
+    def app_get_client_ip(request):
+        """
+        获取请求IP
+        """
+        ip = ''
+        try:
+            # HTTP_X_FORWARDED_FOR: 浏览当前页面的用户计算机的网关.
+            x_forwarded_for = request.META.get('X-Forwarded-For')
+            x_real_ip = request.META.get('X-Real-IP')
+            if x_forwarded_for:
+                ip = x_forwarded_for.split(',')[0]
+            elif x_real_ip:
+                # REMOTE_ADDR: 浏览当前页面的用户计算机的ip地址
+                ip = x_real_ip
+            else:
+                ip = request.META.get('REMOTE_ADDR')
+        except Exception as e:
+            logging.info(_("Request user IP address failed. error msg:{}").format(e))
+        return ip
 
 def haversine(lon1, lat1, lon2, lat2):
     # 计算地图上两点的距离
