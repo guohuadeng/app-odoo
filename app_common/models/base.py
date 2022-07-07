@@ -79,7 +79,7 @@ class Base(models.AbstractModel):
             value = value.strftime(return_format)
         dt = datetime.strptime(value, return_format)
         user_tz = pytz.timezone(self.env.user.tz or 'Etc/GMT-8')
-        _logger.warning('============= user2 tz: %s' % user_tz)
+        # _logger.warning('============= user2 tz: %s' % user_tz)
         dt = dt.replace(tzinfo=pytz.timezone('UTC'))
         return dt.astimezone(user_tz).strftime(return_format)
 
