@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '15.21.11.11',
+    'version': '15.22.07.20',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -62,7 +62,7 @@
     ],
     'images': ['static/description/banner.jpg'],
     'data': [
-        # 'views/res_partner_views.xml',
+        'views/res_partner_views.xml',
         'views/res_currency_views.xml',
         'views/sale_order_views.xml',
         'views/account_move_views.xml',
@@ -92,6 +92,7 @@
     ],
     'js': [
     ],
+    'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': True,
     'auto_install': False,
