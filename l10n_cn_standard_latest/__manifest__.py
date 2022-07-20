@@ -9,7 +9,7 @@
 
 {
     'name': '2020最新中国企业会计表.Latest Chinese Accounting.',
-    'version': '13.21.11.07',
+    'version': '13.22.07.20',
     'author': 'Sunpop.cn',
     'category': 'Localization',
     'website': 'https://www.sunpop.cn',

@@ -1,14 +1,14 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* l10n_cn_standard_latest
+# 	* l10n_cn_standard_latest
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0+e-20181122\n"
+"Project-Id-Version: Odoo Server 13.0+e-20220602\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 16:59+0000\n"
-"PO-Revision-Date: 2018-11-27 16:59+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2022-07-20 10:00+0000\n"
+"PO-Revision-Date: 2022-07-20 10:00+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,8 +16,167 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_purchase_0
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_purchase_0
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_purchase_0
+msgid "0%进项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_sale_0
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_sale_0
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_sale_0
+msgid "0%销项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_purchase_excluded_10
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_purchase_excluded_10
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_purchase_excluded_10
+msgid "10%进项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_purchase_included_10
+msgid "10%进项税(含)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_sale_excluded_10
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_sale_excluded_10
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_sale_excluded_10
+msgid "10%销项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_sale_included_10
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_sale_included_10
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_sale_included_10
+msgid "10%销项税(含)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn11_dept
+msgid "11%离境退税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_purchase_excluded_13
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_purchase_excluded_13
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_purchase_excluded_13
+msgid "13%进项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_purchase_included_13
+msgid "13%进项税(含)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_sale_excluded_13
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_sale_excluded_13
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_sale_excluded_13
+msgid "13%销项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_sale_included_13
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_sale_included_13
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_sale_included_13
+msgid "13%销项税(含)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
 #: model:account.chart.template,name:l10n_cn_standard_latest.l10n_chart_china_standard_business_latest
-msgid "2018中国企业会计科目表"
+msgid "2020中国企业会计科目表"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_purchase_excluded_3
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_purchase_excluded_3
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_purchase_excluded_3
+msgid "3%进项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_purchase_included_3
+msgid "3%进项税(含)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_sale_excluded_3
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_sale_excluded_3
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_sale_excluded_3
+msgid "3%销项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_sale_included_3
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_sale_included_3
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_sale_included_3
+msgid "3%销项税(含)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_purchase_excluded_6
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_purchase_excluded_6
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_purchase_excluded_6
+msgid "6%进项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_purchase_included_6
+msgid "6%进项税(含)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_sale_excluded_6
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_sale_excluded_6
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_sale_excluded_6
+msgid "6%销项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_sale_included_6
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_sale_included_6
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_sale_included_6
+msgid "6%销项税(含)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn08_dept
+msgid "8%离境退税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn09_ex
+msgid "9%出口退税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_purchase_excluded_9
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_purchase_excluded_9
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_purchase_excluded_9
+msgid "9%进项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_purchase_included_9
+msgid "9%进项税(含)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_sale_excluded_9
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_sale_excluded_9
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_sale_excluded_9
+msgid "9%销项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,name:l10n_cn_standard_latest.1_l10n_cn_standard_sale_included_9
+#: model:account.tax,name:l10n_cn_standard_latest.2_l10n_cn_standard_sale_included_9
+#: model:account.tax.template,name:l10n_cn_standard_latest.l10n_cn_standard_sale_included_9
+msgid "9%销项税(含)"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
@@ -31,22 +190,22 @@ msgid "Account Chart Template"
 msgstr "科目表模版"
 
 #. module: l10n_cn_standard_latest
-#: code:addons/l10n_cn_standard_latest/models/account_account.py:43
-#: code:addons/l10n_cn_standard_latest/models/account_chart_template.py:62
+#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_tax_group__active
+msgid "Active"
+msgstr "激活"
+
+#. module: l10n_cn_standard_latest
+#: code:addons/l10n_cn_standard_latest/models/account_account.py:0
+#: code:addons/l10n_cn_standard_latest/models/account_chart_template.py:0
 #, python-format
 msgid "Cannot generate an unused account code."
 msgstr "无法生成未使用的科目"
 
 #. module: l10n_cn_standard_latest
-#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account__child_id
-#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account_template__child_id
+#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account__child_ids
+#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account_template__child_ids
 msgid "Child Chart"
 msgstr "下级科目"
-
-#. module: l10n_cn_standard_latest
-#: model:ir.model,name:l10n_cn_standard_latest.model_res_currency
-msgid "Currency"
-msgstr "币种"
 
 #. module: l10n_cn_standard_latest
 #: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.app_view_account_search
@@ -59,13 +218,7 @@ msgid "Journal"
 msgstr "日记账"
 
 #. module: l10n_cn_standard_latest
-#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account__parent_left
-#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account_template__parent_left
-msgid "Left Parent"
-msgstr "左父项"
-
-#. module: l10n_cn_standard_latest
-#: code:addons/l10n_cn_standard_latest/models/account_chart_template.py:65
+#: code:addons/l10n_cn_standard_latest/models/account_chart_template.py:0
 #, python-format
 msgid "Liquidity Transfer"
 msgstr "流动性移转"
@@ -77,10 +230,20 @@ msgid "Parent Chart"
 msgstr "上级科目"
 
 #. module: l10n_cn_standard_latest
-#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account__parent_right
-#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account_template__parent_right
-msgid "Right Parent"
-msgstr "右父项"
+#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account__parent_path
+#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account_template__parent_path
+msgid "Parent Path"
+msgstr "级别路径"
+
+#. module: l10n_cn_standard_latest
+#: model:ir.model.fields,help:l10n_cn_standard_latest.field_account_tax_group__active
+msgid "Set active to false to hide the tax without removing it."
+msgstr "请不要删除指定税率，可以将其归档。"
+
+#. module: l10n_cn_standard_latest
+#: model:ir.model,name:l10n_cn_standard_latest.model_account_tax_group
+msgid "Tax Group"
+msgstr "税组"
 
 #. module: l10n_cn_standard_latest
 #: model:ir.model,name:l10n_cn_standard_latest.model_account_account_template
@@ -88,9 +251,50 @@ msgid "Templates for Accounts"
 msgstr "科目模板"
 
 #. module: l10n_cn_standard_latest
+#: model:account.tax.group,name:l10n_cn_standard_latest.l10n_cn_tax_group_vat_0
+msgid "VAT 0%"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.group,name:l10n_cn_standard_latest.l10n_cn_tax_group_vat_10
+msgid "VAT 10%"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.group,name:l10n_cn_standard_latest.l10n_cn_tax_group_vat_13
+msgid "VAT 13%"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.group,name:l10n_cn_standard_latest.l10n_cn_tax_group_vat_3
+msgid "VAT 3%"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.group,name:l10n_cn_standard_latest.l10n_cn_tax_group_vat_6
+msgid "VAT 6%"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.group,name:l10n_cn_standard_latest.l10n_cn_tax_group_vat_9
+msgid "VAT 9%"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
 #: model:account.account,name:l10n_cn_standard_latest.1_account_4102
+#: model:account.account,name:l10n_cn_standard_latest.2_account_4102
 #: model:account.account.template,name:l10n_cn_standard_latest.account_4102
 msgid "一般风险准备"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn0_p
+msgid "不计进项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn0_s
+msgid "不计销项税"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
@@ -190,7 +394,7 @@ msgid "保费收入"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag6
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag24
 msgid "保险专用"
 msgstr ""
 
@@ -243,7 +447,7 @@ msgid "其他货币资金"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag8
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag26
 msgid "农业专用"
 msgstr ""
 
@@ -410,17 +614,172 @@ msgid "坏账准备"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag2
-#: model:account.tax,name:l10n_cn_standard_latest.1_vatp_standard_business
-#: model:account.tax.template,name:l10n_cn_standard_latest.vatp_standard_business
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn13_p
+msgid "增值税13%进项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn13_s
+msgid "增值税13%销项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn16_p
 msgid "增值税16%进项税"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag1
-#: model:account.tax,name:l10n_cn_standard_latest.1_vats_standard_business
-#: model:account.tax.template,name:l10n_cn_standard_latest.vats_standard_business
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn16_s
 msgid "增值税16%销项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_purchase_0
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_purchase_0
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_purchase_0
+msgid "增值税进项税0%"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_purchase_included_10
+msgid "增值税进项税10%(价内税)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_purchase_excluded_10
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_purchase_excluded_10
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_purchase_excluded_10
+msgid "增值税进项税10%，单价不含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_purchase_included_13
+msgid "增值税进项税13%(价内税)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_purchase_excluded_13
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_purchase_excluded_13
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_purchase_excluded_13
+msgid "增值税进项税13%，单价不含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_purchase_included_3
+msgid "增值税进项税3%(价内税)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_purchase_excluded_3
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_purchase_excluded_3
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_purchase_excluded_3
+msgid "增值税进项税3%，单价不含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_purchase_included_6
+msgid "增值税进项税6%(价内税)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_purchase_excluded_6
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_purchase_excluded_6
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_purchase_excluded_6
+msgid "增值税进项税6%，单价不含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_purchase_included_9
+msgid "增值税进项税9%(价内税)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_purchase_excluded_9
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_purchase_excluded_9
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_purchase_excluded_9
+msgid "增值税进项税9%，单价不含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_sale_0
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_sale_0
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_sale_0
+msgid "增值税销项税0%"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_sale_excluded_10
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_sale_excluded_10
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_sale_excluded_10
+msgid "增值税销项税10%，单价不含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_sale_included_10
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_sale_included_10
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_sale_included_10
+msgid "增值税销项税10%，单价含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_sale_excluded_13
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_sale_excluded_13
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_sale_excluded_13
+msgid "增值税销项税13%，单价不含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_sale_included_13
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_sale_included_13
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_sale_included_13
+msgid "增值税销项税13%，单价含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_sale_excluded_3
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_sale_excluded_3
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_sale_excluded_3
+msgid "增值税销项税3%，单价不含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_sale_included_3
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_sale_included_3
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_sale_included_3
+msgid "增值税销项税3%，单价含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_sale_excluded_6
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_sale_excluded_6
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_sale_excluded_6
+msgid "增值税销项税6%，单价不含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_sale_included_6
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_sale_included_6
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_sale_included_6
+msgid "增值税销项税6%，单价含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_sale_excluded_9
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_sale_excluded_9
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_sale_excluded_9
+msgid "增值税销项税9%，单价不含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.tax,description:l10n_cn_standard_latest.1_l10n_cn_standard_sale_included_9
+#: model:account.tax,description:l10n_cn_standard_latest.2_l10n_cn_standard_sale_included_9
+#: model:account.tax.template,description:l10n_cn_standard_latest.l10n_cn_standard_sale_included_9
+msgid "增值税销项税9%，单价含税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.template,name:l10n_cn_standard_latest.account_3002
+msgid "外汇买卖"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
@@ -551,6 +910,7 @@ msgstr ""
 
 #. module: l10n_cn_standard_latest
 #: model:account.account,name:l10n_cn_standard_latest.1_account_2221_6
+#: model:account.account,name:l10n_cn_standard_latest.2_account_2221_6
 #: model:account.account.template,name:l10n_cn_standard_latest.account_2221_6
 msgid "应交所得税"
 msgstr ""
@@ -676,7 +1036,13 @@ msgid "应收账款"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag12
+#: model:account.account,name:l10n_cn_standard_latest.1_account_1124
+#: model:account.account.template,name:l10n_cn_standard_latest.account_1124
+msgid "应收账款(PoS)"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag30
 msgid "建造承包商专用"
 msgstr ""
 
@@ -921,7 +1287,7 @@ msgid "短期借款"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag10
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag28
 msgid "石油天然气开采专用"
 msgstr ""
 
@@ -932,7 +1298,7 @@ msgid "研发支出"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag9
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag27
 msgid "租赁专用"
 msgstr ""
 
@@ -1009,7 +1375,7 @@ msgid "被套期项目"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag4
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag22
 msgid "证券专用"
 msgstr ""
 
@@ -1122,23 +1488,28 @@ msgid "递延收益"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag5
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag23
 msgid "金融共用"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag3
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag21
 msgid "银行专用"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag7
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag25
 msgid "银行和保险共用"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag11
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag29
 msgid "银行和证券共用"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.template,name:l10n_cn_standard_latest.account_1002
+msgid "银行存款"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
@@ -1206,4 +1577,3 @@ msgstr ""
 #: model:account.account.template,name:l10n_cn_standard_latest.account_2801
 msgid "预计负债"
 msgstr ""
-
