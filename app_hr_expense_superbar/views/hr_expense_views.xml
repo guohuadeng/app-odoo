@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_hr_expense_view_search" model="ir.ui.view">
+        <field name="name">app.hr.expense.search</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <searchpanel view_types="tree,kanban,pivot,graph,search">
+                    <field name="analytic_account_id" text="name"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+</odoo>
