@@ -71,13 +71,15 @@ class Base(models.AbstractModel):
 
     def _app_dt2local(self, value, return_format=DEFAULT_SERVER_DATETIME_FORMAT):
         """
-        将value中时间，按格式转为用户本地时间.注意只处理in str为字符串类型,如果是时间类型直接用 datetime.now(tz)
+        将value中时间，按格式转为用户本地时间.如果处理当天，是时间类型直接用 datetime.now(tz)
+        输入：str或日期时间类型
+        输出： str
         """
         if not value:
             return value
         if isinstance(value, datetime):
-            value = value.strftime(return_format)
-        dt = datetime.strptime(value, return_format)
+            value = value.strftime(DEFAULT_SERVER_DATETIME_FORMAT)
+        dt = datetime.strptime(value, DEFAULT_SERVER_DATETIME_FORMAT)
         user_tz = pytz.timezone(self.env.user.tz or 'Etc/GMT-8')
         # _logger.warning('============= user2 tz: %s' % user_tz)
         dt = dt.replace(tzinfo=pytz.timezone('UTC'))
@@ -90,8 +92,8 @@ class Base(models.AbstractModel):
         if not value:
             return value
         if isinstance(value, datetime):
-            value = value.strftime(return_format)
-        dt = datetime.strptime(value, return_format)
+            value = value.strftime(DEFAULT_SERVER_DATETIME_FORMAT)
+        dt = datetime.strptime(value, DEFAULT_SERVER_DATETIME_FORMAT)
         pytz_timezone = pytz.timezone('Etc/GMT+8')
         dt = dt.replace(tzinfo=pytz.timezone('UTC'))
         return dt.astimezone(pytz_timezone).strftime(return_format)

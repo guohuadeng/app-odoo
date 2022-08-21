@@ -68,7 +68,7 @@ class AccountChartTemplate(models.Model):
                 ('chart_template_id', '=', self.id),
                 ('parent_id', '!=', False)
             ], limit=1)
-            if len(parent_account) or code == '2221.01.01':
+            if len(parent_account) or code == '22210101' or code == '2221.01.01':
                 parent_code = parent_account[0].parent_id.code
                 if parent_code:
                     parent = self.env['account.account'].sudo().search([
