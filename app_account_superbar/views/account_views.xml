@@ -8,10 +8,10 @@
           <field name="arch" type="xml">
               <xpath expr="//search/searchpanel" position="replace">
                   <searchpanel>
+                      <field name="root_id" icon="fa-filter"/>
                       <field name="user_type_id"/>
                       <!--<field name="tag_ids"/>-->
                       <field name="group_id"/>
-                      <field name="root_id" icon="fa-filter"/>
                   </searchpanel>
               </xpath>
           </field>
