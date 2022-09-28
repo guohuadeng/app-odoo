@@ -22,8 +22,8 @@
 # description:
 
 {
-    'name': 'odoo 15 Customize OEM(Boost, Data reset)',
-    'version': '15.22.03.15',
+    'name': 'odoo 16,15 Customize OEM(Boost, Data reset)',
+    'version': '15.22.09.28',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -87,7 +87,7 @@
     App Customize Odoo (Change Title,Language,Documentation,Quick Debug)
     ============
     White label odoo.
-    Support odoo 15,14, 13, 12, 11, 10, 9.
+    Support odoo 16, 15, 14, 13, 12, 11, 10, 9.
     You can config odoo, make it look like your own platform.
     1. Deletes Odoo label in footer
     2. Replaces "Odoo" in Windows title
