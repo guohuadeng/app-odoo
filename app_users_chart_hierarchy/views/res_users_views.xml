@@ -33,7 +33,7 @@
                 <xpath expr="//field[@name='image_1920']" position="move"/>
             </xpath>
             <xpath expr="//span[@id='add_title']" position="after">
-                <xpath expr="//div[@class='oe_title']" position="move"/>
+                <xpath expr="//div[hasclass('oe_title')]" position="move"/>
             </xpath>
             <xpath expr="//span[@id='add_group']" position="after">
                 <xpath expr="//group" position="move"/>
