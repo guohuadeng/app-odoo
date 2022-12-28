@@ -1,0 +1,130 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* app_base_chinese
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-10 18:20+0000\n"
+"PO-Revision-Date: 2020-04-10 18:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_base_chinese
+#: model:ir.model.fields,field_description:app_base_chinese.field_account_tax_group__active
+msgid "Active"
+msgstr "激活"
+
+#. module: app_base_chinese
+#: model:ir.model,name:app_base_chinese.model_base
+msgid "Base"
+msgstr "基础"
+
+#. module: app_base_chinese
+#: model:ir.model.fields,field_description:app_base_chinese.field_product_category__complete_name
+msgid "Complete Name"
+msgstr "完整名称"
+
+#. module: app_base_chinese
+#: model:ir.model,name:app_base_chinese.model_res_partner
+msgid "Contact"
+msgstr "联系人"
+
+#. module: app_base_chinese
+#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_res_partner_kanban_view
+msgid "Credit："
+msgstr "信用额:"
+
+#. module: app_base_chinese
+#: model:ir.model,name:app_base_chinese.model_res_currency
+msgid "Currency"
+msgstr "币种"
+
+#. module: app_base_chinese
+#: model:ir.model.fields,help:app_base_chinese.field_res_currency__sequence
+msgid "Determine the display order. Sort ascending."
+msgstr "决定显示顺序，数字越小排序越前"
+
+#. module: app_base_chinese
+#: model:ir.model.fields,field_description:app_base_chinese.field_res_partner__name_en_US
+#: model:ir.model.fields,field_description:app_base_chinese.field_res_users__name_en_US
+msgid "English Name"
+msgstr "英文名"
+
+#. module: app_base_chinese
+#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_sale_advance_payment_inv
+msgid "FaPiao / Invoice Orders"
+msgstr "创建收据/发票"
+
+#. module: app_base_chinese
+#: model:ir.model.fields,field_description:app_base_chinese.field_res_partner__fax
+#: model:ir.model.fields,field_description:app_base_chinese.field_res_users__fax
+msgid "Fax"
+msgstr "传真"
+
+#. module: app_base_chinese
+#: model:ir.model.fields,field_description:app_base_chinese.field_stock_location__complete_name
+msgid "Full Location Name"
+msgstr "完整的位置名称"
+
+#. module: app_base_chinese
+#: model:ir.model,name:app_base_chinese.model_stock_location
+msgid "Inventory Locations"
+msgstr "库存位置"
+
+#. module: app_base_chinese
+#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_order_form
+msgid "Invoices/FaPiao"
+msgstr "收据/发票"
+
+#. module: app_base_chinese
+#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_order_form
+msgid "Make Collections"
+msgstr "收款"
+
+#. module: app_base_chinese
+#: model:ir.model.fields,field_description:app_base_chinese.field_res_partner__name
+#: model:ir.model.fields,field_description:app_base_chinese.field_res_users__name
+msgid "Name"
+msgstr "名称"
+
+#. module: app_base_chinese
+#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_view_move_form
+msgid "Post Entry"
+msgstr "过帐"
+
+#. module: app_base_chinese
+#: model:ir.model,name:app_base_chinese.model_product_category
+msgid "Product Category"
+msgstr "品类"
+
+#. module: app_base_chinese
+#: model:ir.model.fields,field_description:app_base_chinese.field_res_currency__sequence
+msgid "Sequence"
+msgstr "排序"
+
+#. module: app_base_chinese
+#: model:ir.model.fields,help:app_base_chinese.field_account_tax_group__active
+msgid "Set active to false to hide the tax without removing it."
+msgstr "请不要删除指定税率，可以将其归档。"
+
+#. module: app_base_chinese
+#: model:ir.model.fields,field_description:app_base_chinese.field_res_partner__short_name
+#: model:ir.model.fields,field_description:app_base_chinese.field_res_users__short_name
+msgid "Short Name"
+msgstr "简称"
+
+#. module: app_base_chinese
+#: model:ir.model,name:app_base_chinese.model_account_tax_group
+msgid "Tax Group"
+msgstr "税组"
+
+#. module: app_base_chinese
+#: model:ir.sequence,name:app_base_chinese.sequence_product_category_normal
+msgid "产品目录常规编号规则"
+msgstr ""
