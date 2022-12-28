@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="app_web_fullwidth asset" inherit_id="web.assets_backend">
+            <xpath expr="//link[last()]" position="after">
+                <link rel="stylesheet" type="text/scss" href="/app_web_fullwidth/static/src/scss/style.scss"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>
