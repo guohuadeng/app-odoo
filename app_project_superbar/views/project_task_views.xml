@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!--搜索加 superbar-->
+  <record model="ir.ui.view" id="app_view_task_search_form">
+    <field name="name">app.project.task.search.form</field>
+    <field name="model">project.task</field>
+    <field name="inherit_id" ref="project.view_task_search_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//search" position="inside">
+        <searchpanel view_types="kanban,tree,graph,pivot">
+          <field name="user_id"/>
+          <field name="stage_id"/>
+        </searchpanel>
+      </xpath>
+    </field>
+  </record>
+</odoo>

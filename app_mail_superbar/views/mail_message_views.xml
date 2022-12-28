@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+    <record id="app_view_message_search" model="ir.ui.view">
+        <field name="name">app.mail.message.search</field>
+        <field name="model">mail.message</field>
+        <field name="inherit_id" ref="mail.view_message_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="kanban,tree">
+                    <field name="message_type"/>
+                    <field name="channel_ids"/>
+                    <field name="author_id"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

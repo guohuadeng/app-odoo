@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+    <record id="app_edit_menu_access_search" model="ir.ui.view">
+        <field name="name">app.ir.ui.menu.search</field>
+        <field name="model">ir.ui.menu</field>
+        <field name="inherit_id" ref="base.edit_menu_access_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="kanban,tree">
+                    <field name="parent_id" filter_domain="[['child_id', '!=', False]]"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

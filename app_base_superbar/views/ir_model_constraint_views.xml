@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+      <record id="app_ir_model_constraint_view_search" model="ir.ui.view">
+          <field name="name">app.ir.model.constraint.search</field>
+          <field name="model">ir.model.constraint</field>
+          <field name="arch" type="xml">
+              <search string="Search ir.model.constraint">
+                  <field name="name" string="Name"/>
+                  <field name="module" string="Module"/>
+                  <searchpanel view_types="tree">
+                      <field name="module"/>
+                      <field name="model"/>
+                  </searchpanel>
+              </search>
+          </field>
+      </record>
+  </data>
+</odoo>

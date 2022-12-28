@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+      <!-- Order -->
+    <record id="app_view_report_pos_order_search" model="ir.ui.view">
+        <field name="name">app.report.pos.order.search</field>
+        <field name="model">report.pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_report_pos_order_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel>
+                    <field name="config_id"/>
+                    <field name="state"/>
+                    <field name="user_id"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+
+  </data>
+</odoo>

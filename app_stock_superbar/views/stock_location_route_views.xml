@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+      <!-- stock orderpoint-->
+    <record id="stock_location_route_view_search_superbar" model="ir.ui.view">
+        <field name="name">stock.location.route.search.superbar</field>
+        <field name="model">stock.location.route</field>
+        <field name="inherit_id" ref="stock.stock_location_route_view_search"/>
+        <field name="groups_id" eval="[(4, ref('base.group_multi_company'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="kanban,tree">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

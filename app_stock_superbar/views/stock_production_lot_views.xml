@@ -1,0 +1,21 @@
+<odoo>
+  <data>
+    <!--批次-->
+    <record id="search_product_lot_filter_superbar" model="ir.ui.view">
+        <field name="name">Production Lots Filter superbar</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.search_product_lot_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="tree">
+                    <field name="product_id" filter_domain="[('tracking', 'in', ('serial', 'lot'))]"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock.action_production_lot_form" model="ir.actions.act_window">
+        <field name="context"/>
+    </record>
+  </data>
+</odoo>

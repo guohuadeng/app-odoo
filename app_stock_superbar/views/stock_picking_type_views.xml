@@ -1,0 +1,19 @@
+<odoo>
+  <data>
+    <!--作业-->
+    <record id="view_location_search_superbar" model="ir.ui.view">
+        <field name="name">stock.picking.type.filter.superbar</field>
+        <field name="model">stock.picking.type</field>
+        <field name="inherit_id" ref="stock.view_pickingtype_filter"/>
+        <field name="groups_id" eval="[(4, ref('stock.group_stock_multi_warehouses'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="tree">
+                    <field name="warehouse_id" groups="stock.group_stock_multi_warehouses"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+
+  </data>
+</odoo>

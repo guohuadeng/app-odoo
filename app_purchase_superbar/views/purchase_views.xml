@@ -1,0 +1,47 @@
+<odoo>
+  <data>
+    <record id="view_purchase_order_filter_superbar" model="ir.ui.view">
+        <field name="name">request.quotation.select.superbar</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="tree,kanban,pivot,graph">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="partner_id" select="multi"/>
+                    <field name="state"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+    <record id="purchase_order_view_search_superbar" model="ir.ui.view">
+        <field name="name">purchase.order.select.superbar</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="tree,kanban,pivot,graph">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="partner_id" select="multi"/>
+                    <field name="invoice_status"/>
+                    <field name="state"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+      <!-- price list -->
+    <record id="product_supplierinfo_search_view_superbar" model="ir.ui.view">
+        <field name="name">product.supplierinfo.search.view.superbar</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="tree">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="name" select="multi"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

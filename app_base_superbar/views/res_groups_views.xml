@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+    <record id="app_view_groups_search" model="ir.ui.view">
+        <field name="name">app.res.groups.search</field>
+        <field name="model">res.groups</field>
+        <field name="inherit_id" ref="base.view_groups_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="kanban,tree">
+                    <field name="category_id"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

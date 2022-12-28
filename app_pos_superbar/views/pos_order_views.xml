@@ -1,0 +1,21 @@
+<odoo>
+  <data>
+      <!-- Order -->
+    <record id="app_view_pos_order_filter" model="ir.ui.view">
+        <field name="name">app.pos.order.list.select</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="tree,kanban,pivot">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="config_id"/>
+                    <field name="state"/>
+                    <field name="user_id"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <record id="app_act_report_xml_search_view" model="ir.ui.view">
+        <field name="name">app.ir.actions.report.search</field>
+        <field name="model">ir.actions.report</field>
+        <field name="inherit_id" ref="base.act_report_xml_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="kanban,tree">
+                    <field name="report_type"/>
+                    <field name="binding_model_id"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

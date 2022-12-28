@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+      <record id="app_view_followers_search" model="ir.ui.view">
+          <field name="name">app.mail.followers.search</field>
+          <field name="model">mail.followers</field>
+          <field name="arch" type="xml">
+              <search string="Search mail.followers">
+                  <field name="res_model" string="Model"/>
+                  <field name="partner_id" string="Partner"/>
+                  <searchpanel view_types="tree">
+                      <field name="subtype_ids"/>
+                      <field name="partner_id"/>
+                  </searchpanel>
+              </search>
+          </field>
+      </record>
+  </data>
+</odoo>

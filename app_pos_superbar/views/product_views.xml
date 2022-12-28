@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+      <!-- Product -->
+    <record id="pos_app_product_template_search_view" model="ir.ui.view">
+        <field name="name">product.template.search.ztree</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="app_product_superbar.app_product_template_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//searchpanel/field[@name='categ_id']" position="before">
+                <field name="pos_categ_id" />
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

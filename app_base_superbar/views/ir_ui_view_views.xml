@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <record id="app_view_view_search" model="ir.ui.view">
+        <field name="name">app.ir.ui.menu.search</field>
+        <field name="model">ir.ui.view</field>
+        <field name="inherit_id" ref="base.view_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="kanban,tree">
+                    <field name="type"/>
+                    <field name="model_data_id"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>
