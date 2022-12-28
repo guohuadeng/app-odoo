@@ -1,7 +1,7 @@
 id,name
-stock.stock_location_locations_partner,ÍùÀ´µ¥Î»
-stock.stock_location_customers,¿Í»§ÇøÎ»
-stock.stock_location_suppliers,¹©Ó¦ÉÌÇøÎ»
-stock.stock_location_locations,ÎïÀíÇøÎ»
-stock.stock_location_locations_virtual,ĞéÄâÇøÎ»
-stock.stock_location_inter_wh,ÄÚ²¿ÖĞ×ªÇøÎ»
+stock.stock_location_locations_partner,å¾€æ¥å•ä½
+stock.stock_location_customers,å®¢æˆ·åŒºä½
+stock.stock_location_suppliers,ä¾›åº”å•†åŒºä½
+stock.stock_location_locations,ç‰©ç†åŒºä½
+stock.stock_location_locations_virtual,è™šæ‹ŸåŒºä½
+stock.stock_location_inter_wh,å†…éƒ¨ä¸­è½¬åŒºä½

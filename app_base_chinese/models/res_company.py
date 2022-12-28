@@ -7,11 +7,24 @@ from odoo.exceptions import UserError, ValidationError
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
-    short_name = fields.Char('Short Name', related='partner_id.short_name', readonly=False)
-
-    # 当传参 show_short_company 时，只显示简称
-    def name_get(self):
-        if self._context.get('show_short_company'):
-            return [(value.id, "%s" % (value.short_name if value.short_name else value.name)) for value in self]
-        else:
-            return super().name_get()
+    @api.model
+    def _adjust_wh_cn_name(self):
+        companys = self.env['res.company'].with_context(active_test=False, lang='zh_CN').search([])
+        for rec in companys:
+            # 修正区位名称
+            ids = self.env['stock.location'].with_context(active_test=False).search(
+                [('name', 'like', ': Transit Location'), ('company_id', '=', rec.id)])
+            ids.write({'name': '%s: 中转区位' % rec.name})
+            ids = self.env['stock.location'].with_context(active_test=False).search(
+                [('name', 'like', ': Scrap'), ('company_id', '=', rec.id)])
+            ids.write({'name': '%s: 报废区位' % rec.name})
+            ids = self.env['stock.location'].with_context(active_test=False).search(
+                [('name', 'like', ': Inventory adjustment'), ('company_id', '=', rec.id)])
+            ids.write({'name': '%s: 盘点区位' % rec.name})
+            # 注意，原生没有在生产中使用 _
+            ids = self.env['stock.location'].with_context(active_test=False).search([
+                ('name', 'like', ': Production'), ('company_id', '=', rec.id)])
+            ids.write({'name': '%s: 生产区位' % rec.name})
+            ids = self.env['stock.location'].with_context(active_test=False).search([
+                ('name', 'like', ': Subcontracting Location'), ('company_id', '=', rec.id)])
+            ids.write({'name': '%s: 委外区位' % rec.name})
