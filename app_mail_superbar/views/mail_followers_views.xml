@@ -7,7 +7,7 @@
               <search string="Search mail.followers">
                   <field name="res_model" string="Model"/>
                   <field name="partner_id" string="Partner"/>
-                  <searchpanel view_types="tree">
+                  <searchpanel>
                       <field name="subtype_ids"/>
                       <field name="partner_id"/>
                   </searchpanel>

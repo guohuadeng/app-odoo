@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="product.product_category_search_view"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <searchpanel view_types="tree,kanban,search">
+                <searchpanel>
                     <field name="parent_id" filter_domain="[('child_id', '!=', False)]"/>
                 </searchpanel>
             </xpath>

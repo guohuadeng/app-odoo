@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <searchpanel view_types="tree,kanban,pivot">
+                <searchpanel>
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="config_id"/>
                     <field name="state"/>

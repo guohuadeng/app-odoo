@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="base.act_report_xml_search_view"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <searchpanel view_types="kanban,tree">
+                <searchpanel>
                     <field name="report_type"/>
                     <field name="binding_model_id"/>
                 </searchpanel>

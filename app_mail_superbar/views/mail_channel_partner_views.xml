@@ -6,7 +6,7 @@
           <field name="arch" type="xml">
               <search string="Search mail.channel.partner">
                   <field name="partner_id" string="Partner"/>
-                  <searchpanel view_types="tree">
+                  <searchpanel>
                       <field name="channel_id"/>
                       <field name="partner_id"/>
                   </searchpanel>

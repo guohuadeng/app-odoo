@@ -6,7 +6,7 @@
           <field name="arch" type="xml">
               <search string="Search mail.tracking.value">
                   <field name="field" string="Field"/>
-                  <searchpanel view_types="tree">
+                  <searchpanel>
                       <field name="create_uid"/>
                   </searchpanel>
               </search>

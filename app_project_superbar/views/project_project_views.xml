@@ -7,7 +7,7 @@
     <field name="inherit_id" ref="project.view_project_project_filter"/>
     <field name="arch" type="xml">
       <xpath expr="//search" position="inside">
-        <searchpanel view_types="kanban,tree">
+        <searchpanel>
           <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
           <field name="user_id"/>
           <field name="partner_id"/>

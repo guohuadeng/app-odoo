@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="mrp.view_mrp_production_filter"/>
         <field name="arch" type="xml">
             <xpath expr="//search" position="inside">
-                <searchpanel view_types="tree,kanban,pivot,graph">
+                <searchpanel>
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="priority"/>
                     <field name="reservation_state"/>
