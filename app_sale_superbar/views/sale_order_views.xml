@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <searchpanel>
+                <searchpanel view_types="list,kanban,pivot,graph">
                     <field name="team_id"/>
                     <field name="user_id"/>
                     <field name="partner_id" filter_domain="[('customer_rank','&gt;', 0)]" limit="1000"/>
@@ -23,7 +23,7 @@
         <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <searchpanel>
+                <searchpanel view_types="list,kanban,pivot,graph">
                     <field name="invoice_status"/>
                     <field name="team_id"/>
                     <field name="user_id"/>

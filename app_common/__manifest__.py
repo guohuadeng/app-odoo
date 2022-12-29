@@ -33,7 +33,7 @@
 
 {
     'name': "Sunpop Odooapp Common Func",
-    'version': '16.22.11.30',
+    'version': '16.22.12.29',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
