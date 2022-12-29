@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="app_product_brand_sale_report_tree" model="ir.ui.view">
+            <field name="name">app.product.brand.sale.report.tree</field>
+            <field name="model">sale.report</field>
+            <field name="inherit_id" ref="app_sale_pro.app_sale_report_tree"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="categ_id" optional="hide"/>
+                    <field name="product_brand_id" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="app_view_order_product_search" model="ir.ui.view">
+            <field name="name">app.sale.report.search</field>
+            <field name="model">sale.report</field>
+            <field name="inherit_id" ref="sale.view_order_product_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search//field[@name='categ_id']" position="after">
+                    <field name="product_brand_id" optional="hide"/>
+                </xpath>
+                <xpath expr="//filter[@name='Category']" position="after">
+                    <filter string="Product Brand" name="groupby_product_brand_id" context="{'group_by':'product_brand_id'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

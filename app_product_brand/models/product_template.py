@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Copyright 2009 NetAndCo (<http://www.netandco.net>).
 # Copyright 2011 Akretion Benoît Guillot <benoit.guillot@akretion.com>
 # Copyright 2014 prisnet.ch Seraphine Lantible <s.lantible@gmail.com>

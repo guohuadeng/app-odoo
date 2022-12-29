@@ -41,7 +41,7 @@
 
 {
     'name': 'Product Brand Manager',
-    'version': '13.22.03.28',
+    'version': '13.22.12.29',
     'author': 'Sunpop.cn',
     'category': 'Product',
     'website': 'https://www.sunpop.cn',
@@ -51,7 +51,8 @@
     'currency': 'EUR',
     'images': ['static/description/banner.png'],
     'depends': [
-        'sale',
+        'app_sale_pro',
+        'app_purchase_pro',
     ],
     'summary': """
     Product brand manager. Odoo App of Sunpop.cn
@@ -71,7 +72,8 @@
     5. Odoo 13, 12, 11, 企业版，社区版，多版本支持
     """,
     'depends': [
-        'sale',
+        'app_purchase_pro',
+        'app_sale_pro',
         ],
     'data': [
         'security/ir.model.access.csv',
@@ -79,7 +81,8 @@
         'views/product_template_views.xml',
         'views/product_product_views.xml',
         # todo: update report
-        # 'reports/sale_report_view.xml',
+        'report/sale_report_views.xml',
+        'report/purchase_report_views.xml',
         # 'reports/account_invoice_report_view.xml',
     ],
     'qweb': [
