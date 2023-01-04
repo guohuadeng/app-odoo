@@ -160,9 +160,9 @@ class ResConfigSettings(models.TransientModel):
             # 销售提成，自用
             # 'sale.commission.line',
             # 不能删除报价单模板
-            # 'sale.order.template.option',
-            # 'sale.order.template.line',
-            # 'sale.order.template',
+            'sale.order.template.option',
+            'sale.order.template.line',
+            'sale.order.template',
         ]
         seqs = [
             'sale',
@@ -243,14 +243,14 @@ class ResConfigSettings(models.TransientModel):
             # 清除生产单据
             'mrp.workcenter.productivity',
             'mrp.workorder',
-            'mrp.production.workcenter.line',
+            # 'mrp.production.workcenter.line',
             'change.production.qty',
             'mrp.production',
-            'mrp.production.product.line',
+            # 'mrp.production.product.line',
             'mrp.unbuild',
             'change.production.qty',
-            'sale.forecast.indirect',
-            'sale.forecast',
+            # 'sale.forecast.indirect',
+            # 'sale.forecast',
         ]
         seqs = [
             'mrp.',
@@ -279,10 +279,9 @@ class ResConfigSettings(models.TransientModel):
             'stock.picking',
             'stock.scrap',
             'stock.picking.batch',
-            'stock.inventory.line',
-            'stock.inventory',
+            'stock.inventory.adjustment.name',
             'stock.valuation.layer',
-            'stock.production.lot',
+            'stock.lot',
             # 'stock.fixed.putaway.strat',
             'procurement.group',
         ]
@@ -344,13 +343,13 @@ class ResConfigSettings(models.TransientModel):
             # 清除财务科目，用于重设
             'res.partner.bank',
             'account.move.line',
-            'account.invoice',
+            # 'account.invoice',
             'account.payment',
             'account.bank.statement',
-            'account.tax.account.tag',
+            # 'account.tax.account.tag',
             'account.tax',
-            'account.account.account.tag',
-            'wizard_multi_charts_accounts',
+            'account.account.tag',
+            # 'wizard_multi_charts_accounts',
             'account.journal',
             'account.account',
         ]
@@ -431,7 +430,7 @@ class ResConfigSettings(models.TransientModel):
             # 清除项目
             'account.analytic.line',
             'project.task',
-            'project.forecast',
+            # 'project.forecast',
             'project.project',
         ]
         seqs = []
@@ -480,7 +479,7 @@ class ResConfigSettings(models.TransientModel):
             'website.published.mixin',
             'website.multi.mixin',
             'website.visitor',
-            'website.redirect',
+            'website.rewrite',
             'website.seo.metadata',
             # 'website.page',
             # 'website.menu',
@@ -502,8 +501,8 @@ class ResConfigSettings(models.TransientModel):
     def remove_workflow(self):
         to_removes = [
             # 清除工作流
-            'wkf.workitem',
-            'wkf.instance',
+            # 'wkf.workitem',
+            # 'wkf.instance',
         ]
         seqs = []
         return self.remove_app_data(to_removes, seqs)
