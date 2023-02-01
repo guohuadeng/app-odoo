@@ -67,6 +67,7 @@
         'views/sale_order_views.xml',
         'views/account_move_views.xml',
         'views/ir_default_views.xml',
+        'views/menu_views.xml',
         'views/templates.xml',
         'wizard/sale_make_invoice_advance_views.xml',
         'data/ir_default_data.xml',
