@@ -7,7 +7,7 @@ from odoo.exceptions import UserError, ValidationError
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    name = fields.Char(index=True, translate=True)
+    name = fields.Char(translate=True)
     short_name = fields.Char('Short Name')  # 简称
     fax = fields.Char('Fax')  # 简称
 

@@ -97,7 +97,7 @@
         <record id="app_view_partner_short_form" model="ir.ui.view">
             <field name="name">app.res.partner.form</field>
             <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_short_form"/>
+            <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='street']" position="before">
                     <xpath expr="//field[@name='country_id']" position="move"/>
@@ -154,7 +154,7 @@
                 <xpath expr="//templates" position="before">
                     <field name="credit_limit"/>
                 </xpath>
-                <xpath expr="//div[hasclass('oe_kanban_details')]/ul" position="inside">
+                <xpath expr="//div[hasclass('oe_kanban_details')]/div/ul" position="inside">
                     <li t-if="record.credit_limit and record.credit_limit.raw_value">
                         Credit：<field name="credit_limit"/>
                     </li>

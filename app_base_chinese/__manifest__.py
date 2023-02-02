@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Created on 2018-11-05
+# Created on 2023-02-02
 # author: 广州尚鹏，https://www.sunpop.cn
 # email: 300883@qq.com
 # resource of Sunpop
@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '13.21.01.02',
+    'version': '16.23.02.02',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -67,7 +67,7 @@
         'views/sale_order_views.xml',
         'views/account_move_views.xml',
         'views/ir_default_views.xml',
-        'views/templates.xml',
+        # 'views/templates.xml',
         'wizard/sale_make_invoice_advance_views.xml',
         'data/ir_default_data.xml',
         'data/base_data.xml',
@@ -80,6 +80,11 @@
         'data/stock_location_data.xml',
         'data/sales_team_data.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'app_base_chinese/static/src/scss/app_style.scss',
+        ]
+    },
     'demo': [
     ],
     'test': [

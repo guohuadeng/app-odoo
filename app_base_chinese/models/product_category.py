@@ -9,6 +9,4 @@ _logger = logging.getLogger(__name__)
 class ProductCategory(models.Model):
     _inherit = "product.category"
 
-    complete_name = fields.Char(
-        'Complete Name', compute='_compute_complete_name',
-        store=True, translate=True)
+    complete_name = fields.Char(translate=True)
