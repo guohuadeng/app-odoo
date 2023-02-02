@@ -17,7 +17,7 @@
 
         <!--名称优化-->
         <record id="account.action_move_out_invoice_type" model="ir.actions.act_window" context="{'lang': 'zh_CN'}">
-            <field name="name">应收请款单</field>
+            <field name="name">应收发票</field>
         </record>
         <record id="account.action_move_out_refund_type" model="ir.actions.act_window" context="{'lang': 'zh_CN'}">
             <field name="name">应收退款-红字发票</field>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="account.menu_action_move_out_invoice_type" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
-        <field name="name">应收请款单</field>
+        <field name="name">应收发票</field>
     </record>
     <record id="account.menu_action_move_out_refund_type" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
         <field name="name">应收退款-红字发票</field>
