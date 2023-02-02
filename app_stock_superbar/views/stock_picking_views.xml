@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="stock.view_picking_internal_search"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <searchpanel>
+                <searchpanel view_types="list,kanban,pivot,graph">
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="user_id"/>
                     <field name="state"/>
