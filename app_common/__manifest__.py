@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Created on 20120-01-05
+# Created on 2023-02-02
 # author: 广州尚鹏，https://www.sunpop.cn
 # email: 300883@qq.com
 # resource of Sunpop
@@ -33,7 +33,7 @@
 
 {
     'name': "Sunpop Odooapp Common Func",
-    'version': '16.22.11.30',
+    'version': '16.23.02.02',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -47,18 +47,18 @@
     基础核心，必须没有要被依赖字段及视图等，实现auto_install
     ''',
     'description': '''    
-    Support Odoo 15, Enterprise and Community Edition
+    Support Odoo 16, Enterprise and Community Edition
     1. 
     2. 
     3. Multi-language Support.
     4. Multi-Company Support.
-    5. Support Odoo 15, Enterprise and Community Edition
+    5. Support Odoo 16, Enterprise and Community Edition
     ==========
     1. 
     2. 
     3. 多语言支持
     4. 多公司支持
-    5. Odoo 15, 企业版，社区版，多版本支持
+    5. Odoo 16, 企业版，社区版，多版本支持
     ''',
     'depends': [
         'base',
