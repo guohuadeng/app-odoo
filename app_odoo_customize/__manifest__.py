@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo 16 Customize OEM(Boost, Data reset)',
-    'version': '16.22.12.29',
+    'version': '16.23.02.06',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -73,7 +73,7 @@
             'app_odoo_customize/static/src/scss/dialog.scss',
             'app_odoo_customize/static/src/js/app_window_title.js',
             'app_odoo_customize/static/src/js/user_menu.js',
-            # 'app_odoo_customize/static/src/js/ribbon.js',
+            'app_odoo_customize/static/src/js/ribbon.js',
             'app_odoo_customize/static/src/js/dialog.js',
         ],
     },
@@ -135,7 +135,7 @@
     The user can get the help document just by one click.
     ## 在符合odoo开源协议的前提下，去除odoo版权信息，自定义你的odoo
     可完全自行设置下列 odoo 选项，让 odoo 看上去像是你的软件产品
-    支持odoo 15,14,13,12, 11, 10, 9 版本，社区版企业版通用
+    支持odoo 16,15,14,13,12, 11, 10, 9 版本，社区版企业版通用
     1. 删除菜单导航页脚的 Odoo 标签
     2. 将弹出窗口中 "Odoo" 设置为自定义名称
     3. 自定义用户菜单中的 Documentation, Support, About 的链接

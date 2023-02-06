@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0+e-20200628\n"
+"Project-Id-Version: Odoo Server 16.0-20221228\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-02 08:16+0000\n"
-"PO-Revision-Date: 2020-11-02 08:16+0000\n"
+"POT-Creation-Date: 2023-02-06 06:40+0000\n"
+"PO-Revision-Date: 2023-02-06 06:40+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: app_odoo_customize
-#. openerp-web
+#. odoo-javascript
 #: code:addons/app_odoo_customize/static/src/xml/res_config_edition.xml:0
 #, python-format
 msgid "(Sunpop.cn Professional Edition)"
@@ -26,14 +26,12 @@ msgstr "(Sunpop.cn 专业版)"
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid ""
 "<span class=\"col-3 col-lg-2 text-left\">\n"
-"                                Accounting <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>\n"
+"                                Accounting\n"
 "                            </span>"
 msgstr ""
 "<span class=\"col-3 col-lg-2 text-left\">\n"
-"                                财务 <span class=\"fa fa-lg fa-building-o\" title=\"只处理当前公司的数据.\" groups=\"base.group_multi_company\"/>\n"
+"                                财务\n"
 "                            </span>"
-
-
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -96,14 +94,22 @@ msgid "<span>Set to False to hide</span>"
 msgstr "<span>设置为 False 则不显示</span>"
 
 #. module: app_odoo_customize
-#. openerp-web
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/user_menu.js:0
+#, python-format
+msgid "Activate Assets Debugging"
+msgstr "激活开发者模式 (assets)"
+
+#. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/user_menu.js:0
 #: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #, python-format
 msgid "Activate the developer mode"
 msgstr "激活开发者模式"
 
 #. module: app_odoo_customize
-#. openerp-web
+#. odoo-javascript
 #: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #, python-format
 msgid "Activate the developer mode (with assets)"
@@ -151,7 +157,7 @@ msgid "Data Cleaning (Be careful to do that!)"
 msgstr "数据清理（请谨慎操作！）"
 
 #. module: app_odoo_customize
-#. openerp-web
+#. odoo-javascript
 #: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #, python-format
 msgid "Deactivate the developer mode"
@@ -250,16 +256,18 @@ msgid "Developer Documentation Url"
 msgstr "开发者手册链接"
 
 #. module: app_odoo_customize
-#. openerp-web
+#. odoo-javascript
 #: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #, python-format
 msgid "Developer Manual"
 msgstr "开发者手册"
 
 #. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_web_environment_ribbon_backend__display_name
-msgid "Display Name"
-msgstr "显示名称"
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/user_menu.js:0
+#, python-format
+msgid "Documentation"
+msgstr "支持文档"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_documentation_url
@@ -273,19 +281,21 @@ msgid "Export Translation"
 msgstr "导出翻译"
 
 #. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_web_environment_ribbon_backend__id
-msgid "ID"
-msgstr ""
+#: model:ir.model,name:app_odoo_customize.model_ir_http
+msgid "HTTP Routing"
+msgstr "HTTP 路由"
 
 #. module: app_odoo_customize
 #: model:ir.model,name:app_odoo_customize.model_base_language_install
 msgid "Install Language"
-msgstr "安装语言"
+msgstr ""
 
 #. module: app_odoo_customize
-#: model:ir.model.fields,field_description:app_odoo_customize.field_web_environment_ribbon_backend____last_update
-msgid "Last Modified on"
-msgstr ""
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/user_menu.js:0
+#, python-format
+msgid "Leave the Developer Tools"
+msgstr "离开开发者模式"
 
 #. module: app_odoo_customize
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_demo_data
@@ -314,6 +324,16 @@ msgid "My Odoo.com Account Url"
 msgstr "我的帐户链接"
 
 #. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.app_view_model_data_search
+msgid "No Updatable"
+msgstr "无需更新"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Odoo Customize Setting"
+msgstr "odoo自定义设置"
+
+#. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Please confirm to delete the select data?"
 msgstr "您确认要删除指定数据？"
@@ -333,6 +353,11 @@ msgstr "刷新翻译"
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Reset Category And Location Complete Name"
 msgstr "重置品类及区位显示名"
+
+#. module: app_odoo_customize
+#: model:ir.ui.menu,name:app_odoo_customize.menu_ir_cron
+msgid "Scheduled Actions"
+msgstr "计划任务"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_system_name
@@ -406,6 +431,13 @@ msgid "Show Support"
 msgstr "显示支持"
 
 #. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/user_menu.js:0
+#, python-format
+msgid "Support"
+msgstr "技术支持"
+
+#. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_support_url
 msgid "Support Url"
 msgstr "支持链接"
@@ -472,11 +504,6 @@ msgid "User Menu Content"
 msgstr "菜单项具体操作设置"
 
 #. module: app_odoo_customize
-#: model:ir.model,name:app_odoo_customize.model_ir_ui_view
-msgid "View"
-msgstr "视图"
-
-#. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Visit our website for more apps and Support. https://www.sunpop.cn"
 msgstr "请访问我们的网站获取更多支持. http://www.sunpop.cn"
@@ -517,17 +544,12 @@ msgid "When enable,everyone login can see the debug menu"
 msgstr "启用后，会显示快速调试菜单"
 
 #. module: app_odoo_customize
-#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "White Label Setting"
-msgstr "个性化odoo设置"
-
-#. module: app_odoo_customize
-#. openerp-web
+#. odoo-javascript
 #: code:addons/app_odoo_customize/static/src/xml/res_config_edition.xml:0
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_group
 #, python-format
 msgid "odooApp"
-msgstr ""
+msgstr "odooApp"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
