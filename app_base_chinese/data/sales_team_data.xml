@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <record id="sales_team.team_sales_department" model="crm.team">
-            <field name="name">中国</field>
-        </record>
+<!--        <record id="sales_team.team_sales_department" model="crm.team">-->
+<!--            <field name="name">中国</field>-->
+<!--        </record>-->
+        <function model="crm.team" name="write">
+            <value model="crm.team" eval="obj().env.ref('sales_team.team_sales_department').id"/>
+            <value eval="{
+            'name': '中国',
+            }"/>
+        </function>
     </data>
 </odoo>

@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '13.21.01.02',
+    'version': '13.23.02.02',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
