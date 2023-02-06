@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <openerp>
     <data noupdate="1">
-
         <function model="ir.config_parameter" name="set_param" eval="('app_system_name', 'odooApp16')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_show_lang', 'True')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_show_debug', 'True')"/>
@@ -17,7 +16,7 @@
         <function model="ir.config_parameter" name="set_param" eval="('app_support_url', 'https://www.sunpop.cn/trial')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_account_title', 'My Online Account')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_account_url', 'https://www.sunpop.cn/my-account')"/>
-        <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_name', 'False')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_name', 'Sunpop.cn')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_color', '#f0f0f0')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_background_color', 'rgba(255,0,0,.4)')"/>
     </data>
