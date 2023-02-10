@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="account.menu_action_move_out_invoice_type" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
+        <field name="name">应收发票</field>
+    </record>
+    <record id="account.menu_action_move_out_refund_type" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
+        <field name="name">应收退款-红字发票</field>
+    </record>
+    <record id="account.menu_action_move_out_receipt_type" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
+        <field name="name">应收收据(无销售订单)</field>
+    </record>
+    <record id="account.menu_action_account_payments_receivable" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
+        <field name="name">应收支付</field>
+    </record>
+
+    <record id="account.menu_action_move_in_invoice_type" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
+        <field name="name">应付账单</field>
+    </record>
+    <record id="account.menu_action_move_in_refund_type" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
+        <field name="name">应付退款</field>
+    </record>
+    <record id="account.menu_action_move_in_receipt_type" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
+        <field name="name">应付收据(无采购订单)</field>
+    </record>
+    <record id="account.menu_action_account_payments_payable" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
+        <field name="name">应付支付</field>
+    </record>
+</odoo>

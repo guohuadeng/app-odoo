@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <data noupdate="0">
+    <data noupdate="01>
 
         <record id="base.res_partner_address_1" model="res.partner">
             <field name="image" type="base64" file="base/static/img/res_partner_address_1-image.png"/>

@@ -1,0 +1,7 @@
+id,name
+stock.stock_location_locations_partner,往来单位
+stock.stock_location_customers,客户区位
+stock.stock_location_suppliers,供应商区位
+stock.stock_location_locations,物理区位
+stock.stock_location_locations_virtual,虚拟区位
+stock.stock_location_inter_wh,内部中转区位

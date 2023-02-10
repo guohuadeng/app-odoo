@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '14.21.03.22',
+    'version': '14.23.02.02',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -49,13 +49,15 @@
     12. 翻译导出默认中文，默认po
     13. 在 base 模型增加 name_en_US 字段，赋值后同时改翻译值
     14. 常用小数精度调整
-    21. todo:中文演示数据(只有demo模式才加载)    
+    15. 销售团队改为中国
+    21. todo:中文演示数据(只有demo模式才加载)
     """,
     'pre_init_hook': 'pre_init_hook',
     'post_init_hook': 'post_init_hook',
     'depends': [
         'app_base',
         'account',
+        'sales_team',
         'stock',
     ],
     'images': ['static/description/banner.jpg'],
@@ -65,6 +67,7 @@
         'views/sale_order_views.xml',
         'views/account_move_views.xml',
         'views/ir_default_views.xml',
+        'views/menu_views.xml',
         'views/templates.xml',
         'wizard/sale_make_invoice_advance_views.xml',
         'data/ir_default_data.xml',
@@ -76,6 +79,7 @@
         'data/product_data.xml',
         'data/product_pricelist_data.xml',
         'data/stock_location_data.xml',
+        'data/sales_team_data.xml',
     ],
     'demo': [
     ],
