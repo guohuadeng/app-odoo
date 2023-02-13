@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="_assets_backend" name="app_web_enterprise assets backend" inherit_id="web.assets_backend">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/app_web_enterprise/static/src/scss/app_style.scss"/>
+        </xpath>
+    </template>
+    <!-- 企业版变色   -->
+    <template id="_app_assets_primary_variables" inherit_id="web_enterprise._assets_primary_variables" priority="15">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/app_web_enterprise/static/src/scss/primary_variables.scss"/>
+        </xpath>
+    </template>
+
+    <template id="app_assets_common" name="app_web_enterprise assets common" inherit_id="web_enterprise.assets_common">
+        <xpath expr="//link[@href='/web_enterprise/static/src/scss/ui.scss']" position="replace">
+            <link rel="stylesheet" type="text/scss" href="/app_web_enterprise/static/src/scss/ui.scss"/>
+        </xpath>
+    </template>
+</odoo>

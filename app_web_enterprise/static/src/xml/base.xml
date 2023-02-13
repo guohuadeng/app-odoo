@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="HomeMenu.Content">
+        <t t-jquery=".o_home_menu_footer" t-operation="inner">
+            <img src='/web/binary/company_logo' alt="Logo"/>
+        </t>
+    </t>
+    <!--    菜单有下拉箭头-->
+    <t t-inherit="web.Dropdown" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o-dropdown')]" position="attributes">
+            <attribute name="t-att-class">{show: state.open}</attribute>
+        </xpath>
+    </t>
+
+</templates>

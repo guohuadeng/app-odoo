@@ -32,5 +32,41 @@
 <!--        <record id="base.grant_menu_access" model="ir.actions.act_window">-->
 <!--            <field name="context">{'ir.ui.menu.full_list': True, 'search_default_top_menu': 1}</field>-->
 <!--        </record>-->
+<!--        <record id="base.grant_menu_access" model="ir.actions.act_window">-->
+<!--            <field name="context">{'ir.ui.menu.full_list': True, 'search_default_top_menu': 1}</field>-->
+<!--        </record>-->
+        <menuitem
+                id="menu_app_group"
+                name="odooApp"
+                parent="base.menu_administration"
+                sequence="1"
+                groups="base.group_system"/>
+        <menuitem
+                id="menu_app_theme_config"
+                parent="menu_app_group"
+                sequence="1"
+                action="action_app_theme_config"
+                groups="base.group_system"/>
+        <menuitem
+                id="menu_ir_cron"
+                name="Scheduled Actions"
+                parent="menu_app_group"
+                sequence="91"
+                action="base.ir_cron_act"
+                groups="base.group_system"/>
+        <!--增加导入Demo数据-->
+        <menuitem
+                id="menu_app_demo_data"
+                parent="menu_app_group"
+                sequence="92"
+                action="base.demo_force_install_action"
+                groups="base.group_system"/>
+        <menuitem
+                id="menu_ir_config_list"
+                name="System Parameters"
+                parent="menu_app_group"
+                sequence="93"
+                action="base.ir_config_list_action"
+                groups="base.group_system"/>
     </data>
 </odoo>
