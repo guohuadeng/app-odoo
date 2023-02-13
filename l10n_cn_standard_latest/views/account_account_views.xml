@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <!-- account.account -->
+      <record id="app_view_account_list" model="ir.ui.view">
+          <field name="name">app.account.list</field>
+          <field name="model">account.account</field>
+          <field name="inherit_id" ref="account.view_account_list"/>
+          <field name="arch" type="xml">
+              <xpath expr="//tree" position="attributes">
+                  <attribute name="default_order">code</attribute>
+              </xpath>
+              <xpath expr="field[@name='user_type_id']" position="after">
+                  <field name="group_id"/>
+                  <field name="tag_ids" widget="many2many_tags"/>
+              </xpath>
+          </field>
+      </record>
+      <record id="init_accounts_tree" model="ir.ui.view">
+          <field name="name">app.account.setup.opening.move.line.tree</field>
+          <field name="model">account.account</field>
+          <field name="inherit_id" ref="account.init_accounts_tree"/>
+          <field name="arch" type="xml">
+              <xpath expr="field[@name='user_type_id']" position="after">
+                  <field name="group_id"/>
+                  <field name="tag_ids" widget="many2many_tags"/>
+              </xpath>
+          </field>
+      </record>
+      <record id="app_view_account_form" model="ir.ui.view">
+          <field name="name">app.account.account.form</field>
+          <field name="model">account.account</field>
+          <field name="inherit_id" ref="account.view_account_form"/>
+          <field name="arch" type="xml">
+              <xpath expr="//field[@name='name']" position="after">
+                  <field name="parent_id"/>
+              </xpath>
+          </field>
+      </record>
+      <record id="app_view_account_search" model="ir.ui.view">
+          <field name="name">app.account.account.search</field>
+          <field name="model">account.account</field>
+          <field name="inherit_id" ref="account.view_account_search"/>
+          <field name="arch" type="xml">
+              <xpath expr="//group" position="inside">
+                  <filter string="Group" name="account_group" domain="" context="{'group_by':'group_id'}"/>
+              </xpath>
+          </field>
+      </record>
+    </data>
+</odoo>
