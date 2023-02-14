@@ -18,7 +18,7 @@
 
 {
     'name': "App web enterprise enhance,企业版界面增强",
-    'version': '16.23.02.13',
+    'version': '16.23.02.14',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -59,9 +59,9 @@
         'web._assets_primary_variables': [
             ('before', 'web_enterprise/static/src/scss/primary_variables.scss', 'app_web_enterprise/static/src/scss/primary_variables.scss'),
         ],
-        # 'web.assets_backend': [
-        #     'app_web_enterprise/static/src/scss/app_style.scss',
-        # ],
+        'web.assets_backend': [
+            'app_web_enterprise/static/src/components/*/*.xml',
+        ],
         # 这里是改样式，要 after处理
         'web.assets_common': [
             ('after', 'web_enterprise/static/src/webclient/home_menu/home_menu_background.scss', 'app_web_enterprise/static/src/scss/home_menu_background.scss'),
