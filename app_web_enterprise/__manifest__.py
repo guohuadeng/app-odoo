@@ -45,6 +45,7 @@
     'price': 68.00,
     'currency': 'EUR',
     'depends': [
+        'mail',
         'web_enterprise',
         # 'web_mobile'
     ],
