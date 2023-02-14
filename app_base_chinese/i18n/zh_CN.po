@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0-20221228\n"
+"Project-Id-Version: Odoo Server 16.0+e-20221228\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-02 10:28+0000\n"
-"PO-Revision-Date: 2023-02-02 10:28+0000\n"
+"POT-Creation-Date: 2023-02-14 08:50+0000\n"
+"PO-Revision-Date: 2023-02-14 08:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,11 +24,6 @@ msgstr "激活"
 #: model:ir.model,name:app_base_chinese.model_res_company
 msgid "Companies"
 msgstr "公司"
-
-#. module: app_base_chinese
-#: model:ir.model.fields,field_description:app_base_chinese.field_product_category__complete_name
-msgid "Complete Name"
-msgstr "完整名称"
 
 #. module: app_base_chinese
 #: model:ir.model,name:app_base_chinese.model_res_partner

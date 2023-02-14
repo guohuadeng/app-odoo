@@ -6,7 +6,7 @@ from odoo import api, fields, models, _
 
 _logger = logging.getLogger(__name__)
 
+
 class ProductCategory(models.Model):
     _inherit = "product.category"
 
-    complete_name = fields.Char(translate=True)
