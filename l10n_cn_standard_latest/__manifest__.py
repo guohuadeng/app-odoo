@@ -9,7 +9,7 @@
 
 {
     'name': '2022最新中国企业会计表.Latest Chinese Accounting.',
-    'version': '15.21.11.11',
+    'version': '16.23.02.14',
     'author': 'Sunpop.cn',
     'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.sunpop.cn',
@@ -23,7 +23,7 @@
     'description': """
     
     最新中国化财务，主要针对标准会计科目表作了优化。
-    1. 2022最新会计科目表，处理营改增后会计科目调整。更新至最新税率。odoo 15专用。
+    1. 2022最新会计科目表，处理营改增后会计科目调整。更新至最新税率。odoo 16专用。
     2. 将菜单中设置为"财务"。
     3. 补充分类及标签信息。
     4. 更新税信息。

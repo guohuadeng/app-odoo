@@ -10,7 +10,7 @@
               <xpath expr="//tree" position="attributes">
                   <attribute name="default_order">code</attribute>
               </xpath>
-              <xpath expr="field[@name='user_type_id']" position="after">
+              <xpath expr="field[@name='account_type']" position="after">
                   <field name="group_id"/>
                   <field name="tag_ids" widget="many2many_tags"/>
               </xpath>
@@ -21,7 +21,7 @@
           <field name="model">account.account</field>
           <field name="inherit_id" ref="account.init_accounts_tree"/>
           <field name="arch" type="xml">
-              <xpath expr="field[@name='user_type_id']" position="after">
+              <xpath expr="field[@name='account_type']" position="after">
                   <field name="group_id"/>
                   <field name="tag_ids" widget="many2many_tags"/>
               </xpath>
