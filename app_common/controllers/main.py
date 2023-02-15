@@ -20,7 +20,8 @@ class AppController(http.Controller):
         if not url:
             return None
         try:
-            response = requests.get(url)  # 将这个图片保存在内存
+            # 将这个图片保存在内存
+            response = requests.get(url)
         except Exception as e:
             return None
         # 返回这个图片的base64编码
@@ -110,5 +111,6 @@ def haversine(lon1, lat1, lon2, lat2):
     dlat = lat2 - lat1
     a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
     c = 2 * asin(sqrt(a))
-    r = 6371  # 地球平均半径，单位为公里
+    # 地球平均半径，单位为公里
+    r = 6371
     return c * r * 1000
