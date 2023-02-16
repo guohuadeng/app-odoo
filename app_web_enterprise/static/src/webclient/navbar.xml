@@ -13,9 +13,16 @@
         </a>
     </xpath>
 </t>
-<!--    web.NavBar.SectionsMenu-->
-<!--    没有子菜单时，调用web.DropdownItem-->
-<!--    web.UserMenu-->
-
-
+    <!--    菜单有下拉箭头， owl的在 web.NavBar， 首行用 MenuDropdown， 下拉的用 DropdownItem -->
+    <!--    owl NavBar-->
+    <t t-name="app_web_enterprise.NavBar.SectionsMenu" t-inherit="web.NavBar.SectionsMenu" t-inherit-mode="extension">
+        <xpath expr="//MenuDropdown" position="attributes">
+            <attribute name="showCaret">true</attribute>
+        </xpath>
+    </t>
+<!--    <t t-name="app_web_enterprise.NavBar.SectionsMenu.Dropdown.MenuSlot" t-inherit="web.NavBar.SectionsMenu.Dropdown.MenuSlot" t-inherit-mode="extension">-->
+<!--        <xpath expr="//DropdownItem[1]" position="attributes">-->
+<!--            <attribute name="showCaret">true</attribute>-->
+<!--        </xpath>-->
+<!--    </t>-->
 </templates>

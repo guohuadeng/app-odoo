@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-
 <!--    <t t-extend="HomeMenu.Content">-->
 <!--        <t t-jquery=".o_home_menu_footer" t-operation="inner">-->
 <!--            <img src='/web/binary/company_logo' alt="Logo"/>-->
 <!--        </t>-->
 <!--    </t>-->
-    <!--    菜单有下拉箭头， owl的在 web.NavBar.SectionsMenu， 有group的用 MenuDropdown， 直接操作的用 DropdownItem -->
-    <t t-name="app_web_enterprise.Dropdown" t-inherit="web.Dropdown">
-        <xpath expr="//div[hasclass('o-dropdown')]" position="attributes">
-            <attribute name="t-att-class">
-        {{ directionCaretClass || ''}}
-        {{ state.open ? 'show' : ''}}</attribute>
-        </xpath>
-    </t>
-
 </templates>

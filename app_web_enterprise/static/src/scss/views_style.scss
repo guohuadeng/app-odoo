@@ -10,3 +10,18 @@
     }
   }
 }
+// 上方菜单下拉，group 也有箭头
+.o_main_navbar {
+  .o-dropdown {
+    .dropdown-menu_group.dropdown-header::after {
+      display: inline-block;
+      margin-left: 3.4px;
+      vertical-align: 3.4px;
+      content: "";
+      border-top: 4px solid;
+      border-right: 4px solid transparent;
+      border-bottom: 0;
+      border-left: 4px solid transparent;
+    }
+  }
+}
