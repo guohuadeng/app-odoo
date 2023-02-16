@@ -11,6 +11,10 @@ const userMenuRegistry = registry.category("user_menuitems");
 patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
     setup() {
         this._super.apply(this, arguments);
+        userMenuRegistry.remove("debug");
+        userMenuRegistry.remove("asset_asset");
+        userMenuRegistry.remove("leave_debug");
+        userMenuRegistry.remove("separator0");
         userMenuRegistry.remove("documentation");
         userMenuRegistry.remove("support");
         userMenuRegistry.remove("odoo_account");
