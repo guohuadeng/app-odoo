@@ -1,0 +1,12 @@
+//list 改标头背景
+.o_list_renderer {
+  .o_list_table {
+    :not(.o_field_x2many_list) > & thead, tfoot {
+      tr > :not(:empty) {
+        padding-top: var(--ListRenderer-thead-padding-v);
+        padding-bottom: var(--ListRenderer-thead-padding-v);
+        background-color: $o-gray-100;
+      }
+    }
+  }
+}

@@ -61,13 +61,17 @@
             ('before', 'web_enterprise/static/src/scss/primary_variables.scss', 'app_web_enterprise/static/src/scss/primary_variables.scss'),
         ],
         'web.assets_backend': [
+            ('after', 'web/static/src/views/**/*', 'app_web_enterprise/static/src/scss/views_style.scss'),
             'app_web_enterprise/static/src/components/*/*.xml',
+            'app_web_enterprise/static/src/webclient/**/*.xml',
+            # 'app_web_enterprise/static/src/xml/base.xml',
         ],
         # 这里是改样式，要 after处理
         'web.assets_common': [
             ('after', 'web_enterprise/static/src/webclient/home_menu/home_menu_background.scss', 'app_web_enterprise/static/src/scss/home_menu_background.scss'),
         ],
         'web.assets_frontend': [
+            # ('after', 'web/static/src/core/**/*', 'app_web_enterprise/static/src/xml/base.xml'),
             ('after', 'web_enterprise/static/src/webclient/home_menu/home_menu_background.scss', 'app_web_enterprise/static/src/scss/home_menu_background.scss'),
         ],
     },
