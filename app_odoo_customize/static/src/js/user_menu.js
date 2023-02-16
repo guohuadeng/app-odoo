@@ -25,9 +25,9 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
             .add("documentation", documentationItem)
             .add("support", supportItem)
             .add("odoo_account", odooAccountItem);
-        // todo: 处理语言列表，rpc取值，同上处理 userMenuRegistry.add("slang_"+语言代码, debugItem(语言代码))
-        // todo: 语言图片的处理，可以扩展 @web/webclient/user_menu/user_menu， 参考 CheckBox 的处理。
-        //  建议直接CheckBox这个类型改，增加个 element.img的处理，选中的语言就是 ischecked的
+        // todo: 处理语言列表，rpc取值，同上处理 userMenuRegistry.add("slang_"+语言代码, debugItem(语言代码), env)
+        // todo: 语言图片的处理，正常直接参考 Shortcuts 的处理，直接生成 html代码即可。
+        // Shortcuts不成就可以扩展 @web/webclient/user_menu/user_menu， 参考 CheckBox 的处理。建议直接CheckBox这个类型改，增加个 element.img的处理，选中的语言就是 ischecked的
     },
     // getElements() {
     //     var ret = this._super.apply(this, arguments);
