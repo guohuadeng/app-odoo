@@ -25,6 +25,7 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
             .add("documentation", documentationItem)
             .add("support", supportItem)
             .add("odoo_account", odooAccountItem);
+        // todo: 处理语言列表，rpc取值，同上处理 userMenuRegistry.add("slang_"+语言代码, debugItem(语言代码))
     },
     // getElements() {
     //     var ret = this._super.apply(this, arguments);
