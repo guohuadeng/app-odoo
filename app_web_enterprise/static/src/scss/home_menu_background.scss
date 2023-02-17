@@ -5,7 +5,7 @@
         color: var(--homeMenu-bg-color, #00463e);
         image: var(--homeMenu-bg-image,
             linear-gradient(to right bottom, #00796B, #00463e),
-            url("/app_web_enterprise/static/img/home-menu-bg-overlay.svg")
+            url("/app_web_enterprise/static/src/img/home-menu-bg-overlay.svg")
         );
     }
 }
