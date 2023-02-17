@@ -283,20 +283,8 @@ class ResConfigSettings(models.TransientModel):
 
     def remove_account_chart(self):
         company_id = self.env.company.id
-        self = self.with_context(force_company=company_id, company_id=company_id)
+        self = self.with_company(self.env.company)
         to_removes = [
-            # 清除财务科目，用于重设
-            'res.partner.bank',
-            'account.move.line',
-            # 'account.invoice',
-            'account.payment',
-            'account.bank.statement',
-            # 'account.tax.account.tag',
-            'account.tax',
-            'account.account.tag',
-            # 'wizard_multi_charts_accounts',
-            'account.journal',
-            'account.account',
         ]
         # todo: 要做 remove_hr，因为工资表会用到 account
         # 更新account关联，很多是多公司字段，故只存在 ir_property，故在原模型，只能用update
