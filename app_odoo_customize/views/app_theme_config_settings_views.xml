@@ -26,7 +26,6 @@
                             <field name="app_show_lang"/>
                             <field name="app_show_debug"/>
                             <field name="app_show_documentation"/>
-                            <field name="app_show_documentation_dev"/>
                             <field name="app_show_support"/>
                             <field name="app_show_account"/>
                         </group>

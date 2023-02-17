@@ -19,6 +19,7 @@ class IrHttp(models.AbstractModel):
         result['app_support_url'] = config_parameter.get_param('app_support_url')
         result['app_account_title'] = config_parameter.get_param('app_account_title')
         result['app_account_url'] = config_parameter.get_param('app_account_url')
+        result['app_show_debug'] = config_parameter.get_param('app_show_debug')
         result['app_show_documentation'] = config_parameter.get_param('app_show_documentation')
         result['app_show_documentation_dev'] = config_parameter.get_param('app_show_documentation_dev')
         result['app_show_support'] = config_parameter.get_param('app_show_support')

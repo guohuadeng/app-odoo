@@ -11,100 +11,45 @@ _logger = logging.getLogger(__name__)
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    app_system_name = fields.Char('System Name', help="Setup System Name,which replace Odoo")
+    app_system_name = fields.Char('System Name', help="Setup System Name,which replace Odoo",
+                                  default='odooApp16', config_parameter='app_system_name')
     app_show_lang = fields.Boolean('Show Quick Language Switcher',
-                                   help="When enable,User can quick switch language in user menu")
-    app_show_debug = fields.Boolean('Show Quick Debug', help="When enable,everyone login can see the debug menu")
-    app_show_documentation = fields.Boolean('Show Documentation', help="When enable,User can visit user manual")
+                                   help="When enable,User can quick switch language in user menu",
+                                   default=True, config_parameter='app_show_lang')
+    app_show_debug = fields.Boolean('Show Quick Debug', help="When enable,everyone login can see the debug menu",
+                                    default=True, config_parameter='app_show_debug')
+    app_show_documentation = fields.Boolean('Show Documentation', help="When enable,User can visit user manual",
+                                            default=True, config_parameter='app_show_documentation')
+    # 停用
     app_show_documentation_dev = fields.Boolean('Show Developer Documentation',
                                                 help="When enable,User can visit development documentation")
-    app_show_support = fields.Boolean('Show Support', help="When enable,User can vist your support site")
-    app_show_account = fields.Boolean('Show My Account', help="When enable,User can login to your website")
-    app_show_enterprise = fields.Boolean('Show Enterprise Tag', help="Uncheck to hide the Enterprise tag")
-    app_show_share = fields.Boolean('Show Share Dashboard', help="Uncheck to hide the Odoo Share Dashboard")
-    app_show_poweredby = fields.Boolean('Show Powered by Odoo', help="Uncheck to hide the Powered by text")
+    app_show_support = fields.Boolean('Show Support', help="When enable,User can vist your support site",
+                                      default=True, config_parameter='app_show_support')
+    app_show_account = fields.Boolean('Show My Account', help="When enable,User can login to your website",
+                                      default=True, config_parameter='app_show_account')
+    app_show_enterprise = fields.Boolean('Show Enterprise Tag', help="Uncheck to hide the Enterprise tag",
+                                         default=False, config_parameter='app_show_enterprise')
+    app_show_share = fields.Boolean('Show Share Dashboard', help="Uncheck to hide the Odoo Share Dashboard",
+                                    default=False, config_parameter='app_show_share')
+    app_show_poweredby = fields.Boolean('Show Powered by Odoo', help="Uncheck to hide the Powered by text",
+                                        default=False, config_parameter='app_show_poweredby')
     group_show_author_in_apps = fields.Boolean(string="Show Author in Apps Dashboard", implied_group='app_odoo_customize.group_show_author_in_apps',
                                                help="Uncheck to Hide Author and Website in Apps Dashboard")
     module_odoo_referral = fields.Boolean('Show Odoo Referral', help="Uncheck to remove the Odoo Referral")
 
-    app_documentation_url = fields.Char('Documentation Url')
-    app_documentation_dev_url = fields.Char('Developer Documentation Url')
-    app_support_url = fields.Char('Support Url')
-    app_account_title = fields.Char('My Odoo.com Account Title')
-    app_account_url = fields.Char('My Odoo.com Account Url')
-    app_enterprise_url = fields.Char('Customize Module Url(eg. Enterprise)')
-    app_ribbon_name = fields.Char('Show Demo Ribbon')
-
-    @api.model
-    def get_values(self):
-        res = super(ResConfigSettings, self).get_values()
-        ir_config = self.env['ir.config_parameter'].sudo()
-        app_system_name = ir_config.get_param('app_system_name', default='odooApp')
-
-        app_show_lang = True if ir_config.get_param('app_show_lang') == "True" else False
-        app_show_debug = True if ir_config.get_param('app_show_debug') == "True" else False
-        app_show_documentation = True if ir_config.get_param('app_show_documentation') == "True" else False
-        app_show_documentation_dev = True if ir_config.get_param('app_show_documentation_dev') == "True" else False
-        app_show_support = True if ir_config.get_param('app_show_support') == "True" else False
-        app_show_account = True if ir_config.get_param('app_show_account') == "True" else False
-        app_show_enterprise = True if ir_config.get_param('app_show_enterprise') == "True" else False
-        app_show_share = True if ir_config.get_param('app_show_share') == "True" else False
-        app_show_poweredby = True if ir_config.get_param('app_show_poweredby') == "True" else False
-
-        app_documentation_url = ir_config.get_param('app_documentation_url',
-                                                    default='https://www.sunpop.cn/documentation/user/12.0/en/index.html')
-        app_documentation_dev_url = ir_config.get_param('app_documentation_dev_url',
-                                                        default='https://www.sunpop.cn/documentation/12.0/index.html')
-        app_support_url = ir_config.get_param('app_support_url', default='https://www.sunpop.cn/trial/')
-        app_account_title = ir_config.get_param('app_account_title', default='My Online Account')
-        app_account_url = ir_config.get_param('app_account_url', default='https://www.sunpop.cn/my-account/')
-        app_enterprise_url = ir_config.get_param('app_enterprise_url', default='https://www.sunpop.cn')
-        app_ribbon_name = ir_config.get_param('app_ribbon_name', default='*Sunpop.cn')
-        res.update(
-            app_system_name=app_system_name,
-            app_show_lang=app_show_lang,
-            app_show_debug=app_show_debug,
-            app_show_documentation=app_show_documentation,
-            app_show_documentation_dev=app_show_documentation_dev,
-            app_show_support=app_show_support,
-            app_show_account=app_show_account,
-            app_show_enterprise=app_show_enterprise,
-            app_show_share=app_show_share,
-            app_show_poweredby=app_show_poweredby,
-
-            app_documentation_url=app_documentation_url,
-            app_documentation_dev_url=app_documentation_dev_url,
-            app_support_url=app_support_url,
-            app_account_title=app_account_title,
-            app_account_url=app_account_url,
-            app_enterprise_url=app_enterprise_url,
-            app_ribbon_name=app_ribbon_name
-        )
-        return res
-
-    def set_values(self):
-        super(ResConfigSettings, self).set_values()
-        ir_config = self.env['ir.config_parameter'].sudo()
-        ir_config.set_param("app_system_name", self.app_system_name or "")
-        ir_config.set_param("app_show_lang", self.app_show_lang or "False")
-        ir_config.set_param("app_show_debug", self.app_show_debug or "False")
-        ir_config.set_param("app_show_documentation", self.app_show_documentation or "False")
-        ir_config.set_param("app_show_documentation_dev", self.app_show_documentation_dev or "False")
-        ir_config.set_param("app_show_support", self.app_show_support or "False")
-        ir_config.set_param("app_show_account", self.app_show_account or "False")
-        ir_config.set_param("app_show_enterprise", self.app_show_enterprise or "False")
-        ir_config.set_param("app_show_share", self.app_show_share or "False")
-        ir_config.set_param("app_show_poweredby", self.app_show_poweredby or "False")
-
-        ir_config.set_param("app_documentation_url",
-                            self.app_documentation_url or "https://www.sunpop.cn/documentation/user/12.0/en/index.html")
-        ir_config.set_param("app_documentation_dev_url",
-                            self.app_documentation_dev_url or "https://www.sunpop.cn/documentation/12.0/index.html")
-        ir_config.set_param("app_support_url", self.app_support_url or "https://www.sunpop.cn/trial/")
-        ir_config.set_param("app_account_title", self.app_account_title or "My Online Account")
-        ir_config.set_param("app_account_url", self.app_account_url or "https://www.sunpop.cn/my-account/")
-        ir_config.set_param("app_enterprise_url", self.app_enterprise_url or "https://www.sunpop.cn")
-        ir_config.set_param("app_ribbon_name", self.app_ribbon_name or "*Sunpop.cn")
+    app_documentation_url = fields.Char('Documentation Url', config_parameter='app_documentation_url',
+                                        default='https://www.sunpop.cn/documentation/user/13.0/en/index.html')
+    app_documentation_dev_url = fields.Char('Developer Documentation Url', config_parameter='app_documentation_dev_url')
+    app_support_url = fields.Char('Support Url', config_parameter='app_support_url',
+                                  default='https://www.sunpop.cn/trial')
+    app_account_title = fields.Char('My Odoo.com Account Title', config_parameter='app_account_title',
+                                    default='My Online Account')
+    app_account_url = fields.Char('My Odoo.com Account Url', config_parameter='app_account_url',
+                                  default='https://www.sunpop.cn/my-account/')
+    app_enterprise_url = fields.Char('Customize Module Url(eg. Enterprise)', config_parameter='app_enterprise_url',
+                                     default='https://www.sunpop.cn')
+    app_ribbon_name = fields.Char('Show Demo Ribbon', config_parameter='app_ribbon_name',
+                                  default='*Sunpop.cn')
 
     def set_module_url(self):
         sql = "UPDATE ir_module_module SET website = '%s' WHERE license like '%s' and website <> ''" % (self.app_enterprise_url, 'OEEL%')
