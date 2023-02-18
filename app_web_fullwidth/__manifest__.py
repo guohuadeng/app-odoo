@@ -22,12 +22,15 @@
 
 {
     'name': 'App Web Responsive Fullwidth (form view full width)',
-    'version': '13.19.11.01',
+    'version': '16.23.02.19',
     'category': 'web',
     'author': 'Sunpop.cn',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
     'sequence': 2,
+    "price": 18.00,
+    "currency": "EUR",
+    'images': ['static/description/banner.png'],
     'summary': """
     Form view Responsive full width (fullwidth). Ready for small, medium, large, extra large screen.Ready for enterprise and communicate version.
     """,
@@ -38,16 +41,12 @@
     'depends': [
         'web'
     ],
-    'data': [
-        'views/template_view.xml',
-    ],
-    'qweb': [
-        'static/src/xml/*.xml',
-    ],
-    "price": 18.00,
-    "currency": "EUR",
-
-    'images': ['static/description/banner.png'],
+    'data': [],
+    'assets': {
+        'web.assets_backend': [
+            ('after', 'web/static/src/views/**/*', 'app_web_fullwidth/static/src/scss/app_style_after.scss'),
+        ],
+    },
 
     'installable': True,
     'auto_install': False,
