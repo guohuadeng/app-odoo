@@ -64,6 +64,7 @@
             ('after', 'web/static/src/views/**/*', 'app_web_enterprise/static/src/scss/views_style.scss'),
             'app_web_enterprise/static/src/components/*/*.xml',
             'app_web_enterprise/static/src/webclient/**/*.xml',
+            'app_web_enterprise/static/src/xml/**/*.xml',
             # 'app_web_enterprise/static/src/xml/base.xml',
         ],
         # 这里是改样式，要 after处理

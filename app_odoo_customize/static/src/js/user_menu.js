@@ -12,15 +12,21 @@ const userMenuRegistry = registry.category("user_menuitems");
 patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
     setup() {
         this._super.apply(this, arguments);
-        userMenuRegistry.remove("debug");
-        userMenuRegistry.remove("asset_asset");
-        userMenuRegistry.remove("leave_debug");
-        userMenuRegistry.remove("separator0");
+        // this.companyService = useService("company");
+        this.rpc = useService("rpc");
+        this.orm = useService("orm");
+        this.app_show_lang = session.app_show_lang;
+        this.app_lang_list = session.app_lang_list;
+        //todo: 演习 shortCutsItem 中的用法，当前是直接 xml 写了展现
+
+        if (session.app_show_lang) {
+            userMenuRegistry.add("separator1", separator1)
+        }
         if (session.app_show_debug) {
-            userMenuRegistry.add("debug", debugItem)
-                .add("asset_asset", activateAssetsDebugging)
-                .add("leave_debug", leaveDebugMode)
-                .add("separator0", separator8)
+            userMenuRegistry.add("debug", debugItem, {'force': true})
+                .add("asset_asset", activateAssetsDebugging, {'force': true})
+                .add("leave_debug", leaveDebugMode, {'force': true})
+                .add("separator10", separator10)
         }
         userMenuRegistry.remove("documentation");
         if (session.app_show_documentation) {
@@ -34,46 +40,23 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
         if (session.app_show_account) {
             userMenuRegistry.add("odoo_account", odooAccountItem);
         }
-        // this.rpc = useService("rpc");
-        // todo: 处理语言列表，rpc取值，同上处理 userMenuRegistry.add("slang_"+语言代码, debugItem(语言代码), env)
-        // todo: 语言图片的处理，正常直接参考 Shortcuts 的处理，直接生成 html代码即可。
-        // Shortcuts不成就可以扩展 @web/webclient/user_menu/user_menu， 参考 CheckBox 的处理。建议直接CheckBox这个类型改，增加个 element.img的处理，选中的语言就是 ischecked的
-        //
-        //         return env.services.rpc("/web/action/load", {
-        //             action_id: actionID,
-        //             additional_context: context,
-        //         });
-        /*
-
-            self._rpc({
-                model: 'res.lang',
-                method: 'search_read',
-                domain: [],
-                fields: ['name', 'code'],
-                lazy: false,
-            }).then(function (res) {
-                _.each(res, function (lang) {
-                    var a = '';
-                    if (lang['code'] === session.user_context.lang) {
-                        a = '<i class="fa fa-check"></i>';
-                    } else {
-                        a = '';
-                    }
-                    lang_list += '<a role="menuitem" href="#" class="dropdown-item" data-lang-menu="lang" data-lang-id="' + lang['code']
-                        + '"><img class="flag" src="app_odoo_customize/static/src/img/flags/' + lang['code'] + '.png"/>' + lang['name'] + a + '</a>';
-                });
-                lang_list += '<div role="separator" class="dropdown-divider"/>';
-                setTimeout( function() {
-                    $('switch-lang').replaceWith(lang_list);
-                }, 1000);
-            })
-
-         */
     },
-    // getElements() {
-    //     var ret = this._super.apply(this, arguments);
-    //     return ret;
-    // },
+
+    async setLang(lang_code) {
+        // alert(lang_code);
+        browser.clearTimeout(this.toggleTimer);
+        if (this.user.lang != lang_code) {
+            const res = await this.orm.call("res.users", "write", [
+                session.uid, {'lang': lang_code}
+            ]);
+            location.reload();
+            // 调用 action , 要先定义 this.action = useService("action")
+            // this.action.action({
+            //     type: 'ir.actions.client',
+            //     tag: 'reload_context',
+            // });
+        }
+    }
 });
 
 function debugItem(env) {
@@ -114,12 +97,20 @@ function leaveDebugMode(env) {
     };
 }
 
-function separator8() {
+function separator1() {
     return {
         type: "separator",
-        sequence: 8,
+        sequence: 1,
     };
 }
+
+function separator10() {
+    return {
+        type: "separator",
+        sequence: 10,
+    };
+}
+
 function documentationItem(env) {
     const documentationURL = session.app_documentation_url;
     return {
@@ -130,7 +121,7 @@ function documentationItem(env) {
         callback: () => {
             browser.open(documentationURL, "_blank");
         },
-        sequence: 10,
+        sequence: 21,
     };
 }
 
@@ -141,10 +132,10 @@ function supportItem(env) {
         id: "support",
         description: env._t("Support"),
         href: url,
-        callback: () => {
+        callback: (ev) => {
             browser.open(url, "_blank");
         },
-        sequence: 20,
+        sequence: 22,
     };
 }
 

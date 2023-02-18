@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo 16 Customize OEM(Boost, Data reset)',
-    'version': '16.23.02.17',
+    'version': '16.23.02.19',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -75,6 +75,7 @@
             'app_odoo_customize/static/src/js/user_menu.js',
             'app_odoo_customize/static/src/js/ribbon.js',
             'app_odoo_customize/static/src/js/dialog.js',
+            'app_odoo_customize/static/src/webclient/**/*.xml',
         ],
     },
     'pre_init_hook': 'pre_init_hook',
