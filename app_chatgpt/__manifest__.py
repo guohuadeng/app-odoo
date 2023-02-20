@@ -10,7 +10,7 @@
 
 {
     'name': 'ChatGPT Robot Multi Chat and Training(Under Construction)',
-    'version': '16.23.02.15',
+    'version': '16.23.02.20',
     'author': 'Sunpop.cn',
     'company': 'Sunpop.cn',
     'maintainer': 'Sunpop.cn',
@@ -19,6 +19,7 @@
     'license': 'LGPL-3',
     'sequence': 10,
     'license': 'AGPL-3',
+    'images': ['static/description/banner.png'],
     'summary': '''
     Multi Odoo ChatGPT Robot. Integration All ChatGpt Api.
     Chat channel with several ChatGPT Robots.
@@ -42,8 +43,15 @@
         'data/ir_config_parameter.xml',
         'views/res_config_settings_views.xml',
     ],
+    'assets': {
+        'mail.assets_messaging': [
+            'app_chatgpt/static/src/models/*.js',
+        ],
+        'mail.assets_model_data': [
+            'app_chatgpt/static/src/models_data/*.js',
+        ],
+    },
     'external_dependencies': {'python': ['openai']},
-    'images': ['static/description/banner.png'],
     'installable': True,
     'application': False,
     'auto_install': False,
