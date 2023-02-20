@@ -20,25 +20,22 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
         //todo: 演习 shortCutsItem 中的用法，当前是直接 xml 写了展现
 
         if (session.app_show_lang) {
-            userMenuRegistry.add("separator1", separator1)
+            userMenuRegistry.add("separator1", separator1, {'force': true})
         }
         if (session.app_show_debug) {
             userMenuRegistry.add("debug", debugItem, {'force': true})
                 .add("asset_asset", activateAssetsDebugging, {'force': true})
                 .add("leave_debug", leaveDebugMode, {'force': true})
-                .add("separator10", separator10)
+                .add("separator10", separator10, {'force': true})
         }
-        userMenuRegistry.remove("documentation");
         if (session.app_show_documentation) {
-            userMenuRegistry.add("documentation", documentationItem);
+            userMenuRegistry.add("documentation", documentationItem, {'force': true});
         }
-        userMenuRegistry.remove("support");
         if (session.app_show_support) {
-            userMenuRegistry.add("support", supportItem)
+            userMenuRegistry.add("support", supportItem, {'force': true})
         }
-        userMenuRegistry.remove("odoo_account");
         if (session.app_show_account) {
-            userMenuRegistry.add("odoo_account", odooAccountItem);
+            userMenuRegistry.add("odoo_account", odooAccountItem, {'force': true});
         }
     },
 
