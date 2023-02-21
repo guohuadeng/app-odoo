@@ -89,6 +89,7 @@ class Channel(models.Model):
         # print('author_id:',author_id)
 
         gpt_id = self.env['gpt.robot']
+        # todo: 应该先确定 gpt_id，才处理对话黑名单。 黑名单是指是否允许与 gpt对话，不是是否允许绑定 gpt
         partner_ids = list(msg_vals.get('partner_ids'))
         if partner_ids:
             partners = self.env['res.partner'].search([('id', 'in', partner_ids)])
