@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="gpt_robot_tree_view" model="ir.ui.view">
+        <field name="name">gpt.robot.tree</field>
+        <field name="model">gpt.robot</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="openapi_api_key"/>
+                <field name="temperature"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="gpt_robot_form_view" model="ir.ui.view">
+        <field name="name">gpt.robot.form</field>
+        <field name="model">gpt.robot</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="openapi_api_key"/>
+                            <field name="temperature"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_gpt_robot" model="ir.actions.act_window">
+        <field name="name">GPT Robot</field>
+        <field name="res_model">gpt.robot</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Let's create a GPT Robot.
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_gpt_robot"
+            name="GPT Robot"
+            parent="base.menu_administration"
+            sequence="90"
+            action="action_gpt_robot"
+            groups="base.group_system"/>
+
+</odoo>

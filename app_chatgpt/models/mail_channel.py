@@ -34,7 +34,7 @@ class Channel(models.Model):
         return "获取结果超时，请重新跟我聊聊。"
 
     @api.model
-    def get_openai_context(self, channel_id, partner_chatgpt, current_prompt,seconds=600):
+    def get_openai_context(self, channel_id, partner_chatgpt, current_prompt, seconds=600):
         afterTime = fields.Datetime.now() - datetime.timedelta(seconds=seconds)
         message_model = self.env['mail.message'].sudo()
         prompt = [f"Human:{current_prompt}\nAI:", ]
@@ -63,7 +63,7 @@ class Channel(models.Model):
 
         return '\n'.join(prompt[::-1])
 
-    def get_chatgpt_answer(self,prompt,partner_name):
+    def get_chatgpt_answer(self, prompt, partner_name):
         response = openai.Completion.create(
             model="text-davinci-003",
             prompt=prompt,
@@ -80,11 +80,35 @@ class Channel(models.Model):
     def _notify_thread(self, message, msg_vals=False, **kwargs):
         rdata = super(Channel, self)._notify_thread(message, msg_vals=msg_vals, **kwargs)
         # print(f'rdata:{rdata}')
+
         chatgpt_channel_id = self.env.ref('app_chatgpt.channel_chatgpt')
         user_chatgpt = self.env.ref("app_chatgpt.user_chatgpt")
         partner_chatgpt = self.env.ref("app_chatgpt.partner_chatgpt")
+
         author_id = msg_vals.get('author_id')
         # print('author_id:',author_id)
+
+        gpt_id = self.env['gpt.robot']
+        partner_ids = list(msg_vals.get('partner_ids'))
+        if partner_ids:
+            partners = self.env['res.partner'].search([('id', 'in', partner_ids)])
+            user_id = partners.mapped('user_ids').filtered(lambda r: r.gpt_id)[:1]
+            if user_id:
+                gpt_policy = user_id.gpt_policy
+                gpt_wl_users = user_id.gpt_wl_users
+                is_allow = message.create_uid.id in gpt_wl_users.ids
+                if gpt_policy == 'all' or (gpt_policy == 'limit' and is_allow):
+                    user_chatgpt = user_id
+                    partner_chatgpt = user_id.partner_id
+                    gpt_id = user_id.gpt_id
+                # if gpt_policy == 'limit' and user_id.gpt_wl_users:
+                #     if message.get('create_uid').id in user_id.gpt_wl_users.ids:
+                #         user_chatgpt = user_id
+                #         partner_chatgpt = user_id.partner_id
+                #         gpt_id = user_id.gpt_id
+                # elif gpt_policy == 'all':
+
+
         # print('partner_chatgpt.id:',partner_chatgpt.id)
         chatgpt_name = str(partner_chatgpt.name or '') + ', '
         # print('chatgpt_name:', chatgpt_name)
@@ -94,6 +118,8 @@ class Channel(models.Model):
         if not prompt:
             return rdata
         api_key = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_api_key')
+        if gpt_id:
+            api_key = gpt_id.openapi_api_key
         try:
             openapi_context_timeout = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_context_timeout')) or 600
         except:
@@ -105,6 +131,9 @@ class Channel(models.Model):
         if author_id:
             partner_id = Partner.browse(author_id)
             if partner_id:
+                user_id = partner_id.user_ids[:1]
+                if user_id.gpt_id:
+                    return rdata
                 partner_name = partner_id.name
         # print(msg_vals)
         # print(msg_vals.get('record_name', ''))

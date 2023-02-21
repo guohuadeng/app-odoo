@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="chatgpt_robot1" model="gpt.robot">
+        <field name="name">ChatGPT Robot 1</field>
+    </record>
+    <record id="chatgpt_robot2" model="gpt.robot">
+        <field name="name">ChatGPT Robot 2</field>
+    </record>
+</odoo>
