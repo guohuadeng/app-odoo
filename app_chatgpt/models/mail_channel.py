@@ -101,13 +101,6 @@ class Channel(models.Model):
                     user_chatgpt = user_id
                     partner_chatgpt = user_id.partner_id
                     gpt_id = user_id.gpt_id
-                # if gpt_policy == 'limit' and user_id.gpt_wl_users:
-                #     if message.get('create_uid').id in user_id.gpt_wl_users.ids:
-                #         user_chatgpt = user_id
-                #         partner_chatgpt = user_id.partner_id
-                #         gpt_id = user_id.gpt_id
-                # elif gpt_policy == 'all':
-
 
         # print('partner_chatgpt.id:',partner_chatgpt.id)
         chatgpt_name = str(partner_chatgpt.name or '') + ', '
