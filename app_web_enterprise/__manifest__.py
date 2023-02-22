@@ -37,10 +37,10 @@
     多级菜单中出现箭头。
     2. Replace the odoo logo or url to your company in menu and page.
     替换主菜单界面的logo为你公司的logo。
-    3. Alway show search in main menu.
-    在主菜单界面让搜索可见。
-    4. Fix view bug like graph shake.
-    修正原生样式bug，如Graph会抖动。
+    3. Add underline for input field.
+    在可编辑字段下方增加下划线，易于分辨。
+    4. Add grid line form list view. Easy to read list data.</li>
+    为表格list增加行列分隔线，易于看数据。
     """,
     'price': 68.00,
     'currency': 'EUR',
