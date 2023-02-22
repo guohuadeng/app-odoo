@@ -9,15 +9,16 @@ patch(Dialog.prototype, "app_odoo_customize.Dialog", {
         this._super.apply(this, arguments);
         const app_system_name = session.app_system_name || "odooApp";
         this.title = app_system_name;
+        owl.onMounted(() => {
+            this.setDrag();
+        });
     },
-    // mounted() {
-    //     //todo: 没用，不能用 jq的处理方式
-    //     this._super.apply(this, arguments);
-    //     var $dl = this.__owl__.vnode ? this.__owl__.vnode.elm : null;
-    //     var $ml = $dl.children[0].children[0].children[0];
-    //     $ml.draggable({
-    //         handle: ".modal-header"
-    //     });
-    // },
+    setDrag() {
+        var $dl = $('#' + this.id + ' .modal-dialog .modal-content');
+        if ($dl)
+            $dl.draggable({
+                handle: ".modal-header"
+            });
+    },
 });
 
