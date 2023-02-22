@@ -43,6 +43,15 @@
         </field>
     </record>
 
+    <record id="model_gpt_robot_action_disconnect" model="ir.actions.server">
+        <field name="name">Disconnect</field>
+        <field name="model_id" ref="app_chatgpt.model_gpt_robot"/>
+        <field name="binding_model_id" ref="app_chatgpt.model_gpt_robot"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_disconnect()</field>
+    </record>
+
     <menuitem
             id="menu_gpt_robot"
             name="GPT Robot"

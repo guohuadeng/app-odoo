@@ -8,6 +8,8 @@ from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 import logging
 _logger = logging.getLogger(__name__)
+
+
 class Channel(models.Model):
     _inherit = 'mail.channel'
 
@@ -18,7 +20,7 @@ class Channel(models.Model):
             "model": "text-davinci-003",
             "prompt": data,
             "temperature": 0.9,
-            "max_tokens": 1000,
+            "max_tokens": 2000,
             "top_p": 1,
             "frequency_penalty": 0.0,
             "presence_penalty": 0.6,
