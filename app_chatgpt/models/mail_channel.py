@@ -126,6 +126,9 @@ class Channel(models.Model):
         api_key = ''
         if gpt_id:
             api_key = gpt_id.openapi_api_key
+            if not api_key:
+                _logger.warning(_("ChatGPT Robot【%s】have not set open api key."))
+                return rdata
         try:
             openapi_context_timeout = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_context_timeout')) or 600
         except:
@@ -148,6 +151,7 @@ class Channel(models.Model):
                     print(prompt)
                     # res = self.get_chatgpt_answer(prompt,partner_name)
                     res = self.get_openai(api_key, prompt, partner_name)
+                    res = res.replace('\n', '<br/>')
                     # print('res:',res)
                     # print('channel:',channel)
                     channel.with_user(user_id).message_post(body=res, message_type='comment',subtype_xmlid='mail.mt_comment',parent_id=message.id)
@@ -169,6 +173,7 @@ class Channel(models.Model):
                     # print(prompt)
                     # res = self.get_chatgpt_answer(prompt, partner_name)
                     res = self.get_openai(api_key, prompt, partner_name)
+                    res = res.replace('\n', '<br/>')
                     chatgpt_channel_id.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment',parent_id=message.id)
                 except Exception as e:
                     raise UserError(_(e))
