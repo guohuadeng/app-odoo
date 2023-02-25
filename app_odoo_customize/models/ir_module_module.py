@@ -14,7 +14,7 @@ class IrModule(models.Model):
     # installed_version = fields.Char('Latest Version', compute='_get_latest_version')
     # latest_version = fields.Char('Installed Version', readonly=True)
 
-    local_updatable = fields.Boolean('Local updatable', compute='_get_latest_version', compute_sudo=False, default=False, store=True)
+    local_updatable = fields.Boolean('Local updatable', compute=False, default=False, store=True)
 
     def module_multi_uninstall(self):
         """ Perform the various steps required to uninstall a module completely
@@ -60,13 +60,20 @@ class IrModule(models.Model):
             })
         return action
 
-    @api.depends('name', 'latest_version', 'state')
-    def _get_latest_version(self):
+    def update_list(self):
+        res = super(IrModule, self).update_list()
         default_version = modules.adapt_version('1.0')
-        for module in self:
-            module.installed_version = self.get_module_info(module.name).get('version', default_version)
-            if module.installed_version and module.latest_version and operator.gt(module.installed_version, module.latest_version):
-                module.local_updatable = True
+        known_mods = self.with_context(lang=None).search([])
+        known_mods_names = {mod.name: mod for mod in known_mods}
+        # 处理可更新字段， 不要compute，会出错
+        for mod_name in modules.get_modules():
+            mod = known_mods_names.get(mod_name)
+            installed_version = self.get_module_info(mod.name).get('version', default_version)
+            if installed_version and mod.latest_version and operator.gt(installed_version, mod.latest_version):
+                local_updatable = True
             else:
-                module.local_updatable = False
-
+                local_updatable = False
+            if mod.local_updatable != local_updatable:
+                mod.write({'local_updatable': local_updatable})
+            
+        return res
