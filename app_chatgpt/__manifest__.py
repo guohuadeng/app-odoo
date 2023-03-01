@@ -40,11 +40,11 @@
     'data': [
         'security/ir.model.access.csv',
         'data/mail_channel_data.xml',
-        'data/gpt_robot_data.xml',
+        'data/ai_robot_data.xml',
         'data/user_partner_data.xml',
         'data/ir_config_parameter.xml',
         'views/res_config_settings_views.xml',
-        'views/gpt_robot_views.xml',
+        'views/ai_robot_views.xml',
         'views/res_users_views.xml',
     ],
     'assets': {

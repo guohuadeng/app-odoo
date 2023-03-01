@@ -4,8 +4,8 @@ import requests
 from odoo import api, fields, models, _
 
 
-class GptRobot(models.Model):
-    _name = 'gpt.robot'
+class AiRobot(models.Model):
+    _name = 'ai.robot'
     _description = 'Gpt Robot'
     _order = 'sequence, name'
 

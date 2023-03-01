@@ -9,7 +9,7 @@
 
 {
     'name': '2023最新中国企业会计表.Latest Chinese Accounting for odoo16',
-    'version': '16.23.02.14',
+    'version': '16.23.03.01',
     'author': 'Sunpop.cn',
     'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.sunpop.cn',

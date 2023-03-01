@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_gpt_robt_user,GptRobotUser,model_gpt_robot,base.group_user,1,1,1,1
+access_gpt_robt_user,AiRobotUser,model_ai_robot,base.group_user,1,1,1,1

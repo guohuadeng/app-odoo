@@ -32,7 +32,7 @@
           <field name="model">account.account</field>
           <field name="inherit_id" ref="account.view_account_form"/>
           <field name="arch" type="xml">
-              <xpath expr="//field[@name='name']" position="after">
+              <xpath expr="//field[@name='account_type']" position="after">
                   <field name="parent_id"/>
               </xpath>
           </field>

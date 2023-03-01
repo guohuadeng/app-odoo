@@ -11,8 +11,8 @@
             <field name="default_pos_receivable_account_id" ref="account_1124"/>
         </record>
 
-        <function model="account.chart.template" name="try_loading">
-            <value eval="[ref('l10n_cn_standard_latest.l10n_chart_china_standard_business_latest')]"/>
-        </function>
+<!--        <function model="account.chart.template" name="try_loading">-->
+<!--            <value eval="[ref('l10n_cn_standard_latest.l10n_chart_china_standard_business_latest')]"/>-->
+<!--        </function>-->
     </data>
 </odoo>

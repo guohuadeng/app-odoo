@@ -85,7 +85,7 @@ class Channel(models.Model):
         to_partner_id = self.env['res.partner']
         user_id = self.env['res.users']
         author_id = msg_vals.get('author_id')
-        gpt_id = self.env['gpt.robot']
+        gpt_id = self.env['ai.robot']
         channel_type = self.channel_type
         if channel_type == 'chat':
             channel_partner_ids = self.channel_partner_ids

@@ -285,6 +285,15 @@ class ResConfigSettings(models.TransientModel):
         company_id = self.env.company.id
         self = self.with_company(self.env.company)
         to_removes = [
+            # 清除财务科目，用于重设
+            'res.partner.bank',
+            # 'account.invoice',
+            'account.payment',
+            'account.bank.statement',
+            # 'account.tax.account.tag',
+            'account.tax',
+            # 'wizard_multi_charts_accounts',
+            # 'account.account',
         ]
         # todo: 要做 remove_hr，因为工资表会用到 account
         # 更新account关联，很多是多公司字段，故只存在 ir_property，故在原模型，只能用update
@@ -354,8 +363,10 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
 
         seqs = []
+        self.env.company.write({
+            'chart_template_id': False,
+        })
         res = self.remove_app_data(to_removes, seqs)
-        self.env.company.write({'chart_template_id': False})
         return res
 
     def remove_project(self):

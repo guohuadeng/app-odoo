@@ -6,7 +6,7 @@ from odoo import fields, models
 class ResUsers(models.Model):
     _inherit = "res.users"
 
-    gpt_id = fields.Many2one('gpt.robot', string='Bind to ChatGpt')
+    gpt_id = fields.Many2one('ai.robot', string='Bind to ChatGpt')
     gpt_policy = fields.Selection([
         ('all', 'All Users'),
         ('limit', 'Selected Users')

@@ -23,6 +23,7 @@ class AccountChartTemplate(models.Model):
 
     @api.model
     def _prepare_transfer_account_template(self):
+        # 初始化时，使用 _load 方法，不再使用此方法了
         ''' Prepare values to create the transfer account that is an intermediary account used when moving money
         from a liquidity account to another.
 
@@ -55,27 +56,27 @@ class AccountChartTemplate(models.Model):
             'chart_template_id': self.id,
         }
 
-    def load_for_current_company(self, sale_tax_rate, purchase_tax_rate):
-        res = super(AccountChartTemplate, self).load_for_current_company(sale_tax_rate, purchase_tax_rate)
+    def _load(self, company):
+        res = super(AccountChartTemplate, self)._load(company)
         # 更新父级
         company = self.env.user.company_id
         acc_ids = self.env['account.account'].sudo().search([('company_id', '=', company.id)])
         for acc in acc_ids:
             code = acc.code
-            parent_account = self.env['account.account.template'].sudo().search([
+            todo_account = self.env['account.account.template'].sudo().search([
                 ('code', '=', code),
                 ('chart_template_id', '=', self.id),
                 ('parent_id', '!=', False)
             ], limit=1)
-            if len(parent_account) or code == '2221.01.01':
-                parent_code = parent_account[0].parent_id.code
+            if len(todo_account) or code == '2221.01.01':
+                parent_code = todo_account[0].parent_id.code
                 if parent_code:
                     parent = self.env['account.account'].sudo().search([
                         ('company_id', '=', company.id),
                         ('code', '=', parent_code),
                     ], limit=1)
                     if len(parent):
-                        acc.update({
+                        acc.write({
                             'parent_id': parent.id,
                         })
         return res
