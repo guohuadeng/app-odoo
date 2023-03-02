@@ -47,14 +47,14 @@
         'views/ai_robot_views.xml',
         'views/res_users_views.xml',
     ],
-    'assets': {
-        'mail.assets_messaging': [
-            'app_chatgpt/static/src/models/*.js',
-        ],
-        'mail.assets_model_data': [
-            'app_chatgpt/static/src/models_data/*.js',
-        ],
-    },
+    # 'assets': {
+    #     'mail.assets_messaging': [
+    #         'app_chatgpt/static/src/models/*.js',
+    #     ],
+    #     'mail.assets_model_data': [
+    #         'app_chatgpt/static/src/models_data/*.js',
+    #     ],
+    # },
     'external_dependencies': {'python': ['openai']},
     'installable': True,
     'application': True,
