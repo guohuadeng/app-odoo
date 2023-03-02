@@ -9,7 +9,7 @@ class AiRobot(models.Model):
     _description = 'Gpt Robot'
     _order = 'sequence, name'
 
-    name = fields.Char(string='Name')
+    name = fields.Char(string='Name', translate=True)
     openapi_api_key = fields.Char(string="API Key", help="Provide the API key here")
     temperature = fields.Float(string='Temperature', default=0.9)
     sequence = fields.Integer('Sequence', help="Determine the display order", default=10)

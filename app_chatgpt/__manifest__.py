@@ -57,6 +57,6 @@
     },
     'external_dependencies': {'python': ['openai']},
     'installable': True,
-    'application': False,
+    'application': True,
     'auto_install': False,
 }
