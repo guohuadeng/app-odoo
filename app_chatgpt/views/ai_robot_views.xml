@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ai_robot_tree_view" model="ir.ui.view">
+        <field name="name">ai.robot.tree</field>
+        <field name="model">ai.robot</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="openapi_api_key" password="True"/>
+                <field name="temperature"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="ai_robot_form_view" model="ir.ui.view">
+        <field name="name">ai.robot.form</field>
+        <field name="model">ai.robot</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="openapi_api_key" password="True"/>
+                            <field name="temperature"/>
+                            <field name="sequence"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ai_robot" model="ir.actions.act_window">
+        <field name="name">GPT Robot</field>
+        <field name="res_model">ai.robot</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Let's create a GPT Robot.
+            </p>
+        </field>
+    </record>
+
+    <record id="model_ai_robot_action_disconnect" model="ir.actions.server">
+        <field name="name">Disconnect</field>
+        <field name="model_id" ref="app_chatgpt.model_ai_robot"/>
+        <field name="binding_model_id" ref="app_chatgpt.model_ai_robot"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_disconnect()</field>
+    </record>
+
+    <menuitem
+            id="menu_ai_robot"
+            name="GPT Robot"
+            parent="base.menu_users"
+            sequence="2"
+            action="action_ai_robot"
+            groups="base.group_system"/>
+
+</odoo>
