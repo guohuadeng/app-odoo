@@ -17,6 +17,7 @@ class Channel(models.Model):
     @api.model
     def get_openai(self, api_key, ai_model, data, user="Odoo"):
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
+        R_TIMEOUT = 3
         
         if ai_model == 'dall-e2':
             # todo: 处理 图像引擎，主要是返回参数到聊天中
@@ -40,7 +41,7 @@ class Channel(models.Model):
                 "user": user,
                 "stop": ["Human:", "AI:"]
             }
-            response = requests.post("https://api.openai.com/v1/chat/completions", data=json.dumps(pdata), headers=headers)
+            response = requests.post("https://api.openai.com/v1/chat/completions", data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
             res = response.json()
             if 'choices' in res:
                 # for rec in res:
@@ -59,7 +60,7 @@ class Channel(models.Model):
                 "user": user,
                 "stop": ["Human:", "AI:"]
             }
-            response = requests.post("https://api.openai.com/v1/completions", data=json.dumps(pdata), headers=headers)
+            response = requests.post("https://api.openai.com/v1/completions", data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
             res = response.json()
             if 'choices' in res:
                 res = '\n'.join([x['text'] for x in res['choices']])
@@ -192,7 +193,7 @@ class Channel(models.Model):
                     res = res.replace('\n', '<br/>')
                     # print('res:',res)
                     # print('channel:',channel)
-                    channel.with_user(user_id).message_post(body=res, message_type='comment',subtype_xmlid='mail.mt_comment',parent_id=message.id)
+                    channel.with_user(user_id).message_post(body=res, message_type='comment',subtype_xmlid='mail.mt_comment', parent_id=message.id)
                     # channel.with_user(user_chatgpt).message_post(body=res, message_type='notification', subtype_xmlid='mail.mt_comment')
                     # channel.sudo().message_post(
                     #     body=res,
