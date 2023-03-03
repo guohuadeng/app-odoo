@@ -21,7 +21,7 @@
     'license': 'AGPL-3',
     'images': ['static/description/banner.png'],
     'summary': '''
-    Multi Odoo ChatGPT Robot. Integration All ChatGpt Api.
+    Multi Odoo ChatGPT Robot. Support chatgpt 3.5 turbo, text-davinci, DALL·E, Integration All ChatGpt Api.
     Chat channel with several ChatGPT Robots.
     Whitelist and blacklist for Users or IP.
     Base on is_chatgpt_integration from InTechual Solutions.

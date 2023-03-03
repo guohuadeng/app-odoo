@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) 2020-Present InTechual Solutions. (<https://intechualsolutions.com/>)
+
 
 import openai
 import requests,json
 import datetime
+# from transformers import TextDavinciTokenizer, TextDavinciModel
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 import logging
@@ -14,25 +15,59 @@ class Channel(models.Model):
     _inherit = 'mail.channel'
 
     @api.model
-    def get_openai(self, api_key, data, user="Odoo"):
+    def get_openai(self, api_key, ai_model, data, user="Odoo"):
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
-        pdata = {
-            "model": "text-davinci-003",
-            "prompt": data,
-            "temperature": 0.9,
-            "max_tokens": 2000,
-            "top_p": 1,
-            "frequency_penalty": 0.0,
-            "presence_penalty": 0.6,
-            "user": user,
-            "stop": ["Human:", "AI:"]
-        }
-        response = requests.post("https://api.openai.com/v1/completions", data=json.dumps(pdata), headers=headers)
-        res = response.json()
-        if 'choices' in res:
-            return '\n'.join([x['text'] for x in res['choices']])
-
-        _logger.error(res)
+        
+        if ai_model == 'dall-e2':
+            # todo: 处理 图像引擎，主要是返回参数到聊天中
+            # image_url = response['data'][0]['url']
+            # https://platform.openai.com/docs/guides/images/introduction
+            pdata = {
+                "prompt": data,
+                "n": 3,
+                "size": "1024x1024",
+            }
+            return '建设中'
+        elif ai_model in ['gpt-3.5-turbo', 'gpt-3.5-turbo-0301']:
+            pdata = {
+                "model": ai_model,
+                "messages": [{"role": "user", "content": data}],
+                "temperature": 0.9,
+                "max_tokens": 2000,
+                "top_p": 1,
+                "frequency_penalty": 0.0,
+                "presence_penalty": 0.6,
+                "user": user,
+                "stop": ["Human:", "AI:"]
+            }
+            response = requests.post("https://api.openai.com/v1/chat/completions", data=json.dumps(pdata), headers=headers)
+            res = response.json()
+            if 'choices' in res:
+                # for rec in res:
+                #     res = rec['message']['content']
+                res = '\n'.join([x['message']['content'] for x in res['choices']])
+                return res
+        else:
+            pdata = {
+                "model": ai_model,
+                "prompt": data,
+                "temperature": 0.9,
+                "max_tokens": 2000,
+                "top_p": 1,
+                "frequency_penalty": 0.0,
+                "presence_penalty": 0.6,
+                "user": user,
+                "stop": ["Human:", "AI:"]
+            }
+            response = requests.post("https://api.openai.com/v1/completions", data=json.dumps(pdata), headers=headers)
+            res = response.json()
+            if 'choices' in res:
+                res = '\n'.join([x['text'] for x in res['choices']])
+                return res
+        #     获取模型信息
+        # list_model = requests.get("https://api.openai.com/v1/models", headers=headers)
+        # model_info = requests.get("https://api.openai.com/v1/models/%s" % ai_model, headers=headers)
+        
         return "获取结果超时，请重新跟我聊聊。"
 
     @api.model
@@ -142,17 +177,18 @@ class Channel(models.Model):
         # print(msg_vals.get('record_name', ''))
         # print('self.channel_type :',self.channel_type)
         if gpt_id:
-            chatgpt_name = str(gpt_id.name or '') + ', '
+            ai_model = gpt_id.ai_model or 'text-davinci-003'
             # print('chatgpt_name:', chatgpt_name)
             # if author_id != to_partner_id.id and (chatgpt_name in msg_vals.get('record_name', '') or 'ChatGPT' in msg_vals.get('record_name', '') ) and self.channel_type == 'chat':
             if author_id != to_partner_id.id and self.channel_type == 'chat':
                 _logger.info(f'私聊:author_id:{author_id},partner_chatgpt.id:{to_partner_id.id}')
                 try:
                     channel = self.env[msg_vals.get('model')].browse(msg_vals.get('res_id'))
-                    prompt = self.get_openai_context(channel.id, to_partner_id.id, prompt,openapi_context_timeout)
+                    if ai_model not in ['gpt-3.5-turbo', 'gpt-3.5-turbo-0301']:
+                        prompt = self.get_openai_context(channel.id, to_partner_id.id, prompt, openapi_context_timeout)
                     print(prompt)
                     # res = self.get_chatgpt_answer(prompt,partner_name)
-                    res = self.get_openai(api_key, prompt, partner_name)
+                    res = self.get_openai(api_key, ai_model, prompt, partner_name)
                     res = res.replace('\n', '<br/>')
                     # print('res:',res)
                     # print('channel:',channel)
@@ -171,10 +207,10 @@ class Channel(models.Model):
             elif author_id != to_partner_id.id and msg_vals.get('model', '') == 'mail.channel' and msg_vals.get('res_id', 0) == chatgpt_channel_id.id:
                 _logger.info(f'频道群聊:author_id:{author_id},partner_chatgpt.id:{to_partner_id.id}')
                 try:
-                    prompt = self.get_openai_context(chatgpt_channel_id.id, to_partner_id.id, prompt,openapi_context_timeout)
+                    prompt = self.get_openai_context(chatgpt_channel_id.id, to_partner_id.id, prompt, openapi_context_timeout)
                     # print(prompt)
                     # res = self.get_chatgpt_answer(prompt, partner_name)
-                    res = self.get_openai(api_key, prompt, partner_name)
+                    res = self.get_openai(api_key, ai_model, prompt, partner_name)
                     res = res.replace('\n', '<br/>')
                     chatgpt_channel_id.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment',parent_id=message.id)
                 except Exception as e:

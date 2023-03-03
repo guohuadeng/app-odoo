@@ -7,6 +7,8 @@
             <tree>
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
+                <field name="provider" optional="hide"/>
+                <field name="ai_model" optional="show"/>
                 <field name="openapi_api_key" password="True"/>
                 <field name="temperature"/>
             </tree>
@@ -22,6 +24,8 @@
                     <group>
                         <group>
                             <field name="name"/>
+                            <field name="provider"/>
+                            <field name="ai_model"/>
                             <field name="openapi_api_key" password="True"/>
                             <field name="temperature"/>
                             <field name="sequence"/>
