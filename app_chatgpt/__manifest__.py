@@ -9,8 +9,8 @@
 # Copyright (c) 2020-Present InTechual Solutions. (<https://intechualsolutions.com/>)
 
 {
-    'name': 'ChatGPT Robot Multi Chat and Training(Under Construction)',
-    'version': '16.23.02.20',
+    'name': 'ChatGPT 3.5 Image Robot Multi Chat and Training',
+    'version': '16.23.03.03',
     'author': 'Sunpop.cn',
     'company': 'Sunpop.cn',
     'maintainer': 'Sunpop.cn',
