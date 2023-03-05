@@ -24,11 +24,19 @@
                     <group>
                         <group>
                             <field name="name"/>
-                            <field name="provider"/>
-                            <field name="ai_model"/>
                             <field name="openapi_api_key" password="True"/>
                             <field name="temperature"/>
                             <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="ai_model"/>
+                            <label class="o_form_label" for="provider">
+                                OpenAI Document
+                            </label>
+                            <div>
+                                <field name="provider"/>
+                                <a href="https://platform.openai.com/docs/introduction" title="OpenAI Document" class="o_doc_link" target="_blank"></a>
+                            </div>
                         </group>
                     </group>
                 </sheet>

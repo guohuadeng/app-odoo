@@ -17,7 +17,7 @@ class Channel(models.Model):
     @api.model
     def get_openai(self, api_key, ai_model, data, user="Odoo"):
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
-        R_TIMEOUT = 3
+        R_TIMEOUT = 5
         
         if ai_model == 'dall-e2':
             # todo: 处理 图像引擎，主要是返回参数到聊天中
