@@ -13,6 +13,7 @@
             <rng:optional><rng:attribute name="view_types"/></rng:optional>
             <rng:optional><rng:attribute name="class"/></rng:optional>
             <rng:optional><rng:attribute name="options"/></rng:optional>
+            <rng:optional><rng:attribute name="position"/></rng:optional>
             <rng:zeroOrMore>
                 <rng:ref name="field" />
             </rng:zeroOrMore>

@@ -8,8 +8,6 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <searchpanel view_types="list,kanban,pivot,graph,activity">
-                    <field name="user_id"/>
-                    <field name="partner_id" limit="1000"/>
                     <field name="date_order"/>
                     <field name="delivery_rating_success"/>
                     <field name="currency_rate"/>
