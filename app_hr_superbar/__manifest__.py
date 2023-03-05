@@ -42,6 +42,7 @@
     'images': ['static/description/hr2.gif'],
     'data': [
         'views/hr_views.xml',
+        'views/hr_department_views.xml',
     ],
     'demo': [
     ],

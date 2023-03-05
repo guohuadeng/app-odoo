@@ -10,7 +10,7 @@
             <xpath expr="//searchpanel" position="attributes">
                 <attribute name="options">{'is_lazy':1}</attribute>
             </xpath>
-            <xpath expr="//searchpanel//field[@name='team_id']" position="before">
+            <xpath expr="//searchpanel//field[1]" position="before">
                 <field name="date_order"/>
                 <field name="amount_total"/>
             </xpath>

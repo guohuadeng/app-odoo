@@ -4,7 +4,6 @@
         <field name="name">app.ir.default.search</field>
         <field name="model">ir.default</field>
         <field name="inherit_id" ref="base.ir_default_search_view"/>
-        <field name="groups_id" eval="[(4, ref('base.group_multi_company'))]"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <searchpanel>
