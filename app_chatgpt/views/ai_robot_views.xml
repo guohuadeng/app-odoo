@@ -7,6 +7,8 @@
             <tree>
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
+                <field name="provider" optional="hide"/>
+                <field name="ai_model" optional="show"/>
                 <field name="openapi_api_key" password="True"/>
                 <field name="temperature"/>
             </tree>
@@ -25,6 +27,16 @@
                             <field name="openapi_api_key" password="True"/>
                             <field name="temperature"/>
                             <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="ai_model"/>
+                            <label class="o_form_label" for="provider">
+                                OpenAI Document
+                            </label>
+                            <div>
+                                <field name="provider"/>
+                                <a href="https://platform.openai.com/docs/introduction" title="OpenAI Document" class="o_doc_link" target="_blank"></a>
+                            </div>
                         </group>
                     </group>
                 </sheet>
