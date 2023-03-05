@@ -41,6 +41,7 @@
     'images': ['static/description/banner.png'],
     'data': [
         'views/sale_order_views.xml',
+        'report/sale_report_views.xml',
     ],
     'demo': [
     ],
