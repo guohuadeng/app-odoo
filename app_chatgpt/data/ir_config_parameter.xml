@@ -4,7 +4,7 @@
 
         <record id="config_openapi_context_timeout" model="ir.config_parameter">
             <field name="key">app_chatgpt.openapi_context_timeout</field>
-            <field name="value">600</field>
+            <field name="value">300</field>
         </record>
 
     </data>
