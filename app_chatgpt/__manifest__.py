@@ -10,7 +10,7 @@
 
 {
     'name': 'Latest ChatGPT AI Center. GPT 3.5 Turbo, Dall-E Image.Multi Robot Support. Chat and Training',
-    'version': '14.23.03.05',
+    'version': '14.23.03.08',
     'author': 'Sunpop.cn',
     'company': 'Sunpop.cn',
     'maintainer': 'Sunpop.cn',

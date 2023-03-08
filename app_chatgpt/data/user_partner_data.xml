@@ -11,8 +11,8 @@
             <field name="partner_id" ref="app_chatgpt.partner_chatgpt"/>
             <field name="gpt_id" ref="app_chatgpt.chatgpt_robot"/>
             <field name="company_id" ref="base.main_company"/>
-            <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
-            <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
         <record id="partner_chatgpt1" model="res.partner">
@@ -27,8 +27,8 @@
             <field name="partner_id" ref="app_chatgpt.partner_chatgpt1"/>
             <field name="gpt_id" ref="app_chatgpt.chatgpt_robot1"/>
             <field name="company_id" ref="base.main_company"/>
-            <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
-            <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
         <record id="partner_chatgpt2" model="res.partner">
@@ -43,8 +43,8 @@
             <field name="partner_id" ref="app_chatgpt.partner_chatgpt2"/>
             <field name="gpt_id" ref="app_chatgpt.chatgpt_robot2"/>
             <field name="company_id" ref="base.main_company"/>
-            <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
-            <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
         </record>
     </data>
 </odoo>
