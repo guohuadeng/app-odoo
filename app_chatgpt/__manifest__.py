@@ -9,8 +9,8 @@
 # Copyright (c) 2020-Present InTechual Solutions. (<https://intechualsolutions.com/>)
 
 {
-    'name': 'Latest ChatGPT AI Center. GPT 3.5 Turbo, Dall-E Image.Multi Robot Support. Chat and Training',
-    'version': '16.23.03.05',
+    'name': 'Latest ChatGPT4 AI Center. GPT 4 for image, Dall-E Image.Multi Robot Support. Chat and Training',
+    'version': '16.23.03.15',
     'author': 'Sunpop.cn',
     'company': 'Sunpop.cn',
     'maintainer': 'Sunpop.cn',
@@ -21,7 +21,7 @@
     'license': 'AGPL-3',
     'images': ['static/description/banner.gif'],
     'summary': '''
-    ChatGpt Odoo AI Center. Multi Odoo ChatGPT Robot. Support chatgpt 3.5 turbo, text-davinci, DALL·E, Integration All ChatGpt Api.
+    ChatGpt Odoo AI Center. Multi Odoo ChatGPT Robot. Support chatgpt 4 image. 3.5 turbo, text-davinci, DALL·E, Integration All ChatGpt Api.
     Easy Chat channel with several ChatGPT Robots and train.
     Whitelist and blacklist for Users or IP.
     ''',
@@ -30,7 +30,7 @@
     providing a more natural and intuitive user experience.
     Base on is_chatgpt_integration from InTechual Solutions.
     1. Multi ChatGpt openAI robot Connector. Chat and train.
-    2. Multi Api support, Chatgpt 3.5 Turbo, Chatgpt 3 Davinci, Chatgpt 2 Code Optimized, 'Dall-E Image.
+    2. Multi Api support, Chatgpt 4, Chatgpt 3.5 Turbo, Chatgpt 3 Davinci, Chatgpt 2 Code Optimized, 'Dall-E Image.
     3. Bind ChatGpt Api to user. So we can chat to robot user or use ChatGpt Channel for Group Chat.
     4. White and black List for ChatGpt.
     5. Setup Demo Chat time for every new user.

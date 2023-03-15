@@ -21,6 +21,7 @@ class AiRobot(models.Model):
         ('dall-e2', 'Dall-E Image'),
     ], required=True, default='gpt-3.5-turbo',
                              help="""
+GPT-4: Can understand Image, generate natural language or code.
 GPT-3.5: A set of models that improve on GPT-3 and can understand as well as generate natural language or code
 DALL·E: A model that can generate and edit images given a natural language prompt
 Whisper: A model that can convert audio into text
