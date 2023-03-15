@@ -12,6 +12,7 @@ class AiRobot(models.Model):
     name = fields.Char(string='Name', translate=True)
     provider = fields.Selection(string="AI Provider", selection=[('openai', 'OpenAI')], required=True, default='openai')
     ai_model = fields.Selection(string="AI Model", selection=[
+        ('gpt-4', 'Chatgpt 4'),
         ('gpt-3.5-turbo', 'Chatgpt 3.5 Turbo'),
         ('gpt-3.5-turbo-0301', 'Chatgpt 3.5 Turbo on 20230301'),
         ('text-davinci-003', 'Chatgpt 3 Davinci'),
