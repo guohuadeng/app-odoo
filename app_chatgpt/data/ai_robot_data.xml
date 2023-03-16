@@ -2,14 +2,22 @@
 <odoo>
     <record id="chatgpt_robot" model="ai.robot">
         <field name="name">ChatGPT odoo</field>
+        <field name="provider">openai</field>
         <field name="sequence">1</field>
     </record>
     <record id="chatgpt_robot1" model="ai.robot">
         <field name="name">ChatGPT Coding</field>
+        <field name="provider">openai</field>
         <field name="sequence">6</field>
     </record>
     <record id="chatgpt_robot2" model="ai.robot">
         <field name="name">ChatGPT Finance</field>
+        <field name="provider">openai</field>
         <field name="sequence">7</field>
+    </record>
+    <record id="chatgpt_robot3" model="ai.robot">
+        <field name="name">ChatGPT Azure</field>
+        <field name="provider">azure</field>
+        <field name="sequence">8</field>
     </record>
 </odoo>

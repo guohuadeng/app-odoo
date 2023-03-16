@@ -10,7 +10,7 @@
 
 {
     'name': 'Latest ChatGPT AI Center. GPT 3.5 Turbo, Dall-E Image.Multi Robot Support. Chat and Training',
-    'version': '16.23.03.05',
+    'version': '16.23.03.16',
     'author': 'Sunpop.cn',
     'company': 'Sunpop.cn',
     'maintainer': 'Sunpop.cn',
@@ -21,7 +21,7 @@
     'license': 'AGPL-3',
     'images': ['static/description/banner.gif'],
     'summary': '''
-    ChatGpt Odoo AI Center. Multi Odoo ChatGPT Robot. Support chatgpt 3.5 turbo, text-davinci, DALL·E, Integration All ChatGpt Api.
+    ChatGpt Odoo AI Center. Multi Odoo ChatGPT Robot. Support chatgpt 3.5 turbo, text-davinci, DALL·E, Integration All ChatGpt Api and Azure OpenAI Service.
     Easy Chat channel with several ChatGPT Robots and train.
     Whitelist and blacklist for Users or IP.
     ''',
@@ -36,6 +36,7 @@
     5. Setup Demo Chat time for every new user.
     6. Easy Start and Stop ChatGpt.
     7. Evaluation the ai robot to make better response. This training.
+    8. Connect the Azure OpenAI Service.
     11. Multi-language Support. Multi-Company Support.
     12. Support Odoo 16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
