@@ -39,6 +39,9 @@
                                 <a href="https://platform.openai.com/docs/introduction" title="OpenAI Document" class="o_doc_link" target="_blank"></a>
                             </div>
                             <field name="max_length"/>
+                            <field name="engine"/>
+                            <field name="endpoint"/>
+                            <field name="api_version"/>
                         </group>
                     </group>
                 </sheet>

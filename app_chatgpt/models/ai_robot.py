@@ -3,6 +3,7 @@
 import requests
 import openai
 from odoo import api, fields, models, _
+from odoo.exceptions import UserError
 
 
 class AiRobot(models.Model):
@@ -34,6 +35,9 @@ GPT-3	A set of models that can understand and generate natural language
     openapi_api_key = fields.Char(string="API Key", help="Provide the API key here")
     temperature = fields.Float(string='Temperature', default=0.9)
     max_length = fields.Integer('Max Length', default=100)
+    endpoint = fields.Char('End Point')
+    engine = fields.Char('Engine', default='odooapp')
+    api_version = fields.Char('API Version', default='2022-12-01')
     sequence = fields.Integer('Sequence', help="Determine the display order", default=10)
 
     def action_disconnect(self):
@@ -41,10 +45,14 @@ GPT-3	A set of models that can understand and generate natural language
 
     def get_openai(self, data):
         openai.api_type = self.provider
-        openai.api_base = "https://odooapp.openai.azure.com/"
-        openai.api_version = "2022-12-01"
+        if not self.endpoint:
+            raise UserError(_("Please Set your AI robot's endpoint first."))
+        openai.api_base = self.endpoint
+        if not self.api_version:
+            raise UserError(_("Please Set your AI robot's API Version first."))
+        openai.api_version = self.api_version
         openai.api_key = self.openapi_api_key
-        response = openai.Completion.create(engine='odooapp', prompt=data, temperature=self.temperature, max_tokens=self.max_length, top_p=0.5, frequency_penalty=0,
+        response = openai.Completion.create(engine=self.engine, prompt=data, temperature=self.temperature, max_tokens=self.max_length, top_p=0.5, frequency_penalty=0,
                                             presence_penalty=0, stop=["Human:", "AI:"])
         if 'choices' in response:
             res = response['choices'][0]['text'].replace(' .', '.').strip()
