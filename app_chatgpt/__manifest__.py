@@ -36,7 +36,7 @@
     5. Setup Demo Chat time for every new user.
     6. Easy Start and Stop ChatGpt.
     7. Evaluation the ai robot to make better response. This training.
-    8. Connect the Azure OpenAI Service.
+    8. Add api support Connect the Microsoft Azure OpenAI Service.
     11. Multi-language Support. Multi-Company Support.
     12. Support Odoo 16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
