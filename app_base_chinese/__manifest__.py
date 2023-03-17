@@ -79,6 +79,7 @@
         'data/product_pricelist_data.xml',
         'data/stock_location_data.xml',
         'data/sales_team_data.xml',
+        'views/ir_module_module_views.xml',
     ],
     'assets': {
         'web.assets_backend': [

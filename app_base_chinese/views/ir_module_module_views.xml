@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="app_base_chinese_module_module_form_view" model="ir.ui.view">
+        <field name="name">app.base.chinese.module.module.form</field>
+        <field name="model">ir.module.module</field>
+        <field name="inherit_id" ref="base.module_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='description_html']" position="before">
+                <field name="description_html_cn" class="oe_styling_v8" attrs="{'invisible': [('description_html_cn', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

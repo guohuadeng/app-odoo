@@ -6,6 +6,6 @@ from . import res_currency
 from . import product_category
 from . import stock_location
 from . import account_tax_group
-
+from . import ir_module_module
 
 
