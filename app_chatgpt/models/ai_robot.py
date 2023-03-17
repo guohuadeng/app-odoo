@@ -34,9 +34,9 @@ GPT-3	A set of models that can understand and generate natural language
                              """)
     openapi_api_key = fields.Char(string="API Key", help="Provide the API key here")
     temperature = fields.Float(string='Temperature', default=0.9)
-    max_length = fields.Integer('Max Length', default=100)
+    max_length = fields.Integer('Max Length', default=300)
     endpoint = fields.Char('End Point')
-    engine = fields.Char('Engine', default='odooapp')
+    engine = fields.Char('Engine', help='If use Azure, Please input the Model deployment name.')
     api_version = fields.Char('API Version', default='2022-12-01')
     sequence = fields.Integer('Sequence', help="Determine the display order", default=10)
 
@@ -44,6 +44,8 @@ GPT-3	A set of models that can understand and generate natural language
         requests.delete('https://chatgpt.com/v1/disconnect')
 
     def get_openai(self, data):
+        self.ensure_one()
+        # only for azure
         openai.api_type = self.provider
         if not self.endpoint:
             raise UserError(_("Please Set your AI robot's endpoint first."))
@@ -52,8 +54,15 @@ GPT-3	A set of models that can understand and generate natural language
             raise UserError(_("Please Set your AI robot's API Version first."))
         openai.api_version = self.api_version
         openai.api_key = self.openapi_api_key
-        response = openai.Completion.create(engine=self.engine, prompt=data, temperature=self.temperature, max_tokens=self.max_length, top_p=0.5, frequency_penalty=0,
-                                            presence_penalty=0, stop=["Human:", "AI:"])
+        response = openai.Completion.create(
+            engine=self.engine,
+            prompt=data,
+            temperature=self.temperature or 0.9,
+            max_tokens=self.max_length or 600,
+            top_p=0.5,
+            frequency_penalty=0,
+            presence_penalty=0, stop=["Human:", "AI:"])
+        
         if 'choices' in response:
             res = response['choices'][0]['text'].replace(' .', '.').strip()
             return res

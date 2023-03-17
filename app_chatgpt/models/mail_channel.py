@@ -70,6 +70,7 @@ class Channel(models.Model):
                     res = '\n'.join([x['text'] for x in res['choices']])
                     return res
             elif provider == 'azure':
+                _logger.warning('=====================azure input data: %s' % data)
                 res = gpt_id.get_openai(data)
                 return res
         #     获取模型信息
