@@ -6,6 +6,7 @@ import datetime
 # from transformers import TextDavinciTokenizer, TextDavinciModel
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
+
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -15,9 +16,18 @@ class Channel(models.Model):
 
     @api.model
     def get_openai(self, gpt_id, provider, api_key, ai_model, data, user="Odoo"):
+        if provider == 'azure':
+            res = gpt_id.get_openai(data)
+        return res
+
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
-        R_TIMEOUT = 5
+        R_TIMEOUT = 30
+        o_url = gpt_id.endpoint or "https://api.openai.com/v1/chat/completions"
         
+        # 以下处理 open ai
+        #     获取模型信息
+        # list_model = requests.get("https://api.openai.com/v1/models", headers=headers)
+        # model_info = requests.get("https://api.openai.com/v1/models/%s" % ai_model, headers=headers)
         if ai_model == 'dall-e2':
             # todo: 处理 图像引擎，主要是返回参数到聊天中
             # image_url = response['data'][0]['url']
@@ -33,49 +43,43 @@ class Channel(models.Model):
                 "model": ai_model,
                 "messages": [{"role": "user", "content": data}],
                 "temperature": 0.9,
-                "max_tokens": 2000,
+                "max_tokens": gpt_id.max_length or 1000,
                 "top_p": 1,
                 "frequency_penalty": 0.0,
                 "presence_penalty": 0.6,
                 "user": user,
                 "stop": ["Human:", "AI:"]
             }
-            if provider == 'openai':
-                response = requests.post("https://api.openai.com/v1/chat/completions", data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
-                res = response.json()
-                if 'choices' in res:
-                    # for rec in res:
-                    #     res = rec['message']['content']
-                    res = '\n'.join([x['message']['content'] for x in res['choices']])
-                    return res
-            elif provider == 'azure':
-                res = gpt_id.get_openai(data)
+            
+            _logger.warning('=====================open input pdata: %s' % pdata)
+            
+            response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
+            res = response.json()
+            if 'choices' in res:
+                # for rec in res:
+                #     res = rec['message']['content']
+                res = '\n'.join([x['message']['content'] for x in res['choices']])
                 return res
         else:
             pdata = {
                 "model": ai_model,
                 "prompt": data,
                 "temperature": 0.9,
-                "max_tokens": 2000,
+                "max_tokens": gpt_id.max_length or 1000,
                 "top_p": 1,
                 "frequency_penalty": 0.0,
                 "presence_penalty": 0.6,
                 "user": user,
                 "stop": ["Human:", "AI:"]
             }
-            if provider == 'openai':
-                response = requests.post("https://api.openai.com/v1/completions", data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
-                res = response.json()
-                if 'choices' in res:
-                    res = '\n'.join([x['text'] for x in res['choices']])
-                    return res
+            response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
+            res = response.json()
+            if 'choices' in res:
+                res = '\n'.join([x['text'] for x in res['choices']])
+                return res
             elif provider == 'azure':
-                _logger.warning('=====================azure input data: %s' % data)
                 res = gpt_id.get_openai(data)
                 return res
-        #     获取模型信息
-        # list_model = requests.get("https://api.openai.com/v1/models", headers=headers)
-        # model_info = requests.get("https://api.openai.com/v1/models/%s" % ai_model, headers=headers)
         
         return "获取结果超时，请重新跟我聊聊。"
 

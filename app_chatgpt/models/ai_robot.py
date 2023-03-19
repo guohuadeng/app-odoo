@@ -5,13 +5,15 @@ import openai
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 
+import logging
+_logger = logging.getLogger(__name__)
 
 class AiRobot(models.Model):
     _name = 'ai.robot'
     _description = 'Gpt Robot'
     _order = 'sequence, name'
 
-    name = fields.Char(string='Name', translate=True)
+    name = fields.Char(string='Name', translate=True, required=True)
     provider = fields.Selection(string="AI Provider", selection=[('openai', 'OpenAI'), ('azure', 'Azure')], required=True, default='openai')
     ai_model = fields.Selection(string="AI Model", selection=[
         ('gpt-4', 'Chatgpt 4'),
@@ -35,7 +37,7 @@ GPT-3	A set of models that can understand and generate natural language
     openapi_api_key = fields.Char(string="API Key", help="Provide the API key here")
     temperature = fields.Float(string='Temperature', default=0.9)
     max_length = fields.Integer('Max Length', default=300)
-    endpoint = fields.Char('End Point')
+    endpoint = fields.Char('End Point', default='https://api.openai.com/v1/chat/completions')
     engine = fields.Char('Engine', help='If use Azure, Please input the Model deployment name.')
     api_version = fields.Char('API Version', default='2022-12-01')
     sequence = fields.Integer('Sequence', help="Determine the display order", default=10)
@@ -62,7 +64,16 @@ GPT-3	A set of models that can understand and generate natural language
             top_p=0.5,
             frequency_penalty=0,
             presence_penalty=0, stop=["Human:", "AI:"])
-        
+
+        _logger.warning('=====================azure input data: %s' % data)
         if 'choices' in response:
             res = response['choices'][0]['text'].replace(' .', '.').strip()
             return res
+
+    @api.onchange('provider')
+    def _onchange_provider(self):
+        if self.provider == 'openai':
+            self.endpoint = 'https://api.openai.com/v1/chat/completions'
+        elif self.provider == 'azure':
+            self.endpoint = 'https://odoo.openai.azure.com'
+            
