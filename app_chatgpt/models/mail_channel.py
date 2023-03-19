@@ -18,7 +18,7 @@ class Channel(models.Model):
     def get_openai(self, gpt_id, provider, api_key, ai_model, data, user="Odoo"):
         if provider == 'azure':
             res = gpt_id.get_openai(data)
-        return res
+            return res
 
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
         R_TIMEOUT = 30
@@ -77,10 +77,7 @@ class Channel(models.Model):
             if 'choices' in res:
                 res = '\n'.join([x['text'] for x in res['choices']])
                 return res
-            elif provider == 'azure':
-                res = gpt_id.get_openai(data)
-                return res
-        
+            
         return "获取结果超时，请重新跟我聊聊。"
 
     @api.model
