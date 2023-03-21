@@ -278,6 +278,16 @@
             <rng:optional><rng:attribute name="decoration-primary"/></rng:optional>
             <rng:optional><rng:attribute name="decoration-success"/></rng:optional>
             <rng:optional><rng:attribute name="decoration-warning"/></rng:optional>
+            <rng:optional><rng:attribute name="decoration-black"/></rng:optional>
+            <rng:optional><rng:attribute name="decoration-white"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-danger"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-info"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-muted"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-primary"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-success"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-warning"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-black"/></rng:optional>
+            <rng:optional><rng:attribute name="bg-white"/></rng:optional>
             <rng:optional><rng:attribute name="kanban_view_ref" /></rng:optional>
             <rng:optional>
                 <rng:attribute name="force_save">
