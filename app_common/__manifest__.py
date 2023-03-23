@@ -48,6 +48,8 @@
     ''',
     'description': '''    
     Support Odoo 16, Enterprise and Community Edition
+    need to setup odoo.conf, add follow:
+    server_wide_modules = web,app_common
     1. 
     2. 
     3. Multi-language Support.
