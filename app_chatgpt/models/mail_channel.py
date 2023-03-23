@@ -195,8 +195,8 @@ class Channel(models.Model):
                 _logger.info(f'私聊:author_id:{author_id},partner_chatgpt.id:{to_partner_id.id}')
                 try:
                     channel = self.env[msg_vals.get('model')].browse(msg_vals.get('res_id'))
-                    if ai_model not in ['gpt-3.5-turbo', 'gpt-3.5-turbo-0301']:
-                        prompt = self.get_openai_context(channel.id, to_partner_id.id, prompt, openapi_context_timeout)
+                    # if ai_model not in ['gpt-3.5-turbo', 'gpt-3.5-turbo-0301']:
+                    prompt = self.get_openai_context(channel.id, to_partner_id.id, prompt, openapi_context_timeout)
                     print(prompt)
                     # res = self.get_chatgpt_answer(prompt,partner_name)
                     res = self.get_openai(gpt_id, provider, api_key, ai_model, prompt, partner_name)
