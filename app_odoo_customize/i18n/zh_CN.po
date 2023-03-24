@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0-20221228\n"
+"Project-Id-Version: Odoo Server 16.0+e-20230320\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 06:40+0000\n"
-"PO-Revision-Date: 2023-02-06 06:40+0000\n"
+"POT-Creation-Date: 2023-03-24 12:06+0000\n"
+"PO-Revision-Date: 2023-03-24 12:06+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -139,6 +139,11 @@ msgstr "点击设置"
 #: model:ir.model,name:app_odoo_customize.model_res_config_settings
 msgid "Config Settings"
 msgstr "配置设置"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.replace_copyright_name
+msgid "Copyright &amp;copy;"
+msgstr "版权所有 &amp;copy;"
 
 #. module: app_odoo_customize
 #: model:ir.actions.act_window,name:app_odoo_customize.action_app_theme_config
@@ -288,7 +293,7 @@ msgstr "HTTP 路由"
 #. module: app_odoo_customize
 #: model:ir.model,name:app_odoo_customize.model_base_language_install
 msgid "Install Language"
-msgstr ""
+msgstr "安装语言"
 
 #. module: app_odoo_customize
 #. odoo-javascript
@@ -447,6 +452,21 @@ msgstr "支持链接"
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "System Name"
 msgstr "系统名称"
+
+#. module: app_odoo_customize
+#: model:ir.ui.menu,name:app_odoo_customize.menu_ir_config_list
+msgid "System Parameters"
+msgstr "系统参数"
+
+#. module: app_odoo_customize
+#. odoo-python
+#: code:addons/app_odoo_customize/models/ir_module_module.py:0
+#, python-format
+msgid ""
+"The languages that you selected have been successfully update."
+"                            You still need to Upgrade the apps to make it "
+"worked."
+msgstr "你选择的翻译语言已更新。但你仍然需要更新相关模块才可生效。"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.app_edit_menu_access_search
