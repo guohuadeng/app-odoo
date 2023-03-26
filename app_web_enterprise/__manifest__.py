@@ -75,6 +75,7 @@
         'web.assets_frontend': [
             # ('after', 'web/static/src/core/**/*', 'app_web_enterprise/static/src/xml/base.xml'),
             ('after', 'web_enterprise/static/src/webclient/home_menu/home_menu_background.scss', 'app_web_enterprise/static/src/scss/home_menu_background.scss'),
+            'app_web_enterprise/static/src/scss/app_style_website.scss',
         ],
     },
 

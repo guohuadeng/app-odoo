@@ -1,0 +1,23 @@
+//网站的  oe_structure_header_contact_1 滚动时不可见
+.o_header_affixed .oe_structure_solo  {
+  display: none;
+}
+
+//小屏时，顶部高度为 30px
+
+//form
+@media (max-width: 768px) {
+  header {
+    .navbar-brand.logo img {
+      height: 40px;
+    }
+    .navbar {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  .o_header_affixed.o_header_is_scrolled .navbar-brand img  {
+    height: 40px;
+  }
+
+}
