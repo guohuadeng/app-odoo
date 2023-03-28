@@ -21,7 +21,7 @@ class Channel(models.Model):
             return res
 
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
-        R_TIMEOUT = 30
+        R_TIMEOUT = 300
         o_url = gpt_id.endpoint or "https://api.openai.com/v1/chat/completions"
         
         # 以下处理 open ai

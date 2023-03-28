@@ -21,6 +21,8 @@
         <field name="model">ai.robot</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                </header>
                 <sheet>
                     <group>
                         <group>
