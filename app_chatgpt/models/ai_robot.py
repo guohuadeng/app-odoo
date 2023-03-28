@@ -49,7 +49,9 @@ GPT-3	A set of models that can understand and generate natural language
         #     通用方法
         self.ensure_one()
         if hasattr(self, 'get_%s' % self.provider):
-            return getattr(self, '%get_' % self.provider)(data, partner_name, *args)
+            return getattr(self, 'get_%s' % self.provider)(data, partner_name, *args)
+        else:
+            return _('No robot provider found')
 
     def get_openai(self, data, partner_name='odoo', *args):
         self.ensure_one()
