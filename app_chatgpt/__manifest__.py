@@ -41,7 +41,12 @@
     12. Support Odoo 16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
     ''',
-    'depends': ['base', 'base_setup', 'mail'],
+    'depends': [
+        'base',
+        'base_setup',
+        'mail',
+        'queue_job',
+    ],
     'data': [
         'security/ir.model.access.csv',
         'data/mail_channel_data.xml',

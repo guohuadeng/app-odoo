@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import openai
-import requests,json
+import requests, json
 import datetime
 # from transformers import TextDavinciTokenizer, TextDavinciModel
 from odoo import api, fields, models, _
@@ -43,6 +43,11 @@ class Channel(models.Model):
                 _logger.error(f"not find for id:{str(msg.id)}")
 
         return '\n'.join(prompt[::-1])
+
+    def get_ai(self, ai, prompt, partner_name, channel, user_id, message):
+        res = ai.get_ai(prompt, partner_name)
+        res = res.replace('\n', '<br/>')
+        channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
 
     def _notify_thread(self, message, msg_vals=False, **kwargs):
         rdata = super(Channel, self)._notify_thread(message, msg_vals=msg_vals, **kwargs)
@@ -110,11 +115,12 @@ class Channel(models.Model):
                     # if ai_model not in ['gpt-3.5-turbo', 'gpt-3.5-turbo-0301']:
                     prompt = self.get_openai_context(channel.id, to_partner_id.id, prompt, openapi_context_timeout)
                     print(prompt)
-                    res = ai.get_ai(prompt, partner_name)
-                    res = res.replace('\n', '<br/>')
+                    self.with_delay().get_ai(ai, prompt, partner_name, channel, user_id, message)
+                    # res = ai.get_ai(prompt, partner_name)
+                    # res = res.replace('\n', '<br/>')
                     # print('res:',res)
                     # print('channel:',channel)
-                    channel.with_user(user_id).message_post(body=res, message_type='comment',subtype_xmlid='mail.mt_comment', parent_id=message.id)
+                    # channel.with_user(user_id).message_post(body=res, message_type='comment',subtype_xmlid='mail.mt_comment', parent_id=message.id)
                     # channel.with_user(user_chatgpt).message_post(body=res, message_type='notification', subtype_xmlid='mail.mt_comment')
                     # channel.sudo().message_post(
                     #     body=res,
@@ -129,10 +135,12 @@ class Channel(models.Model):
                 _logger.info(f'频道群聊:author_id:{author_id},partner_chatgpt.id:{to_partner_id.id}')
                 try:
                     prompt = self.get_openai_context(chatgpt_channel_id.id, to_partner_id.id, prompt, openapi_context_timeout)
-                    res = ai.get_ai(prompt, 'odoo')
-                    res = res.replace('\n', '<br/>')
-                    chatgpt_channel_id.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
+                    self.with_delay().get_ai(ai, prompt, 'odoo', chatgpt_channel_id, user_id, message)
+                    # res = ai.get_ai(prompt, 'odoo')
+                    # res = res.replace('\n', '<br/>')
+                    # chatgpt_channel_id.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
                 except Exception as e:
                     raise UserError(_(e))
 
         return rdata
+
