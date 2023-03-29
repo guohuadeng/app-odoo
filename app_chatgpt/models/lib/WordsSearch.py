@@ -7,6 +7,8 @@
 # 2020.04.06 第一次提交
 # 2020.05.16 修改，支持大于0xffff的字符
 
+import os
+
 __all__ = ['WordsSearch']
 __author__ = 'Lin Zhijun'
 __date__ = '2020.05.16'
@@ -77,7 +79,10 @@ class WordsSearch():
         self._indexs = []
 
     def SetKeywords(self, keywords):
-        self._keywords = keywords
+        keyword_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'sensi_words.txt')
+        s = open(keyword_path, 'r+', encoding='utf-8').read().split('\n')
+        self._keywords = s + keywords
+        # self._keywords = keywords
         self._indexs = []
         for i in range(len(keywords)):
             self._indexs.append(i)

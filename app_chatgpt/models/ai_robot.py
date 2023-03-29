@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import requests,json
+import requests, json
 import openai
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
