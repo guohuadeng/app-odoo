@@ -4,9 +4,11 @@ import requests
 import openai
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
+from .lib.WordsSearch import WordsSearch
 
 import logging
 _logger = logging.getLogger(__name__)
+
 
 class AiRobot(models.Model):
     _name = 'ai.robot'
@@ -41,6 +43,8 @@ GPT-3	A set of models that can understand and generate natural language
     engine = fields.Char('Engine', help='If use Azure, Please input the Model deployment name.')
     api_version = fields.Char('API Version', default='2022-12-01')
     sequence = fields.Integer('Sequence', help="Determine the display order", default=10)
+    sensitive_words = fields.Text('Sensitive Words', help='Sensitive word filtering. Separate keywords with a carriage return.')
+    is_filtering = fields.Boolean('Filter Sensitive Words', default=False)
 
     def action_disconnect(self):
         requests.delete('https://chatgpt.com/v1/disconnect')
@@ -68,6 +72,7 @@ GPT-3	A set of models that can understand and generate natural language
         _logger.warning('=====================azure input data: %s' % data)
         if 'choices' in response:
             res = response['choices'][0]['text'].replace(' .', '.').strip()
+            res = self.filter_sensitive_words(res)
             return res
 
     @api.onchange('provider')
@@ -77,3 +82,10 @@ GPT-3	A set of models that can understand and generate natural language
         elif self.provider == 'azure':
             self.endpoint = 'https://odoo.openai.azure.com'
             
+    def filter_sensitive_words(self, data):
+        if self.is_filtering:
+            search = WordsSearch()
+            s = self.sensitive_words
+            search.SetKeywords(s.split('\n'))
+            result = search.Replace(text=data)
+            return result

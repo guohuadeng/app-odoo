@@ -43,6 +43,10 @@
                             <field name="endpoint"/>
                             <field name="api_version"/>
                         </group>
+                        <group>
+                            <field name="is_filtering"/>
+                            <field name="sensitive_words" attrs="{'invisible': [('is_filtering', '=', False)]}"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
