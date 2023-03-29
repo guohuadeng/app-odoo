@@ -96,6 +96,7 @@ GPT-3	A set of models that can understand and generate natural language
                 # for rec in res:
                 #     res = rec['message']['content']
                 res = '\n'.join([x['message']['content'] for x in res['choices']])
+                res = self.filter_sensitive_words(res)
                 return res
         else:
             pdata = {
@@ -113,6 +114,7 @@ GPT-3	A set of models that can understand and generate natural language
             res = response.json()
             if 'choices' in res:
                 res = '\n'.join([x['text'] for x in res['choices']])
+                res = self.filter_sensitive_words(res)
                 return res
     
         return "获取结果超时，请重新跟我聊聊。"
