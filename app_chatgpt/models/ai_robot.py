@@ -159,3 +159,5 @@ GPT-3	A set of models that can understand and generate natural language
             search.SetKeywords(s.split('\n'))
             result = search.Replace(text=data)
             return result
+        else:
+            return data
