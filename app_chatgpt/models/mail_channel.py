@@ -46,8 +46,9 @@ class Channel(models.Model):
 
     def get_ai(self, ai, prompt, partner_name, channel, user_id, message):
         res = ai.get_ai(prompt, partner_name)
-        res = res.replace('\n', '<br/>')
-        channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
+        if res:
+            res = res.replace('\n', '<br/>')
+            channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
 
     def _notify_thread(self, message, msg_vals=False, **kwargs):
         rdata = super(Channel, self)._notify_thread(message, msg_vals=msg_vals, **kwargs)
