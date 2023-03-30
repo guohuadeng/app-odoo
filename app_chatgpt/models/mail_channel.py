@@ -102,7 +102,7 @@ class Channel(models.Model):
             openapi_context_timeout = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_context_timeout')) or 600
         except:
             openapi_context_timeout = 600
-
+        sync_config = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openai_sync_config')
         openai.api_key = api_key
         partner_name = ''
         # print(msg_vals)
@@ -116,7 +116,10 @@ class Channel(models.Model):
                     # if ai_model not in ['gpt-3.5-turbo', 'gpt-3.5-turbo-0301']:
                     prompt = self.get_openai_context(channel.id, to_partner_id.id, prompt, openapi_context_timeout)
                     print(prompt)
-                    self.with_delay().get_ai(ai, prompt, partner_name, channel, user_id, message)
+                    if sync_config == 'sync':
+                        self.get_ai(ai, prompt, partner_name, channel, user_id, message)
+                    else:
+                        self.with_delay().get_ai(ai, prompt, partner_name, channel, user_id, message)
                     # res = ai.get_ai(prompt, partner_name)
                     # res = res.replace('\n', '<br/>')
                     # print('res:',res)
@@ -136,7 +139,10 @@ class Channel(models.Model):
                 _logger.info(f'频道群聊:author_id:{author_id},partner_chatgpt.id:{to_partner_id.id}')
                 try:
                     prompt = self.get_openai_context(chatgpt_channel_id.id, to_partner_id.id, prompt, openapi_context_timeout)
-                    self.with_delay().get_ai(ai, prompt, 'odoo', chatgpt_channel_id, user_id, message)
+                    if sync_config == 'sync':
+                        self.get_ai(ai, prompt, 'odoo', chatgpt_channel_id, user_id, message)
+                    else:
+                        self.with_delay().get_ai(ai, prompt, 'odoo', chatgpt_channel_id, user_id, message)
                     # res = ai.get_ai(prompt, 'odoo')
                     # res = res.replace('\n', '<br/>')
                     # chatgpt_channel_id.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)

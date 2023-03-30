@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[@name='integration']" position="after">
-                <h2>ChatGPT</h2>
+                <h2>Ai Center</h2>
                 <div class="col-xs-12 row o_settings_container" id="chatgpt_integraion">
                     <div class="col-xs-12 col-md-10 o_setting_box">
                         <div class="o_setting_right_pane border-start-0">
@@ -14,6 +14,10 @@
                                 <div class="row mt0">
                                     <label class="col-lg-2" string="上下文连接超时" for="openapi_context_timeout"/>
                                     <field name="openapi_context_timeout" title="上下文连接超时 秒数" style="width: 10% !important;"/>秒
+                                </div>
+                                <div class="row mt0">
+                                    <label class="col-lg-2" string="同步配置" for="openai_sync_config"/>
+                                    <field name="openai_sync_config" title="同步配置" style="width: 10% !important;"/>
                                 </div>
                             </div>
                         </div>

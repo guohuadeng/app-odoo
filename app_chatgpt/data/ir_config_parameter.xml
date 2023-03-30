@@ -7,5 +7,10 @@
             <field name="value">300</field>
         </record>
 
+        <record id="openai_sync_config" model="ir.config_parameter">
+            <field name="key">app_chatgpt.openai_sync_config</field>
+            <field name="value">sync</field>
+        </record>
+
     </data>
 </odoo>

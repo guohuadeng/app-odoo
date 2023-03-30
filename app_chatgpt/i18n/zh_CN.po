@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e-20230320\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-29 07:58+0000\n"
-"PO-Revision-Date: 2023-03-29 07:58+0000\n"
+"POT-Creation-Date: 2023-03-30 10:30+0000\n"
+"PO-Revision-Date: 2023-03-30 10:30+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -477,6 +477,11 @@ msgid "Africa"
 msgstr ""
 
 #. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
+msgid "Ai Center"
+msgstr ""
+
+#. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__res_users__gpt_policy__all
 msgid "All Users"
 msgstr ""
@@ -529,6 +534,11 @@ msgstr ""
 #, python-format
 msgid "Asia"
 msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__res_config_settings__openai_sync_config__async
+msgid "Asynchronous"
+msgstr "异步响应"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -648,7 +658,6 @@ msgstr ""
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.app_chatgpt_res_users_form
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
 msgid "ChatGPT"
 msgstr ""
 
@@ -808,7 +817,7 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model,name:app_chatgpt.model_mail_channel
 msgid "Discussion Channel"
-msgstr "讨论频道"
+msgstr ""
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__display_name
@@ -1345,7 +1354,7 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model,name:app_chatgpt.model_mail_message
 msgid "Message"
-msgstr "消息"
+msgstr ""
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1461,6 +1470,13 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__name
 msgid "Name"
+msgstr ""
+
+#. module: app_chatgpt
+#. odoo-python
+#: code:addons/app_chatgpt/models/ai_robot.py:0
+#, python-format
+msgid "No robot provider found"
 msgstr ""
 
 #. module: app_chatgpt
@@ -1770,6 +1786,16 @@ msgstr ""
 #, python-format
 msgid "Symbols"
 msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_config_settings__openai_sync_config
+msgid "Sync Config"
+msgstr "同步配置"
+
+#. module: app_chatgpt
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__res_config_settings__openai_sync_config__sync
+msgid "Synchronous"
+msgstr "同步响应"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -27132,6 +27158,11 @@ msgstr ""
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
 msgid "上下文连接超时 秒数"
+msgstr ""
+
+#. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
+msgid "同步配置"
 msgstr ""
 
 #. module: app_chatgpt
