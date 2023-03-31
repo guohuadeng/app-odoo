@@ -70,6 +70,7 @@
         ],
         # 这里是改样式，要 after处理
         'web.assets_common': [
+            ('after', 'web/static/lib/jquery.ui/jquery-ui.css', 'app_web_enterprise/static/lib/jquery.ui/jquery-ui.css'),
             ('after', 'web_enterprise/static/src/webclient/home_menu/home_menu_background.scss', 'app_web_enterprise/static/src/scss/home_menu_background.scss'),
         ],
         'web.assets_frontend': [
