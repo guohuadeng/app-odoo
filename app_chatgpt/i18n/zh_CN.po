@@ -478,13 +478,18 @@ msgstr ""
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "Ai Center"
-msgstr ""
+msgid "Ai Center(Chatgpt)"
+msgstr "Ai服务中心(Chatgpt)"
+
+#. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
+msgid "Seconds"
+msgstr "秒"
 
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__res_users__gpt_policy__all
 msgid "All Users"
-msgstr ""
+msgstr "所有用户"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_users__gpt_policy
@@ -817,7 +822,7 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model,name:app_chatgpt.model_mail_channel
 msgid "Discussion Channel"
-msgstr ""
+msgstr "讨论频道"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__display_name
@@ -1354,7 +1359,7 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model,name:app_chatgpt.model_mail_message
 msgid "Message"
-msgstr ""
+msgstr "消息"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1477,7 +1482,7 @@ msgstr ""
 #: code:addons/app_chatgpt/models/ai_robot.py:0
 #, python-format
 msgid "No robot provider found"
-msgstr ""
+msgstr "没有设置Ai接口供应方"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -27152,13 +27157,13 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_config_settings__openapi_context_timeout
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "上下文连接超时"
-msgstr ""
+msgid "Connect Timout"
+msgstr "上下文连接超时"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "上下文连接超时 秒数"
-msgstr ""
+msgid "After timeout seconds then Disconnect"
+msgstr "上下文连接超时(秒)"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
