@@ -43,8 +43,8 @@ GPT-3	A set of models that can understand and generate natural language
     engine = fields.Char('Engine', help='If use Azure, Please input the Model deployment name.')
     api_version = fields.Char('API Version', default='2022-12-01')
     sequence = fields.Integer('Sequence', help="Determine the display order", default=10)
-    sensitive_words = fields.Text('Sensitive Words', help='Sensitive word filtering. Separate keywords with a carriage return.')
-    is_filtering = fields.Boolean('Filter Sensitive Words', default=False)
+    sensitive_words = fields.Text('Sensitive Words Plus', help='Sensitive word filtering. Separate keywords with a carriage return.')
+    is_filtering = fields.Boolean('Filter Sensitive Words', default=False, help='Use base Filter in dir models/lib/sensi_words.txt')
 
     def action_disconnect(self):
         requests.delete('https://chatgpt.com/v1/disconnect')

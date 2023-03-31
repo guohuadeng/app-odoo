@@ -1721,8 +1721,8 @@ msgstr ""
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__sensitive_words
-msgid "Sensitive Words"
-msgstr "敏感词"
+msgid "Sensitive Words Plus"
+msgstr "额外敏感词"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_ai_robot__sensitive_words
@@ -24948,6 +24948,11 @@ msgstr ""
 #, python-format
 msgid "upwards button"
 msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__sensitive_words
+msgid "Use base Filter in dir models/lib/sensi_words.txt"
+msgstr "使用此文件进行基础过滤 models/lib/sensi_words.txt"
 
 #. module: app_chatgpt
 #. odoo-javascript
