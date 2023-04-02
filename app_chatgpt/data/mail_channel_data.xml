@@ -3,7 +3,7 @@
     <data noupdate="1">
         <record model="mail.channel" id="channel_chatgpt">
             <field name="name">ChatGPT Group Chat</field>
-            <field name="description">ChatGPT企业内部频道</field>
+            <field name="description">ChatGPT话题</field>
             <field name="image_128" type="base64" file="app_chatgpt/static/description/chatgpt.png"/>
         </record>
 
