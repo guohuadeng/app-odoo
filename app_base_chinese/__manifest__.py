@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '16.23.03.22',
+    'version': '16.23.04.02',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -75,6 +75,7 @@
         'data/res_country_data.xml',
         'data/res_currency_data.xml',
         'data/res_lang_data.xml',
+        'data/res_users_data.xml',
         'data/product_data.xml',
         'data/product_pricelist_data.xml',
         'data/stock_location_data.xml',

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- 默认user，使用write处理 -->
+        <function model="res.users" name="write" context="{'lang': 'zh_CN'}">
+            <value eval="[ref('base.default_user')]"/>
+            <value model="res.users" eval="{
+            'lang': 'zh_CN',
+            'tz': 'Etc/GMT-8',
+            'name': '默认内部用户模板',
+            }"/>
+        </function>
+        <function model="res.users" name="write" context="{'lang': 'zh_CN'}">
+            <value eval="[ref('base.template_portal_user_id')]"/>
+            <value model="res.users" eval="{
+            'lang': 'zh_CN',
+            'tz': 'Etc/GMT-8',
+            'name': '默认门户用户模板',
+            }"/>
+        </function>
+<!--        游客-->
+        <function model="res.users" name="write" context="{'lang': 'zh_CN'}">
+            <value eval="[ref('base.public_user')]"/>
+            <value model="res.users" eval="{
+            'lang': 'zh_CN',
+            'tz': 'Etc/GMT-8',
+            }"/>
+        </function>
+    </data>
+</odoo>
