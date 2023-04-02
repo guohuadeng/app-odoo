@@ -47,7 +47,7 @@
             <field name="model">res.partner</field>
             <field name="priority" eval="900"/>
             <field name="arch" type="xml">
-                <form>
+                <form class="o_form_address_chinese">
                     <div class="o_address_format o_address_chinese">
                         <div name="partner_address_country" class="d-flex">
                             <field name="country_id" placeholder="Country" class="o_address_country"
