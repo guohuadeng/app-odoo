@@ -14,7 +14,7 @@
             <field name="subtype_id" ref="mail.mt_comment"/>
             <field name="subject">Welcome to ChatGPT Group Chat</field>
             <field name="body"><![CDATA[<p>Welcome to ChatGPT Group Chat.</p>
-            <p>Pleas answer me any question.</p>]]></field>
+            <p>Please ask me any question.</p>]]></field>
         </record>
 
         <record model="mail.channel.member" id="channel_member_chatgtp_channel_for_admin">
