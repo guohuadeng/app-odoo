@@ -8,7 +8,6 @@
             <xpath expr="//search">
                 <searchpanel>
                     <field name="type"/>
-                    <field name="model_data_id"/>
                 </searchpanel>
             </xpath>
         </field>
