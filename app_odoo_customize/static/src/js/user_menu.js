@@ -22,7 +22,7 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
         if (session.app_show_lang) {
             userMenuRegistry.add("separator1", separator1, {'force': true})
         }
-        if (session.app_show_debug) {
+        if (session.app_show_debug && session.is_erp_manager) {
             userMenuRegistry.add("debug", debugItem, {'force': true})
                 .add("asset_asset", activateAssetsDebugging, {'force': true})
                 .add("leave_debug", leaveDebugMode, {'force': true})
