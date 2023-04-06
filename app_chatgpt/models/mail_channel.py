@@ -62,7 +62,7 @@ class Channel(models.Model):
             channel_partner_ids = self.channel_partner_ids
             to_partner_id = channel_partner_ids - message.author_id
             user_id = to_partner_id.mapped('user_ids').filtered(lambda r: r.gpt_id)[:1]
-            if user_id:
+            if user_id and to_partner_id.gpt_id:
                 gpt_policy = user_id.gpt_policy
                 gpt_wl_users = user_id.gpt_wl_users
                 is_allow = message.create_uid.id in gpt_wl_users.ids
