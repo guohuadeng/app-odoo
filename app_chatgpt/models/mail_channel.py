@@ -61,13 +61,13 @@ class Channel(models.Model):
         if channel_type == 'chat':
             channel_partner_ids = self.channel_partner_ids
             to_partner_id = channel_partner_ids - message.author_id
-            user_id = to_partner_id.mapped('user_ids').filtered(lambda r: r.gpt_id)[:1]
-            if user_id:
+            user_id = to_partner_id.related_user_id
+            if user_id and to_partner_id.gpt_id:
                 gpt_policy = user_id.gpt_policy
                 gpt_wl_users = user_id.gpt_wl_users
                 is_allow = message.create_uid.id in gpt_wl_users.ids
                 if gpt_policy == 'all' or (gpt_policy == 'limit' and is_allow):
-                    ai = user_id.gpt_id
+                    ai = to_partner_id.gpt_id
 
         elif channel_type in ['group', 'channel']:
             # partner_ids = @ ids
@@ -75,8 +75,8 @@ class Channel(models.Model):
             if partner_ids:
                 partners = self.env['res.partner'].search([('id', 'in', partner_ids)])
                 # user_id = user has binded gpt robot
-                user_id = partners.mapped('user_ids').filtered(lambda r: r.gpt_id)[:1]
-                if user_id:
+                user_id = partners.mapped('related_user_id').filtered(lambda r: r.gpt_id)[:1]
+                if user_id and user_id.gpt_id:
                     gpt_policy = user_id.gpt_policy
                     gpt_wl_users = user_id.gpt_wl_users
                     is_allow = message.create_uid.id in gpt_wl_users.ids
