@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="_assets_backend" name="app_web_enterprise assets backend" inherit_id="web.assets_backend">
-        <xpath expr="//link[last()]" position="after">
-            <link rel="stylesheet" type="text/scss" href="/app_web_enterprise/static/src/scss/app_style.scss"/>
-        </xpath>
-    </template>
     <!-- 企业版变色   -->
-    <template id="_app_assets_primary_variables" inherit_id="web_enterprise._assets_primary_variables" priority="15">
-        <xpath expr="//link[last()]" position="after">
-            <link rel="stylesheet" type="text/scss" href="/app_web_enterprise/static/src/scss/primary_variables.scss"/>
-        </xpath>
-    </template>
-
-    <template id="app_assets_common" name="app_web_enterprise assets common" inherit_id="web_enterprise.assets_common">
-        <xpath expr="//link[@href='/web_enterprise/static/src/scss/ui.scss']" position="replace">
-            <link rel="stylesheet" type="text/scss" href="/app_web_enterprise/static/src/scss/ui.scss"/>
+    <template id="replace_theme_color" name="Replace theme color" inherit_id="web.webclient_bootstrap">
+        <xpath expr="//meta[@name='theme-color']" position="replace">
+            <meta name="theme-color" content="#875A7B"/>
+            <!-- Windows Phone -->
+            <meta name="msapplication-navbutton-color" content="#00796B"/>
+            <!-- iOS Safari -->
+            <meta name="apple-mobile-web-app-capable" content="yes"/>
+            <meta name="theme-color" content="#875A7B" media="(prefers-color-scheme: light)"/>
+            <meta name="theme-color" content="#242733" media="(prefers-color-scheme: dark)"/>
         </xpath>
     </template>
 </odoo>

@@ -18,7 +18,7 @@
 
 {
     'name': "App web enterprise enhance,企业版界面增强",
-    'version': '16.23.02.19',
+    'version': '16.23.04.08',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -51,11 +51,9 @@
     ],
     'images': [],
     'data': [
+        'views/webclient_templates.xml',
     ],
     'assets': {
-        'web.assets_qweb': [
-            'app_web_enterprise/static/src/xml/*.xml',
-        ],
         # 企业版变色，注意这个是变量定义，要before
         'web._assets_primary_variables': [
             ('before', 'web_enterprise/static/src/scss/primary_variables.scss', 'app_web_enterprise/static/src/scss/primary_variables.scss'),
