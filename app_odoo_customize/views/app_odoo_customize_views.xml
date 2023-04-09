@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-<!--        <template id="assets_backend" name="app_odoo_customize assets" inherit_id="web.assets_backend">-->
-<!--            <xpath expr="//link[last()]" position="after">-->
-<!--                <link rel="stylesheet" type="text/scss" href="/app_odoo_customize/static/src/scss/app.scss"/>-->
-<!--                <link rel="stylesheet" type="text/scss" href="/app_odoo_customize/static/src/scss/ribbon.scss"/>-->
-<!--                <link rel="stylesheet" type="text/scss" href="/app_odoo_customize/static/src/scss/dialog.scss"/>-->
-<!--            </xpath>-->
-<!--            <xpath expr="script[last()]" position="after">-->
-<!--                <script type="text/javascript" src="/app_odoo_customize/static/src/js/app_window_title.js"></script>-->
-<!--                <script type="text/javascript" src="/app_odoo_customize/static/src/js/customize_user_menu.js"></script>-->
-<!--                <script type="text/javascript" src="/app_odoo_customize/static/src/js/ribbon.js"></script>-->
-<!--                <script type="text/javascript" src="/app_odoo_customize/static/src/js/dialog.js"></script>-->
-<!--            </xpath>-->
-<!--        </template>-->
-
-        <!-- some odoo version not support, please remove this if you are using odoo9 -->
-        <template id="replace_login" name="Login Layout" inherit_id="web.login_layout">
-            <xpath expr="//a[@target='_blank']" position="replace">
-                <a href="https://www.sunpop.cn" target="_blank">Powered by <span>odooApp</span></a>
-            </xpath>
-        </template>
-        <template id="replace_copyright_name" name="Copyright Name" inherit_id="web.frontend_layout">
-            <xpath expr="//span[hasclass('o_footer_copyright_name')]" position="replace">
-                <span class="o_footer_copyright_name me-2">Copyright &amp;copy; <span t-field="res_company.name" itemprop="name"/></span>
-            </xpath>
-        </template>
+    <!--    处理 title 及 theme-color-->
+    <template id="app_layout" inherit_id="web.layout" name="app Web layout">
+        <xpath expr="//title" position="replace">
+            <title t-esc="title or 'odooApp'"/>
+        </xpath>
+    </template>
+    <!--    end-->
+    <template id="replace_login" name="Login Layout" inherit_id="web.login_layout">
+        <xpath expr="//a[@target='_blank']" position="replace">
+            <a href="https://www.sunpop.cn" target="_blank">Powered by
+                <span>odooApp</span>
+            </a>
+        </xpath>
+    </template>
+    <template id="replace_copyright_name" name="Copyright Name" inherit_id="web.frontend_layout">
+        <xpath expr="//span[hasclass('o_footer_copyright_name')]" position="replace">
+            <span class="o_footer_copyright_name me-2">Copyright &amp;copy;
+                <span t-field="res_company.name" itemprop="name"/>
+            </span>
+        </xpath>
+    </template>
 </odoo>
