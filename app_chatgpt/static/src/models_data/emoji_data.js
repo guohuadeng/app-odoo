@@ -21857,55 +21857,6 @@ const emojisData0 = `{
     "shortcodes": [
         ":thumbs_down:"
     ]
-},
-{
-    "category": "ChatGpt Training",
-    "codepoints": "👐",
-    "emoticons": [],
-    "keywords": [
-        "` + _lt("mark") + `",
-        "` + _lt("neutral") + `",
-        "` + _lt("hand") + `",
-        "` + _lt("open") + `",
-        "` + _lt("open hands") + `"
-    ],
-    "name": "` + _lt("mark_as_neutral. open hands") + `",
-    "shortcodes": [
-        ":open_hands:"
-    ]
-},
-{
-    "category": "ChatGpt Training",
-    "codepoints": "👋",
-    "emoticons": [],
-    "keywords": [
-        "` + _lt("mark") + `",
-        "` + _lt("redundant") + `",
-        "` + _lt("hand") + `",
-        "` + _lt("wave") + `",
-        "` + _lt("waving") + `"
-    ],
-    "name": "` + _lt("mark_as_redundant. waving hand") + `",
-    "shortcodes": [
-        ":waving_hand:"
-    ]
-},
-{
-    "category": "ChatGpt Training",
-    "codepoints": "🈵",
-    "emoticons": [],
-    "keywords": [
-        "` + _lt("mark") + `",
-        "` + _lt("unhelpful") + `",
-        "` + _lt("“no vacancy”") + `",
-        "` + _lt("ideograph") + `",
-        "` + _lt("Japanese") + `",
-        "` + _lt("満") + `"
-    ],
-    "name": "` + _lt("mark_as_unhelpful. Need more answer") + `",
-    "shortcodes": [
-        ":Japanese_“no_vacancy”_button:"
-    ]
 },`;
 
 export const emojisData = JSON.parse(`[

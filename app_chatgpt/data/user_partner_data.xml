@@ -6,13 +6,14 @@
             <field name="image_1920" type="base64" file="app_chatgpt/static/description/chatgpt.png"/>
         </record>
         <record id="user_chatgpt" model="res.users">
-            <field name="login">chatgpt@sunpop.cn</field>
+            <field name="login">chatgpt@example.com</field>
+            <field name="email">chatgpt@example.com</field>
             <field name="password">chatgpt</field>
             <field name="partner_id" ref="app_chatgpt.partner_chatgpt"/>
             <field name="gpt_id" ref="app_chatgpt.chatgpt_robot"/>
             <field name="company_id" ref="base.main_company"/>
-            <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
-            <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
         <record id="partner_chatgpt1" model="res.partner">
@@ -21,14 +22,14 @@
         </record>
 
         <record id="user_chatgpt1" model="res.users">
-            <field name="login">chatgpt1@sunpop.cn</field>
-            <field name="email">chatgpt1@sunpop.cn</field>
+            <field name="email">chatgpt1@example.com</field>
+            <field name="login">chatgpt1@example.com</field>
             <field name="password">chatgpt</field>
             <field name="partner_id" ref="app_chatgpt.partner_chatgpt1"/>
             <field name="gpt_id" ref="app_chatgpt.chatgpt_robot1"/>
             <field name="company_id" ref="base.main_company"/>
-            <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
-            <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
         <record id="partner_chatgpt2" model="res.partner">
@@ -37,14 +38,30 @@
         </record>
 
         <record id="user_chatgpt2" model="res.users">
-            <field name="login">chatgpt2@sunpop.cn</field>
-            <field name="email">chatgpt2@sunpop.cn</field>
+            <field name="login">chatgpt2@example.com</field>
+            <field name="email">chatgpt2@example.com</field>
             <field name="password">chatgpt</field>
             <field name="partner_id" ref="app_chatgpt.partner_chatgpt2"/>
             <field name="gpt_id" ref="app_chatgpt.chatgpt_robot2"/>
             <field name="company_id" ref="base.main_company"/>
-            <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
-            <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+            <field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+
+        <record id="partner_chatgpt3" model="res.partner">
+            <field name="name">ChatGPT Azure</field>
+            <field name="image_1920" type="base64" file="app_chatgpt/static/description/chatgpt.png"/>
+        </record>
+
+        <record id="user_chatgpt3" model="res.users">
+            <field name="login">chatgpt3@example.com</field>
+            <field name="email">chatgpt3@example.com</field>
+            <field name="password">chatgpt</field>
+            <field name="partner_id" ref="app_chatgpt.partner_chatgpt3"/>
+            <field name="gpt_id" ref="app_chatgpt.chatgpt_robot3"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
         </record>
     </data>
 </odoo>

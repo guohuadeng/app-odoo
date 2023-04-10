@@ -17,7 +17,7 @@
             <p>Pleas answer me any question.</p>]]></field>
         </record>
 
-        <record model="mail.channel.member" id="channel_member_chatgtp_channel_for_admin">
+        <record model="mail.channel.partner" id="channel_member_chatgtp_channel_for_admin">
             <field name="partner_id" ref="base.partner_admin"/>
             <field name="channel_id" ref="app_chatgpt.channel_chatgpt"/>
             <field name="fetched_message_id" ref="app_chatgpt.module_install_notification"/>
@@ -25,7 +25,7 @@
         </record>
 
         <record model="mail.channel" id="app_chatgpt.channel_chatgpt">
-            <field name="group_ids" eval="[Command.link(ref('base.group_user'))]"/>
+            <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
     </data>
 </odoo>
