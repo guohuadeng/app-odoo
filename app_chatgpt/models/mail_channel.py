@@ -48,10 +48,7 @@ class Channel(models.Model):
         res = ai.get_ai(prompt, partner_name)
         if res:
             res = res.replace('\n', '<br/>')
-            if channel.channel_type == 'chat':
-                channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment')
-            else:
-                channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
+            channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
 
     def _notify_thread(self, message, msg_vals=False, **kwargs):
         rdata = super(Channel, self)._notify_thread(message, msg_vals=msg_vals, **kwargs)
