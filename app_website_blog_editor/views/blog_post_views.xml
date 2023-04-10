@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="app_view_blog_post_form" model="ir.ui.view">
+		<field name="name">app.blog.post.form</field>
+		<field name="model">blog.post</field>
+		<field name="inherit_id" ref="website_blog.view_blog_post_form" />
+		<field name="arch" type="xml">
+			<xpath expr="//page[@name='seo']" position="before">
+                <page name="post_content" string="Content">
+                    <field name="content" widget="html" nolabel="1" class="oe-bordered-editor"
+                           options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true}"/>
+                </page>
+            </xpath>
+		</field>
+	</record>
+</odoo>
+
+
