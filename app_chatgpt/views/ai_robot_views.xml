@@ -22,6 +22,8 @@
         <field name="arch" type="xml">
             <form>
                 <header>
+                    <button string="Get List Model" type="object" name="get_ai_list_model"/>
+                    <button string="Get Model Info" type="object" name="get_ai_model_info"/>
                 </header>
                 <sheet>
                     <group>

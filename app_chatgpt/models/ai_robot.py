@@ -57,6 +57,39 @@ GPT-3	A set of models that can understand and generate natural language
         else:
             return _('No robot provider found')
 
+    def get_ai_model_info(self):
+        self.ensure_one()
+        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.openapi_api_key}"}
+        R_TIMEOUT = 300
+        o_url = "https://api.openai.com/v1/models/%s" % self.ai_model
+        if self.endpoint:
+            o_url = self.endpoint.replace("/chat/completions", "") + "/models/%s" % self.ai_model
+        
+        response = requests.get(o_url, headers=headers, timeout=R_TIMEOUT)
+        response.close()
+        if response:
+            res = response.json()
+            r_text = json.dumps(res, indent=2)
+        else:
+            r_text = 'No response.'
+        raise UserError(r_text)
+
+    def get_ai_list_model(self):
+        self.ensure_one()
+        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.openapi_api_key}"}
+        R_TIMEOUT = 300
+        o_url = "https://api.openai.com/v1/models"
+        if self.endpoint:
+            o_url = self.endpoint.replace("/chat/completions", "") + "/models"
+        response = requests.get(o_url, headers=headers, timeout=R_TIMEOUT)
+        response.close()
+        if response:
+            res = response.json()
+            r_text = json.dumps(res, indent=2)
+        else:
+            r_text = 'No response.'
+        raise UserError(r_text)
+
     def get_openai(self, data, partner_name='odoo', *args):
         self.ensure_one()
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.openapi_api_key}"}
@@ -130,20 +163,27 @@ GPT-3	A set of models that can understand and generate natural language
             raise UserError(_("Please Set your AI robot's API Version first."))
         openai.api_version = self.api_version
         openai.api_key = self.openapi_api_key
-        response = openai.Completion.create(
-            engine=self.engine,
-            prompt=data,
-            temperature=self.temperature or 0.9,
-            max_tokens=self.max_length or 600,
-            top_p=0.5,
-            frequency_penalty=0,
-            presence_penalty=0, stop=["Human:", "AI:"])
-
-        _logger.warning('=====================azure input data: %s' % data)
+        pdata = {
+            "engine": self.engine,
+            "prompt": data,
+            "temperature": self.temperature or 0.9,
+            "max_tokens": self.max_length or 600,
+            "top_p": 0.5,
+            "frequency_penalty": 0,
+            "presence_penalty": 0,
+            "stop": ["Human:", "AI:"],
+        }
+        _logger.warning('=====================azure input data: %s' % pdata)
+        response = openai.Completion.create(pdata)
+        
         if 'choices' in response:
             res = response['choices'][0]['text'].replace(' .', '.').strip()
             res = self.filter_sensitive_words(res)
             return res
+        else:
+            _logger.warning('=====================azure output data: %s' % response)
+            return _('Azure no response')
+            
 
     @api.onchange('provider')
     def _onchange_provider(self):
@@ -156,8 +196,9 @@ GPT-3	A set of models that can understand and generate natural language
         if self.is_filtering:
             search = WordsSearch()
             s = self.sensitive_words
-            search.SetKeywords(s.split('\n'))
-            result = search.Replace(text=data)
-            return result
+            if s:
+                search.SetKeywords(s.split('\n'))
+                data = search.Replace(text=data)
+            return data
         else:
             return data

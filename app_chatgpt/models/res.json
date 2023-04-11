@@ -1,0 +1,21 @@
+{
+  'id': 'chatcmpl-747IRWr2Ij3HA6NVTWp4ZTnEA2grW',
+  'object': 'chat.completion',
+  'created': 1681215715,
+  'model': 'gpt-3.5-turbo-0301',
+  'usage': {
+    'prompt_tokens': 17,
+    'completion_tokens': 38,
+    'total_tokens': 55
+  },
+  'choices': [
+    {
+      'message': {
+        'role': 'assistant',
+        'content': '非常抱歉，我不太理解您在说什么。 可以提供更多背景信息或上下文吗？'
+      },
+      'finish_reason': 'stop',
+      'index': 0
+    }
+  ]
+}

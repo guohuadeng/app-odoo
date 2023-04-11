@@ -1795,7 +1795,7 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_config_settings__openai_sync_config
 msgid "Sync Config"
-msgstr "同步配置"
+msgstr "响应模式"
 
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__res_config_settings__openai_sync_config__sync
