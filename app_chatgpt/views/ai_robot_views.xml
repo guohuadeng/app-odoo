@@ -46,6 +46,7 @@
                             <field name="engine"/>
                             <field name="endpoint"/>
                             <field name="api_version"/>
+                            <field name="ai_timeout"/>
                         </group>
                         <group>
                             <field name="is_filtering"/>

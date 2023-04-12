@@ -42,6 +42,7 @@ GPT-3	A set of models that can understand and generate natural language
     endpoint = fields.Char('End Point', default='https://api.openai.com/v1/chat/completions')
     engine = fields.Char('Engine', help='If use Azure, Please input the Model deployment name.')
     api_version = fields.Char('API Version', default='2022-12-01')
+    ai_timeout = fields.Integer('Timeout(seconds)', help="Connect timeout for Ai response", default=120)
     sequence = fields.Integer('Sequence', help="Determine the display order", default=10)
     sensitive_words = fields.Text('Sensitive Words Plus', help='Sensitive word filtering. Separate keywords with a carriage return.')
     is_filtering = fields.Boolean('Filter Sensitive Words', default=False, help='Use base Filter in dir models/lib/sensi_words.txt')
@@ -77,7 +78,7 @@ GPT-3	A set of models that can understand and generate natural language
     def get_ai_model_info(self):
         self.ensure_one()
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.openapi_api_key}"}
-        R_TIMEOUT = 300
+        R_TIMEOUT = self.ai_timeout or 120
         o_url = "https://api.openai.com/v1/models/%s" % self.ai_model
         if self.endpoint:
             o_url = self.endpoint.replace("/chat/completions", "") + "/models/%s" % self.ai_model
@@ -94,7 +95,7 @@ GPT-3	A set of models that can understand and generate natural language
     def get_ai_list_model(self):
         self.ensure_one()
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.openapi_api_key}"}
-        R_TIMEOUT = 300
+        R_TIMEOUT = self.ai_timeout or 120
         o_url = "https://api.openai.com/v1/models"
         if self.endpoint:
             o_url = self.endpoint.replace("/chat/completions", "") + "/models"
@@ -110,7 +111,7 @@ GPT-3	A set of models that can understand and generate natural language
     def get_openai(self, data, partner_name='odoo', *args):
         self.ensure_one()
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.openapi_api_key}"}
-        R_TIMEOUT = 300
+        R_TIMEOUT = self.ai_timeout or 120
         o_url = self.endpoint or "https://api.openai.com/v1/chat/completions"
     
         # 以下处理 open ai
