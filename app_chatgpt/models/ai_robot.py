@@ -37,8 +37,63 @@ Moderation: A fine-tuned model that can detect whether text may be sensitive or 
 GPT-3	A set of models that can understand and generate natural language
                              """)
     openapi_api_key = fields.Char(string="API Key", help="Provide the API key here")
-    temperature = fields.Float(string='Temperature', default=0.9)
-    max_length = fields.Integer('Max Length', default=300)
+    # begin gpt 参数
+    # 1. stop：表示聊天机器人停止生成回复的条件，可以是一段文本或者一个列表，当聊天机器人生成的回复中包含了这个条件，就会停止继续生成回复。
+    # 2. temperature：控制回复的“新颖度”，值越高，聊天机器人生成的回复越不确定和随机，值越低，聊天机器人生成的回复会更加可预测和常规化。
+    # 3. top_p：与temperature有些类似，也是控制回复的“新颖度”。不同的是，top_p控制的是回复中概率最高的几个可能性的累计概率之和，值越小，生成的回复越保守，值越大，生成的回复越新颖。
+    # 4. frequency_penalty：用于控制聊天机器人回复中出现频率过高的词汇的惩罚程度。聊天机器人会尝试避免在回复中使用频率较高的词汇，以提高回复的多样性和新颖度。
+    # 5. presence_penalty：与frequency_penalty相对，用于控制聊天机器人回复中出现频率较低的词汇的惩罚程度。聊天机器人会尝试在回复中使用频率较低的词汇，以提高回复的多样性和新颖度。
+    max_tokens = fields.Integer('Max response', default=600,
+                                help="""
+                                Set a limit on the number of tokens per model response.
+                                The API supports a maximum of 4000 tokens shared between the prompt
+                                (including system message, examples, message history, and user query) and the model's response.
+                                One token is roughly 4 characters for typical English text.
+                                """)
+    temperature = fields.Float(string='Temperature', default=0.9,
+                               help="""
+                               Controls randomness. Lowering the temperature means that the model will produce
+                               more repetitive and deterministic responses.
+                               Increasing the temperature will result in more unexpected or creative responses.
+                               Try adjusting temperature or Top P but not both.
+                                    """)
+    top_p = fields.Float('Top probabilities', default=0.6,
+                         help="""
+                         Similar to temperature, this controls randomness but uses a different method.
+                         Lowering Top P will narrow the model’s token selection to likelier tokens.
+                         Increasing Top P will let the model choose from tokens with both high and low likelihood.
+                         Try adjusting temperature or Top P but not both
+                         """)
+    # 避免使用常用词
+    frequency_penalty = fields.Float('Frequency penalty', default=0.5,
+                                     help="""
+                                     Reduce the chance of repeating a token proportionally based on how often it has appeared in the text so far.
+                                     This decreases the likelihood of repeating the exact same text in a response.
+                                     """)
+    # 避免使用生僻词
+    presence_penalty = fields.Float('Presence penalty', default=0.2,
+                                    help="""
+                                    Reduce the chance of repeating any token that has appeared in the text at all so far.
+                                    This increases the likelihood of introducing new topics in a response.
+                                    """)
+    # 停止回复的关键词
+    stop = fields.Char('Stop sequences',
+                       help="""
+                       Use , to separate the stop key word.
+                       Make responses stop at a desired point, such as the end of a sentence or list.
+                       Specify up to four sequences where the model will stop generating further tokens in a response.
+                       The returned text will not contain the stop sequence.
+                       """)
+    # 角色设定
+    sys_content = fields.Char('System message',
+                              help="""
+                              Give the model instructions about how it should behave and any context it should reference when generating a response.
+                              You can describe the assistant’s personality,
+                              tell it what it should and shouldn’t answer, and tell it how to format responses.
+                              There’s no token limit for this section, but it will be included with every API call,
+                              so it counts against the overall token limit.
+                              """)
+    # end gpt 参数
     endpoint = fields.Char('End Point', default='https://api.openai.com/v1/chat/completions')
     engine = fields.Char('Engine', help='If use Azure, Please input the Model deployment name.')
     api_version = fields.Char('API Version', default='2022-12-01')
@@ -50,31 +105,38 @@ GPT-3	A set of models that can understand and generate natural language
     def action_disconnect(self):
         requests.delete('https://chatgpt.com/v1/disconnect')
         
-    def get_ai(self, data, sender_id=False, answer_id=False, **kwargs):
+    def get_ai(self, data, author_id=False, answer_id=False, **kwargs):
         #     通用方法
-        # sender_id: 请求的 partner_id 对象
+        # author_id: 请求的 partner_id 对象
         # answer_id: 回答的 partner_id 对象
         # kwargs，dict 形式的可变参数
         self.ensure_one()
         # 前置勾子，一般返回 False，有问题返回响应内容
-        res_pre = self.get_ai_pre(data, sender_id, answer_id, **kwargs)
+        res_pre = self.get_ai_pre(data, author_id, answer_id, **kwargs)
         if res_pre:
             return res_pre
         if hasattr(self, 'get_%s' % self.provider):
-            res = getattr(self, 'get_%s' % self.provider)(data, sender_id, answer_id, **kwargs)
+            res = getattr(self, 'get_%s' % self.provider)(data, author_id, answer_id, **kwargs)
         else:
             res = _('No robot provider found')
         
         # 后置勾子，返回处理后的内容，用于处理敏感词等
-        res_post = self.get_ai_post(res, sender_id, answer_id, **kwargs)
+        res_post = self.get_ai_post(res, author_id, answer_id, **kwargs)
         return res_post
 
-    def get_ai_pre(self, data, sender_id=False, answer_id=False, **kwargs):
+    def get_ai_pre(self, data, author_id=False, answer_id=False, **kwargs):
         return False
     
-    def get_ai_post(self, res, sender_id=False, answer_id=False, **kwargs):
-        res = self.filter_sensitive_words(res)
+    def get_ai_post(self, res, author_id=False, answer_id=False, **kwargs):
+        # res = self.filter_sensitive_words(res)
         return res
+    
+    def get_ai_system(self, content=None):
+        # 获取基础ai角色设定, role system
+        sys_content = content or self.sys_content
+        if sys_content:
+            return {"role": "system", "content": sys_content}
+        return {}
     
     def get_ai_model_info(self):
         self.ensure_one()
@@ -109,19 +171,63 @@ GPT-3	A set of models that can understand and generate natural language
             r_text = 'No response.'
         raise UserError(r_text)
 
-    def get_openai(self, data, sender_id, answer_id, *args):
+    def get_openai(self, data, author_id, answer_id, **kwargs):
         self.ensure_one()
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.openapi_api_key}"}
         R_TIMEOUT = self.ai_timeout or 120
         o_url = self.endpoint or "https://api.openai.com/v1/chat/completions"
-        partner_name = 'odoo'
-        # if sender_id:
-        #     partner_name = sender_id.name
+
+        if self.stop:
+            stop = self.stop.split(',')
+        else:
+            stop = ["Human:", "AI:"]
         # 以下处理 open ai
-        #     获取模型信息
-        # list_model = requests.get("https://api.openai.com/v1/models", headers=headers)
-        # model_info = requests.get("https://api.openai.com/v1/models/%s" % ai_model, headers=headers)
-        if self.ai_model == 'dall-e2':
+        if self.ai_model in ['gpt-3.5-turbo', 'gpt-3.5-turbo-0301']:
+            messages = [{"role": "user", "content": data}]
+            # Ai角色设定
+            sys_content = self.get_ai_system(kwargs.get('sys_content'))
+            if sys_content:
+                messages.insert(sys_content)
+            pdata = {
+                "model": self.ai_model,
+                "messages": messages,
+                "temperature": self.temperature or 0.9,
+                "max_tokens": self.max_tokens or 1000,
+                "top_p": self.top_p or 0.6,
+                "frequency_penalty": self.frequency_penalty or 0.5,
+                "presence_penalty": self.presence_penalty or 0.2,
+                "stop": stop
+            }
+            _logger.warning('=====================open input pdata: %s' % pdata)
+            response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
+            try:
+                # todo: 将 res 总结果给 self.get_ai_post，再取实际内容 return，将 tokens 计算写在 post 方法中
+                res = response.json()
+                if 'usage' in res:
+                    usage = res['usage']
+                    prompt_tokens = usage['prompt_tokens']
+                    completion_tokens = usage['completion_tokens']
+                    total_tokens = usage['total_tokens']
+                    vals = {
+                        'human_prompt_tokens': author_id.human_prompt_tokens + prompt_tokens,
+                        'ai_completion_tokens': author_id.ai_completion_tokens + completion_tokens,
+                        'tokens_total': author_id.tokens_total + total_tokens,
+                        'used_number': author_id.used_number + 1,
+                    }
+                    if not author_id.first_ask_time:
+                        ask_date = response.headers.get("Date")
+                        vals.update({
+                            'first_ask_time': ask_date
+                        })
+                    author_id.write(vals)
+                if 'choices' in res:
+                    # for rec in res:
+                    #     res = rec['message']['content']
+                    res = '\n'.join([x['message']['content'] for x in res['choices']])
+                    return res
+            except Exception as e:
+                _logger.warning("Get Response Json failed: %s", e)
+        elif self.ai_model == 'dall-e2':
             # todo: 处理 图像引擎，主要是返回参数到聊天中
             # image_url = response['data'][0]['url']
             # https://platform.openai.com/docs/guides/images/introduction
@@ -131,56 +237,15 @@ GPT-3	A set of models that can understand and generate natural language
                 "size": "1024x1024",
             }
             return '建设中'
-        elif self.ai_model in ['gpt-3.5-turbo', 'gpt-3.5-turbo-0301']:
-            pdata = {
-                "model": self.ai_model,
-                "messages": [{"role": "user", "content": data}],
-                "temperature": 0.9,
-                "max_tokens": self.max_length or 1000,
-                "top_p": 1,
-                "frequency_penalty": 0.0,
-                "presence_penalty": 0.6,
-                "user": partner_name,
-                "stop": ["Human:", "AI:"]
-            }
-            _logger.warning('=====================open input pdata: %s' % pdata)
-            response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
-            try:
-                res = response.json()
-                if 'usage' in res:
-                    usage = res['usage']
-                    prompt_tokens = usage['prompt_tokens']
-                    completion_tokens = usage['completion_tokens']
-                    total_tokens = usage['total_tokens']
-                    vals = {
-                        'human_prompt_tokens': sender_id.human_prompt_tokens + prompt_tokens,
-                        'ai_completion_tokens': sender_id.ai_completion_tokens + completion_tokens,
-                        'tokens_total': sender_id.tokens_total + total_tokens,
-                        'used_number': sender_id.used_number + 1,
-                    }
-                    if not sender_id.first_ask_time:
-                        ask_date = response.headers.get("Date")
-                        vals.update({
-                            'first_ask_time': ask_date
-                        })
-                    sender_id.write(vals)
-                if 'choices' in res:
-                    # for rec in res:
-                    #     res = rec['message']['content']
-                    res = '\n'.join([x['message']['content'] for x in res['choices']])
-                    return res
-            except Exception as e:
-                _logger.warning("Get Response Json failed: %s", e)
         else:
             pdata = {
                 "model": self.ai_model,
                 "prompt": data,
                 "temperature": 0.9,
-                "max_tokens": self.max_length or 1000,
+                "max_tokens": self.max_tokens or 1000,
                 "top_p": 1,
                 "frequency_penalty": 0.0,
                 "presence_penalty": 0.6,
-                "user": partner_name,
                 "stop": ["Human:", "AI:"]
             }
             response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
@@ -189,9 +254,9 @@ GPT-3	A set of models that can understand and generate natural language
                 res = '\n'.join([x['text'] for x in res['choices']])
                 return res
     
-        return "获取结果超时，请重新跟我聊聊。"
+        return _("Response Timeout, please speak again.")
 
-    def get_azure(self, data, sender_id, answer_id, *args):
+    def get_azure(self, data, author_id, answer_id, **kwargs):
         self.ensure_one()
         # only for azure
         openai.api_type = self.provider
@@ -202,21 +267,29 @@ GPT-3	A set of models that can understand and generate natural language
             raise UserError(_("Please Set your AI robot's API Version first."))
         openai.api_version = self.api_version
         openai.api_key = self.openapi_api_key
-        pdata = {
-            "engine": self.engine,
-            "prompt": data,
-            "temperature": self.temperature or 0.9,
-            "max_tokens": self.max_length or 600,
-            "top_p": 0.5,
-            "frequency_penalty": 0,
-            "presence_penalty": 0,
-            "stop": ["Human:", "AI:"],
-        }
-        _logger.warning('=====================azure input data: %s' % pdata)
-        response = openai.Completion.create(pdata)
-        
+        if self.stop:
+            stop = self.stop.split(',')
+        else:
+            stop = ["Human:", "AI:"]
+        if isinstance(data, list):
+            messages = data
+        else:
+            messages = [{"role": "user", "content": data}]
+        # Ai角色设定
+        sys_content = self.get_ai_system(kwargs.get('sys_content'))
+        if sys_content:
+            messages.insert(sys_content)
+        response = openai.ChatCompletion.create(
+            engine=self.engine,
+            messages=messages,
+            temperature=self.temperature or 0.9,
+            max_tokens=self.max_tokens or 600,
+            top_p=self.top_p or 0.6,
+            frequency_penalty=self.frequency_penalty or 0.5,
+            presence_penalty=self.presence_penalty or 0.2,
+            stop=stop)
         if 'choices' in response:
-            res = response['choices'][0]['text'].replace(' .', '.').strip()
+            res = response['choices'][0]['message']['content'].replace(' .', '.').strip()
             return res
         else:
             _logger.warning('=====================azure output data: %s' % response)

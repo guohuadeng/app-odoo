@@ -1399,7 +1399,7 @@ msgid "Mahjong red dragon"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__max_length
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__max_tokens
 msgid "Max Length"
 msgstr ""
 

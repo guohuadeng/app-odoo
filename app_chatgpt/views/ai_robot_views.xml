@@ -10,7 +10,7 @@
                 <field name="provider" optional="hide"/>
                 <field name="ai_model" optional="show"/>
                 <field name="openapi_api_key" password="True"/>
-                <field name="max_length" optional="show"/>
+                <field name="max_tokens" optional="show"/>
                 <field name="temperature"/>
             </tree>
         </field>
@@ -26,12 +26,19 @@
                     <button string="Get Model Info" type="object" name="get_ai_model_info"/>
                 </header>
                 <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Robot Name" required="1"/>
+                        </h1>
+                    </div>
                     <group>
                         <group>
-                            <field name="name"/>
                             <field name="openapi_api_key" password="True" required="True"/>
                             <field name="temperature"/>
-                            <field name="sequence"/>
+                            <field name="top_p"/>
+                            <field name="frequency_penalty"/>
+                            <field name="presence_penalty"/>
                         </group>
                         <group>
                             <field name="ai_model"/>
@@ -42,11 +49,12 @@
                                 <field name="provider"/>
                                 <a href="https://platform.openai.com/docs/introduction" title="OpenAI Document" class="o_doc_link" target="_blank"></a>
                             </div>
-                            <field name="max_length"/>
+                            <field name="max_tokens"/>
                             <field name="engine"/>
                             <field name="endpoint"/>
                             <field name="api_version"/>
                             <field name="ai_timeout"/>
+                            <field name="sequence"/>
                         </group>
                         <group>
                             <field name="is_filtering"/>
