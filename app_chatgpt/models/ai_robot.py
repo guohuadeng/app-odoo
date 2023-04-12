@@ -49,14 +49,31 @@ GPT-3	A set of models that can understand and generate natural language
     def action_disconnect(self):
         requests.delete('https://chatgpt.com/v1/disconnect')
         
-    def get_ai(self, data, partner_name='odoo', *args):
+    def get_ai(self, data, sender_id=False, answer_id=False, **kwargs):
         #     通用方法
+        # sender_id: 请求的 partner_id 对象
+        # answer_id: 回答的 partner_id 对象
+        # kwargs，dict 形式的可变参数
         self.ensure_one()
+        # 前置勾子，一般返回 False，有问题返回响应内容
+        res_pre = self.get_ai_pre(data, sender_id, answer_id, **kwargs)
+        if res_pre:
+            return res_pre
         if hasattr(self, 'get_%s' % self.provider):
-            return getattr(self, 'get_%s' % self.provider)(data, partner_name, *args)
+            res = getattr(self, 'get_%s' % self.provider)(data, sender_id, answer_id, **kwargs)
         else:
-            return _('No robot provider found')
+            res = _('No robot provider found')
+        
+        # 后置勾子，返回处理后的内容，用于处理敏感词等
+        res_post = self.get_ai_post(res, sender_id, answer_id, **kwargs)
+        return res_post
 
+    def get_ai_pre(self, data, sender_id=False, answer_id=False, **kwargs):
+        return False
+    
+    def get_ai_post(self, res, sender_id=False, answer_id=False, **kwargs):
+        return res
+    
     def get_ai_model_info(self):
         self.ensure_one()
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.openapi_api_key}"}
