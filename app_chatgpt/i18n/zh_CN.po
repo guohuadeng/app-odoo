@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e-20230320\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 10:30+0000\n"
-"PO-Revision-Date: 2023-03-30 10:30+0000\n"
+"POT-Creation-Date: 2023-04-12 08:53+0000\n"
+"PO-Revision-Date: 2023-04-12 08:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -421,6 +421,11 @@ msgid "ABCD"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__ai_completion_tokens
+msgid "AI Completion Tokens"
+msgstr "AI使用Token"
+
+#. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__ai_model
 msgid "AI Model"
 msgstr ""
@@ -478,13 +483,13 @@ msgstr ""
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "Ai Center(Chatgpt)"
-msgstr "Ai服务中心(Chatgpt)"
+msgid "After timeout seconds then Disconnect"
+msgstr "上下文连接超时(秒)"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "Seconds"
-msgstr "秒"
+msgid "Ai Center(Chatgpt)"
+msgstr "Ai服务中心(Chatgpt)"
 
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__res_users__gpt_policy__all
@@ -559,6 +564,13 @@ msgid "Azure"
 msgstr ""
 
 #. module: app_chatgpt
+#. odoo-python
+#: code:addons/app_chatgpt/models/ai_robot.py:0
+#, python-format
+msgid "Azure no response"
+msgstr ""
+
+#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
@@ -588,6 +600,7 @@ msgid "Bactrian"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner__gpt_id
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_users__gpt_id
 msgid "Bind to ChatGpt"
 msgstr "绑定至ChatGpt"
@@ -769,6 +782,16 @@ msgid "Config Settings"
 msgstr "配置设置"
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_config_settings__openapi_context_timeout
+msgid "Connect Timout"
+msgstr "上下文连接超时"
+
+#. module: app_chatgpt
+#: model:ir.model,name:app_chatgpt.model_res_partner
+msgid "Contact"
+msgstr "联系人"
+
+#. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__create_uid
 msgid "Created by"
 msgstr ""
@@ -852,6 +875,11 @@ msgid "END arrow"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model,name:app_chatgpt.model_mail_thread
+msgid "Email Thread"
+msgstr "EMail线程"
+
+#. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__endpoint
 msgid "End Point"
 msgstr ""
@@ -925,6 +953,11 @@ msgid "Filter Sensitive Words"
 msgstr "是否启用敏感词过滤"
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__first_ask_time
+msgid "First Ask Time"
+msgstr "首次发问时间"
+
+#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
@@ -977,6 +1010,16 @@ msgid "Gemini"
 msgstr ""
 
 #. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_form_view
+msgid "Get List Model"
+msgstr ""
+
+#. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_form_view
+msgid "Get Model Info"
+msgstr ""
+
+#. module: app_chatgpt
 #: model:ir.model,name:app_chatgpt.model_ai_robot
 msgid "Gpt Robot"
 msgstr ""
@@ -995,6 +1038,11 @@ msgstr ""
 #, python-format
 msgid "Hindu"
 msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__human_prompt_tokens
+msgid "Human Prompt Tokens"
+msgstr "人员使用Token"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1042,7 +1090,6 @@ msgstr ""
 
 #. module: app_chatgpt
 #. odoo-javascript
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
@@ -1357,6 +1404,11 @@ msgid "Max Length"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__max_number
+msgid "Max Number of Call"
+msgstr "最大发问次数"
+
+#. module: app_chatgpt
 #: model:ir.model,name:app_chatgpt.model_mail_message
 msgid "Message"
 msgstr "消息"
@@ -1483,6 +1535,11 @@ msgstr ""
 #, python-format
 msgid "No robot provider found"
 msgstr "没有设置Ai接口供应方"
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__used_number
+msgid "Number of Used"
+msgstr "已发问次数"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1715,6 +1772,11 @@ msgid "Scorpius"
 msgstr ""
 
 #. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
+msgid "Seconds"
+msgstr "秒"
+
+#. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__res_users__gpt_policy__limit
 msgid "Selected Users"
 msgstr ""
@@ -1727,12 +1789,22 @@ msgstr "额外敏感词"
 #. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_ai_robot__sensitive_words
 msgid "Sensitive word filtering. Separate keywords with a carriage return."
-msgstr "敏感词过滤。请用回车符分隔关键词。"
+msgstr "使用此文件进行基础过滤 models/lib/sensi_words.txt"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__sequence
 msgid "Sequence"
 msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__service_end_date
+msgid "Service End Date"
+msgstr "服务到期时间"
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__service_start_date
+msgid "Service Start Date"
+msgstr "服务开始时间"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1881,6 +1953,11 @@ msgid "Temperature"
 msgstr ""
 
 #. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
+msgid "Timout then disconnect(s)"
+msgstr ""
+
+#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
@@ -1901,6 +1978,11 @@ msgstr ""
 #, python-format
 msgid "Tokyo tower"
 msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__tokens_total
+msgid "Total Tokens"
+msgstr "总使用Token量"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1960,9 +2042,19 @@ msgid "UP! button"
 msgstr ""
 
 #. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.app_chatgpt_res_users_form
+msgid "Usage"
+msgstr "使用情况"
+
+#. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__is_filtering
+msgid "Use base Filter in dir models/lib/sensi_words.txt"
+msgstr ""
+
+#. module: app_chatgpt
 #: model:ir.model,name:app_chatgpt.model_res_users
 msgid "User"
-msgstr ""
+msgstr "用户"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -11554,8 +11646,6 @@ msgstr ""
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "hand"
 msgstr ""
@@ -12511,7 +12601,6 @@ msgstr ""
 
 #. module: app_chatgpt
 #. odoo-javascript
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
@@ -15194,9 +15283,6 @@ msgstr ""
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "mark"
 msgstr ""
@@ -15213,27 +15299,6 @@ msgstr ""
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "mark_as_good. thumbs up"
-msgstr ""
-
-#. module: app_chatgpt
-#. odoo-javascript
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#, python-format
-msgid "mark_as_neutral. open hands"
-msgstr ""
-
-#. module: app_chatgpt
-#. odoo-javascript
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#, python-format
-msgid "mark_as_redundant. waving hand"
-msgstr ""
-
-#. module: app_chatgpt
-#. odoo-javascript
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#, python-format
-msgid "mark_as_unhelpful. Need more answer"
 msgstr ""
 
 #. module: app_chatgpt
@@ -16420,7 +16485,6 @@ msgstr ""
 #. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "neutral"
 msgstr ""
@@ -17034,7 +17098,6 @@ msgstr ""
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "open"
 msgstr ""
@@ -17055,7 +17118,6 @@ msgstr ""
 
 #. module: app_chatgpt
 #. odoo-javascript
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "open hands"
@@ -19866,13 +19928,6 @@ msgstr ""
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "red-faced"
-msgstr ""
-
-#. module: app_chatgpt
-#. odoo-javascript
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#, python-format
-msgid "redundant"
 msgstr ""
 
 #. module: app_chatgpt
@@ -24805,13 +24860,6 @@ msgstr ""
 #. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#, python-format
-msgid "unhelpful"
-msgstr ""
-
-#. module: app_chatgpt
-#. odoo-javascript
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "unicorn"
@@ -24948,11 +24996,6 @@ msgstr ""
 #, python-format
 msgid "upwards button"
 msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__sensitive_words
-msgid "Use base Filter in dir models/lib/sensi_words.txt"
-msgstr "使用此文件进行基础过滤 models/lib/sensi_words.txt"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -25402,14 +25445,12 @@ msgstr ""
 #. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "wave"
 msgstr ""
 
 #. module: app_chatgpt
 #. odoo-javascript
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
@@ -27093,13 +27134,6 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
-msgid "“no vacancy”"
-msgstr ""
-
-#. module: app_chatgpt
-#. odoo-javascript
-#: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
-#, python-format
 msgid "“not free of charge”"
 msgstr ""
 
@@ -27157,22 +27191,6 @@ msgstr ""
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "ココ"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_res_config_settings__openapi_context_timeout
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "Connect Timout"
-msgstr "上下文连接超时"
-
-#. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "After timeout seconds then Disconnect"
-msgstr "上下文连接超时(秒)"
-
-#. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "同步配置"
 msgstr ""
 
 #. module: app_chatgpt

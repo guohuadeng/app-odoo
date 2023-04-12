@@ -14,3 +14,13 @@ class ResUsers(models.Model):
     ], string='Allowed Conversation Mode', default='all', ondelete='set default')
     gpt_wl_users = fields.Many2many('res.users', 'res_users_res_users_rel', 'robot_id', 'user_id', string='Allowed Users', domain="[('id', '!=', id)]")
     gpt_demo_time = fields.Integer('Default Demo Time', default=0)
+
+    first_ask_time = fields.Datetime('First Ask Time')
+    service_start_date = fields.Datetime('Service Start Date')
+    service_end_date = fields.Datetime('Service End Date')
+    used_number = fields.Integer('Number of Used')
+    max_number = fields.Integer('Max Number of Call')
+    human_prompt_tokens = fields.Integer('Human Prompt Tokens')
+    ai_completion_tokens = fields.Integer('AI Completion Tokens')
+    tokens_total = fields.Integer('Total Tokens')
+
