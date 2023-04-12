@@ -45,7 +45,9 @@ class Channel(models.Model):
         return '\n'.join(prompt[::-1])
 
     def get_ai(self, ai, prompt, partner_name, channel, user_id, message):
-        res = ai.get_ai(prompt, partner_name)
+        sender_id = message.create_uid.partner_id
+        answer_id = user_id.partner_id
+        res = ai.get_ai(prompt, sender_id, answer_id)
         if res:
             res = res.replace('\n', '<br/>')
             channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)

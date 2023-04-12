@@ -72,6 +72,7 @@ GPT-3	A set of models that can understand and generate natural language
         return False
     
     def get_ai_post(self, res, sender_id=False, answer_id=False, **kwargs):
+        res = self.filter_sensitive_words(res)
         return res
     
     def get_ai_model_info(self):
@@ -107,12 +108,14 @@ GPT-3	A set of models that can understand and generate natural language
             r_text = 'No response.'
         raise UserError(r_text)
 
-    def get_openai(self, data, partner_name='odoo', *args):
+    def get_openai(self, data, sender_id, answer_id, *args):
         self.ensure_one()
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.openapi_api_key}"}
-        R_TIMEOUT = 300
+        R_TIMEOUT = 3000
         o_url = self.endpoint or "https://api.openai.com/v1/chat/completions"
-    
+        partner_name = 'odoo'
+        # if sender_id:
+        #     partner_name = sender_id.name
         # 以下处理 open ai
         #     获取模型信息
         # list_model = requests.get("https://api.openai.com/v1/models", headers=headers)
@@ -141,13 +144,32 @@ GPT-3	A set of models that can understand and generate natural language
             }
             _logger.warning('=====================open input pdata: %s' % pdata)
             response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
-            res = response.json()
-            if 'choices' in res:
-                # for rec in res:
-                #     res = rec['message']['content']
-                res = '\n'.join([x['message']['content'] for x in res['choices']])
-                res = self.filter_sensitive_words(res)
-                return res
+            try:
+                res = response.json()
+                if 'usage' in res:
+                    usage = res['usage']
+                    prompt_tokens = usage['prompt_tokens']
+                    completion_tokens = usage['completion_tokens']
+                    total_tokens = usage['total_tokens']
+                    vals = {
+                        'human_prompt_tokens': sender_id.human_prompt_tokens + prompt_tokens,
+                        'ai_completion_tokens': sender_id.ai_completion_tokens + completion_tokens,
+                        'tokens_total': sender_id.tokens_total + total_tokens,
+                        'used_number': sender_id.used_number + 1,
+                    }
+                    if not sender_id.first_ask_time:
+                        ask_date = response.headers.get("Date")
+                        vals.update({
+                            'first_ask_time': ask_date
+                        })
+                    sender_id.write(vals)
+                if 'choices' in res:
+                    # for rec in res:
+                    #     res = rec['message']['content']
+                    res = '\n'.join([x['message']['content'] for x in res['choices']])
+                    return res
+            except Exception as e:
+                _logger.warning("Get Response Json failed: %s", e)
         else:
             pdata = {
                 "model": self.ai_model,
@@ -164,12 +186,11 @@ GPT-3	A set of models that can understand and generate natural language
             res = response.json()
             if 'choices' in res:
                 res = '\n'.join([x['text'] for x in res['choices']])
-                res = self.filter_sensitive_words(res)
                 return res
     
         return "获取结果超时，请重新跟我聊聊。"
 
-    def get_azure(self, data, partner_name='odoo', *args):
+    def get_azure(self, data, sender_id, answer_id, *args):
         self.ensure_one()
         # only for azure
         openai.api_type = self.provider
@@ -195,12 +216,10 @@ GPT-3	A set of models that can understand and generate natural language
         
         if 'choices' in response:
             res = response['choices'][0]['text'].replace(' .', '.').strip()
-            res = self.filter_sensitive_words(res)
             return res
         else:
             _logger.warning('=====================azure output data: %s' % response)
             return _('Azure no response')
-            
 
     @api.onchange('provider')
     def _onchange_provider(self):
@@ -215,7 +234,9 @@ GPT-3	A set of models that can understand and generate natural language
             s = self.sensitive_words
             if s:
                 search.SetKeywords(s.split('\n'))
-                data = search.Replace(text=data)
+            else:
+                search.SetKeywords([])
+            data = search.Replace(text=data)
             return data
         else:
             return data
