@@ -128,8 +128,29 @@ GPT-3	A set of models that can understand and generate natural language
         return False
     
     def get_ai_post(self, res, author_id=False, answer_id=False, **kwargs):
-        # res = self.filter_sensitive_words(res)
-        return res
+        if res and isinstance(res, dict):
+            data = res['content'].replace(' .', '.').strip()
+            if 'usage' in res:
+                usage = res['usage']
+                prompt_tokens = usage['prompt_tokens']
+                completion_tokens = usage['completion_tokens']
+                total_tokens = usage['total_tokens']
+                vals = {
+                    'human_prompt_tokens': author_id.human_prompt_tokens + prompt_tokens,
+                    'ai_completion_tokens': author_id.ai_completion_tokens + completion_tokens,
+                    'tokens_total': author_id.tokens_total + total_tokens,
+                    'used_number': author_id.used_number + 1,
+                }
+                if not author_id.first_ask_time:
+                    ask_date = fields.Datetime.now()
+                    vals.update({
+                        'first_ask_time': ask_date
+                    })
+                author_id.write(vals)
+            # res = self.filter_sensitive_words(data)
+        else:
+            data = res
+        return data
     
     def get_ai_system(self, content=None):
         # 获取基础ai角色设定, role system
@@ -187,7 +208,7 @@ GPT-3	A set of models that can understand and generate natural language
             # Ai角色设定
             sys_content = self.get_ai_system(kwargs.get('sys_content'))
             if sys_content:
-                messages.insert(sys_content)
+                messages.insert(0, sys_content)
             pdata = {
                 "model": self.ai_model,
                 "messages": messages,
@@ -201,25 +222,7 @@ GPT-3	A set of models that can understand and generate natural language
             _logger.warning('=====================open input pdata: %s' % pdata)
             response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
             try:
-                # todo: 将 res 总结果给 self.get_ai_post，再取实际内容 return，将 tokens 计算写在 post 方法中
                 res = response.json()
-                if 'usage' in res:
-                    usage = res['usage']
-                    prompt_tokens = usage['prompt_tokens']
-                    completion_tokens = usage['completion_tokens']
-                    total_tokens = usage['total_tokens']
-                    vals = {
-                        'human_prompt_tokens': author_id.human_prompt_tokens + prompt_tokens,
-                        'ai_completion_tokens': author_id.ai_completion_tokens + completion_tokens,
-                        'tokens_total': author_id.tokens_total + total_tokens,
-                        'used_number': author_id.used_number + 1,
-                    }
-                    if not author_id.first_ask_time:
-                        ask_date = response.headers.get("Date")
-                        vals.update({
-                            'first_ask_time': ask_date
-                        })
-                    author_id.write(vals)
                 if 'choices' in res:
                     # for rec in res:
                     #     res = rec['message']['content']
@@ -278,7 +281,7 @@ GPT-3	A set of models that can understand and generate natural language
         # Ai角色设定
         sys_content = self.get_ai_system(kwargs.get('sys_content'))
         if sys_content:
-            messages.insert(sys_content)
+            messages.insert(0, sys_content)
         response = openai.ChatCompletion.create(
             engine=self.engine,
             messages=messages,
@@ -287,9 +290,11 @@ GPT-3	A set of models that can understand and generate natural language
             top_p=self.top_p or 0.6,
             frequency_penalty=self.frequency_penalty or 0.5,
             presence_penalty=self.presence_penalty or 0.2,
-            stop=stop)
+            stop=stop,
+            request_timeout=self.ai_timeout or 120,
+        )
         if 'choices' in response:
-            res = response['choices'][0]['message']['content'].replace(' .', '.').strip()
+            res = response['choices'][0]['message']
             return res
         else:
             _logger.warning('=====================azure output data: %s' % response)

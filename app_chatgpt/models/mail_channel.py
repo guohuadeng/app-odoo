@@ -14,13 +14,13 @@ _logger = logging.getLogger(__name__)
 class Channel(models.Model):
     _inherit = 'mail.channel'
     
-    def get_openai_context(self, channel_id, author_id, answer_id, minutes=30):
+    def get_openai_context(self, channel_id, author_id, answer_id, minutes=30, chat_count=1):
         # 上下文处理，要处理群的方式，以及独聊的方式
         # azure新api 处理
         context_history = []
         afterTime = fields.Datetime.now() - datetime.timedelta(minutes=minutes)
         message_model = self.env['mail.message'].sudo()
-        # 处理消息： 取最新问题 + 上2次的交互，将之前的交互按时间顺序拼接
+        # 处理消息： 取最新问题 + 上 chat_count=1次的交互，将之前的交互按时间顺序拼接。
         # 注意： ai 每一次回复都有 parent_id 来处理连续性
         # 私聊处理
         domain = [('res_id', '=', channel_id),
@@ -32,16 +32,17 @@ class Channel(models.Model):
         if self.channel_type in ['group', 'channel']:
             # 群聊增加时间限制，当前找所有人，不限制 author_id
             domain += [('date', '>=', afterTime)]
-            ai_msg_list = message_model.with_context(tz='UTC').search(domain, order="id desc", limit=2)
-            for ai_msg in ai_msg_list.sorted(key='id'):
-                user_content = ai_msg.parent_id.body.replace("<p>", "").replace("</p>", "")
-                ai_content = ai_msg.body.replace("<p>", "").replace("</p>", "")
-                context_history.append({
-                    'role': 'user',
-                    'content': user_content,
-                }, {
+            ai_msg_list = message_model.with_context(tz='UTC').search(domain, order="id desc", limit=chat_count)
+            for ai_msg in ai_msg_list:
+                user_content = ai_msg.parent_id.description.replace("<p>", "").replace("</p>", "").replace('@%s' % answer_id.name, '').lstrip()
+                ai_content = str(ai_msg.body).replace("<p>", "").replace("</p>", "").replace("<p>", "")
+                context_history.insert(0, {
                     'role': 'assistant',
                     'content': ai_content,
+                })
+                context_history.insert(0, {
+                    'role': 'user',
+                    'content': user_content,
                 })
         return context_history
 
@@ -88,8 +89,8 @@ class Channel(models.Model):
                         ai = user_id.gpt_id
 
         chatgpt_channel_id = self.env.ref('app_chatgpt.channel_chatgpt')
-
-        msg = msg_vals.get('body')
+        msg = message.description.replace('@%s' % answer_id.name, '').lstrip()
+        
         # print('prompt:', prompt)
         # print('-----')
         if not msg:
@@ -102,43 +103,40 @@ class Channel(models.Model):
                 _logger.warning(_("ChatGPT Robot【%s】have not set open api key."))
                 return rdata
         try:
-            openapi_context_timeout = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_context_timeout')) or 600
+            openapi_context_timeout = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_context_timeout')) or 60
         except:
-            openapi_context_timeout = 600
+            openapi_context_timeout = 60
         sync_config = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openai_sync_config')
         openai.api_key = api_key
         # print(msg_vals)
         # print(msg_vals.get('record_name', ''))
         # print('self.channel_type :',self.channel_type)
         if ai:
+            # 非4版本，取0次。其它取3 次历史
+            chat_count = 0 if '4' in ai.ai_model else 3
             if author_id != answer_id.id and self.channel_type == 'chat':
+                # 私聊
                 _logger.info(f'私聊:author_id:{author_id},partner_chatgpt.id:{answer_id.id}')
-                try:
-                    channel = self.env[msg_vals.get('model')].browse(msg_vals.get('res_id'))
-                    # if ai_model not in ['gpt-3.5-turbo', 'gpt-3.5-turbo-0301']:
-                    messages = [{"role": "user", "content": msg}]
-                    c_history = self.get_openai_context(channel.id, author_id, answer_id, openapi_context_timeout)
-                    if c_history:
-                        messages.insert(0, c_history)
-                    if sync_config == 'sync':
-                        self.get_ai_response(ai, messages, channel, user_id, message)
-                    else:
-                        self.with_delay().get_ai_response(ai, messages, channel, user_id, message)
-                except Exception as e:
-                    raise UserError(_(e))
+                channel = self.env[msg_vals.get('model')].browse(msg_vals.get('res_id'))
             elif author_id != answer_id.id and msg_vals.get('model', '') == 'mail.channel' and msg_vals.get('res_id', 0) == chatgpt_channel_id.id:
+                # 公开的群聊
                 _logger.info(f'频道群聊:author_id:{author_id},partner_chatgpt.id:{answer_id.id}')
-                try:
-                    messages = [{"role": "user", "content": msg}]
-                    c_history = self.get_openai_context(chatgpt_channel_id.id, author_id, answer_id, openapi_context_timeout)
-                    if c_history:
-                        messages.insert(0, c_history)
-                    if sync_config == 'sync':
-                        self.get_ai_response(ai, messages, chatgpt_channel_id, user_id, message)
-                    else:
-                        self.with_delay().get_ai(ai, messages, chatgpt_channel_id, user_id, message)
-                except Exception as e:
-                    raise UserError(_(e))
+                channel = chatgpt_channel_id
+            elif author_id != answer_id.id and msg_vals.get('model', '') == 'mail.channel' and self.channel_type in ['group', 'channel']:
+                # 其它群聊
+                channel = self
+        
+            try:
+                messages = [{"role": "user", "content": msg}]
+                c_history = self.get_openai_context(channel.id, author_id, answer_id, openapi_context_timeout, chat_count)
+                if c_history:
+                    messages += c_history
+                if sync_config == 'sync':
+                    self.get_ai_response(ai, messages, channel, user_id, message)
+                else:
+                    self.with_delay().get_ai(ai, messages, channel, user_id, message)
+            except Exception as e:
+                raise UserError(_(e))
 
         return rdata
 
