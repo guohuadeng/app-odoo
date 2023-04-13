@@ -81,8 +81,8 @@ class WordsSearch():
     def SetKeywords(self, keywords):
         keyword_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'sensi_words.txt')
         s = open(keyword_path, 'r+', encoding='utf-8').read().split('\n')
-        self._keywords = s + keywords
-        # self._keywords = keywords
+        keywords += s
+        self._keywords = keywords
         self._indexs = []
         for i in range(len(keywords)):
             self._indexs.append(i)

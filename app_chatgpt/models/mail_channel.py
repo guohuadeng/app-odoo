@@ -89,7 +89,7 @@ class Channel(models.Model):
                         ai = user_id.gpt_id
 
         chatgpt_channel_id = self.env.ref('app_chatgpt.channel_chatgpt')
-        msg = message.description.replace('@%s' % answer_id.name, '').lstrip()
+        msg = message.preview.replace('@%s' % answer_id.name, '').lstrip()
         
         # print('prompt:', prompt)
         # print('-----')

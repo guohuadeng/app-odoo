@@ -125,7 +125,14 @@ GPT-3	A set of models that can understand and generate natural language
         return res_post
 
     def get_ai_pre(self, data, author_id=False, answer_id=False, **kwargs):
-        return False
+        search = WordsSearch()
+        search.SetKeywords([])
+        content = data[0]['content']
+        sensi = search.FindFirst(content)
+        if sensi is not None:
+            return _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。')
+        else:
+            return False
     
     def get_ai_post(self, res, author_id=False, answer_id=False, **kwargs):
         if res and isinstance(res, dict):
