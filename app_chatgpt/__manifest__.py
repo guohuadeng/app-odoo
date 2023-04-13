@@ -56,8 +56,8 @@
         'data/ir_config_parameter.xml',
         'views/res_config_settings_views.xml',
         'views/ai_robot_views.xml',
-        'views/res_users_views.xml',
         'views/res_partner_ai_use_views.xml',
+        'views/res_users_views.xml',
     ],
     'assets': {
         'mail.assets_messaging': [

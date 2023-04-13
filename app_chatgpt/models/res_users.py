@@ -12,5 +12,5 @@ class ResUsers(models.Model):
         ('all', 'All Users'),
         ('limit', 'Selected Users')
     ], string='Allowed Conversation Mode', default='all', ondelete='set default')
-    gpt_wl_users = fields.Many2many('res.users', 'res_users_res_users_rel', 'robot_id', 'user_id', string='Allowed Users', domain="[('id', '!=', id)]")
+    gpt_wl_partners = fields.Many2many('res.partner', 'res_partner_ai_use', 'ai_user_id', 'name', string='Allowed Partners')
     gpt_demo_time = fields.Integer('Default Demo Time', default=0)

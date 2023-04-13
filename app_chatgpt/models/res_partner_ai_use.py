@@ -8,6 +8,7 @@ class ResPartnerAiUse(models.Model):
     _description = '消费者Ai使用情况'
 
     name = fields.Many2one('res.partner', 'Partner')
+    ai_user_id = fields.Many2one('res.users', 'Ai User', domain=[('gpt_id', '!=', False)])
     first_ask_time = fields.Datetime('First Ask Time')
     service_start_date = fields.Datetime('Service Start Date')
     service_end_date = fields.Datetime('Service End Date')

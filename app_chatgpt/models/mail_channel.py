@@ -28,7 +28,8 @@ class Channel(models.Model):
                   ('message_type', '!=', 'user_notification'),
                   ('parent_id', '!=', False),
                   ('author_id', '=', answer_id.id),
-                  ('body', '!=', '<p>%s</p>' % _('Response Timeout, please speak again.'))]
+                  ('body', '!=', '<p>%s</p>' % _('Response Timeout, please speak again.')),
+                  ('body', '!=', '温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。')]
         if self.channel_type in ['group', 'channel']:
             # 群聊增加时间限制，当前找所有人，不限制 author_id
             domain += [('date', '>=', afterTime)]
@@ -68,8 +69,8 @@ class Channel(models.Model):
             user_id = answer_id.mapped('user_ids').filtered(lambda r: r.gpt_id)[:1]
             if user_id and answer_id.gpt_id:
                 gpt_policy = user_id.gpt_policy
-                gpt_wl_users = user_id.gpt_wl_users
-                is_allow = message.create_uid.id in gpt_wl_users.ids
+                gpt_wl_partners = user_id.gpt_wl_partners
+                is_allow = message.author_id.id in gpt_wl_partners.ids
                 if gpt_policy == 'all' or (gpt_policy == 'limit' and is_allow):
                     ai = answer_id.gpt_id
 
@@ -82,8 +83,8 @@ class Channel(models.Model):
                 user_id = partners.mapped('user_ids').filtered(lambda r: r.gpt_id)[:1]
                 if user_id:
                     gpt_policy = user_id.gpt_policy
-                    gpt_wl_users = user_id.gpt_wl_users
-                    is_allow = message.create_uid.id in gpt_wl_users.ids
+                    gpt_wl_partners = user_id.gpt_wl_partners
+                    is_allow = message.author_id.id in gpt_wl_partners.ids
                     answer_id = user_id.partner_id
                     if gpt_policy == 'all' or (gpt_policy == 'limit' and is_allow):
                         ai = user_id.gpt_id
@@ -134,7 +135,7 @@ class Channel(models.Model):
                 if sync_config == 'sync':
                     self.get_ai_response(ai, messages, channel, user_id, message)
                 else:
-                    self.with_delay().get_ai(ai, messages, channel, user_id, message)
+                    self.with_delay().get_ai_response(ai, messages, channel, user_id, message)
             except Exception as e:
                 raise UserError(_(e))
 
