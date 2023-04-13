@@ -15,18 +15,6 @@
                             <field name="gpt_demo_time"/>
                         </group>
                     </group>
-                    <group>
-                        <group string="Usage">
-                            <field name="first_ask_time"/>
-                            <field name="service_start_date"/>
-                            <field name="service_end_date"/>
-                            <field name="used_number"/>
-                            <field name="max_number"/>
-                            <field name="human_prompt_tokens"/>
-                            <field name="ai_completion_tokens"/>
-                            <field name="tokens_total"/>
-                        </group>
-                    </group>
                 </page>
             </xpath>
         </field>

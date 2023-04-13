@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_gpt_robt_user,AiRobotUser,model_ai_robot,base.group_user,1,1,1,1
+access_res_partner_ai_use_user,ResPartnerAiUseUser,model_res_partner_ai_use,base.group_user,1,1,1,1

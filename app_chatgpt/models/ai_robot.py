@@ -139,25 +139,35 @@ GPT-3	A set of models that can understand and generate natural language
             usage = json.loads(json.dumps(res['usage']))
             content = json.loads(json.dumps(res['choices'][0]['message']['content']))
             data = content.replace(' .', '.').strip()
-            if usage:
-                # todo: 不是写到 user ，是要写到指定 m2m 相关模型， 如：  res.partner.ai.use
-                user_id = author_id.mapped('user_ids')[:1]
+            answer_user = answer_id.mapped('user_ids')[:1]
+            if answer_user.gpt_policy == 'limit' and usage:
                 prompt_tokens = usage['prompt_tokens']
                 completion_tokens = usage['completion_tokens']
                 total_tokens = usage['total_tokens']
-                vals = {
-                    'human_prompt_tokens': user_id.human_prompt_tokens + prompt_tokens,
-                    'ai_completion_tokens': user_id.ai_completion_tokens + completion_tokens,
-                    'tokens_total': user_id.tokens_total + total_tokens,
-                    'used_number': user_id.used_number + 1,
-                }
-                if not user_id.first_ask_time:
-                    ask_date = fields.Datetime.now()
-                    vals.update({
+                # 不是写到 user ，是要写到指定 m2m 相关模型， 如：  res.partner.ai.use
+                ai_use = self.env['res.partner.ai.use'].search([('name', '=', author_id.id)], limit=1)
+                ask_date = fields.Datetime.now()
+                if not ai_use:
+                    ai_use.create({
+                        'name': author_id.id,
+                        'human_prompt_tokens': prompt_tokens,
+                        'ai_completion_tokens': completion_tokens,
+                        'tokens_total': total_tokens,
+                        'used_number': 1,
                         'first_ask_time': ask_date
                     })
-                user_id.write(vals)
-            # res = self.filter_sensitive_words(data)
+                else:
+                    vals = {
+                        'human_prompt_tokens': ai_use.human_prompt_tokens + prompt_tokens,
+                        'ai_completion_tokens': ai_use.ai_completion_tokens + completion_tokens,
+                        'tokens_total': ai_use.tokens_total + total_tokens,
+                        'used_number': ai_use.used_number + 1,
+                    }
+                    if not ai_use.first_ask_time:
+                        vals.update({
+                            'first_ask_time': ask_date
+                        })
+                    ai_use.write(vals)
         else:
             data = res
         return data
