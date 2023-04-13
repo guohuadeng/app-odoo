@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import openai.openai_object
 import requests, json
 import openai
 from odoo import api, fields, models, _
@@ -70,8 +70,8 @@ GPT-3	A set of models that can understand and generate natural language
                                      Reduce the chance of repeating a token proportionally based on how often it has appeared in the text so far.
                                      This decreases the likelihood of repeating the exact same text in a response.
                                      """)
-    # 避免使用生僻词
-    presence_penalty = fields.Float('Presence penalty', default=0.2,
+    # 越大模型就趋向于生成更新的话题，惩罚已经出现过的文本
+    presence_penalty = fields.Float('Presence penalty', default=0.5,
                                     help="""
                                     Reduce the chance of repeating any token that has appeared in the text at all so far.
                                     This increases the likelihood of introducing new topics in a response.
@@ -135,25 +135,28 @@ GPT-3	A set of models that can understand and generate natural language
             return False
     
     def get_ai_post(self, res, author_id=False, answer_id=False, **kwargs):
-        if res and isinstance(res, dict):
-            data = res['content'].replace(' .', '.').strip()
-            if 'usage' in res:
-                usage = res['usage']
+        if res and author_id and isinstance(res, openai.openai_object.OpenAIObject) or isinstance(res, list):
+            usage = json.loads(json.dumps(res['usage']))
+            content = json.loads(json.dumps(res['choices'][0]['message']['content']))
+            data = content.replace(' .', '.').strip()
+            if usage:
+                # todo: 不是写到 user ，是要写到指定 m2m 相关模型， 如：  res.partner.ai.use
+                user_id = author_id.mapped('user_ids')[:1]
                 prompt_tokens = usage['prompt_tokens']
                 completion_tokens = usage['completion_tokens']
                 total_tokens = usage['total_tokens']
                 vals = {
-                    'human_prompt_tokens': author_id.human_prompt_tokens + prompt_tokens,
-                    'ai_completion_tokens': author_id.ai_completion_tokens + completion_tokens,
-                    'tokens_total': author_id.tokens_total + total_tokens,
-                    'used_number': author_id.used_number + 1,
+                    'human_prompt_tokens': user_id.human_prompt_tokens + prompt_tokens,
+                    'ai_completion_tokens': user_id.ai_completion_tokens + completion_tokens,
+                    'tokens_total': user_id.tokens_total + total_tokens,
+                    'used_number': user_id.used_number + 1,
                 }
-                if not author_id.first_ask_time:
+                if not user_id.first_ask_time:
                     ask_date = fields.Datetime.now()
                     vals.update({
                         'first_ask_time': ask_date
                     })
-                author_id.write(vals)
+                user_id.write(vals)
             # res = self.filter_sensitive_words(data)
         else:
             data = res
@@ -211,32 +214,33 @@ GPT-3	A set of models that can understand and generate natural language
             stop = ["Human:", "AI:"]
         # 以下处理 open ai
         if self.ai_model in ['gpt-3.5-turbo', 'gpt-3.5-turbo-0301']:
-            messages = [{"role": "user", "content": data}]
+            # 基本与 azure 同，要处理 api_base
+            openai.api_key = self.openapi_api_key
+            openai.api_base = o_url.replace('/chat/completions', '')
+            if isinstance(data, list):
+                messages = data
+            else:
+                messages = [{"role": "user", "content": data}]
             # Ai角色设定
             sys_content = self.get_ai_system(kwargs.get('sys_content'))
             if sys_content:
                 messages.insert(0, sys_content)
-            pdata = {
-                "model": self.ai_model,
-                "messages": messages,
-                "temperature": self.temperature or 0.9,
-                "max_tokens": self.max_tokens or 1000,
-                "top_p": self.top_p or 0.6,
-                "frequency_penalty": self.frequency_penalty or 0.5,
-                "presence_penalty": self.presence_penalty or 0.2,
-                "stop": stop
-            }
-            _logger.warning('=====================open input pdata: %s' % pdata)
-            response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
-            try:
-                res = response.json()
-                if 'choices' in res:
-                    # for rec in res:
-                    #     res = rec['message']['content']
-                    res = '\n'.join([x['message']['content'] for x in res['choices']])
-                    return res
-            except Exception as e:
-                _logger.warning("Get Response Json failed: %s", e)
+            response = openai.ChatCompletion.create(
+                model=self.ai_model,
+                messages=messages,
+                n=1,
+                temperature=self.temperature or 0.9,
+                max_tokens=self.max_tokens or 600,
+                top_p=self.top_p or 0.6,
+                frequency_penalty=self.frequency_penalty or 0.5,
+                presence_penalty=self.presence_penalty or 0.5,
+                stop=stop,
+                request_timeout=self.ai_timeout or 120,
+            )
+            if 'choices' in response:
+                return response
+            else:
+                _logger.warning('=====================Openai output data: %s' % response)
         elif self.ai_model == 'dall-e2':
             # todo: 处理 图像引擎，主要是返回参数到聊天中
             # image_url = response['data'][0]['url']
@@ -292,20 +296,21 @@ GPT-3	A set of models that can understand and generate natural language
         response = openai.ChatCompletion.create(
             engine=self.engine,
             messages=messages,
+            # 返回的回答数量
+            n=1,
             temperature=self.temperature or 0.9,
             max_tokens=self.max_tokens or 600,
             top_p=self.top_p or 0.6,
             frequency_penalty=self.frequency_penalty or 0.5,
-            presence_penalty=self.presence_penalty or 0.2,
+            presence_penalty=self.presence_penalty or 0.5,
             stop=stop,
             request_timeout=self.ai_timeout or 120,
         )
         if 'choices' in response:
-            res = response['choices'][0]['message']
-            return res
+            return response
         else:
             _logger.warning('=====================azure output data: %s' % response)
-            return _('Azure no response')
+        return _("Response Timeout, please speak again.")
 
     @api.onchange('provider')
     def _onchange_provider(self):

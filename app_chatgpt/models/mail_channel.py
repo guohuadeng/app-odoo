@@ -32,18 +32,18 @@ class Channel(models.Model):
         if self.channel_type in ['group', 'channel']:
             # 群聊增加时间限制，当前找所有人，不限制 author_id
             domain += [('date', '>=', afterTime)]
-            ai_msg_list = message_model.with_context(tz='UTC').search(domain, order="id desc", limit=chat_count)
-            for ai_msg in ai_msg_list:
-                user_content = ai_msg.parent_id.description.replace("<p>", "").replace("</p>", "").replace('@%s' % answer_id.name, '').lstrip()
-                ai_content = str(ai_msg.body).replace("<p>", "").replace("</p>", "").replace("<p>", "")
-                context_history.insert(0, {
-                    'role': 'assistant',
-                    'content': ai_content,
-                })
-                context_history.insert(0, {
-                    'role': 'user',
-                    'content': user_content,
-                })
+        ai_msg_list = message_model.with_context(tz='UTC').search(domain, order="id desc", limit=chat_count)
+        for ai_msg in ai_msg_list:
+            user_content = ai_msg.parent_id.description.replace("<p>", "").replace("</p>", "").replace('@%s' % answer_id.name, '').lstrip()
+            ai_content = str(ai_msg.body).replace("<p>", "").replace("</p>", "").replace("<p>", "")
+            context_history.insert(0, {
+                'role': 'assistant',
+                'content': ai_content,
+            })
+            context_history.insert(0, {
+                'role': 'user',
+                'content': user_content,
+            })
         return context_history
 
     def get_ai_response(self, ai, messages, channel, user_id, message):
