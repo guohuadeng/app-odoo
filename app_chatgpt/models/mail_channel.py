@@ -35,18 +35,20 @@ class Channel(models.Model):
             domain += [('date', '>=', afterTime)]
         ai_msg_list = message_model.with_context(tz='UTC').search(domain, order="id desc", limit=chat_count)
         for ai_msg in ai_msg_list:
-            # todo: 判断这个 ai_msg 是不是ai发，有才 insert。 判断 user_msg 是不是 user发的，有才 insert
+            # 判断这个 ai_msg 是不是ai发，有才 insert。 判断 user_msg 是不是 user发的，有才 insert
             user_msg = ai_msg.parent_id
-            user_content = user_msg.description.replace("<p>", "").replace("</p>", "").replace('@%s' % answer_id.name, '').lstrip()
-            ai_content = str(ai_msg.body).replace("<p>", "").replace("</p>", "").replace("<p>", "")
-            context_history.insert(0, {
-                'role': 'assistant',
-                'content': ai_content,
-            })
-            context_history.insert(0, {
-                'role': 'user',
-                'content': user_content,
-            })
+            if ai_msg.author_id.gpt_id:
+                ai_content = str(ai_msg.body).replace("<p>", "").replace("</p>", "").replace("<p>", "")
+                context_history.insert(0, {
+                    'role': 'assistant',
+                    'content': ai_content,
+                })
+            if not user_msg.author_id.gpt_id:
+                user_content = user_msg.description.replace("<p>", "").replace("</p>", "").replace('@%s' % answer_id.name, '').lstrip()
+                context_history.insert(0, {
+                    'role': 'user',
+                    'content': user_content,
+                })
         return context_history
 
     def get_ai_response(self, ai, messages, channel, user_id, message):
@@ -130,10 +132,11 @@ class Channel(models.Model):
                 channel = self
         
             try:
-                messages = [{"role": "user", "content": msg}]
+                messages = []
                 c_history = self.get_openai_context(channel.id, author_id, answer_id, openapi_context_timeout, chat_count)
                 if c_history:
                     messages += c_history
+                messages.append({"role": "user", "content": msg})
                 if sync_config == 'sync':
                     self.get_ai_response(ai, messages, channel, user_id, message)
                 else:
