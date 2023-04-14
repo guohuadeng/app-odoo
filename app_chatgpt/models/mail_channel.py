@@ -35,7 +35,9 @@ class Channel(models.Model):
             domain += [('date', '>=', afterTime)]
         ai_msg_list = message_model.with_context(tz='UTC').search(domain, order="id desc", limit=chat_count)
         for ai_msg in ai_msg_list:
-            user_content = ai_msg.parent_id.description.replace("<p>", "").replace("</p>", "").replace('@%s' % answer_id.name, '').lstrip()
+            # todo: 判断这个 ai_msg 是不是ai发，有才 insert。 判断 user_msg 是不是 user发的，有才 insert
+            user_msg = ai_msg.parent_id
+            user_content = user_msg.description.replace("<p>", "").replace("</p>", "").replace('@%s' % answer_id.name, '').lstrip()
             ai_content = str(ai_msg.body).replace("<p>", "").replace("</p>", "").replace("<p>", "")
             context_history.insert(0, {
                 'role': 'assistant',
