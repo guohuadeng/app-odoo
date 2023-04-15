@@ -52,10 +52,16 @@ class Channel(models.Model):
             })
         return context_history
 
+    def get_ai_config(self, ai):
+        # 勾子，用于取ai 配置
+        return {}
+    
     def get_ai_response(self, ai, messages, channel, user_id, message):
         author_id = message.create_uid.partner_id
         answer_id = user_id.partner_id
-        res = ai.get_ai(messages, author_id, answer_id)
+        # todo: 只有个人配置的群聊才给配置
+        param = self.get_ai_config(ai)
+        res = ai.get_ai(messages, author_id, answer_id, param)
         if res:
             res = res.replace('\n', '<br/>')
             channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
@@ -120,7 +126,8 @@ class Channel(models.Model):
         if message.body == _('<div class="o_mail_notification">joined the channel</div>'):
             msg = _("Please warmly welcome our new partner %s and send him the best wishes.") % message.author_id.name
         else:
-            msg = message.preview.replace('@%s' % answer_id.name, '').lstrip()
+            # 不能用 preview， 如果用 : 提示词则 preview信息丢失
+            msg = message.description.replace('@%s' % answer_id.name, '').lstrip()
         
         if not msg:
             return rdata
@@ -142,7 +149,6 @@ class Channel(models.Model):
         # print('self.channel_type :',self.channel_type)
         if ai:
             # 非4版本，取0次。其它取3 次历史
-            # todo: channel中只有2个人，1个是ai，1个不是的时候，直接用ai回话，不用处理 @
             chat_count = 0 if '4' in ai.ai_model else 3
             if author_id != answer_id.id and self.channel_type == 'chat':
                 # 私聊
