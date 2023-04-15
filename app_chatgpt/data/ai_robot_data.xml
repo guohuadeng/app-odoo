@@ -18,7 +18,7 @@
         <field name="endpoint">https://api.openai.com/v1/chat/completions</field>
         <field name="sequence">7</field>
     </record>
-    <record id="chatgpt_robot3" model="ai.robot">
+    <record id="chatgpt3_azure" model="ai.robot">
         <field name="name">ChatGPT Azure</field>
         <field name="provider">azure</field>
         <field name="endpoint">https://my.openai.azure.com</field>

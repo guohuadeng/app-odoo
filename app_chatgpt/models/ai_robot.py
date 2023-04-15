@@ -125,12 +125,13 @@ GPT-3	A set of models that can understand and generate natural language
         return res_post
 
     def get_ai_pre(self, data, author_id=False, answer_id=False, **kwargs):
-        search = WordsSearch()
-        search.SetKeywords([])
-        content = data[0]['content']
-        sensi = search.FindFirst(content)
-        if sensi is not None:
-            return _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。')
+        if self.is_filtering:
+            search = WordsSearch()
+            search.SetKeywords([])
+            content = data[0]['content']
+            sensi = search.FindFirst(content)
+            if sensi is not None:
+                return _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。')
         else:
             return False
     
@@ -231,10 +232,11 @@ GPT-3	A set of models that can understand and generate natural language
                 messages = data
             else:
                 messages = [{"role": "user", "content": data}]
-            # Ai角色设定
-            sys_content = self.get_ai_system(kwargs.get('sys_content'))
-            if sys_content:
-                messages.insert(0, sys_content)
+            # Ai角色设定，如果没设定则再处理
+            if messages[0].get('role') != 'system':
+                sys_content = self.get_ai_system(kwargs.get('sys_content'))
+                if sys_content:
+                    messages.insert(0, sys_content)
             response = openai.ChatCompletion.create(
                 model=self.ai_model,
                 messages=messages,
@@ -300,9 +302,12 @@ GPT-3	A set of models that can understand and generate natural language
         else:
             messages = [{"role": "user", "content": data}]
         # Ai角色设定
-        sys_content = self.get_ai_system(kwargs.get('sys_content'))
-        if sys_content:
-            messages.insert(0, sys_content)
+
+        # Ai角色设定，如果没设定则再处理
+        if messages[0].role != 'system':
+            sys_content = self.get_ai_system(kwargs.get('sys_content'))
+            if sys_content:
+                messages.insert(0, sys_content)
         response = openai.ChatCompletion.create(
             engine=self.engine,
             messages=messages,
