@@ -36,6 +36,12 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
         }
         if (session.app_show_account) {
             userMenuRegistry.add("odoo_account", odooAccountItem, {'force': true});
+        } else {
+            try {
+                userMenuRegistry.remove("odoo_account");
+            } catch (err) {
+                console.log(err);
+            }
         }
     },
 
