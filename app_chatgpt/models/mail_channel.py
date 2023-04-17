@@ -114,7 +114,14 @@ class Channel(models.Model):
                 else:
                     partners = self.channel_partner_ids.filtered(lambda r: r.gpt_id)[:1]
                     user_id = partners.mapped('user_ids')[:1]
-
+            else:
+                # 没有@时，默认第一个robot
+                robot = self.env.ref('app_chatgpt.chatgpt_robot')
+                if robot:
+                    user_id = self.env['res.users'].search([('gpt_id', '=', robot.id)], limit=1)
+                else:
+                    partners = self.channel_partner_ids.filtered(lambda r: r.gpt_id)[:1]
+                    user_id = partners.mapped('user_ids')[:1]
             if user_id:
                 gpt_policy = user_id.gpt_policy
                 gpt_wl_partners = user_id.gpt_wl_partners
