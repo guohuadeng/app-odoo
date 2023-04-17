@@ -65,6 +65,8 @@ class Base(models.AbstractModel):
             if self._context.get(fieldname) or self._context.get('default_%s' % fieldname):
                 return self._context.get(fieldname) or self._context.get('default_%s' % fieldname)
             else:
+                if not domain:
+                    domain = self._fields[fieldname].domain or []
                 rec = self.env[self._fields[fieldname].comodel_name].sudo().search(domain, limit=1)
                 return rec.id if rec else False
         return False

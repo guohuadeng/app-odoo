@@ -39,6 +39,7 @@
                             <field name="top_p"/>
                             <field name="frequency_penalty"/>
                             <field name="presence_penalty"/>
+                            <field name="sys_content" placeholder="Role-playing and scene setting.Give the model instructions about how it should behave and any context it should reference when generating a response."/>
                         </group>
                         <group>
                             <field name="ai_model"/>

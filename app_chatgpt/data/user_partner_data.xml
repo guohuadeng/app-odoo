@@ -47,31 +47,31 @@
             <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
         </record>
 
-        <record id="partner_chatgpt3" model="res.partner">
-            <field name="name">ChatGPT Azure</field>
-            <field name="image_1920" type="base64" file="app_chatgpt/static/description/chatgpt.png"/>
+        <record id="partner_chatgpt3_azure" model="res.partner">
+            <field name="name">ChatGPT3 Azure</field>
+            <field name="image_1920" type="base64" file="app_chatgpt/static/description/chatgpt_blue.png"/>
         </record>
 
-        <record id="user_chatgpt3" model="res.users">
-            <field name="login">chatgpt3@sunpop.cn</field>
-            <field name="email">chatgpt3@sunpop.cn</field>
+        <record id="user_chatgpt3_azure" model="res.users">
+            <field name="login">chatgpt3_azure@odooai.cn</field>
+            <field name="email">chatgpt3_azure@odooai.cn</field>
             <field name="password">chatgpt</field>
-            <field name="partner_id" ref="app_chatgpt.partner_chatgpt3"/>
-            <field name="gpt_id" ref="app_chatgpt.chatgpt_robot3"/>
+            <field name="partner_id" ref="app_chatgpt.partner_chatgpt3_azure"/>
+            <field name="gpt_id" ref="app_chatgpt.chatgpt3_azure"/>
             <field name="company_id" ref="base.main_company"/>
             <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
             <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
         </record>
         <record id="partner_chatgpt4_azure" model="res.partner">
             <field name="name">ChatGPT4 Azure</field>
-            <field name="image_1920" type="base64" file="app_chatgpt/static/description/chatgpt.png"/>
+            <field name="image_1920" type="base64" file="app_chatgpt/static/description/chatgpt_blue.png"/>
         </record>
 
         <record id="user_chatgpt4_azure" model="res.users">
-            <field name="login">chatgpt4@sunpop.cn</field>
-            <field name="email">chatgpt4@sunpop.cn</field>
+            <field name="login">chatgpt4_azure@odooai.cn</field>
+            <field name="email">chatgpt4_azure@odooai.cn</field>
             <field name="password">chatgpt</field>
-            <field name="partner_id" ref="app_chatgpt.chatgpt4_azure"/>
+            <field name="partner_id" ref="app_chatgpt.partner_chatgpt4_azure"/>
             <field name="gpt_id" ref="app_chatgpt.chatgpt4_azure"/>
             <field name="company_id" ref="base.main_company"/>
             <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>

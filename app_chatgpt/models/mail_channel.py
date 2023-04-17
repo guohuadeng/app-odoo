@@ -23,13 +23,16 @@ class Channel(models.Model):
         # 处理消息： 取最新问题 + 上 chat_count=1次的交互，将之前的交互按时间顺序拼接。
         # 注意： ai 每一次回复都有 parent_id 来处理连续性
         # 私聊处理
+
+        # todo: 更好的处理方式
         domain = [('res_id', '=', channel_id),
                   ('model', '=', 'mail.channel'),
                   ('message_type', '!=', 'user_notification'),
                   ('parent_id', '!=', False),
                   ('author_id', '=', answer_id.id),
                   ('body', '!=', '<p>%s</p>' % _('Response Timeout, please speak again.')),
-                  ('body', '!=', '温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。')]
+                  ('body', '!=', _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。'))]
+
         if self.channel_type in ['group', 'channel']:
             # 群聊增加时间限制，当前找所有人，不限制 author_id
             domain += [('date', '>=', afterTime)]
@@ -51,10 +54,16 @@ class Channel(models.Model):
                 })
         return context_history
 
+    def get_ai_config(self, ai):
+        # 勾子，用于取ai 配置
+        return {}
+
     def get_ai_response(self, ai, messages, channel, user_id, message):
         author_id = message.create_uid.partner_id
         answer_id = user_id.partner_id
-        res = ai.get_ai(messages, author_id, answer_id)
+        # todo: 只有个人配置的群聊才给配置
+        param = self.get_ai_config(ai)
+        res = ai.get_ai(messages, author_id, answer_id, param)
         if res:
             res = res.replace('\n', '<br/>')
             channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
@@ -66,7 +75,14 @@ class Channel(models.Model):
         user_id = self.env['res.users']
         author_id = msg_vals.get('author_id')
         ai = self.env['ai.robot']
+        channel = self.env['mail.channel']
         channel_type = self.channel_type
+        messages = []
+
+        # 不处理 一般notify，但处理欢迎
+        if '<div class="o_mail_notification' in message.body and message.body != _('<div class="o_mail_notification">joined the channel</div>'):
+                return rdata
+
         if channel_type == 'chat':
             channel_partner_ids = self.channel_partner_ids
             answer_id = channel_partner_ids - message.author_id
@@ -82,22 +98,39 @@ class Channel(models.Model):
             # partner_ids = @ ids
             partner_ids = list(msg_vals.get('partner_ids'))
             if partner_ids:
+                # 常规群聊 @
                 partners = self.env['res.partner'].search([('id', 'in', partner_ids)])
-                # user_id = user has binded gpt robot
+                # user_id = user, who has binded gpt robot
                 user_id = partners.mapped('user_ids').filtered(lambda r: r.gpt_id)[:1]
-                if user_id:
-                    gpt_policy = user_id.gpt_policy
-                    gpt_wl_partners = user_id.gpt_wl_partners
-                    is_allow = message.author_id.id in gpt_wl_partners.ids
-                    answer_id = user_id.partner_id
-                    if gpt_policy == 'all' or (gpt_policy == 'limit' and is_allow):
-                        ai = user_id.gpt_id
+            elif message.body == _('<div class="o_mail_notification">joined the channel</div>'):
+                # 欢迎的情况
+                partners = self.channel_partner_ids.filtered(lambda r: r.gpt_id)[:1]
+                user_id = partners.mapped('user_ids')[:1]
+            elif self.member_count == 2:
+                # 处理独聊频道
+                if hasattr(self, 'is_private') and not self.is_private:
+                    # 2个人的非私有频道不处理
+                    pass
+                else:
+                    partners = self.channel_partner_ids.filtered(lambda r: r.gpt_id)[:1]
+                    user_id = partners.mapped('user_ids')[:1]
+
+            if user_id:
+                gpt_policy = user_id.gpt_policy
+                gpt_wl_partners = user_id.gpt_wl_partners
+                is_allow = message.author_id.id in gpt_wl_partners.ids
+                answer_id = user_id.partner_id
+                if gpt_policy == 'all' or (gpt_policy == 'limit' and is_allow):
+                    ai = user_id.gpt_id
 
         chatgpt_channel_id = self.env.ref('app_chatgpt.channel_chatgpt')
-        msg = message.preview.replace('@%s' % answer_id.name, '').lstrip()
         
-        # print('prompt:', prompt)
-        # print('-----')
+        if message.body == _('<div class="o_mail_notification">joined the channel</div>'):
+            msg = _("Please warmly welcome our new partner %s and send him the best wishes.") % message.author_id.name
+        else:
+            # 不能用 preview， 如果用 : 提示词则 preview信息丢失
+            msg = message.description.replace('@%s' % answer_id.name, '').lstrip()
+
         if not msg:
             return rdata
         # api_key = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_api_key')
@@ -124,12 +157,14 @@ class Channel(models.Model):
                 _logger.info(f'私聊:author_id:{author_id},partner_chatgpt.id:{answer_id.id}')
                 channel = self.env[msg_vals.get('model')].browse(msg_vals.get('res_id'))
             elif author_id != answer_id.id and msg_vals.get('model', '') == 'mail.channel' and msg_vals.get('res_id', 0) == chatgpt_channel_id.id:
-                # 公开的群聊
+                # todo: 公开的群聊，当前只开1个，后续更多
                 _logger.info(f'频道群聊:author_id:{author_id},partner_chatgpt.id:{answer_id.id}')
                 channel = chatgpt_channel_id
             elif author_id != answer_id.id and msg_vals.get('model', '') == 'mail.channel' and self.channel_type in ['group', 'channel']:
-                # 其它群聊
-                channel = self
+                # 高级用户自建的话题
+                channel = self.env[msg_vals.get('model')].browse(msg_vals.get('res_id'))
+                if hasattr(channel, 'is_private') and channel.description:
+                    messages.append({"role": "system", "content": channel.description})
         
             try:
                 messages = []

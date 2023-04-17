@@ -105,36 +105,37 @@ GPT-3	A set of models that can understand and generate natural language
     def action_disconnect(self):
         requests.delete('https://chatgpt.com/v1/disconnect')
         
-    def get_ai(self, data, author_id=False, answer_id=False, **kwargs):
+    def get_ai(self, data, author_id=False, answer_id=False, param={}):
         #     通用方法
         # author_id: 请求的 partner_id 对象
         # answer_id: 回答的 partner_id 对象
         # kwargs，dict 形式的可变参数
         self.ensure_one()
         # 前置勾子，一般返回 False，有问题返回响应内容
-        res_pre = self.get_ai_pre(data, author_id, answer_id, **kwargs)
+        res_pre = self.get_ai_pre(data, author_id, answer_id, param)
         if res_pre:
             return res_pre
         if hasattr(self, 'get_%s' % self.provider):
-            res = getattr(self, 'get_%s' % self.provider)(data, author_id, answer_id, **kwargs)
+            res = getattr(self, 'get_%s' % self.provider)(data, author_id, answer_id, param)
         else:
             res = _('No robot provider found')
         
         # 后置勾子，返回处理后的内容，用于处理敏感词等
-        res_post = self.get_ai_post(res, author_id, answer_id, **kwargs)
+        res_post = self.get_ai_post(res, author_id, answer_id,  param)
         return res_post
 
-    def get_ai_pre(self, data, author_id=False, answer_id=False, **kwargs):
-        search = WordsSearch()
-        search.SetKeywords([])
-        content = data[0]['content']
-        sensi = search.FindFirst(content)
-        if sensi is not None:
-            return _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。')
+    def get_ai_pre(self, data, author_id=False, answer_id=False, param={}):
+        if self.is_filtering:
+            search = WordsSearch()
+            search.SetKeywords([])
+            content = data[0]['content']
+            sensi = search.FindFirst(content)
+            if sensi is not None:
+                return _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。')
         else:
             return False
     
-    def get_ai_post(self, res, author_id=False, answer_id=False, **kwargs):
+    def get_ai_post(self, res, author_id=False, answer_id=False, param={}):
         if res and author_id and isinstance(res, openai.openai_object.OpenAIObject) or isinstance(res, list):
             usage = json.loads(json.dumps(res['usage']))
             content = json.loads(json.dumps(res['choices'][0]['message']['content']))
@@ -212,12 +213,20 @@ GPT-3	A set of models that can understand and generate natural language
             r_text = 'No response.'
         raise UserError(r_text)
 
-    def get_openai(self, data, author_id, answer_id, **kwargs):
+    def get_openai(self, data, author_id, answer_id, param={}):
         self.ensure_one()
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.openapi_api_key}"}
         R_TIMEOUT = self.ai_timeout or 120
         o_url = self.endpoint or "https://api.openai.com/v1/chat/completions"
 
+        # 处理传参，传过来的优先于 robot 默认的
+        max_tokens = param.get('max_tokens') or self.max_tokens or 600,
+        temperature = param.get('temperature') or self.temperature or 0.9,
+        top_p = param.get('top_p') or self.top_p or 0.6,
+        frequency_penalty = param.get('frequency_penalty') or self.frequency_penalty or 0.5,
+        presence_penalty = param.get('presence_penalty') or self.presence_penalty or 0.5,
+        # request_timeout = param.get('request_timeout') or self.ai_timeout or 120,
+        
         if self.stop:
             stop = self.stop.split(',')
         else:
@@ -231,10 +240,12 @@ GPT-3	A set of models that can understand and generate natural language
                 messages = data
             else:
                 messages = [{"role": "user", "content": data}]
-            # Ai角色设定
-            sys_content = self.get_ai_system(kwargs.get('sys_content'))
-            if sys_content:
-                messages.insert(0, sys_content)
+            # Ai角色设定，如果没设定则再处理
+            if messages[0].get('role') != 'system':
+                sys_content = self.get_ai_system(param.get('sys_content'))
+                if sys_content:
+                    messages.insert(0, sys_content)
+            #         暂时不变
             response = openai.ChatCompletion.create(
                 model=self.ai_model,
                 messages=messages,
@@ -266,11 +277,11 @@ GPT-3	A set of models that can understand and generate natural language
                 "model": self.ai_model,
                 "prompt": data,
                 "temperature": 0.9,
-                "max_tokens": self.max_tokens or 1000,
+                "max_tokens": max_tokens,
                 "top_p": 1,
                 "frequency_penalty": 0.0,
                 "presence_penalty": 0.6,
-                "stop": ["Human:", "AI:"]
+                "stop": stop
             }
             response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
             res = response.json()
@@ -280,7 +291,7 @@ GPT-3	A set of models that can understand and generate natural language
     
         return _("Response Timeout, please speak again.")
 
-    def get_azure(self, data, author_id, answer_id, **kwargs):
+    def get_azure(self, data, author_id, answer_id, param={}):
         self.ensure_one()
         # only for azure
         openai.api_type = self.provider
@@ -299,10 +310,21 @@ GPT-3	A set of models that can understand and generate natural language
             messages = data
         else:
             messages = [{"role": "user", "content": data}]
-        # Ai角色设定
-        sys_content = self.get_ai_system(kwargs.get('sys_content'))
-        if sys_content:
-            messages.insert(0, sys_content)
+
+        # 处理传参，传过来的优先于 robot 默认的
+        max_tokens = param.get('max_tokens') or self.max_tokens or 600,
+        temperature = param.get('temperature') or self.temperature or 0.9,
+        top_p = param.get('top_p') or self.top_p or 0.6,
+        frequency_penalty = param.get('frequency_penalty') or self.frequency_penalty or 0.5,
+        presence_penalty = param.get('presence_penalty') or self.presence_penalty or 0.5,
+        # request_timeout = param.get('request_timeout') or self.ai_timeout or 120,
+
+        # Ai角色设定，如果没设定则再处理
+        if messages[0].get('role') != 'system':
+            sys_content = self.get_ai_system(param.get('sys_content'))
+            if sys_content:
+                messages.insert(0, sys_content)
+        #         暂时不变
         response = openai.ChatCompletion.create(
             engine=self.engine,
             messages=messages,
