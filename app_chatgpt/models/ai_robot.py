@@ -229,12 +229,12 @@ GPT-3	A set of models that can understand and generate natural language
         o_url = self.endpoint or "https://api.openai.com/v1/chat/completions"
 
         # 处理传参，传过来的优先于 robot 默认的
-        max_tokens = param.get('max_tokens') or self.max_tokens or 600,
-        temperature = param.get('temperature') or self.temperature or 0.8,
-        top_p = param.get('top_p') or self.top_p or 0.6,
-        frequency_penalty = param.get('frequency_penalty') or self.frequency_penalty or 0.5,
-        presence_penalty = param.get('presence_penalty') or self.presence_penalty or 0.5,
-        # request_timeout = param.get('request_timeout') or self.ai_timeout or 120,
+        max_tokens = param.get('max_tokens') if param.get('max_tokens') else self.max_tokens
+        temperature = param.get('temperature') if param.get('temperature') else self.temperature
+        top_p = param.get('top_p') if param.get('top_p') else self.top_p
+        frequency_penalty = param.get('frequency_penalty') if param.get('frequency_penalty') else self.frequency_penalty
+        presence_penalty = param.get('presence_penalty') if param.get('presence_penalty') else self.presence_penalty
+        request_timeout = param.get('request_timeout') if param.get('request_timeout') else self.ai_timeout
         
         if self.stop:
             stop = self.stop.split(',')
@@ -254,21 +254,40 @@ GPT-3	A set of models that can understand and generate natural language
                 sys_content = self.get_ai_system(param.get('sys_content'))
                 if sys_content:
                     messages.insert(0, sys_content)
-            #         暂时不变
-            response = openai.ChatCompletion.create(
-                model=self.ai_model,
-                messages=messages,
-                n=1,
-                temperature=self.temperature or 0.8,
-                max_tokens=self.max_tokens or 600,
-                top_p=self.top_p or 0.6,
-                frequency_penalty=self.frequency_penalty or 0.5,
-                presence_penalty=self.presence_penalty or 0.5,
-                stop=stop,
-                request_timeout=self.ai_timeout or 120,
-            )
-            if 'choices' in response:
-                return response
+            # todo: 当前反向代理方式不通，要调整为 远程主机中接受请求，post到openai，再将结果返回给请求者
+            # response = openai.ChatCompletion.create(
+            #     model=self.ai_model,
+            #     messages=messages,
+            #     # 返回的回答数量
+            #     n=1,
+            #     max_tokens=max_tokens,
+            #     temperature=temperature,
+            #     top_p=top_p,
+            #     frequency_penalty=frequency_penalty,
+            #     presence_penalty=presence_penalty,
+            #     stop=stop,
+            #     request_timeout=request_timeout,
+            # )
+            # if 'choices' in response:
+            #     return response
+            # todo: 两种方式一样，要调整 v 服务器的二次处理 /root/toai.py
+            pdata = {
+                "model": self.ai_model,
+                "messages": messages,
+                "max_tokens": max_tokens,
+                "temperature": temperature,
+                "top_p": top_p,
+                "frequency_penalty": frequency_penalty,
+                "presence_penalty": presence_penalty,
+                "stop": stop
+            }
+            response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
+            try:
+                res = response.json()
+                if 'choices' in res:
+                    return res
+            except Exception as e:
+                _logger.warning("Get Response Json failed: %s", e)
             else:
                 _logger.warning('=====================Openai output data: %s' % response)
         elif self.ai_model == 'dall-e2':
@@ -320,13 +339,13 @@ GPT-3	A set of models that can understand and generate natural language
         else:
             messages = [{"role": "user", "content": data}]
 
-        # todo: 处理传参，传过来的优先于 robot 默认的，当前有问题，无法做tuple转换
-        max_tokens = param.get('max_tokens') or self.max_tokens or 600,
-        temperature = param.get('temperature') or self.temperature or 0.8,
-        top_p = param.get('top_p') or self.top_p or 0.6,
-        frequency_penalty = param.get('frequency_penalty') or self.frequency_penalty or 0.5,
-        presence_penalty = param.get('presence_penalty') or self.presence_penalty or 0.5,
-        # request_timeout = param.get('request_timeout') or self.ai_timeout or 120,
+        # 处理传参，传过来的优先于 robot 默认的
+        max_tokens = param.get('max_tokens') if param.get('max_tokens') else self.max_tokens
+        temperature = param.get('temperature') if param.get('temperature') else self.temperature
+        top_p = param.get('top_p') if param.get('top_p') else self.top_p
+        frequency_penalty = param.get('frequency_penalty') if param.get('frequency_penalty') else self.frequency_penalty
+        presence_penalty = param.get('presence_penalty') if param.get('presence_penalty') else self.presence_penalty
+        request_timeout= param.get('request_timeout') if param.get('request_timeout') else self.ai_timeout
 
         # Ai角色设定，如果没设定则再处理
         if messages[0].get('role') != 'system':
@@ -339,13 +358,13 @@ GPT-3	A set of models that can understand and generate natural language
             messages=messages,
             # 返回的回答数量
             n=1,
-            temperature=self.temperature or 0.8,
-            max_tokens=self.max_tokens or 600,
-            top_p=self.top_p or 0.6,
-            frequency_penalty=self.frequency_penalty or 0.5,
-            presence_penalty=self.presence_penalty or 0.5,
+            max_tokens=max_tokens,
+            temperature=temperature,
+            top_p=top_p,
+            frequency_penalty=frequency_penalty,
+            presence_penalty=presence_penalty,
             stop=stop,
-            request_timeout=self.ai_timeout or 120,
+            request_timeout=request_timeout,
         )
         if 'choices' in response:
             return response
