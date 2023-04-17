@@ -131,6 +131,9 @@ class Channel(models.Model):
                 answer_id = user_id.partner_id
                 if gpt_policy == 'all' or (gpt_policy == 'limit' and is_allow):
                     ai = user_id.gpt_id
+                elif user_id.gpt_id and not is_allow:
+                    # 暂时有限用户的Ai
+                    raise UserError(_('此Ai暂时未开放，请联系管理员。'))
 
         chatgpt_channel_id = self.env.ref('app_chatgpt.channel_chatgpt')
         
