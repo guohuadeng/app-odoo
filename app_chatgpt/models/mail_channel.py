@@ -116,7 +116,9 @@ class Channel(models.Model):
                     user_id = partners.mapped('user_ids')[:1]
             elif not message.author_id.gpt_id:
                 # 没有@时，默认第一个robot
-                robot = self.env.ref('app_chatgpt.chatgpt_robot')
+                # robot = self.env.ref('app_chatgpt.chatgpt_robot')
+                # 临时用azure
+                robot = self.env.ref('app_chatgpt.chatgpt3_azure')
                 if robot:
                     user_id = self.env['res.users'].search([('gpt_id', '=', robot.id)], limit=1)
                 else:
