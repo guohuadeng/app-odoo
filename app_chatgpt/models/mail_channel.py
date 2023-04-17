@@ -63,7 +63,7 @@ class Channel(models.Model):
         answer_id = user_id.partner_id
         # todo: 只有个人配置的群聊才给配置
         param = self.get_ai_config(ai)
-        res = ai.get_ai(messages, author_id, answer_id, param)
+        res, is_ai = ai.get_ai(messages, author_id, answer_id, param)
         if res:
             res = res.replace('\n', '<br/>')
             channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
@@ -144,22 +144,18 @@ class Channel(models.Model):
         if not msg:
             return rdata
         # api_key = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_api_key')
-        api_key = ''
-        if ai:
+        # ai处理，不要自问自答
+        if ai and answer_id != message.author_id:
             api_key = ai.openapi_api_key
             if not api_key:
                 _logger.warning(_("ChatGPT Robot【%s】have not set open api key."))
                 return rdata
-        try:
-            openapi_context_timeout = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_context_timeout')) or 60
-        except:
-            openapi_context_timeout = 60
-        sync_config = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openai_sync_config')
-        openai.api_key = api_key
-        # print(msg_vals)
-        # print(msg_vals.get('record_name', ''))
-        # print('self.channel_type :',self.channel_type)
-        if ai:
+            try:
+                openapi_context_timeout = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_context_timeout')) or 60
+            except:
+                openapi_context_timeout = 60
+            sync_config = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openai_sync_config')
+            openai.api_key = api_key
             # 非4版本，取0次。其它取3 次历史
             chat_count = 0 if '4' in ai.ai_model else 3
             if author_id != answer_id.id and self.channel_type == 'chat':
