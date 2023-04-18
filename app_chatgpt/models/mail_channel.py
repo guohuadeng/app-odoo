@@ -173,7 +173,6 @@ class Channel(models.Model):
                     messages.append({"role": "system", "content": channel.description})
         
             try:
-                messages = []
                 c_history = self.get_openai_context(channel.id, author_id, answer_id, openapi_context_timeout, chat_count)
                 if c_history:
                     messages += c_history
