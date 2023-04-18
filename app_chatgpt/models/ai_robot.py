@@ -141,7 +141,7 @@ GPT-3	A set of models that can understand and generate natural language
             content = json.loads(json.dumps(res['choices'][0]['message']['content']))
             data = content.replace(' .', '.').strip()
             answer_user = answer_id.mapped('user_ids')[:1]
-            if answer_user.gpt_policy == 'limit' and usage:
+            if usage:
                 prompt_tokens = usage['prompt_tokens']
                 completion_tokens = usage['completion_tokens']
                 total_tokens = usage['total_tokens']
@@ -151,6 +151,7 @@ GPT-3	A set of models that can understand and generate natural language
                 if not ai_use:
                     ai_use.create({
                         'name': author_id.id,
+                        'ai_user_id': answer_user.id,
                         'human_prompt_tokens': prompt_tokens,
                         'ai_completion_tokens': completion_tokens,
                         'tokens_total': total_tokens,
