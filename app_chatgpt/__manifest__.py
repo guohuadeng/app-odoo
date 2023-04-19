@@ -10,7 +10,7 @@
 
 {
     'name': 'Latest ChatGPT4 AI Center. GPT 4 for image, Dall-E Image.Multi Robot Support. Chat and Training',
-    'version': '16.23.04.13',
+    'version': '16.23.04.20',
     'author': 'Sunpop.cn',
     'company': 'Sunpop.cn',
     'maintainer': 'Sunpop.cn',
@@ -38,6 +38,7 @@
     7. Evaluation the ai robot to make better response. This training.
     8. Add api support Connect the Microsoft Azure OpenAI Service.
     9. Can set Synchronous or Asynchronous mode for Ai response.
+    10.Filter Sensitive Words Setup.
     11. Multi-language Support. Multi-Company Support.
     12. Support Odoo 16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
