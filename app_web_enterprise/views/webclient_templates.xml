@@ -4,6 +4,7 @@
     <template id="app_layout" inherit_id="web.layout" name="app Web layout">
         <xpath expr="//meta[last()]" position="after">
             <meta name="theme-color" content="#875A7B"/>
+            <meta name="mobile-web-app-capable" content="yes"/>
             <!-- Windows Phone -->
             <meta name="msapplication-navbutton-color" content="#00796B"/>
             <!-- iOS Safari -->
