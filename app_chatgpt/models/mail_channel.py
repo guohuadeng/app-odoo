@@ -39,8 +39,8 @@ class Channel(models.Model):
         ai_msg_list = message_model.with_context(tz='UTC').search(domain, order="id desc", limit=chat_count)
         for ai_msg in ai_msg_list:
             # 判断这个 ai_msg 是不是ai发，有才 insert。 判断 user_msg 是不是 user发的，有才 insert
-            user_msg = ai_msg.parent_id
-            if ai_msg.author_id.gpt_id:
+            user_msg = ai_msg.parent_id.sudo()
+            if ai_msg.author_id.sudo().gpt_id:
                 ai_content = str(ai_msg.body).replace("<p>", "").replace("</p>", "").replace("<p>", "")
                 context_history.insert(0, {
                     'role': 'assistant',
@@ -74,7 +74,7 @@ class Channel(models.Model):
         answer_id = self.env['res.partner']
         user_id = self.env['res.users']
         author_id = msg_vals.get('author_id')
-        ai = self.env['ai.robot']
+        ai = self.env['ai.robot'].sudo()
         channel = self.env['mail.channel']
         channel_type = self.channel_type
         messages = []
@@ -86,13 +86,13 @@ class Channel(models.Model):
         if channel_type == 'chat':
             channel_partner_ids = self.channel_partner_ids
             answer_id = channel_partner_ids - message.author_id
-            user_id = answer_id.mapped('user_ids').filtered(lambda r: r.gpt_id)[:1]
+            user_id = answer_id.mapped('user_ids').sudo().filtered(lambda r: r.gpt_id)[:1]
             if user_id and answer_id.gpt_id:
                 gpt_policy = user_id.gpt_policy
                 gpt_wl_partners = user_id.gpt_wl_partners
                 is_allow = message.author_id.id in gpt_wl_partners.ids
                 if gpt_policy == 'all' or (gpt_policy == 'limit' and is_allow):
-                    ai = answer_id.gpt_id
+                    ai = answer_id.sudo().gpt_id
 
         elif channel_type in ['group', 'channel']:
             # partner_ids = @ ids
@@ -101,10 +101,10 @@ class Channel(models.Model):
                 # 常规群聊 @
                 partners = self.env['res.partner'].search([('id', 'in', partner_ids)])
                 # user_id = user, who has binded gpt robot
-                user_id = partners.mapped('user_ids').filtered(lambda r: r.gpt_id)[:1]
+                user_id = partners.mapped('user_ids').sudo().filtered(lambda r: r.gpt_id)[:1]
             elif message.body == _('<div class="o_mail_notification">joined the channel</div>'):
                 # 欢迎的情况
-                partners = self.channel_partner_ids.filtered(lambda r: r.gpt_id)[:1]
+                partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id)[:1]
                 user_id = partners.mapped('user_ids')[:1]
             elif self.member_count == 2:
                 # 处理独聊频道
@@ -112,7 +112,7 @@ class Channel(models.Model):
                     # 2个人的非私有频道不处理
                     pass
                 else:
-                    partners = self.channel_partner_ids.filtered(lambda r: r.gpt_id)[:1]
+                    partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id)[:1]
                     user_id = partners.mapped('user_ids')[:1]
             elif not message.author_id.gpt_id:
                 # 没有@时，默认第一个robot
@@ -120,9 +120,9 @@ class Channel(models.Model):
                 # 临时用azure
                 robot = self.env.ref('app_chatgpt.chatgpt3_azure')
                 if robot:
-                    user_id = self.env['res.users'].search([('gpt_id', '=', robot.id)], limit=1)
+                    user_id = self.env['res.users'].sudo().search([('gpt_id', '=', robot.id)], limit=1)
                 else:
-                    partners = self.channel_partner_ids.filtered(lambda r: r.gpt_id)[:1]
+                    partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id)[:1]
                     user_id = partners.mapped('user_ids')[:1]
             if user_id:
                 gpt_policy = user_id.gpt_policy
@@ -130,7 +130,7 @@ class Channel(models.Model):
                 is_allow = message.author_id.id in gpt_wl_partners.ids
                 answer_id = user_id.partner_id
                 if gpt_policy == 'all' or (gpt_policy == 'limit' and is_allow):
-                    ai = user_id.gpt_id
+                    ai = user_id.sudo().gpt_id
 
         chatgpt_channel_id = self.env.ref('app_chatgpt.channel_chatgpt')
         
