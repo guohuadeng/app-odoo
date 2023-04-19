@@ -12,7 +12,7 @@ class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
     app_system_name = fields.Char('System Name', help="Setup System Name,which replace Odoo",
-                                  default='odooApp16', config_parameter='app_system_name')
+                                  default='odooAi', config_parameter='app_system_name')
     app_show_lang = fields.Boolean('Show Quick Language Switcher',
                                    help="When enable,User can quick switch language in user menu",
                                    default=True, config_parameter='app_show_lang')

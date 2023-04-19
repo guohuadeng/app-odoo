@@ -3,14 +3,14 @@
     <!--    处理 title 及 theme-color-->
     <template id="app_layout" inherit_id="web.layout" name="app Web layout">
         <xpath expr="//title" position="replace">
-            <title t-esc="title or 'odooApp'"/>
+            <title t-esc="title or 'odooAi'"/>
         </xpath>
     </template>
     <!--    end-->
     <template id="replace_login" name="Login Layout" inherit_id="web.login_layout">
         <xpath expr="//a[@target='_blank']" position="replace">
             <a href="https://www.sunpop.cn" target="_blank">Powered by
-                <span>odooApp</span>
+                <span>odooAi</span>
             </a>
         </xpath>
     </template>

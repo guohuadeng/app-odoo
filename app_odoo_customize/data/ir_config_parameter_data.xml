@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <openerp>
     <data noupdate="1">
-        <function model="ir.config_parameter" name="set_param" eval="('app_system_name', 'odooApp16')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_system_name', 'odooAi')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_show_lang', 'True')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_show_debug', 'True')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_show_documentation', 'True')"/>
