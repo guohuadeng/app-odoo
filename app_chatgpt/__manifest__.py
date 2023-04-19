@@ -50,6 +50,7 @@
     ],
     'data': [
         'security/ir.model.access.csv',
+        'security/ir_rules.xml',
         'data/mail_channel_data.xml',
         'data/ai_robot_data.xml',
         'data/user_partner_data.xml',

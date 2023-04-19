@@ -10,12 +10,12 @@
                 <field name="first_ask_time"/>
                 <field name="service_start_date"/>
                 <field name="service_end_date"/>
-                <field name="used_number"/>
-                <field name="max_number"/>
-                <field name="token_balance"/>
-                <field name="human_prompt_tokens"/>
-                <field name="ai_completion_tokens"/>
-                <field name="tokens_total"/>
+                <field name="used_number" sum="Total"/>
+                <field name="max_number" sum="Total"/>
+                <field name="token_balance" sum="Total"/>
+                <field name="human_prompt_tokens" sum="Total"/>
+                <field name="ai_completion_tokens" sum="Total"/>
+                <field name="tokens_total" sum="Total"/>
             </tree>
         </field>
     </record>
@@ -48,6 +48,20 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="res_partner_ai_use_search_view" model="ir.ui.view">
+        <field name="name">res.partner.ai.use.search</field>
+        <field name="model">res.partner.ai.use</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="ai_user_id"/>
+                <searchpanel>
+                    <field name="ai_user_id"/>
+                </searchpanel>
+            </search>
         </field>
     </record>
 
