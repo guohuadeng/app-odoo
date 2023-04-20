@@ -250,6 +250,7 @@ class ResConfigSettings(models.TransientModel):
             # 'account.invoice',
             'account.bank.statement.line',
             'account.payment',
+            'account.batch.payment',
             'account.analytic.line',
             'account.analytic.account',
             'account.partial.reconcile',
