@@ -97,6 +97,10 @@ class Channel(models.Model):
         elif channel_type in ['group', 'channel']:
             # partner_ids = @ ids
             partner_ids = list(msg_vals.get('partner_ids'))
+            if hasattr(self, 'ai_partner_id') and self.ai_partner_id:
+                # 当有主id时，使用主id
+                if self.ai_partner_id.id in partner_ids:
+                    partner_ids = [self.ai_partner_id.id]
             if partner_ids:
                 # 常规群聊 @
                 partners = self.env['res.partner'].search([('id', 'in', partner_ids)])
@@ -118,10 +122,11 @@ class Channel(models.Model):
                 # 没有@时，默认第一个robot
                 # robot = self.env.ref('app_chatgpt.chatgpt_robot')
                 # 临时用azure
-                robot = self.env.ref('app_chatgpt.chatgpt3_azure')
-                if robot:
-                    user_id = self.env['res.users'].sudo().search([('gpt_id', '=', robot.id)], limit=1)
+                if hasattr(self, 'ai_partner_id') and self.ai_partner_id:
+                    # 当有主id时，使用主id
+                    user_id = self.ai_partner_id.mapped('user_ids')[:1]
                 else:
+                    # 使用群里的第一个robot
                     partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id)[:1]
                     user_id = partners.mapped('user_ids')[:1]
             if user_id:
