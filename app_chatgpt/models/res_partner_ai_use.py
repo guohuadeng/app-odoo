@@ -18,4 +18,6 @@ class ResPartnerAiUse(models.Model):
     ai_completion_tokens = fields.Integer('AI Completion Tokens')
     tokens_total = fields.Integer('Total Tokens')
     token_balance = fields.Integer('Token Balance')
+    # balance = allow - total
+    token_allow = fields.Integer('Token Allow')
 

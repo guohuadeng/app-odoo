@@ -6,16 +6,17 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="ai_user_id"/>
-                <field name="first_ask_time"/>
-                <field name="service_start_date"/>
-                <field name="service_end_date"/>
-                <field name="used_number" sum="Total"/>
-                <field name="max_number" sum="Total"/>
-                <field name="token_balance" sum="Total"/>
-                <field name="human_prompt_tokens" sum="Total"/>
-                <field name="ai_completion_tokens" sum="Total"/>
-                <field name="tokens_total" sum="Total"/>
+                <field name="ai_user_id" options="show"/>
+                <field name="first_ask_time" options="show"/>
+                <field name="service_start_date" options="show"/>
+                <field name="service_end_date" options="show"/>
+                <field name="used_number" sum="Total" options="hide"/>
+                <field name="max_number" sum="Total" options="hide"/>
+                <field name="human_prompt_tokens" sum="Total" options="show"/>
+                <field name="ai_completion_tokens" sum="Total" options="show"/>
+                <field name="tokens_total" sum="Total" options="show"/>
+                <field name="token_balance" sum="Total" options="show"/>
+                <field name="token_allow" sum="Total" options="show"/>
             </tree>
         </field>
     </record>
