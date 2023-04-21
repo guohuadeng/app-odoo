@@ -143,10 +143,16 @@ GPT-3	A set of models that can understand and generate natural language
         return res_post, is_ai
     
     def get_ai_post(self, res, author_id=False, answer_id=False, param={}):
-        if res and author_id and isinstance(res, openai.openai_object.OpenAIObject) or isinstance(res, list):
+        if res and author_id and isinstance(res, openai.openai_object.OpenAIObject) or isinstance(res, list) or isinstance(res, dict):
             # 返回是个对象，那么就是ai
-            usage = json.loads(json.dumps(res['usage']))
-            content = json.loads(json.dumps(res['choices'][0]['message']['content']))
+            if isinstance(res, dict):
+                # openai 格式处理
+                usage = res['usage']
+                content = res['choices'][0]['message']['content']
+            else:
+                # azure 格式
+                usage = json.loads(json.dumps(res['usage']))
+                content = json.loads(json.dumps(res['choices'][0]['message']['content']))
             data = content.replace(' .', '.').strip()
             answer_user = answer_id.mapped('user_ids')[:1]
             if usage:
