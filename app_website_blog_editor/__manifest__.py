@@ -63,6 +63,9 @@
     13. 代码完全开源
     ''',
     'data': [
+        'views/blog_blog_views.xml',
+        'views/blog_tag_category_views.xml',
+        'views/blog_tag_views.xml',
         'views/blog_post_views.xml',
         # 'report/.xml',
     ],

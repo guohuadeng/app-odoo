@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_view_blog_blog_list" model="ir.ui.view">
+        <field name="name">app.blog.blog.list</field>
+        <field name="model">blog.blog</field>
+        <field name="inherit_id" ref="website_blog.view_blog_blog_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[1]" position="before">
+                <field name="sequence" widget="handle"/>
+                <field name="id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
+
