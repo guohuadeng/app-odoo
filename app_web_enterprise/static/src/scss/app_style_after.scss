@@ -1,3 +1,7 @@
+// 不显示 tooltip
+.o_tooltip.o_tooltip_visible  {
+  display: none;
+}
 // 上方菜单下拉，group 也有箭头
 .o_main_navbar {
   .o-dropdown {
