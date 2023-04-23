@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="app_chatgpt.Message" t-inherit="mail.Message" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_Message_prettyBody')]//.." position="replace">
+            <t t-if="!messageView.composerViewInEditing">
+                <div class="o_Message_prettyBody" t-ref="prettyBody"/><!-- messageView.message.prettyBody is inserted here from _update() -->
+                <div name="bottom_operation" class="position-relative mt-8">
+                    <div t-if="messageView.message.human_prompt_tokens &gt; 0 or messageView.message.ai_completion_tokens &gt;0"
+                         class="o_Message_token text-muted" style="float:left;display:inline;font-size: 13px;">
+                        <br/>
+                        ------------------
+                        <br/>
+                        <span title="提问/答复 消耗Token">
+                            <t t-esc="messageView.message.human_prompt_tokens"/> / <t t-esc="messageView.message.ai_completion_tokens"/>
+                        </span>
+                    </div>
+                </div>
+
+            </t>
+        </xpath>
+    </t>
+</templates>

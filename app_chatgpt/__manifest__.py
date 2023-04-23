@@ -68,6 +68,9 @@
         'mail.assets_model_data': [
             'app_chatgpt/static/src/models_data/*.js',
         ],
+        'web.assets_backend': [
+            'app_chatgpt/static/src/components/*/*.xml',
+        ],
     },
     'external_dependencies': {'python': ['openai']},
     'installable': True,
