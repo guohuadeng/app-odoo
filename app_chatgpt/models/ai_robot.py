@@ -139,8 +139,8 @@ GPT-3	A set of models that can understand and generate natural language
         
         res = getattr(self, 'get_%s' % self.provider)(data, author_id, answer_id, param)
         # 后置勾子，返回处理后的内容
-        res_post, is_ai = self.get_ai_post(res, author_id, answer_id,  param)
-        return res_post, is_ai
+        res_post, usage, is_ai = self.get_ai_post(res, author_id, answer_id,  param)
+        return res_post, usage, is_ai
     
     def get_ai_post(self, res, author_id=False, answer_id=False, param={}):
         if res and author_id and isinstance(res, openai.openai_object.OpenAIObject) or isinstance(res, list):
@@ -178,10 +178,10 @@ GPT-3	A set of models that can understand and generate natural language
                             'first_ask_time': ask_date
                         })
                     ai_use.write(vals)
-            return data, True
+            return data, usage, True
         else:
             # 直接返回错误语句，那么就是非ai
-            return res, False
+            return res, False, False
     
     def get_ai_system(self, content=None):
         # 获取基础ai角色设定, role system

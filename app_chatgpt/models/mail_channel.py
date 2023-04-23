@@ -63,10 +63,19 @@ class Channel(models.Model):
         answer_id = user_id.partner_id
         # todo: 只有个人配置的群聊才给配置
         param = self.get_ai_config(ai)
-        res, is_ai = ai.get_ai(messages, author_id, answer_id, param)
+        res, usage, is_ai = ai.get_ai(messages, author_id, answer_id, param)
         if res:
             res = res.replace('\n', '<br/>')
-            channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
+            new_msg = channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
+            if usage:
+                prompt_tokens = usage['prompt_tokens']
+                completion_tokens = usage['completion_tokens']
+                total_tokens = usage['total_tokens']
+                new_msg.write({
+                    'human_prompt_tokens': prompt_tokens,
+                    'ai_completion_tokens': completion_tokens,
+                    'cost_tokens': total_tokens,
+                })
 
     def _notify_thread(self, message, msg_vals=False, **kwargs):
         rdata = super(Channel, self)._notify_thread(message, msg_vals=msg_vals, **kwargs)
