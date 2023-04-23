@@ -39,7 +39,6 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
             } catch (err) {
                 console.log(err);
             }
-            userMenuRegistry.remove("support");
         }
         if (session.app_show_account) {
             userMenuRegistry.add("odoo_account", odooAccountItem, {'force': true});
