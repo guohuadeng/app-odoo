@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="base.view_users_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[@name='button_box']" position="inside">
-                <button name="%(app_chatgpt.action_res_users_2_partner_ai_use)d" type="action" string="Partner AI Use" icon="fa-comments">
+                <button name="%(app_chatgpt.action_res_users_2_partner_ai_use)d" type="action" string="Partner Ai Use" icon="fa-comments">
                 </button>
             </xpath>
             <xpath expr="//page[@name='preferences']" position="after">

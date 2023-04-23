@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_blog_tag_tree" model="ir.ui.view">
+        <field name="name">app.blog_tag_tree</field>
+        <field name="model">blog.tag</field>
+        <field name="inherit_id" ref="website_blog.blog_tag_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[1]" position="before">
+                <field name="sequence" widget="handle"/>
+                <field name="id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
+

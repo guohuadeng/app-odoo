@@ -33,10 +33,17 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
         }
         if (session.app_show_support) {
             userMenuRegistry.add("support", supportItem, {'force': true})
+        } else if (userMenuRegistry.get('support')) {
+            try {
+                userMenuRegistry.remove("support");
+            } catch (err) {
+                console.log(err);
+            }
+            userMenuRegistry.remove("support");
         }
         if (session.app_show_account) {
             userMenuRegistry.add("odoo_account", odooAccountItem, {'force': true});
-        } else {
+        } else if (userMenuRegistry.get('odoo_account')){
             try {
                 userMenuRegistry.remove("odoo_account");
             } catch (err) {

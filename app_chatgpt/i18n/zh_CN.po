@@ -4,16 +4,121 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e-20230320\n"
+"Project-Id-Version: Odoo Server 16.0+e-20230415\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-12 08:53+0000\n"
-"PO-Revision-Date: 2023-04-12 08:53+0000\n"
+"POT-Creation-Date: 2023-04-22 13:44+0000\n"
+"PO-Revision-Date: 2023-04-22 13:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__frequency_penalty
+msgid ""
+"\n"
+"                                     Reduce the chance of repeating a token proportionally based on how often it has appeared in the text so far.\n"
+"                                     This decreases the likelihood of repeating the exact same text in a response.\n"
+"                                     "
+msgstr ""
+"\n"
+"避免使用常用词。"
+"聊天机器人会尝试避免在回复中使用频率较高的词汇，以提高回复的多样性和新颖度。"
+"用于控制聊天机器人回复中出现频率过高的词汇的惩罚程度。聊天机器人会尝试避免在回复中使用频率较高的词汇，以提高回复的多样性和新颖度。"
+""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__presence_penalty
+msgid ""
+"\n"
+"                                    Reduce the chance of repeating any token that has appeared in the text at all so far.\n"
+"                                    This increases the likelihood of introducing new topics in a response.\n"
+"                                    "
+msgstr ""
+"\n"
+"避免使用重复词。"
+"越大模型就趋向于生成更新的话题，惩罚已经出现过的文本"
+""
+#. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__max_tokens
+msgid ""
+"\n"
+"                                Set a limit on the number of tokens per model response.\n"
+"                                The API supports a maximum of 4000 tokens shared between the prompt\n"
+"                                (including system message, examples, message history, and user query) and the model's response.\n"
+"                                One token is roughly 4 characters for typical English text.\n"
+"                                "
+msgstr ""
+"\n"
+"最大回复Token\n"
+"Ai接口处理Prompt提问与回复的合计Token不会超过4000，"
+"包括角色设定 + 设定的历史回复 + 问题"
+"1个Token一般可包含4个英文字母"
+""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__temperature
+msgid ""
+"\n"
+"                               Controls randomness. Lowering the temperature means that the model will produce\n"
+"                               more repetitive and deterministic responses.\n"
+"                               Increasing the temperature will result in more unexpected or creative responses.\n"
+"                               Try adjusting temperature or Top P but not both.\n"
+"                                    "
+msgstr ""
+"\n"
+"控制回复的“新颖度”。"
+"值越高，聊天机器人生成的回复越不确定和随机，"
+"值越低，聊天机器人生成的回复会更加可预测和常规化。"
+""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__sys_content
+msgid ""
+"\n"
+"                              Give the model instructions about how it should behave and any context it should reference when generating a response.\n"
+"                              You can describe the assistant’s personality,\n"
+"                              tell it what it should and shouldn’t answer, and tell it how to format responses.\n"
+"                              There’s no token limit for this section, but it will be included with every API call,\n"
+"                              so it counts against the overall token limit.\n"
+"                              "
+msgstr ""
+"Ai角色场景设定。"
+"为Ai设定角色和场景后，Ai即可按你设定要求进行回答。"
+"你可以让Ai专注某领域回答，描述Ai个性。"
+"并告诉Ai应该回答什么，不应该回答什么，并告诉他以何种格式响应。"
+"角色设定会计入整体的会话Token限制和数量。"
+
+#. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__top_p
+msgid ""
+"\n"
+"                         Similar to temperature, this controls randomness but uses a different method.\n"
+"                         Lowering Top P will narrow the model’s token selection to likelier tokens.\n"
+"                         Increasing Top P will let the model choose from tokens with both high and low likelihood.\n"
+"                         Try adjusting temperature or Top P but not both\n"
+"                         "
+msgstr ""
+"语言连贯性，与 temperature 参数类似，用于控制递归联想时的可选择概率。"
+"也是控制回复的“新颖度”。"
+"不同的是，top_p控制的是回复中概率最高的几个可能性的累计概率之和，"
+"值越小，生成的回复越保守，值越大，生成的回复越新颖。"
+
+#. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__stop
+msgid ""
+"\n"
+"                       Use , to separate the stop key word.\n"
+"                       Make responses stop at a desired point, such as the end of a sentence or list.\n"
+"                       Specify up to four sequences where the model will stop generating further tokens in a response.\n"
+"                       The returned text will not contain the stop sequence.\n"
+"                       "
+msgstr ""
+"停止标识。"
+"表示聊天机器人停止生成回复的条件，可以是一段文本或者一个列表，"
+"当聊天机器人生成的回复中包含了这个条件，就会停止继续生成回复。"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_ai_robot__ai_model
@@ -29,6 +134,15 @@ msgid ""
 "GPT-3\tA set of models that can understand and generate natural language\n"
 "                             "
 msgstr ""
+"\n"
+"GPT-4: 最新引擎，更好的智能回复。支持多模态输入如图片，但暂时没开放。\n"
+"GPT-3.5: 问答引擎，可以根据提问回复答案或者代码。\n"
+"DALL·E: 根据要求生成图片。\n"
+"Whisper: 文字转语音引擎。\n"
+"Embeddings:\tA set of models that can convert text into a numerical form\n"
+"CodexLimited: A set of models that can understand and generate code, including translating natural language to code\n"
+"Moderation: A fine-tuned model that can detect whether text may be sensitive or unsafe\n"
+"GPT-3\tA set of models that can understand and generate natural language\n"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -391,6 +505,15 @@ msgid "9:30"
 msgstr ""
 
 #. module: app_chatgpt
+#. odoo-python
+#: code:addons/app_chatgpt/models/mail_channel.py:0
+#: code:addons/app_chatgpt/models/mail_channel.py:0
+#: code:addons/app_chatgpt/models/mail_channel.py:0
+#, python-format
+msgid "<div class=\"o_mail_notification\">joined the channel</div>"
+msgstr ""
+
+#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
@@ -421,19 +544,19 @@ msgid "ABCD"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__ai_completion_tokens
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__ai_completion_tokens
 msgid "AI Completion Tokens"
-msgstr "AI使用Token"
+msgstr "Ai回答Token"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__ai_model
 msgid "AI Model"
-msgstr ""
+msgstr "Ai模型"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__provider
 msgid "AI Provider"
-msgstr ""
+msgstr "Ai服务商"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -492,6 +615,11 @@ msgid "Ai Center(Chatgpt)"
 msgstr "Ai服务中心(Chatgpt)"
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__ai_user_id
+msgid "Ai User"
+msgstr "Ai用户"
+
+#. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__res_users__gpt_policy__all
 msgid "All Users"
 msgstr "所有用户"
@@ -502,9 +630,9 @@ msgid "Allowed Conversation Mode"
 msgstr "对话权限"
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__gpt_wl_users
-msgid "Allowed Users"
-msgstr "指定用户"
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__gpt_wl_partners
+msgid "Allowed Partners"
+msgstr ""
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -561,13 +689,6 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__provider__azure
 msgid "Azure"
-msgstr ""
-
-#. module: app_chatgpt
-#. odoo-python
-#: code:addons/app_chatgpt/models/ai_robot.py:0
-#, python-format
-msgid "Azure no response"
 msgstr ""
 
 #. module: app_chatgpt
@@ -680,7 +801,7 @@ msgid "ChatGPT"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ai.robot,name:app_chatgpt.chatgpt_robot3
+#: model:ai.robot,name:app_chatgpt.chatgpt3_azure
 msgid "ChatGPT Azure"
 msgstr ""
 
@@ -704,6 +825,11 @@ msgstr "ChatGPT机器人【%s】没有设置 api key."
 #. module: app_chatgpt
 #: model:ai.robot,name:app_chatgpt.chatgpt_robot
 msgid "ChatGPT odoo"
+msgstr ""
+
+#. module: app_chatgpt
+#: model:ai.robot,name:app_chatgpt.chatgpt4_azure
+msgid "ChatGPT4 Azure"
 msgstr ""
 
 #. module: app_chatgpt
@@ -787,17 +913,24 @@ msgid "Connect Timout"
 msgstr "上下文连接超时"
 
 #. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__ai_timeout
+msgid "Connect timeout for Ai response"
+msgstr ""
+
+#. module: app_chatgpt
 #: model:ir.model,name:app_chatgpt.model_res_partner
 msgid "Contact"
 msgstr "联系人"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__create_uid
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__create_date
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__create_date
 msgid "Created on"
 msgstr ""
 
@@ -849,6 +982,7 @@ msgstr "讨论频道"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__display_name
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -953,9 +1087,9 @@ msgid "Filter Sensitive Words"
 msgstr "是否启用敏感词过滤"
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__first_ask_time
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__first_ask_time
 msgid "First Ask Time"
-msgstr "首次发问时间"
+msgstr "首次提问"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -978,6 +1112,11 @@ msgstr ""
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "French stick"
+msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__frequency_penalty
+msgid "Frequency penalty"
 msgstr ""
 
 #. module: app_chatgpt
@@ -1040,14 +1179,15 @@ msgid "Hindu"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__human_prompt_tokens
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__human_prompt_tokens
 msgid "Human Prompt Tokens"
-msgstr "人员使用Token"
+msgstr "已提问Token"
 
 #. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__id
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__id
 #, python-format
 msgid "ID"
 msgstr ""
@@ -1325,16 +1465,19 @@ msgstr ""
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot____last_update
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use____last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__write_uid
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__write_date
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__write_date
 msgid "Last Updated on"
 msgstr ""
 
@@ -1399,19 +1542,19 @@ msgid "Mahjong red dragon"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__max_tokens
-msgid "Max Length"
-msgstr ""
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__max_number
+msgid "Max Number of Call"
+msgstr "提问次数限制"
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__max_number
-msgid "Max Number of Call"
-msgstr "最大发问次数"
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__max_tokens
+msgid "Max response"
+msgstr ""
 
 #. module: app_chatgpt
 #: model:ir.model,name:app_chatgpt.model_mail_message
 msgid "Message"
-msgstr "消息"
+msgstr ""
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1537,9 +1680,9 @@ msgid "No robot provider found"
 msgstr "没有设置Ai接口供应方"
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__used_number
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__used_number
 msgid "Number of Used"
-msgstr "已发问次数"
+msgstr "已提问次数"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1653,6 +1796,20 @@ msgid "PC"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__name
+msgid "Partner"
+msgstr "用户"
+
+
+#. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.app_chatgpt_res_users_form
+#: model:ir.actions.act_window,name:app_chatgpt.action_res_partner_ai_use
+#: model:ir.actions.act_window,name:app_chatgpt.action_res_users_2_partner_ai_use
+#: model:ir.ui.menu,name:app_chatgpt.menu_res_partner_ai_use
+msgid "Partner Ai Use"
+msgstr "用户Ai对话用量"
+
+#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
@@ -1683,6 +1840,18 @@ msgid "Please Set your AI robot's endpoint first."
 msgstr ""
 
 #. module: app_chatgpt
+#. odoo-python
+#: code:addons/app_chatgpt/models/mail_channel.py:0
+#, python-format
+msgid "Please warmly welcome our new partner %s and send him the best wishes."
+msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__presence_penalty
+msgid "Presence penalty"
+msgstr ""
+
+#. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_ai_robot__openapi_api_key
 msgid "Provide the API key here"
 msgstr ""
@@ -1693,6 +1862,28 @@ msgstr ""
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "Puck"
+msgstr ""
+
+#. module: app_chatgpt
+#. odoo-python
+#: code:addons/app_chatgpt/models/ai_robot.py:0
+#: code:addons/app_chatgpt/models/ai_robot.py:0
+#: code:addons/app_chatgpt/models/mail_channel.py:0
+#, python-format
+msgid "Response Timeout, please speak again."
+msgstr ""
+
+#. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_form_view
+msgid "Robot Name"
+msgstr ""
+
+#. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_form_view
+msgid ""
+"Role-playing and scene setting.Give the model instructions about how it "
+"should behave and any context it should reference when generating a "
+"response."
 msgstr ""
 
 #. module: app_chatgpt
@@ -1794,17 +1985,17 @@ msgstr "使用此文件进行基础过滤 models/lib/sensi_words.txt"
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "排序"
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__service_end_date
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__service_end_date
 msgid "Service End Date"
-msgstr "服务到期时间"
+msgstr "服务到期日期"
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__service_start_date
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__service_start_date
 msgid "Service Start Date"
-msgstr "服务开始时间"
+msgstr "服务开始日期"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1858,6 +2049,11 @@ msgid "Statue of Liberty"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__stop
+msgid "Stop sequences"
+msgstr ""
+
+#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
@@ -1867,12 +2063,17 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_config_settings__openai_sync_config
 msgid "Sync Config"
-msgstr "响应模式"
+msgstr "同步配置"
 
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__res_config_settings__openai_sync_config__sync
 msgid "Synchronous"
 msgstr "同步响应"
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__sys_content
+msgid "System message"
+msgstr ""
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1953,6 +2154,11 @@ msgid "Temperature"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__ai_timeout
+msgid "Timeout(seconds)"
+msgstr ""
+
+#. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
 msgid "Timout then disconnect(s)"
 msgstr ""
@@ -1964,6 +2170,16 @@ msgstr ""
 #, python-format
 msgid "Titania"
 msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__token_allow
+msgid "Token Allow"
+msgstr "Token限额"
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__token_balance
+msgid "Token Balance"
+msgstr "Token余量"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1980,9 +2196,19 @@ msgid "Tokyo tower"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_res_users__tokens_total
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__top_p
+msgid "Top probabilities"
+msgstr ""
+
+#. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.res_partner_ai_use_tree_view
+msgid "Total"
+msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__tokens_total
 msgid "Total Tokens"
-msgstr "总使用Token量"
+msgstr "总Token用量"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -2040,11 +2266,6 @@ msgstr ""
 #, python-format
 msgid "UP! button"
 msgstr ""
-
-#. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.app_chatgpt_res_users_form
-msgid "Usage"
-msgstr "使用情况"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_ai_robot__is_filtering
@@ -27194,6 +27415,26 @@ msgid "ココ"
 msgstr ""
 
 #. module: app_chatgpt
+#. odoo-python
+#: code:addons/app_chatgpt/models/mail_channel.py:0
+#, python-format
+msgid "此Ai暂时未开放，请联系管理员。"
+msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model,name:app_chatgpt.model_res_partner_ai_use
+msgid "消费者Ai使用情况"
+msgstr ""
+
+#. module: app_chatgpt
+#. odoo-python
+#: code:addons/app_chatgpt/models/ai_robot.py:0
+#: code:addons/app_chatgpt/models/mail_channel.py:0
+#, python-format
+msgid "温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。"
+msgstr ""
+
+#. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_res_config_settings__openapi_context_timeout
-msgid "多少秒以内的聊天信息作为上下文继续"
+msgid "群聊中多少分钟以内的聊天信息作为上下文继续"
 msgstr ""
