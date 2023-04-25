@@ -170,7 +170,8 @@ GPT-3	A set of models that can understand and generate natural language
                         'ai_completion_tokens': completion_tokens,
                         'tokens_total': total_tokens,
                         'used_number': 1,
-                        'first_ask_time': ask_date
+                        'first_ask_time': ask_date,
+                        'latest_ask_time': ask_date
                     })
                 else:
                     vals = {
@@ -178,6 +179,7 @@ GPT-3	A set of models that can understand and generate natural language
                         'ai_completion_tokens': ai_use.ai_completion_tokens + completion_tokens,
                         'tokens_total': ai_use.tokens_total + total_tokens,
                         'used_number': ai_use.used_number + 1,
+                        'latest_ask_time': ask_date
                     }
                     if not ai_use.first_ask_time:
                         vals.update({

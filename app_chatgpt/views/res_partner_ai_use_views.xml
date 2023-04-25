@@ -8,6 +8,7 @@
                 <field name="name"/>
                 <field name="ai_user_id" optional="show"/>
                 <field name="first_ask_time" optional="show"/>
+                <field name="latest_ask_time" optional="show"/>
                 <field name="service_start_date" optional="show"/>
                 <field name="service_end_date" optional="show"/>
                 <field name="used_number" sum="Total" optional="hide"/>
@@ -35,6 +36,7 @@
                         <group>
                             <field name="ai_user_id"/>
                             <field name="first_ask_time"/>
+                            <field name="latest_ask_time"/>
                             <field name="service_start_date"/>
                             <field name="service_end_date"/>
                             <field name="used_number" readonly="True"/>
