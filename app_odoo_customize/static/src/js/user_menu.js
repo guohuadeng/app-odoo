@@ -32,8 +32,12 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
             userMenuRegistry.add("documentation", documentationItem, {'force': true});
         }
         if (session.app_show_support) {
-            userMenuRegistry.add("support", supportItem, {'force': true})
-        } else if (userMenuRegistry.get('support')) {
+            try {
+                userMenuRegistry.add("support", supportItem, {'force': true})
+            } catch (err) {
+                console.log(err);
+            }
+        } else if (userMenuRegistry.get('support', false)) {
             try {
                 userMenuRegistry.remove("support");
             } catch (err) {
