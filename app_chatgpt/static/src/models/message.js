@@ -15,12 +15,16 @@ registerPatch({
             if ('ai_completion_tokens' in data) {
                 data2.ai_completion_tokens = data.ai_completion_tokens;
             }
+            if ('is_ai' in data) {
+                data2.is_ai = data.is_ai;
+            }
             return data2;
         },
     },
     fields: {
         human_prompt_tokens: attr(),
         ai_completion_tokens: attr(),
+        is_ai: attr(),
 
     }
 })

@@ -67,6 +67,7 @@ class Channel(models.Model):
         if res:
             res = res.replace('\n', '<br/>')
             new_msg = channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
+            new_msg.write({'is_ai': True})
             if usage:
                 prompt_tokens = usage['prompt_tokens']
                 completion_tokens = usage['completion_tokens']

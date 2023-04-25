@@ -10,6 +10,8 @@ class Message(models.Model):
     ai_completion_tokens = fields.Integer('AI Completion Tokens')
     cost_tokens = fields.Integer('Cost Tokens')
 
+    is_ai = fields.Boolean('Is Ai', default=False)
+
     def _message_add_reaction(self, content):
         super(Message, self)._message_add_reaction(content)
         if self.create_uid.gpt_id:
@@ -24,4 +26,5 @@ class Message(models.Model):
             message['human_prompt_tokens'] = message_sudo.human_prompt_tokens
             message['ai_completion_tokens'] = message_sudo.ai_completion_tokens
             message['cost_tokens'] = message_sudo.cost_tokens
+            message['is_ai'] = message_sudo.is_ai
         return message_values
