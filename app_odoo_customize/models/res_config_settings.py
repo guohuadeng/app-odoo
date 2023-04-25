@@ -15,18 +15,18 @@ class ResConfigSettings(models.TransientModel):
                                   default='odooAi', config_parameter='app_system_name')
     app_show_lang = fields.Boolean('Show Quick Language Switcher',
                                    help="When enable,User can quick switch language in user menu",
-                                   default=True, config_parameter='app_show_lang')
+                                   config_parameter='app_show_lang')
     app_show_debug = fields.Boolean('Show Quick Debug', help="When enable,everyone login can see the debug menu",
                                     default=True, config_parameter='app_show_debug')
     app_show_documentation = fields.Boolean('Show Documentation', help="When enable,User can visit user manual",
-                                            default=True, config_parameter='app_show_documentation')
+                                            default=False, config_parameter='app_show_documentation')
     # 停用
     app_show_documentation_dev = fields.Boolean('Show Developer Documentation',
                                                 help="When enable,User can visit development documentation")
     app_show_support = fields.Boolean('Show Support', help="When enable,User can vist your support site",
-                                      default=True, config_parameter='app_show_support')
+                                      config_parameter='app_show_support')
     app_show_account = fields.Boolean('Show My Account', help="When enable,User can login to your website",
-                                      default=True, config_parameter='app_show_account')
+                                      default=False, config_parameter='app_show_account')
     app_show_enterprise = fields.Boolean('Show Enterprise Tag', help="Uncheck to hide the Enterprise tag",
                                          default=False, config_parameter='app_show_enterprise')
     app_show_share = fields.Boolean('Show Share Dashboard', help="Uncheck to hide the Odoo Share Dashboard",
