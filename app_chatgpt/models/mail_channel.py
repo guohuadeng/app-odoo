@@ -67,7 +67,6 @@ class Channel(models.Model):
         if res:
             res = res.replace('\n', '<br/>')
             new_msg = channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
-            new_msg.write({'is_ai': True})
             if usage:
                 prompt_tokens = usage['prompt_tokens']
                 completion_tokens = usage['completion_tokens']
@@ -210,3 +209,8 @@ class Channel(models.Model):
 
         return rdata
 
+    def _message_post_after_hook(self, message, msg_vals):
+        if message.author_id.gpt_id:
+            if msg_vals['body'] not in [_('Response Timeout, please speak again.'), _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。')]:
+                message.is_ai = True
+        return super(Channel, self)._message_post_after_hook(message, msg_vals)
