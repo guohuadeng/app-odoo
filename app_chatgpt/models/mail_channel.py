@@ -197,9 +197,10 @@ class Channel(models.Model):
                 if c_history:
                     messages += c_history
                 messages.append({"role": "user", "content": msg})
-                # msg_len = sum(len(str(m)) for m in messages)
-                # if msg_len * 2 >= 2049:
-                #     messages = [{"role": "user", "content": msg}]
+                msg_len = sum(len(str(m)) for m in messages)
+                # 接口最大接收 8430 Token
+                if msg_len * 2 >= 8000:
+                    messages = [{"role": "user", "content": msg}]
                 if sync_config == 'sync':
                     self.get_ai_response(ai, messages, channel, user_id, message)
                 else:

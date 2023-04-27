@@ -149,6 +149,7 @@ GPT-3	A set of models that can understand and generate natural language
                 # openai 格式处理
                 usage = res['usage']
                 content = res['choices'][0]['message']['content']
+                # _logger.warning('===========Ai响应:%s' % content)
             else:
                 # azure 格式
                 usage = json.loads(json.dumps(res['usage']))
@@ -298,7 +299,7 @@ GPT-3	A set of models that can understand and generate natural language
             except Exception as e:
                 _logger.warning("Get Response Json failed: %s", e)
             else:
-                _logger.warning('=====================Openai output data: %s' % response)
+                _logger.warning('=====================Openai output data: %s' % response.json())
         elif self.ai_model == 'dall-e2':
             # todo: 处理 图像引擎，主要是返回参数到聊天中
             # image_url = response['data'][0]['url']
@@ -378,7 +379,7 @@ GPT-3	A set of models that can understand and generate natural language
         if 'choices' in response:
             return response
         else:
-            _logger.warning('=====================azure output data: %s' % response)
+            _logger.warning('=====================azure output data: %s' % response.json())
         return _("Response Timeout, please speak again.")
 
     @api.onchange('provider')
