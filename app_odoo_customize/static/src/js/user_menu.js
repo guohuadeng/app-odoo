@@ -35,13 +35,13 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
             try {
                 userMenuRegistry.add("support", supportItem, {'force': true})
             } catch (err) {
-                console.log(err);
+                ;
             }
         } else if (userMenuRegistry.get('support', false)) {
             try {
                 userMenuRegistry.remove("support");
             } catch (err) {
-                console.log(err);
+                ;
             }
         }
         if (session.app_show_account) {
@@ -50,7 +50,7 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
             try {
                 userMenuRegistry.remove("odoo_account");
             } catch (err) {
-                console.log(err);
+                ;
             }
         }
     },
@@ -58,7 +58,7 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
     async setLang(lang_code) {
         // alert(lang_code);
         browser.clearTimeout(this.toggleTimer);
-        if (this.user.lang != lang_code) {
+        if (this.user.lang !== lang_code) {
             const res = await this.orm.call("res.users", "write", [
                 session.uid, {'lang': lang_code}
             ]);
