@@ -24,7 +24,7 @@ msgid ""
 "                                     "
 msgstr ""
 "\n"
-"避免使用常用词。聊天机器人会尝试避免在回复中使用频率较高的词汇，以提高回复的多样性和新颖度。用于控制聊天机器人回复中出现频率过高的词汇的惩罚程度。聊天机器人会尝试避免在回复中使用频率较高的词汇，以提高回复的多样性和新颖度。"
+"-2~2，避免使用常用词。聊天机器人会尝试避免在回复中使用频率较高的词汇，以提高回复的多样性和新颖度。用于控制聊天机器人回复中出现频率过高的词汇的惩罚程度。聊天机器人会尝试避免在回复中使用频率较高的词汇，以提高回复的多样性和新颖度。"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_ai_robot__presence_penalty
@@ -35,7 +35,7 @@ msgid ""
 "                                    "
 msgstr ""
 "\n"
-"避免使用重复词。越大模型就趋向于生成更新的话题，惩罚已经出现过的文本"
+"-2~2，避免使用重复词。越大模型就趋向于生成更新的话题，惩罚已经出现过的文本"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_ai_robot__max_tokens
@@ -62,7 +62,7 @@ msgid ""
 "                                    "
 msgstr ""
 "\n"
-"控制回复的“新颖度”。值越高，聊天机器人生成的回复越不确定和随机，值越低，聊天机器人生成的回复会更加可预测和常规化。"
+"0~2，控制回复的“新颖度”。值越高，聊天机器人生成的回复越不确定和随机，值越低，聊天机器人生成的回复会更加可预测和常规化。"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_ai_robot__sys_content
@@ -87,7 +87,7 @@ msgid ""
 "                         Try adjusting temperature or Top P but not both\n"
 "                         "
 msgstr ""
-"语言连贯性，与 temperature "
+"0~1，语言连贯性。与 temperature "
 "参数类似，用于控制递归联想时的可选择概率。也是控制回复的“新颖度”。不同的是，top_p控制的是回复中概率最高的几个可能性的累计概率之和，值越小，生成的回复越保守，值越大，生成的回复越新颖。"
 
 #. module: app_chatgpt

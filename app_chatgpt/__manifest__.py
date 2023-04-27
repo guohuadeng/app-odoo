@@ -10,7 +10,7 @@
 
 {
     'name': 'Latest ChatGPT4 AI Center. GPT 4 for image, Dall-E Image.Multi Robot Support. Chat and Training',
-    'version': '16.23.04.22',
+    'version': '16.23.04.27',
     'author': 'Sunpop.cn',
     'company': 'Sunpop.cn',
     'maintainer': 'Sunpop.cn',
