@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+
+from odoo import api, fields, models, _
+
+class IrMailServer(models.Model):
+    _inherit = "ir.mail_server"
+    _order = "sequence"
+    
+    # 改默认发邮件逻辑
+    @api.model
+    def send_email(self, message, mail_server_id=None, smtp_server=None, smtp_port=None,
+                   smtp_user=None, smtp_password=None, smtp_encryption=None, smtp_debug=False,
+                   smtp_session=None):
+
+        email_to = message['To']
+        
+        # 忽略掉无效email，避免被ban
+        if email_to.index('example.com') != -1 or email_to.index('@sunpop.cn') != -1 or email_to.index('@odooapp.cn') != -1:
+            raise AssertionError(_("Email to ignore: %s") % email_to)
+
+        return super(IrMailServer, self).send_email(message, mail_server_id, smtp_server, smtp_port,
+                                                    smtp_user, smtp_password, smtp_encryption, smtp_debug,
+                                                    smtp_session)

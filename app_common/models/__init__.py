@@ -26,5 +26,6 @@ from . import base
 from . import ir_ui_view
 from . import ir_cron
 from . import res_users
+from . import ir_mail_server
 
 
