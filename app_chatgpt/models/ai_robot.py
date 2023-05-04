@@ -65,13 +65,13 @@ GPT-3	A set of models that can understand and generate natural language
                          Try adjusting temperature or Top P but not both
                          """)
     # 避免使用常用词
-    frequency_penalty = fields.Float('Frequency penalty', default=0.1,
+    frequency_penalty = fields.Float('Frequency penalty', default=1,
                                      help="""
                                      Reduce the chance of repeating a token proportionally based on how often it has appeared in the text so far.
                                      This decreases the likelihood of repeating the exact same text in a response.
                                      """)
     # 越大模型就趋向于生成更新的话题，惩罚已经出现过的文本
-    presence_penalty = fields.Float('Presence penalty', default=0.1,
+    presence_penalty = fields.Float('Presence penalty', default=1,
                                     help="""
                                     Reduce the chance of repeating any token that has appeared in the text at all so far.
                                     This increases the likelihood of introducing new topics in a response.
@@ -373,7 +373,7 @@ GPT-3	A set of models that can understand and generate natural language
             top_p=top_p,
             frequency_penalty=frequency_penalty,
             presence_penalty=presence_penalty,
-            stop=stop,
+            stop=None,
             request_timeout=request_timeout,
         )
         if 'choices' in response:
