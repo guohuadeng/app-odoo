@@ -2,6 +2,9 @@
 
 from odoo import api, fields, models, _
 
+import logging
+_logger = logging.getLogger(__name__)
+
 class IrMailServer(models.Model):
     _inherit = "ir.mail_server"
     _order = "sequence"
@@ -16,6 +19,7 @@ class IrMailServer(models.Model):
         
         # 忽略掉无效email，避免被ban
         if email_to.index('example.com') != -1 or email_to.index('@sunpop.cn') != -1 or email_to.index('@odooapp.cn') != -1:
+            _logger.error(_("=================Email to ignore: %s") % email_to)
             raise AssertionError(_("Email to ignore: %s") % email_to)
 
         return super(IrMailServer, self).send_email(message, mail_server_id, smtp_server, smtp_port,
