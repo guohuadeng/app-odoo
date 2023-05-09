@@ -18,7 +18,7 @@ class IrMailServer(models.Model):
         email_to = message['To']
         
         # 忽略掉无效email，避免被ban
-        if email_to.index('example.com') != -1 or email_to.index('@sunpop.cn') != -1 or email_to.index('@odooapp.cn') != -1:
+        if email_to.find('example.com') != -1 or email_to.find('@sunpop.cn') != -1 or email_to.find('@odooapp.cn') != -1:
             _logger.error(_("=================Email to ignore: %s") % email_to)
             raise AssertionError(_("Email to ignore: %s") % email_to)
 

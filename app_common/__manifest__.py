@@ -33,7 +33,7 @@
 
 {
     'name': "Sunpop Odooapp Common Func",
-    'version': '16.23.05.04',
+    'version': '16.23.05.09',
     'author': 'Sunpop.cn',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
@@ -63,7 +63,7 @@
     5. Odoo 16, 企业版，社区版，多版本支持
     ''',
     'depends': [
-        'base',
+        'mail',
         'web',
     ],
     'data': [
