@@ -139,6 +139,7 @@ class Channel(models.Model):
                     partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id)[:1]
                     user_id = partners.mapped('user_ids')[:1]
             if user_id:
+                # todo: 此处理不判断，将此处逻辑迁移至 get_ai_pre， 非ai回复的直接内容注意设置为 is_ai=false
                 gpt_policy = user_id.gpt_policy
                 gpt_wl_partners = user_id.gpt_wl_partners
                 is_allow = message.author_id.id in gpt_wl_partners.ids
