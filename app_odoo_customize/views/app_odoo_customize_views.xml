@@ -9,7 +9,7 @@
     <!--    end-->
     <template id="replace_login" name="Login Layout" inherit_id="web.login_layout">
         <xpath expr="//a[@target='_blank']" position="replace">
-            <a href="https://www.sunpop.cn" target="_blank">Powered by
+            <a href="https://www.odooai.cn" target="_blank">Powered by
                 <span>odooAi</span>
             </a>
         </xpath>

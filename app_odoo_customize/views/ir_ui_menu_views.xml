@@ -37,7 +37,7 @@
 <!--        </record>-->
         <menuitem
                 id="menu_app_group"
-                name="odooApp"
+                name="odooAi"
                 parent="base.menu_administration"
                 sequence="1"
                 groups="base.group_system"/>

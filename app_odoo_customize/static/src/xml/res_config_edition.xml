@@ -3,7 +3,7 @@
     <t t-extend="res_config_edition">
         <t t-jquery=".user-heading h3" t-operation="replace">
             <h3>
-                odooAi <t t-esc="widget.server_version"/> (Sunpop.cn Professional Edition)
+                odooAi <t t-esc="widget.server_version"/> (odooAi.cn Edition)
             </h3>
         </t>
     </t>
