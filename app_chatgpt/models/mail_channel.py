@@ -125,7 +125,7 @@ class Channel(models.Model):
                     # 2个人的非私有频道不处理
                     pass
                 else:
-                    partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id)[:1]
+                    partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id and r != message.author_id)[:1]
                     user_id = partners.mapped('user_ids')[:1]
             elif not message.author_id.gpt_id:
                 # 没有@时，默认第一个robot
@@ -201,8 +201,19 @@ class Channel(models.Model):
                 messages.append({"role": "user", "content": msg})
                 msg_len = sum(len(str(m)) for m in messages)
                 # 接口最大接收 8430 Token
-                if msg_len * 2 >= 8000:
-                    messages = [{"role": "user", "content": msg}]
+                if msg_len * 2 > ai.max_send_char:
+                    messages = []
+                    if hasattr(channel, 'is_private') and channel.description:
+                        messages.append({"role": "system", "content": channel.description})
+                    messages.append({"role": "user", "content": msg})
+                    msg_len = sum(len(str(m)) for m in messages)
+                    if msg_len * 2 > ai.max_send_char:
+                        new_msg = channel.with_user(user_id).message_post(body=_('您所发送的提示词已超长。'), message_type='comment',
+                                                                          subtype_xmlid='mail.mt_comment',
+                                                                          parent_id=message.id)
+
+                    # if msg_len * 2 >= 8000:
+                    # messages = [{"role": "user", "content": msg}]
                 if sync_config == 'sync':
                     self.get_ai_response(ai, messages, channel, user_id, message)
                 else:
@@ -214,6 +225,7 @@ class Channel(models.Model):
 
     def _message_post_after_hook(self, message, msg_vals):
         if message.author_id.gpt_id:
-            if msg_vals['body'] not in [_('Response Timeout, please speak again.'), _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。')]:
+            if msg_vals['body'] not in [_('Response Timeout, please speak again.'), _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。'),
+                                        _('此Ai暂时未开放，请联系管理员。'), _('您所发送的提示词已超长。')]:
                 message.is_ai = True
         return super(Channel, self)._message_post_after_hook(message, msg_vals)

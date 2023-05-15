@@ -102,6 +102,8 @@ GPT-3	A set of models that can understand and generate natural language
     sensitive_words = fields.Text('Sensitive Words Plus', help='Sensitive word filtering. Separate keywords with a carriage return.')
     is_filtering = fields.Boolean('Filter Sensitive Words', default=False, help='Use base Filter in dir models/lib/sensi_words.txt')
 
+    max_send_char = fields.Integer('Max Send Char', help='Max Send Prompt Length', default=8000)
+
     def action_disconnect(self):
         requests.delete('https://chatgpt.com/v1/disconnect')
 
