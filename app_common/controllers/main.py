@@ -26,7 +26,7 @@ class AppController(http.Controller):
         # 返回这个图片的base64编码
         return base64.b64encode(BytesIO(response.content).read())
 
-    @http.route('/web/ua/show', auth='public', methods=['GET'])
+    @http.route(['/web/ua', '/web/ua/show'], auth='public', methods=['GET'])
     def app_ua_show(self):
         # https://github.com/selwin/python-user-agents
         ua_string = request.httprequest.headers.get('User-Agent')
@@ -67,7 +67,7 @@ class AppController(http.Controller):
             utype = 'wxapp'
         elif 'MicroMessenger' in ua:
             # 微信浏览器
-            utype = 'wxweb'
+            utype = 'wx'
         elif 'cn.erpapp.o20sticks.App' in ua:
             # 安卓app
             utype = 'native_android'
