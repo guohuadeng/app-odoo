@@ -117,6 +117,14 @@ GPT-3	A set of models that can understand and generate natural language
             if sensi is not None:
                 _logger.error('==========敏感词：%s' % sensi['Keyword'])
                 return _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。')
+        elif not author_id.gpt_id and answer_id.gpt_id:
+            user_id = answer_id.user_ids[:1]
+            gpt_policy = user_id.gpt_policy
+            gpt_wl_partners = user_id.gpt_wl_partners
+            is_allow = author_id.id in gpt_wl_partners.ids
+            if gpt_policy != 'all' and not is_allow:
+                # 暂时有限用户的Ai
+                return _('此Ai暂时未开放，请联系管理员。')
         else:
             return False
 
