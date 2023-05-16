@@ -162,6 +162,11 @@ class Channel(models.Model):
 
         if not msg:
             return rdata
+
+        if self._context.get('app_ai_sync_config') and self._context.get('app_ai_sync_config') in ['sync', 'async']:
+            sync_config = self._context.get('app_ai_sync_config')
+        else:
+            sync_config = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openai_sync_config')
         # api_key = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_api_key')
         # ai处理，不要自问自答
         if ai and answer_id != message.author_id:
@@ -173,7 +178,6 @@ class Channel(models.Model):
                 openapi_context_timeout = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_context_timeout')) or 60
             except:
                 openapi_context_timeout = 60
-            sync_config = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openai_sync_config')
             openai.api_key = api_key
             # 非4版本，取0次。其它取3 次历史
             if '4' in ai.ai_model:
@@ -229,3 +233,26 @@ class Channel(models.Model):
                                         _('此Ai暂时未开放，请联系管理员。'), _('您所发送的提示词已超长。')]:
                 message.is_ai = True
         return super(Channel, self)._message_post_after_hook(message, msg_vals)
+
+    @api.model
+    def _get_my_last_cid(self):
+        # 获取当前用户最后一次进入的channel，返回该channel的id
+        # todo: 优化，每次聊天进入时就 write
+        user = self.env.user
+        msgs = self.env['mail.message'].sudo().search([
+            ('model', '=', 'mail.channel'),
+            ('author_id', '=', user.partner_id.id),
+        ], limit=3, order='id desc')
+        c_id = 0
+        c = self
+        for m in msgs:
+            c = self.browse(m.res_id)
+            if c.is_member:
+                c_id = c.id
+                break
+        if not c_id:
+            c = self.env.ref('app_chatgpt.channel_chatgpt', raise_if_not_found=False)
+            c_id = c.id or False
+        if c and not c.is_member:
+            c.sudo().add_members([user.partner_id.id])
+        return c_id
