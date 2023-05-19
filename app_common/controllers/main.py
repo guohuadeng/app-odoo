@@ -67,7 +67,7 @@ class AppController(http.Controller):
             utype = 'wxapp'
         elif 'MicroMessenger' in ua:
             # 微信浏览器
-            utype = 'wx'
+            utype = 'wxweb'
         elif 'cn.erpapp.o20sticks.App' in ua:
             # 安卓app
             utype = 'native_android'
