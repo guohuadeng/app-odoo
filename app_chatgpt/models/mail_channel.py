@@ -65,7 +65,9 @@ class Channel(models.Model):
         param = self.get_ai_config(ai)
         res, usage, is_ai = ai.get_ai(messages, author_id, answer_id, param)
         if res:
-            res = res.replace('\n', '<br/>')
+            if self.get_ua_type() != 'wxweb':
+                # 处理当微信语音返回时，是直接回文本信息，不需要转换回车
+                res = res.replace('\n', '<br/>')
             new_msg = channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
             if usage:
                 prompt_tokens = usage['prompt_tokens']
