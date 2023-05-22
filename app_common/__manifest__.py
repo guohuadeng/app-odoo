@@ -67,9 +67,6 @@
         'web',
     ],
     'data': [
-        # 'security/*.xml',
-        # 'security/ir.model.access.csv',
-        # 'data/.xml',
         'views/ir_cron_views.xml',
         # 'report/.xml',
     ],
