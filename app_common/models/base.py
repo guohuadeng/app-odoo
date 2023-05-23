@@ -130,6 +130,7 @@ def get_ua_type():
     # MicroMessenger: Mozilla/5.0 (Linux; Android 10; ELE-AL00 Build/HUAWEIELE-AL00; wv)
     # AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.62 XWEB/2767 MMWEBSDK/20210302 Mobile Safari/537.36 MMWEBID/6689 MicroMessenger/8.0.2.1860(0x2800023B) Process/appbrand2 WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64
     # MiniProgramEnv/android
+    # 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_7_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.37(0x18002529) NetType/WIFI Language/zh_CN'
     # 微信浏览器，开发工具，小程序，iphone
     # Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1
     # wechatdevtools/1.03.2011120 MicroMessenger/7.0.4 Language/zh_CN webview/
@@ -142,7 +143,8 @@ def get_ua_type():
     # web 表示普通浏览器，后续更深入处理
     utype = 'web'
     # todo: 引入现成 py lib，处理企业微信
-    if 'MicroMessenger' in ua and 'webdebugger' not in ua and ('MiniProgramEnv' in ua or 'wechatdevtools' in ua):
+    if 'MicroMessenger' in ua and 'webdebugger' not in ua \
+        and ('miniProgram' in ua or 'MiniProgram' in ua or 'MiniProgramEnv' in ua or 'wechatdevtools' in ua):
         # 微信小程序及开发者工具
         utype = 'wxapp'
     elif 'MicroMessenger' in ua:

@@ -19,6 +19,8 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
         this.app_lang_list = session.app_lang_list;
         //todo: 演习 shortCutsItem 中的用法，当前是直接 xml 写了展现
 
+        userMenuRegistry.add("refresh_current", refresh_current, {'force': true});
+
         if (session.app_show_lang) {
             userMenuRegistry.add("separator1", separator1, {'force': true})
         }
@@ -164,5 +166,17 @@ function odooAccountItem(env) {
             browser.open(app_account_url, "_blank");
         },
         sequence: 60,
+    };
+}
+
+function refresh_current(env) {
+    return {
+        type: "item",
+        id: "refresh_current",
+        description: env._t("Refresh Page"),
+        callback: () => {
+            location.reload();
+        },
+        sequence: 58,
     };
 }
