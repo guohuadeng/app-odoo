@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e-20230320\n"
+"Project-Id-Version: Odoo Server 16.0+e-20230423\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-24 12:06+0000\n"
-"PO-Revision-Date: 2023-03-24 12:06+0000\n"
+"POT-Creation-Date: 2023-05-24 13:01+0000\n"
+"PO-Revision-Date: 2023-05-24 13:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,8 +19,8 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/app_odoo_customize/static/src/xml/res_config_edition.xml:0
 #, python-format
-msgid "(Sunpop.cn Professional Edition)"
-msgstr "(Sunpop.cn 专业版)"
+msgid "(odooAi.cn Edition)"
+msgstr "(odooAi.cn 智能版)"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -345,8 +345,24 @@ msgstr "您确认要删除指定数据？"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.replace_login
-msgid "Powered by <span>odooApp</span>"
-msgstr "技术支持 <span>Sunpop.cn</span>"
+msgid ""
+"Powered by\n"
+"                <span>odooAi.cn</span>"
+msgstr "技术支持 <span>odooAi.cn</span>"
+
+#. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/user_menu.js:0
+#, python-format
+msgid "Preferences"
+msgstr ""
+
+#. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/user_menu.js:0
+#, python-format
+msgid "Refresh Page"
+msgstr "刷新本页"
 
 #. module: app_odoo_customize
 #: model:ir.actions.server,name:app_odoo_customize.action_server_module_multi_refresh_po
@@ -568,10 +584,10 @@ msgstr "启用后，会显示快速调试菜单"
 #: code:addons/app_odoo_customize/static/src/xml/res_config_edition.xml:0
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_group
 #, python-format
-msgid "odooApp"
-msgstr "odooApp"
+msgid "odooAi"
+msgstr "odooAi欧度智能"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "odooApp Customize Settings"
-msgstr "odooApp 定制化设置"
+msgid "odooAi Customize Settings"
+msgstr "odooAi 定制化设置"

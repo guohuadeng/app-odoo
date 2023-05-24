@@ -27,7 +27,7 @@ class AccountAccount(models.Model):
 
     parent_id = fields.Many2one('account.account', 'Parent Chart', index=True, ondelete='cascade')
     child_ids = fields.One2many('account.account', 'parent_id', 'Child Chart')
-    parent_path = fields.Char(index=True)
+    parent_path = fields.Char(index=True, unaccent=False)
 
     @api.model
     def _search_new_account_code(self, company, digits, prefix):
