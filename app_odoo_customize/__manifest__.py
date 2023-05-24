@@ -130,6 +130,7 @@
     38. Add Draggable Dialog enable.
     39. Only erp manager can see debug menu..
     40. Fix support for enterprise version.
+    41. Fix odoo bug, when click Preferences menu not hide in mobile.
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -177,5 +178,6 @@
     38. 对话框可拖拽
     39. 只有系统管理员可以操作快速debug
     40. 增强对企业版的支持
+    41. 修正odoo原生移动端菜单bug，点击个人设置时，原菜单不隐藏等
     """,
 }

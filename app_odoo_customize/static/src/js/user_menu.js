@@ -38,7 +38,7 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
                             m[0].click();
                         }
                     } catch (e) {
-                        console.log(e);
+                        ;
                     }
                     env.services.action.doAction(actionDescription);
                     //修正 bug，在移动端不会关闭本身
