@@ -1,4 +1,6 @@
 /** @odoo-module **/
+/* jshint esversion: 6 */
+
 
 import { UserMenu } from "@web/webclient/user_menu/user_menu";
 import { routeToUrl } from "@web/core/browser/router_service";
@@ -11,6 +13,7 @@ const userMenuRegistry = registry.category("user_menuitems");
 
 patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
     setup() {
+        "use strict";
         this._super.apply(this, arguments);
         // this.companyService = useService("company");
         this.rpc = useService("rpc");
@@ -19,6 +22,31 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
         this.app_lang_list = session.app_lang_list;
         //todo: 演习 shortCutsItem 中的用法，当前是直接 xml 写了展现
 
+        //修正 bug，在移动端不会关闭本身
+        //o_burger_menu position-fixed top-0 bottom-0 start-100 d-flex flex-column flex-nowrap burgerslide burgerslide-enter-active
+        function preferencesItem(env) {
+            return {
+                type: "item",
+                id: "settings",
+                description: env._t("Preferences"),
+                callback: async function () {
+                    const actionDescription = await env.services.orm.call("res.users", "action_get");
+                    actionDescription.res_id = env.services.user.userId;
+                    try {
+                        let m = document.getElementsByClassName("o_burger_menu_close");
+                        if (m) {
+                            m[0].click();
+                        }
+                    } catch (e) {
+                        console.log(e);
+                    }
+                    env.services.action.doAction(actionDescription);
+                    //修正 bug，在移动端不会关闭本身
+                },
+                sequence: 50,
+            };
+        }
+        userMenuRegistry.add("profile", preferencesItem, {'force': true, 'menu': this});
         userMenuRegistry.add("refresh_current", refresh_current, {'force': true});
 
         if (session.app_show_lang) {
@@ -35,7 +63,7 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
         }
         if (session.app_show_support) {
             try {
-                userMenuRegistry.add("support", supportItem, {'force': true})
+                userMenuRegistry.add("support", supportItem, {'force': true});
             } catch (err) {
                 ;
             }
@@ -58,6 +86,7 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
     },
 
     async setLang(lang_code) {
+        "use strict";
         // alert(lang_code);
         browser.clearTimeout(this.toggleTimer);
         if (this.user.lang !== lang_code) {
@@ -75,6 +104,7 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
 });
 
 function debugItem(env) {
+    "use strict";
     const url_debug = $.param.querystring(window.location.href, 'debug=1');
     return {
         type: "item",
@@ -89,6 +119,7 @@ function debugItem(env) {
 }
 
 function activateAssetsDebugging(env) {
+    "use strict";
     return {
         type: "item",
         description: env._t("Activate Assets Debugging"),
@@ -100,6 +131,7 @@ function activateAssetsDebugging(env) {
 }
 
 function leaveDebugMode(env) {
+    "use strict";
     return {
         type: "item",
         description: env._t("Leave the Developer Tools"),
@@ -113,6 +145,7 @@ function leaveDebugMode(env) {
 }
 
 function separator1() {
+    "use strict";
     return {
         type: "separator",
         sequence: 1,
@@ -120,6 +153,7 @@ function separator1() {
 }
 
 function separator10() {
+    "use strict";
     return {
         type: "separator",
         sequence: 10,
@@ -127,6 +161,7 @@ function separator10() {
 }
 
 function documentationItem(env) {
+    "use strict";
     const documentationURL = session.app_documentation_url;
     return {
         type: "item",
@@ -141,6 +176,7 @@ function documentationItem(env) {
 }
 
 function supportItem(env) {
+    "use strict";
     const url = session.app_support_url;
     return {
         type: "item",
@@ -155,6 +191,7 @@ function supportItem(env) {
 }
 
 function odooAccountItem(env) {
+    "use strict";
     const app_account_title = session.app_account_title;
     const app_account_url = session.app_account_url;
     return {
@@ -163,17 +200,21 @@ function odooAccountItem(env) {
         description: env._t(app_account_title),
         href: app_account_url,
         callback: () => {
-            browser.open(app_account_url, "_blank");
+            top.location.href = app_account_url;
+            // browser.open(app_account_url, "_blank");
         },
         sequence: 60,
     };
 }
 
 function refresh_current(env) {
+    //移动端，主要为了小程序
+    "use strict";
     return {
         type: "item",
         id: "refresh_current",
         description: env._t("Refresh Page"),
+        hide: !env.isSmall,
         callback: () => {
             location.reload();
         },
