@@ -155,7 +155,8 @@ GPT-3	A set of models that can understand and generate natural language
     def get_ai_post(self, res, author_id=False, answer_id=False, param={}):
         if res and author_id and isinstance(res, openai.openai_object.OpenAIObject) or isinstance(res, list) or isinstance(res, dict):
             # 返回是个对象，那么就是ai
-            if isinstance(res, dict):
+            # if isinstance(res, dict):
+            if self.provider == 'openai':
                 # openai 格式处理
                 usage = res['usage']
                 content = res['choices'][0]['message']['content']
