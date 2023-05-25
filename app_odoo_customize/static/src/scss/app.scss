@@ -37,9 +37,18 @@
   }
   //Activity
   .o_ActivityMenuView_dropdownMenu  {
-    bottom: var(--o-navbar-height) ;
+    bottom: var(--o-navbar-height);
     top: auto;
   }
+  //homeMenu
+  .o_home_menu {
+    .container, .o_container_small, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm  {
+      position: absolute;
+      //bottom: var(--o-navbar-height);
+      bottom: 40px;
+    }
+  }
+
   //userMenu
   .o_burger_menu  {
     //height: 95%;
