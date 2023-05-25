@@ -21,6 +21,14 @@
                             </div>
                         </div>
                     </group>
+                    <group string="UI Config" name="app_ui_config">
+                        <group>
+                            <field name="app_navbar_pos_pc"/>
+                        </group>
+                        <group>
+                            <field name="app_navbar_pos_mobile"/>
+                        </group>
+                    </group>
                     <group string="User Menu">
                         <group>
                             <field name="app_show_lang"/>

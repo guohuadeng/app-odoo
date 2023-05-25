@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo 16 Customize OEM(Boost, Data reset)',
-    'version': '16.23.05.24',
+    'version': '16.23.05.25',
     'author': 'Sunpop.cn',
     'category': 'Productivity',
     'website': 'https://www.sunpop.cn',
@@ -36,6 +36,7 @@
     customize my odoo.
     """,
     'depends': [
+        'app_common',
         'base_setup',
         'web',
         'mail',
@@ -71,11 +72,11 @@
             'app_odoo_customize/static/src/scss/app.scss',
             'app_odoo_customize/static/src/scss/ribbon.scss',
             'app_odoo_customize/static/src/scss/dialog.scss',
-            'app_odoo_customize/static/src/js/app_window_title.js',
             'app_odoo_customize/static/src/js/user_menu.js',
             'app_odoo_customize/static/src/js/ribbon.js',
             'app_odoo_customize/static/src/js/dialog.js',
-            'app_odoo_customize/static/src/webclient/**/*.xml',
+            'app_odoo_customize/static/src/webclient/*.js',
+            'app_odoo_customize/static/src/webclient/*.xml',
         ],
     },
     'pre_init_hook': 'pre_init_hook',
@@ -131,6 +132,7 @@
     39. Only erp manager can see debug menu..
     40. Fix support for enterprise version.
     41. Fix odoo bug, when click Preferences menu not hide in mobile.
+    42. Add menu navbar setup for top or bottom. navigator footer support.
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.

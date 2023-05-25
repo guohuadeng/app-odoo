@@ -29,4 +29,7 @@ class IrHttp(models.AbstractModel):
         # 增加多语言
         result['app_lang_list'] = self.env['res.lang'].search_read([], ['id', 'code', 'name'])
         result['is_erp_manager'] = self.env.user.has_group('base.group_erp_manager')
+        # 增加 bar位置处理
+        result['app_navbar_pos_pc'] = config_parameter.get_param('app_navbar_pos_pc', 'top')
+        result['app_navbar_pos_mobile'] = config_parameter.get_param('app_navbar_pos_mobile', 'top')
         return result

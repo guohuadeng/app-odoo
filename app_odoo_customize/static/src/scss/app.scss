@@ -17,6 +17,46 @@
     content: '/';
   }
 }
+// navbar在下方的特殊处理
+.o_web_client.navbar_pos_bottom {
+  .o_navbar {
+    display: block;
+    .o_main_navbar  {
+      --o-navbar-height: 40px;
+    }
+  }
+  //message
+  .o_MessagingMenu_dropdownMenu:not(.o-isDeviceSmall) {
+    bottom: var(--o-navbar-height) ;
+    top: auto;
+  }
+  .o_MessagingMenu_dropdownMenu.o-isDeviceSmall {
+    bottom: var(--o-navbar-height)+6!important; ;
+    height: calc(100% - var(--o-navbar-height));
+    top: 0;
+  }
+  //Activity
+  .o_ActivityMenuView_dropdownMenu  {
+    bottom: var(--o-navbar-height) ;
+    top: auto;
+  }
+  //userMenu
+  .o_burger_menu  {
+    //height: 95%;
+  }
+
+  //  toggle处理
+  .dropdown .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 3.4px;
+    vertical-align: 3.4px;
+    content: "";
+    border-top: 0;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid;
+    border-left: 4px solid transparent;
+  }
+}
 // Colors replace to ent
 //$o-community-color: #875A7B;
 
