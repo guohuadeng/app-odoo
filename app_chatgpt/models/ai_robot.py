@@ -142,10 +142,10 @@ GPT-3	A set of models that can understand and generate natural language
         res_pre = self.get_ai_pre(data, author_id, answer_id, param)
         if res_pre:
             # 有错误内容，则返回上级内容及 is_ai为假
-            return res_pre, False
+            return res_pre, {}, False
         if not hasattr(self, 'get_%s' % self.provider):
             res = _('No robot provider found')
-            return res, False
+            return res, {}, False
         
         res = getattr(self, 'get_%s' % self.provider)(data, author_id, answer_id, param)
         # 后置勾子，返回处理后的内容
