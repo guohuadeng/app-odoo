@@ -19,11 +19,19 @@
 }
 // navbar在下方的特殊处理
 .o_web_client.navbar_pos_bottom {
-  --o-navbar-height: 60px;
+
+  @media (max-width: 768px) {
+    --o-navbar-height: 60px;
+  }
+  flex-direction: column-reverse!important;
   .o_navbar {
     display: block;
-    .o_main_navbar  {
-      --o-navbar-height: 60px;
+
+    .o_main_navbar {
+      @media (max-width: 768px) {
+        --o-navbar-height: 60px;
+        padding: 0 40px;
+      }
       button.o_mobile_menu_toggle, .o_menu_systray .o_debug_manager .dropdown-toggle  {
         font-size: 1.5em;
       }
@@ -47,8 +55,6 @@
   //homeMenu
   .o_home_menu {
     .container, .o_container_small, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm  {
-      position: absolute;
-      bottom: var(--o-navbar-height);
       //bottom: 60px;
     }
   }
