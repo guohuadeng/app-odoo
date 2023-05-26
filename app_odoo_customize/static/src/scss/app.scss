@@ -19,10 +19,14 @@
 }
 // navbar在下方的特殊处理
 .o_web_client.navbar_pos_bottom {
+  --o-navbar-height: 60px;
   .o_navbar {
     display: block;
     .o_main_navbar  {
-      --o-navbar-height: 40px;
+      --o-navbar-height: 60px;
+      button.o_mobile_menu_toggle, .o_menu_systray .o_debug_manager .dropdown-toggle  {
+        font-size: 1.5em;
+      }
     }
   }
   //message
@@ -44,14 +48,23 @@
   .o_home_menu {
     .container, .o_container_small, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm  {
       position: absolute;
-      //bottom: var(--o-navbar-height);
-      bottom: 40px;
+      bottom: var(--o-navbar-height);
+      //bottom: 60px;
     }
   }
 
   //userMenu
   .o_burger_menu  {
-    //height: 95%;
+    width: 80%;
+    .o_burger_menu_topbar {
+      min-height: var(--o-navbar-height);
+    }
+    &.flex-column  {
+      flex-direction: column-reverse!important;
+    }
+    .oi:before, .fa:before, .dropdown-toggle  {
+      font-size: 1.5em;
+    }
   }
 
   //  toggle处理
