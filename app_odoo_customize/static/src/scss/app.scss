@@ -63,7 +63,7 @@
   .o_burger_menu  {
     width: 80%;
     .o_burger_menu_topbar {
-      min-height: var(--o-navbar-height);
+      height: var(--o-navbar-height);
     }
     &.flex-column  {
       flex-direction: column-reverse!important;
