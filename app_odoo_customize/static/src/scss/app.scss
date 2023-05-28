@@ -21,7 +21,7 @@
 .o_web_client.navbar_pos_bottom {
 
   @media (max-width: 768px) {
-    --o-navbar-height: 60px;
+    --o-navbar-height: 80px;
   }
   flex-direction: column-reverse!important;
   .o_navbar {
@@ -29,11 +29,11 @@
 
     .o_main_navbar {
       @media (max-width: 768px) {
-        --o-navbar-height: 60px;
-        padding: 0 40px;
+        --o-navbar-height: 80px;
+        padding: 0 var(--o-navbar-height);
       }
       button.o_mobile_menu_toggle, .o_menu_systray .o_debug_manager .dropdown-toggle  {
-        font-size: 1.5em;
+        font-size: 2em;
       }
     }
   }
@@ -69,7 +69,7 @@
       flex-direction: column-reverse!important;
     }
     .oi:before, .fa:before, .dropdown-toggle  {
-      font-size: 1.5em;
+      font-size: 2em;
       line-height: var(--o-navbar-height);
     }
   }
