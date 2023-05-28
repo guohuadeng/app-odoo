@@ -70,6 +70,7 @@
     }
     .oi:before, .fa:before, .dropdown-toggle  {
       font-size: 1.5em;
+      line-height: var(--o-navbar-height);
     }
   }
 
