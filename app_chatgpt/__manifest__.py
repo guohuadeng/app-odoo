@@ -45,6 +45,7 @@
     ''',
     'depends': [
         'base',
+        'app_common',
         'base_setup',
         'mail',
         'queue_job',

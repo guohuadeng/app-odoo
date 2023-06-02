@@ -6,6 +6,7 @@ import datetime
 # from transformers import TextDavinciTokenizer, TextDavinciModel
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import UserError
+from odoo.addons.app_common.models.base import get_ua_type
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -65,7 +66,7 @@ class Channel(models.Model):
         param = self.get_ai_config(ai)
         res, usage, is_ai = ai.get_ai(messages, author_id, answer_id, param)
         if res:
-            if self.get_ua_type() != 'wxweb':
+            if get_ua_type() != 'wxweb':
                 # 处理当微信语音返回时，是直接回文本信息，不需要转换回车
                 res = res.replace('\n', '<br/>')
             new_msg = channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)

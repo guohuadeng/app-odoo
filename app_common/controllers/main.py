@@ -33,7 +33,7 @@ class AppController(http.Controller):
         # https://github.com/selwin/python-user-agents
         ua_string = request.httprequest.headers.get('User-Agent')
         user_agent = parse(ua_string)
-        ua_type = self.get_ua_type()
+        ua_type = get_ua_type()
         ustr = "Request UA: <br/> %s <br/>Parse UA: <br/>%s <br/>UA Type:<br/>%s <br/>" % (ua_string, str(user_agent), ua_type)
         return request.make_response(ustr, [('Content-Type', 'text/html')])
         
