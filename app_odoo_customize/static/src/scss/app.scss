@@ -32,11 +32,19 @@
         --o-navbar-height: 80px;
         padding: 0 var(--o-navbar-height);
       }
-      button.o_mobile_menu_toggle, .o_menu_systray .o_debug_manager .dropdown-toggle  {
+
+      button.o_mobile_menu_toggle, .o_menu_systray .o_debug_manager .dropdown-toggle {
         font-size: 2em;
+      }
+
+      //  toggle处理
+      .dropdown .dropdown-toggle::after {
+        border-top: 0;
+        border-bottom: 4px solid;
       }
     }
   }
+
   //message
   .o_MessagingMenu_dropdownMenu:not(.o-isDeviceSmall) {
     bottom: var(--o-navbar-height) ;
@@ -72,18 +80,6 @@
       font-size: 2em;
       line-height: var(--o-navbar-height);
     }
-  }
-
-  //  toggle处理
-  .dropdown .dropdown-toggle::after {
-    display: inline-block;
-    margin-left: 3.4px;
-    vertical-align: 3.4px;
-    content: "";
-    border-top: 0;
-    border-right: 4px solid transparent;
-    border-bottom: 4px solid;
-    border-left: 4px solid transparent;
   }
 }
 // Colors replace to ent
