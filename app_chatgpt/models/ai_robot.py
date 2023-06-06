@@ -19,6 +19,7 @@ class AiRobot(models.Model):
     provider = fields.Selection(string="AI Provider", selection=[('openai', 'OpenAI'), ('azure', 'Azure')], required=True, default='openai')
     ai_model = fields.Selection(string="AI Model", selection=[
         ('gpt-4', 'Chatgpt 4'),
+        ('gpt-4-32k', 'Chatgpt 4 32k'),
         ('gpt-3.5-turbo', 'Chatgpt 3.5 Turbo'),
         ('gpt-3.5-turbo-0301', 'Chatgpt 3.5 Turbo on 20230301'),
         ('text-davinci-003', 'Chatgpt 3 Davinci'),
@@ -151,6 +152,28 @@ GPT-3	A set of models that can understand and generate natural language
         # 后置勾子，返回处理后的内容
         res_post, usage, is_ai = self.get_ai_post(res, author_id, answer_id,  param)
         return res_post, usage, is_ai
+
+    def get_ai_origin(self, data, author_id=False, answer_id=False, param={}):
+        # 通用方法
+        # author_id: 请求的 partner_id 对象
+        # answer_id: 回答的 partner_id 对象
+        # param，dict 形式的参数
+        # 调整输出为2个参数：res_post详细内容，is_ai是否ai的响应
+
+        self.ensure_one()
+        # 前置勾子，一般返回 False，有问题返回响应内容，用于处理敏感词等
+        res_pre = self.get_ai_pre(data, author_id, answer_id, param)
+        if res_pre:
+            # 有错误内容，则返回上级内容及 is_ai为假
+            return res_pre, {}, False
+        if not hasattr(self, 'get_%s' % self.provider):
+            res = _('No robot provider found')
+            return res, {}, False
+
+        res = getattr(self, 'get_%s' % self.provider)(data, author_id, answer_id, param)
+        # 后置勾子，返回处理后的内容
+        res_post, usage, is_ai = self.get_ai_post(res, author_id, answer_id, param)
+        return res
     
     def get_ai_post(self, res, author_id=False, answer_id=False, param={}):
         if res and author_id and isinstance(res, openai.openai_object.OpenAIObject) or isinstance(res, list) or isinstance(res, dict):
