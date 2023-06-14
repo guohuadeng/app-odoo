@@ -330,7 +330,7 @@ odoo enterprise version UI enhance.
 
 3. Alway show search in main menu.
 
-欧度智能，odooai.cn 的odoo模块。企业版界面增强。
+欧度智能，sunpop.cn 的odoo模块。企业版界面增强。
 
 1. 多级菜单中出现箭头。
 
@@ -378,7 +378,7 @@ Form view Responsive full width (fullwidth). Ready for small, medium, large, ext
 
     如果是多语种环境需要自行更改翻译，主要体现在16%增值税处理。
 
-    欧度智能，odooai.cn
+    欧度智能，sunpop.cn
 
     The Latest Chinese Account
 

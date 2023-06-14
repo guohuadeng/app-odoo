@@ -3,7 +3,7 @@
 <!--    <t t-extend="res_config_edition">-->
 <!--        <t t-jquery=".user-heading h3" t-operation="replace">-->
 <!--            <h3>-->
-<!--                odooApp <t t-esc="widget.server_version"/> (odooai.cn Edition)-->
+<!--                odooApp <t t-esc="widget.server_version"/> (sunpop.cn Edition)-->
 <!--            </h3>-->
 <!--        </t>-->
 <!--        <t t-jquery=".user-o_web_settings_compact_subtitle small" t-operation="replace">-->
