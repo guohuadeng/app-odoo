@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+admin_access, db_backup admin access,model_db_backup,base.group_no_one,1,1,1,1
+admin_security_rule, Model db_backup admin access,model_db_backup,app_auto_backup.group_manager,1,1,1,1
