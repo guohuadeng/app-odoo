@@ -5,7 +5,7 @@
 {
     "name": "Web No Bubble",
     "version": "13.20.04.10",
-    'author': 'Sunpop.cn',
+    'author': 'odooai.cn',
     "website": "https://github.com/OCA/web",
     "license": "AGPL-3",
     "category": "Web",

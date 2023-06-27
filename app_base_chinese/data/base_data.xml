@@ -4,12 +4,12 @@
         <function name="install_lang" model="res.lang"/>
 
         <record id="base.main_partner" model="res.partner" context="{'default_is_company': True}">
-            <field name="name">广州尚鹏</field>
+            <field name="name">欧度智能</field>
         </record>
 
         <!-- Basic Company  -->
         <record id="base.main_company" model="res.company">
-            <field name="name">广州尚鹏</field>
+            <field name="name">欧度智能</field>
         </record>
 
         <record model="res.partner" id="base.partner_root">

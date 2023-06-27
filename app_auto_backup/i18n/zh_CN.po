@@ -123,8 +123,8 @@ msgstr ""
 
 #. module: app_auto_backup
 #: model_terms:ir.ui.view,arch_db:app_auto_backup.view_backup_config_form
-msgid "Contact Sunpop.cn!"
-msgstr "联系 Sunpop.cn"
+msgid "Contact odooai.cn!"
+msgstr "联系 odooai.cn"
 
 #. module: app_auto_backup
 #: model:ir.model.fields,field_description:app_auto_backup.field_db_backup__create_uid
