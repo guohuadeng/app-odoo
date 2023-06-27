@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Created on 2018-10-12
-# author: 欧度智能，https://www.sunpop.cn
+# author: 欧度智能，https://www.odooai.cn
 # email: 300883@qq.com
 # resource of odooai
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).

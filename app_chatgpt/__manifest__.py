@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Created on 2023-02-016
-# author: 欧度智能，https://www.sunpop.cn
+# author: 欧度智能，https://www.odooai.cn
 # email: 300883@qq.com
 # resource of odooai
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -11,11 +11,11 @@
 {
     'name': 'Latest ChatGPT4 AI Center. GPT 4 for image, Dall-E Image.Multi Robot Support. Chat and Training',
     'version': '16.23.04.27',
-    'author': 'sunpop.cn',
+    'author': 'odooai.cn',
     'company': 'sunpop.cn',
     'maintainer': 'sunpop.cn',
     'category': 'Website/Website',
-    'website': 'https://www.sunpop.cn',
+    'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 10,
     'license': 'AGPL-3',

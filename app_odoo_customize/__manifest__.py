@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Created on 2018-11-26
-# author: 欧度智能，https://www.sunpop.cn
+# author: 欧度智能，https://www.odooai.cn
 # email: 300883@qq.com
 # resource of odooai
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -24,9 +24,9 @@
 {
     'name': 'odoo 16 Customize OEM(Boost, Data reset)',
     'version': '16.23.05.25',
-    'author': 'sunpop.cn',
+    'author': 'odooai.cn',
     'category': 'Productivity',
-    'website': 'https://www.sunpop.cn',
+    'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'images': ['static/description/banner.gif'],

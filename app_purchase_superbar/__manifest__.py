@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Created on 2018-08-15
-# author: 欧度智能，https://www.sunpop.cn
+# author: 欧度智能，https://www.odooai.cn
 # email: 300883@qq.com
 # resource of odooai
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
@@ -18,9 +18,9 @@
 {
     'name': "App purchase search browse by partner",
     'version': '16.22.12.06',
-    'author': 'sunpop.cn',
+    'author': 'odooai.cn',
     'category': 'Base',
-    'website': 'https://www.sunpop.cn',
+    'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """

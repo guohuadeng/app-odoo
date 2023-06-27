@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Created on 2017-11-05
-# author: 欧度智能，https://www.sunpop.cn
+# author: 欧度智能，https://www.odooai.cn
 # email: 300883@qq.com
 # resource of odooai
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -19,9 +19,9 @@
 {
     'name': "App web enterprise enhance,企业版界面增强",
     'version': '16.23.04.08',
-    'author': 'sunpop.cn',
+    'author': 'odooai.cn',
     'category': 'Base',
-    'website': 'https://www.sunpop.cn',
+    'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """
@@ -32,7 +32,7 @@
     """,
     'description': """
     odoo enterprise version UI enhance.
-    欧度智能，sunpop.cn 的odoo模块。企业版界面增强。
+    欧度智能，odooai.cn 的odoo模块。企业版界面增强。
     1. Add dropdown arrow to parent menu.
     多级菜单中出现箭头。
     2. Replace the odoo logo or url to your company in menu and page.

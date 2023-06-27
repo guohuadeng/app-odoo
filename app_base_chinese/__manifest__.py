@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Created on 2023-02-02
-# author: 欧度智能，https://www.sunpop.cn
+# author: 欧度智能，https://www.odooai.cn
 # email: 300883@qq.com
 # resource of odooai
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -19,9 +19,9 @@
 {
     'name': "App base chinese，中国化基本模块增强",
     'version': '16.23.04.02',
-    'author': 'sunpop.cn',
+    'author': 'odooai.cn',
     'category': 'Base',
-    'website': 'https://www.sunpop.cn',
+    'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'price': 0,

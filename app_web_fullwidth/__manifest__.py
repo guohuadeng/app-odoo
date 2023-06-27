@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Created on 2019-01-04
-# author: 欧度智能，https://www.sunpop.cn
+# author: 欧度智能，https://www.odooai.cn
 # email: 300883@qq.com
 # resource of odooai
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -24,8 +24,8 @@
     'name': 'App Web Responsive Fullwidth (form view full width)',
     'version': '16.23.02.19',
     'category': 'web',
-    'author': 'sunpop.cn',
-    'website': 'https://www.sunpop.cn',
+    'author': 'odooai.cn',
+    'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     "price": 18.00,

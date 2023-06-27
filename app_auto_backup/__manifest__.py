@@ -23,7 +23,7 @@
         4) If you want to write backups to a remote location you should fill in the SFTP details.
     """,
 
-    'author': 'Sunpop.cn',
+    'author': 'odooai.cn',
     'website': "http://www.sunpop.cn",
     'category': 'Administration',
     'installable': True,
