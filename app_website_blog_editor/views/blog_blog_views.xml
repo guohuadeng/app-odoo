@@ -11,6 +11,20 @@
             </xpath>
         </field>
     </record>
+    <record id="app_view_blog_blog_form" model="ir.ui.view">
+        <field name="name">app.blog.blog.form</field>
+        <field name="model">blog.blog</field>
+        <field name="inherit_id" ref="website_blog.view_blog_blog_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//group" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_blog_post" type="object" class="oe_stat_button">
+                        <field name="blog_post_count" widget="statinfo"/>
+                    </button>
+                </div>
+            </xpath>
+        </field>
+    </record>
 </odoo>
 
 
