@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="app_view_blog_post_search" model="ir.ui.view">
+		<field name="name">app.blog.post.search</field>
+		<field name="model">blog.post</field>
+		<field name="inherit_id" ref="website_blog.view_blog_post_search"/>
+		<field name="arch" type="xml">
+			<xpath expr="//search" position="inside">
+                <searchpanel>
+                    <field name="blog_id"/>
+                </searchpanel>
+            </xpath>
+		</field>
+	</record>
+</odoo>
+
+
