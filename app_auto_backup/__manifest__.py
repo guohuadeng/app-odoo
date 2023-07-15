@@ -24,7 +24,7 @@
     """,
 
     'author': 'odooai.cn',
-    'website': "http://www.sunpop.cn",
+    'website': "http://www.odooai.cn",
     'category': 'Administration',
     'installable': True,
     'license': 'LGPL-3',

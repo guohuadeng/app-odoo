@@ -3,7 +3,7 @@
     <data noupdate="1">
         <!-- 创建数据库时首个公司信息 -->
         <record id="base.main_company" model="res.company">
-            <field name="website">https://www.sunpop.cn</field>
+            <field name="website">https://www.odooai.cn</field>
         </record>
 	</data>
 </odoo>
