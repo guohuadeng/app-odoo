@@ -19,8 +19,8 @@ msgstr ""
 #. openerp-web
 #: code:addons/app_odoo_customize/static/src/xml/res_config_edition.xml:0
 #, python-format
-msgid "(Sunpop.cn Professional Edition)"
-msgstr "(Sunpop.cn 专业版)"
+msgid "(odooai.cn Professional Edition)"
+msgstr "(odooai.cn 专业版)"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -321,7 +321,7 @@ msgstr "您确认要删除指定数据？"
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.replace_login
 msgid "Powered by <span>odooApp</span>"
-msgstr "技术支持 <span>Sunpop.cn</span>"
+msgstr "技术支持 <span>odooai.cn</span>"
 
 #. module: app_odoo_customize
 #: model:ir.actions.server,name:app_odoo_customize.action_server_module_multi_refresh_po
@@ -478,8 +478,8 @@ msgstr "视图"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Visit our website for more apps and Support. https://www.sunpop.cn"
-msgstr "请访问我们的网站获取更多支持. http://www.sunpop.cn"
+msgid "Visit our website for more apps and Support. https://www.odooai.cn"
+msgstr "请访问我们的网站获取更多支持. http://www.odooai.cn"
 
 #. module: app_odoo_customize
 #: model:ir.model,name:app_odoo_customize.model_web_environment_ribbon_backend
