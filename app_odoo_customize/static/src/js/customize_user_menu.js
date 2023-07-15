@@ -11,11 +11,11 @@ odoo.define('app_odoo_customize.UserMenu', function (require) {
 
     var UserMenu = require('web.UserMenu');
     //避免错误，要再定义
-    var documentation_url = 'https://www.sunpop.cn';
-    var documentation_dev_url = 'https://www.sunpop.cn';
-    var support_url = 'https://www.sunpop.cn';
+    var documentation_url = 'https://www.odooai.cn';
+    var documentation_dev_url = 'https://www.odooai.cn';
+    var support_url = 'https://www.odooai.cn';
     var account_title = 'My Account';
-    var account_url = 'https://www.sunpop.cn';
+    var account_url = 'https://www.odooai.cn';
 
     UserMenu.include({
         init: function () {

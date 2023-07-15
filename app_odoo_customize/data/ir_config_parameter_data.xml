@@ -44,15 +44,15 @@
         </record>
         <record id="app_documentation_url" model="ir.config_parameter">
             <field name="key">app_documentation_url</field>
-            <field name="value">https://www.sunpop.cn/documentation/user/13.0/zh_CN/index.html</field>
+            <field name="value">https://www.odooai.cn/documentation/user/13.0/zh_CN/index.html</field>
         </record>
         <record id="app_documentation_dev_url" model="ir.config_parameter">
             <field name="key">app_documentation_dev_url</field>
-            <field name="value">https://www.sunpop.cn/documentation/13.0/index.html</field>
+            <field name="value">https://www.odooai.cn/documentation/13.0/index.html</field>
         </record>
         <record id="app_support_url" model="ir.config_parameter">
             <field name="key">app_support_url</field>
-            <field name="value">https://www.sunpop.cn/trial</field>
+            <field name="value">https://www.odooai.cn/trial</field>
         </record>
         <record id="app_account_title" model="ir.config_parameter">
             <field name="key">app_account_title</field>
@@ -60,12 +60,12 @@
         </record>
         <record id="app_account_url" model="ir.config_parameter">
             <field name="key">app_account_url</field>
-            <field name="value">https://www.sunpop.cn/my-account</field>
+            <field name="value">https://www.odooai.cn/my-account</field>
         </record>
         <!--测试环境，from oca/web-->
         <record id="app_ribbon_name" model="ir.config_parameter">
             <field name="key">app_ribbon_name</field>
-            <field name="value"><![CDATA[Sunpop Test<br/>({db_name})]]></field>
+            <field name="value"><![CDATA[odooai Test<br/>({db_name})]]></field>
         </record>
         <!-- Add ribbon color configuration parameter -->
         <record id="app_ribbon_color" model="ir.config_parameter">

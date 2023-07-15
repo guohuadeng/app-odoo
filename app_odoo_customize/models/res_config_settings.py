@@ -51,14 +51,14 @@ class ResConfigSettings(models.TransientModel):
         app_show_poweredby = True if ir_config.get_param('app_show_poweredby') == "True" else False
         
         app_documentation_url = ir_config.get_param('app_documentation_url',
-                                                    default='https://www.sunpop.cn/documentation/user/13.0/en/index.html')
+                                                    default='https://www.odooai.cn/documentation/user/13.0/en/index.html')
         app_documentation_dev_url = ir_config.get_param('app_documentation_dev_url',
-                                                        default='https://www.sunpop.cn/documentation/13.0/index.html')
-        app_support_url = ir_config.get_param('app_support_url', default='https://www.sunpop.cn/trial/')
+                                                        default='https://www.odooai.cn/documentation/13.0/index.html')
+        app_support_url = ir_config.get_param('app_support_url', default='https://www.odooai.cn/trial/')
         app_account_title = ir_config.get_param('app_account_title', default='My Online Account')
-        app_account_url = ir_config.get_param('app_account_url', default='https://www.sunpop.cn/my-account/')
-        app_enterprise_url = ir_config.get_param('app_enterprise_url', default='https://www.sunpop.cn')
-        app_ribbon_name = ir_config.get_param('app_ribbon_name', default='*Sunpop.cn')
+        app_account_url = ir_config.get_param('app_account_url', default='https://www.odooai.cn/my-account/')
+        app_enterprise_url = ir_config.get_param('app_enterprise_url', default='https://www.odooai.cn')
+        app_ribbon_name = ir_config.get_param('app_ribbon_name', default='*odooai.cn')
         res.update(
             app_system_name=app_system_name,
             app_show_lang=app_show_lang,
@@ -96,14 +96,14 @@ class ResConfigSettings(models.TransientModel):
         ir_config.set_param("app_show_poweredby", self.app_show_poweredby or "False")
         
         ir_config.set_param("app_documentation_url",
-                            self.app_documentation_url or "https://www.sunpop.cn/documentation/user/13.0/en/index.html")
+                            self.app_documentation_url or "https://www.odooai.cn/documentation/user/13.0/en/index.html")
         ir_config.set_param("app_documentation_dev_url",
-                            self.app_documentation_dev_url or "https://www.sunpop.cn/documentation/13.0/index.html")
-        ir_config.set_param("app_support_url", self.app_support_url or "https://www.sunpop.cn/trial/")
+                            self.app_documentation_dev_url or "https://www.odooai.cn/documentation/13.0/index.html")
+        ir_config.set_param("app_support_url", self.app_support_url or "https://www.odooai.cn/trial/")
         ir_config.set_param("app_account_title", self.app_account_title or "My Online Account")
-        ir_config.set_param("app_account_url", self.app_account_url or "https://www.sunpop.cn/my-account/")
-        ir_config.set_param("app_enterprise_url", self.app_enterprise_url or "https://www.sunpop.cn")
-        ir_config.set_param("app_ribbon_name", self.app_ribbon_name or "*Sunpop.cn")
+        ir_config.set_param("app_account_url", self.app_account_url or "https://www.odooai.cn/my-account/")
+        ir_config.set_param("app_enterprise_url", self.app_enterprise_url or "https://www.odooai.cn")
+        ir_config.set_param("app_ribbon_name", self.app_ribbon_name or "*odooai.cn")
     
     def set_module_url(self):
         sql = "UPDATE ir_module_module SET website = '%s' WHERE license like '%s' and website <> ''" % (self.app_enterprise_url, 'OEEL%')
