@@ -188,7 +188,7 @@ odoo enterprise version UI enhance.
 1. Add dropdown arrow to parent menu.
 2. Replace the odoo logo to your company logo in main menu.
 3. Alway show search in main menu.
-广州尚鹏，Sunpop.cn 的odoo模块。企业版界面增强。
+欧度智能，odooai.cn 的odoo模块。企业版界面增强。
 1. 多级菜单中出现箭头。
 2. 替换主菜单界面的logo为你公司的logo。
 3。 在主菜单界面让搜索可见。
@@ -216,7 +216,7 @@ Form view Responsive full width (fullwidth). Ready for small, medium, large, ext
     7. 注意，必须在没有业务数据，没有会计科目的初始环境。可以使用 "app_odoo_customize" 模块清除财务数据，重置会计科目。
      
     如果是多语种环境需要自行更改翻译，主要体现在16%增值税处理。
-    广州尚鹏，Sunpop.cn        
+    欧度智能，odooai.cn
     The Latest Chinese Account
     Including the following data in the Accounting Standards for Business Enterprises
     包含企业会计准则以下数据    

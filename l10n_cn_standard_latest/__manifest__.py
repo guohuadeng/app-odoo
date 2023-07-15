@@ -5,14 +5,14 @@
 # Copyright (C) 2012-2012 南京盈通 ccdos@intoerp.com <small business chart>
 # Copyright (C) 2008-now  开阖软件 jeff@osbzr.com    < PM and LTS >
 # Copyright (C) 2017-now  jeffery9@gmail.com
-# Copyright (C) 2018-11  广州尚鹏 https://www.sunpop.cn
+# Copyright (C) 2018-11  欧度智能 https://www.odooai.cn
 
 {
     'name': '2020最新中国企业会计表.Latest Chinese Accounting.',
     'version': '12.19.11.13',
-    'author': 'Sunpop.cn',
+    'author': 'odooai.cn',
     'category': 'Localization',
-    'website': 'https://www.sunpop.cn',
+    'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 12,
     'summary': """    
@@ -32,7 +32,7 @@
     7. 注意，必须在没有业务数据，没有会计科目的初始环境。可以使用 "app_odoo_customize" 模块清除财务数据，重置会计科目。
      
     如果是多语种环境需要自行更改翻译，主要体现在13%增值税处理。
-    广州尚鹏，Sunpop.cn
+    欧度智能，odooai.cn
         
     The Latest Chinese Account
     Including the following data in the Accounting Standards for Business Enterprises

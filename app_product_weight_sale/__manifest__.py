@@ -13,8 +13,8 @@
     Support kg(s) or lb(s)
     """,
     'category': 'Sales',
-    'author': 'Sunpop.cn',
-    'website': 'https://www.sunpop.cn',
+    'author': 'odooai.cn',
+    'website': 'https://www.odooai.cn',
     'images': ['static/description/banner.png'],
     'currency': 'EUR',
     'price': 38,
