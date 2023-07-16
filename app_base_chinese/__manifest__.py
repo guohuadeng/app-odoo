@@ -18,7 +18,7 @@
 
 {
     'name': "App base chinese，中国化基本模块增强",
-    'version': '16.23.04.02',
+    'version': '16.23.07.16',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -75,6 +75,8 @@
         'data/res_country_data.xml',
         'data/res_currency_data.xml',
         'data/res_lang_data.xml',
+        'data/res_company_data.xml',
+        'data/res_partner_data.xml',
         'data/res_users_data.xml',
         'data/product_data.xml',
         'data/product_pricelist_data.xml',
@@ -88,6 +90,8 @@
         ]
     },
     'demo': [
+        'data/res_company_demo.xml',
+        'data/res_partner_demo.xml',
     ],
     'test': [
     ],
