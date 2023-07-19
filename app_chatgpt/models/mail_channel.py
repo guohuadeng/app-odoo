@@ -6,6 +6,7 @@ import datetime
 # from transformers import TextDavinciTokenizer, TextDavinciModel
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import UserError
+from odoo.osv import expression
 from odoo.addons.app_common.models.base import get_ua_type
 
 import logging
@@ -30,13 +31,14 @@ class Channel(models.Model):
                   ('model', '=', 'mail.channel'),
                   ('message_type', '!=', 'user_notification'),
                   ('parent_id', '!=', False),
-                  ('author_id', '=', answer_id.id),
                   ('body', '!=', '<p>%s</p>' % _('Response Timeout, please speak again.')),
                   ('body', '!=', _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。'))]
 
         if self.channel_type in ['group', 'channel']:
             # 群聊增加时间限制，当前找所有人，不限制 author_id
-            domain += [('date', '>=', afterTime)]
+            domain = expression.AND([domain, [('date', '>=', afterTime)]])
+        else:
+            domain = expression.AND([domain, [('author_id', '=', answer_id.id)]])
         ai_msg_list = message_model.with_context(tz='UTC').search(domain, order="id desc", limit=chat_count)
         for ai_msg in ai_msg_list:
             # 判断这个 ai_msg 是不是ai发，有才 insert。 判断 user_msg 是不是 user发的，有才 insert
