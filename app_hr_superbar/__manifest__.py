@@ -21,6 +21,7 @@
     'author': 'odooai.cn',
     'category': 'Human Resources',
     'website': 'https://www.odooai.cn',
+    'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'summary': """

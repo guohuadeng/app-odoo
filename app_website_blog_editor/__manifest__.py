@@ -37,6 +37,7 @@
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
+    'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'price': 0.00,

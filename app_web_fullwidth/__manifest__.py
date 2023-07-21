@@ -26,6 +26,7 @@
     'category': 'web',
     'author': 'odooai.cn',
     'website': 'https://www.odooai.cn',
+    'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     "price": 18.00,

@@ -13,6 +13,7 @@
     'author': 'odooai.cn',
     'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.odooai.cn',
+    'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 12,
     'summary': """    

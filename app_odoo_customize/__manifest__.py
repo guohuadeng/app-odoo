@@ -27,6 +27,7 @@
     'author': 'odooai.cn',
     'category': 'Productivity',
     'website': 'https://www.odooai.cn',
+    'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'images': ['static/description/banner.gif'],
