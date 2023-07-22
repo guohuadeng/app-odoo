@@ -59,6 +59,7 @@
         'base_address_extended',
         'account',
         'sales_team',
+        'sale',
         'stock',
     ],
     'images': ['static/description/banner.jpg'],
