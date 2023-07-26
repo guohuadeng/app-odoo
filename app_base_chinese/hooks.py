@@ -22,6 +22,7 @@ def pre_init_hook(cr):
     """
     数据初始化，只在安装时执行，更新时不执行
     """
+    # todo: 启用中文
     pass
 
 
