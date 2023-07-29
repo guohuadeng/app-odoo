@@ -9,7 +9,7 @@
 # Copyright (c) 2020-Present InTechual Solutions. (<https://intechualsolutions.com/>)
 
 {
-    'name': 'ChatGPT 4/32k,Google Bard, AiGC Center.Ai服务中心，聚合全网Ai',
+    'name': 'ChatGPT4,Google Bard, AiGC Center.Ai服务中心，聚合全网Ai',
     'version': '15.23.07.29',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
@@ -21,8 +21,8 @@
     'sequence': 10,
     'images': ['static/description/banner.gif'],
     'summary': '''
-    ChatGpt Odoo AI Center. Multi Ai aigc support including Google Bard Ai, Azure Ai, Baidu Ai.
-    Support chatgpt 4 image. DALLE, Integration All ChatGpt Api and Azure OpenAI Service.
+    ChatGpt Odoo AI Center. Multi Ai aigc support with Google Bard Ai, Azure Ai, Baidu Ai,etc..
+    Support chatgpt 4 32k image. DALLE, Integration All ChatGpt Api and Azure OpenAI.
     Easy Chat channel with several ChatGPT Robots and train.
     ''',
     'description': '''
@@ -48,18 +48,15 @@
         'app_common',
         'base_setup',
         'mail',
-        'queue_job',
     ],
     'data': [
         'security/ir.model.access.csv',
-        'security/ir_rules.xml',
         'data/mail_channel_data.xml',
         'data/ai_robot_data.xml',
         'data/user_partner_data.xml',
         'data/ir_config_parameter.xml',
         'views/res_config_settings_views.xml',
         'views/ai_robot_views.xml',
-        'views/res_partner_ai_use_views.xml',
         'views/res_users_views.xml',
     ],
     'assets': {
@@ -68,9 +65,6 @@
         ],
         'mail.assets_model_data': [
             'app_chatgpt/static/src/models_data/*.js',
-        ],
-        'web.assets_backend': [
-            'app_chatgpt/static/src/components/*/*.xml',
         ],
     },
     'external_dependencies': {'python': ['openai']},
