@@ -9,7 +9,7 @@
 # Copyright (c) 2020-Present InTechual Solutions. (<https://intechualsolutions.com/>)
 
 {
-    'name': 'ChatGPT 4/32k,Google Bard, AiGC Center.Ai服务中心，聚合全网Ai',
+    'name': 'ChatGPT4,Google Bard, AiGC Center.Ai服务中心，聚合全网Ai',
     'version': '16.23.07.29',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
@@ -21,8 +21,8 @@
     'sequence': 10,
     'images': ['static/description/banner.gif'],
     'summary': '''
-    ChatGpt Odoo AI Center. Multi Ai aigc support including Google Bard Ai, Azure Ai, Baidu Ai.
-    Support chatgpt 4 image. DALLE, Integration All ChatGpt Api and Azure OpenAI Service.
+    ChatGpt Odoo AI Center. Multi Ai aigc support with Google Bard Ai, Azure Ai, Baidu Ai,etc..
+    Support chatgpt 4 32k image. DALLE, Integration All ChatGpt Api and Azure OpenAI.
     Easy Chat channel with several ChatGPT Robots and train.
     ''',
     'description': '''
