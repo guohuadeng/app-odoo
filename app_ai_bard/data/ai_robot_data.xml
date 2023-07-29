@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <record id="robot_google_bard" model="ai.robot">
+        <field name="name">Google Bard</field>
+        <field name="provider">google</field>
+        <field name="ai_model">google-bard</field>
+	    <field name="api_version" eval="False"/>
+        <field name="endpoint">https://api.bard.ai/v1/text/generate</field>
+        <field name="sequence">9</field>
+    </record>
+</odoo>

@@ -186,10 +186,13 @@ GPT-3	A set of models that can understand and generate natural language
                 usage = res['usage']
                 content = res['choices'][0]['message']['content']
                 # _logger.warning('===========Ai响应:%s' % content)
-            else:
+            elif self.provider == 'azure':
                 # azure 格式
                 usage = json.loads(json.dumps(res['usage']))
                 content = json.loads(json.dumps(res['choices'][0]['message']['content']))
+            else:
+                usage = False
+                content = res
             data = content.replace(' .', '.').strip()
             answer_user = answer_id.mapped('user_ids')[:1]
             if usage:

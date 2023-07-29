@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="partner_google_bard" model="res.partner">
+            <field name="name">Google Bard</field>
+            <field name="image_1920" type="base64" file="app_ai_bard/static/src/img/bard.gif"/>
+        </record>
+
+        <record id="user_google_bard" model="res.users">
+            <field name="login">ai_bard@example.com</field>
+            <field name="email">ai_bard@example.com</field>
+            <field name="partner_id" ref="partner_google_bard"/>
+            <field name="gpt_id" ref="robot_google_bard"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
+            <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
+        </record>    </data>
+</odoo>
