@@ -9,8 +9,8 @@
 # Copyright (c) 2020-Present InTechual Solutions. (<https://intechualsolutions.com/>)
 
 {
-    'name': 'Latest ChatGPT4 AI Center. GPT 4 for image, Dall-E Image.Multi Robot Support. Chat and Training',
-    'version': '16.23.04.27',
+    'name': 'Latest ChatGPT4/32k 0801 AI Center. GPT 4 for image,  Chat and Training',
+    'version': '16.23.047.29',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
     'maintainer': 'odooai.cn',
