@@ -6,7 +6,7 @@
 # resource of odooai
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-var = {
+{
     'name': 'Google Bard Ai for odoo ai center, 谷歌Ai支持',
     'version': '16.23.07.29',
     'author': 'odooai.cn',
