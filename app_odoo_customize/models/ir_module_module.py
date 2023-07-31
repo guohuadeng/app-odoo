@@ -4,6 +4,7 @@ from odoo import api, fields, models, modules, tools, _
 
 import operator
 
+
 class IrModule(models.Model):
     _inherit = 'ir.module.module'
 
@@ -15,6 +16,8 @@ class IrModule(models.Model):
     # latest_version = fields.Char('Installed Version', readonly=True)
 
     local_updatable = fields.Boolean('Local updatable', compute=False, default=False, store=True)
+    addons_path_id = fields.Many2one('ir.module.addons.path', string='Addons Path', readonly=True)
+    addons_path = fields.Char(string='Addons Path', related='addons_path_id.path', readonly=True)
 
     def module_multi_uninstall(self):
         """ Perform the various steps required to uninstall a module completely

@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo 16 Customize OEM(Boost, Data reset)',
-    'version': '16.23.05.25',
+    'version': '16.23.07.31',
     'author': 'odooai.cn',
     'category': 'Productivity',
     'website': 'https://www.odooai.cn',
@@ -55,6 +55,7 @@
         'views/ir_views.xml',
         'views/ir_module_module_views.xml',
         'views/ir_translation_views.xml',
+        'views/ir_module_addons_path_views.xml',
         'views/ir_ui_menu_views.xml',
         'views/ir_ui_view_views.xml',
         'views/ir_model_fields_views.xml',
