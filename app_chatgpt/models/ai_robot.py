@@ -18,6 +18,8 @@ class AiRobot(models.Model):
     name = fields.Char(string='Name', translate=True, required=True)
     provider = fields.Selection(string="AI Provider", selection=[('openai', 'OpenAI'), ('azure', 'Azure')], required=True, default='openai')
     ai_model = fields.Selection(string="AI Model", selection=[
+        ('gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0613(Default and Latest)'),
+        ('gpt-3.5-turbo-16k-0613', 'gpt-3.5-turbo-16k-0613(Big text)'),
         ('gpt-4', 'Chatgpt 4'),
         ('gpt-4-32k', 'Chatgpt 4 32k'),
         ('gpt-3.5-turbo', 'Chatgpt 3.5 Turbo'),
@@ -26,8 +28,8 @@ class AiRobot(models.Model):
         ('code-davinci-002', 'Chatgpt 2 Code Optimized'),
         ('text-davinci-002', 'Chatgpt 2 Davinci'),
         ('dall-e2', 'Dall-E Image'),
-    ], required=True, default='gpt-3.5-turbo',
-                             help="""
+    ], required=True, default='gpt-3.5-turbo-0613',
+                                help="""
 GPT-4: Can understand Image, generate natural language or code.
 GPT-3.5: A set of models that improve on GPT-3 and can understand as well as generate natural language or code
 DALL·E: A model that can generate and edit images given a natural language prompt
@@ -184,10 +186,13 @@ GPT-3	A set of models that can understand and generate natural language
                 usage = res['usage']
                 content = res['choices'][0]['message']['content']
                 # _logger.warning('===========Ai响应:%s' % content)
-            else:
+            elif self.provider == 'azure':
                 # azure 格式
                 usage = json.loads(json.dumps(res['usage']))
                 content = json.loads(json.dumps(res['choices'][0]['message']['content']))
+            else:
+                usage = False
+                content = res
             data = content.replace(' .', '.').strip()
             answer_user = answer_id.mapped('user_ids')[:1]
             if usage:

@@ -11,3 +11,6 @@ class ResConfigSettings(models.TransientModel):
         ('sync', 'Synchronous'),
         ('async', 'Asynchronous')
     ], string='Sync Config', default='sync', config_parameter="app_chatgpt.openai_sync_config")
+    module_app_ai_bard = fields.Boolean("Google Bard Ai")
+    module_app_ai_baidu = fields.Boolean("Baidu Ai China", help='百度文心一格')
+    module_app_ai_ali = fields.Boolean("Ali Ai China", help='阿里通义千问')
