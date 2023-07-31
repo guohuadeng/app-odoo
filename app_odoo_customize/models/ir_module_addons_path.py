@@ -6,6 +6,7 @@ from odoo import api, fields, models, modules, tools, _
 
 class IrModuleAddonsPath(models.Model):
     _name = "ir.module.addons.path"
+    _description = 'Module Addons Path'
 
     def _default_bg_color(self):
         colors = ['#F06050', '#F4A45F', '#F7CD2E', '#6CC1ED', '#EB7E7F', '#5CC482',
