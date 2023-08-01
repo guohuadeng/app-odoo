@@ -12,7 +12,7 @@
                 <field name="installed_version" position="after">
                     <field name="latest_version" optional="hide"/>
                     <field name="local_updatable" optional="show"/>
-                    <field name="addons_path" optional="hide"/>
+                    <field name="addons_path" optional="hide" groups="base.group_no_one"/>
                 </field>
                 <field name="website" position="attributes">
                     <attribute name="optional">hide</attribute>
@@ -29,7 +29,7 @@
                     <filter name="is_local_updatable" string="Local updatable" domain="[('local_updatable', '=', True)]"/>
                 </filter>
                 <xpath expr="//search/group" position="inside">
-                    <filter string="Addons Path" name="addons_path" domain="[]" context="{'group_by': 'addons_path_id'}"/>
+                    <filter string="Addons Path" name="addons_path" domain="[]" context="{'group_by': 'addons_path_id'}" groups="base.group_no_one"/>
                 </xpath>
             </field>
         </record>
@@ -47,7 +47,7 @@
                 <xpath expr="//notebook/page/group" position="inside">
                     <group name="module_path">
                         <field name="addons_path_id" invisible="1"/>
-                        <field name="addons_path"/>
+                        <field name="addons_path" groups="base.group_no_one"/>
                     </group>
                 </xpath>
             </field>
