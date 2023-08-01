@@ -185,10 +185,13 @@ class Channel(models.Model):
                 openapi_context_timeout = 60
             openai.api_key = api_key
             # 非4版本，取0次。其它取3 次历史
+            chat_count = 3
             if '4' in ai.ai_model:
-                chat_count = 1 if self.chat_count > 0 else 0
+                if hasattr(self, 'chat_count'):
+                    if self.chat_count > 0:
+                        chat_count = 1
             else:
-                chat_count = self.chat_count
+                chat_count = chat_count
             if author_id != answer_id.id and self.channel_type == 'chat':
                 # 私聊
                 _logger.info(f'私聊:author_id:{author_id},partner_chatgpt.id:{answer_id.id}')
