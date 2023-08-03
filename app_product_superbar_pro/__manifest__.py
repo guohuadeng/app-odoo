@@ -34,7 +34,7 @@
     Product category tree ,Department tree, stock location tree.
     超级方便的查询，树状视图
     """,
-    'price': 0.00,
+    'price': 68.00,
     'currency': 'EUR',
     'depends': [
         'app_product_superbar',
