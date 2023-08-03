@@ -37,15 +37,15 @@
     2. 中文默认值，如国家、时区、货币等。处理模块 base, product.
     3. 客户加简称，地址显示中文化，客户编码显示优先
     4. 客户地址显示增加手机号与电话号码
-    5. 货币处理，增加排序显示
+    5. 货币处理，人民币增强，增加排序显示
     6. 修正品类的列表及m2o字段中不显示中文目录名的Bug
     7. 修正仓库位置的列表及m2o字段中不显示中文目录名的Bug
     8. 超级用户改时区为 中国
-    9. 时间格式年月日为 2019-12-30，时间为 22:10
+    9. 时间格式年月日为 中国格式，如 2023-08-08，时间为 12:34
     10. 国家增加排序，中国排第一 
     11. 收款相关显示中国习惯    
     12. 翻译导出默认中文，默认po
-    13. 在 base 模型增加 name_en_US 字段，赋值后同时改翻译值
+    13. [默认已移除，可自行加载.py]在 base 模型增加 name_en_US 字段，赋值后同时改翻译值
     14. 常用小数精度调整
     15. 销售团队改为中国
     21. 多语言支持，多公司支持
@@ -60,7 +60,7 @@
     6. Fixed bug where the category list and m2o field did not display the name of the Chinese directory.
     7. Fixed bug where warehouse location list and m2o field did not display the name of the Chinese directory.
     8. Superuser changed time zone to China.
-    9. Date format is year-month-day (e.g., 2019-12-30) and time is 22:10
+    9. Date format is year-month-day (e.g., 2023-08-08) and time is 12:34
     10.Country sorting added; China ranked first
     11.Display payment-related information according to typical practices in China.
     12.Default export translation is set to Mandarin (po).
