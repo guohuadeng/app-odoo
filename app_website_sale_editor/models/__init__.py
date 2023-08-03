@@ -22,4 +22,4 @@
 # http://www.odooai.cn/odoo10_developer_document_offline/
 # description:
 
-# from . import models
+from . import product_template
