@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <xpath expr="//searchpanel//field[@name='categ_id']" position="before">
                 <field name="public_categ_ids" select="multi" text="name"/>
+                <field name="website_ribbon_id" select="multi"/>
             </xpath>
         </field>
     </record>

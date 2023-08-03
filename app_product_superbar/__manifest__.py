@@ -42,7 +42,7 @@
     ],
     'images': ['static/description/banner.gif'],
     'data': [
-        'views/product_views.xml',
+        'views/product_template_views.xml',
         'views/product_category_views.xml',
     ],
     'demo': [
