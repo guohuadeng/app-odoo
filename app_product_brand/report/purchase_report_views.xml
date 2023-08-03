@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="app_product_brand_purchase_report_tree" model="ir.ui.view">
-            <field name="name">app.product.brand.purchase.report.tree</field>
-            <field name="model">purchase.report</field>
-            <field name="inherit_id" ref="app_purchase_pro.app_purchase_report_tree"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='product_id']" position="after">
-                    <field name="category_id" optional="hide"/>
-                    <field name="product_brand_id" optional="hide"/>
-                </xpath>
-            </field>
-        </record>
+<!--        <record id="app_product_brand_purchase_report_tree" model="ir.ui.view">-->
+<!--            <field name="name">app.product.brand.purchase.report.tree</field>-->
+<!--            <field name="model">purchase.report</field>-->
+<!--            <field name="inherit_id" ref="app_purchase_pro.app_purchase_report_tree"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//field[@name='product_id']" position="after">-->
+<!--                    <field name="category_id" optional="hide"/>-->
+<!--                    <field name="product_brand_id" optional="hide"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
         <record id="app_view_purchase_order_search" model="ir.ui.view">
             <field name="name">app.purchase.report.search</field>
             <field name="model">purchase.report</field>
