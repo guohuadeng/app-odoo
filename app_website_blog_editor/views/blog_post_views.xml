@@ -3,31 +3,64 @@
 	<record id="app_view_blog_post_list" model="ir.ui.view">
 		<field name="name">app.blog.post.list</field>
 		<field name="model">blog.post</field>
-		<field name="inherit_id" ref="website_blog.view_blog_post_list" />
+		<field name="inherit_id" ref="website_blog.view_blog_post_list"/>
 		<field name="arch" type="xml">
 			<xpath expr="//field[@name='author_id']" position="before">
 				<field name="visits" optional="show"/>
-            </xpath>
+			</xpath>
 			<xpath expr="//field[@name='write_date']" position="after">
 				<field name="published_date" optional="hide"/>
-            </xpath>
-			<xpath expr="//field[@name='is_published']" position="after">
+			</xpath>
+			<xpath expr="//field[@name='name']" position="after">
 				<button name="action_post_debug_view" type="object" title="Settings" icon="fa-bug fa-lg" groups="base.group_no_one"/>
-            </xpath>
+				<button name="action_post_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
+			</xpath>
 		</field>
 	</record>
 
 	<record id="app_view_blog_post_form" model="ir.ui.view">
 		<field name="name">app.blog.post.form</field>
 		<field name="model">blog.post</field>
-		<field name="inherit_id" ref="website_blog.view_blog_post_form" />
+		<field name="inherit_id" ref="website_blog.view_blog_post_form"/>
 		<field name="arch" type="xml">
 			<xpath expr="//page[@name='seo']" position="before">
-                <page name="post_content" string="Content">
-                    <field name="content" widget="html" nolabel="1" class="oe-bordered-editor"
-                           options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true}"/>
-                </page>
-            </xpath>
+				<page name="post_content" string="Content">
+					<field name="content" widget="html" nolabel="1" class="oe-bordered-editor"
+					       options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true}"/>
+				</page>
+			</xpath>
+		</field>
+	</record>
+
+	<record id="app_blog_post_form_view_code" model="ir.ui.view">
+		<field name="name">app.blog.post.code</field>
+		<field name="model">blog.post</field>
+		<field name="priority">99</field>
+		<field name="mode">primary</field>
+		<field name="arch" type="xml">
+			<form string="Blog Contet">
+				<sheet name="blog_content">
+					<field name="id" invisible="True"/>
+					<div class="oe_title">
+						<label for="name" string="Blog Name"/>
+						<h1>
+							<div class="d-flex">
+								<field class="text-break" name="name"/>
+							</div>
+						</h1>
+					</div>
+					<group>
+						<group>
+							<field name="is_published" widget="website_redirect_button"></field>
+						</group>
+					</group>
+					<notebook>
+						<page name="shop_desc" string="Website Description">
+							<field name="content" nolabel="1" widget="ace"/>
+						</page>
+					</notebook>
+				</sheet>
+			</form>
 		</field>
 	</record>
 </odoo>

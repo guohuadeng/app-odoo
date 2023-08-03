@@ -8,6 +8,7 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
+					<button name="action_product_debug_view" type="object" title="Content Set" icon="fa-bug fa-lg" groups="base.group_no_one"/>
 					<button name="action_product_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
                 </xpath>
                 <xpath expr="//field[@name='website_url']" position="attributes">
@@ -15,6 +16,7 @@
                 </xpath>
             </field>
         </record>
+
         <record id="app_product_template_form_view" model="ir.ui.view">
             <field name="name">app.product.template.common.form</field>
             <field name="model">product.template</field>
@@ -29,8 +31,8 @@
             </field>
         </record>
 
-	    <record id="product_template_form_view_src" model="ir.ui.view">
-		    <field name="name">app.product.template.website.src</field>
+	    <record id="app_product_template_form_view_code" model="ir.ui.view">
+		    <field name="name">app.product.template.website.code</field>
 		    <field name="model">product.template</field>
 		    <field name="priority">99</field>
 		    <field name="mode">primary</field>
@@ -63,5 +65,20 @@
 			    </form>
 		    </field>
 	    </record>
+
+        <record id="app_product_template_form_view_debug" model="ir.ui.view">
+		    <field name="name">app.product.template.website.debug</field>
+		    <field name="model">product.template</field>
+		    <field name="priority">99</field>
+		    <field name="mode">primary</field>
+            <field name="inherit_id" ref="app_product_template_form_view_code"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='website_description']" position="attributes">
+	                <attribute name="widget">html</attribute>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </openerp>
