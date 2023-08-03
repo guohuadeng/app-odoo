@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="product_brand_search_form_view" model="ir.ui.view">
+        <field name="name">product.brand.search.form</field>
+        <field name="model">product.brand</field>
+        <field name="arch" type="xml">
+            <search string="Product Brand">
+                <field name="name"/>
+                <field name="partner_id"/>
+            </search>
+        </field>
+    </record>
+
+    <!--action-->
+    <record id="action_open_brand_products" model="ir.actions.act_window">
+        <field name="name">Brand Products</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">kanban,form,tree</field>
+        <field name="domain">[('product_brand_id', '=', active_id)]</field>
+    </record>
+
+    <record id="action_open_single_product_brand" model="ir.actions.act_window">
+        <field name="name">Product Brand</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.brand</field>
+        <field name="view_mode">kanban,form,tree</field>
+        <field name="target">current</field>
+        <field name="domain">[('product_ids', 'in', active_id)]</field>
+    </record>
+
+    <record id="view_product_brand_form" model="ir.ui.view">
+        <field name="name">product.brand.form</field>
+        <field name="model">product.brand</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(action_open_brand_products)d"
+                            type="action"
+                            class="oe_stat_button"
+                            icon="fa-cubes">
+                            <field name="products_count" widget="statinfo" string="Products"/>
+                        </button>
+                    </div>
+                    <field name="logo" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                            <label for="name" string="Brand Name" class="oe_edit_only"/>
+                            <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id"/>
+                        </group>
+                    </group>
+                    <group string="Description">
+                        <field name="description" nolabel="1"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_product_brand_tree" model="ir.ui.view">
+        <field name="name">product.brand.tree</field>
+        <field name="model">product.brand</field>
+        <field name="arch" type="xml">
+            <tree string="product.brand">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="partner_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_product_brand_kanban" model="ir.ui.view">
+        <field name="name">product.brand.kanban</field>
+        <field name="model">product.brand</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="logo"/>
+                <field name="products_count"/>
+                <field name="description"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('product.brand', 'logo', record.id.raw_value)" alt="Logo"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <h4>
+                                    <field name="name"/>
+                                </h4>
+                                <div>
+                                    <a name="%(action_open_brand_products)d" type="action">
+                                        <t t-esc="record.products_count.value"/> Products
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_product_brand">
+        <field name="name">Brand</field>
+        <field name="res_model">product.brand</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <menuitem
+        name="Product Brands"
+        id="menu_product_brand"
+        action="action_product_brand"
+        parent="sale.prod_config_main"/>
+</odoo>
