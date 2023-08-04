@@ -2180,12 +2180,12 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__ai_timeout
 msgid "Timeout(seconds)"
-msgstr ""
+msgstr "超时(秒)"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
 msgid "Timout then disconnect(s)"
-msgstr ""
+msgstr "超时设定(秒)"
 
 #. module: app_chatgpt
 #. odoo-javascript
