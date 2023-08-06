@@ -3,8 +3,12 @@
     <data noupdate="0">
         <!-- 时间格式 -->
         <record id="base.lang_zh_CN" model="res.lang">
+            <field name="name">中文</field>
             <field name="date_format">%Y-%m-%d</field>
             <field name="time_format">%H:%M:%S</field>
+        </record>
+        <record id="base.lang_en" model="res.lang">
+            <field name="name">English</field>
         </record>
     </data>
 </odoo>
