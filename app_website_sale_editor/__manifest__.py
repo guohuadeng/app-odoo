@@ -65,6 +65,7 @@
     ''',
     'data': [
         'views/product_template_views.xml',
+        'views/product_public_category_views.xml',
         # 'report/.xml',
     ],
     'demo': [],

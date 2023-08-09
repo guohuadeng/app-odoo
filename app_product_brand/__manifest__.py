@@ -43,7 +43,7 @@
     'name': 'Product Brand Manager,产品品牌管理',
     'version': '16.23.12.29',
     'author': 'odooai.cn',
-    'category': 'Product',
+    'category': 'Base',
     'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,

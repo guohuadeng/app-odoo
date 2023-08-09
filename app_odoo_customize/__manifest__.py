@@ -25,7 +25,7 @@
     'name': 'odoo 16 Customize OEM(Boost, Data reset)',
     'version': '16.23.08.05',
     'author': 'odooai.cn',
-    'category': 'Productivity',
+    'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
