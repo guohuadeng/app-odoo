@@ -25,7 +25,7 @@
 
     'author': 'odooai.cn',
     'website': "http://www.odooai.cn",
-    'category': 'Administration',
+    'category': 'Extra tools',
     'installable': True,
     'license': 'LGPL-3',
 

@@ -33,7 +33,7 @@
 
 {
     'name': "Website Product Editor in Backend",
-    'version': '16.23.04.11',
+    'version': '16.23.08.03',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -65,6 +65,7 @@
     ''',
     'data': [
         'views/product_template_views.xml',
+        'views/product_public_category_views.xml',
         # 'report/.xml',
     ],
     'demo': [],

@@ -9,12 +9,14 @@
                 <field name="required"/>
             </field>
             <field name="readonly" position="after">
-                <field name="index"/>
-                <field name="copied"/>
-                <field name="tracking"/>
+                <field name="index" groups="base.group_no_one"/>
+                <field name="copied" groups="base.group_no_one"/>
+                <field name="tracking" groups="base.group_no_one"/>
+	            <field name="translate" groups="base.group_no_one"/>
             </field>
         </field>
     </record>
+
     <record id="app_view_model_fields_search" model="ir.ui.view">
         <field name="name">app.ir.ui.view search</field>
         <field name="model">ir.model.fields</field>
