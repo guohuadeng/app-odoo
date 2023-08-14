@@ -9,7 +9,7 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <searchpanel>
-                    <field name="warehouse_id" groups="stock.group_stock_multi_warehouses"/>
+                    <field name="warehouse_id" groups="stock.group_stock_multi_warehouses" enable_counters="1"/>
                 </searchpanel>
             </xpath>
         </field>

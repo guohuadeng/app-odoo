@@ -9,8 +9,8 @@
             <xpath expr="//searchpanel" position="replace">
                 <searchpanel>
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
-                    <field name="department_id"/>
-                    <field name="job_id"/>
+                    <field name="department_id" enable_counters="1"/>
+                    <field name="job_id" enable_counters="1"/>
                 </searchpanel>
             </xpath>
         </field>

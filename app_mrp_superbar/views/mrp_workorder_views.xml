@@ -8,8 +8,8 @@
         <field name="arch" type="xml">
             <xpath expr="//search" position="inside">
                 <searchpanel>
-                    <field name="workcenter_id"/>
-                    <field name="state"/>
+                    <field name="workcenter_id" enable_counters="1"/>
+                    <field name="state" enable_counters="1"/>
                 </searchpanel>
             </xpath>
         </field>

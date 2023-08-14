@@ -9,7 +9,7 @@
                 <xpath expr="//search">
                     <searchpanel>
                         <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
-                        <field name="category_id" select="multi"/>
+                        <field name="category_id" select="multi" enable_counters="1"/>
                         <!--<field name="is_company"/>-->
                         <field name="industry_id"/>
 <!--                        <field name="lang"/>-->
