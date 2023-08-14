@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="app_product_superbar.app_product_template_search_view"/>
         <field name="arch" type="xml">
             <xpath expr="//searchpanel/field[@name='categ_id']" position="before">
-                <field name="pos_categ_id" />
+                <field name="pos_categ_id"  enable_counters="1"/>
             </xpath>
         </field>
     </record>

@@ -9,8 +9,8 @@
             <xpath expr="//search">
                 <searchpanel>
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
-                    <field name="location_id" groups="stock.group_stock_multi_locations"/>
-                    <field name="usage"/>
+                    <field name="location_id" groups="stock.group_stock_multi_locations" enable_counters="1"/>
+                    <field name="usage" enable_counters="1"/>
                 </searchpanel>
             </xpath>
         </field>

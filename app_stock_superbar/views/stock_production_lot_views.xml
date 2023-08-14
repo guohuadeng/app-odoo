@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <searchpanel>
-                    <field name="product_id" filter_domain="[('tracking', 'in', ('serial', 'lot'))]"/>
+                    <field name="product_id" filter_domain="[('tracking', 'in', ('serial', 'lot'))]" enable_counters="1"/>
                 </searchpanel>
             </xpath>
         </field>

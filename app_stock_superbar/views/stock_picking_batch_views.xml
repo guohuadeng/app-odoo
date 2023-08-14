@@ -10,7 +10,7 @@
                 <searchpanel>
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="user_id"/>
-                    <field name="state"/>
+                    <field name="state" enable_counters="1"/>
                 </searchpanel>
             </xpath>
         </field>
