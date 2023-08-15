@@ -25,7 +25,19 @@
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='sales']" position="after">
                     <page name="shop_desc" string="Website Description" attrs="{'invisible': [('sale_ok','=',False)]}">
-                        <field name="website_description" nolabel="1"/>
+	                    <group>
+		                    <group>
+<!--			                    todo: 这里加个快速设置 seo url字段-->
+			                    <field name="website_meta_title" invisible="1"/>
+			                    <field name="website_meta_keywords"/>
+		                    </group>
+		                    <group>
+			                    <field name="website_meta_description"/>
+		                    </group>
+	                    </group>
+	                    <group string="Content">
+                            <field name="website_description" nolabel="1"/>
+	                    </group>
                     </page>
                 </xpath>
             </field>

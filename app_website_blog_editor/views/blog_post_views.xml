@@ -32,7 +32,7 @@
 		<field name="model">blog.post</field>
 		<field name="inherit_id" ref="website_blog.view_blog_post_form"/>
 		<field name="arch" type="xml">
-			<xpath expr="//page[@name='seo']" position="before">
+			<xpath expr="//page[@name='seo']" position="after">
 				<page name="post_content" string="Content">
 					<field name="content" widget="html" nolabel="1" class="oe-bordered-editor"
 					       options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true}"/>
