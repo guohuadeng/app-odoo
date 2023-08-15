@@ -22,5 +22,6 @@
         <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_background_color', 'rgba(255,0,0,.4)')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_navbar_pos_pc', 'top')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_navbar_pos_mobile', 'bottom')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_debug_only_admin', 'True')"/>
     </data>
 </openerp>

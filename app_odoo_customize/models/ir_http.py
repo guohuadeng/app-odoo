@@ -32,4 +32,7 @@ class IrHttp(models.AbstractModel):
         # 增加 bar位置处理
         result['app_navbar_pos_pc'] = config_parameter.get_param('app_navbar_pos_pc', 'top')
         result['app_navbar_pos_mobile'] = config_parameter.get_param('app_navbar_pos_mobile', 'top')
+        # 此处直接取，不用 session
+        result['app_debug_only_admin'] = config_parameter.get_param('app_debug_only_admin')
+        result['app_stop_subscribe'] = config_parameter.get_param('app_stop_subscribe')
         return result
