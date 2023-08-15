@@ -5,6 +5,9 @@
 		<field name="model">blog.post</field>
 		<field name="inherit_id" ref="website_blog.view_blog_post_list"/>
 		<field name="arch" type="xml">
+			<xpath expr="//field[@name='name']" position="before">
+				<field name="id" optional="show"/>
+			</xpath>
 			<xpath expr="//field[@name='website_url']" position="attributes">
 				<attribute name="optional">hide</attribute>
 			</xpath>
