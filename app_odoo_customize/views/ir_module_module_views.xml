@@ -30,12 +30,13 @@
                 </field>
                 <filter name="not_installed" position="after">
                     <filter name="is_local_updatable" string="Local updatable" domain="[('local_updatable', '=', True)]"/>
-                </field>
+                </filter>
                 <xpath expr="//search/group" position="inside">
                     <filter string="Addons Path" name="addons_path" domain="[]" context="{'group_by': 'addons_path_id'}" groups="base.group_no_one"/>
                 </xpath>
             </field>
         </record>
+
         <record id="app_module_form" model="ir.ui.view">
             <field name="name">app.ir.module.module.form</field>
             <field name="model">ir.module.module</field>
@@ -55,6 +56,7 @@
                 </xpath>
             </field>
         </record>
+
     	<record id="app_module_view_kanban" model="ir.ui.view">
             <field name="name">ir.module.module.kanban.inherit.base</field>
             <field name="model">ir.module.module</field>

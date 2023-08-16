@@ -14,7 +14,7 @@ class MailThread(models.AbstractModel):
         if app_stop_subscribe:
             return True
         else:
-            return super(MailThread, self).message_subscribe(partner_ids, channel_ids, subtype_ids)
+            return super(MailThread, self).message_subscribe(partner_ids, subtype_ids)
 
     def _message_subscribe(self, partner_ids=None, channel_ids=None, subtype_ids=None, customer_ids=None):
         """ 停用订阅功能. """
@@ -23,7 +23,7 @@ class MailThread(models.AbstractModel):
         if app_stop_subscribe:
             return True
         else:
-            return super(MailThread, self)._message_subscribe(partner_ids, channel_ids, subtype_ids, customer_ids)
+            return super(MailThread, self)._message_subscribe(partner_ids, subtype_ids, customer_ids)
 
     def _message_auto_subscribe_followers(self, updated_values, default_subtype_ids):
         """ 停用订阅功能. """
@@ -41,4 +41,4 @@ class MailThread(models.AbstractModel):
         if app_stop_subscribe:
             return True
         else:
-            return super(MailThread, self)._message_auto_subscribe_notify( partner_ids, template)
+            return super(MailThread, self)._message_auto_subscribe_notify(partner_ids, template)
