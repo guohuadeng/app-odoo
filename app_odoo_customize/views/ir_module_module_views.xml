@@ -25,9 +25,12 @@
             <field name="model">ir.module.module</field>
             <field name="inherit_id" ref="base.view_module_filter" />
             <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <filter name="author"/>
+                </field>
                 <filter name="not_installed" position="after">
                     <filter name="is_local_updatable" string="Local updatable" domain="[('local_updatable', '=', True)]"/>
-                </filter>
+                </field>
                 <xpath expr="//search/group" position="inside">
                     <filter string="Addons Path" name="addons_path" domain="[]" context="{'group_by': 'addons_path_id'}" groups="base.group_no_one"/>
                 </xpath>
