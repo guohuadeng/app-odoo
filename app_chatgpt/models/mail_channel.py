@@ -92,7 +92,7 @@ class Channel(models.Model):
             result.append((c.id, "%s%s" % (pre, c.name or '')))
         return result
 
-    def get_openai_context(self, channel_id, author_id, answer_id, minutes=30, chat_count=1):
+    def get_openai_context(self, channel_id, author_id, answer_id, minutes=30, chat_count=0):
         # 上下文处理，要处理群的方式，以及独聊的方式
         # azure新api 处理
         context_history = []
@@ -115,7 +115,10 @@ class Channel(models.Model):
             domain = expression.AND([domain, [('date', '>=', afterTime)]])
         else:
             domain = expression.AND([domain, [('author_id', '=', answer_id.id)]])
-        ai_msg_list = message_model.with_context(tz='UTC').search(domain, order="id desc", limit=chat_count)
+        if chat_count == 0:
+            ai_msg_list = []
+        else:
+            ai_msg_list = message_model.with_context(tz='UTC').search(domain, order="id desc", limit=chat_count)
         for ai_msg in ai_msg_list:
             # 判断这个 ai_msg 是不是ai发，有才 insert。 判断 user_msg 是不是 user发的，有才 insert
             user_msg = ai_msg.parent_id.sudo()
@@ -262,7 +265,7 @@ class Channel(models.Model):
             openai.api_key = api_key
             # 非4版本，取0次。其它取3 次历史
             chat_count = 3
-            if '4' in ai.ai_model:
+            if '4' in ai.ai_model or '4' in ai.name:
                 chat_count = 1
                 if hasattr(self, 'chat_count'):
                     if self.chat_count > 0:
