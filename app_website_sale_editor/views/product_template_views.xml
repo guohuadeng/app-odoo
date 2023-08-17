@@ -27,9 +27,10 @@
                     <page name="shop_desc" string="Website Description" attrs="{'invisible': [('sale_ok','=',False)]}">
 	                    <group>
 		                    <group>
-<!--			                    todo: 这里加个快速设置 seo url字段-->
+<!--			                     这里加个快速设置 seo url字段-->
 			                    <field name="website_meta_title" invisible="1"/>
 			                    <field name="website_meta_keywords"/>
+								<field name="seo_name"/>
 		                    </group>
 		                    <group>
 			                    <field name="website_meta_description"/>
