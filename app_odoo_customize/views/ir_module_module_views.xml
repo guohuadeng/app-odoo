@@ -26,7 +26,7 @@
             <field name="inherit_id" ref="base.view_module_filter" />
             <field name="arch" type="xml">
                 <field name="name" position="after">
-                    <filter name="author"/>
+                    <field name="author"/>
                 </field>
                 <filter name="not_installed" position="after">
                     <filter name="is_local_updatable" string="Local updatable" domain="[('local_updatable', '=', True)]"/>
@@ -40,20 +40,15 @@
         <record id="app_module_form" model="ir.ui.view">
             <field name="name">app.ir.module.module.form</field>
             <field name="model">ir.module.module</field>
-            <field name="inherit_id" ref="base.module_form" />
-            <field name="arch" type="xml">
-                <h3 class="oe_fade" position="attributes">
-                    <attribute name="groups">app_odoo_customize.group_show_author_in_apps</attribute>
-                </h3>
-                <field name="website" position="attributes">
-                    <attribute name="groups">app_odoo_customize.group_show_author_in_apps</attribute>
-                </field>
-                <xpath expr="//notebook/page/group" position="inside">
-                    <group name="module_path">
-                        <field name="addons_path_id" invisible="1"/>
-                        <field name="addons_path" groups="base.group_no_one"/>
-                    </group>
-                </xpath>
+            <field name="inherit_id" ref="base.module_form"/>
+	        <field name="arch" type="xml">
+		        <h3 class="oe_fade" position="attributes">
+			        <attribute name="groups">app_odoo_customize.group_show_author_in_apps</attribute>
+		        </h3>
+		        <field name="category_id" position="after">
+			        <field name="addons_path_id" invisible="1"/>
+			        <field name="addons_path" groups="base.group_no_one"/>
+		        </field>
             </field>
         </record>
 

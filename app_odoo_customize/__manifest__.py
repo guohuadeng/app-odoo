@@ -137,6 +137,7 @@
     42. Add menu navbar setup for top or bottom. navigator footer support.
     43. Check to only Debug / Debug Assets for Odoo Admin. Deny debug from url for other user.
     44. Check to stop subscribe and follow. This to make odoo speed up.
+    45. Add addons path info to module.
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -188,5 +189,6 @@
     42. 可设置导航栏在上方还是下方，分开桌面与移动端.
     43. 可设置只允许管理员进入开发者模式，不可在url中直接debut=1来调试
     44. 可配置停用自动用户订阅功能，这会提速odoo，减少资源消耗
+    45. 为应用模块增加模块路径信息
     """,
 }
