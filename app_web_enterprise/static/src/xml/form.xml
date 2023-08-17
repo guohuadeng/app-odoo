@@ -18,4 +18,13 @@
             Discard
         </xpath>
     </t>
+    <!--    创建移到左边-->
+    <t t-name="app_web_enterprise.FormControlPanel" t-inherit="web.FormControlPanel" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_cp_bottom_right')]//t[3]" position="replace"/>
+<!--        <xpath expr="//t[t-slot='control-panel-create-button']" position="replace"/>-->
+<!--        <xpath expr="//div[hasclass('o_cp_top_left')]" position="replace"/>-->
+        <xpath expr="//div[hasclass('o_cp_top_left')]" position="inside">
+            <t t-slot="control-panel-create-button" />
+        </xpath>
+    </t>
 </templates>
