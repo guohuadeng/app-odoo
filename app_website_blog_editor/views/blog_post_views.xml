@@ -17,6 +17,9 @@
 			<xpath expr="//field[@name='is_published']" position="attributes">
 				<attribute name="optional">show</attribute>
 			</xpath>
+			<xpath expr="//field[@name='website_url']" position="after">
+				<field name="seo_name"/>
+			</xpath>
 			<xpath expr="//field[@name='author_id']" position="before">
 				<field name="visits" optional="show"/>
 			</xpath>
@@ -35,6 +38,9 @@
 		<field name="model">blog.post</field>
 		<field name="inherit_id" ref="website_blog.view_blog_post_form"/>
 		<field name="arch" type="xml">
+			<xpath expr="//field[@name='tag_ids']" position="after">
+				<field name="seo_name"/>
+			</xpath>
 			<xpath expr="//page[@name='seo']" position="after">
 				<page name="post_content" string="Content">
 					<field name="content" widget="html" nolabel="1" class="oe-bordered-editor"
