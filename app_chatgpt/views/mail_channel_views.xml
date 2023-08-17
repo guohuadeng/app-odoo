@@ -103,10 +103,6 @@
                     <group expand="0" string="Group By">
                         <filter string="Channel Type" name="groupby_channel_type" domain="[]" context="{'group_by': 'channel_type'}"/>
                     </group>
-                    <searchpanel>
-                        <field name="channel_type"/>
-                        <field name="is_private"/>
-                    </searchpanel>
                 </xpath>
             </field>
         </record>
