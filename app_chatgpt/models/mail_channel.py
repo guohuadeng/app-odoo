@@ -174,7 +174,9 @@ class Channel(models.Model):
 
         # 不处理 一般notify，但处理欢迎
         if '<div class="o_mail_notification' in message.body and message.body != _('<div class="o_mail_notification">joined the channel</div>'):
-                return rdata
+            return rdata
+        if 'o_odoobot_command' in message.body:
+            return rdata
 
         if channel_type == 'chat':
             channel_partner_ids = self.channel_partner_ids
@@ -234,7 +236,8 @@ class Channel(models.Model):
             #     elif user_id.gpt_id and not is_allow:
             #         # 暂时有限用户的Ai
             #         raise UserError(_('此Ai暂时未开放，请联系管理员。'))
-
+        if hasattr(ai, 'is_translator') and ai.is_translator:
+            return rdata
         chatgpt_channel_id = self.env.ref('app_chatgpt.channel_chatgpt')
         
         if message.body == _('<div class="o_mail_notification">joined the channel</div>'):
