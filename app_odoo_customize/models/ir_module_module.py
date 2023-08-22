@@ -18,6 +18,7 @@ class IrModule(models.Model):
     local_updatable = fields.Boolean('Local updatable', compute=False, default=False, store=True)
     addons_path_id = fields.Many2one('ir.module.addons.path', string='Addons Path ID', readonly=True)
     addons_path = fields.Char(string='Addons Path', related='addons_path_id.path', readonly=True)
+    license = fields.Char(readonly=True)
 
     def module_multi_uninstall(self):
         """ Perform the various steps required to uninstall a module completely

@@ -7,7 +7,8 @@
 		<field name="arch" type="xml">
 			<xpath expr="//search" position="inside">
                 <searchpanel>
-                    <field name="blog_id" enable_counters="1"/>
+                    <field name="blog_id" enable_counters="1" select="multi"/>
+                    <field name="tag_ids" enable_counters="1"  select="multi"/>
                 </searchpanel>
             </xpath>
 		</field>

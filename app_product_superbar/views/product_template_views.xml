@@ -9,8 +9,8 @@
             <xpath expr="//search">
                 <searchpanel view_types="list,kanban,pivot,graph,activity,search" class="app_test">
                     <field name="categ_id" text="name" enable_counters="1" expand="1" limit="1000"/>
-                    <field name="type" enable_counters="1"/>
-	                <field name="product_tag_ids" select="multi" enable_counters="1"/>
+                    <field name="type"/>
+	                <field name="product_tag_ids" select="multi"/>
                 </searchpanel>
             </xpath>
         </field>

@@ -54,6 +54,12 @@ class ResConfigSettings(models.TransientModel):
         ('bottom', 'Bottom'),
         # ('left', 'Left'),
     ], config_parameter='app_navbar_pos_mobile')
+    
+    # 安全与提速
+    app_debug_only_admin = fields.Boolean('Debug for Admin', config_parameter='app_debug_only_admin',
+                                          help="Check to only Debug / Debug Assets for Odoo Admin. Deny debug from url for other user.")
+    app_stop_subscribe = fields.Boolean('Stop Odoo Subscribe', help="Check to stop subscribe and follow. This to make odoo speed up.",
+                                        config_parameter='app_stop_subscribe')
 
     def set_module_url(self):
         sql = "UPDATE ir_module_module SET website = '%s' WHERE license like '%s' and website <> ''" % (self.app_enterprise_url, 'OEEL%')

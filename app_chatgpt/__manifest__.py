@@ -10,7 +10,7 @@
 
 {
     'name': 'ChatGPT4,Google Bard, AiGC Center.Ai服务中心，聚合全网Ai',
-    'version': '16.23.07.29',
+    'version': '16.23.08.15',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
     'maintainer': 'odooai.cn',
@@ -61,6 +61,7 @@
         'views/ai_robot_views.xml',
         'views/res_partner_ai_use_views.xml',
         'views/res_users_views.xml',
+        'views/mail_channel_views.xml',
     ],
     'assets': {
         'mail.assets_messaging': [
