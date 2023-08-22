@@ -22,7 +22,7 @@
 # description:
 
 {
-    'name': 'odoo 16 Customize OEM(Boost, Data reset)',
+    'name': 'odoo Tweak Customize All in One. Customize,UI,Boost,Security,Data,Development Enhance',
     'version': '16.23.08.15',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
@@ -32,9 +32,9 @@
     'sequence': 2,
     'images': ['static/description/banner.gif'],
     'summary': """
-    1 click customize odoo, reset data. For quick develop. Set brand, boost, reset data, debug. Language Switcher.
-    Easy Delete data.reset account chart.
-    customize my odoo.
+    1 click Tweak odoo. 45 Functions odoo enhancement. for Customize, UI, Boost, Security, Development.
+    Easy reset data, clear data, reset account chart, reset Demo data.
+    For quick debug. Set brand,  Language Switcher. odoo improve all.
     """,
     'depends': [
         'app_common',
