@@ -68,7 +68,7 @@
 		<field name="priority">99</field>
 		<field name="mode">primary</field>
 		<field name="arch" type="xml">
-			<form string="Blog Contet">
+			<form string="Blog Content">
 				<sheet name="blog_content">
 					<field name="id" invisible="True"/>
 					<div class="oe_title">

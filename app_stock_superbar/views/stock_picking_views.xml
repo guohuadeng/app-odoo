@@ -9,8 +9,7 @@
             <xpath expr="//search">
                 <searchpanel view_types="list,kanban,pivot,graph">
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
-                    <field name="user_id"/>
-                    <field name="state" enable_counters="1"/>
+                    <field name="state"/>
                     <field name="picking_type_id" enable_counters="1"/>
                 </searchpanel>
             </xpath>

@@ -8,7 +8,6 @@
     <field name="arch" type="xml">
       <xpath expr="//search" position="inside">
         <searchpanel>
-          <field name="user_id"/>
           <field name="stage_id"/>
         </searchpanel>
       </xpath>

@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0-20230320\n"
+"Project-Id-Version: Odoo Server 16.0+e-20230721\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-10 17:30+0000\n"
-"PO-Revision-Date: 2023-04-10 17:30+0000\n"
+"POT-Creation-Date: 2023-08-24 14:14+0000\n"
+"PO-Revision-Date: 2023-08-24 14:14+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,71 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: app_website_blog_editor
+#: model:ir.model,name:app_website_blog_editor.model_blog_blog
+msgid "Blog"
+msgstr "博客分类"
+
+#. module: app_website_blog_editor
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_blog_post_form_view_code
+msgid "Blog Content"
+msgstr "博客内容"
+
+#. module: app_website_blog_editor
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_blog_post_form_view_code
+msgid "Blog Name"
+msgstr "博客名称"
+
+#. module: app_website_blog_editor
+#: model:ir.model,name:app_website_blog_editor.model_blog_post
+msgid "Blog Post"
+msgstr "博文"
+
+#. module: app_website_blog_editor
+#: model:ir.model,name:app_website_blog_editor.model_blog_tag
+msgid "Blog Tag"
+msgstr "博客标签"
+
+#. module: app_website_blog_editor
+#: model:ir.model,name:app_website_blog_editor.model_blog_tag_category
+msgid "Blog Tag Category"
+msgstr "博客标签分类"
+
+#. module: app_website_blog_editor
 #: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_view_blog_post_form
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_view_blog_post_search
 msgid "Content"
 msgstr "博客图文"
+
+#. module: app_website_blog_editor
+#: model:ir.model.fields,help:app_website_blog_editor.field_blog_blog__sequence
+#: model:ir.model.fields,help:app_website_blog_editor.field_blog_tag__sequence
+#: model:ir.model.fields,help:app_website_blog_editor.field_blog_tag_category__sequence
+msgid "Determine the display order"
+msgstr "确定显示顺序"
+
+#. module: app_website_blog_editor
+#: model:ir.model.fields,field_description:app_website_blog_editor.field_blog_blog__sequence
+#: model:ir.model.fields,field_description:app_website_blog_editor.field_blog_tag__sequence
+#: model:ir.model.fields,field_description:app_website_blog_editor.field_blog_tag_category__sequence
+msgid "Sequence"
+msgstr "顺序"
+
+#. module: app_website_blog_editor
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_view_blog_post_list
+msgid "Settings"
+msgstr "设置"
+
+#. module: app_website_blog_editor
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_view_blog_post_list
+msgid "Source Code"
+msgstr "源代码"
+
+#. module: app_website_blog_editor
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_view_blog_post_search
+msgid "Title"
+msgstr "标题"
+
+#. module: app_website_blog_editor
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_blog_post_form_view_code
+msgid "Website Description"
+msgstr "网站描述"
