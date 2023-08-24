@@ -505,5 +505,5 @@ class ResConfigSettings(models.TransientModel):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         self.app_doc_root_url = base_url
 
-    def action_set_all_to_app_doc_root_url(self):
-        if self.app_doc_root_url:
+    # def action_set_all_to_app_doc_root_url(self):
+    #     if self.app_doc_root_url:
