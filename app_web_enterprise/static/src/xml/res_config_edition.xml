@@ -1,13 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
-<!--    <t t-extend="res_config_edition">-->
-<!--        <t t-jquery=".user-heading h3" t-operation="replace">-->
-<!--            <h3>-->
-<!--                odooApp <t t-esc="widget.server_version"/> (odooai.cn Edition)-->
-<!--            </h3>-->
-<!--        </t>-->
-<!--        <t t-jquery=".user-o_web_settings_compact_subtitle small" t-operation="replace">-->
-<!--            <small><a target="_blank" href="http://www.gnu.org/licenses/lgpl.html" style="text-decoration: underline;">GNU LGPL Licensed</a></small>-->
-<!--        </t>-->
-<!--    </t>-->
+	<t t-inherit="web.res_config_edition" t-inherit-mode="extension" owl="1">
+		<xpath expr="//div[hasclass('user-heading')]//h3" position="replace">
+            <h3 class="px-0">
+                Odoo <t t-esc="serverVersion"/> (<a target="_blank" href="https://www.odooai.cn" style="text-decoration: underline;">odooai.cn</a> Edition)
+            </h3>
+		</xpath>
+    </t>
 </templates>
