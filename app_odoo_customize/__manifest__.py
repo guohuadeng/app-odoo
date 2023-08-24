@@ -77,8 +77,11 @@
             'app_odoo_customize/static/src/js/user_menu.js',
             'app_odoo_customize/static/src/js/ribbon.js',
             'app_odoo_customize/static/src/js/dialog.js',
+            'app_odoo_customize/static/src/js/web_dialog_size.js',
             'app_odoo_customize/static/src/webclient/*.js',
             'app_odoo_customize/static/src/webclient/*.xml',
+            'app_odoo_customize/static/src/xml/res_config_edition.xml',
+            'app_odoo_customize/static/src/xml/web_dialog_size.xml',
         ],
     },
     'pre_init_hook': 'pre_init_hook',
@@ -130,7 +133,7 @@
     35. Fixed for odoo 14.
     36. Add refresh translate for multi module.
     37. Easy noupdate manage for External Identifiers(xml_id)
-    38. Add Draggable Dialog enable.
+    38. Add Draggable and sizeable Dialog enable.
     39. Only erp manager can see debug menu..
     40. Fix support for enterprise version.
     41. Fix odoo bug, when click Preferences menu not hide in mobile.
@@ -183,7 +186,7 @@
     35. 优化至odoo14适用
     36. 可为多个模块强制更新翻译
     37. noupdate字段的快速管理，主要针对 xml_id
-    38. 对话框可拖拽
+    38. 对话框可拖拽，可缩放，自动大屏优化
     39. 只有系统管理员可以操作快速debug
     40. 增强对企业版的支持
     41. 修正odoo原生移动端菜单bug，点击个人设置时，原菜单不隐藏等
