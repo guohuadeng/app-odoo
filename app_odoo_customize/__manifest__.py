@@ -65,6 +65,7 @@
         'data/ir_module_module_data.xml',
         # 'data/digest_template_data.xml',
         'data/res_company_data.xml',
+        'data/res_config_settings_data.xml',
     ],
     # 'qweb': [
     #     'static/src/xml/*.xml',
