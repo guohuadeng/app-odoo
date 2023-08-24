@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e-20230721\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-31 09:10+0000\n"
-"PO-Revision-Date: 2023-07-31 09:10+0000\n"
+"POT-Creation-Date: 2023-08-24 06:10+0000\n"
+"PO-Revision-Date: 2023-08-24 06:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -91,7 +91,7 @@ msgstr "<span class=\"col-3 col-lg-2 text-left\">网站与博客</span>"
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.ir_module_addons_path_form_view
 msgid "<span class=\"o_stat_text\"> Modules </span>"
-msgstr "<span class=“o_stat_text”> 模块 </span>"
+msgstr "<span class=\"o_stat_text\"> 模块 </span>"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -122,9 +122,13 @@ msgstr "激活开发者模式 (assets)"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_module__addons_path
-#: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_module__addons_path_id
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.app_view_module_filter
 msgid "Addons Path"
+msgstr "模块所在目录"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_module__addons_path_id
+msgid "Addons Path ID"
 msgstr "模块路径"
 
 #. module: app_odoo_customize
@@ -132,6 +136,11 @@ msgstr "模块路径"
 #: model:ir.ui.menu,name:app_odoo_customize.menu_ir_module_addons_path
 msgid "Addons Paths"
 msgstr "模块路径"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__module_app_chatgpt
+msgid "Ai Center"
+msgstr "Ai服务中心"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -148,6 +157,18 @@ msgstr "底部"
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Cancel"
 msgstr "取消"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_debug_only_admin
+msgid ""
+"Check to only Debug / Debug Assets for Odoo Admin. Deny debug from url for "
+"other user."
+msgstr "勾选后仅Odoo管理员可操作开发者模式。 拒绝其他用户从URL进入调试模式。"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_stop_subscribe
+msgid "Check to stop subscribe and follow. This to make odoo speed up."
+msgstr "选中以停止订阅并关注。这是为了让odoo加速。"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -187,8 +208,8 @@ msgstr "创建于"
 #. module: app_odoo_customize
 #: model:ir.actions.act_window,name:app_odoo_customize.action_app_theme_config
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_theme_config
-msgid "Customize Debrand"
-msgstr "定制我的odoo"
+msgid "Customize Boost Odoo"
+msgstr "增强并定制我的odoo"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_enterprise_url
@@ -206,6 +227,11 @@ msgstr "数据清理（请谨慎操作！）"
 #, python-format
 msgid "Deactivate the developer mode"
 msgstr "取消开发者模式"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_debug_only_admin
+msgid "Debug for Admin"
+msgstr "仅系统管理员可调试"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -324,15 +350,45 @@ msgid "Documentation Url"
 msgstr "用户手册链接"
 
 #. module: app_odoo_customize
+#: model:ir.model,name:app_odoo_customize.model_mail_thread
+msgid "Email Thread"
+msgstr "邮件会话"
+
+#. module: app_odoo_customize
 #: model:ir.actions.act_window,name:app_odoo_customize.action_server_module_multi_get_po
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.app_module_view_kanban
 msgid "Export Translation"
 msgstr "导出翻译"
 
 #. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Extra Feature"
+msgstr "额外功能"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__module_app_odoo_doc
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Get Help Documentation on current odoo operation or topic."
+msgstr "获取有关当前 odoo 操作或主题的帮助文档。"
+
+#. module: app_odoo_customize
+msgid "Get Help Documentation on current operation or topic."
+msgstr "获取有关当前操作或主题的帮助文档。"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Get Help Documentation on current operation or topic. Click to get"
+msgstr "获取有关odoo当前操作或主题的帮助文档。点击获取"
+
+#. module: app_odoo_customize
 #: model:ir.model,name:app_odoo_customize.model_ir_http
 msgid "HTTP Routing"
 msgstr "HTTP 路由"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__module_app_odoo_doc
+msgid "Help Document Anywhere"
+msgstr "即时查看帮助"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__id
@@ -367,6 +423,11 @@ msgid "Leave the Developer Tools"
 msgstr "离开开发者模式"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_module__license
+msgid "License"
+msgstr "许可协议"
+
+#. module: app_odoo_customize
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_demo_data
 msgid "Load demo data"
 msgstr "加载演示数据"
@@ -382,6 +443,11 @@ msgstr "可本地更新"
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__module_ids
 msgid "Module"
 msgstr "模块"
+
+#. module: app_odoo_customize
+#: model:ir.model,name:app_odoo_customize.model_ir_module_addons_path
+msgid "Module Addons Path"
+msgstr "模块所在目录"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__module_count
@@ -421,7 +487,7 @@ msgstr "无需更新"
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Odoo Customize Setting"
-msgstr "odoo自定义设置"
+msgstr "odoo全面定制，提速，界面，数据处理"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__path
@@ -474,6 +540,11 @@ msgstr "重置品类及区位显示名"
 #: model:ir.ui.menu,name:app_odoo_customize.menu_ir_cron
 msgid "Scheduled Actions"
 msgstr "计划任务"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Security and Boost"
+msgstr "安全与提速"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_system_name
@@ -550,6 +621,11 @@ msgstr "显示分享Odoo"
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_show_support
 msgid "Show Support"
 msgstr "显示支持"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_stop_subscribe
+msgid "Stop Odoo Subscribe"
+msgstr "停止Odoo订阅"
 
 #. module: app_odoo_customize
 #. odoo-javascript
@@ -646,6 +722,16 @@ msgid "Upgrade"
 msgstr "升级"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__module_app_chatgpt
+msgid "Use Ai to boost you business."
+msgstr "使用 Ai 促进您的业务发展。"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Use Ai to make odoo more powerful."
+msgstr "使用 Ai 使odoo更强大好用。"
+
+#. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "User Menu"
 msgstr "用户菜单"
@@ -694,11 +780,6 @@ msgstr "启用后，会显示在线支持链接"
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_show_debug
 msgid "When enable,everyone login can see the debug menu"
 msgstr "启用后，会显示快速调试菜单"
-
-#. module: app_odoo_customize
-#: model:ir.model,name:app_odoo_customize.model_ir_module_addons_path
-msgid "ir.module.addons.path"
-msgstr "ir.module.addons.path"
 
 #. module: app_odoo_customize
 #. odoo-javascript

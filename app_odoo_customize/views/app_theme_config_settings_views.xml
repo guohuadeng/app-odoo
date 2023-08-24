@@ -6,7 +6,7 @@
             <field name="model">res.config.settings</field>
             <field name="priority">20</field>
             <field name="arch" type="xml">
-                <form string="odooAi Customize Settings" class="oe_form_configuration">
+                <form string="odooAi Customize Settings" class="oe_form_configuration" create="0">
                     <header>
                         <button string="Apply" type="object" name="execute" class="oe_highlight"/>
                         <button string="Cancel" type="object" name="cancel" class="oe_link" special="cancel"/>
@@ -37,6 +37,32 @@
                             <field name="app_stop_subscribe"/>
                         </group>
                     </group>
+	                <h4 class="o_horizontal_separator mt-4 mb-3">Extra Feature</h4>
+                    <div class="row mt16 o_settings_container" name="app_modules">
+		                <div class="col-lg-6 col-md-6 o_setting_box">
+			                <div class="o_setting_left_pane">
+				                <field name="module_app_odoo_doc"/>
+			                </div>
+			                <div class="o_setting_right_pane">
+				                <label for="module_app_odoo_doc"/>
+				                <a href="https://apps.odoo.com/apps/modules/16.0/app_odoo_doc"
+				                   title="Get Help Documentation on current odoo operation or topic. Click to get " class="o_doc_link ml8"
+				                   target="_blank"/>
+				                <div class="">Get Help Documentation on current odoo operation or topic.</div>
+			                </div>
+		                </div>
+		                <div class="col-lg-6 col-md-6 o_setting_box">
+			                <div class="o_setting_left_pane">
+				                <field name="module_app_chatgpt"/>
+			                </div>
+			                <div class="o_setting_right_pane">
+				                <label for="module_app_chatgpt"/>
+				                <a href="https://apps.odoo.com/apps/modules/16.0/app_chatgpt" class="o_doc_link ml8"
+				                   target="_blank"/>
+				                <div class="">Use Ai to make odoo more powerful.</div>
+			                </div>
+		                </div>
+                    </div>
                     <group string="User Menu">
                         <group>
                             <field name="app_show_lang"/>
@@ -177,7 +203,7 @@
         </record>
 
         <record id="action_app_theme_config" model="ir.actions.act_window">
-            <field name="name">Customize Debrand</field>
+            <field name="name">Customize Boost Odoo</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">res.config.settings</field>
             <field name="view_mode">form</field>

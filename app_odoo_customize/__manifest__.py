@@ -22,8 +22,8 @@
 # description:
 
 {
-    'name': 'odoo Tweak Customize All in One. Customize,UI,Boost,Security,Data,Development Enhance',
-    'version': '16.23.08.15',
+    'name': 'odoo Tweak,Boost,Customize,Ai All in One. Customize,UI,Boost,Security,Data,Development Enhance',
+    'version': '16.23.08.24',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
@@ -134,16 +134,17 @@
     39. Only erp manager can see debug menu..
     40. Fix support for enterprise version.
     41. Fix odoo bug, when click Preferences menu not hide in mobile.
-    42. Add menu navbar setup for top or bottom. navigator footer support.
+    42. Mobile Enhance. Add menu navbar setup for top or bottom. navigator footer support.
     43. Check to only Debug / Debug Assets for Odoo Admin. Deny debug from url for other user.
     44. Check to stop subscribe and follow. This to make odoo speed up.
     45. Add addons path info to module.
+    46. Add Help documentation anywhere.  easy get help for any odoo operation or action.
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
     The user can get the help document just by one click.
-    ## 在符合odoo开源协议的前提下，去除odoo版权信息，自定义你的odoo
-    可完全自行设置下列 odoo 选项，让 odoo 看上去像是你的软件产品
+    ## 在符合odoo开源协议的前提下，自定义你的odoo系统
+    可完全自行设置下列选项，将 odoo 整合进自有软件产品
     支持odoo 16,15,14,13,12, 11, 10, 9 版本，社区版企业版通用
     1. 删除菜单导航页脚的 Odoo 标签
     2. 将弹出窗口中 "Odoo" 设置为自定义名称
@@ -190,5 +191,6 @@
     43. 可设置只允许管理员进入开发者模式，不可在url中直接debut=1来调试
     44. 可配置停用自动用户订阅功能，这会提速odoo，减少资源消耗
     45. 为应用模块增加模块路径信息
+    46. 增加快速帮助文档，可以在任意操作中获取相关的 odoo 帮助.
     """,
 }

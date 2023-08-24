@@ -60,6 +60,9 @@ class ResConfigSettings(models.TransientModel):
                                           help="Check to only Debug / Debug Assets for Odoo Admin. Deny debug from url for other user.")
     app_stop_subscribe = fields.Boolean('Stop Odoo Subscribe', help="Check to stop subscribe and follow. This to make odoo speed up.",
                                         config_parameter='app_stop_subscribe')
+    # 处理额外模块
+    module_app_odoo_doc = fields.Boolean("Help Document Anywhere", help='Get Help Documentation on current odoo operation or topic.')
+    module_app_chatgpt = fields.Boolean("Ai Center", help='Use Ai to boost you business.')
 
     def set_module_url(self):
         sql = "UPDATE ir_module_module SET website = '%s' WHERE license like '%s' and website <> ''" % (self.app_enterprise_url, 'OEEL%')
