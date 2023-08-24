@@ -21,7 +21,8 @@ class Module(models.Model):
             else:
                 module.description_html_cn = False
             if module_path and path:
-                with tools.file_open(path, 'rb') as desc_file:
+                # 注意： b 不能在 mode中才能使用 utf-8
+                with tools.file_open(path, 'r') as desc_file:
                     doc = desc_file.read()
                     html = lxml.html.document_fromstring(doc)
                     for element, attribute, link, pos in html.iterlinks():

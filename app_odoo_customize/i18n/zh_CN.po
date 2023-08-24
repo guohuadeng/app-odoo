@@ -451,7 +451,7 @@ msgstr "无需更新"
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "OEM & Boost"
-msgstr "定制与提速"
+msgstr "定制与增强"
 
 #. module: app_odoo_customize
 #. odoo-javascript
@@ -520,8 +520,8 @@ msgstr "安全与提速"
 #. module: app_odoo_customize
 #: model:ir.actions.act_window,name:app_odoo_customize.action_app_theme_config
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_theme_config
-msgid "Settings"
-msgstr "设置"
+msgid "OEM and Boost"
+msgstr "odoo定制OEM及增强"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_system_name
