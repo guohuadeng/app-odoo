@@ -9,7 +9,7 @@ class Message(models.Model):
     human_prompt_tokens = fields.Integer('Human Prompt Tokens')
     ai_completion_tokens = fields.Integer('AI Completion Tokens')
     cost_tokens = fields.Integer('Cost Tokens')
-
+    # 是否ai回复
     is_ai = fields.Boolean('Is Ai', default=False)
 
     def _message_add_reaction(self, content):

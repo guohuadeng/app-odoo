@@ -92,7 +92,7 @@ class Channel(models.Model):
             result.append((c.id, "%s%s" % (pre, c.name or '')))
         return result
 
-    def get_openai_context(self, channel_id, author_id, answer_id, minutes=30, chat_count=0):
+    def get_openai_context(self, channel_id, author_id, answer_id, minutes=60, chat_count=0):
         # 上下文处理，要处理群的方式，以及独聊的方式
         # azure新api 处理
         context_history = []
@@ -107,6 +107,7 @@ class Channel(models.Model):
                   ('model', '=', 'mail.channel'),
                   ('message_type', '!=', 'user_notification'),
                   ('parent_id', '!=', False),
+                  ('is_ai', '=', True),
                   ('body', '!=', '<p>%s</p>' % _('Response Timeout, please speak again.')),
                   ('body', '!=', _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。'))]
 
@@ -122,7 +123,7 @@ class Channel(models.Model):
         for ai_msg in ai_msg_list:
             # 判断这个 ai_msg 是不是ai发，有才 insert。 判断 user_msg 是不是 user发的，有才 insert
             user_msg = ai_msg.parent_id.sudo()
-            if ai_msg.author_id.sudo().gpt_id:
+            if ai_msg.author_id.sudo().gpt_id and answer_id.sudo().gpt_id and ai_msg.author_id.sudo().gpt_id == answer_id.sudo().gpt_id:
                 ai_content = str(ai_msg.body).replace("<p>", "").replace("</p>", "").replace("<p>", "")
                 context_history.insert(0, {
                     'role': 'assistant',

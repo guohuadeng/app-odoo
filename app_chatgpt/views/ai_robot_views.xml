@@ -23,8 +23,8 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button string="Get List Model" type="object" name="get_ai_list_model"/>
-                    <button string="Get Model Info" type="object" name="get_ai_model_info"/>
+                    <button string="Get List Model" type="object" name="get_ai_list_model" attrs="{'invisible': [('provider', '!=', 'openai')]}"/>
+                    <button string="Get Model Info" type="object" name="get_ai_model_info" attrs="{'invisible': [('provider', '!=', 'openai')]}"/>
                 </header>
                 <sheet>
                     <div class="oe_title">
