@@ -5,13 +5,14 @@ from odoo.addons.portal.controllers.web import Home
 from odoo.http import request
 
 
-class KsHome(Home):
+class AppHome(Home):
 
     @http.route()
     def web_client(self, s_action=None, **kw):
-        res = super(KsHome, self).web_client(s_action, **kw)
+        # todo: 当前只对 web，要调整为也对 website
+        res = super(AppHome, self).web_client(s_action, **kw)
 
-        if kw.get('debug') in ['1', 'assets', 'assets,tests']:
+        if kw.get('debug', False):
             config_parameter = request.env['ir.config_parameter'].sudo()
             app_debug_only_admin = config_parameter.get_param('app_debug_only_admin')
             if request.session.uid and request.env.user.browse(request.session.uid)._is_admin():

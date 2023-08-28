@@ -67,8 +67,11 @@ class ResConfigSettings(models.TransientModel):
     # 应用帮助文档
     app_doc_root_url = fields.Char('Help of topic domain', config_parameter='app_doc_root_url', default='https://odooai.cn')
 
-    def set_module_url(self):
-        sql = "UPDATE ir_module_module SET website = '%s' WHERE license like '%s' and website <> ''" % (self.app_enterprise_url, 'OEEL%')
+    @api.model
+    def set_module_url(self, rec=None):
+        config_parameter = self.env['ir.config_parameter'].sudo()
+        app_enterprise_url = config_parameter.get_param('app_enterprise_url', 'https://www.odooai.cn')
+        sql = "UPDATE ir_module_module SET website = '%s' WHERE license like '%s' and website <> ''" % (app_enterprise_url, 'OEEL%')
         try:
             self._cr.execute(sql)
             self._cr.commit()
