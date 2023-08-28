@@ -39,7 +39,7 @@
 
 {
     'name': "Website Blogs Editor in Backend",
-    'version': '16.23.08.03',
+    'version': '16.23.08.28',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -74,6 +74,7 @@
         'views/blog_tag_category_views.xml',
         'views/blog_tag_views.xml',
         'views/blog_post_views.xml',
+        'views/res_config_settings_views.xml'
         # 'report/.xml',
     ],
     'demo': [],

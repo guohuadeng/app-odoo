@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e-20230721\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-24 14:14+0000\n"
-"PO-Revision-Date: 2023-08-24 14:14+0000\n"
+"POT-Creation-Date: 2023-08-28 08:26+0000\n"
+"PO-Revision-Date: 2023-08-28 08:26+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -46,6 +46,11 @@ msgid "Blog Tag Category"
 msgstr "博客标签分类"
 
 #. module: app_website_blog_editor
+#: model:ir.model,name:app_website_blog_editor.model_res_config_settings
+msgid "Config Settings"
+msgstr "配置设置"
+
+#. module: app_website_blog_editor
 #: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_view_blog_post_form
 #: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_view_blog_post_search
 msgid "Content"
@@ -57,6 +62,11 @@ msgstr "博客图文"
 #: model:ir.model.fields,help:app_website_blog_editor.field_blog_tag_category__sequence
 msgid "Determine the display order"
 msgstr "确定显示顺序"
+
+#. module: app_website_blog_editor
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_res_config_settings_form_view
+msgid "If set, replaces the blog post background image as the meta image."
+msgstr "如果设置，默认将博文背景图片替换为元图像。"
 
 #. module: app_website_blog_editor
 #: model:ir.model.fields,field_description:app_website_blog_editor.field_blog_blog__sequence
@@ -79,6 +89,12 @@ msgstr "源代码"
 #: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_view_blog_post_search
 msgid "Title"
 msgstr "标题"
+
+#. module: app_website_blog_editor
+#: model:ir.model.fields,field_description:app_website_blog_editor.field_res_config_settings__sync_blog_meta_background_img
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_res_config_settings_form_view
+msgid "Use a meta image by default for blog post background"
+msgstr "博客文章背景默认使用元图像"
 
 #. module: app_website_blog_editor
 #: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_blog_post_form_view_code
