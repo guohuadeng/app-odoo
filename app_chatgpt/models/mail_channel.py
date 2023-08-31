@@ -16,17 +16,16 @@ _logger = logging.getLogger(__name__)
 class Channel(models.Model):
     _inherit = 'mail.channel'
 
-    is_private = fields.Boolean(string="私有频道", default=False, help="私人频道不公开，可邀请及清退指定用户")
+    is_private = fields.Boolean(string="Private", default=False, help="Check to set Private, Can only use by user, not Public")
     # 因为 channel_member_ids 不好处理，在此增加此字段
     # 主Ai
-    ai_partner_id = fields.Many2one(comodel_name="res.partner", string="专属主Ai", required=False,
+    ai_partner_id = fields.Many2one(comodel_name="res.partner", string="Main Ai", required=False,
                                     domain=[('gpt_id', '!=', None), ('is_chat_private', '=', True)],
                                     default=lambda self: self._app_get_m2o_default('ai_partner_id'),
-                                    help="主Ai是主要对话对象，当没有@操作时，由主Ai回答", )
-    ext_ai_partner_id = fields.Many2one(comodel_name="res.partner", string="辅助Ai",
-                                        domain=[('gpt_id', '!=', None), ('is_chat_private', '=', True)],
-                                        help="通过 @辅助Ai 可以让辅助Ai回答问题", )
-    description = fields.Char('Ai角色设定', help="填写后，Ai将以您设定的身份与你交互，如：你是一个在航空航天领域的专家。不填则根据问题智能处理")
+                                    help="Main Ai is the robot help you default.")
+    ext_ai_partner_id = fields.Many2one(comodel_name="res.partner", string="Secondary Ai",
+                                        domain=[('gpt_id', '!=', None), ('is_chat_private', '=', True)])
+    description = fields.Char('Ai Character', help="Ai would help you act as the Character set.")
     set_max_tokens = fields.Selection([
         ('300', '简短'),
         ('600', '标准'),
@@ -349,3 +348,8 @@ class Channel(models.Model):
         if c and not c.is_member:
             c.sudo().add_members([user.partner_id.id])
         return c_id
+
+    @api.onchange('ai_partner_id')
+    def _onchange_ai_partner_id(self):
+        if self.ai_partner_id and self.ai_partner_id.image_1920:
+            self.image_128 = self.ai_partner_id.avatar_128

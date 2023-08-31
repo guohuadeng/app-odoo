@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e-20230721\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-26 14:52+0000\n"
-"PO-Revision-Date: 2023-08-26 14:52+0000\n"
+"POT-Creation-Date: 2023-08-29 10:37+0000\n"
+"PO-Revision-Date: 2023-08-29 10:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -661,6 +661,11 @@ msgid "ATM sign"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__active
+msgid "Active"
+msgstr ""
+
+#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
@@ -685,10 +690,37 @@ msgid "Ai Center Setup"
 msgstr "Ai智能服务中心设置"
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__description
+msgid "Ai Character"
+msgstr "Ai角色设定"
+
+#. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
+msgid "Ai Character Set"
+msgstr "Ai角色风格设定"
+
+#. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_search_view
+msgid "Ai Provider"
+msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.actions.act_window,name:app_chatgpt.action_ai_robot
+#: model:ir.model,name:app_chatgpt.model_ai_robot
+#: model:ir.ui.menu,name:app_chatgpt.menu_ai_robot
+msgid "Ai Robot"
+msgstr "GPT机器人"
+
+#. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__ai_user_id
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.app_view_users_search
 msgid "Ai User"
 msgstr "Ai用户"
+
+#. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_mail_channel__description
+msgid "Ai would help you act as the Character set."
+msgstr "Ai将按你设置的角色来对你的问题进行反馈"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
@@ -703,16 +735,6 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_chat_count__none
 msgid "Ai自动判断"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__description
-msgid "Ai角色设定"
-msgstr ""
-
-#. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
-msgid "Ai角色风格设定"
 msgstr ""
 
 #. module: app_chatgpt
@@ -762,6 +784,11 @@ msgstr ""
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "Aquarius"
+msgstr ""
+
+#. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_search_view
+msgid "Archived"
 msgstr ""
 
 #. module: app_chatgpt
@@ -990,6 +1017,11 @@ msgstr ""
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__ai_model__gpt-4-32k
 msgid "Chatgpt 4 32k"
 msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_mail_channel__is_private
+msgid "Check to set Private, Can only use by user, not Public"
+msgstr "勾选后，即为私人频道，仅个人使用。"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1262,12 +1294,6 @@ msgid "Fuji"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.actions.act_window,name:app_chatgpt.action_ai_robot
-#: model:ir.ui.menu,name:app_chatgpt.menu_ai_robot
-msgid "GPT Robot"
-msgstr ""
-
-#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
@@ -1303,12 +1329,8 @@ msgid "Google Bard Ai"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model,name:app_chatgpt.model_ai_robot
-msgid "Gpt Robot"
-msgstr "GPT机器人"
-
-#. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_search
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_search_view
 msgid "Group By"
 msgstr ""
 
@@ -1670,7 +1692,7 @@ msgstr ""
 
 #. module: app_chatgpt
 #: model_terms:ir.actions.act_window,help:app_chatgpt.action_ai_robot
-msgid "Let's create a GPT Robot."
+msgid "Let's create a Ai Robot."
 msgstr ""
 
 #. module: app_chatgpt
@@ -1702,6 +1724,16 @@ msgstr ""
 #, python-format
 msgid "Mahjong red dragon"
 msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__ai_partner_id
+msgid "Main Ai"
+msgstr "专属主Ai"
+
+#. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_mail_channel__ai_partner_id
+msgid "Main Ai is the robot help you default."
+msgstr "主Ai是主要对话对象，当没有 @ 操作时，由主Ai回答"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__max_number
@@ -2029,6 +2061,11 @@ msgid "Presence penalty"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__is_private
+msgid "Private"
+msgstr "私有频道"
+
+#. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_ai_robot__openapi_api_key
 msgid "Provide the API key here"
 msgstr ""
@@ -2139,6 +2176,11 @@ msgstr ""
 #, python-format
 msgid "Scorpius"
 msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__ext_ai_partner_id
+msgid "Secondary Ai"
+msgstr "辅助Ai"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
@@ -27623,11 +27665,6 @@ msgid "上下文相关"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__ai_partner_id
-msgid "专属主Ai"
-msgstr ""
-
-#. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_top_p__0_9
 msgid "严谨惯性思维"
 msgstr ""
@@ -27635,11 +27672,6 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_max_tokens__1000
 msgid "中等"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields,help:app_chatgpt.field_mail_channel__ai_partner_id
-msgid "主Ai是主要对话对象，当没有@操作时，由主Ai回答"
 msgstr ""
 
 #. module: app_chatgpt
@@ -27671,11 +27703,6 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__set_max_tokens
 msgid "响应篇幅限制"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields,help:app_chatgpt.field_mail_channel__description
-msgid "填写后，Ai将以您设定的身份与你交互，如：你是一个在航空航天领域的专家。不填则根据问题智能处理"
 msgstr ""
 
 #. module: app_chatgpt
@@ -27819,16 +27846,6 @@ msgid "百度文心一格"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,help:app_chatgpt.field_mail_channel__is_private
-msgid "私人频道不公开，可邀请及清退指定用户"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__is_private
-msgid "私有频道"
-msgstr ""
-
-#. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_max_tokens__300
 msgid "简短"
 msgstr ""
@@ -27865,11 +27882,6 @@ msgid "跳跃性"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__ext_ai_partner_id
-msgid "辅助Ai"
-msgstr ""
-
-#. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_kanban
 msgid "进入频道"
 msgstr ""
@@ -27882,11 +27894,6 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_frequency_penalty__-1
 msgid "通俗易懂"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields,help:app_chatgpt.field_mail_channel__ext_ai_partner_id
-msgid "通过 @辅助Ai 可以让辅助Ai回答问题"
 msgstr ""
 
 #. module: app_chatgpt

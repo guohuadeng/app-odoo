@@ -5,11 +5,11 @@
         <field name="name">stock.picking.type.filter.superbar</field>
         <field name="model">stock.picking.type</field>
         <field name="inherit_id" ref="stock.view_pickingtype_filter"/>
-        <field name="groups_id" eval="[(4, ref('stock.group_stock_multi_warehouses'))]"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <searchpanel>
-                    <field name="warehouse_id" groups="stock.group_stock_multi_warehouses" enable_counters="1"/>
+                    <field name="code"/>
+                    <field name="warehouse_id" groups="stock.group_stock_multi_warehouses"/>
                 </searchpanel>
             </xpath>
         </field>

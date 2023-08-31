@@ -11,7 +11,7 @@
                     <field name="state"/>
                     <field name="invoice_status"/>
                     <field name="partner_id" filter_domain="[('customer_rank','&gt;', 0)]" limit="1000" enable_counters="1"/>
-                    <field name="team_id" enable_counters="1"/>
+                    <field name="team_id" enable_counters="1" select="multi"/>
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                 </searchpanel>
             </xpath>
@@ -26,7 +26,7 @@
             <xpath expr="//search">
                 <searchpanel view_types="list,kanban,pivot,graph">
                     <field name="invoice_status"/>
-                    <field name="team_id"/>
+                    <field name="team_id" enable_counters="1" select="multi"/>
                     <field name="partner_id" filter_domain="[('customer_rank','&gt;', 0)]" limit="1000"/>
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                 </searchpanel>

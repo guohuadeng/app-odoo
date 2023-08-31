@@ -69,13 +69,29 @@
         </field>
     </record>
 
+
+        <record id="ai_robot_search_view" model="ir.ui.view">
+            <field name="name">ai.robot.search</field>
+            <field name="model">ai.robot</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="ai_model"/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter name="groupby_provider" string="Ai Provider" domain="[]" context="{'group_by' : 'provider'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
     <record id="action_ai_robot" model="ir.actions.act_window">
-        <field name="name">GPT Robot</field>
+        <field name="name">Ai Robot</field>
         <field name="res_model">ai.robot</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Let's create a GPT Robot.
+                Let's create a Ai Robot.
             </p>
         </field>
     </record>
@@ -91,7 +107,7 @@
 
     <menuitem
             id="menu_ai_robot"
-            name="GPT Robot"
+            name="Ai Robot"
             parent="base.menu_users"
             sequence="2"
             action="action_ai_robot"

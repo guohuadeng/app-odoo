@@ -19,7 +19,7 @@
                                 <field name="ext_ai_partner_id"
                                        options="{'no_open': True, 'no_create': True}"/>
                             </group>
-                            <group  name="param_set" string="Ai角色风格设定">
+                            <group  name="param_set" string="Ai Character Set">
                                 <div class="o_td_label">
                                     <label for="set_max_tokens"/>
                                 </div>

@@ -17,7 +17,7 @@
 
 {
     'name': "Stock Superbar ztree, parent children tree",
-    'version': '16.22.12.06',
+    'version': '16.23.08.31',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -48,8 +48,9 @@
         'views/stock_picking_type_views.xml',
         'views/stock_warehouse_orderpoint_views.xml',
         'views/stock_rule_views.xml',
-        'views/stock_location_route_views.xml',
-        'views/stock_production_lot_views.xml',
+        'views/stock_lot_views.xml',
+        # todo: 以下两个模型调整了
+        # 'views/stock_location_route_views.xml',
     ],
     'demo': [
     ],

@@ -12,7 +12,7 @@ _logger = logging.getLogger(__name__)
 
 class AiRobot(models.Model):
     _name = 'ai.robot'
-    _description = 'Gpt Robot'
+    _description = 'Ai Robot'
     _order = 'sequence, name'
 
     name = fields.Char(string='Name', translate=True, required=True)
@@ -106,7 +106,8 @@ GPT-3	A set of models that can understand and generate natural language
     is_filtering = fields.Boolean('Filter Sensitive Words', default=False, help='Use base Filter in dir models/lib/sensi_words.txt')
 
     max_send_char = fields.Integer('Max Send Char', help='Max Send Prompt Length', default=8000)
-
+    active = fields.Boolean('Active', default=True)
+    
     def action_disconnect(self):
         requests.delete('https://chatgpt.com/v1/disconnect')
 
