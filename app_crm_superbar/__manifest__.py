@@ -28,7 +28,7 @@
 # description:
 
 {
-    'name': "Crm Advance search, browse by stage and team",
+    'name': 'Crm Advance search, Navigator by stage and team',
     'version': '16.23.09.01',
     'author': 'odooai.cn',
     'category': 'Base',
@@ -63,7 +63,7 @@
         'crm',
         'utm',
     ],
-    'images': ['static/description/crm1.jpg'],
+    'images': ['static/description/banner.png'],
     'data': [
         'views/crm_lead_views.xml',
     ],
