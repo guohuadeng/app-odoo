@@ -40,7 +40,7 @@
     'depends': [
         'stock',
     ],
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/banner.png'],
     'data': [
         'views/product_template_views.xml',
         'views/product_category_views.xml',
