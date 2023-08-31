@@ -17,7 +17,7 @@
 
 {
     'name': "App product browse by category navigator",
-    'version': '16.22.12.06',
+    'version': '16.23.09.01',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
