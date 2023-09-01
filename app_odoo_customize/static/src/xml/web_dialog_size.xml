@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
 <!--begin	旧widget模式-->
+<!--	remove  d-none if want to show, 当前没必要-->
     <t t-extend="web.DialogWidget">
         <t t-jquery="button.btn-close" t-operation="inner">
             <i class="fa fa-close" />
         </t>
         <t t-jquery="button.btn-close" t-operation="before">
-            <button type="button" class="dialog_button_extend btn btn-secondary">
+            <button type="button" class="dialog_button_extend btn btn-secondary d-none">
                 <i class="fa fa-expand" />
             </button>
-            <button type="button" class="dialog_button_restore btn btn-secondary">
+            <button type="button" class="dialog_button_restore btn btn-secondary d-none">
                 <i class="fa fa-compress" />
             </button>
         </t>
@@ -42,7 +43,7 @@
         <button
             t-if="props.getsize() == 'dialog_full_screen'"
             type="button"
-            class="btn btn-secondary dialog_button_extend"
+            class="btn btn-secondary dialog_button_extend d-none"
             t-on-click="dialog_button_restore"
         >
             <i class="fa fa-compress" />
@@ -50,7 +51,7 @@
         <button
             t-if="props.getsize() != 'dialog_full_screen'"
             type="button"
-            class="btn btn-secondary dialog_button_restore"
+            class="btn btn-secondary dialog_button_restore d-none"
             t-on-click="dialog_button_extend"
         >
             <i class="fa fa-expand" />
