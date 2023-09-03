@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="app_website_pages_tree_view" model="ir.ui.view">
+		<field name="name">app.website.page.list</field>
+		<field name="model">website.page</field>
+		<field name="inherit_id" ref="website.website_pages_tree_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='website_url']" position="attributes">
+				<attribute name="optional">show</attribute>
+			</xpath>
+			<xpath expr="//field[@name='is_in_menu']" position="attributes">
+				<attribute name="optional">show</attribute>
+			</xpath>
+			<xpath expr="//field[@name='website_url']" position="after">
+                <field name="seo_name" invisible="1"/>
+                <field name="website_meta_keywords" optional="show"/>
+                <field name="website_meta_title" optional="hide"/>
+                <field name="website_meta_description" optional="hide"/>
+			</xpath>
+		</field>
+	</record>
+
+	<record id="app_website_pages_view_search" model="ir.ui.view">
+		<field name="name">app.website.page.search</field>
+		<field name="model">website.page</field>
+		<field name="inherit_id" ref="website.website_pages_view_search"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='url']" position="after">
+				<field name="website_meta_keywords"/>
+				<field name="website_meta_title"/>
+				<field name="website_meta_description"/>
+			</xpath>
+		</field>
+	</record>
+</odoo>
+
+

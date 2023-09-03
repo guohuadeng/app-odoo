@@ -61,6 +61,10 @@
 			<xpath expr="//field[@name='name']" position="replace">
 				<field name="name" string="Title"/>
 				<field name="content" string="Content"/>
+				<field name="seo_name"/>
+				<field name="website_meta_keywords"/>
+				<field name="website_meta_title"/>
+				<field name="website_meta_description"/>
 			</xpath>
 		</field>
 	</record>

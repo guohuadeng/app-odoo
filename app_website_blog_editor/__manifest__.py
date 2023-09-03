@@ -74,6 +74,7 @@
         'views/blog_tag_category_views.xml',
         'views/blog_tag_views.xml',
         'views/blog_post_views.xml',
+        'views/website_page_views.xml',
         'views/res_config_settings_views.xml'
         # 'report/.xml',
     ],
