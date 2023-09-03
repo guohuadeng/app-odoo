@@ -14,6 +14,12 @@
                 <xpath expr="//field[@name='website_url']" position="attributes">
 	                <attribute name="optional">hide</attribute>
                 </xpath>
+                <xpath expr="//field[@name='is_published']" position="after">
+	                <field name="seo_name" optional="hide"/>
+	                <field name="website_meta_keywords" optional="hide"/>
+	                <field name="website_meta_title" optional="hide"/>
+	                <field name="website_meta_description" optional="hide"/>
+                </xpath>
             </field>
         </record>
 
@@ -28,9 +34,9 @@
 	                    <group>
 		                    <group>
 <!--			                     这里加个快速设置 seo url字段-->
-			                    <field name="website_meta_title" invisible="1"/>
-			                    <field name="website_meta_keywords"/>
 								<field name="seo_name"/>
+			                    <field name="website_meta_keywords"/>
+			                    <field name="website_meta_title"/>
 		                    </group>
 		                    <group>
 			                    <field name="website_meta_description"/>

@@ -18,7 +18,10 @@
 				<attribute name="optional">show</attribute>
 			</xpath>
 			<xpath expr="//field[@name='website_url']" position="after">
-				<field name="seo_name"/>
+                <field name="seo_name" optional="show"/>
+                <field name="website_meta_keywords" optional="show"/>
+                <field name="website_meta_title" optional="hide"/>
+                <field name="website_meta_description" optional="hide"/>
 			</xpath>
 			<xpath expr="//field[@name='author_id']" position="before">
 				<field name="visits" optional="show"/>
