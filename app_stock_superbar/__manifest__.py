@@ -19,7 +19,7 @@
     'name': "Stock Superbar ztree, parent children tree",
     'version': '16.23.08.31',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Warehouse',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
