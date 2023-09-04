@@ -19,7 +19,7 @@
     'name': "Multi Add Purchase Product,采购订单批量加产品",
     'version': '13.21.12.30',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Purchase',
     'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,

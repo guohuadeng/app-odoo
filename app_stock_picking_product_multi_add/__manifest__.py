@@ -19,7 +19,7 @@
     'name': "App Stock Picking Order Product Multi Batch Add",
     'version': '13.19.11.19',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Warehouse',
     'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,

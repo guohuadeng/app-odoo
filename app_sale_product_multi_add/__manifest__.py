@@ -19,7 +19,7 @@
     'name': "Multi Add Sale Product,订单批量加产品",
     'version': '13.21.12.30',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Sales',
     'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,
