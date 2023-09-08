@@ -5,6 +5,9 @@
 		<field name="model">website.page</field>
 		<field name="inherit_id" ref="website.website_pages_tree_view"/>
 		<field name="arch" type="xml">
+			<xpath expr="//field[@name='name']" position="before">
+                <field name="id" groups="base.group_no_one" optional="show"/>
+			</xpath>
 			<xpath expr="//field[@name='website_url']" position="attributes">
 				<attribute name="optional">show</attribute>
 			</xpath>
