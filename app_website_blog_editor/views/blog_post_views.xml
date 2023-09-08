@@ -29,7 +29,7 @@
 			<xpath expr="//field[@name='write_date']" position="after">
 				<field name="published_date" optional="hide"/>
 			</xpath>
-			<xpath expr="//field[@name='name']" position="after">
+            <xpath expr="//field[@name='is_seo_optimized']" position="before">
 				<button name="action_post_debug_view" type="object" title="Settings" icon="fa-bug fa-lg" groups="base.group_no_one"/>
 				<button name="action_post_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
 			</xpath>

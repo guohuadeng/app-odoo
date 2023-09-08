@@ -11,7 +11,7 @@
             <field name="inherit_id" ref="base.edit_menu"/>
             <field name="arch" type="xml">
                 <xpath expr="//tree"  position="attributes">
-                    <multi_edit eval="True"/>
+                    <attribute name="multi_edit">1</attribute>
                 </xpath>
                 <field name="complete_name" position="after">
                     <field name="name"/>

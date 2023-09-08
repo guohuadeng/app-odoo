@@ -7,12 +7,18 @@
             <field name="inherit_id" ref="website_sale.product_pages_tree_view"/>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='name']" position="after">
+                <xpath expr="//field[@name='is_seo_optimized']" position="before">
 					<button name="action_product_debug_view" type="object" title="Content Set" icon="fa-bug fa-lg" groups="base.group_no_one"/>
 					<button name="action_product_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
                 </xpath>
                 <xpath expr="//field[@name='website_url']" position="attributes">
 	                <attribute name="optional">hide</attribute>
+                </xpath>
+                <xpath expr="//field[@name='is_published']" position="attributes">
+	                <attribute name="optional">show</attribute>
+                </xpath>
+                <xpath expr="//field[@name='is_seo_optimized']" position="attributes">
+	                <attribute name="optional">show</attribute>
                 </xpath>
                 <xpath expr="//field[@name='is_published']" position="after">
 	                <field name="seo_name" optional="hide"/>
@@ -74,13 +80,21 @@
 							    <field name="sale_ok" invisible="1"/>
 							    <field name="is_published" widget="website_redirect_button" attrs="{'invisible': [('sale_ok','=',False)]}"></field>
 						    </group>
-					    </group>
-					    <notebook>
-						    <page name="shop_desc" string="Website Description">
-							    <field name="website_description" nolabel="1" widget="ace" attrs="{'invisible': [('sale_ok','=',False)]}"/>
-						    </page>
-					    </notebook>
-				    </sheet>
+                        </group>
+                        <notebook>
+                            <page name="shop_desc" string="Website Description">
+                                <field name="website_description" nolabel="1" widget="ace" attrs="{'invisible': [('sale_ok','=',False)]}"/>
+                            </page>
+                            <page name="seo" string="SEO">
+                                <group>
+                                    <field name="seo_name"/>
+                                    <field name="website_meta_title" string="Meta Title"/>
+                                    <field name="website_meta_description" string="Meta Description"/>
+                                    <field name="website_meta_keywords" string="Meta Keywords" help="Separate every keyword with a comma"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
 			    </form>
 		    </field>
 	    </record>
@@ -94,7 +108,21 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='website_description']" position="attributes">
-	                <attribute name="widget">html</attribute>
+                    <attribute name="widget">html</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="app_product_template_search_view" model="ir.ui.view">
+            <field name="name">app.product.template.website.search</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="after">
+                    <field name="seo_name"/>
+                    <field name="website_meta_keywords"/>
+                    <field name="website_meta_title"/>
+                    <field name="website_meta_description"/>
                 </xpath>
             </field>
         </record>

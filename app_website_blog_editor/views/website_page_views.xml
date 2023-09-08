@@ -17,7 +17,7 @@
                 <field name="website_meta_title" optional="hide"/>
                 <field name="website_meta_description" optional="hide"/>
 			</xpath>
-			<xpath expr="//field[@name='name']" position="after">
+            <xpath expr="//field[@name='is_seo_optimized']" position="before">
                 <button name="action_page_debug_view" position="move"/>
                 <button name="action_page_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
             </xpath>
