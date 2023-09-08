@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
+
 import openai.openai_object
 import requests, json
 import openai
-from odoo import api, fields, models, _
+import base64
+
+from odoo import api, fields, models, modules, tools, _
 from odoo.exceptions import UserError
 from .lib.WordsSearch import WordsSearch
 
@@ -16,7 +19,8 @@ class AiRobot(models.Model):
     _order = 'sequence, name'
 
     name = fields.Char(string='Name', translate=True, required=True)
-    provider = fields.Selection(string="AI Provider", selection=[('openai', 'OpenAI'), ('azure', 'Azure')], required=True, default='openai')
+    provider = fields.Selection(string="AI Provider", selection=[('openai', 'OpenAI'), ('azure', 'Azure')],
+                                required=True, default='openai', change_default=True)
     ai_model = fields.Selection(string="AI Model", selection=[
         ('gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0613(Default and Latest)'),
         ('gpt-3.5-turbo-16k-0613', 'gpt-3.5-turbo-16k-0613(Big text)'),
@@ -106,8 +110,15 @@ GPT-3	A set of models that can understand and generate natural language
     is_filtering = fields.Boolean('Filter Sensitive Words', default=False, help='Use base Filter in dir models/lib/sensi_words.txt')
 
     max_send_char = fields.Integer('Max Send Char', help='Max Send Prompt Length', default=8000)
+    image_avatar = fields.Image('Avatar')
+    partner_ids = fields.One2many('res.partner', 'gpt_id', string='Partner')
+    partner_count = fields.Integer('#Partner', compute='_compute_partner_count', store=False)
     active = fields.Boolean('Active', default=True)
-    
+
+    def _compute_partner_count(self):
+        for rec in self:
+            rec.partner_count = len(rec.partner_ids)
+
     def action_disconnect(self):
         requests.delete('https://chatgpt.com/v1/disconnect')
 
@@ -428,6 +439,15 @@ GPT-3	A set of models that can understand and generate natural language
             self.endpoint = 'https://api.openai.com/v1/chat/completions'
         elif self.provider == 'azure':
             self.endpoint = 'https://odoo.openai.azure.com'
+            
+        if self.provider:
+            # 取头像
+            module_path = modules.get_module_path('app_chatgpt', display_warning=False)
+            if module_path:
+                path = modules.check_resource_path(module_path, ('static/description/src/%s.png' % self.provider))
+                if path:
+                    image_file = tools.file_open(path, 'rb')
+                    self.image_avatar = base64.b64encode(image_file.read())
             
     def filter_sensitive_words(self, data):
         if self.is_filtering:

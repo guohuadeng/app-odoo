@@ -29,6 +29,9 @@
         <field name="model">res.users</field>
         <field name="inherit_id" ref="base.view_users_search"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="gpt_id"/>
+            </xpath>
             <xpath expr="//filter[@name='filter_no_share']" position="before">
                 <filter name="is_robot" string="Ai User" domain="[('gpt_id','!=',False)]"/>
                 <filter name="not_robot" string="Not Ai" domain="[('gpt_id','=',False)]"/>

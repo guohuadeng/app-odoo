@@ -7,7 +7,7 @@ class ResUsers(models.Model):
     _inherit = "res.users"
 
     # 改为在 partner中设置，用户处绑定
-    gpt_id = fields.Many2one('ai.robot', string='Bind to ChatGpt', related='partner_id.gpt_id', inherited=True, readonly=False)
+    gpt_id = fields.Many2one('ai.robot', string='Bind to Ai', related='partner_id.gpt_id', inherited=True, readonly=False)
     gpt_policy = fields.Selection([
         ('all', 'All Users'),
         ('limit', 'Selected Users')

@@ -5,18 +5,21 @@
         <field name="provider">openai</field>
         <field name="endpoint">https://api.openai.com/v1/chat/completions</field>
         <field name="sequence">1</field>
+        <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/openai.png"/>
     </record>
     <record id="chatgpt_robot1" model="ai.robot">
         <field name="name">ChatGPT Coding</field>
         <field name="provider">openai</field>
         <field name="endpoint">https://api.openai.com/v1/chat/completions</field>
         <field name="sequence">6</field>
+        <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/openai.png"/>
     </record>
     <record id="chatgpt_robot2" model="ai.robot">
         <field name="name">ChatGPT Finance</field>
         <field name="provider">openai</field>
         <field name="endpoint">https://api.openai.com/v1/chat/completions</field>
         <field name="sequence">7</field>
+        <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/openai.png"/>
     </record>
     <record id="chatgpt3_azure" model="ai.robot">
         <field name="name">ChatGPT Azure</field>
@@ -25,6 +28,7 @@
         <field name="engine">gpt35</field>
         <field name="api_version">2023-03-15-preview</field>
         <field name="sequence">8</field>
+        <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/azure.png"/>
     </record>
     <record id="chatgpt4_azure" model="ai.robot">
         <field name="name">ChatGPT4 Azure</field>
@@ -33,5 +37,6 @@
         <field name="engine">gpt4</field>
         <field name="api_version">2023-03-15-preview</field>
         <field name="sequence">9</field>
+        <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/azure.png"/>
     </record>
 </odoo>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e-20230721\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-29 10:37+0000\n"
-"PO-Revision-Date: 2023-08-29 10:37+0000\n"
+"POT-Creation-Date: 2023-09-08 15:42+0000\n"
+"PO-Revision-Date: 2023-09-08 15:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -124,6 +124,11 @@ msgstr ""
 "CodexLimited: A set of models that can understand and generate code, including translating natural language to code\n"
 "Moderation: A fine-tuned model that can detect whether text may be sensitive or unsafe\n"
 "GPT-3\tA set of models that can understand and generate natural language\n"
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__partner_count
+msgid "#Partner"
+msgstr "用户绑定"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_mail_channel__frequency_penalty
@@ -690,11 +695,6 @@ msgid "Ai Center Setup"
 msgstr "Ai智能服务中心设置"
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__description
-msgid "Ai Character"
-msgstr "Ai角色设定"
-
-#. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
 msgid "Ai Character Set"
 msgstr "Ai角色风格设定"
@@ -716,11 +716,6 @@ msgstr "GPT机器人"
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.app_view_users_search
 msgid "Ai User"
 msgstr "Ai用户"
-
-#. module: app_chatgpt
-#: model:ir.model.fields,help:app_chatgpt.field_mail_channel__description
-msgid "Ai would help you act as the Character set."
-msgstr "Ai将按你设置的角色来对你的问题进行反馈"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
@@ -821,6 +816,11 @@ msgid "Australia"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__image_avatar
+msgid "Avatar"
+msgstr "头像"
+
+#. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__provider__azure
 msgid "Azure"
 msgstr ""
@@ -860,10 +860,15 @@ msgid "Baidu Ai China"
 msgstr "百度Ai"
 
 #. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_kanban_view
+msgid "Bind Partner"
+msgstr "用户绑定"
+
+#. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_partner__gpt_id
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_users__gpt_id
-msgid "Bind to ChatGpt"
-msgstr "绑定至ChatGpt"
+msgid "Bind to Ai"
+msgstr "绑定至Ai"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1171,7 +1176,7 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model,name:app_chatgpt.model_mail_thread
 msgid "Email Thread"
-msgstr "邮件会话"
+msgstr "EMail线程"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__endpoint
@@ -1783,6 +1788,11 @@ msgid "Milky Way"
 msgstr ""
 
 #. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_kanban_view
+msgid "Model:"
+msgstr "模型:"
+
+#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
@@ -2006,6 +2016,7 @@ msgid "PC"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__partner_ids
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__name
 msgid "Partner"
 msgstr "用户"
@@ -2091,7 +2102,12 @@ msgstr ""
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_form_view
 msgid "Robot Name"
-msgstr ""
+msgstr "Ai名称"
+
+#. module: app_chatgpt
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_kanban_view
+msgid "Robot Provider"
+msgstr "Ai服务商"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_form_view
@@ -27672,6 +27688,12 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_max_tokens__1000
 msgid "中等"
+msgstr ""
+
+#. module: app_chatgpt
+#: model:mail.channel,description:app_chatgpt.channel_chatgpt
+msgid ""
+"你是一个智能语音对话系统\"odooAi欧度智能\"，用户关注微信公众号或者打开微信小程序\"odooAi欧度智能\"即可使用，如果用户疑问，请告诉他们以上使用说明。"
 msgstr ""
 
 #. module: app_chatgpt

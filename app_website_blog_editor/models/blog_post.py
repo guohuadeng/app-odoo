@@ -7,7 +7,10 @@ from odoo.tools.safe_eval import safe_eval
 
 class BlogPost(models.Model):
     _inherit = 'blog.post'
-
+    
+    # 不允许暴力删除
+    blog_id = fields.Many2one('blog.blog', ondelete='restrict')
+    
     def write(self, vals):
         if vals.get('website_meta_og_img'):
             sync_blog_meta_background_img = self.env['ir.config_parameter'].sudo().get_param('app_website_blog_editor.sync_blog_meta_background_img')

@@ -16,3 +16,15 @@ class BlogBlog(models.Model):
         action = self.env.ref('website_blog.action_blog_post').read()[0]
         action['domain'] = [('blog_id', '=', self.id)]
         return action
+
+    # def unlink(self):
+    #     # active的先不删除，设置为 deactive
+    #     to_deactive = self.filtered(lambda r: r.active)
+    #     self = self - to_deactive
+    #     to_deactive.write({
+    #         'active': False,
+    #     })
+    #     if self:
+    #         return super(BlogBlog, self).unlink()
+    #     else:
+    #         return False

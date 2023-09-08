@@ -6,7 +6,7 @@ from odoo import fields, models, api
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    gpt_id = fields.Many2one('ai.robot', string='Bind to ChatGpt')
+    gpt_id = fields.Many2one('ai.robot', string='Bind to Ai', ondelete='set null')
 
     is_chat_private = fields.Boolean('Allow Chat Private', default=False)
 
