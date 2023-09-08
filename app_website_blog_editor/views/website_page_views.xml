@@ -17,6 +17,22 @@
                 <field name="website_meta_title" optional="hide"/>
                 <field name="website_meta_description" optional="hide"/>
 			</xpath>
+			<xpath expr="//field[@name='name']" position="after">
+                <button name="action_page_debug_view" position="move"/>
+                <button name="action_page_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
+            </xpath>
+		</field>
+	</record>
+<!--    form-->
+	<record id="app_view_view_form_extend_debug" model="ir.ui.view">
+		<field name="name">app.website.page.form</field>
+		<field name="model">website.page</field>
+        <field name="mode">primary</field>
+		<field name="inherit_id" ref="website.view_view_form_extend"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='arch_base']" position="attributes">
+				<attribute name="widget">html</attribute>
+			</xpath>
 		</field>
 	</record>
 

@@ -39,7 +39,7 @@
 
 {
     'name': "Website Blogs Editor in Backend",
-    'version': '16.23.08.28',
+    'version': '16.23.09.08',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
