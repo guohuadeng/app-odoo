@@ -8,6 +8,9 @@
 			<xpath expr="//field[@name='name']" position="before">
 				<field name="id" optional="show"/>
 			</xpath>
+			<xpath expr="//field[@name='name']" position="attributes">
+				<attribute name="optional">show</attribute>
+			</xpath>
 			<xpath expr="//field[@name='website_url']" position="attributes">
 				<attribute name="optional">hide</attribute>
 			</xpath>
