@@ -1,0 +1,26 @@
+.o_form_view .o_address_format {
+  .o_address_country {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    width: 48%;
+    margin-right: 2%;
+  }
+}
+.o_form_view.o_form_editable .o_address_format {
+  div.o_address_state {
+    width: 50%;
+    margin-right: 0;
+  }
+  .o_address_city{
+    width: 48%;
+    margin-right: 2%;
+  }
+  .o_address_city_id{
+    width: 48%;
+    margin-right: 2%;
+  }
+  input.o_address_zip{
+    width: 50%;
+    margin-right: 0;
+  }
+}

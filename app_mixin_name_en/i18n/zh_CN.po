@@ -1,0 +1,48 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* app_mixin_name_en
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-01 08:44+0000\n"
+"PO-Revision-Date: 2020-07-01 08:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_mixin_name_en
+#: model:ir.model,name:app_mixin_name_en.model_res_partner
+msgid "Contact"
+msgstr "联系人"
+
+#. module: app_mixin_name_en
+#: model:ir.model.fields,field_description:app_mixin_name_en.field_mixin_name_en__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: app_mixin_name_en
+#: model:ir.model.fields,field_description:app_mixin_name_en.field_mixin_name_en__name_en_US
+#: model:ir.model.fields,field_description:app_mixin_name_en.field_res_partner__name_en_US
+#: model:ir.model.fields,field_description:app_mixin_name_en.field_res_users__name_en_US
+msgid "English Name"
+msgstr "英文名"
+
+#. module: app_mixin_name_en
+#: model:ir.model.fields,field_description:app_mixin_name_en.field_mixin_name_en__id
+msgid "ID"
+msgstr ""
+
+#. module: app_mixin_name_en
+#: model:ir.model.fields,field_description:app_mixin_name_en.field_mixin_name_en____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: app_mixin_name_en
+#: model:ir.model,name:app_mixin_name_en.model_mixin_name_en
+msgid "Mixin Auto english name"
+msgstr "Mixin 自动英文名"

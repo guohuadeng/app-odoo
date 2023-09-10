@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Partner Form视图，用继承方式改写2018-11-21,ivan -->
+        <!--todo: 英文环境下不显示-->
+        <record id="app_view_partner_form" model="ir.ui.view">
+            <field name="name">app.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+<!--                    todo: 在英文环境不显示，xml中可以直接调 env。或者是在原widget中加options，如果无值时则显示同样的 name-->
+                    <field name="name_en_US" place_holder="Default same as name, Input to set other"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
