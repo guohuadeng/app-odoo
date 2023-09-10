@@ -17,7 +17,7 @@
 
 
 {
-    'name': "Chinese Enhance All in One，odoo中文版套件之基础",
+    'name': 'Chinese Enhance All in One，odoo中文版套件之基础',
     'version': '16.23.08.03',
     'author': 'odooai.cn',
     'category': 'Base',
@@ -27,11 +27,11 @@
     'sequence': 2,
     'price': 0,
     'currency': 'EUR',
-    'summary': """
-    Chinese enhance. Out of the box use odoo in china. Chinese address format, number format, money format.
-    Set all chinese default value. Default country, timezone, currency, partner...
-    """,
-    'description': """
+    'summary': '''
+    odoo简体中文版全面增强. Chinese enhance. Out of the box use odoo in china. Chinese address format, number format, money format.
+    Set all chinese default value. Default country, timezone, currency, partner.
+    ''',
+    'description': '''
     odoo Chinese Enhance. odoo中国版增强-基础
     1. 中文地址格式，适用于所有中国中文客户、供应商、合作伙伴、用户、员工信息等
     2. 中文默认值，如国家、时区、货币等。处理模块 base, product.
@@ -67,11 +67,11 @@
     12.Default export translation is set to Mandarin (po).
     13.Added 'name_en_US' field in base model which updates translation value when assigned a value.
     14.Common decimal precision adjustments made.
-    15.Sales team changed to "China".
+    15.Sales team changed to [China].
     21. Multi-language Support. Multi-Company Support.
     22. Support Odoo 16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     23. Full Open Source.
-    """,
+    ''',
     'pre_init_hook': 'pre_init_hook',
     'post_init_hook': 'post_init_hook',
     'depends': [
@@ -80,6 +80,7 @@
         'sales_team',
         'sale',
         'stock',
+        'app_odoo_customize',
     ],
     'images': ['static/description/banner.jpg'],
     'data': [
