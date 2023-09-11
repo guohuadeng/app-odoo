@@ -44,9 +44,6 @@
 		<field name="model">blog.post</field>
 		<field name="inherit_id" ref="website_blog.view_blog_post_form"/>
 		<field name="arch" type="xml">
-			<xpath expr="//field[@name='tag_ids']" position="after">
-				<field name="seo_name"/>
-			</xpath>
 			<xpath expr="//page[@name='seo']" position="after">
 				<page name="post_content" string="Content">
 					<field name="content" widget="html" nolabel="1" class="oe-bordered-editor"
@@ -56,7 +53,20 @@
 		</field>
 	</record>
 
-	<record id="app_view_blog_post_search" model="ir.ui.view">
+    <record id="app_blog_post_form_view_code" model="ir.ui.view">
+        <field name="name">app.blog.post.code</field>
+        <field name="model">blog.post</field>
+        <field name="priority">99</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="app_view_blog_post_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='content']" position="replace">
+                <field name="content" nolabel="1" widget="ace"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="app_view_blog_post_search" model="ir.ui.view">
 		<field name="name">app.blog.post.search</field>
 		<field name="model">blog.post</field>
 		<field name="inherit_id" ref="website_blog.view_blog_post_search"/>
@@ -69,38 +79,6 @@
 				<field name="website_meta_title"/>
 				<field name="website_meta_description"/>
 			</xpath>
-		</field>
-	</record>
-
-	<record id="app_blog_post_form_view_code" model="ir.ui.view">
-		<field name="name">app.blog.post.code</field>
-		<field name="model">blog.post</field>
-		<field name="priority">99</field>
-		<field name="mode">primary</field>
-		<field name="arch" type="xml">
-			<form string="Blog Content">
-				<sheet name="blog_content">
-					<field name="id" invisible="True"/>
-					<div class="oe_title">
-						<label for="name" string="Blog Name"/>
-						<h1>
-							<div class="d-flex">
-								<field class="text-break" name="name"/>
-							</div>
-						</h1>
-					</div>
-					<group>
-						<group>
-							<field name="is_published" widget="website_redirect_button"></field>
-						</group>
-					</group>
-					<notebook>
-						<page name="shop_desc" string="Website Description">
-							<field name="content" nolabel="1" widget="ace"/>
-						</page>
-					</notebook>
-				</sheet>
-			</form>
 		</field>
 	</record>
 </odoo>

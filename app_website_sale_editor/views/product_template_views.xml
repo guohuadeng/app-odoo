@@ -64,7 +64,12 @@
 		    <field name="arch" type="xml">
 			    <form string="Website Product">
 				    <sheet name="product_form">
-					    <field name="id" invisible="True"/>
+                        <div class="oe_button_box" name="button_box" attrs="{'invisible': [('active', '=', False)]}">
+                            <field name="is_published" widget="website_redirect_button"/>
+                        </div>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+					    <field name="id" invisible="1"/>
+					    <field name="active" invisible="1"/>
 					    <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
 					    <div class="oe_title">
 						    <label for="name" string="Product Name"/>
@@ -78,7 +83,6 @@
 					    <group>
 						    <group>
 							    <field name="sale_ok" invisible="1"/>
-							    <field name="is_published" widget="website_redirect_button" attrs="{'invisible': [('sale_ok','=',False)]}"></field>
 						    </group>
                         </group>
                         <notebook>
