@@ -17,11 +17,11 @@ class AiRobot(models.Model):
 
     provider = fields.Selection(
         selection_add=[('google', 'Google Ai')],
-        ondelete={'google': 'cascade'}
+        ondelete={'google': 'set default'}
     ),
     set_ai_model = fields.Selection(
         selection_add=[('google-bard', 'Google Bard')],
-        ondelete={'google-bard': 'cascade'})
+        ondelete={'google-bard': 'set default'})
 
     @api.onchange('provider')
     def _onchange_provider(self):
