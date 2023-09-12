@@ -41,7 +41,6 @@
         'base_setup',
         'web',
         'mail',
-        'iap',
         # 'digest',
         # when enterprise
         # 'web_mobile'
