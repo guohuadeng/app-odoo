@@ -25,6 +25,7 @@
                 <field name="id"/>
                 <field name="name"/>
                 <field name="provider"/>
+                <field name="set_ai_model"/>
                 <field name="ai_model"/>
                 <field name="partner_count"/>
                 <field name="image_avatar"/>

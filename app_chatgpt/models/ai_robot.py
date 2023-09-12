@@ -21,7 +21,10 @@ class AiRobot(models.Model):
     name = fields.Char(string='Name', translate=True, required=True)
     provider = fields.Selection(string="AI Provider", selection=[('openai', 'OpenAI'), ('azure', 'Azure')],
                                 required=True, default='openai', change_default=True)
-    ai_model = fields.Selection(string="AI Model", selection=[
+    # update ai_robot set ai_model=set_ai_model
+    ai_model = fields.Char(string="AI Model", required=True, default='auto', help='Customize input', ondelete=None)
+    
+    set_ai_model = fields.Selection(string="Quick Set Model", selection=[
         ('gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0613(Default and Latest)'),
         ('gpt-3.5-turbo-16k-0613', 'gpt-3.5-turbo-16k-0613(Big text)'),
         ('gpt-4', 'Chatgpt 4'),
@@ -32,7 +35,7 @@ class AiRobot(models.Model):
         ('code-davinci-002', 'Chatgpt 2 Code Optimized'),
         ('text-davinci-002', 'Chatgpt 2 Davinci'),
         ('dall-e2', 'Dall-E Image'),
-    ], required=True, default='gpt-3.5-turbo-0613',
+    ], default='gpt-3.5-turbo-0613',
                                 help="""
 GPT-4: Can understand Image, generate natural language or code.
 GPT-3.5: A set of models that improve on GPT-3 and can understand as well as generate natural language or code
@@ -448,6 +451,13 @@ GPT-3	A set of models that can understand and generate natural language
                 if path:
                     image_file = tools.file_open(path, 'rb')
                     self.image_avatar = base64.b64encode(image_file.read())
+            
+    @api.onchange('set_ai_model')
+    def _onchange_set_ai_model(self):
+        if self.set_ai_model:
+            self.ai_model = self.set_ai_model
+        else:
+            self.ai_model = None
             
     def filter_sensitive_words(self, data):
         if self.is_filtering:

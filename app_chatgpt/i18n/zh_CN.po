@@ -102,7 +102,7 @@ msgid ""
 msgstr "停止标识。表示聊天机器人停止生成回复的条件，可以是一段文本或者一个列表，当聊天机器人生成的回复中包含了这个条件，就会停止继续生成回复。"
 
 #. module: app_chatgpt
-#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__ai_model
+#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__set_ai_model
 msgid ""
 "\n"
 "GPT-4: Can understand Image, generate natural language or code.\n"
@@ -989,37 +989,37 @@ msgid "ChatGpt Training"
 msgstr "ChatGpt训练"
 
 #. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__ai_model__code-davinci-002
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__set_ai_model__code-davinci-002
 msgid "Chatgpt 2 Code Optimized"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__ai_model__text-davinci-002
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__set_ai_model__text-davinci-002
 msgid "Chatgpt 2 Davinci"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__ai_model__text-davinci-003
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__set_ai_model__text-davinci-003
 msgid "Chatgpt 3 Davinci"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__ai_model__gpt-3_5-turbo
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__set_ai_model__gpt-3_5-turbo
 msgid "Chatgpt 3.5 Turbo"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__ai_model__gpt-3_5-turbo-0301
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__set_ai_model__gpt-3_5-turbo-0301
 msgid "Chatgpt 3.5 Turbo on 20230301"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__ai_model__gpt-4
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__set_ai_model__gpt-4
 msgid "Chatgpt 4"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__ai_model__gpt-4-32k
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__set_ai_model__gpt-4-32k
 msgid "Chatgpt 4 32k"
 msgstr ""
 
@@ -1114,7 +1114,7 @@ msgid "DVD"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__ai_model__dall-e2
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__set_ai_model__dall-e2
 msgid "Dall-E Image"
 msgstr ""
 
@@ -11552,12 +11552,12 @@ msgid "gorilla"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__ai_model__gpt-3_5-turbo-0613
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__set_ai_model__gpt-3_5-turbo-0613
 msgid "gpt-3.5-turbo-0613(Default and Latest)"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__ai_model__gpt-3_5-turbo-16k-0613
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__ai_robot__set_ai_model__gpt-3_5-turbo-16k-0613
 msgid "gpt-3.5-turbo-16k-0613(Big text)"
 msgstr ""
 
