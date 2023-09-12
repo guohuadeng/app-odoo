@@ -45,7 +45,7 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'OPL-1',
     'sequence': 2,
-    'price': 98.00,
+    'price': 18.00,
     'currency': 'EUR',
     'images': ['static/description/banner.png'],
     'summary': '''
