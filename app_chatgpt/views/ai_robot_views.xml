@@ -97,12 +97,13 @@
                             <field name="max_send_char"/>
                         </group>
                         <group>
+                            <field name="set_ai_model"/>
                             <field name="ai_model"/>
                             <label class="o_form_label" for="provider">
                                 OpenAI Document
                             </label>
                             <div>
-                                <field name="provider"/>
+                                <field name="provider" class="oe_inline"/>
                                 <a href="https://platform.openai.com/docs/introduction" title="OpenAI Document" class="o_doc_link" target="_blank"></a>
                             </div>
                             <field name="max_tokens"/>

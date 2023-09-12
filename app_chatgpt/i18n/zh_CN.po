@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e-20230721\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-08 15:42+0000\n"
-"PO-Revision-Date: 2023-09-08 15:42+0000\n"
+"POT-Creation-Date: 2023-09-12 08:20+0000\n"
+"PO-Revision-Date: 2023-09-12 08:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1100,6 +1100,11 @@ msgid "Created on"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_ai_robot__ai_model
+msgid "Customize input"
+msgstr "输入模型内容"
+
+#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
@@ -2088,6 +2093,11 @@ msgstr ""
 #, python-format
 msgid "Puck"
 msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__set_ai_model
+msgid "Quick Set Model"
+msgstr "模型快选"
 
 #. module: app_chatgpt
 #. odoo-python

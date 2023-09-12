@@ -19,7 +19,7 @@ class AiRobot(models.Model):
         selection_add=[('google', 'Google Ai')],
         ondelete={'google': 'cascade'}
     ),
-    ai_model = fields.Selection(
+    set_ai_model = fields.Selection(
         selection_add=[('google-bard', 'Google Bard')],
         ondelete={'google-bard': 'cascade'})
 
