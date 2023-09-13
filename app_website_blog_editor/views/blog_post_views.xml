@@ -50,6 +50,9 @@
 					       options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true}"/>
 				</page>
 			</xpath>
+			<xpath expr="//field[@name='visits']" position="attributes">
+                <attribute name="readonly">0</attribute>
+			</xpath>
 		</field>
 	</record>
 
