@@ -204,15 +204,24 @@ GPT-3	A set of models that can understand and generate natural language
                 # azure 格式
                 usage = json.loads(json.dumps(res['usage']))
                 content = json.loads(json.dumps(res['choices'][0]['message']['content']))
+            elif self.provider == 'ali':
+                # ali 格式
+                usage = res['usage']
+                content = res['output']['text']
             else:
                 usage = False
                 content = res
             data = content.replace(' .', '.').strip()
             answer_user = answer_id.mapped('user_ids')[:1]
             if usage:
-                prompt_tokens = usage['prompt_tokens']
-                completion_tokens = usage['completion_tokens']
-                total_tokens = usage['total_tokens']
+                if self.provider == 'ali':
+                    prompt_tokens = usage['input_tokens']
+                    completion_tokens = usage['output_tokens']
+                    total_tokens = usage['input_tokens'] + usage['output_tokens']
+                else:
+                    prompt_tokens = usage['prompt_tokens']
+                    completion_tokens = usage['completion_tokens']
+                    total_tokens = usage['total_tokens']
                 # 不是写到 user ，是要写到指定 m2m 相关模型， 如：  res.partner.ai.use
                 ai_use = self.env['res.partner.ai.use'].search([('name', '=', author_id.id)], limit=1)
                 ask_date = fields.Datetime.now()
