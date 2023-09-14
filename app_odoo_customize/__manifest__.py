@@ -22,8 +22,8 @@
 # description:
 
 {
-    'name': 'odoo 15,14,13 Customize OEM(Boost, Data reset)',
-    'version': '13.22.04.26',
+    'name': 'odoo Tweak,Boost,Customize,Ai All in One. Customize,UI,Boost,Security,Data,Development Enhance',
+    'version': '13.23.08.28',
     'author': 'odooai.cn',
     'category': 'Productivity',
     'website': 'https://www.odooai.cn',
