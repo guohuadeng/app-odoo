@@ -208,6 +208,10 @@ GPT-3	A set of models that can understand and generate natural language
                 # ali 格式
                 usage = res['usage']
                 content = res['output']['text']
+            elif self.provider == 'baidu':
+                # baidu 格式
+                usage = res['usage']
+                content = res['result']
             else:
                 usage = False
                 content = res
