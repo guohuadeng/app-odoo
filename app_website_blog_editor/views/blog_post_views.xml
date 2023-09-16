@@ -68,7 +68,7 @@
             </xpath>
         </field>
     </record>
-
+    <!--search-->
     <record id="app_view_blog_post_search" model="ir.ui.view">
 		<field name="name">app.blog.post.search</field>
 		<field name="model">blog.post</field>
@@ -82,6 +82,10 @@
 				<field name="website_meta_title"/>
 				<field name="website_meta_description"/>
 			</xpath>
+			<xpath expr="//filter[@name='inactive']" position="after">
+				<filter string="Published" name="filter_published" domain="[('is_published','=',True)]"/>
+				<filter string="Not Published" name="filter_un_published" domain="[('is_published','!=',True)]"/>
+            </xpath>
 		</field>
 	</record>
 </odoo>
