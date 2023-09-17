@@ -152,9 +152,14 @@ class Channel(models.Model):
                 res = res.replace('\n', '<br/>')
             new_msg = channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
             if usage:
-                prompt_tokens = usage['prompt_tokens']
-                completion_tokens = usage['completion_tokens']
-                total_tokens = usage['total_tokens']
+                if ai.provider == 'ali':
+                    prompt_tokens = usage['input_tokens']
+                    completion_tokens = usage['output_tokens']
+                    total_tokens = usage['input_tokens'] + usage['output_tokens']
+                else:
+                    prompt_tokens = usage['prompt_tokens']
+                    completion_tokens = usage['completion_tokens']
+                    total_tokens = usage['total_tokens']
                 new_msg.write({
                     'human_prompt_tokens': prompt_tokens,
                     'ai_completion_tokens': completion_tokens,
