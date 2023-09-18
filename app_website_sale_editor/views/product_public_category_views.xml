@@ -6,7 +6,13 @@
         <field name="inherit_id" ref="website_sale.product_public_category_tree_view"/>
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
-	            <attribute name="editable">bottom</attribute>
+                <attribute name="multi_edit">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='display_name']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+            <xpath expr="//field[@name='display_name']" position="before">
+                <field name="name" optional="show"/>
             </xpath>
         </field>
     </record>
