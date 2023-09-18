@@ -9,7 +9,7 @@
 
 {
     'name': '2023最新中国企业会计科目表.Latest Chinese Accounting for odoo16',
-    'version': '16.23.03.01',
+    'version': '16.23.09.18',
     'author': 'odooai.cn',
     'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.odooai.cn',
