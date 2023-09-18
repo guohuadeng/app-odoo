@@ -17,7 +17,7 @@
 
 
 {
-    'name': 'Chinese Enhance All in One，odoo中文版套件之基础',
+    'name': 'odoo中文版套件之基础,中国会计基础,Chinese Enhance All in One，',
     'version': '16.23.08.03',
     'author': 'odooai.cn',
     'category': 'Base',
@@ -29,7 +29,7 @@
     'currency': 'EUR',
     'summary': '''
     odoo简体中文版全面增强. Chinese enhance. Out of the box use odoo in china. Chinese address format, number format, money format.
-    Set all chinese default value. Default country, timezone, currency, partner.
+    Set all chinese default value. Default country, timezone, currency, partner.中国会计基础模块.
     ''',
     'description': '''
     odoo Chinese Enhance. odoo中国版增强-基础
