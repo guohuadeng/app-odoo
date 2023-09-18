@@ -30,6 +30,7 @@ account_1402,1402,在途物资,,FALSE,asset_current,,l10n_chart_china_standard_b
 account_1403,1403,原材料,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_1404,1404,材料成本差异,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_1405,1405,库存商品,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
+account_1405_01,1405.01,其中：数据资源,account_1405,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_1406,1406,发出商品,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_1407,1407,商品进销差价,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_1408,1408,委托加工物资,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
@@ -62,6 +63,7 @@ account_1623,1623,公益性生物资产,,FALSE,asset_current,tag26,l10n_chart_ch
 account_1631,1631,油气资产,,FALSE,asset_current,tag28,l10n_chart_china_standard_business_latest
 account_1632,1632,累计折耗,,FALSE,asset_current,tag28,l10n_chart_china_standard_business_latest
 account_1701,1701,无形资产,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
+account_1701_01,1701.01,其中：数据资源,account_1701,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_1702,1702,累计摊销,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_1703,1703,无形资产减值准备,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_1711,1711,商誉,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
@@ -141,6 +143,7 @@ account_5001,5001,生产成本,,FALSE,expense_direct_cost,,l10n_chart_china_stan
 account_5101,5101,制造费用,,FALSE,expense_direct_cost,,l10n_chart_china_standard_business_latest
 account_5201,5201,劳务成本,,FALSE,expense_direct_cost,,l10n_chart_china_standard_business_latest
 account_5301,5301,研发支出,,FALSE,expense_direct_cost,,l10n_chart_china_standard_business_latest
+account_5301_01,5301.01,其中：数据资源,account_5301,FALSE,expense_direct_cost,,l10n_chart_china_standard_business_latest
 account_5401,5401,工程施工,,FALSE,expense_direct_cost,tag30,l10n_chart_china_standard_business_latest
 account_5402,5402,工程结算,,FALSE,expense_direct_cost,tag30,l10n_chart_china_standard_business_latest
 account_5403,5403,机械作业,,FALSE,expense_direct_cost,tag30,l10n_chart_china_standard_business_latest

@@ -313,7 +313,7 @@ class ResConfigSettings(models.TransientModel):
             # 'account.tax.account.tag',
             'account.tax',
             # 'wizard_multi_charts_accounts',
-            # 'account.account',
+            'account.account',
         ]
         # todo: 要做 remove_hr，因为工资表会用到 account
         # 更新account关联，很多是多公司字段，故只存在 ir_property，故在原模型，只能用update
