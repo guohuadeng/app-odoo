@@ -17,7 +17,7 @@
 {
     'name': 'App Search By Date (Datetime) or Number Range',
     'version': '10.19.05.22',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'category': 'web',
     'website': 'http://www.sunpop.cn',
     'license': 'AGPL-3',

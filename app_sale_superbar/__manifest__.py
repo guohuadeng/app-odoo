@@ -18,7 +18,7 @@
 {
     'name': "App sale order browse by partner and channel",
     'version': '10.19.05.22',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',

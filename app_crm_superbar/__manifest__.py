@@ -18,7 +18,7 @@
 {
     'name': "App crm browse by stage and team",
     'version': '10.19.5.22',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',

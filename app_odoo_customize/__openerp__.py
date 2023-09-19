@@ -17,7 +17,7 @@
 {
     'name': 'Customize odoo OEM (Boost, My Odoo)',
     'version': '10.20.03.04',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',
     'license': 'AGPL-3',

@@ -23,7 +23,7 @@
     'description': """
     扫码面板
     """,
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'website': 'http://www.sunpop.cn',
     'license': 'LGPL-3',
     'category': 'Warehouse',

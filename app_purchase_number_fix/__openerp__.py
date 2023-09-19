@@ -19,7 +19,7 @@
 {
     'name': "Purchase number fix(odoo 10 purchase return bug fix)",
     'version': '10.0.3.24',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'category': 'Base',
     'website': 'http://www.sunpop.cn',
     'license': 'LGPL-3',

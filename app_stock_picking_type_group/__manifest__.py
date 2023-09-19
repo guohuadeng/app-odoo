@@ -19,7 +19,7 @@
 {
     'name': "App stock picking type group,库存作业类型分组",
     'version': '11.0.3.24',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'category': 'Base',
     'website': 'http://www.sunpop.cn',
     'license': 'LGPL-3',

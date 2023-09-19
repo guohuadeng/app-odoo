@@ -18,7 +18,7 @@
 {
     'name': "Employee Navigator by department, hr superbar",
     'version': '10.19.05.22',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'category': 'Human Resources',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',

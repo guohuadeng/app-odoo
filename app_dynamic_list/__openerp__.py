@@ -2,7 +2,7 @@
 {
     'name': 'App Customize Columns of List (Tree) View Dynamic',
     'version': '10.0.1.6',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'category': 'Productivity',
     'website': 'http://www.odooapp.cn',
     'sequence': 2,

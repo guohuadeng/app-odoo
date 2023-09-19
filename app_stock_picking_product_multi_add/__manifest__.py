@@ -18,7 +18,7 @@
 {
     'name': "App Stock Picking Order Product Multi Batch Add, 库存调拨单批量增加产品",
     'version': '10.0.8.15',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'category': 'Base',
     'website': 'http://www.sunpop.cn',
     'license': 'LGPL-3',

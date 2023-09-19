@@ -18,7 +18,7 @@
     'name': 'App Web Fullwidth(list, kanban, form view fullwidth)',
     'version': '10.1.5.16',
     'category': 'web',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'website': 'http://www.sunpop.cn',
     'license': 'AGPL-3',
     'sequence': 2,

@@ -19,7 +19,7 @@
 # website': "https://gilvanleal.github.io/odoowidgets/",
 {
     'name': "App widget extra(Inputmask Widget)",
-    'author': "Sunpop.cn",
+    'author': "广州欧度智能",
     'website': 'http://www.sunpop.cn',
     'currency': 'EUR',
     'price': 38,

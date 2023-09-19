@@ -30,7 +30,7 @@
     4. Multi language support, done for Chinese and English
     多语言版本，默认支持中英双语
     """,
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'website': 'http://www.sunpop.cn',
     'license': 'LGPL-3',
     'category': 'Purchase',

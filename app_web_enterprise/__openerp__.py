@@ -19,7 +19,7 @@
 {
     'name': "App web enterprise enhance, odoo企业版界面增强",
     'version': '10.0.5.17',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'category': 'Base',
     'website': 'http://www.sunpop.cn',
     'license': 'LGPL-3',

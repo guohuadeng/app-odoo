@@ -17,7 +17,7 @@
 {
     'name': 'App Odoo Data clear(Quick Debug,Delete clear)',
     'version': '10.0.2.4',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',
     'license': 'AGPL-3',

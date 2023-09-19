@@ -19,7 +19,7 @@
     'summary': 'Auto Internal Reference.',
     "version": '10.0.2.2',
     'category': 'Sales',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'website': 'http://www.sunpop.cn',
     'license': 'AGPL-3',
     'sequence': 2,

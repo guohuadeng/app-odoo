@@ -18,7 +18,7 @@
 {
     'name': "App contacts by company superbar",
     'version': '10.19.05.09',
-    'author': 'Sunpop.cn',
+    'author': '广州欧度智能',
     'category': 'Base',
     'website': 'https://www.sunpop.cn',
     'license': 'LGPL-3',
