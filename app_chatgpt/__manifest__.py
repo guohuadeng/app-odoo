@@ -22,7 +22,7 @@
     'images': ['static/description/banner.gif'],
     'summary': '''
     ChatGpt Odoo AI Center. Multi Ai aigc support with Ali Qwen Ai, Azure Ai, Baidu Ai,etc..
-    Support chatgpt 4 32k image. DALLE, Integration All ChatGpt Api and Azure OpenAI.
+    Support chatgpt 4 32k, Integration All ChatGpt Api and Azure OpenAI.
     Easy Chat channel with several ChatGPT Robots and train.
     ''',
     'description': '''
@@ -30,7 +30,7 @@
     providing a more natural and intuitive user experience.
     Base on is_chatgpt_integration from InTechual Solutions.
     1. Multi ChatGpt openAI robot Connector. Chat and train.
-    2. Multi Ai support including Azure Ai, Alibaba Ai, Baidu Ai, Chatgpt 4, Chatgpt 3.5 Turbo, Chatgpt 3 Davinci, Chatgpt 2 Code Optimized, 'Dall-E Image.
+    2. Multi Ai support including Azure Ai, Alibaba Ai, Baidu Ai, Chatgpt 4, Chatgpt 3.5 Turbo, Chatgpt 3 Davinci.
     3. Bind ChatGpt Api to user. So we can chat to robot user or use ChatGpt Channel for Group Chat.
     4. White and black List for ChatGpt.
     5. Setup Demo Chat time for every new user.
