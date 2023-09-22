@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e-20230721\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-12 08:20+0000\n"
-"PO-Revision-Date: 2023-09-12 08:20+0000\n"
+"POT-Creation-Date: 2023-09-22 11:49+0000\n"
+"PO-Revision-Date: 2023-09-22 11:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -690,9 +690,19 @@ msgid "After timeout seconds then Disconnect"
 msgstr "上下文连接超时(秒)"
 
 #. module: app_chatgpt
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_chat_count__none
+msgid "Ai Auto"
+msgstr "Ai自动判断"
+
+#. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
 msgid "Ai Center Setup"
 msgstr "Ai智能服务中心设置"
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__description
+msgid "Ai Character"
+msgstr "Ai角色"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
@@ -718,6 +728,11 @@ msgid "Ai User"
 msgstr "Ai用户"
 
 #. module: app_chatgpt
+#: model:ir.model.fields,help:app_chatgpt.field_mail_channel__description
+msgid "Ai would help you act as the Character set."
+msgstr "Ai将会按照你设定的角色来提供回答。"
+
+#. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
 msgid "Ai常规设定"
 msgstr ""
@@ -728,14 +743,9 @@ msgid "Ai智能优化设定，具体参数"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_chat_count__none
-msgid "Ai自动判断"
-msgstr ""
-
-#. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_config_settings__module_app_ai_ali
 msgid "Ali Ai China"
-msgstr ""
+msgstr "阿里Ai"
 
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__res_users__gpt_policy__all
@@ -1286,8 +1296,9 @@ msgstr ""
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__frequency_penalty
-msgid "Frequency penalty"
-msgstr ""
+#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__set_frequency_penalty
+msgid "Frequency Penalty"
+msgstr "语言风格"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -1358,6 +1369,11 @@ msgstr ""
 #, python-format
 msgid "Hindu"
 msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__set_chat_count
+msgid "History Count"
+msgstr "上下文相关"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_mail_mail__human_prompt_tokens
@@ -1722,6 +1738,11 @@ msgid "Libra"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_max_tokens__2000
+msgid "Long"
+msgstr "长篇"
+
+#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
@@ -1751,6 +1772,12 @@ msgid "Max Number of Call"
 msgstr "提问次数限制"
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__max_tokens
+#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__set_max_tokens
+msgid "Max Response"
+msgstr "响应长度限制"
+
+#. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__max_send_char
 msgid "Max Send Char"
 msgstr ""
@@ -1761,9 +1788,9 @@ msgid "Max Send Prompt Length"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__max_tokens
-msgid "Max response"
-msgstr ""
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_max_tokens__1000
+msgid "Medium"
+msgstr "中等"
 
 #. module: app_chatgpt
 #: model:ir.model,name:app_chatgpt.model_mail_message
@@ -2006,6 +2033,11 @@ msgid "Orthodox cross"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_max_tokens__3000
+msgid "Overlength"
+msgstr "超长篇"
+
+#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
@@ -2073,8 +2105,9 @@ msgstr ""
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__presence_penalty
+#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__set_presence_penalty
 msgid "Presence penalty"
-msgstr ""
+msgstr "设置用词多样性"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__is_private
@@ -2244,6 +2277,11 @@ msgid "Service Start Date"
 msgstr "服务开始日期"
 
 #. module: app_chatgpt
+#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__set_temperature
+msgid "Set Temperature"
+msgstr "设置创造性"
+
+#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
@@ -2266,11 +2304,21 @@ msgid "Shinto"
 msgstr ""
 
 #. module: app_chatgpt
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_max_tokens__300
+msgid "Short"
+msgstr "简短"
+
+#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "Smileys & Emotion"
 msgstr ""
+
+#. module: app_chatgpt
+#: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_max_tokens__600
+msgid "Standard"
+msgstr "标准"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -2448,8 +2496,9 @@ msgstr ""
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__top_p
-msgid "Top probabilities"
-msgstr ""
+#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__set_top_p
+msgid "Top Probabilities"
+msgstr "设置思维连贯性"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.res_partner_ai_use_tree_view
@@ -27686,24 +27735,8 @@ msgid "上下文数量"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__set_chat_count
-msgid "上下文相关"
-msgstr ""
-
-#. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_top_p__0_9
 msgid "严谨惯性思维"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_max_tokens__1000
-msgid "中等"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:mail.channel,description:app_chatgpt.channel_chatgpt
-msgid ""
-"你是一个智能语音对话系统\"odooAi欧度智能\"，用户关注微信公众号或者打开微信小程序\"odooAi欧度智能\"即可使用，如果用户疑问，请告诉他们以上使用说明。"
 msgstr ""
 
 #. module: app_chatgpt
@@ -27722,19 +27755,13 @@ msgid "允许较多重复"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__set_temperature
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_temperature__1_5
 msgid "创造性"
-msgstr ""
+msgstr "创造性"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__temperature
 msgid "创造性值"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__set_max_tokens
-msgid "响应篇幅限制"
 msgstr ""
 
 #. module: app_chatgpt
@@ -27760,11 +27787,6 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_frequency_penalty__0_1
 msgid "少常用词"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__set_top_p
-msgid "思维连贯性"
 msgstr ""
 
 #. module: app_chatgpt
@@ -27824,7 +27846,6 @@ msgstr ""
 
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_frequency_penalty__1
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_max_tokens__600
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_presence_penalty__1
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_temperature__1
 msgid "标准"
@@ -27868,18 +27889,8 @@ msgid "用户设定的角色相关，一般不要调整"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__set_presence_penalty
-msgid "用词多样性"
-msgstr ""
-
-#. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_res_config_settings__module_app_ai_baidu
 msgid "百度文心一格"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_max_tokens__300
-msgid "简短"
 msgstr ""
 
 #. module: app_chatgpt
@@ -27890,16 +27901,6 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_frequency_penalty__2
 msgid "老学究-晦涩难懂"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__set_frequency_penalty
-msgid "语言风格"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_max_tokens__3000
-msgid "超长篇"
 msgstr ""
 
 #. module: app_chatgpt
@@ -27936,11 +27937,6 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__presence_penalty
 msgid "避免重复词值"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_max_tokens__2000
-msgid "长篇"
 msgstr ""
 
 #. module: app_chatgpt

@@ -27,32 +27,32 @@ class Channel(models.Model):
                                         domain=[('gpt_id', '!=', None), ('is_chat_private', '=', True)])
     description = fields.Char('Ai Character', help="Ai would help you act as the Character set.")
     set_max_tokens = fields.Selection([
-        ('300', '简短'),
-        ('600', '标准'),
-        ('1000', '中等'),
-        ('2000', '长篇'),
-        ('3000', '超长篇'),
+        ('300', 'Short'),
+        ('600', 'Standard'),
+        ('1000', 'Medium'),
+        ('2000', 'Long'),
+        ('3000', 'Overlength'),
         ('32000', '32K'),
-    ], string='响应篇幅限制', default='600', help="越大返回内容越多，计费也越多")
+    ], string='Max Response', default='600', help="越大返回内容越多，计费也越多")
     set_chat_count = fields.Selection([
-        ('none', 'Ai自动判断'),
+        ('none', 'Ai Auto'),
         ('1', '1标准'),
         ('3', '3强关联'),
         ('5', '5超强关联'),
-    ], string="上下文相关", default='1', help="0-5，设定后，会将最近n次对话发给Ai，有助于他更好的回答，但太大费用也高")
+    ], string="History Count", default='1', help="0-5，设定后，会将最近n次对话发给Ai，有助于他更好的回答，但太大费用也高")
     set_temperature = fields.Selection([
         ('2', '天马行空'),
         ('1.5', '创造性'),
         ('1', '标准'),
         ('0.6', '理性'),
         ('0.1', '保守'),
-    ], string="创造性", default='1', help="0-21，值越大越富有想像力，越小则越保守")
+    ], string="Set Temperature", default='1', help="0-21，值越大越富有想像力，越小则越保守")
     set_top_p = fields.Selection([
         ('0.9', '严谨惯性思维'),
         ('0.6', '标准推理'),
         ('0.4', '跳跃性'),
         ('0.1', '随便'),
-    ], string="思维连贯性", default='0.6', help="0-1，值越大越倾向大众化的连贯思维")
+    ], string="Top Probabilities", default='0.6', help="0-1，值越大越倾向大众化的连贯思维")
     # 避免使用常用词
     set_frequency_penalty = fields.Selection([
         ('2', '老学究-晦涩难懂'),
@@ -61,7 +61,7 @@ class Channel(models.Model):
         ('0.1', '少常用词'),
         ('-1', '通俗易懂'),
         ('-2', '大白话'),
-    ], string='语言风格', default='1', help="-2~2，值越大越少使用常用词")
+    ], string='Frequency Penalty', default='1', help="-2~2，值越大越少使用常用词")
     set_presence_penalty = fields.Selection([
         ('2', '多样强迫症'),
         ('1.5', '新颖化'),
@@ -69,7 +69,7 @@ class Channel(models.Model):
         ('0.1', '允许常规重复'),
         ('-1', '允许较多重复'),
         ('-2', '更多强调重复'),
-    ], string='用词多样性', default='1', help="-2~2，值越大越少重复词")
+    ], string='Presence penalty', default='1', help="-2~2，值越大越少重复词")
 
     # todo: 这里用 compute?
     max_tokens = fields.Integer('最长响应Token', default=600, help="越大返回内容越多，计费也越多")

@@ -52,7 +52,7 @@ GPT-3	A set of models that can understand and generate natural language
     # 3. top_p：0-1，语言连贯性，与temperature有些类似，也是控制回复的“新颖度”。不同的是，top_p控制的是回复中概率最高的几个可能性的累计概率之和，值越小，生成的回复越保守，值越大，生成的回复越新颖。
     # 4. frequency_penalty：-2~2，用于控制聊天机器人回复中出现频率过高的词汇的惩罚程度。聊天机器人会尝试避免在回复中使用频率较高的词汇，以提高回复的多样性和新颖度。
     # 5. presence_penalty：-2~2与frequency_penalty相对，用于控制聊天机器人回复中出现频率较低的词汇的惩罚程度。聊天机器人会尝试在回复中使用频率较低的词汇，以提高回复的多样性和新颖度。
-    max_tokens = fields.Integer('Max response', default=600,
+    max_tokens = fields.Integer('Max Response', default=600,
                                 help="""
                                 Set a limit on the number of tokens per model response.
                                 The API supports a maximum of 4000 tokens shared between the prompt
@@ -66,7 +66,7 @@ GPT-3	A set of models that can understand and generate natural language
                                Increasing the temperature will result in more unexpected or creative responses.
                                Try adjusting temperature or Top P but not both.
                                     """)
-    top_p = fields.Float('Top probabilities', default=0.6,
+    top_p = fields.Float('Top Probabilities', default=0.6,
                          help="""
                          Similar to temperature, this controls randomness but uses a different method.
                          Lowering Top P will narrow the model’s token selection to likelier tokens.
@@ -74,7 +74,7 @@ GPT-3	A set of models that can understand and generate natural language
                          Try adjusting temperature or Top P but not both
                          """)
     # 避免使用常用词
-    frequency_penalty = fields.Float('Frequency penalty', default=1,
+    frequency_penalty = fields.Float('Frequency Penalty', default=1,
                                      help="""
                                      Reduce the chance of repeating a token proportionally based on how often it has appeared in the text so far.
                                      This decreases the likelihood of repeating the exact same text in a response.
