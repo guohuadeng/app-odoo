@@ -5,7 +5,6 @@
   "owned_by": "openai",
   "permission": [
     {
-      "id": "modelperm-ZErASyl63fhYUeMMk7QKOHAB",
       "object": "model_permission",
       "created": 1677691854,
       "allow_create_engine": false,
