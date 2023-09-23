@@ -6,19 +6,46 @@
         <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[@name='integration']" position="after">
-                <h2>ChatGPT</h2>
-                <div class="col-xs-12 row o_settings_container" id="chatgpt_integraion">
-                    <div class="col-xs-12 col-md-10 o_setting_box">
-                        <div class="o_setting_right_pane border-start-0">
-                            <div class="content-group">
-                                <div class="row mt0">
-                                    <label class="col-lg-2" string="上下文连接超时" for="openapi_context_timeout"/>
-                                    <field name="openapi_context_timeout" title="上下文连接超时 秒数" style="width: 10% !important;"/>秒
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                <h2>Ai Center Setup</h2>
+	            <div class="col-xs-12 col-md-6 row o_settings_container" id="chatgpt_integration">
+		            <div class="col-12 o_web_settings_compact_subtitle">
+			            Support by
+			            <a target="_blank" href="https://www.odooai.cn" style="text-decoration: underline;">odooAi.cn</a>
+		            </div>
+		            <div class="col-12 col-lg-12 o_setting_box" id="ai_base_setting">
+			            <div class="o_setting_right_pane border-start-0">
+				            <div class="content-group">
+				                <div class="o_web_settings_compact_subtitle">
+					                <label class="col-4" string="Timout then disconnect(s)" for="openapi_context_timeout"/>
+					                <field name="openapi_context_timeout" title="After timeout seconds then Disconnect" style="width: 200px !important;"/>Seconds
+				                </div>
+				                <div class="row mt0">
+					                <label class="col-4" for="openai_sync_config"/>
+					                <field name="openai_sync_config" style="width: 200px !important;"/>
+				                </div>
+			                </div>
+		                </div>
+	                </div>
+		            <div class="col-lg-6 col-12 o_setting_box" id="ai_google_integraion">
+			            <div class="o_setting_left_pane">
+				            <field name="module_app_ai_bard"/>
+			            </div>
+			            <div class="o_setting_right_pane">
+				            <label for="module_app_ai_bard"/>
+				            <a href="https://apps.odoo.com/apps/modules/14.0/app_ai_bard/"
+				               title="Get Google Bard Ai from https://apps.odoo.com/apps/modules/14.0/app_ai_bard" class="o_doc_link ml8" target="_blank"></a>
+			            </div>
+		            </div>
+		            <div class="col-lg-6 col-12 o_setting_box" id="ai_baidu_integraion">
+			            <div class="o_setting_left_pane">
+				            <field name="module_app_ai_baidu"/>
+			            </div>
+			            <div class="o_setting_right_pane">
+				            <label for="module_app_ai_baidu"/>
+				            <a href="https://apps.odoo.com/apps/modules/14.0/app_ai_baidu/"
+				               title="Get Baidu Ai from https://apps.odoo.com/apps/modules/14.0/app_ai_baidu" class="o_doc_link ml8" target="_blank"></a>
+			            </div>
+		            </div>
                 </div>
             </xpath>
         </field>

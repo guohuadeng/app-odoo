@@ -10,33 +10,112 @@
                 <field name="provider" optional="hide"/>
                 <field name="ai_model" optional="show"/>
                 <field name="openapi_api_key" password="True"/>
+                <field name="max_tokens" optional="show"/>
                 <field name="temperature"/>
+                <field name="max_send_char"/>
             </tree>
         </field>
     </record>
-    
+
+    <record id="ai_robot_kanban_view" model="ir.ui.view">
+        <field name="name">ai.robot.kanban</field>
+        <field name="model">ai.robot</field>
+        <field name="arch" type="xml">
+            <kanban class="o_ai_robot_kanban">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="provider"/>
+                <field name="set_ai_model"/>
+                <field name="ai_model"/>
+                <field name="partner_count"/>
+                <field name="image_avatar"/>
+                <field name="active"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_image me-1">
+                                <img t-att-src="kanban_image('ai.robot', 'image_avatar', record.id.raw_value)" alt="Robot Provider" class="o_image_64_contain"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_record_top mb-0">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
+                                            <field name="name"/>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    Model:
+                                    <field name="ai_model"/>
+                                </div>
+                                <div class="mt-1">
+                                    <strong>
+                                        <t t-esc="record.partner_count.value"/>
+                                    </strong>
+                                     Bind Partner
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
     <record id="ai_robot_form_view" model="ir.ui.view">
         <field name="name">ai.robot.form</field>
         <field name="model">ai.robot</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button string="Get List Model" type="object" name="get_ai_list_model" attrs="{'invisible': [('provider', '!=', 'openai')]}"/>
+                    <button string="Get Model Info" type="object" name="get_ai_model_info" attrs="{'invisible': [('provider', '!=', 'openai')]}"/>
+                </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="%(base.action_res_users)d" icon="fa-users" type="action"
+                                context="{'search_default_gpt_id': id}">
+                            <field name="partner_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <field name="image_avatar" widget='image' class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Robot Name" required="1"/>
+                        </h1>
+                    </div>
                     <group>
                         <group>
-                            <field name="name"/>
-                            <field name="openapi_api_key" password="True"/>
+                            <field name="id" invisible="1"/>
+                            <field name="openapi_api_key" password="True" required="True"/>
                             <field name="temperature"/>
-                            <field name="sequence"/>
+                            <field name="top_p"/>
+                            <field name="frequency_penalty"/>
+                            <field name="presence_penalty"/>
+                            <field name="sys_content" placeholder="Role-playing and scene setting.Give the model instructions about how it should behave and any context it should reference when generating a response."/>
+                            <field name="max_send_char"/>
                         </group>
                         <group>
+                            <field name="set_ai_model"/>
                             <field name="ai_model"/>
                             <label class="o_form_label" for="provider">
                                 OpenAI Document
                             </label>
                             <div>
-                                <field name="provider"/>
+                                <field name="provider" class="oe_inline"/>
                                 <a href="https://platform.openai.com/docs/introduction" title="OpenAI Document" class="o_doc_link" target="_blank"></a>
                             </div>
+                            <field name="max_tokens"/>
+                            <field name="engine"/>
+                            <field name="endpoint"/>
+                            <field name="api_version"/>
+                            <field name="ai_timeout"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="is_filtering"/>
+                            <field name="sensitive_words" attrs="{'invisible': [('is_filtering', '=', False)]}"/>
                         </group>
                     </group>
                 </sheet>
@@ -44,13 +123,28 @@
         </field>
     </record>
 
+    <record id="ai_robot_search_view" model="ir.ui.view">
+        <field name="name">ai.robot.search</field>
+        <field name="model">ai.robot</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="ai_model"/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <group expand="0" name="group_by" string="Group By">
+                    <filter name="groupby_provider" string="Ai Provider" domain="[]" context="{'group_by' : 'provider'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
     <record id="action_ai_robot" model="ir.actions.act_window">
-        <field name="name">GPT Robot</field>
+        <field name="name">Ai Robot</field>
         <field name="res_model">ai.robot</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Let's create a GPT Robot.
+                Let's create a Ai Robot.
             </p>
         </field>
     </record>
@@ -59,14 +153,14 @@
         <field name="name">Disconnect</field>
         <field name="model_id" ref="app_chatgpt.model_ai_robot"/>
         <field name="binding_model_id" ref="app_chatgpt.model_ai_robot"/>
-        <field name="binding_view_types">list,form</field>
+        <field name="binding_view_types">kanban,list,form</field>
         <field name="state">code</field>
         <field name="code">action = records.action_disconnect()</field>
     </record>
 
     <menuitem
             id="menu_ai_robot"
-            name="GPT Robot"
+            name="Ai Robot"
             parent="base.menu_users"
             sequence="2"
             action="action_ai_robot"

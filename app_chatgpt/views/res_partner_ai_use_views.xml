@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_partner_ai_use_tree_view" model="ir.ui.view">
+        <field name="name">res.partner.ai.use.tree</field>
+        <field name="model">res.partner.ai.use</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="ai_user_id" optional="show"/>
+                <field name="first_ask_time" optional="show"/>
+                <field name="latest_ask_time" optional="show"/>
+                <field name="service_start_date" optional="show"/>
+                <field name="service_end_date" optional="show"/>
+                <field name="used_number" sum="Total" optional="hide"/>
+                <field name="max_number" sum="Total" optional="hide"/>
+                <field name="human_prompt_tokens" sum="Total" optional="show"/>
+                <field name="ai_completion_tokens" sum="Total" optional="show"/>
+                <field name="tokens_total" sum="Total" optional="show"/>
+                <field name="token_balance" sum="Total" optional="show"/>
+                <field name="token_allow" sum="Total" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_partner_ai_use_form_view" model="ir.ui.view">
+        <field name="name">res.partner.ai.use.form</field>
+        <field name="model">res.partner.ai.use</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <label for="name"/>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="ai_user_id"/>
+                            <field name="first_ask_time"/>
+                            <field name="latest_ask_time"/>
+                            <field name="service_start_date"/>
+                            <field name="service_end_date"/>
+                            <field name="used_number" readonly="True"/>
+                            <field name="max_number" readonly="True"/>
+                            <field name="token_balance" readonly="True"/>
+                        </group>
+                        <group>
+                            <field name="human_prompt_tokens" readonly="True"/>
+                            <field name="ai_completion_tokens" readonly="True"/>
+                            <field name="tokens_total" readonly="True"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_partner_ai_use_search_view" model="ir.ui.view">
+        <field name="name">res.partner.ai.use.search</field>
+        <field name="model">res.partner.ai.use</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="ai_user_id"/>
+                <searchpanel>
+                    <field name="ai_user_id"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_res_partner_ai_use" model="ir.actions.act_window">
+        <field name="name">Partner Ai Use</field>
+        <field name="res_model">res.partner.ai.use</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'create': 0, 'delete': 0}</field>
+    </record>
+
+
+    <record id="action_res_users_2_partner_ai_use" model="ir.actions.act_window">
+        <field name="name">Partner Ai Use</field>
+        <field name="res_model">res.partner.ai.use</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('ai_user_id', 'in', active_ids)]</field>
+        <field name="context">{'default_ai_user_id':active_id,}</field>
+    </record>
+
+    <menuitem
+            id="menu_res_partner_ai_use"
+            name="Partner Ai Use"
+            parent="base.menu_users"
+            sequence="3"
+            action="action_res_partner_ai_use"
+            groups="base.group_system"/>
+</odoo>
