@@ -1,0 +1,21 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* app_website_sale_editor
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20230320\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-10 17:30+0000\n"
+"PO-Revision-Date: 2023-04-10 17:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_website_sale_editor
+#: model_terms:ir.ui.view,arch_db:app_website_sale_editor.app_product_template_form_view
+msgid "Website Description"
+msgstr "网站图文"

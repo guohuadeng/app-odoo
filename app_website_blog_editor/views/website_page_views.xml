@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="app_website_pages_tree_view" model="ir.ui.view">
+		<field name="name">app.website.page.list</field>
+		<field name="model">website.page</field>
+		<field name="inherit_id" ref="website.website_pages_tree_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='name']" position="before">
+                <field name="id" groups="base.group_no_one" optional="show"/>
+			</xpath>
+			<xpath expr="//field[@name='website_url']" position="attributes">
+				<attribute name="optional">show</attribute>
+			</xpath>
+			<xpath expr="//field[@name='is_in_menu']" position="attributes">
+				<attribute name="optional">show</attribute>
+			</xpath>
+			<xpath expr="//field[@name='website_url']" position="after">
+                <field name="seo_name" invisible="1"/>
+                <field name="website_meta_keywords" optional="show"/>
+                <field name="website_meta_title" optional="hide"/>
+                <field name="website_meta_description" optional="hide"/>
+			</xpath>
+            <xpath expr="//field[@name='is_seo_optimized']" position="before">
+                <button name="action_page_debug_view" position="move"/>
+                <button name="action_page_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
+            </xpath>
+		</field>
+	</record>
+<!--    form-->
+	<record id="app_view_view_form_extend_debug" model="ir.ui.view">
+		<field name="name">app.website.page.form</field>
+		<field name="model">website.page</field>
+        <field name="mode">primary</field>
+		<field name="inherit_id" ref="website.view_view_form_extend"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='arch_base']" position="attributes">
+				<attribute name="widget">html</attribute>
+			</xpath>
+		</field>
+	</record>
+
+	<record id="app_website_pages_view_search" model="ir.ui.view">
+		<field name="name">app.website.page.search</field>
+		<field name="model">website.page</field>
+		<field name="inherit_id" ref="website.website_pages_view_search"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='url']" position="after">
+				<field name="website_meta_keywords"/>
+				<field name="website_meta_title"/>
+				<field name="website_meta_description"/>
+			</xpath>
+		</field>
+	</record>
+</odoo>
+
+
