@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="app_res_config_settings_form_view" model="ir.ui.view">
+        <field name="name">app.res.config.settings.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='social_default_image_setting']" position="after">
+                <div class="col-12 col-lg-6 o_setting_box" id="blog_default_image_setting">
+                    <div class="o_setting_left_pane">
+                        <field name="sync_blog_meta_background_img"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label string="Use a meta image by default for blog post background" for="sync_blog_meta_background_img"/>
+                        <div class="text-muted">
+                            If set, replaces the blog post background image as the meta image.
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

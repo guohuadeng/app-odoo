@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="app_product_template_tree_view" model="ir.ui.view">
+            <field name="name">app.product.template.tree</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="website_sale.product_pages_tree_view"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='is_seo_optimized']" position="before">
+					<button name="action_product_debug_view" type="object" title="Content Set" icon="fa-bug fa-lg" groups="base.group_no_one"/>
+					<button name="action_product_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
+                </xpath>
+                <xpath expr="//field[@name='website_url']" position="attributes">
+	                <attribute name="optional">hide</attribute>
+                </xpath>
+                <xpath expr="//field[@name='is_published']" position="attributes">
+	                <attribute name="optional">show</attribute>
+                </xpath>
+                <xpath expr="//field[@name='is_seo_optimized']" position="attributes">
+	                <attribute name="optional">show</attribute>
+                </xpath>
+                <xpath expr="//field[@name='is_published']" position="after">
+	                <field name="seo_name" optional="hide"/>
+	                <field name="website_meta_keywords" optional="hide"/>
+	                <field name="website_meta_title" optional="hide"/>
+	                <field name="website_meta_description" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="app_product_template_form_view" model="ir.ui.view">
+            <field name="name">app.product.template.common.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sales']" position="after">
+                    <page name="shop_desc" string="Website Description" attrs="{'invisible': [('sale_ok','=',False)]}">
+	                    <group>
+		                    <group>
+<!--			                     这里加个快速设置 seo url字段-->
+								<field name="seo_name"/>
+			                    <field name="website_meta_keywords"/>
+			                    <field name="website_meta_title"/>
+		                    </group>
+		                    <group>
+			                    <field name="website_meta_description"/>
+		                    </group>
+	                    </group>
+	                    <group string="Content">
+                            <field name="website_description" nolabel="1"/>
+	                    </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+	    <record id="app_product_template_form_view_code" model="ir.ui.view">
+		    <field name="name">app.product.template.website.code</field>
+		    <field name="model">product.template</field>
+		    <field name="priority">99</field>
+		    <field name="mode">primary</field>
+		    <field name="arch" type="xml">
+			    <form string="Website Product">
+				    <sheet name="product_form">
+                        <div class="oe_button_box" name="button_box" attrs="{'invisible': [('active', '=', False)]}">
+                            <field name="is_published" widget="website_redirect_button"/>
+                        </div>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+					    <field name="id" invisible="1"/>
+					    <field name="active" invisible="1"/>
+					    <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
+					    <div class="oe_title">
+						    <label for="name" string="Product Name"/>
+						    <h1>
+							    <div class="d-flex">
+								    <field name="priority" widget="priority" class="me-3"/>
+								    <field class="text-break" name="name" placeholder="e.g. Cheese Burger"/>
+							    </div>
+						    </h1>
+					    </div>
+					    <group>
+						    <group>
+							    <field name="sale_ok" invisible="1"/>
+						    </group>
+                        </group>
+                        <notebook>
+                            <page name="shop_desc" string="Website Description">
+                                <field name="website_description" nolabel="1" widget="ace" attrs="{'invisible': [('sale_ok','=',False)]}"/>
+                            </page>
+                            <page name="seo" string="SEO">
+                                <group>
+                                    <field name="seo_name"/>
+                                    <field name="website_meta_title" string="Meta Title"/>
+                                    <field name="website_meta_description" string="Meta Description"/>
+                                    <field name="website_meta_keywords" string="Meta Keywords" help="Separate every keyword with a comma"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+			    </form>
+		    </field>
+	    </record>
+
+        <record id="app_product_template_form_view_debug" model="ir.ui.view">
+		    <field name="name">app.product.template.website.debug</field>
+		    <field name="model">product.template</field>
+		    <field name="priority">99</field>
+		    <field name="mode">primary</field>
+            <field name="inherit_id" ref="app_product_template_form_view_code"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='website_description']" position="attributes">
+                    <attribute name="widget">html</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="app_product_template_search_view" model="ir.ui.view">
+            <field name="name">app.product.template.website.search</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="after">
+                    <field name="seo_name"/>
+                    <field name="website_meta_keywords"/>
+                    <field name="website_meta_title"/>
+                    <field name="website_meta_description"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
