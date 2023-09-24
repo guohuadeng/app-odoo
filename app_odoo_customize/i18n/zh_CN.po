@@ -762,7 +762,7 @@ msgstr "启用后，会显示快速调试菜单"
 #. module: app_odoo_customize
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_group
 msgid "odooAi"
-msgstr "odooAi欧度智能"
+msgstr "odooAi"
 
 #. module: app_odoo_customize
 #. odoo-javascript
