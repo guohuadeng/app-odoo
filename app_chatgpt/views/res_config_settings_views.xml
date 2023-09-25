@@ -3,9 +3,9 @@
     <record id="is_res_config_settings_view" model="ir.ui.view">
         <field name="name">res.config.settings.view.form.is.chatgpt.inherit</field>
         <field name="model">res.config.settings</field>
-        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="inherit_id" ref="app_odoo_customize.view_app_theme_config_settings"/>
         <field name="arch" type="xml">
-            <xpath expr="//div[@name='integration']" position="after">
+            <xpath expr="//div[@name='app_modules']" position="after">
                 <h2>Ai Center Setup</h2>
 	            <div class="col-xs-12 col-md-6 row o_settings_container" id="chatgpt_integration">
 		            <div class="col-12 o_web_settings_compact_subtitle">
