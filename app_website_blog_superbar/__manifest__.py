@@ -51,6 +51,7 @@
     'images': ['static/description/banner.png'],
     'depends': [
         'website_blog',
+        'app_base_superbar',
     ],
     'summary': '''
     Odoo App of odooai.cn
@@ -71,6 +72,7 @@
     ''',
     'data': [
         'views/blog_post_views.xml',
+        'views/ir_attachment_views.xml',
         # 'report/.xml',
     ],
     'demo': [],

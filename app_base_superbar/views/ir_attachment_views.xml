@@ -8,7 +8,6 @@
             <xpath expr="//search">
                 <searchpanel>
                     <field name="type"/>
-                    <field name="create_uid"/>
                 </searchpanel>
             </xpath>
         </field>
