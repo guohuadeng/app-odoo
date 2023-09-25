@@ -38,7 +38,7 @@
 			</xpath>
 		</field>
 	</record>
-
+<!--search-->
 	<record id="app_website_pages_view_search" model="ir.ui.view">
 		<field name="name">app.website.page.search</field>
 		<field name="model">website.page</field>
@@ -48,6 +48,9 @@
 				<field name="website_meta_keywords"/>
 				<field name="website_meta_title"/>
 				<field name="website_meta_description"/>
+                <group expand="0" string="Group By">
+                    <filter string="Website" name="groupby_website_id" domain="[]" context="{'group_by': 'website_id'}"/>
+                </group>
 			</xpath>
 		</field>
 	</record>
