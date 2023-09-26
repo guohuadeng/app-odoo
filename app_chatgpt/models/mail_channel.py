@@ -241,7 +241,7 @@ class Channel(models.Model):
             #     elif user_id.gpt_id and not is_allow:
             #         # 暂时有限用户的Ai
             #         raise UserError(_('此Ai暂时未开放，请联系管理员。'))
-        if hasattr(ai, 'is_translator') and ai.is_translator:
+        if hasattr(ai, 'is_translator') and ai.is_translator and ai.ai_model == 'translator':
             return rdata
         chatgpt_channel_id = self.env.ref('app_chatgpt.channel_chatgpt')
         
