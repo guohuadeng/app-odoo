@@ -101,19 +101,22 @@ class Base(models.AbstractModel):
 
     @api.model
     def get_image_from_url(self, url):
-        if not url:
-            return None
-        try:
-            response = requests.get(url)  # 将这个图片保存在内存
-        except Exception as e:
-            return None
         # 返回这个图片的base64编码
-        return base64.b64encode(BytesIO(response.content).read())
+        return get_image_from_url(url)
 
     def get_ua_type(self):
         return get_ua_type()
 
-
+def get_image_from_url(url):
+    if not url:
+        return None
+    try:
+        response = requests.get(url, timeout=5)
+    except Exception as e:
+        return None
+    # 返回这个图片的base64编码
+    return base64.b64encode(BytesIO(response.content).read())
+    
 def get_ua_type():
     ua = request.httprequest.headers.get('User-Agent')
     # 临时用 agent 处理，后续要前端中正确处理或者都从后台来
