@@ -387,11 +387,15 @@ GPT-3	A set of models that can understand and generate natural language
                 "presence_penalty": 0.1,
                 "stop": stop
             }
-            response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
-            res = response.json()
-            if 'choices' in res:
-                res = '\n'.join([x['text'] for x in res['choices']])
-                return res
+            response = openai.ChatCompletion.create(
+                model=self.ai_model,
+                messages=data
+            )
+            # response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
+            if 'choices' in response:
+                return response
+            else:
+                _logger.warning('=====================openai output data: %s' % response.json())
     
         return _("Response Timeout, please speak again.")
 
