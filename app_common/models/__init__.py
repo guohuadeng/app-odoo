@@ -30,6 +30,7 @@ from . import ir_mail_server
 from . import mail_mail
 from . import ir_http
 from . import app_import
+from . import res_partner
 
 
 
