@@ -61,9 +61,6 @@
             <search>
                 <field name="name"/>
                 <field name="ai_user_id"/>
-                <searchpanel>
-                    <field name="ai_user_id"/>
-                </searchpanel>
             </search>
         </field>
     </record>
