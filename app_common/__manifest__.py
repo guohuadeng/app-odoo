@@ -1,16 +1,22 @@
 # -*- coding: utf-8 -*-
 
-# Created on 20120-01-05
+# Created on 2023-02-02
 # author: 欧度智能，https://www.odooai.cn
 # email: 300883@qq.com
 # resource of odooai
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-# Odoo12在线用户手册（长期更新）
-# https://www.odooai.cn/documentation/user/12.0/zh_CN/index.html
+# Odoo16在线用户手册（长期更新）
+# https://www.odooai.cn/documentation/16.0/zh_CN/index.html
 
-# Odoo12在线开发者手册（长期更新）
-# https://www.odooai.cn/documentation/12.0/index.html
+# Odoo16在线开发者手册（长期更新）
+# https://www.odooai.cn/documentation/16.0/zh_CN/developer.html
+
+# Odoo13在线用户手册（长期更新）
+# https://www.odooai.cn/documentation/user/13.0/zh_CN/index.html
+
+# Odoo13在线开发者手册（长期更新）
+# https://www.odooai.cn/documentation/13.0/index.html
 
 # Odoo10在线中文用户手册（长期更新）
 # https://www.odooai.cn/documentation/user/10.0/zh_CN/index.html
@@ -33,10 +39,11 @@
 
 {
     'name': "odooai Odooapp Common Func",
-    'version': '15.21.11.30',
+    'version': '15.23.09.28',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
+    'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
     'price': 0.00,
@@ -47,27 +54,26 @@
     基础核心，必须没有要被依赖字段及视图等，实现auto_install
     ''',
     'description': '''    
-    Support Odoo 15, Enterprise and Community Edition
+    Support Odoo 16, 15, Enterprise and Community Edition
+    need to setup odoo.conf, add follow:
+    server_wide_modules = web,app_common
     1. 
     2. 
     3. Multi-language Support.
     4. Multi-Company Support.
-    5. Support Odoo 15, Enterprise and Community Edition
+    5. Support Odoo 16, 15, Enterprise and Community Edition
     ==========
     1. 
     2. 
     3. 多语言支持
     4. 多公司支持
-    5. Odoo 15, 企业版，社区版，多版本支持
+    5. Odoo 16, 15, 企业版，社区版，多版本支持
     ''',
     'depends': [
-        'base',
+        'mail',
         'web',
     ],
     'data': [
-        # 'security/*.xml',
-        # 'security/ir.model.access.csv',
-        # 'data/.xml',
         'views/ir_cron_views.xml',
         # 'report/.xml',
     ],

@@ -6,18 +6,6 @@
 # resource of odooai
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-# Odoo16在线用户手册（长期更新）
-# https://www.odooai.cn/documentation/16.0/zh_CN/index.html
-
-# Odoo16在线开发者手册（长期更新）
-# https://www.odooai.cn/documentation/16.0/zh_CN/developer.html
-
-# Odoo13在线用户手册（长期更新）
-# https://www.odooai.cn/documentation/user/13.0/zh_CN/index.html
-
-# Odoo13在线开发者手册（长期更新）
-# https://www.odooai.cn/documentation/13.0/index.html
-
 # Odoo在线中文用户手册（长期更新）
 # https://www.odooai.cn/documentation/user/10.0/zh_CN/index.html
 
