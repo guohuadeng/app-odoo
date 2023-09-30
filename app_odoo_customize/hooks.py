@@ -27,7 +27,7 @@ def pre_init_hook(cr):
     except Exception as e:
         pass
 
-def post_init_hook(cr, registry):
+def post_init_hook(cr):
     # a = check_module_installed(cr, ['app_web_superbar','aaaaa'])
     pass
     # cr.execute("")

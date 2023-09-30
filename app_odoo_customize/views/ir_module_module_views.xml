@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <!-- Modules list -->
-        <record id="app_module_tree" model="ir.ui.view">
-            <field name="name">app.ir.module.module.tree</field>
-            <field name="model">ir.module.module</field>
-            <field name="inherit_id" ref="base.module_tree"/>
-            <field name="arch" type="xml">
-                <field name="name" position="attributes">
-                    <attribute name="groups"/>
-                </field>
-                <field name="installed_version" position="after">
-                    <field name="latest_version" optional="hide"/>
-                    <field name="local_updatable" optional="show"/>
-                    <field name="addons_path" optional="hide" groups="base.group_no_one"/>
-                </field>
-                <field name="website" position="attributes">
-                    <attribute name="optional">hide</attribute>
-                </field>
-            </field>
-        </record>
+        <!-- todo: Modules list -->
+<!--        <record id="app_module_tree" model="ir.ui.view">-->
+<!--            <field name="name">app.ir.module.module.tree</field>-->
+<!--            <field name="model">ir.module.module</field>-->
+<!--            <field name="inherit_id" ref="base.module_tree"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <field name="name" position="attributes">-->
+<!--                    <attribute name="groups"/>-->
+<!--                </field>-->
+<!--                <field name="installed_version" position="after">-->
+<!--                    <field name="latest_version" optional="hide"/>-->
+<!--                    <field name="local_updatable" optional="show"/>-->
+<!--                    <field name="addons_path" optional="hide" groups="base.group_no_one"/>-->
+<!--                </field>-->
+<!--                <field name="website" position="attributes">-->
+<!--                    <attribute name="optional">hide</attribute>-->
+<!--                </field>-->
+<!--            </field>-->
+<!--        </record>-->
         <!-- Modules search-->
         <record id="app_view_module_filter" model="ir.ui.view">
             <field name="name">app.ir.module.module.list.select</field>
@@ -68,11 +68,11 @@
                 </xpath>
                 <!--显示快速升级-->
                 <xpath expr="//div[hasclass('oe_module_action')]" position="inside" groups="app_odoo_customize.group_show_quick_upgrade">
-                    <button type="object" class="btn btn-default btn-sm float-right" name="button_uninstall_wizard" states="installed">Uninstall</button>
-                    <button type="object" class="btn btn-success btn-sm float-right" name="button_immediate_upgrade" states="installed">Upgrade</button>
+                    <button type="object" class="btn btn-default btn-sm float-right" name="button_uninstall_wizard" t-if="installed">Uninstall</button>
+                    <button type="object" class="btn btn-success btn-sm float-right" name="button_immediate_upgrade" t-if="installed">Upgrade</button>
                 </xpath>
                 <!--显示导出翻译-->
-                <xpath expr="//div[hasclass('dropdown-menu')]" position="inside">
+                <xpath expr="//t[@t-name='kanban-menu']" position="inside">
                     <a t-if="installed" name="%(app_odoo_customize.action_server_module_multi_get_po)d" type="action" role="menuitem" class="dropdown-item">Export Translation</a>
                     <a t-if="installed" name="%(app_odoo_customize.action_server_module_multi_refresh_po)d" type="action" role="menuitem" class="dropdown-item">Refresh Translation</a>
                 </xpath>

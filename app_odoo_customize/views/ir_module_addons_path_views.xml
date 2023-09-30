@@ -20,7 +20,7 @@
                     <div class="oe_button_box" name="button_box">
                         <button name="open_apps_view" type="object"
                                 class="oe_stat_button" icon="fa-cubes"
-                                attrs="{'invisible': [('module_count', '=', 0)]}">
+                                invisible="module_count == 0">
                             <div class="o_stat_info">
                                 <field name="module_count" class="o_stat_value"/>
                                 <span class="o_stat_text"> Modules </span>

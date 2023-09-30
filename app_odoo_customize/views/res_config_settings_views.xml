@@ -6,9 +6,9 @@
             <field name="model">res.config.settings</field>
             <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
             <field name="arch" type="xml">
-                <div id="appstore" position="attributes">
+                <setting id="appstore" position="attributes">
                     <attribute name="class">o_hidden</attribute>
-                </div>
+                </setting>
             </field>
         </record>
     </data>

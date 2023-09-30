@@ -74,19 +74,19 @@
             'app_odoo_customize/static/src/scss/app.scss',
             'app_odoo_customize/static/src/scss/ribbon.scss',
             'app_odoo_customize/static/src/scss/dialog.scss',
-            'app_odoo_customize/static/src/js/user_menu.js',
-            'app_odoo_customize/static/src/js/ribbon.js',
-            'app_odoo_customize/static/src/js/dialog.js',
-            'app_odoo_customize/static/src/webclient/*.js',
+            # todo: fix，使用 owl 的 service
+            # 'app_odoo_customize/static/src/js/user_menu.js',
+            # 'app_odoo_customize/static/src/js/ribbon.js',
+            # 'app_odoo_customize/static/src/js/dialog.js',
+            # 'app_odoo_customize/static/src/webclient/*.js',
             'app_odoo_customize/static/src/webclient/*.xml',
             'app_odoo_customize/static/src/xml/res_config_edition.xml',
         ],
     },
     'pre_init_hook': 'pre_init_hook',
-    'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': True,
-    'auto_install': True,
+    'auto_install': False,
     'description': """
 
     App Customize Odoo (Change Title,Language,Documentation,Quick Debug)
