@@ -22,7 +22,7 @@
 # description:
 
 {
-    'name': 'odoo17 Tweak,Ai Employee,Boost,Customize All in One. Customize,UI,Boost,Security,Data,Development Enhance',
+    'name': 'odoo17 Tweak,Ai Employee,Boost,Customize All in One. Customize,UI,Boost,Security,Data',
     'version': '16.23.09.17',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
@@ -92,7 +92,7 @@
     ============
     For Odoo17. Please get from the follow github. Done for 85%.
     https://github.com/guohuadeng/app-odoo/tree/17.0
-    White label odoo.
+    White label odoo. UI and Development Enhance.
     Support odoo 16,15,14,13,12,11,10,9.
     You can config odoo, make it look like your own platform.
     1. Deletes Odoo label in footer
