@@ -7,7 +7,7 @@ class WebsitePage(models.Model):
     _inherit = 'website.page'
 
     is_force_all = fields.Boolean('Force All Website', default=False,
-                                  help='If check, the page would use to all website, even u change.')
+                                  help='If check, the page would use to all website, even u change.\n Important, The page url must be uniq in all website')
 
     def write(self, vals):
         # 处理强制全局, Create时不管
