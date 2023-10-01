@@ -14,6 +14,9 @@
 			<xpath expr="//field[@name='is_in_menu']" position="attributes">
 				<attribute name="optional">show</attribute>
 			</xpath>
+			<xpath expr="//field[@name='is_published']" position="before">
+                <field name="is_force_all" widget="boolean_toggle" optional="show"/>
+            </xpath>
 			<xpath expr="//field[@name='website_url']" position="after">
                 <field name="seo_name" invisible="1"/>
                 <field name="website_meta_keywords" optional="show"/>
@@ -23,10 +26,36 @@
             <xpath expr="//field[@name='is_seo_optimized']" position="before">
                 <button name="action_page_debug_view" position="move"/>
                 <button name="action_page_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
+                <button name="action_page_form_view" type="object" title="Properties Set" icon="fa-file-text-o fa-lg" groups="base.group_no_one"/>
             </xpath>
 		</field>
 	</record>
 <!--    form-->
+<!--    编辑时的属性-->
+	<record id="app_website_page_properties_view_form" model="ir.ui.view">
+		<field name="name">app.website.page.properties.form.view</field>
+		<field name="model">website.page</field>
+        <field name="mode">extension</field>
+		<field name="inherit_id" ref="website.website_page_properties_view_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='is_published']" position="before">
+                <field name="is_force_all" widget="boolean_toggle"/>
+			</xpath>
+		</field>
+	</record>
+<!--    编辑form各主属性-->
+	<record id="app_website_pages_form_view" model="ir.ui.view">
+		<field name="name">app.website.page.form</field>
+		<field name="model">website.page</field>
+        <field name="mode">extension</field>
+		<field name="inherit_id" ref="website.website_pages_form_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='is_published']" position="before">
+                <field name="is_force_all" widget="boolean_toggle"/>
+			</xpath>
+		</field>
+	</record>
+<!--    可视编辑器-->
 	<record id="app_view_view_form_extend_debug" model="ir.ui.view">
 		<field name="name">app.website.page.form</field>
 		<field name="model">website.page</field>
