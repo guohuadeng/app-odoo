@@ -25,7 +25,6 @@
 			</xpath>
             <xpath expr="//field[@name='is_seo_optimized']" position="before">
                 <button name="action_page_debug_view" position="move"/>
-                <button name="action_page_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
                 <button name="action_page_form_view" type="object" title="Properties Set" icon="fa-file-text-o fa-lg" groups="base.group_no_one"/>
             </xpath>
 		</field>
@@ -64,6 +63,7 @@
 		<field name="arch" type="xml">
 			<xpath expr="//field[@name='arch_base']" position="attributes">
 				<attribute name="widget">html</attribute>
+                <attribute name="options">{'sandboxedPreview': true}</attribute>
 			</xpath>
 		</field>
 	</record>
