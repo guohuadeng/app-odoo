@@ -14,6 +14,9 @@
             <xpath expr="//field[@name='display_name']" position="before">
                 <field name="name" optional="show"/>
             </xpath>
+            <xpath expr="//field[@name='website_id']" position="before">
+                <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128','size': [40, 40]}"/>
+            </xpath>
         </field>
     </record>
 </odoo>
