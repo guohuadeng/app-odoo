@@ -26,5 +26,6 @@ from . import blog_tag_category
 from . import blog_tag
 from . import blog_blog
 from . import blog_post
+from . import ir_ui_view
 from . import website_page
 from . import res_config_settings

@@ -22,7 +22,7 @@
 # description:
 
 {
-    'name': 'odoo Tweak,Ai Employee,Boost,Customize All in One. Customize,UI,Boost,Security,Data,Development Enhance',
+    'name': 'odoo17 Tweak,Ai Employee,Boost,Customize All in One. Customize,UI,Boost,Security,Data',
     'version': '16.23.09.17',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
@@ -32,9 +32,9 @@
     'sequence': 2,
     'images': ['static/description/banner.gif'],
     'summary': """
-    Ai as employee. 1 click Tweak odoo. 48 Functions odoo enhancement. for Customize, UI, Boost, Security, Development.
+    Ai as employee.1 click Tweak odoo. 48 Functions odoo enhancement. for Customize,UI,Boost Security,Development.
     Easy reset data, clear data, reset account chart, reset Demo data.
-    For quick debug. Set brand,  Language Switcher all in one.
+    For quick debug. Set brand,Language Switcher all in one.
     """,
     'depends': [
         'app_common',
@@ -88,10 +88,11 @@
     'application': True,
     'auto_install': True,
     'description': """
-
     App Customize Odoo (Change Title,Language,Documentation,Quick Debug)
     ============
-    White label odoo.
+    For Odoo17. Please get from the follow github. Done for 85%.
+    https://github.com/guohuadeng/app-odoo/tree/17.0
+    White label odoo. UI and Development Enhance.
     Support odoo 16,15,14,13,12,11,10,9.
     You can config odoo, make it look like your own platform.
     1. Deletes Odoo label in footer
