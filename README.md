@@ -1,7 +1,11 @@
 # Odoo Addon for 17,16,15,14,13,12,11,10，Odoo的全版本开源免费增强集合
 
-本 Repo 在中国 Gitee 的镜像，便于中国用户访问
+本 Repo 在全球 Github 的最新主版本
+[https://github.com/guohuadeng/app-odoo](https://github.com/guohuadeng/app-odoo)
+
+本 Repo 在中国 Gitee 的每日同步镜像，便于中国用户访问
 [https://gitee.com/guohuadeng/app-odoo](https://gitee.com/guohuadeng/app-odoo)
+
 快速下载请至 [Odoo官方应用市场](https://apps.odoo.com/apps/modules/16.0/app_odoo_customize)
 下载后留下好评和邮箱，我们会定期同步，并自动为该邮箱账户派送 应用商店红包
 
