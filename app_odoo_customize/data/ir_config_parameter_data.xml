@@ -17,7 +17,7 @@
         <function model="ir.config_parameter" name="set_param" eval="('app_account_title', 'My Online Account')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_account_url', 'https://www.odooai.cn/my')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_enterprise_url', 'https://www.odooai.cn')"/>
-        <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_name', 'odooai.cn')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_name', 'False')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_color', '#f0f0f0')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_background_color', 'rgba(255,0,0,.4)')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_navbar_pos_pc', 'top')"/>
