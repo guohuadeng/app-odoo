@@ -9,6 +9,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='is_seo_optimized']" position="before">
 					<button name="action_product_debug_view" type="object" title="Content Set" icon="fa-bug fa-lg" groups="base.group_no_one"/>
+					<button name="action_product_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
                 </xpath>
                 <xpath expr="//field[@name='website_url']" position="attributes">
 	                <attribute name="optional">hide</attribute>
@@ -54,7 +55,7 @@
                 </xpath>
             </field>
         </record>
-    <!--可以停用此form-->
+
 	    <record id="app_product_template_form_view_code" model="ir.ui.view">
 		    <field name="name">app.product.template.website.code</field>
 		    <field name="model">product.template</field>
@@ -112,7 +113,6 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='website_description']" position="attributes">
                     <attribute name="widget">html</attribute>
-                    <attribute name="options">{'sandboxedPreview': true}</attribute>
                 </xpath>
             </field>
         </record>

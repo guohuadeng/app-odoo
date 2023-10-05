@@ -1,9 +1,28 @@
-Odoo Addon for 17,16,15,14,13,12,11,10
+# Odoo Addon for 17,16,15,14,13,12,11,10，Odoo的全版本开源免费增强集合
+本 Repo 在中国 Gitee 的镜像，便于中国用户访问
+[https://gitee.com/guohuadeng/app-odoo](https://gitee.com/guohuadeng/app-odoo)
+
+## Support by [欧度智能 odooAi.cn](https://www.odooai.cn)
+广州欧度智能科技有限公司
+Odoo中国官方伙伴，原广州尚鹏
+
+1. Odoo项目100%客户成功交付
+2. Odoo官网下载第一，服务上千家企业
+3. Odoo官网销量第一的中国公司
+4. 钉钉、企业微信认证服务商
+5. 微软中国ChatGPT服务商，Ai服务中心
+6. 十年专注Odoo开源ERP开发实施培训
+7. Odoo中文[应用商店，海量免费及商业模块主题](https://www.odooapp.cn)
 
 ## Todo
-test update
+1. Odoo微信相关将已开发的、第三方的免费上架
+2. Odoo企业微信相关将已开发的、第三方的免费上架
+3. Odoo钉钉相关将已开发的、第三方的免费上架
+4. 原 ztree, superbar 的升级，升级 zchar
+5. Odoo社区版主题上架
+6. Odoo 17 升级部份已完成，等待发布
 
-ztree, superbar
+# Odoo Apps 清单，已上架 [Odoo中文应用商店](https://www.odooapp.cn)
 
 ## app_account_invoice_product_multi_add
 

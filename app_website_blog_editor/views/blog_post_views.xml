@@ -34,6 +34,7 @@
 			</xpath>
             <xpath expr="//field[@name='is_seo_optimized']" position="before">
 				<button name="action_post_debug_view" type="object" title="Settings" icon="fa-bug fa-lg" groups="base.group_no_one"/>
+				<button name="action_post_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
 			</xpath>
 		</field>
 	</record>
@@ -46,7 +47,7 @@
 			<xpath expr="//page[@name='seo']" position="after">
 				<page name="post_content" string="Content">
 					<field name="content" widget="html" nolabel="1" class="oe-bordered-editor"
-					       options="{'sandboxedPreview': true, 'codeview': true, 'dynamic_placeholder': true}"/>
+					       options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true}"/>
 				</page>
 			</xpath>
 			<xpath expr="//field[@name='visits']" position="attributes">
