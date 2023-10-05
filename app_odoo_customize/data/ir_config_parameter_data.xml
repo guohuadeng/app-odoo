@@ -12,12 +12,13 @@
         <function model="ir.config_parameter" name="set_param" eval="('app_show_enterprise', 'False')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_show_share', 'False')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_show_poweredby', 'False')"/>
-        <function model="ir.config_parameter" name="set_param" eval="('app_documentation_url', 'https://www.odooai.cn/documentation/user/13.0/zh_CN/index.html')"/>
-        <function model="ir.config_parameter" name="set_param" eval="('app_documentation_dev_url', 'https://www.odooai.cn/documentation/13.0/index.html')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_documentation_url', 'https://www.odooai.cn/documentation/16.0/index.html')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_documentation_dev_url', 'https://www.odooai.cn/documentation/16.0/developer.html')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_support_url', 'https://www.odooai.cn/trial')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_account_title', 'My Online Account')"/>
-        <function model="ir.config_parameter" name="set_param" eval="('app_account_url', 'https://www.odooai.cn/my-account')"/>
-        <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_name', 'odooai.cn({db_name})')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_account_url', 'https://www.odooai.cn/my')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_enterprise_url', 'https://www.odooai.cn')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_name', 'False')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_color', '#f0f0f0')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_background_color', 'rgba(255,0,0,.4)')"/>
     </data>

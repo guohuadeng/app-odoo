@@ -22,8 +22,8 @@
 # description:
 
 {
-    'name': 'odoo 16,15 Customize OEM(Boost, Data reset)',
-    'version': '15.23.02.22',
+    'name': 'odoo17 Tweak,Ai Employee,Boost,Customize All in One. Customize,UI,Boost,Security,Data',
+    'version': '15.23.09.17',
     'author': 'odooai.cn',
     'category': 'Productivity',
     'website': 'https://www.odooai.cn',
@@ -31,9 +31,9 @@
     'sequence': 2,
     'images': ['static/description/banner.gif'],
     'summary': """
-    1 click customize odoo, reset data. For quick develop. Set brand, boost, reset data, debug. Language Switcher.
-    Easy Delete data.reset account chart.
-    customize my odoo.
+    Ai as employee.1 click Tweak odoo. 48 Functions odoo enhancement. for Customize,UI,Boost Security,Development.
+    Easy reset data, clear data, reset account chart, reset Demo data.
+    For quick debug. Set brand,Language Switcher all in one.
     """,
     'depends': [
         'base_setup',
@@ -83,12 +83,14 @@
     'application': True,
     'auto_install': True,
     'description': """
-
     App Customize Odoo (Change Title,Language,Documentation,Quick Debug)
     ============
-    White label odoo.
-    Support odoo 16, 15, 14, 13, 12, 11, 10, 9.
+    For Odoo17. Please get from the follow github. Done for 85%.
+    https://github.com/guohuadeng/app-odoo/tree/17.0
+    White label odoo. UI and Development Enhance.
+    Support odoo 17,16,15,14,13,12,11,10,9.
     You can config odoo, make it look like your own platform.
+    ============
     1. Deletes Odoo label in footer
     2. Replaces "Odoo" in Windows title
     3. Customize Documentation, Support, About links and title in usermenu
@@ -126,16 +128,24 @@
     35. Fixed for odoo 14.
     36. Add refresh translate for multi module.
     37. Easy noupdate manage for External Identifiers(xml_id)
-    38. Add Draggable Dialog enable.
+    38. Add Draggable and sizeable Dialog enable.
     39. Only erp manager can see debug menu..
     40. Fix support for enterprise version.
+    41. Fix odoo bug, when click Preferences menu not hide in mobile.
+    42. Mobile Enhance. Add menu navbar setup for top or bottom. navigator footer support.
+    43. Check to only Debug / Debug Assets for Odoo Admin. Deny debug from url for other user.
+    44. Check to stop subscribe and follow. This to make odoo speed up.
+    45. Add addons path info to module.
+    46. Add Help documentation anywhere.  easy get help for any odoo operation or action.
+    47. Add ai robot app integration. Use Ai as your employee.
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
     The user can get the help document just by one click.
-    ## 在符合odoo开源协议的前提下，去除odoo版权信息，自定义你的odoo
-    可完全自行设置下列 odoo 选项，让 odoo 看上去像是你的软件产品
-    支持odoo 15,14,13,12, 11, 10, 9 版本，社区版企业版通用
+    ## 在符合odoo开源协议的前提下，自定义你的odoo系统
+    可完全自行设置下列选项，将 odoo 整合进自有软件产品
+    支持odoo 17,16,15,14,13,12, 11, 10, 9 版本，社区版企业版通用
+    ============
     1. 删除菜单导航页脚的 Odoo 标签
     2. 将弹出窗口中 "Odoo" 设置为自定义名称
     3. 自定义用户菜单中的 Documentation, Support, About 的链接
@@ -173,7 +183,14 @@
     35. 优化至odoo14适用
     36. 可为多个模块强制更新翻译
     37. noupdate字段的快速管理，主要针对 xml_id
-    38. 对话框可拖拽
+    38. 对话框可拖拽，可缩放，自动大屏优化
     39. 只有系统管理员可以操作快速debug
+    40. 增强对企业版的支持
+    41. 修正odoo原生移动端菜单bug，点击个人设置时，原菜单不隐藏等
+    42. 可设置导航栏在上方还是下方，分开桌面与移动端.
+    43. 可设置只允许管理员进入开发者模式，不可在url中直接debut=1来调试
+    44. 可配置停用自动用户订阅功能，这会提速odoo，减少资源消耗
+    45. 为应用模块增加模块路径信息
+    46. 增加快速帮助文档，可以在任意操作中获取相关的 odoo 帮助.
     """,
 }
