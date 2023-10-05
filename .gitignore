@@ -1,3 +1,5 @@
+#个人文件目录，不传到git，每个人将个人文件放到 _s 目录下
+_s/
 /.idea
 .idea/
 \.idea
@@ -8,15 +10,12 @@
 ~*.*
 .pyc
 .DS_Store
-u*.bat
-ivan.conf
-chill.conf
 vcs.xml
 deployment.xml
 
 # Byte-compiled / optimized / DLL files
+__pycache__
 __pycache__/
-/__pycache__
 *.py[cod]
 *$py.class
 
@@ -26,8 +25,6 @@ __pycache__/
 # Distribution / packaging
 .Python
 develop-eggs/
-dist/
-downloads/
 eggs/
 .eggs/
 parts/
@@ -122,7 +119,3 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
-/app_odoo_customize/_resource
-/app_web_studio
-/web_studio
