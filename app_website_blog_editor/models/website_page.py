@@ -6,6 +6,7 @@ from odoo import api, fields, models
 class WebsitePage(models.Model):
     _inherit = 'website.page'
 
+    
     is_force_all = fields.Boolean('Force All Website', default=False,
                                   help='If check, the page would use to all website, even u change.\n Important, The page url must be uniq in all website')
 
