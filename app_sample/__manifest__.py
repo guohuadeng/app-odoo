@@ -23,7 +23,7 @@
 ##############################################################################
 
 {
-    'name': 'Odoo Module Template,App sample with widget. Developer guidelines. Odoo开发规范模板',
+    'name': 'Odoo Module Sample. module app addons template sample with widget. Developer guidelines. Odoo开发规范模板',
     'version': '16.23.10.07',
     'author': 'odooai.cn',
     'category': 'Base',
@@ -35,24 +35,27 @@
     'currency': 'EUR',
     'images': ['static/description/banner.gif'],
     'summary': '''
-    Odoo module template. module sample with 170+ widget list. Copy to quick create app for odoo. Developer reference guides, Developer Tutorials.
+    Odoo module template. module sample with 170+ widget list. Clone this sample to your name to quick create your odoo addons.
+    Developer reference guides, Developer Tutorials.
     Sample manifest, .py, .xml views and data. report, action, menu..
-    All file follow odoo rule with comments.
     ''',
-    'description': '''    
+    'description': '''
+    Just Rename the sample app to your name to quick create new module.
+    All file follow odoo rule with comments.
     Support Odoo 17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition
     Odoo Developr rule from here https://www.odooai.cn/documentation/16.0/developer.html
     1. A full Sample module app of odoo addons. All the code, views, data follow the odoo rule.
     2. Sample manifest file. Including structure and name and description etc, all field sample. Security xml and csv file for role group access rule.
-    Follow odoo rule in https://www.odooai.cn/documentation/16.0/zh_CN/developer/reference/backend/module.html#reference-module-manifest
+    Follow odoo rule follow
+     https://www.odooai.cn/documentation/16.0/zh_CN/developer/reference/backend/module.html#reference-module-manifest
     3. Sample .py models file, for new model and inherit model
-    4. Sample xml views file for models, with list, kanban, form, search。
+    4. Sample .xml views file for models, with list, kanban, form, search
     5. Sample controllers file for website data publish and api developer. including how inherit odoo portal home.
     6. Sample report design file. .py file with how sql define. .xml file for graph and pivot.
-    7. Sample action and menu file.
-    8. Ui misc sample。 Alert like info and special field setup..
+    7. Sample action and menu file. Root menu and menu group and action menu.
+    8. Ui misc sample. Alert like info and special field setup.
     9. Odoo Widget sample. 170+ widget list document and Frequently Used Sample.
-    10. Quick access odoo developer Tutorials online.
+    10. Quick access odoo developer Tutorials online. Document online for chinese and english. Fast visit in China.
     11. Multi-language Support. Multi-Company Support.
     12. Support Odoo 17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
