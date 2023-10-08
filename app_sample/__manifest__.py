@@ -23,7 +23,7 @@
 ##############################################################################
 
 {
-    'name': 'Odoo Module Sample. module app addons template sample with widget. Developer guidelines. Odoo开发规范模板',
+    'name': 'Odoo Module Sample. App sample with widget. Odoo开发规范模板',
     'version': '14.23.10.07',
     'author': 'odooai.cn',
     'category': 'Base',
@@ -31,7 +31,7 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'OPL-1',
     'sequence': 2,
-    'price': 3.00,
+    'price': 2.00,
     'currency': 'EUR',
     'images': ['static/description/banner.gif'],
     'summary': '''
