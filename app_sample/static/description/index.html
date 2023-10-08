@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# -*- coding: utf-8 -*-
+##############################################################################
+# Copyright (C) 2009~2023 odooAi.cn
+##############################################################################
+-->
+<html>
+<!-- begin title-->
+<section class="oe_container container o_cc o_cc2">
+    <h1 class="text-center bg-warning text-white pt24 pb24">Odoo Module Template. App sample with widget. </h1>
+    <h3 class="text-center">Odoo开发规范模板,Widget清单与使用样例</h3>
+    <h4 class="text-center">Sample Description of app. video and brief and detail demo snap and text</h4>
+</section>
+<!-- end title-->
+
+<!-- begin video-->
+<section class="s_text_block o_colored_level pt16 pb16">
+    <div class="container s_allow_columns">
+        <p class="text-center bg-info text-white pt16 pb16">Just Clone this sample to your name to quick create your odoo addons</p>
+        <h2 class="text-center bg-info text-white pt16 pb16">- Demo Video -</h2>
+    </div>
+    <!--    local video-->
+    <div class="container">
+        <div class="row s_nb_column_fixed">
+            <div class="o_colored_level col-lg-12">
+                <video controls="controls" loop="1" preload="auto" muted autoplay src="app.mp4" class="o_video" style="width: 100%; height: 100%;">
+                    <source type="video/mp4" src="odoo17.mp4"/>
+                    <a href="">
+                        Download the demo video.
+                    </a>
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container container s_text_block pt24 pb24 o_colored_level" data-snippet="s_text_block" data-name="文本">
+    <!--    remote video-->
+    <div class="s_allow_columns container">
+        <div data-oe-expression="//www.youtube.com/embed/whnmkTWsQkQ?rel=0&amp;autoplay=0" class="media_iframe_video">
+            <div class="css_editable_mode_display"></div>
+            <div class="media_iframe_video_size"></div>
+            <iframe src="//www.youtube.com/embed/whnmkTWsQkQ?rel=0&amp;autoplay=1" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+        </div>
+        <p class="o_default_snippet_text"><br></p>
+    </div>
+    <div class="oe_row text-center">
+        <span>Click above Play. or go </span>
+        <a href="https://youtu.be/whnmkTWsQkQ" target="_blank" role="button" class="btn btn-link btn-lg">Youtube Video of odoo Advance Search Superbar</a>
+    </div>
+    <div class="oe_row text-center">
+        <p class="o_default_snippet_text">Demo Gif Animation if you can not get video</p>
+        <img class="oe_demo oe_screenshot img img-fluid" src="banner.gif">
+    </div>
+</section>
+<!-- end video-->
+
+<!-- begin features-->
+<section class="oe_container container s_text_block o_colored_level pt16 pb16">
+    <h2 class="text-center bg-info text-white pt16 pb16">- Features -</h2>
+</section>
+<section class="s_features_grid pt24 pb24 o_colored_level" data-snippet="s_features_grid" data-name="Features Grid">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 s_col_no_bgcolor pb24">
+                <div class="row">
+                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
+                        <i class="fa bg-primary text-white s_features_grid_icon rounded fa-2x">1</i>
+                        <div class="s_features_grid_content">
+                            <h4 class="pt16">
+                                A full Sample module app of odoo addons.
+                            </h4>
+                            <p>All the code, views, data ,banner, icon and description sample follow the odoo rule.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box">
+                        <i class="fa fa-2x rounded bg-primary text-white s_features_grid_icon">2</i>
+                        <div class="s_features_grid_content">
+                            <h4 class="pt16">
+                                Sample manifest file.
+                            </h4>
+                            <p>Including structure and name and description etc, all field sample. Security xml and csv file for role group access rule. Follow most odoo rule follow </p>
+                            <p>https://www.odooai.cn/documentation/16.0/contributing/development/coding_guidelines.html</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
+                        <i class="fa bg-primary text-white s_features_grid_icon rounded fa-2x">3</i>
+                        <div class="s_features_grid_content">
+                            <h4 class="pt16">
+                                Sample .py models file
+                            </h4>
+                            <p>for new model and inherit model<br></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
+                        <i class="fa bg-primary text-white s_features_grid_icon rounded fa-2x">4</i>
+                        <div class="s_features_grid_content">
+                            <h4 class="pt16">
+                                Sample .xml views file for models
+                            </h4>
+                            <p>Sample xml views file for models, with list, kanban, form, search<br></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
+                        <i class="fa bg-primary text-white s_features_grid_icon rounded fa-2x">5</i>
+                        <div class="s_features_grid_content">
+                            <h4 class="pt16">
+                                Sample controllers file
+                            </h4>
+                            <p> for website data publish and api developer. including how inherit odoo portal home<br></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 s_col_no_bgcolor pb24">
+                <div class="row">
+                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
+                        <i class="fa bg-primary text-white s_features_grid_icon rounded fa-2x">6</i>
+                        <div class="s_features_grid_content">
+                            <h4 class="pt16">
+                                 Sample report design file
+                            </h4>
+                            <p> .py file with how sql define. .xml file for graph and pivot</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
+                        <i class="fa fa-2x rounded bg-primary text-white s_features_grid_icon">7</i>
+                        <div class="s_features_grid_content">
+                            <h4 class="pt16">
+                                Sample action and menu file
+                            </h4>
+                            <p>Root menu and menu group and action menu</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
+                        <i class="fa fa-2x rounded bg-primary text-white s_features_grid_icon">8</i>
+                        <div class="s_features_grid_content">
+                            <h4 class="pt16">
+                                Ui misc sample
+                            </h4>
+                            <p>Alert like info and special field setup.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
+                        <i class="fa fa-2x rounded bg-primary text-white s_features_grid_icon">9</i>
+                        <div class="s_features_grid_content">
+                            <h4 class="pt16">
+                                Odoo Widget sample
+                            </h4>
+                            <p>170+ widget list document and Frequently Used Sample.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
+                        <i class="fa fa-2x rounded bg-primary text-white s_features_grid_icon">10</i>
+                        <div class="s_features_grid_content">
+                            <h4 class="pt16">
+                                Quick access odoo developer Tutorials online.
+                            </h4>
+                            <p>Document online for chinese and english. Fast visit in China.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
+                        <i class="fa fa-2x rounded bg-primary text-white s_features_grid_icon">11</i>
+                        <div class="s_features_grid_content">
+                            <h4 class="pt16">
+                                Full Open Source.Multi-language Support. Multi-Company Support
+                            </h4>
+                            <p>Support Odoo 16,15,14,13,12, Enterprise and Community and odoo.sh Edition.</p>
+                            <p>代码完全开源，多语言支持，多公司支持。Odoo 16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end features-->
+
+<!-- begin snapshot-->
+<section class="s_text_block o_colored_level pt16 pb16">
+    <div class="container s_allow_columns">
+        <h2 class="text-center bg-info text-white pt16 pb16">- Feature Guide -</h2>
+    </div>
+</section>
+<section class="s_table_of_content pt24 pb24 o_cc o_cc1 o_colored_level" data-snippet="s_table_of_content" data-name="Table of Content">
+    <div class="container">
+        <div class="row s_nb_column_fixed">
+            <div class="col-lg-2 col-md-3 s_table_of_content_navbar_wrap s_table_of_content_navbar_sticky s_table_of_content_vertical_navbar d-print-none d-none d-lg-block o_not_editable o_cc o_cc1 o_colored_level"
+                 data-name="Navbar">
+                <div class="s_table_of_content_navbar list-group o_no_link_popover" style="top: 82px; max-height: calc(100vh - 102px);">
+                    <a href="#toc_01" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0 active">
+                        A full Sample app
+                    </a>
+                    <a href="#toc_02" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
+                        Sample manifest
+                    </a>
+                    <a href="#toc_03" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
+                        Sample .py
+                    </a>
+                    <a href="#toc_04" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
+                        Sample .xml
+                    </a>
+                    <a href="#toc_05" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
+                        Sample controllers
+                    </a>
+                    <a href="#toc_06" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
+                        Sample report
+                    </a>
+                    <a href="#toc_07" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
+                        Sample action and menu
+                    </a>
+                    <a href="#toc_08" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
+                        Ui misc sample
+                    </a>
+                    <a href="#toc_09" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
+                        Odoo Widget sample
+                    </a>
+                    <a href="#toc_10" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
+                        Quick developer Tutorials
+                    </a>
+                    <a href="#toc_11" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
+                        Multi-language,Multi-Company
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md9 s_table_of_content_main oe_structure oe_empty o_colored_level" data-name="Content">
+                <section class="pb16 o_colored_level" style="background-image: none;">
+                    <h3 data-anchor="true" id="toc_01">
+                        A full Sample module app of odoo addons.
+                    </h3>
+                    <h4 class="oe_slogan">All the code, views, data ,banner, icon and description sample follow the odoo rule.</h4>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo1.jpg">
+                    </div>
+                </section>
+                <section class="pb16 o_colored_level" style="background-image: none;">
+                    <h3 data-anchor="true" id="toc_02">
+                        Sample manifest file.
+                    </h3>
+                    <h4 class="oe_slogan">Including structure and name and description etc, all field sample. </h4>
+                    <p>Security xml and csv file for role group access rule.
+                        Sample icon, banner, index.html, install/uninstall hooks.
+                        Follow most odoo rule follow</p>
+                    <p>https://www.odooai.cn/documentation/16.0/contributing/development/coding_guidelines.html</p>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo2.jpg">
+                    </div>
+                </section>
+                <section class="pb16 o_colored_level" style="background-image: none;">
+                    <h3 data-anchor="true" id="toc_03">
+                        Sample .py models file, for new model and inherit model
+                    </h3>
+                    <p>Please comment the inherit .py file of product_template.py in produce odoo.</p>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo3.png">
+                    </div>
+                </section>
+                <section class="pb16 o_colored_level" style="background-image: none;">
+                    <h3 data-anchor="true" id="toc_04">
+                        Sample .xml views file for models, with list, kanban, form, search
+                    </h3>
+                    <p>List</p>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo_list.jpg">
+                    </div>
+                    <p>Kanban</p>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo_kanban.jpg">
+                    </div>
+                    <p>Form</p>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo_form.jpg">
+                    </div>
+                    <p>Form</p>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo_search.jpg">
+                    </div>
+                </section>
+                <section class="pb16 o_colored_level" style="background-image: none;">
+                    <h3 data-anchor="true" id="toc_05">
+                        Sample controllers file for website data publish and api developer
+                    </h3>
+                    <p>including how inherit odoo portal home.</p>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo_controler.jpg">
+                    </div>
+                </section>
+                <section class="pb16 o_colored_level" style="background-image: none;">
+                    <h3 data-anchor="true" id="toc_06">
+                        Sample report design file.
+                    </h3>
+                    <p> .py file with how sql define.</p>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo_report.jpg">
+                    </div>
+                    <p> .xml file for graph and pivot.</p>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo_graph.jpg">
+                    </div>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo_pivot.jpg">
+                    </div>
+                </section>
+                <section class="pb16 o_colored_level" style="background-image: none;">
+                    <h3 data-anchor="true" id="toc_07">
+                        Sample action and menu file.
+                    </h3>
+                    <p>Root menu and menu group and action menu.</p>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo_menu.png">
+                    </div>
+                </section>
+                <section class="pb16 o_colored_level" style="background-image: none;">
+                    <h3 data-anchor="true" id="toc_08">
+                        Ui misc sample. Alert like info and special field setup.
+                    </h3>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo_ui.jpg">
+                    </div>
+                </section>
+                <section class="pb16 o_colored_level" style="background-image: none;">
+                    <h3 data-anchor="true" id="toc_09">
+                         Odoo Widget sample.
+                    </h3>
+                    <p>170+ widget list document</p>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo_widget_list.jpg">
+                    </div>
+                    <p> Frequently Used Sample.</p>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo_widget_use.jpg">
+                    </div>
+                </section>
+                <section class="pb16 o_colored_level" style="background-image: none;">
+                    <h3 data-anchor="true" id="toc_10">
+                        Quick access odoo developer Tutorials online.
+                    </h3>
+                    <p>Click alert info to visit. Document online for chinese and english. Fast visit in China.</p>
+                    <div class="oe_demo oe_screenshot img img-fluid">
+                        <img src="demo_10.jpg">
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end snapshot-->
+
+<!-- begin free-->
+<!-- end free-->
+
+<!-- begin howto-->
+<section class="oe_container container s_text_block o_colored_level pt16 pb16">
+    <h2 class="text-center bg-info text-white pt16 pb16">- How to setup and use -</h2>
+    <h3>This app need no extra module. The price already included</h3>
+</section>
+<section class="oe_container container">
+    <div class="oe_row oe_spaced">
+        <h4 class="pt16">
+            1. Buy and Install <a href="http://www.odoo.com/apps/modules/16.0/app_sample/" target="_blank">app_sample. </a>
+        </h4>
+        <h4 class="pt16">
+            2. Clone this sample and rename to your module name to quick create your odoo addons.
+        </h4>
+        <h4 class="pt16">3. Check the demo we create</h4>
+        <div class="row">
+            <div class="oe_demo oe_screenshot img img-fluid">
+                <img src="demo_use.jpg">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end howto-->
+
+<!-- begin upsell-->
+<!-- end upsell-->
+
+<!-- begin support-->
+<section class="container oe_dark">
+    <div class="oe_row oe_spaced text-center">
+        <div class="row">
+            <h2 class="oe_slogan">Technical Help & Support</h2>
+        </div>
+        <div class="col-md-12 pad0">
+            <div class="oe_mt16">
+                <p><h4 class="pt16">
+                For any type of technical help & support requests, Feel free to contact us</h4></p>
+                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
+                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:odoo@china.com"><span
+                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
+                    <i class="fa fa-envelope"></i> odoo@china.com</a>
+                <p><h4 class="pt16">
+                Via QQ: 300883 (App user would not get QQ or any other IM support. Only for odoo project customize.)</h4></p>
+                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
+                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:300883@qq.com"><span
+                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
+                    <i class="fa fa-envelope"></i> 300883@qq.com</a>
+            </div>
+            <div class="oe_mt16">
+                <h4 class="pt16">Visit our website for more support.</h4>
+                <h4 class="pt16">https://www.odooai.cn</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end support-->
+</html>
