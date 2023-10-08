@@ -23,7 +23,7 @@
 ##############################################################################
 
 {
-    'name': 'Odoo Module Sample. module app addons template sample with widget. Developer guidelines. Odoo开发规范模板',
+    'name': 'Odoo Module Sample. App sample with widget. Odoo开发规范模板',
     'version': '16.23.10.07',
     'author': 'odooai.cn',
     'category': 'Base',
