@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Template for model view inherit，继承模型视图 -->
+    <!-- List -->
+    <record id="app_view_product_template_tree" model="ir.ui.view">
+        <field name="name">app.view.product.template.tree</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="short_name"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Kanban-->
+    <record id="app_view_product_template_kanban" model="ir.ui.view">
+        <field name="name">app.view.product.template.kanban</field>
+        <field name="model">product.template</field>
+        <field name="name">product.template.search.brand</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_kanban_details')]/strong[1]" position="after">
+                <div>
+                    <a t-if="record.product_brand_id" type="action"
+                       name="%(action_open_single_product_brand)d">
+                        <field name="product_brand_id"/>
+                    </a>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="app_view_product_template_form" model="ir.ui.view">
+        <field name="name">app.product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <field name="product_tooltip" position="after">
+                <field name="short_name" placeholder="Brief Name"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Search -->
+    <record id="app_view_product_template_search" model="ir.ui.view">
+        <field name="name">app.product.template.search</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="short_name"/>
+            </field>
+        </field>
+    </record>
+</odoo>

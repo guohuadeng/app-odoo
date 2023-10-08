@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Sample，样例，-->
+        <!-- Root，根菜单，This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+        <menuitem id="module_new_root" name="Module New Root"
+                  web_icon="app_template,static/description/icon.png"
+                  groups="group_app_user"
+                  sequence="90"/>
+
+        <!-- Category,菜单分组，This Menu Item Must have a parent -->
+        <menuitem id="module_new_cat" name="Module New Category"
+                  parent="module_new_root"
+                  sequence="91"/>
+
+        <!-- Action，操作菜单，This Menu Item must have a parent and an action -->
+        <!-- model.new Menu -->
+        <menuitem id="menu_model_new" name="Model New"
+                  parent="module_new_cat"
+                  sequence="92"
+                  action="action_model_new"/>
+
+        <menuitem id="menu_model_new_report" name="Model New Report"
+                  parent="module_new_cat"
+                  sequence="93"
+                  action="action_model_new_report"/>
+
+        <!-- Exist Menu，改当前存在菜单，Change exist menu, use context if you are using multi language-->
+<!--        <record id="Exist_ID_menu" model="ir.ui.menu" context="{'lang': 'zh_CN}">-->
+<!--            <field name="groups_id"-->
+<!--                   eval="[(6,0,[ref('Exist_ID')])]"/>-->
+<!--        </record>-->
+    </data>
+</odoo>
