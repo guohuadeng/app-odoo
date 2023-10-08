@@ -31,7 +31,7 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'OPL-1',
     'sequence': 2,
-    'price': 8.00,
+    'price': 3.00,
     'currency': 'EUR',
     'images': ['static/description/banner.gif'],
     'summary': '''
@@ -43,11 +43,13 @@
     Just Rename the sample app to your name to quick create new module.
     All file follow odoo rule with comments.
     Support Odoo 17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition
-    Odoo Developr rule from here https://www.odooai.cn/documentation/16.0/developer.html
-    1. A full Sample module app of odoo addons. All the code, views, data follow the odoo rule.
+    Odoo Developr rule from here 
+    https://www.odooai.cn/documentation/16.0/developer.html
+    1. A full Sample module app of odoo addons. All the code, views, data ,banner, icon and description sample follow the odoo rule.
     2. Sample manifest file. Including structure and name and description etc, all field sample. Security xml and csv file for role group access rule.
-    Follow odoo rule follow
-     https://www.odooai.cn/documentation/16.0/zh_CN/developer/reference/backend/module.html#reference-module-manifest
+    Sample icon, banner, index.html, install/uninstall hooks.
+    Follow most odoo rule follow
+     https://www.odooai.cn/documentation/16.0/contributing/development/coding_guidelines.html
     3. Sample .py models file, for new model and inherit model
     4. Sample .xml views file for models, with list, kanban, form, search
     5. Sample controllers file for website data publish and api developer. including how inherit odoo portal home.

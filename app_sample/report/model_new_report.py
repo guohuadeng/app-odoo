@@ -61,7 +61,6 @@ class ModelNewReport(models.Model):
         '''
 
     @api.model
-    @api.model
     def _where(self):
         return ''
 

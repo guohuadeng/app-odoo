@@ -10,10 +10,15 @@
             <tree string="Model New" editable="bottom">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
-                <field name="ref" optional="show"/>
+                <field name="ref" optional="hide"/>
                 <field name="date" widget="date" optional="show"/>
                 <field name="amount" optional="show" sum="Total"/>
                 <field name="note" optional="hide"/>
+
+                <field name="day_max" invisible="1"/>
+                <field name="w_progressbar" widget="progressbar" optional="show"/>
+                <field name="w_percentpie" widget="percentpie" optional="show"/>
+                <field name="w_gauge" widget="gauge" options="{'max_field': 'day_max'}"  optional="show"/>
                 <field name="state"
                     decoration-warning="state == 'draft'"
                     decoration-muted="state == 'cancel'"
@@ -113,7 +118,6 @@
                                         <field name="date_end" widget="daterange" options='{"related_start_date": "date"}'/>
                                     </div>
                                     <field name="w_gauge" widget="gauge" options="{'max_field': 'day_max'}"/>
-                                    <field name="w_progressbar" widget="progressbar" options="{'editable': true}" title="Integer"/>
                                     <field name="w_progressbar" widget="progressbar" options="{'editable': true}" title="Integer"/>
                                     <field name="w_percentpie" widget="percentpie" title="float"/>
                                     <field name="w_percentage" widget="percentage" title="float"/>
