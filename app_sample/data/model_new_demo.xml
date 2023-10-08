@@ -7,7 +7,7 @@
             <field name="ref">demo1</field>
             <field name="amount">888</field>
             <field name="date">2023-09-13</field>
-            <field name="image" type="base64" file="app_template/static/img/icon_odooai.png"/>
+            <field name="image" type="base64" file="app_sample/static/img/icon_odooai.png"/>
             <field name="state">draft</field>
             <field name="user_id" ref="base.user_admin"/>
         </record>

@@ -4,7 +4,7 @@
         <!-- Sample，样例，-->
         <!-- Root，根菜单，This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
         <menuitem id="module_new_root" name="Module New Root"
-                  web_icon="app_template,static/description/icon.png"
+                  web_icon="app_sample,static/description/icon.png"
                   groups="group_app_user"
                   sequence="90"/>
 
