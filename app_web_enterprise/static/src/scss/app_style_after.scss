@@ -54,8 +54,14 @@
 
 //form
 @media (min-width: 768px) {
-  .o_form_view .o_form_view_container .o_form_sheet_bg .o_form_sheet {
-    margin: 6px auto;
+  .o_form_view .o_form_view_container {
+    .o_form_sheet_bg .o_form_sheet {
+      margin: 6px auto;
+    }
+  //  create 按键
+    button.o_form_button_create {
+      min-width: 4rem;
+    }
   }
 }
 
