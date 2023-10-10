@@ -104,6 +104,17 @@ class Base(models.AbstractModel):
         # 返回这个图片的base64编码
         return get_image_from_url(url)
 
+    @api.model
+    def get_image_url2attachment(self, url, mimetype_list=None):
+        # Todo: mimetype filter
+        image, file_name = get_image_url2attachment(url)
+        if image and file_name:
+            attachment = self.env['ir.attachment'].create({
+                'datas': image,
+                'name': file_name,
+            })
+            return attachment
+
     def get_ua_type(self):
         return get_ua_type()
 
@@ -116,6 +127,19 @@ def get_image_from_url(url):
         return None
     # 返回这个图片的base64编码
     return base64.b64encode(BytesIO(response.content).read())
+
+def get_image_url2attachment(url):
+    if not url:
+        return None
+    try:
+        response = requests.get(url, timeout=5)
+    except Exception as e:
+        return None, None
+    # 返回这个图片的base64编码
+    image = base64.b64encode(BytesIO(response.content).read())
+    file_name = url.split('/')[-1]
+    return image, file_name
+
     
 def get_ua_type():
     ua = request.httprequest.headers.get('User-Agent')
