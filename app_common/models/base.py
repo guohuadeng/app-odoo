@@ -118,6 +118,7 @@ class Base(models.AbstractModel):
     def get_ua_type(self):
         return get_ua_type()
 
+
 def get_image_from_url(url):
     if not url:
         return None
@@ -127,6 +128,7 @@ def get_image_from_url(url):
         return None
     # 返回这个图片的base64编码
     return base64.b64encode(BytesIO(response.content).read())
+
 
 def get_image_url2attachment(url):
     if not url:
