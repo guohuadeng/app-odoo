@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    Graph view, 图表-->
+    <record id="app_model_new_report_view_graph" model="ir.ui.view">
+        <field name="name">app.model.new.report.graph</field>
+        <field name="model">model.new.report</field>
+        <field name="arch" type="xml">
+            <graph string="Model New Analysis" sample="1">
+                <field name="amount"/>
+                <field name="date" interval="month"/>
+            </graph>
+        </field>
+    </record>
+
+    <!--    Pivot view, 透视表-->
+    <record id="app_model_new_report_view_pivot" model="ir.ui.view">
+        <field name="name">app.model.new.report.pivot</field>
+        <field name="model">model.new.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Model new pivot" sample="1">
+                <field name="name" type="col"/>
+                <field name="user_id" type="col"/>
+                <field name="date" interval="month" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!--    Tree view, 列表-->
+    <record id="app_model_new_report_view_tree" model="ir.ui.view">
+        <field name="name">app.model.new.report.tree</field>
+        <field name="model">model.new.report</field>
+        <field name="arch" type="xml">
+            <tree default_order="date desc">
+                <field name="date"/>
+                <field name="name"/>
+                <field name="amount"/>
+                <field name="user_id" groups="base.group_multi_company"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="app_model_new_report_view_search" model="ir.ui.view">
+        <field name="name">app.model.new.report.search</field>
+        <field name="model">model.new.report</field>
+        <field name="arch" type="xml">
+            <search string="Model New Search">
+                <field name="name"/>
+                <field name="user_id"/>
+                <filter string="Trailing 12 months" name="completion_date" domain="[
+                        ('date', '>=', (datetime.datetime.combine(context_today() + relativedelta(days=-365), datetime.time(0,0,0)).to_utc()).strftime('%Y-%m-%d %H:%M:%S')),
+                        ('date', '>=', (datetime.datetime.combine(context_today(), datetime.time(0,0,0)).to_utc()).strftime('%Y-%m-%d %H:%M:%S'))]"/>
+                <separator/>
+                <filter name="filter_date" date="date"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <group expand="1" string="Group By">
+                    <filter string="Date" name="group_by_date" context="{'group_by': 'date:month'}"/>
+                    <separator/>
+                    <filter string="User" name="group_by_user_id" context="{'group_by': 'user_id'}"/>
+                    <filter string="Company" name="company" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_model_new_report" model="ir.actions.act_window">
+        <field name="name">Model New Report</field>
+        <field name="res_model">model.new.report</field>
+        <field name="view_mode">graph,pivot,tree</field>
+        <field name="context">{
+            'pivot_column_groupby': ['user_id'],
+            'pivot_row_groupby': ['date:month'],
+            'graph_mode': 'bar',
+            'graph_groupbys': ['date:month', 'user_id'],
+            }
+        </field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No data yet!
+            </p>
+            <p>
+                Start Analysis
+            </p>
+        </field>
+    </record>
+</odoo>

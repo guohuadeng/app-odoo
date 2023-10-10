@@ -9,7 +9,7 @@
 			<field name="arch" type="xml">
 				<xpath expr="//div[@data-key='general_settings']" position="after">
 					<div class="app_settings_block ml8" data-string="app_odoo_customize" string="OEM &amp; Boost" data-key="app_odoo_customize">
-						<div class="row app_settings_header my-0 ms-0 mw-100 bg-warning bg-opacity-25">
+						<div class="row app_settings_header my-0 ms-0 mw-100 bg-warning bg-opacity-25" name="app_settings_header">
 							<div class="col-lg-12 col-md-12 ms-0 o_setting_box">
 								<div class="o_setting_right_pane border-start-0 ms-0 ps-0">
 									<div class="content-group">
