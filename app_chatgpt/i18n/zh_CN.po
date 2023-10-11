@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e-20230721\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 11:49+0000\n"
-"PO-Revision-Date: 2023-09-22 11:49+0000\n"
+"POT-Creation-Date: 2023-10-11 08:30+0000\n"
+"PO-Revision-Date: 2023-10-11 08:30+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -685,24 +685,9 @@ msgid "Africa"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "After timeout seconds then Disconnect"
-msgstr "上下文连接超时(秒)"
-
-#. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_chat_count__none
 msgid "Ai Auto"
 msgstr "Ai自动判断"
-
-#. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "Ai Center Setup"
-msgstr "Ai智能服务中心设置"
-
-#. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__description
-msgid "Ai Character"
-msgstr "Ai角色"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
@@ -719,18 +704,13 @@ msgstr ""
 #: model:ir.model,name:app_chatgpt.model_ai_robot
 #: model:ir.ui.menu,name:app_chatgpt.menu_ai_robot
 msgid "Ai Robot"
-msgstr "Ai机器人"
+msgstr "GPT机器人"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__ai_user_id
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.app_view_users_search
 msgid "Ai User"
 msgstr "Ai用户"
-
-#. module: app_chatgpt
-#: model:ir.model.fields,help:app_chatgpt.field_mail_channel__description
-msgid "Ai would help you act as the Character set."
-msgstr "Ai将会按照你设定的角色来提供回答。"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
@@ -741,11 +721,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
 msgid "Ai智能优化设定，具体参数"
 msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_res_config_settings__module_app_ai_ali
-msgid "Ali Ai China"
-msgstr "阿里Ai"
 
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__res_users__gpt_policy__all
@@ -865,11 +840,6 @@ msgid "Bactrian"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_res_config_settings__module_app_ai_baidu
-msgid "Baidu Ai China"
-msgstr "百度Ai"
-
-#. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_kanban_view
 msgid "Bind Partner"
 msgstr "用户绑定"
@@ -984,11 +954,16 @@ msgstr "ChatGPT机器人【%s】没有设置 api key."
 #. module: app_chatgpt
 #: model:ai.robot,name:app_chatgpt.chatgpt_robot
 msgid "ChatGPT odoo"
-msgstr ""
+msgstr "ChatGPT openAi"
 
 #. module: app_chatgpt
 #: model:ai.robot,name:app_chatgpt.chatgpt4_azure
 msgid "ChatGPT4 Azure"
+msgstr ""
+
+#. module: app_chatgpt
+#: model:mail.channel,description:app_chatgpt.channel_chatgpt
+msgid "ChatGPT话题"
 msgstr ""
 
 #. module: app_chatgpt
@@ -1191,7 +1166,7 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model,name:app_chatgpt.model_mail_thread
 msgid "Email Thread"
-msgstr "EMail线程"
+msgstr "邮件会话"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__endpoint
@@ -1324,17 +1299,6 @@ msgid "Gemini"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "Get Baidu Ai from https://apps.odoo.com/apps/modules/16.0/app_ai_baidu"
-msgstr ""
-
-#. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid ""
-"Get Google Bard Ai from https://apps.odoo.com/apps/modules/16.0/app_ai_bard"
-msgstr ""
-
-#. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_form_view
 msgid "Get List Model"
 msgstr "获取Model List"
@@ -1343,11 +1307,6 @@ msgstr "获取Model List"
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_form_view
 msgid "Get Model Info"
 msgstr "获取Model Info"
-
-#. module: app_chatgpt
-#: model:ir.model.fields,field_description:app_chatgpt.field_res_config_settings__module_app_ai_bard
-msgid "Google Bard Ai"
-msgstr ""
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_search
@@ -1795,7 +1754,7 @@ msgstr "中等"
 #. module: app_chatgpt
 #: model:ir.model,name:app_chatgpt.model_mail_message
 msgid "Message"
-msgstr ""
+msgstr "消息"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -2242,11 +2201,6 @@ msgid "Secondary Ai"
 msgstr "辅助Ai"
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "Seconds"
-msgstr "秒"
-
-#. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__res_users__gpt_policy__limit
 msgid "Selected Users"
 msgstr ""
@@ -2348,11 +2302,6 @@ msgid "Stop sequences"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "Support by"
-msgstr ""
-
-#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
@@ -2362,7 +2311,7 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_config_settings__openai_sync_config
 msgid "Sync Config"
-msgstr "同步配置"
+msgstr "对话响应配置"
 
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__res_config_settings__openai_sync_config__sync
@@ -2456,11 +2405,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__ai_timeout
 msgid "Timeout(seconds)"
 msgstr "超时(秒)"
-
-#. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "Timout then disconnect(s)"
-msgstr "超时设定(秒)"
 
 #. module: app_chatgpt
 #. odoo-javascript
@@ -17387,11 +17331,6 @@ msgid "oden"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.is_res_config_settings_view
-msgid "odooAi.cn"
-msgstr ""
-
-#. module: app_chatgpt
 #. odoo-javascript
 #: code:addons/app_chatgpt/static/src/models_data/emoji_data.js:0
 #, python-format
@@ -27757,7 +27696,7 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__mail_channel__set_temperature__1_5
 msgid "创造性"
-msgstr "创造性"
+msgstr ""
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__temperature
@@ -27889,11 +27828,6 @@ msgid "用户设定的角色相关，一般不要调整"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:ir.model.fields,help:app_chatgpt.field_res_config_settings__module_app_ai_baidu
-msgid "百度文心一格"
-msgstr ""
-
-#. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_res_config_settings__openapi_context_timeout
 msgid "群聊中多少分钟以内的聊天信息作为上下文继续"
 msgstr ""
@@ -27937,11 +27871,6 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_mail_channel__presence_penalty
 msgid "避免重复词值"
-msgstr ""
-
-#. module: app_chatgpt
-#: model:ir.model.fields,help:app_chatgpt.field_res_config_settings__module_app_ai_ali
-msgid "阿里通义千问"
 msgstr ""
 
 #. module: app_chatgpt

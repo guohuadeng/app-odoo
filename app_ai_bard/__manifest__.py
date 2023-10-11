@@ -8,7 +8,7 @@
 
 {
     'name': 'Google Bard Ai for odoo ai center, 谷歌Ai支持',
-    'version': '16.23.07.29',
+    'version': '16.23.10.11',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
     'maintainer': 'odooai.cn',
@@ -43,7 +43,7 @@
     13. Full Open Source.
     ''',
     'depends': [
-        'app_chatgpt',
+        'app_ai',
     ],
     'data': [
         'data/ai_robot_data.xml',

@@ -10,7 +10,7 @@
 
 {
     'name': 'ChatGPT4, China Ali,AiGC Center.Ai服务中心，聚合全网Ai',
-    'version': '16.23.09.27',
+    'version': '16.23.10.11',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
     'maintainer': 'odooai.cn',
@@ -57,7 +57,6 @@
         'data/ai_robot_data.xml',
         'data/user_partner_data.xml',
         'data/ir_config_parameter.xml',
-        'views/res_config_settings_views.xml',
         'views/ai_robot_views.xml',
         'views/res_partner_ai_use_views.xml',
         'views/res_users_views.xml',
