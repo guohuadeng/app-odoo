@@ -43,7 +43,7 @@
     13. Full Open Source.
     ''',
     'depends': [
-        'app_ai',
+        'app_chatgpt',
     ],
     'data': [
         'data/ai_robot_data.xml',
