@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+    <record id="app_chat_res_users_tree_view" model="ir.ui.view">
+        <field name="name">app.chat.res.users.tree</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='login_date']" position="before">
+                <field name="is_chat_private" widget="boolean_toggle" optional="show"/>
+            </xpath>
+        </field>
+    </record>
     <record id="app_chatgpt_res_users_form" model="ir.ui.view">
         <field name="name">app.chatgpt.res.users.form</field>
         <field name="model">res.users</field>
