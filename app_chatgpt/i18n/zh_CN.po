@@ -128,7 +128,7 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__partner_count
 msgid "#Partner"
-msgstr "用户绑定"
+msgstr "Ai员工绑定"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_mail_channel__frequency_penalty
@@ -704,7 +704,7 @@ msgstr ""
 #: model:ir.model,name:app_chatgpt.model_ai_robot
 #: model:ir.ui.menu,name:app_chatgpt.menu_ai_robot
 msgid "Ai Robot"
-msgstr "GPT机器人"
+msgstr "Ai机器人"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_partner_ai_use__ai_user_id
@@ -842,7 +842,7 @@ msgstr ""
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_kanban_view
 msgid "Bind Partner"
-msgstr "用户绑定"
+msgstr "Ai员工绑定"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_partner__gpt_id
