@@ -25,7 +25,7 @@ class Channel(models.Model):
                                     help="Main Ai is the robot help you default.")
     ext_ai_partner_id = fields.Many2one(comodel_name="res.partner", string="Secondary Ai",
                                         domain=[('gpt_id', '!=', None), ('is_chat_private', '=', True)])
-    description = fields.Char('Ai Character', help="Ai would help you act as the Character set.")
+    description = fields.Text('Ai Character', help="Ai would help you act as the Character set.")
     set_max_tokens = fields.Selection([
         ('300', 'Short'),
         ('600', 'Standard'),

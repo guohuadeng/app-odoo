@@ -7,7 +7,6 @@ import base64
 
 from odoo import api, fields, models, modules, tools, _
 from odoo.exceptions import UserError
-from .lib.WordsSearch import WordsSearch
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -411,16 +410,3 @@ GPT-3	A set of models that can understand and generate natural language
             self.ai_model = self.set_ai_model
         else:
             self.ai_model = None
-            
-    def filter_sensitive_words(self, data):
-        if self.is_filtering:
-            search = WordsSearch()
-            s = self.sensitive_words
-            if s:
-                search.SetKeywords(s.split('\n'))
-            else:
-                search.SetKeywords([])
-            data = search.Replace(text=data)
-            return data
-        else:
-            return data
