@@ -125,27 +125,8 @@ GPT-3	A set of models that can understand and generate natural language
         requests.delete('https://chatgpt.com/v1/disconnect')
 
     def get_ai_pre(self, data, author_id=False, answer_id=False, param={}):
-        if self.is_filtering:
-            search = WordsSearch()
-            search.SetKeywords([])
-            if isinstance(data, list):
-                content = data[len(data)-1]['content']
-            else:
-                content = data
-            sensi = search.FindFirst(content)
-            if sensi is not None:
-                _logger.error('==========敏感词：%s' % sensi['Keyword'])
-                return _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。')
-        elif not author_id.gpt_id and answer_id.gpt_id:
-            user_id = answer_id.user_ids[:1]
-            gpt_policy = user_id.gpt_policy
-            gpt_wl_partners = user_id.gpt_wl_partners
-            is_allow = author_id.id in gpt_wl_partners.ids
-            if gpt_policy != 'all' and not is_allow:
-                # 暂时有限用户的Ai
-                return _('此Ai暂时未开放，请联系管理员。')
-        else:
-            return False
+        # hook，都正常
+        return False
 
     def get_ai(self, data, author_id=False, answer_id=False, param={}):
         #     通用方法
@@ -192,6 +173,7 @@ GPT-3	A set of models that can understand and generate natural language
         return res
     
     def get_ai_post(self, res, author_id=False, answer_id=False, param={}):
+        # hook，高级版要替代
         if res and author_id and isinstance(res, openai.openai_object.OpenAIObject) or isinstance(res, list) or isinstance(res, dict):
             # 返回是个对象，那么就是ai
             # if isinstance(res, dict):
@@ -204,55 +186,10 @@ GPT-3	A set of models that can understand and generate natural language
                 # azure 格式
                 usage = json.loads(json.dumps(res['usage']))
                 content = json.loads(json.dumps(res['choices'][0]['message']['content']))
-            elif self.provider == 'ali':
-                # ali 格式
-                usage = res['usage']
-                content = res['output']['text']
-            elif self.provider == 'baidu':
-                # baidu 格式
-                usage = res['usage']
-                content = res['result']
             else:
                 usage = False
                 content = res
             data = content.replace(' .', '.').strip()
-            answer_user = answer_id.mapped('user_ids')[:1]
-            if usage:
-                if self.provider == 'ali':
-                    prompt_tokens = usage['input_tokens']
-                    completion_tokens = usage['output_tokens']
-                    total_tokens = usage['input_tokens'] + usage['output_tokens']
-                else:
-                    prompt_tokens = usage['prompt_tokens']
-                    completion_tokens = usage['completion_tokens']
-                    total_tokens = usage['total_tokens']
-                # 不是写到 user ，是要写到指定 m2m 相关模型， 如：  res.partner.ai.use
-                ai_use = self.env['res.partner.ai.use'].search([('name', '=', author_id.id)], limit=1)
-                ask_date = fields.Datetime.now()
-                if not ai_use:
-                    ai_use.create({
-                        'name': author_id.id,
-                        'ai_user_id': answer_user.id,
-                        'human_prompt_tokens': prompt_tokens,
-                        'ai_completion_tokens': completion_tokens,
-                        'tokens_total': total_tokens,
-                        'used_number': 1,
-                        'first_ask_time': ask_date,
-                        'latest_ask_time': ask_date
-                    })
-                else:
-                    vals = {
-                        'human_prompt_tokens': ai_use.human_prompt_tokens + prompt_tokens,
-                        'ai_completion_tokens': ai_use.ai_completion_tokens + completion_tokens,
-                        'tokens_total': ai_use.tokens_total + total_tokens,
-                        'used_number': ai_use.used_number + 1,
-                        'latest_ask_time': ask_date
-                    }
-                    if not ai_use.first_ask_time:
-                        vals.update({
-                            'first_ask_time': ask_date
-                        })
-                    ai_use.write(vals)
             return data, usage, True
         else:
             # 直接返回错误语句，那么就是非ai
