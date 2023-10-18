@@ -114,6 +114,8 @@ class Base(models.AbstractModel):
                 'name': file_name,
             })
             return attachment
+        else:
+            return False
 
     def get_ua_type(self):
         return get_ua_type()
