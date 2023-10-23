@@ -17,7 +17,7 @@ You can customize every odoo list/tree view easily.
 This module is ready for Community and Enterprise Edition.
 
     """,
-    'images': ['static/description/sales_coms.jpg'
+    'images': ['static/description/sales_com.png'
     ],
     'depends': ['web'],
     'data': [
