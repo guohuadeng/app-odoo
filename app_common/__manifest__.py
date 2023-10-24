@@ -38,8 +38,8 @@
 ##############################################################################
 
 {
-    'name': "odooai Odooapp Common Func",
-    'version': '16.23.10.10',
+    'name': "odooAi Common Util and Tools",
+    'version': '16.23.10.24',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -50,18 +50,25 @@
     'currency': 'EUR',
     'images': ['static/description/banner.png'],
     'summary': '''
-    Core for common use odooai apps.
+    Core for common use for odooai.cn apps.
     基础核心，必须没有要被依赖字段及视图等，实现auto_install
     ''',
-    'description': '''    
-    Support Odoo 16, Enterprise and Community Edition
+    'description': '''
     need to setup odoo.conf, add follow:
     server_wide_modules = web,app_common
-    1. 
-    2. 
-    3. Multi-language Support.
-    4. Multi-Company Support.
-    5. Support Odoo 16, Enterprise and Community Edition
+    1. Quick import data from excel with .py code
+    2. Quick m2o default value
+    3. Filter for useless field
+    4. UTC local timezone convert
+    5. Get browser ua, user-agent
+    6. Image to local, image url to local, media to local attachment
+    7. Log cron job
+    8. Boost for less no use mail
+    9. Customize .rng file
+    10. Misc like get distance between two points
+    11. Multi-language Support. Multi-Company Support
+    12. Support Odoo 17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    13. Full Open Source.
     ==========
     1. 
     2. 
@@ -84,6 +91,7 @@
     # 'pre_init_hook': 'pre_init_hook',
     # 'post_init_hook': 'post_init_hook',
     # 'uninstall_hook': 'uninstall_hook',
+    'external_dependencies': {'python': ['pyyaml', 'ua-parser', 'user-agents']},
     'installable': True,
     'application': True,
     'auto_install': True,
