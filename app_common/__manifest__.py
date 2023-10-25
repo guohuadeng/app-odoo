@@ -39,7 +39,7 @@
 
 {
     'name': "odooAi Common Util and Tools",
-    'version': '16.23.10.24',
+    'version': '16.23.10.25',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -91,7 +91,8 @@
     # 'pre_init_hook': 'pre_init_hook',
     # 'post_init_hook': 'post_init_hook',
     # 'uninstall_hook': 'uninstall_hook',
-    'external_dependencies': {'python': ['pyyaml', 'ua-parser', 'user-agents']},
+    # 可以不需要，因为直接放 common中了
+    # 'external_dependencies': {'python': ['pyyaml', 'ua-parser', 'user-agents']},
     'installable': True,
     'application': True,
     'auto_install': True,
