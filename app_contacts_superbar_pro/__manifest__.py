@@ -17,7 +17,7 @@
 
 {
     'name': "Contacts Customer Supplier Quick Search by superbar",
-    'version': '16.22.12.06',
+    'version': '16.23.10.26',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
