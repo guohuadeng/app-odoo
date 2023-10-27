@@ -13,11 +13,12 @@ class MailMail(models.Model):
         for m in self:
             email_to = m.email_to
             # 忽略掉无效email，避免被ban
-            if email_to.find('no-reply@odooai.cn') != -1 or email_to.find('postmaster-odoo@odooai.cn') != -1:
-                pass
-            elif email_to.find('example.com') != -1 or email_to.find('@sunpop.cn') != -1 or email_to.find('@odooapp.cn') != -1:
-                _logger.error(_("=================Email to ignore: %s") % email_to)
-                self = self - m
+            if email_to:
+                if email_to.find('no-reply@odooai.cn') != -1 or email_to.find('postmaster-odoo@odooai.cn') != -1:
+                    pass
+                elif email_to.find('example.com') != -1 or email_to.find('@sunpop.cn') != -1 or email_to.find('@odooapp.cn') != -1:
+                    _logger.error(_("=================Email to ignore: %s") % email_to)
+                    self = self - m
         if not self:
             return True
         return super(MailMail, self)._send(auto_commit, raise_exception, smtp_session)
