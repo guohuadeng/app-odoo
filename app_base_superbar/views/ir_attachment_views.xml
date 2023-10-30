@@ -1,5 +1,4 @@
 <odoo>
-  <data>
     <record id="app_view_attachment_search" model="ir.ui.view">
         <field name="name">app.ir.attachment.search</field>
         <field name="model">ir.attachment</field>
@@ -12,5 +11,4 @@
             </xpath>
         </field>
     </record>
-  </data>
 </odoo>
