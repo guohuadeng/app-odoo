@@ -38,10 +38,10 @@
 ##############################################################################
 
 {
-    'name': "Website Blogs,Page Editor in source code. mass edit blog and page.Odoo网页与博文源码编辑",
+    'name': "Website Blogs,Page Editor in source code. mass edit blog and page.Odoo网页与博文源码编辑器",
     'version': '16.23.10.31',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Website',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',

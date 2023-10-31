@@ -41,7 +41,7 @@
     'name': "Website Blogs Search Enhance",
     'version': '16.23.07.07',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Website',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',

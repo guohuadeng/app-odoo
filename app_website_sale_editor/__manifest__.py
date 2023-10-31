@@ -41,7 +41,7 @@
     'name': "Website Product Editor in Backend",
     'version': '16.23.08.03',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Website',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
