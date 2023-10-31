@@ -15,7 +15,7 @@
 				<attribute name="optional">hide</attribute>
 			</xpath>
 			<xpath expr="//field[@name='is_seo_optimized']" position="attributes">
-				<attribute name="optional">hide</attribute>
+				<attribute name="optional">show</attribute>
 			</xpath>
 			<xpath expr="//field[@name='is_published']" position="attributes">
 				<attribute name="optional">show</attribute>
@@ -25,6 +25,7 @@
                 <field name="website_meta_keywords" optional="show"/>
                 <field name="website_meta_title" optional="hide"/>
                 <field name="website_meta_description" optional="hide"/>
+                <field name="tag_ids" widget="many2many_tags" optional="hide"/>
 			</xpath>
 			<xpath expr="//field[@name='author_id']" position="before">
 				<field name="visits" optional="show"/>
