@@ -39,7 +39,7 @@
 
 {
     'name': "odooAi Common Util and Tools",
-    'version': '16.23.10.27',
+    'version': '16.23.10.30',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',

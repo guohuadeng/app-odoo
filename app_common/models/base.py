@@ -6,6 +6,7 @@ from odoo.http import request
 import requests
 import base64
 from io import BytesIO
+import uuid
 
 from datetime import date, datetime, time
 import pytz
@@ -117,6 +118,18 @@ class Base(models.AbstractModel):
         else:
             return False
 
+    @api.model
+    def get_image_base642attachment(self, data):
+        image, file_name = get_image_base642attachment(data)
+        if image and file_name:
+            attachment = self.env['ir.attachment'].create({
+                'datas': image,
+                'name': file_name,
+            })
+            return attachment
+        else:
+            return False
+
     def get_ua_type(self):
         return get_ua_type()
 
@@ -144,7 +157,18 @@ def get_image_url2attachment(url):
     file_name = url.split('/')[-1]
     return image, file_name
 
-    
+
+def get_image_base642attachment(data):
+    if not data:
+        return None
+    try:
+        image_data = data.split(',')[1]
+        file_name = str(uuid.uuid4()) + '.png'
+        return image_data, file_name
+    except Exception as e:
+        return None, None
+
+
 def get_ua_type():
     ua = request.httprequest.headers.get('User-Agent')
     # 临时用 agent 处理，后续要前端中正确处理或者都从后台来
