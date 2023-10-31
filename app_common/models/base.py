@@ -149,7 +149,9 @@ def get_image_url2attachment(url):
     if not url:
         return None
     try:
-        response = requests.get(url, timeout=5)
+        if url.startswith('//'):
+            url = 'https:%s' % url
+        response = requests.get(url, timeout=30)
     except Exception as e:
         return None, None
     # 返回这个图片的base64编码
