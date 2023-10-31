@@ -11,6 +11,7 @@
                 </xpath>
                 <xpath expr="//field[@name='theme_id']" position="after">
                     <field name="cdn_activated" optional="hide" widget="boolean_toggle"/>
+                    <field name="cdn_url" optional="hide"/>
                 </xpath>
                 <xpath expr="//field[@name='default_lang_id']" position="attributes">
                     <attribute name="optional">hide</attribute>
