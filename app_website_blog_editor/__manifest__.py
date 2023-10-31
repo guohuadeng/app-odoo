@@ -38,8 +38,8 @@
 ##############################################################################
 
 {
-    'name': "Website Blogs Editor in Backend",
-    'version': '16.23.09.08',
+    'name': "Website Blogs,Page Editor in source code. mass edit blog and page.Odoo网页与博文源码编辑",
+    'version': '16.23.10.31',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -48,23 +48,29 @@
     'sequence': 2,
     'price': 0.00,
     'currency': 'EUR',
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.gif'],
     'depends': [
         'website_blog',
     ],
     'summary': '''
-    Odoo App of odooai.cn
+    Make developer to easy build website. Edit odoo page in source code.  Quick edit website page, Quick clone website blog.
+    Quick seo website page and blog. mass edit page and blog.
     ''',
-    'description': '''    
-    Support Odoo 16,15,14,13,12, Enterprise and Community and odoo.sh Edition
-    1. 
-    2. 
+    'description': '''
+    Make developer to easy build website.
+    1. Edit website page and website blog in source code mode
+    2. Mass edit website page and blog property like url key and name, etc..
+    3. Mass translate website page, website blog, website product to any language. this need extra pay for app_ai_seo
+    4. Easy mass seo builder. Use AI to edit website. mass setup seo. this need extra pay for app_ai_seo
     11. Multi-language Support. Multi-Company Support.
     12. Support Odoo 16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
     ==========
-    1. 
-    2. 
+    程序员网站开发专用
+    1. 快速网页编辑，博客编辑，源码方式编辑网站内容
+    2. 批量网页内容编辑，批量博客编辑
+    3. 批量翻译网站页面，博客，产品信息。快速生成全球化网站，需要额外付费模块 app_ai_seo
+    4. 批量SEO，提升网站排名。使用Ai编辑及优化网站，需要额外付费模块 app_ai_seo
     11. 多语言支持，多公司支持
     12. Odoo 16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
     13. 代码完全开源
