@@ -8,8 +8,8 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='is_seo_optimized']" position="before">
-					<button name="action_product_debug_view" type="object" title="Content Set" icon="fa-bug fa-lg" groups="base.group_no_one"/>
-					<button name="action_product_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
+					<button name="action_product_debug_view" type="object" title="Content Set" icon="fa-bug fa-lg"/>
+					<button name="action_product_code_view" type="object" title="Source Code" icon="fa-code fa-lg"/>
                 </xpath>
                 <xpath expr="//field[@name='website_url']" position="attributes">
 	                <attribute name="optional">hide</attribute>
