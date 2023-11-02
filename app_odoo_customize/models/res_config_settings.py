@@ -395,7 +395,14 @@ class ResConfigSettings(models.TransientModel):
             'account.analytic.line',
             'project.task',
             # 'project.forecast',
+            'project.update',
             'project.project',
+            'project.collaborator',
+            'project.milestone',
+            # 'project.project.stage',
+            'project.task.recurrence',
+            # 表名为 project_task_user_rel
+            'project.task.stage.personal',
         ]
         seqs = []
         return self.remove_app_data(to_removes, seqs)
