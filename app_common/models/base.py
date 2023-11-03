@@ -210,5 +210,9 @@ def get_ua_type():
     elif 'cn.erpapp.o20sticks.App' in ua:
         # 安卓app
         utype = 'native_android'
+    elif 'BytedanceWebview' in ua:
+        utype = 'dyweb'
+    elif 'wxwork' in ua:
+        utype = 'qwapp'
     # _logger.warning('=========get ua %s,%s' % (utype, ua))
     return utype
