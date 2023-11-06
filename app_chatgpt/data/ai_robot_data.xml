@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <record id="chatgpt_robot" model="ai.robot">
+        <field name="name">ChatGPT odoo</field>
+        <field name="provider">openai</field>
+        <field name="endpoint">https://api.openai.com/v1/chat/completions</field>
+        <field name="sequence">1</field>
+        <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/openai.png"/>
+    </record>
+    <record id="chatgpt_robot1" model="ai.robot">
+        <field name="name">ChatGPT Coding</field>
+        <field name="provider">openai</field>
+        <field name="endpoint">https://api.openai.com/v1/chat/completions</field>
+        <field name="sequence">6</field>
+        <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/openai.png"/>
+    </record>
+    <record id="chatgpt_robot2" model="ai.robot">
+        <field name="name">ChatGPT Finance</field>
+        <field name="provider">openai</field>
+        <field name="endpoint">https://api.openai.com/v1/chat/completions</field>
+        <field name="sequence">7</field>
+        <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/openai.png"/>
+    </record>
+    <record id="chatgpt3_azure" model="ai.robot">
+        <field name="name">ChatGPT Azure</field>
+        <field name="provider">azure</field>
+        <field name="endpoint">https://my.openai.azure.com</field>
+        <field name="engine">gpt35</field>
+        <field name="api_version">2023-07-01-preview</field>
+        <field name="sequence">8</field>
+        <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/chatgpt35_azure.png"/>
+    </record>
+<!--    注意，在azure中，只需做1个部署即可，然后指定不同模型名。 因为其同时只能部署一个endpoint-->
+    <record id="chatgpt4_azure" model="ai.robot">
+        <field name="name">ChatGPT4 Azure</field>
+        <field name="provider">azure</field>
+        <field name="endpoint">https://my.openai.azure.com</field>
+        <field name="engine">gpt4</field>
+        <field name="api_version">2023-07-01-preview</field>
+        <field name="sequence">9</field>
+        <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/chatgpt4_azure.png"/>
+    </record>
+    <record id="chatgpt4_32k_azure" model="ai.robot">
+        <field name="name">ChatGPT4-32k Azure</field>
+        <field name="provider">azure</field>
+        <field name="endpoint">https://my.openai.azure.com</field>
+        <field name="engine">gpt4-32k</field>
+        <field name="api_version">2023-07-01-preview</field>
+        <field name="sequence">10</field>
+        <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/chatgpt4_azure.png"/>
+    </record>
+</odoo>

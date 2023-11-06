@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <!--list 原生处理-->
+        <record id="ai_mail_channel_view_tree" model="ir.ui.view">
+            <field name="model">mail.channel</field>
+            <field name="name">ai.mail.channel.tree</field>
+            <field name="inherit_id" ref="mail.mail_channel_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="ai_partner_id" optional="show"/>
+                    <field name="description" optional="show"/>
+                    <field name="set_max_tokens" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+        <!--       form,原生继承以便管理-->
+        <record id="ai_mail_channel_view_form" model="ir.ui.view">
+            <field name="name">ai.mail.channel.form</field>
+            <field name="model">mail.channel</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="mail.mail_channel_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='privacy']" position="before">
+                    <page name="page_user" string="用户设定的角色相关，一般不要调整">
+                        <group>
+                            <group name="role_set" string="Ai常规设定">
+                                <field name="channel_type" readonly="1"/>
+                                <field name="ai_partner_id"
+                                       options="{'no_open': True, 'no_create': True}"/>
+                                <field name="ext_ai_partner_id"
+                                       options="{'no_open': True, 'no_create': True}"/>
+                            </group>
+                            <group  name="param_set" string="Ai Character Set">
+                                <div class="o_td_label">
+                                    <label for="set_max_tokens"/>
+                                </div>
+                                <field name="set_max_tokens" nolabel="1" required="1"/>
+                                <div class="o_td_label">
+                                    <label for="set_chat_count"/>
+                                </div>
+                                <field name="set_chat_count" nolabel="1" required="1"/>
+                                <div class="o_td_label">
+                                    <label for="set_temperature"/>
+                                </div>
+                                <field name="set_temperature" nolabel="1" required="1"/>
+                                <div class="o_td_label">
+                                    <label for="set_top_p"/>
+                                </div>
+                                <field name="set_top_p" nolabel="1" required="1"/>
+                                <div class="o_td_label">
+                                    <label for="set_frequency_penalty"/>
+                                </div>
+                                <field name="set_frequency_penalty" nolabel="1" required="1"/>
+                                <div class="o_td_label">
+                                    <label for="set_presence_penalty"/>
+                                </div>
+                                <field name="set_presence_penalty" nolabel="1" required="1"/>
+                                <field name="is_private" readonly="0"/>
+                                <field name="create_uid" readonly="1" options="{'no_open': True, 'no_create': True}"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='group_public_id']/.." position="after">
+                    <group string="Ai智能优化设定，具体参数">
+                        <field name="chat_count"/>
+                        <p class="ml16 my-n1 mb16" colspan="2">0-3，设定后，会将最近n次对话发给Ai，有助于他更好的回答</p>
+                        <field name="max_tokens"/>
+                        <p class="ml16 my-n1 mb16" colspan="2">最大响应Token,控制返回内容长度</p>
+                        <field name="temperature"/>
+                        <p class="ml16 my-n1 mb16" colspan="2">0-1，值越大越富有想像力，越小则越保守</p>
+                        <field name="frequency_penalty"/>
+                        <p class="ml16 my-n1 mb16" colspan="2">0-1，值越大越少使用常用词</p>
+                        <field name="presence_penalty"/>
+                        <p class="ml16 my-n1 mb16" colspan="2">0-1，值越大越少重复词</p>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!--kanban,原生的处理-->
+        <record id="ai_mail_channel_view_kanban" model="ir.ui.view">
+            <field name="model">mail.channel</field>
+            <field name="inherit_id" ref="mail.mail_channel_view_kanban"/>
+            <field name="mode">extension</field>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban//field[1]" position="before">
+                    <field name="is_private"/>
+                </xpath>
+                <xpath expr="//field[@name='description']" position="before">
+                    <em>角色:</em>
+                </xpath>
+                <xpath expr="//button[@name='channel_join']" position="replace">
+                    <button attrs="{'invisible':[('is_private','=',True), ('group_ids', '!=', [])]}"
+                            class="btn btn-warning float-end" type="edit">
+                        智能设定
+                    </button>
+                    <button type="object" attrs="{'invisible':['|', ('is_member','=',True), ('group_ids', '!=', [])]}" class="btn btn-primary float-end" name="channel_join">进入频道</button>
+                </xpath>
+                <xpath expr="//button[@name='action_unfollow']" position="replace">
+                    <button type="object" attrs="{'invisible':['|', ('is_member','=',False), ('group_ids', '!=', [])]}"
+                            class="btn btn-secondary float-end" name="action_unfollow">暂时离开</button>
+                </xpath>
+            </field>
+        </record>
+
+        <!--search 原生处理-->
+        <record id="ai_mail_channel_view_search" model="ir.ui.view">
+            <field name="model">mail.channel</field>
+            <field name="inherit_id" ref="mail.mail_channel_view_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="channel_type"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Channel Type" name="groupby_channel_type" domain="[]" context="{'group_by': 'channel_type'}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
