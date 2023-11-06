@@ -38,7 +38,7 @@
 ##############################################################################
 
 {
-    'name': "odooAi Common Util and Tools",
+    'name': "odooAi Common Util and Tools,欧度智能基础核心优化",
     'version': '16.23.10.30',
     'author': 'odooai.cn',
     'category': 'Base',
