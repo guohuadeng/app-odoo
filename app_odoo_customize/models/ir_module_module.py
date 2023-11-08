@@ -72,12 +72,13 @@ class IrModule(models.Model):
         # 处理可更新字段， 不要compute，会出错
         for mod_name in modules.get_modules():
             mod = known_mods_names.get(mod_name)
-            installed_version = self.get_module_info(mod.name).get('version', default_version)
-            if installed_version and mod.latest_version and operator.gt(installed_version, mod.latest_version):
-                local_updatable = True
-            else:
-                local_updatable = False
-            if mod.local_updatable != local_updatable:
-                mod.write({'local_updatable': local_updatable})
+            if mod:
+                installed_version = self.get_module_info(mod.name).get('version', default_version)
+                if installed_version and mod.latest_version and operator.gt(installed_version, mod.latest_version):
+                    local_updatable = True
+                else:
+                    local_updatable = False
+                if mod.local_updatable != local_updatable:
+                    mod.write({'local_updatable': local_updatable})
             
         return res
