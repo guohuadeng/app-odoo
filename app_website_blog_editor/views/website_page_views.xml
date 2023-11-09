@@ -43,7 +43,7 @@
                 <button name="action_page_code_view" type="object" title="Source Code" icon="fa-code fa-lg"/>
                 <button name="action_page_form_view" type="object" title="Properties Set" icon="fa-file-text-o fa-lg" />
             </xpath>
-            <xpath expr="//button[@name='action_page_debug_view']" position="attribute">
+            <xpath expr="//button[@name='action_page_debug_view']" position="attributes">
                 <attribute name="groups"/>
             </xpath>
 		</field>
