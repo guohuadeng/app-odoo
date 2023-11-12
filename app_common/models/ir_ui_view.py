@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, models, tools, SUPERUSER_ID
+from odoo import api, models, tools, SUPERUSER_ID, _
 from odoo.modules.module import get_resource_path
 from odoo.tools import view_validation
 from odoo.tools.view_validation import _relaxng_cache, validate, _validators
 from odoo.tools.safe_eval import safe_eval
 
+import os
 from lxml import etree
 import logging
 _logger = logging.getLogger(__name__)
@@ -17,13 +18,13 @@ def app_relaxng(view_type):
         if view_type in ['tree', 'search']:
             _file = get_resource_path('app_common', 'rng', '%s_view.rng' % view_type)
         else:
-            _file = get_resource_path('base', 'rng', '%s_view.rng' % view_type)
+            _file = os.path.join('base', 'rng', '%s_view.rng' % view_type)
         with tools.file_open(_file) as frng:
             try:
                 relaxng_doc = etree.parse(frng)
                 _relaxng_cache[view_type] = etree.RelaxNG(relaxng_doc)
             except Exception:
-                _logger.error('You can Ignore this. Failed to load RelaxNG XML schema for views validation')
+                _logger.error(_('You can Ignore this. Failed to load RelaxNG XML schema for views validation, file: %s' % _file))
                 _relaxng_cache[view_type] = None
     return _relaxng_cache[view_type]
 
