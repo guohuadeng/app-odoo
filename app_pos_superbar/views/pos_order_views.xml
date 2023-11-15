@@ -9,7 +9,6 @@
             <xpath expr="//search">
                 <searchpanel>
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
-                    <field name="config_id" enable_counters="1"/>
                     <field name="state"/>
                 </searchpanel>
             </xpath>
