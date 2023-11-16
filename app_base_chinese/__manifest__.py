@@ -18,7 +18,7 @@
 
 {
     'name': 'odoo中文版套件之基础,中国会计基础,Chinese Enhance All in One，',
-    'version': '17.23.11.06',
+    'version': '23.11.06',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',

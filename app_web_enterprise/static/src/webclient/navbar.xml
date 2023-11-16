@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+<!--<t t-name="app_web_enterprise.EnterpriseNavBar" t-inherit="web_enterprise.EnterpriseNavBar" t-inherit-mode="extension">-->
+<!--&lt;!&ndash;   todo: 以下主要是测试，改这个主图标为 O &ndash;&gt;-->
+<!--    <xpath expr="//a[hasclass('o_menu_toggle')]" position="replace">-->
+<!--        <a href="#" class="o_menu_toggle fa fa-2x fa-opera" style="font-size: 2em;" accesskey="h" t-ref="menuApps" t-on-click.prevent="() => this.hm.toggle()">-->
+<!--        </a>-->
+<!--    </xpath>-->
+<!--</t>-->
+    <!--    菜单有下拉箭头， owl的在 web.NavBar， 首行用 MenuDropdown， 下拉的用 DropdownItem -->
+    <!--    owl NavBar-->
+    <t t-name="app_web_enterprise.NavBar.SectionsMenu" t-inherit="web.NavBar.SectionsMenu" t-inherit-mode="extension">
+        <xpath expr="//MenuDropdown" position="attributes">
+            <attribute name="showCaret">true</attribute>
+        </xpath>
+    </t>
+<!--    <t t-name="app_web_enterprise.NavBar.SectionsMenu.Dropdown.MenuSlot" t-inherit="web.NavBar.SectionsMenu.Dropdown.MenuSlot" t-inherit-mode="extension">-->
+<!--        <xpath expr="//DropdownItem[1]" position="attributes">-->
+<!--            <attribute name="showCaret">true</attribute>-->
+<!--        </xpath>-->
+<!--    </t>-->
+</templates>
