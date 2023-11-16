@@ -113,6 +113,7 @@ class Base(models.AbstractModel):
             attachment = self.env['ir.attachment'].create({
                 'datas': image,
                 'name': file_name,
+                'website_id': False,
             })
             return attachment
         else:
@@ -125,6 +126,7 @@ class Base(models.AbstractModel):
             attachment = self.env['ir.attachment'].create({
                 'datas': image,
                 'name': file_name,
+                'website_id': False,
             })
             return attachment
         else:
