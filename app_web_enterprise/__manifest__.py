@@ -72,7 +72,7 @@
         ],
         'web.assets_backend': [
             # ('before', 'web/static/src/views/**/*', 'app_web_enterprise/static/src/scss/app_style_before.scss'),
-            # ('after', 'web/static/src/views/**/*', 'app_web_enterprise/static/src/scss/app_style_after.scss'),
+            ('after', 'web/static/src/views/**/*', 'app_web_enterprise/static/src/scss/app_style_after.scss'),
             # 'app_web_enterprise/static/src/components/*/*.xml',
             'app_web_enterprise/static/src/webclient/navbar.xml',
             'app_web_enterprise/static/src/xml/res_config_edition.xml',
