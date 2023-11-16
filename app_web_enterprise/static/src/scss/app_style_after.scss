@@ -72,6 +72,9 @@
   .o_form_view .o_form_view_container .o_form_sheet_bg .o_form_sheet {
     max-width: 98%;
   }
+  .o_form_view .o_form_view_container .o_notebook .o_notebook_headers {
+    overflow-x: inherit;
+  }
 }
 
 @media (min-width: 992px) {
