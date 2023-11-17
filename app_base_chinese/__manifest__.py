@@ -77,6 +77,7 @@
     'depends': [
         'base_address_extended',
         'account',
+        'l10n_multilang',
         'sales_team',
         'sale',
         'stock',

@@ -2,8 +2,8 @@
 <odoo>
     <data noupdate="1">
         <!-- Price list -->
-        <record id="product.list0" model="product.pricelist">
-            <field name="currency_id" ref="base.CNY"/>
-        </record>
+<!--        <record id="product.list0" model="product.pricelist">-->
+<!--            <field name="currency_id" ref="base.CNY"/>-->
+<!--        </record>-->
     </data>
 </odoo>

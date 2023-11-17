@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="base.module_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='description_html']" position="before">
-                <field name="description_html_cn" class="oe_styling_v8" attrs="{'invisible': [('description_html_cn', '=', False)]}"/>
+                <field name="description_html_cn"/>
             </xpath>
         </field>
     </record>

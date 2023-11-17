@@ -31,7 +31,7 @@ def post_init_hook(cr, registry):
     数据初始化，只在安装后执行，更新时不执行
     """
     try:
-        env = api.Environment(cr, SUPERUSER_ID, {})
+        env = api.Environment(cr, SUPERUSER_ID, {'active_test': False})
         ids = env['product.category'].sudo().with_context(lang='zh_CN').search([
             ('parent_id', '!=', False)
         ], order='parent_path')
@@ -46,6 +46,14 @@ def post_init_hook(cr, registry):
         # 超级用户改时区为中国
         ids = env['res.users'].sudo().with_context(lang='zh_CN').browse([1, 2])
         ids.write({'tz': "Etc/GMT-8"})
+        # 公司价格改人民币
+        ids = env['res.company'].sudo().search([], limit=1)
+        if ids:
+            ids.write({'currency_id': env.ref('base.CNY').id})
+        # 价格表改人民币
+        ids = env['product.pricelist'].sudo().search([], limit=1)
+        if ids:
+            ids.write({'currency_id': env.ref('base.CNY').id})
     except Exception as e:
         raise Warning(e)
 

@@ -47,7 +47,9 @@
     * 税金模板
     """,
     'depends': [
+        'base',
         'account',
+        'l10n_multilang',
         'app_odoo_customize',
     ],
     'images': ['static/description/banner.png'],
