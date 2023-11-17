@@ -54,6 +54,10 @@
 			<xpath expr="//field[@name='visits']" position="attributes">
                 <attribute name="readonly">0</attribute>
 			</xpath>
+			<xpath expr="//field[@name='website_meta_keywords']" position="after">
+                <field name="seo_name"/>
+                <field name="website_url"/>
+			</xpath>
 		</field>
 	</record>
 

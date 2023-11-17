@@ -396,15 +396,21 @@ class ResConfigSettings(models.TransientModel):
             'project.task',
             # 'project.forecast',
             'project.update',
-            'project.project',
             'project.collaborator',
             'project.milestone',
             # 'project.project.stage',
             'project.task.recurrence',
             # 表名为 project_task_user_rel
             'project.task.stage.personal',
+            'project.project',
         ]
         seqs = []
+        try:
+            sql = "delete from project_sale_line_employee_map"
+            self._cr.execute(sql)
+            self._cr.commit()
+        except Exception as e:
+            _logger.error('remove data error: %s,%s', 'project: project_sale_line_employee_map', e)
         return self.remove_app_data(to_removes, seqs)
 
     def remove_quality(self):
