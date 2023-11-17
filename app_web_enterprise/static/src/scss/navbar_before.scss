@@ -1,0 +1,12 @@
+$o-navbar-background: rgba($o-brand-odoo, .05);
+
+.o_main_navbar {
+  --NavBar-entry-backgroundColor: $o-navbar-background;
+  background: $o-navbar-background;
+
+    .o_menu_sections {
+      .o_nav_entry, .dropdown-toggle {
+        background: var(--NavBar-entry-backgroundColor, transparent);
+      }
+    }
+}

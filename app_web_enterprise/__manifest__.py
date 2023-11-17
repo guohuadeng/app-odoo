@@ -70,8 +70,9 @@
         'web._assets_primary_variables': [
             ('before', 'web_enterprise/static/src/scss/primary_variables.scss', 'app_web_enterprise/static/src/scss/primary_variables.scss'),
         ],
+        # 处理header 变更
         'web.assets_backend': [
-            # ('before', 'web/static/src/views/**/*', 'app_web_enterprise/static/src/scss/app_style_before.scss'),
+            ('before', 'web/static/src/webclient/navbar/navbar.scss', 'app_web_enterprise/static/src/scss/navbar_before.scss'),            # ('after', 'web/static/src/webclient/navbar/navbar.scss', 'app_web_enterprise/static/src/scss/navbar.scss'),
             ('after', 'web/static/src/views/**/*', 'app_web_enterprise/static/src/scss/app_style_after.scss'),
             # 'app_web_enterprise/static/src/components/*/*.xml',
             'app_web_enterprise/static/src/webclient/navbar.xml',
