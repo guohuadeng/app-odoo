@@ -115,6 +115,7 @@ class Base(models.AbstractModel):
                 'name': file_name,
                 'website_id': False,
             })
+            attachment.generate_access_token()
             return attachment
         else:
             return False
@@ -128,6 +129,7 @@ class Base(models.AbstractModel):
                 'name': file_name,
                 'website_id': False,
             })
+            attachment.generate_access_token()
             return attachment
         else:
             return False
