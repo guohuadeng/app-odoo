@@ -11,7 +11,7 @@
 
 ## Support by [欧度智能 odooAi.cn](https://www.odooai.cn)
 广州欧度智能科技有限公司
-Odoo中国官方伙伴，原广州尚鹏
+Odoo中国官方伙伴，原欧度智能
 
 1. Odoo项目100%客户成功交付
 2. Odoo官网下载第一，服务上千家企业
