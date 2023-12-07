@@ -17,7 +17,7 @@
 
 {
     'name': "App purchase search browse by partner",
-    'version': '16.22.12.06',
+    'version': '16.23.12.07',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -43,16 +43,15 @@
     'data': [
         'views/purchase_views.xml',
     ],
+    
+    'assets': {
+        'web.assets_backend': [
+            'app_purchase_superbar/static/src/views/*.xml',
+        ],
+    },
     'demo': [
     ],
     'test': [
-    ],
-    'css': [
-    ],
-    'qweb': [
-        'static/src/xml/*.xml',
-    ],
-    'js': [
     ],
     'post_load': None,
     'post_init_hook': 'post_init_hook',
