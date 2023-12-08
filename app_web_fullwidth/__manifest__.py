@@ -22,7 +22,7 @@
 
 {
     'name': 'Web Form Fullwidth, Full screen full width. Chatter Position ',
-    'version': '16.23.02.19',
+    'version': '16.23.12.08',
     'category': 'web',
     'author': 'odooai.cn',
     'website': 'https://www.odooai.cn',
@@ -44,10 +44,14 @@
     'depends': [
         'web'
     ],
-    'data': [],
+    'data': [
+        'views/res_users_views.xml',
+        'views/webclient_templates.xml',
+    ],
     'assets': {
         'web.assets_backend': [
             ('after', 'web/static/src/views/**/*', 'app_web_fullwidth/static/src/scss/app_style_after.scss'),
+            '/app_web_fullwidth/static/src/js/*.js'
         ],
     },
 
