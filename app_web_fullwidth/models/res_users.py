@@ -10,7 +10,7 @@ class ResUsers(models.Model):
         ("auto", "Responsive"),
         ("bottom", "Bottom"),
         ("sided", "Sided"),
-        ], default="auto",)
+        ], string='Chatter Position', default="bottom")
 
     @property
     def SELF_READABLE_FIELDS(self):

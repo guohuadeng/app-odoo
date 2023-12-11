@@ -42,7 +42,7 @@
     Easy config the chatter position to bottom or side or Responsive form every user.
     """,
     'depends': [
-        'web'
+        'app_odoo_customize'
     ],
     'data': [
         'views/res_users_views.xml',
