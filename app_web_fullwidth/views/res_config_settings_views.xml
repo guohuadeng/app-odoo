@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_app_theme_config_settings" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.app_odoo_customize</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority">20</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='app_ui_internal']//group[@name='app_ui_internal_right']" position="inside">
+                <label for="default_chatter_position"/>
+                <div>
+                    <field name="default_chatter_position" class="oe_inline"/>
+                    <button string="Set All User" type="object" name="user_set_chatter_pos" class="ml4 oe_highlight"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -22,7 +22,7 @@
 
 {
     'name': 'Web Form Fullwidth, Full screen full width. Chatter Position ',
-    'version': '16.23.12.08',
+    'version': '16.23.12.12',
     'category': 'web',
     'author': 'odooai.cn',
     'website': 'https://www.odooai.cn',
@@ -40,12 +40,14 @@
     'description': """
     UI Enhance for Odoo. Form view fullwidth, full screen.
     Easy config the chatter position to bottom or side or Responsive form every user.
+    Easy set all company user UI for chatter position
     """,
     'depends': [
         'app_odoo_customize'
     ],
     'data': [
         'views/res_users_views.xml',
+        'views/res_config_settings_views.xml',
         'views/webclient_templates.xml',
     ],
     'assets': {
