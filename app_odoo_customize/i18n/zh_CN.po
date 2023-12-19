@@ -178,7 +178,7 @@ msgstr "配置设置"
 msgid ""
 "Copyright &amp;copy;\n"
 "\t            <span class=\"copyright_name_before\" contenteditable=\"true\">2009-2024 </span>"
-msgstr
+msgstr ""
 "版权所有 &amp;copy;\n"
 "\t            <span class=\"copyright_name_before\" contenteditable=\"true\">2009-2024 </span>"
 
