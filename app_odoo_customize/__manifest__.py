@@ -22,7 +22,7 @@
 # description:
 
 {
-    'name': 'odoo Tweak,Ai Employee,Boost,Customize All in One. Customize,UI,Boost,Security,Data,Development Enhance',
+    'name': 'odoo17 Tweak,Ai Employee,Boost,Customize All in One. Customize,UI,Boost,Security,Data,Development Enhance',
     'version': '23.11.16',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
