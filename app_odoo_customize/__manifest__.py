@@ -23,7 +23,7 @@
 
 {
     'name': 'Odoo 15,14,13 Customize OEM(Boost, Data reset)',
-    'version': '14.22.02.25',
+    'version': '14.23.12.28',
     'author': 'odooai.cn',
     'category': 'Productivity',
     'website': 'https://www.odooai.cn',
@@ -130,7 +130,7 @@
         'base_setup',
         'web',
         'mail',
-        'iap',
+        # 'iap',
         # 'digest',
         # when enterprise
         # 'web_mobile'
