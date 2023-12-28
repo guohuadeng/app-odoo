@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo17 Tweak,Ai Employee,Boost,Customize All in One. Customize,UI,Boost,Security,Data',
-    'version': '15.23.09.17',
+    'version': '15.23.12.28',
     'author': 'odooai.cn',
     'category': 'Productivity',
     'website': 'https://www.odooai.cn',
@@ -39,7 +39,7 @@
         'base_setup',
         'web',
         'mail',
-        'iap',
+        # 'iap',
         # 'digest',
         # when enterprise
         # 'web_mobile'
