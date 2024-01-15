@@ -7,7 +7,7 @@ import { session } from "@web/session";
 patch(Dialog.prototype, "app_odoo_customize.Dialog", {
     setup() {
         this._super.apply(this, arguments);
-        const app_system_name = session.app_system_name || "odooApp";
+        const app_system_name = session.app_system_name || "odooAi";
         this.title = app_system_name;
         owl.onMounted(() => {
             this.setDrag();
