@@ -1,0 +1,14 @@
+<odoo>
+    <record id="app_folder_view_search" model="ir.ui.view">
+        <field name="name">documents.folder.search</field>
+        <field name="model">documents.folder</field>
+        <field name="inherit_id" ref="documents.folder_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel>
+                    <field name="parent_folder_id" select="multi"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+</odoo>
