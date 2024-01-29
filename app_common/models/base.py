@@ -110,13 +110,17 @@ class Base(models.AbstractModel):
         # Todo: mimetype filter
         image, file_name = get_image_url2attachment(url)
         if image and file_name:
-            attachment = self.env['ir.attachment'].create({
-                'datas': image,
-                'name': file_name,
-                'website_id': False,
-            })
-            attachment.generate_access_token()
-            return attachment
+            try:
+                attachment = self.env['ir.attachment'].create({
+                    'datas': image,
+                    'name': file_name,
+                    'website_id': False,
+                })
+                attachment.generate_access_token()
+                return attachment
+            except Exception as e:
+                _logger.error('get_image_url2attachment error: %s' % str(e))
+                return False
         else:
             return False
 
@@ -124,19 +128,22 @@ class Base(models.AbstractModel):
     def get_image_base642attachment(self, data):
         image, file_name = get_image_base642attachment(data)
         if image and file_name:
-            attachment = self.env['ir.attachment'].create({
-                'datas': image,
-                'name': file_name,
-                'website_id': False,
-            })
-            attachment.generate_access_token()
-            return attachment
+            try:
+                attachment = self.env['ir.attachment'].create({
+                    'datas': image,
+                    'name': file_name,
+                    'website_id': False,
+                })
+                attachment.generate_access_token()
+                return attachment
+            except Exception as e:
+                _logger.error('get_image_base642attachment error: %s' % str(e))
+                return False
         else:
             return False
 
     def get_ua_type(self):
         return get_ua_type()
-
 
 def get_image_from_url(url):
     if not url:
