@@ -9,15 +9,15 @@
             </label>
         </xpath>
     </t>
-    <!--    保存增加字样-->
-    <t t-name="app_web_enterprise.FormStatusIndicator" t-inherit="web.FormStatusIndicator" t-inherit-mode="extension">
-        <xpath expr="//i[hasclass('fa-cloud-upload')]" position="after">
-            Save
-        </xpath>
-        <xpath expr="//i[hasclass('fa-undo')]" position="after">
-            Discard
-        </xpath>
-    </t>
+    <!--   更紧凑，先不处理 保存增加字样-->
+<!--    <t t-name="app_web_enterprise.FormStatusIndicator" t-inherit="web.FormStatusIndicator" t-inherit-mode="extension">-->
+<!--        <xpath expr="//i[hasclass('fa-cloud-upload')]" position="after">-->
+<!--            Save-->
+<!--        </xpath>-->
+<!--        <xpath expr="//i[hasclass('fa-undo')]" position="after">-->
+<!--            Discard-->
+<!--        </xpath>-->
+<!--    </t>-->
     <!--    创建移到左边-->
     <t t-name="app_web_enterprise.FormControlPanel" t-inherit="web.FormControlPanel" t-inherit-mode="extension">
         <xpath expr="//div[hasclass('o_cp_bottom_right')]//t[3]" position="replace"/>
