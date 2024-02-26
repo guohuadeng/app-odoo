@@ -17,7 +17,7 @@
 
 from odoo import api, SUPERUSER_ID
 
-def pre_init_hook(cr):
+def pre_init_hook(env):
     """
     数据初始化，只在安装时执行，更新时不执行
     """
