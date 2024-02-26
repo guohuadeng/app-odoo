@@ -5,11 +5,11 @@
 # Copyright (C) 2012-2012 南京盈通 ccdos@intoerp.com <small business chart>
 # Copyright (C) 2008-now  开阖软件 jeff@osbzr.com    < PM and LTS >
 # Copyright (C) 2017-now  jeffery9@gmail.com
-# Copyright (C) 2018-11  欧度智能 https://www.odooai.cn
+# Copyright (C) 2018-now  欧度智能 https://www.odooai.cn
 
 {
-    'name': '2024最新中国会计科目表.企业标准会计.Latest Chinese Accounting for odoo16',
-    'version': '23.09.18',
+    'name': '2024最新中国会计科目表.企业标准会计.Latest Chinese Accounting for odoo17',
+    'version': '24.02.26',
     'author': 'odooai.cn',
     'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.odooai.cn',
@@ -49,20 +49,13 @@
     'depends': [
         'base',
         'account',
-        'l10n_multilang',
         'app_odoo_customize',
     ],
     'images': ['static/description/banner.png'],
     'data': [
         'views/account_account_views.xml',
         'views/account_views.xml',
-        'data/chart_data.xml',
         'data/account_account_tag_data.xml',
-        'data/account.group.csv',
-        'data/account.account.template.csv',
-        'data/account_tax_group_data.xml',
-        'data/account_tax_template_data.xml',
-        'data/account_chart_template_data.xml',
     ],
     'post_init_hook': 'post_init_hook',
     'installable': True,

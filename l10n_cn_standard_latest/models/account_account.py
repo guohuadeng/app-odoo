@@ -30,12 +30,14 @@ class AccountAccount(models.Model):
     parent_path = fields.Char(index=True, unaccent=False)
 
     @api.model
-    def _search_new_account_code(self, company, digits, prefix):
+    def _search_new_account_code(self, company, digits, prefix, cache=None):
         # 分隔符，金蝶为 "."，用友为""，注意odoo中一级科目，现金默认定义是4位头，银行是6位头
         delimiter = '.'
         for num in range(1, 100):
             new_code = str(prefix.ljust(digits - 1, '0')) + delimiter + '%02d' % (num)
-            rec = self.search([('code', '=', new_code), ('company_id', '=', company.id)], limit=1)
+            if new_code in (cache or []):
+                continue
+            rec = self.search([('code', '=', new_code), ('company_id', 'child_of', company.root_id.id)], limit=1)
             if not rec:
                 return new_code
         raise UserError(_('Cannot generate an unused account code.'))
