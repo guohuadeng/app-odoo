@@ -381,11 +381,18 @@ class ResConfigSettings(models.TransientModel):
                 })
         except Exception as e:
             pass  # raise Warning(e)
-
+        
+        try:
+            rec = self.env['account.journal'].search([])
+            rec.write({
+                'default_account_id': False,
+                'suspense_account_id': False
+            })
+        except Exception as e:
+            pass 
+           
         seqs = []
-        self.env.company.write({
-            'chart_template_id': False,
-        })
+        
         res = self.remove_app_data(to_removes, seqs)
         return res
 
