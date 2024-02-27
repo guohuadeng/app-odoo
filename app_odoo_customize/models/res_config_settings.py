@@ -384,7 +384,7 @@ class ResConfigSettings(models.TransientModel):
 
         seqs = []
         self.env.company.write({
-            'chart_template_id': False,
+            'chart_template': False,
         })
         res = self.remove_app_data(to_removes, seqs)
         return res
