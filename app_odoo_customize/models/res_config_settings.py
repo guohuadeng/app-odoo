@@ -392,7 +392,7 @@ class ResConfigSettings(models.TransientModel):
             pass 
            
         seqs = []
-        
+
         res = self.remove_app_data(to_removes, seqs)
         return res
 
