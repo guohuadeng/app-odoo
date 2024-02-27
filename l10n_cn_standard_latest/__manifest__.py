@@ -30,7 +30,8 @@
     4. 更新税信息。
     5. 增加树状结构，支持二级科目，可设置上级科目，配合 "app_web_superbar" 使用可轻易实现树状导航。
     6. 使用金蝶的会计科目命名法对多级科目进行初始化。可自行调整为用友科目命名法
-    7. 注意，必须在没有业务数据，没有会计科目的初始环境。可以使用 "app_odoo_customize" 模块清除财务数据，重置会计科目。
+    7. 增加中文数字和阿拉伯数字的转换(需安装cn2an库，pip3 install cn2an)
+    8. 注意，必须在没有业务数据，没有会计科目的初始环境。可以使用 "app_odoo_customize" 模块清除财务数据，重置会计科目。
 
     如果是多语种环境需要自行更改翻译，主要体现在3%,6%,13%增值税处理。
     中国财务，中国会计，中国城市
@@ -56,9 +57,14 @@
         'views/account_account_views.xml',
         'views/account_views.xml',
         'data/account_account_tag_data.xml',
+        'report/account_report.xml',
+        'report/report_voucher.xml',
     ],
     'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': True,
     'auto_install': False,
+    'external_dependencies': {
+        'python': ['cn2an']
+    },
 }
