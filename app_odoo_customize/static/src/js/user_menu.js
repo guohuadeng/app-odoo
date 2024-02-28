@@ -1,7 +1,7 @@
 /** @odoo-module **/
 /* jshint esversion: 6 */
 
-
+import { _t } from "@web/core/l10n/translation";
 import { UserMenu } from "@web/webclient/user_menu/user_menu";
 import { routeToUrl } from "@web/core/browser/router_service";
 import { patch } from "@web/core/utils/patch";
@@ -11,10 +11,11 @@ import { session } from "@web/session";
 import { useService } from "@web/core/utils/hooks";
 const userMenuRegistry = registry.category("user_menuitems");
 
-patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
+patch(UserMenu.prototype, {
     setup() {
+        super.setup();
+
         "use strict";
-        this._super.apply(this, arguments);
         // this.companyService = useService("company");
         this.rpc = useService("rpc");
         this.orm = useService("orm");
@@ -28,7 +29,7 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
             return {
                 type: "item",
                 id: "settings",
-                description: env._t("Preferences"),
+                description: _t("Preferences"),
                 callback: async function () {
                     const actionDescription = await env.services.orm.call("res.users", "action_get");
                     actionDescription.res_id = env.services.user.userId;
@@ -105,14 +106,12 @@ patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
 
 function debugItem(env) {
     "use strict";
-    const url_debug = $.param.querystring(window.location.href, 'debug=1');
     return {
         type: "item",
         id: "debug",
-        description: env._t("Activate the developer mode"),
-        href: url_debug,
+        description: _t("Activate the developer mode"),
         callback: () => {
-            browser.open(url_debug, "_self");
+            browser.location.search = "?debug=1";
         },
         sequence: 5,
     };
@@ -122,7 +121,7 @@ function activateAssetsDebugging(env) {
     "use strict";
     return {
         type: "item",
-        description: env._t("Activate Assets Debugging"),
+        description: _t("Activate Assets Debugging"),
         callback: () => {
             browser.location.search = "?debug=assets";
         },
@@ -134,7 +133,7 @@ function leaveDebugMode(env) {
     "use strict";
     return {
         type: "item",
-        description: env._t("Leave the Developer Tools"),
+        description: _t("Leave the Developer Tools"),
         callback: () => {
             const route = env.services.router.current;
             route.search.debug = "";
@@ -163,10 +162,11 @@ function separator10() {
 function documentationItem(env) {
     "use strict";
     const documentationURL = session.app_documentation_url;
+
     return {
         type: "item",
         id: "documentation",
-        description: env._t("Documentation"),
+        description: _t("Documentation"),
         href: documentationURL,
         callback: () => {
             browser.open(documentationURL, "_blank");
@@ -181,7 +181,7 @@ function supportItem(env) {
     return {
         type: "item",
         id: "support",
-        description: env._t("Support"),
+        description: _t("Support"),
         href: url,
         callback: (ev) => {
             browser.open(url, "_blank");
@@ -197,7 +197,7 @@ function odooAccountItem(env) {
     return {
         type: "item",
         id: "account",
-        description: env._t(app_account_title),
+        description: _t(app_account_title),
         href: app_account_url,
         callback: () => {
             top.location.href = app_account_url;
@@ -213,7 +213,7 @@ function refresh_current(env) {
     return {
         type: "item",
         id: "refresh_current",
-        description: env._t("Refresh Page"),
+        description: _t("Refresh Page"),
         hide: !env.isSmall,
         callback: () => {
             location.reload();

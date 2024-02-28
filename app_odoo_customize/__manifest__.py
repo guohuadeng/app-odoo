@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo17 Tweak,Ai Employee,Boost,Customize All in One. Customize,UI,Boost,Security,Data,Development Enhance',
-    'version': '24.02.27',
+    'version': '24.02.28',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
@@ -66,16 +66,13 @@
         'data/res_company_data.xml',
         'data/res_config_settings_data.xml',
     ],
-    # 'qweb': [
-    #     'static/src/xml/*.xml',
-    # ],
     'assets': {
         'web.assets_backend': [
             'app_odoo_customize/static/src/scss/app.scss',
             'app_odoo_customize/static/src/scss/ribbon.scss',
             'app_odoo_customize/static/src/scss/dialog.scss',
             # todo: fix，使用 owl 的 service
-            # 'app_odoo_customize/static/src/js/user_menu.js',
+            'app_odoo_customize/static/src/js/user_menu.js',
             # 'app_odoo_customize/static/src/js/ribbon.js',
             # 'app_odoo_customize/static/src/js/dialog.js',
             # 'app_odoo_customize/static/src/webclient/*.js',
