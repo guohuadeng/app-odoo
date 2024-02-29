@@ -4,11 +4,11 @@ import { WebClient } from "@web/webclient/webclient";
 import { patch } from "@web/core/utils/patch";
 import { session } from "@web/session";
 
-patch(WebClient.prototype, "app_odoo_customize.WebClient", {
+patch(WebClient.prototype, {
     setup() {
         // 处理 navbar 全局可配置位置
         var self = this;
-        self._super.apply(this, arguments);
+        super.setup();
         this.state.navbar_pos_pc = session.app_navbar_pos_pc || 'top';
         this.state.navbar_pos_mobile = session.app_navbar_pos_mobile || 'top';
         if (self.env.isSmall)
