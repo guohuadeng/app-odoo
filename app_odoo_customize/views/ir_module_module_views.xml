@@ -41,7 +41,7 @@
             <field name="arch" type="xml">
                 <!--点击模块看详情-->
                 <xpath expr="//div[hasclass('oe_module_vignette')]" position="attributes" groups="app_odoo_customize.group_show_quick_upgrade">
-                    <attribute name="class">oe_module_vignette oe_kanban_global_click</attribute>
+                    <attribute name="class" position="add" separator=" ">oe_kanban_global_click</attribute>
                 </xpath>
                 <!--让模块名更显眼-->
                 <xpath expr="//div[hasclass('oe_module_desc')]//code" position="replace"/>

@@ -73,9 +73,10 @@
             'app_odoo_customize/static/src/scss/dialog.scss',
             # todo: fix，使用 owl 的 service
             'app_odoo_customize/static/src/js/user_menu.js',
-            # 'app_odoo_customize/static/src/js/ribbon.js',
-            # 'app_odoo_customize/static/src/js/dialog.js',
-            # 'app_odoo_customize/static/src/webclient/*.js',
+            'app_odoo_customize/static/src/js/ribbon.esm.js',
+            # odoo 17内置窗口拖放,
+            'app_odoo_customize/static/src/js/dialog.js',
+            'app_odoo_customize/static/src/webclient/*.js',
             'app_odoo_customize/static/src/webclient/*.xml',
             'app_odoo_customize/static/src/xml/res_config_edition.xml',
         ],
