@@ -7,7 +7,7 @@
 			<field name="priority">20</field>
 			<field name="inherit_id" ref="base.res_config_settings_view_form"/>
 			<field name="arch" type="xml">
-				<xpath expr="//app[@name='general_settings']" position="after">
+				<xpath expr="//app[@name='general_settings']" position="before">
 					<app class="app_settings_block ml8" data-string="OEM &amp; Boost" string="OEM &amp; Boost"
                          name="app_odoo_customize" data-key="app_odoo_customize" logo="/app_odoo_customize/static/description/icon.png">>
 						<div class="row app_settings_header my-0 ms-0 mw-100 bg-warning bg-opacity-25">

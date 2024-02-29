@@ -18,7 +18,7 @@
 from odoo import api, SUPERUSER_ID, _
 
 
-def pre_init_hook(cr):
+def pre_init_hook(env):
     """
     数据初始化，只在安装时执行，更新时不执行
     """
@@ -26,25 +26,24 @@ def pre_init_hook(cr):
     pass
 
 
-def post_init_hook(cr, registry):
+def post_init_hook(env):
     """
     数据初始化，只在安装后执行，更新时不执行
     """
     try:
-        env = api.Environment(cr, SUPERUSER_ID, {'active_test': False})
-        ids = env['product.category'].sudo().with_context(lang='zh_CN').search([
+        ids = env['product.category'].sudo().with_context(lang='zh_CN', active_test=False).search([
             ('parent_id', '!=', False)
         ], order='parent_path')
         for rec in ids:
             rec._compute_complete_name()
-        ids = env['stock.location'].sudo().with_context(lang='zh_CN').search([
+        ids = env['stock.location'].sudo().with_context(lang='zh_CN', active_test=False).search([
             ('location_id', '!=', False),
             ('usage', '!=', 'views'),
         ], order='parent_path')
         for rec in ids:
             rec._compute_complete_name()
         # 超级用户改时区为中国
-        ids = env['res.users'].sudo().with_context(lang='zh_CN').browse([1, 2])
+        ids = env['res.users'].sudo().with_context(lang='zh_CN', active_test=False).browse([1, 2])
         ids.write({'tz': "Etc/GMT-8"})
         # 公司价格改人民币
         ids = env['res.company'].sudo().search([], limit=1)
@@ -57,7 +56,7 @@ def post_init_hook(cr, registry):
     except Exception as e:
         raise Warning(e)
 
-def uninstall_hook(cr, registry):
+def uninstall_hook(env):
     """
     数据初始化，卸载时执行
     """
