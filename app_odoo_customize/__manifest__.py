@@ -133,7 +133,7 @@
         'base_setup',
         'portal',
         'mail',
-        'iap',
+        # 'iap',
         # 'digest',
         # when enterprise
         # 'web_mobile'
