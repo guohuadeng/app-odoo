@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo Tweak,Boost,Customize,Ai All in One. Customize,UI,Boost,Security,Data,Development Enhance',
-    'version': '13.23.08.28',
+    'version': '13.24.03.05',
     'author': 'odooai.cn',
     'category': 'Productivity',
     'website': 'https://www.odooai.cn',
@@ -131,7 +131,7 @@
     'images': ['static/description/banner.gif'],
     'depends': [
         'base_setup',
-        'web',
+        'portal',
         'mail',
         'iap',
         # 'digest',
