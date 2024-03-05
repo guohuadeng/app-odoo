@@ -58,7 +58,7 @@ class ResConfigSettings(models.TransientModel):
     # 安全与提速
     app_debug_only_admin = fields.Boolean('Debug for Admin', config_parameter='app_debug_only_admin',
                                           help="Check to only Debug / Debug Assets for Odoo Admin. Deny debug from url for other user.")
-    app_stop_subscribe = fields.Boolean('Stop Odoo Subscribe', help="Check to stop subscribe and follow. This to make odoo speed up.",
+    app_stop_subscribe = fields.Boolean('Stop Odoo Subscribe / Follow', help="Check to stop subscribe and follow. This to make odoo speed up.",
                                         config_parameter='app_stop_subscribe')
     # 处理额外模块
     module_app_odoo_doc = fields.Boolean("Help Document Anywhere", help='Get Help Documentation on current odoo operation or topic.')

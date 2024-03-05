@@ -637,7 +637,7 @@ msgstr "显示支持"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_stop_subscribe
-msgid "Stop Odoo Subscribe"
+msgid "Stop Odoo Subscribe / Follow"
 msgstr "停止Odoo订阅"
 
 #. module: app_odoo_customize

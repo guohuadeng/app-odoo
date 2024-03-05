@@ -11,8 +11,8 @@ class AppHome(Home):
     def web_client(self, s_action=None, **kw):
         # todo: 当前只对 web，要调整为也对 website
         res = super(AppHome, self).web_client(s_action, **kw)
-
-        if kw.get('debug', False):
+        if request.session.uid and request.env['res.users'].sudo().browse(request.session.uid).has_group('base.group_user') \
+                and kw.get('debug', False):
             config_parameter = request.env['ir.config_parameter'].sudo()
             app_debug_only_admin = config_parameter.get_param('app_debug_only_admin')
             if request.session.uid and request.env.user.browse(request.session.uid)._is_admin():
