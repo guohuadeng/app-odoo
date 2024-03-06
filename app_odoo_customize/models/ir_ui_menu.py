@@ -24,3 +24,13 @@ class IrUiMenu(models.Model):
             name = self.name
         return name
 
+    def load_web_menus(self, debug):
+        web_menus = super(IrUiMenu, self).load_web_menus(debug)
+        if debug:
+            menus = self.load_menus(debug)  # This method has been cached in ORM and does not affect the performance
+            for menu_id in web_menus.keys():
+                if menu_id == 'root':
+                    web_menus[menu_id]['sequence'] = 0
+                    continue
+                web_menus[menu_id]['sequence'] = menus[menu_id]['sequence']
+        return web_menus
