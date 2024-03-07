@@ -25,7 +25,7 @@
                         <group>
                             <field name="gpt_id"/>
                             <field name="gpt_policy"/>
-                            <field name="gpt_wl_partners" widget="many2many_tags" attrs="{'invisible': [('gpt_policy', '=', 'all')]}"/>
+                            <field name="gpt_wl_partners" widget="many2many_tags" invisible="gpt_policy == 'all'"/>
                             <field name="gpt_demo_time"/>
                             <field name="is_chat_private"/>
                         </group>

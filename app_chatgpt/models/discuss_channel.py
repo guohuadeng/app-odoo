@@ -14,7 +14,7 @@ _logger = logging.getLogger(__name__)
 
 
 class Channel(models.Model):
-    _inherit = 'mail.channel'
+    _inherit = 'discuss.channel'
 
     is_private = fields.Boolean(string="Private", default=False, help="Check to set Private, Can only use by user, not Public")
     # 因为 channel_member_ids 不好处理，在此增加此字段
@@ -84,11 +84,8 @@ class Channel(models.Model):
     def name_get(self):
         result = []
         for c in self:
-            if c.channel_type == 'channel' and c.is_private:
-                pre = '[私]'
-            else:
-                pre = ''
-            result.append((c.id, "%s%s" % (pre, c.name or '')))
+            pre = '[私]' if c.channel_type == 'channel' and c.is_private else ''
+            result.append((c.id, f"{pre}{c.name or ''}"))
         return result
 
     def get_openai_context(self, channel_id, author_id, answer_id, minutes=60, chat_count=0):
@@ -103,7 +100,7 @@ class Channel(models.Model):
 
         # todo: 更好的处理方式
         domain = [('res_id', '=', channel_id),
-                  ('model', '=', 'mail.channel'),
+                  ('model', '=', 'discuss.channel'),
                   ('message_type', '!=', 'user_notification'),
                   ('parent_id', '!=', False),
                   ('is_ai', '=', True),
@@ -173,7 +170,7 @@ class Channel(models.Model):
         user_id = self.env['res.users']
         author_id = msg_vals.get('author_id')
         ai = self.env['ai.robot'].sudo()
-        channel = self.env['mail.channel']
+        channel = self.env['discuss.channel']
         channel_type = self.channel_type
         messages = []
 
@@ -285,11 +282,11 @@ class Channel(models.Model):
                 # 私聊
                 _logger.info(f'私聊:author_id:{author_id},partner_chatgpt.id:{answer_id.id}')
                 channel = self.env[msg_vals.get('model')].browse(msg_vals.get('res_id'))
-            elif author_id != answer_id.id and msg_vals.get('model', '') == 'mail.channel' and msg_vals.get('res_id', 0) == chatgpt_channel_id.id:
+            elif author_id != answer_id.id and msg_vals.get('model', '') == 'discuss.channel' and msg_vals.get('res_id', 0) == chatgpt_channel_id.id:
                 # todo: 公开的群聊，当前只开1个，后续更多
                 _logger.info(f'频道群聊:author_id:{author_id},partner_chatgpt.id:{answer_id.id}')
                 channel = chatgpt_channel_id
-            elif author_id != answer_id.id and msg_vals.get('model', '') == 'mail.channel' and self.channel_type in ['group', 'channel']:
+            elif author_id != answer_id.id and msg_vals.get('model', '') == 'discuss.channel' and self.channel_type in ['group', 'channel']:
                 # 高级用户自建的话题
                 channel = self.env[msg_vals.get('model')].browse(msg_vals.get('res_id'))
                 if hasattr(channel, 'is_private') and channel.description:
@@ -337,7 +334,7 @@ class Channel(models.Model):
         # todo: 优化，每次聊天进入时就 write
         user = self.env.user
         msgs = self.env['mail.message'].sudo().search([
-            ('model', '=', 'mail.channel'),
+            ('model', '=', 'discuss.channel'),
             ('author_id', '=', user.partner_id.id),
         ], limit=3, order='id desc')
         c_id = 0

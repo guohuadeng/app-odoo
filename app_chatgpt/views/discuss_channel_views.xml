@@ -2,10 +2,10 @@
 <odoo>
     <data>
         <!--list 原生处理-->
-        <record id="ai_mail_channel_view_tree" model="ir.ui.view">
-            <field name="model">mail.channel</field>
-            <field name="name">ai.mail.channel.tree</field>
-            <field name="inherit_id" ref="mail.mail_channel_view_tree"/>
+        <record id="ai_discuss_channel_view_tree" model="ir.ui.view">
+            <field name="model">discuss.channel</field>
+            <field name="name">ai.discuss.channel.tree</field>
+            <field name="inherit_id" ref="mail.discuss_channel_view_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="ai_partner_id" optional="show"/>
@@ -15,11 +15,11 @@
             </field>
         </record>
         <!--       form,原生继承以便管理-->
-        <record id="ai_mail_channel_view_form" model="ir.ui.view">
-            <field name="name">ai.mail.channel.form</field>
-            <field name="model">mail.channel</field>
+        <record id="ai_discuss_channel_view_form" model="ir.ui.view">
+            <field name="name">ai.discuss.channel.form</field>
+            <field name="model">discuss.channel</field>
             <field name="mode">extension</field>
-            <field name="inherit_id" ref="mail.mail_channel_view_form"/>
+            <field name="inherit_id" ref="mail.discuss_channel_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='privacy']" position="before">
                     <page name="page_user" string="用户设定的角色相关，一般不要调整">
@@ -80,9 +80,9 @@
         </record>
 
         <!--kanban,原生的处理-->
-        <record id="ai_mail_channel_view_kanban" model="ir.ui.view">
-            <field name="model">mail.channel</field>
-            <field name="inherit_id" ref="mail.mail_channel_view_kanban"/>
+        <record id="ai_discuss_channel_view_kanban" model="ir.ui.view">
+            <field name="model">discuss.channel</field>
+            <field name="inherit_id" ref="mail.discuss_channel_view_kanban"/>
             <field name="mode">extension</field>
             <field name="arch" type="xml">
                 <xpath expr="//kanban//field[1]" position="before">
@@ -92,23 +92,23 @@
                     <em>角色:</em>
                 </xpath>
                 <xpath expr="//button[@name='channel_join']" position="replace">
-                    <button attrs="{'invisible':[('is_private','=',True), ('group_ids', '!=', [])]}"
+                    <button invisible="is_private and group_ids"
                             class="btn btn-warning float-end" type="edit">
                         智能设定
                     </button>
-                    <button type="object" attrs="{'invisible':['|', ('is_member','=',True), ('group_ids', '!=', [])]}" class="btn btn-primary float-end" name="channel_join">进入频道</button>
+                    <button type="object" invisible="is_member or group_ids" class="btn btn-primary float-end" name="channel_join">进入频道</button>
                 </xpath>
                 <xpath expr="//button[@name='action_unfollow']" position="replace">
-                    <button type="object" attrs="{'invisible':['|', ('is_member','=',False), ('group_ids', '!=', [])]}"
+                    <button type="object" invisible="is_member or group_ids"
                             class="btn btn-secondary float-end" name="action_unfollow">暂时离开</button>
                 </xpath>
             </field>
         </record>
 
         <!--search 原生处理-->
-        <record id="ai_mail_channel_view_search" model="ir.ui.view">
-            <field name="model">mail.channel</field>
-            <field name="inherit_id" ref="mail.mail_channel_view_search"/>
+        <record id="ai_discuss_channel_view_search" model="ir.ui.view">
+            <field name="model">discuss.channel</field>
+            <field name="inherit_id" ref="mail.discuss_channel_view_search"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="channel_type"/>

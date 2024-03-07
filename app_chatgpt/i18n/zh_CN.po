@@ -962,7 +962,7 @@ msgid "ChatGPT4 Azure"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:mail.channel,description:app_chatgpt.channel_chatgpt
+#: model:discuss.channel,description:app_chatgpt.channel_chatgpt
 msgid "ChatGPT话题"
 msgstr ""
 

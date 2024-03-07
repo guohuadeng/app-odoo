@@ -68,8 +68,8 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button string="Get List Model" type="object" name="get_ai_list_model" attrs="{'invisible': [('provider', '!=', 'openai')]}"/>
-                    <button string="Get Model Info" type="object" name="get_ai_model_info" attrs="{'invisible': [('provider', '!=', 'openai')]}"/>
+                    <button string="Get List Model" type="object" name="get_ai_list_model" invisible="provider != 'openai'"/>
+                    <button string="Get Model Info" type="object" name="get_ai_model_info" invisible="provider != 'openai'"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
@@ -104,10 +104,8 @@
                             </label>
                             <div>
                                 <field name="provider" class="oe_inline"/>
-                                <a href="https://platform.openai.com/docs/introduction" title="OpenAI Document" class="o_doc_link" target="_blank"
-                                 attrs="{'invisible': [('provider', '!=', 'openai')]}"/>
-                                <a href="https://learn.microsoft.com/zh-cn/azure/ai-services/openai/how-to/chatgpt" title="Azure AI Document" class="o_doc_link" target="_blank"
-                                 attrs="{'invisible': [('provider', '!=', 'azure')]}"/>
+                                <a href="https://platform.openai.com/docs/introduction" title="OpenAI Document" class="o_doc_link" target="_blank" invisible="provider != 'openai'"/>
+                                <a href="https://learn.microsoft.com/zh-cn/azure/ai-services/openai/how-to/chatgpt" title="Azure AI Document" class="o_doc_link" target="_blank" invisible="provider != 'openai'"/>
                             </div>
                             <field name="max_tokens"/>
                             <field name="engine"/>
@@ -118,7 +116,7 @@
                         </group>
                         <group>
                             <field name="is_filtering"/>
-                            <field name="sensitive_words" attrs="{'invisible': [('is_filtering', '=', False)]}"/>
+                            <field name="sensitive_words" invisible="not is_filtering"/>
                         </group>
                     </group>
                 </sheet>

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import openai.openai_object
+# import openai.openai_object
+import openai
 import requests, json
 import openai
 import base64
@@ -173,7 +174,7 @@ GPT-3	A set of models that can understand and generate natural language
     
     def get_ai_post(self, res, author_id=False, answer_id=False, param={}):
         # hook，高级版要替代
-        if res and author_id and isinstance(res, openai.openai_object.OpenAIObject) or isinstance(res, list) or isinstance(res, dict):
+        if res and author_id and type(res) == openai.Completion or isinstance(res, list) or isinstance(res, dict):
             # 返回是个对象，那么就是ai
             # if isinstance(res, dict):
             if self.provider == 'openai':
