@@ -80,6 +80,9 @@ class ResConfigSettings(models.TransientModel):
 
     # 清数据，o=对象, s=序列 
     def remove_app_data(self, o, s=[]):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
+        
         for line in o:
             # 检查是否存在
             try:
@@ -154,6 +157,9 @@ class ResConfigSettings(models.TransientModel):
         return self.remove_app_data(to_removes, seqs)
 
     def remove_pos(self):
+
+        if not self._app_check_sys_op():
+            return False
         to_removes = [
             # 清除POS单据
             'pos.payment',
