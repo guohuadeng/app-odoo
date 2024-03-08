@@ -68,15 +68,18 @@ class ResConfigSettings(models.TransientModel):
     app_doc_root_url = fields.Char('Help of topic domain', config_parameter='app_doc_root_url', default='https://odooai.cn')
 
     @api.model
-    def set_module_url(self, rec=None):
+    def set_module_url(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         config_parameter = self.env['ir.config_parameter'].sudo()
         app_enterprise_url = config_parameter.get_param('app_enterprise_url', 'https://www.odooai.cn')
-        sql = "UPDATE ir_module_module SET website = '%s' WHERE license like '%s' and website <> ''" % (app_enterprise_url, 'OEEL%')
-        try:
-            self._cr.execute(sql)
-            self._cr.commit()
-        except Exception as e:
-            pass
+        modules = self.env['ir.module.module'].search([('license', 'like', 'OEEL%'), ('website', '!=', False)])
+        if modules:
+            sql = "UPDATE ir_module_module SET website = '%s' WHERE id IN %s" % (app_enterprise_url, tuple(modules.ids))
+            try:
+                self._cr.execute(sql)
+            except Exception as e:
+                pass
 
     # 清数据，o=对象, s=序列 
     def remove_app_data(self, o, s=[]):
