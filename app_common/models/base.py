@@ -52,6 +52,12 @@ EXCLU_FIELDS = [
 
 class Base(models.AbstractModel):
     _inherit = 'base'
+    
+    @api.model
+    def _app_check_sys_op(self):
+        if self.env.user.has_group('base.group_erp_manager'):
+            return True
+        return False
 
     @api.model
     def _get_normal_fields(self):
@@ -101,32 +107,50 @@ class Base(models.AbstractModel):
         return dt.astimezone(pytz_timezone).strftime(return_format)
 
     @api.model
-    def get_image_from_url(self, url):
+    def _get_image_from_url(self, url):
         # 返回这个图片的base64编码
+        if not self._app_check_sys_op():
+            return False
         return get_image_from_url(url)
 
     @api.model
-    def get_image_url2attachment(self, url, mimetype_list=None):
+    def _get_image_url2attachment(self, url, mimetype_list=None):
         # Todo: mimetype filter
+        if not self._app_check_sys_op():
+            return False
         image, file_name = get_image_url2attachment(url)
         if image and file_name:
-            attachment = self.env['ir.attachment'].create({
-                'datas': image,
-                'name': file_name,
-            })
-            return attachment
+            try:
+                attachment = self.env['ir.attachment'].create({
+                    'datas': image,
+                    'name': file_name,
+                    'website_id': False,
+                })
+                attachment.generate_access_token()
+                return attachment
+            except Exception as e:
+                _logger.error('get_image_url2attachment error: %s' % str(e))
+                return False
         else:
             return False
 
     @api.model
-    def get_image_base642attachment(self, data):
+    def _get_image_base642attachment(self, data):
+        if not self._app_check_sys_op():
+            return False
         image, file_name = get_image_base642attachment(data)
         if image and file_name:
-            attachment = self.env['ir.attachment'].create({
-                'datas': image,
-                'name': file_name,
-            })
-            return attachment
+            try:
+                attachment = self.env['ir.attachment'].create({
+                    'datas': image,
+                    'name': file_name,
+                    'website_id': False,
+                })
+                attachment.generate_access_token()
+                return attachment
+            except Exception as e:
+                _logger.error('get_image_base642attachment error: %s' % str(e))
+                return False
         else:
             return False
 
