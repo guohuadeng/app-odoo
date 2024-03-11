@@ -107,6 +107,8 @@ class ResConfigSettings(models.TransientModel):
         ir_config.set_param("app_ribbon_name", self.app_ribbon_name or "*odooai.cn")
 
     def set_module_url(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         sql = "UPDATE ir_module_module SET website = '%s' WHERE license like '%s' and website <> ''" % (self.app_enterprise_url, 'OEEL%')
         try:
             self._cr.execute(sql)
@@ -115,7 +117,9 @@ class ResConfigSettings(models.TransientModel):
             pass
 
     # 清数据，o=对象, s=序列 
-    def remove_app_data(self, o, s=[]):
+    def _remove_app_data(self, o, s=[]):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         for line in o:
             # 检查是否存在
             try:
@@ -167,7 +171,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'sale',
         ]
-        return self.remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_product(self):
         to_removes = [
@@ -178,7 +182,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'product.product',
         ]
-        return self.remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_product_attribute(self):
         to_removes = [
@@ -187,7 +191,7 @@ class ResConfigSettings(models.TransientModel):
             'product.attribute',
         ]
         seqs = []
-        return self.remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_pos(self):
         to_removes = [
@@ -200,12 +204,12 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'pos.',
         ]
-        res = self.remove_app_data(to_removes, seqs)
+        res = self._remove_app_data(to_removes, seqs)
 
         # 更新要关帐的值，因为 store=true 的计算字段要重置
 
         try:
-            statement = self.env['account.bank.statement'].sudo().search([])
+            statement = self.env['account.bank.statement'].search([])
             for s in statement:
                 s._end_balance()
         except Exception as e:
@@ -223,7 +227,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'purchase.',
         ]
-        return self.remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_expense(self):
         to_removes = [
@@ -236,7 +240,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'hr.expense.',
         ]
-        return self.remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_mrp(self):
         to_removes = [
@@ -255,7 +259,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'mrp.',
         ]
-        return self.remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_mrp_bom(self):
         to_removes = [
@@ -264,7 +268,7 @@ class ResConfigSettings(models.TransientModel):
             'mrp.bom',
         ]
         seqs = []
-        return self.remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_inventory(self):
         to_removes = [
@@ -293,7 +297,7 @@ class ResConfigSettings(models.TransientModel):
             'product.tracking.default',
             'WH/',
         ]
-        return self.remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_account(self):
         to_removes = [
@@ -313,7 +317,7 @@ class ResConfigSettings(models.TransientModel):
             'hr.expense.sheet',
             'account.move',
         ]
-        res = self.remove_app_data(to_removes, [])
+        res = self._remove_app_data(to_removes, [])
 
         # extra 更新序号
         domain = [
@@ -422,7 +426,7 @@ class ResConfigSettings(models.TransientModel):
             pass  # raise Warning(e)
 
         seqs = []
-        res = self.remove_app_data(to_removes, seqs)
+        res = self._remove_app_data(to_removes, seqs)
         self.env.company.write({'chart_template_id': False})
         return res
 
@@ -435,7 +439,7 @@ class ResConfigSettings(models.TransientModel):
             'project.project',
         ]
         seqs = []
-        return self.remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_quality(self):
         to_removes = [
@@ -454,7 +458,7 @@ class ResConfigSettings(models.TransientModel):
             'quality.alert',
             # 'quality.point',
         ]
-        return self.remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_quality_setting(self):
         to_removes = [
@@ -466,7 +470,7 @@ class ResConfigSettings(models.TransientModel):
             'quality.reason',
             'quality.tag',
         ]
-        return self.remove_app_data(to_removes)
+        return self._remove_app_data(to_removes)
 
     def remove_website(self):
         to_removes = [
@@ -487,7 +491,7 @@ class ResConfigSettings(models.TransientModel):
             # 'website',
         ]
         seqs = []
-        return self.remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_message(self):
         to_removes = [
@@ -497,7 +501,7 @@ class ResConfigSettings(models.TransientModel):
             'mail.activity',
         ]
         seqs = []
-        return self.remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_workflow(self):
         to_removes = [
@@ -506,7 +510,7 @@ class ResConfigSettings(models.TransientModel):
             'wkf.instance',
         ]
         seqs = []
-        return self.remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_all_biz(self):
         self.remove_account()
