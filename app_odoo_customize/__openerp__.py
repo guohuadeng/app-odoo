@@ -16,7 +16,7 @@
 # description:
 {
     'name': 'Customize odoo OEM (Boost, My Odoo)',
-    'version': '10.20.03.04',
+    'version': '10.24.03.11',
     'author': '广州欧度智能',
     'category': 'Productivity',
     'website': 'http://www.sunpop.cn',

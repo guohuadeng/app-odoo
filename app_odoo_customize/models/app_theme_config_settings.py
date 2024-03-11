@@ -2,7 +2,8 @@
 
 import logging
 
-from openerp import api, fields, models, _
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 
@@ -41,6 +42,13 @@ class AppThemeConfigSettings(models.TransientModel):
         string='Favicon mimetype',
         help='Set the mimetype of your file.')
 
+
+    @api.model
+    def _app_check_sys_op(self):
+        if self.env.user.has_group('base.group_erp_manager'):
+            return True
+        return False
+    
     @api.model
     def get_default_all(self, fields):
         ir_config = self.env['ir.config_parameter']
@@ -115,6 +123,8 @@ class AppThemeConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_sales(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除销售单据
             ['sale.order.line', ],
@@ -140,6 +150,8 @@ class AppThemeConfigSettings(models.TransientModel):
         return True
 
     def remove_product(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除产品数据
             ['product.product', ],
@@ -165,6 +177,8 @@ class AppThemeConfigSettings(models.TransientModel):
         return True
 
     def remove_product_attribute(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除产品属性
             ['product.attribute.value', ],
@@ -183,6 +197,8 @@ class AppThemeConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_pos(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除POS单据
             ['pos.order.line', ],
@@ -209,6 +225,8 @@ class AppThemeConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_purchase(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除采购单据
             ['purchase.order.line', ],
@@ -237,6 +255,8 @@ class AppThemeConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_mrp(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除生产单据
             ['mrp.workcenter.productivity', ],
@@ -268,6 +288,8 @@ class AppThemeConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_mrp_bom(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除生产BOM
             ['mrp.bom.line', ],
@@ -286,6 +308,8 @@ class AppThemeConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_inventory(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除库存单据
             ['stock.quant', ],
@@ -354,6 +378,8 @@ class AppThemeConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_account(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除财务会计单据
             ['account.voucher.line', ],
@@ -419,6 +445,8 @@ class AppThemeConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_message(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除消息数据
             ['mail.message', ],
@@ -437,6 +465,8 @@ class AppThemeConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_workflow(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除工作流
             ['wkf.workitem', ],
