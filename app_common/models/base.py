@@ -107,7 +107,7 @@ class Base(models.AbstractModel):
         return dt.astimezone(pytz_timezone).strftime(return_format)
 
     @api.model
-    def get_image_from_url(self, url):
+    def _get_image_from_url(self, url):
         # 返回这个图片的base64编码
         if not self._app_check_sys_op():
             return False
