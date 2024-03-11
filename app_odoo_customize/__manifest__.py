@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo Tweak,Boost,Customize,Ai All in One. Customize,UI,Boost,Security,Data,Development Enhance',
-    'version': '13.23.12.28',
+    'version': '13.24.03.11',
     'author': 'odooai.cn',
     'category': 'Productivity',
     'website': 'https://www.odooai.cn',

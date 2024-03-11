@@ -33,7 +33,7 @@
 
 {
     'name': "odooai Odooapp Common Func",
-    'version': '13.22.08.21',
+    'version': '13.24.03.11',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
