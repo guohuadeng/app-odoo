@@ -160,7 +160,6 @@ class ResConfigSettings(models.TransientModel):
         return self._remove_app_data(to_removes, seqs)
 
     def remove_pos(self):
-
         if not self._app_check_sys_op():
             return False
         to_removes = [
@@ -178,7 +177,7 @@ class ResConfigSettings(models.TransientModel):
         # 更新要关帐的值，因为 store=true 的计算字段要重置
 
         try:
-            statement = self.env['account.bank.statement'].sudo().search([])
+            statement = self.env['account.bank.statement'].search([])
             for s in statement:
                 s._end_balance()
         except Exception as e:
@@ -527,7 +526,7 @@ class ResConfigSettings(models.TransientModel):
         return True
 
     def action_set_app_doc_root_to_my(self):
-        base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        base_url = self.env['ir.config_parameter'].get_param('web.base.url')
         self.app_doc_root_url = base_url
 
     # def action_set_all_to_app_doc_root_url(self):
