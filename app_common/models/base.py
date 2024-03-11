@@ -114,7 +114,7 @@ class Base(models.AbstractModel):
         return get_image_from_url(url)
 
     @api.model
-    def get_image_url2attachment(self, url, mimetype_list=None):
+    def _get_image_url2attachment(self, url, mimetype_list=None):
         # Todo: mimetype filter
         if not self._app_check_sys_op():
             return False
@@ -135,7 +135,7 @@ class Base(models.AbstractModel):
             return False
 
     @api.model
-    def get_image_base642attachment(self, data):
+    def _get_image_base642attachment(self, data):
         if not self._app_check_sys_op():
             return False
         image, file_name = get_image_base642attachment(data)
