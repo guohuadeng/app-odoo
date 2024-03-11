@@ -131,7 +131,7 @@
     'images': ['static/description/banner.gif'],
     'depends': [
         'base_setup',
-        'web',
+        'portal',
         'mail',
         # 'iap',
         # 'digest',
