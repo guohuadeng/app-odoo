@@ -52,6 +52,12 @@ class Base(models.AbstractModel):
     _inherit = 'base'
 
     @api.model
+    def _app_check_sys_op(self):
+        if self.env.user.has_group('base.group_erp_manager'):
+            return True
+        return False
+
+    @api.model
     def _get_normal_fields(self):
         f_list = []
         for k, v in self._fields.items():
@@ -100,6 +106,8 @@ class Base(models.AbstractModel):
 
     @api.model
     def get_image_from_url(self, url):
+        if not self._app_check_sys_op():
+            return False
         if not url:
             return None
         try:
