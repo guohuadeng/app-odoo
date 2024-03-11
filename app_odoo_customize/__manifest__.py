@@ -69,7 +69,6 @@ The user can get the help document just by one click.
         'web',
         'mail',
         'web_settings_dashboard',
-        'iap',
         # 'digest',
         # when enterprise
         # 'web_mobile'
