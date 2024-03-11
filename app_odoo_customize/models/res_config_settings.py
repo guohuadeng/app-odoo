@@ -3,6 +3,7 @@
 import logging
 
 from odoo import api, fields, models, _
+from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 
@@ -33,6 +34,13 @@ class ResConfigSettings(models.TransientModel):
     app_account_url = fields.Char('My Odoo.com Account Url')
     app_enterprise_url = fields.Char('Customize Module Url(eg. Enterprise)')
 
+
+    @api.model
+    def _app_check_sys_op(self):
+        if self.env.user.has_group('base.group_erp_manager'):
+            return True
+        return False
+    
     @api.model
     def get_values(self):
         res = super(ResConfigSettings, self).get_values()
@@ -83,7 +91,7 @@ class ResConfigSettings(models.TransientModel):
     @api.multi
     def set_values(self):
         super(ResConfigSettings, self).set_values()
-        ir_config = self.env['ir.config_parameter'].sudo()
+        ir_config = self.env['ir.config_parameter']
         ir_config.set_param("app_system_name", self.app_system_name or "")
         ir_config.set_param("app_show_lang", self.app_show_lang or "False")
         ir_config.set_param("app_show_debug", self.app_show_debug or "False")
@@ -106,6 +114,8 @@ class ResConfigSettings(models.TransientModel):
         ir_config.set_param("app_enterprise_url", self.app_enterprise_url or "https://www.odooai.cn")
 
     def set_module_url(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         sql = "UPDATE ir_module_module SET website = '%s' WHERE license like '%s' and website <> ''" % (self.app_enterprise_url, 'OEEL%')
         try:
             self._cr.execute(sql)
@@ -113,6 +123,10 @@ class ResConfigSettings(models.TransientModel):
             pass
 
     def remove_sales(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除销售单据
             ['sale.order.line', ],
@@ -144,6 +158,8 @@ class ResConfigSettings(models.TransientModel):
         return True
 
     def remove_product(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除产品数据
             ['product.product', ],
@@ -167,6 +183,8 @@ class ResConfigSettings(models.TransientModel):
         return True
 
     def remove_product_attribute(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除产品属性
             ['product.attribute.value', ],
@@ -185,6 +203,8 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_pos(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除POS单据
             ['pos.order.line', ],
@@ -214,6 +234,8 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_purchase(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除采购单据
             ['purchase.order.line', ],
@@ -244,32 +266,8 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_expense(self):
-        to_removes = [
-            # 清除采购单据
-            ['hr.expense.sheet', ],
-            ['hr.expense', ],
-        ]
-        try:
-            for line in to_removes:
-                obj_name = line[0]
-                obj = self.pool.get(obj_name)
-                if obj:
-                    sql = "delete from %s" % obj._table
-                    self._cr.execute(sql)
-            # 更新序号
-            seqs = self.env['ir.sequence'].search([
-                ('code', '=', 'hr.expense.invoice')])
-            for seq in seqs:
-                seq.write({
-                    'number_next': 1,
-                })
-            self._cr.execute(sql)
-        except Exception as e:
-            pass  # raise Warning(e)
-        return True
-
-    @api.multi
-    def remove_expense(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除
             ['hr.expense.sheet', ],
@@ -298,6 +296,8 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_mrp(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除生产单据
             ['mrp.workcenter.productivity', ],
@@ -333,6 +333,8 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_mrp_bom(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除生产BOM
             ['mrp.bom.line', ],
@@ -351,6 +353,8 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_inventory(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除库存单据
             ['stock.quant', ],
@@ -402,6 +406,8 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_account(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除财务会计单据
             ['account.voucher.line', ],
@@ -452,6 +458,8 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_account_chart(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除财务科目，用于重设
             ['res.partner.bank', ],
@@ -530,6 +538,8 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_project(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除项目
             ['account.analytic.line', ],
@@ -551,6 +561,8 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_website(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除网站数据，w, w_blog
             ['blog.tag.category', ],
@@ -579,6 +591,8 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_message(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除消息数据
             ['mail.message', ],
@@ -597,6 +611,8 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_workflow(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         to_removes = [
             # 清除工作流
             ['wkf.workitem', ],
@@ -616,6 +632,8 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def remove_all_biz(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
         try:
             self.remove_account()
             self.remove_inventory()

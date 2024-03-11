@@ -23,7 +23,7 @@
 
 {
     'name': 'Customize odoo OEM (Boost, My Odoo)',
-    'version': '12.22.03.01',
+    'version': '12.24.03.11',
     'author': 'odooai.cn',
     'category': 'Productivity',
     'website': 'https://www.odooai.cn',
@@ -80,7 +80,6 @@
         'web',
         'mail',
         'web_settings_dashboard',
-        'iap',
         # 'digest',
         # when enterprise
         # 'web_mobile'
