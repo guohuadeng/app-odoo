@@ -15,7 +15,7 @@ class BlogBlog(models.Model):
 
     def action_view_blog_post(self):
         self.ensure_one()
-        action = self.env.ref('website_blog.action_blog_post').read()[0]
+        action = self.env.ref('website_blog.action_blog_post').sudo().read()[0]
         action['domain'] = [('blog_id', '=', self.id)]
         return action
 

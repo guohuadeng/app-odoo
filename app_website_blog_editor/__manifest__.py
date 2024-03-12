@@ -39,7 +39,7 @@
 
 {
     'name': "Website Blogs,Page Editor in source code. mass edit blog and page.Odoo网页与博文源码编辑器",
-    'version': '16.23.10.31',
+    'version': '16.24.03.12',
     'author': 'odooai.cn',
     'category': 'Website',
     'website': 'https://www.odooai.cn',
