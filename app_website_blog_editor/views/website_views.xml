@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="app_view_website_tree" model="ir.ui.view">
+            <field name="name">app.website.tree</field>
+            <field name="model">website</field>
+            <field name="inherit_id" ref="website.view_website_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_lang_id']" position="after">
+                    <field name="language_ids" optional="hide" widget="many2many_tags"/>
+                </xpath>
+                <xpath expr="//field[@name='theme_id']" position="after">
+                    <field name="cdn_activated" optional="hide" widget="boolean_toggle"/>
+                    <field name="cdn_url" optional="hide"/>
+                </xpath>
+                <xpath expr="//field[@name='default_lang_id']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                </xpath>
+                <xpath expr="//field[@name='theme_id']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="app_view_website_form" model="ir.ui.view">
+            <field name="name">app.website.form</field>
+            <field name="model">website</field>
+            <field name="inherit_id" ref="website.view_website_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='language_count']" position="before">
+                    <field name="cdn_activated" widget="boolean_toggle"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -45,7 +45,7 @@
     5. Add grid line form list view. Easy to read list data.</li>
     为表格list增加行列分隔线，易于看数据。
     11. Multi-language Support. Multi-Company Support.
-    12. Support Odoo 16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    12. Support Odoo 17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
     ==========
     1.
