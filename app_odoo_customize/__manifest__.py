@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo17 Tweak,Ai Employee,Boost,Customize All in One. Customize,UI,Boost,Security,Data,Development Enhance',
-    'version': '24.03.12',
+    'version': '24.03.13',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
@@ -137,6 +137,7 @@
     45. Add addons path info to module.
     46. Add Help documentation anywhere.  easy get help for any odoo operation or action.
     47. Add ai robot app integration. Use Ai as your employee.
+    48. Add menu debug information of action and xml id.
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -190,5 +191,7 @@
     44. 可配置停用自动用户订阅功能，这会提速odoo，减少资源消耗
     45. 为应用模块增加模块路径信息
     46. 增加快速帮助文档，可以在任意操作中获取相关的 odoo 帮助.
+    47. 增加 Ai 如 ChatGpt 或百度ai的快速安装选项.
+    48. 增加菜单Debug功能.
     """,
 }
