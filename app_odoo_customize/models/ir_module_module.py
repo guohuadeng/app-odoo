@@ -58,7 +58,7 @@ class IrModule(models.Model):
 
     def button_get_po(self):
         self.ensure_one()
-        action = self.env.ref('app_odoo_customize.action_server_module_multi_get_po').read()[0]
+        action = self.env.ref('app_odoo_customize.action_server_module_multi_get_po').sudo().read()[0]
         action['context'].update({
                 'default_lang': self.env.user.lang,
             })
