@@ -39,7 +39,7 @@
 
 {
     'name': "Website Product Editor in Backend",
-    'version': '24.03.12',
+    'version': '24.03.15',
     'author': 'odooai.cn',
     'category': 'Website',
     'website': 'https://www.odooai.cn',
