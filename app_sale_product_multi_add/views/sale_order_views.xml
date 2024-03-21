@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+
+        <!-- sale,Inherit Form View to Modify it -->
+        <record id="app_view_order_form" model="ir.ui.view">
+            <field name="name">app.sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page/field[@name='order_line']/tree/control" position="inside">
+                    <create name="multi_add_line" string="Multi add product" context="{
+                        'pro_multi_add': True,
+                        'pro_res_model': 'product.product',
+                        'pro_res_field': 'product_id',
+                        }"/>
+<!--                    <create name="single_add_line" string="Advance Add" context="{-->
+<!--                    'pro_single_add': True,-->
+<!--                    }"/>-->
+                </xpath>
+            </field>
+        </record>
+  </data>
+</odoo>
