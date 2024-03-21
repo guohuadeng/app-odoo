@@ -10,6 +10,8 @@
     "license": "AGPL-3",
     "category": "Web",
     "summary": "Remove the bubbles from the web interface",
+    "price": 0.00,
+    "currency": "EUR",
     "depends": ["web"],
     "data": ["views/web_no_bubble.xml"],
     "installable": True,
