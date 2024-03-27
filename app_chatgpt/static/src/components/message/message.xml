@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
     <t t-name="app_chatgpt.Message" t-inherit="mail.Message" t-inherit-mode="extension">
-        <xpath expr="//Composer[@composer='message.composer']" position="after">
-            <div t-if="state.isEditing" name="bottom_operation" class="position-relative mt-8">
+        <xpath expr="//t[@t-if='showSubtypeDescription']" position="after">
+<!--            <p>gpt xml测试：<t t-esc="message.ai_completion_tokens"/></p>-->
+            <div t-if="!state.isEditing" name="bottom_operation" class="position-relative mt-8">
                 <div t-if="message.human_prompt_tokens &gt; 0 or message.ai_completion_tokens &gt;0"
                      class="o_Message_token text-muted" style="float:left;display:inline;font-size: 13px;">
                     <br/>
@@ -13,6 +14,24 @@
                         /
                         <t t-esc="message.ai_completion_tokens"/>
                     </span>
+                </div>
+<!--                直接将btn处理方法置于此-->
+                <div name="action_btn" style="padding:40px 5px 0px 5px;float:right;">
+                    <div class="position-relative" style="padding:0px 5px;height:20px;display:inline-block;">
+                        <button t-on-click="copy" class="btn d-flex p-0 rounded-1">
+                            <i class="o_MessageView_btn fa fa-copy o_MessageActionView_actionCopy"/>
+                        </button>
+                    </div>
+                    <div class="position-relative" style="padding:0px 5px;height:20px;display:inline-block;">
+                        <button t-on-click="onClickMarkAsGood" class="btn d-flex p-0 rounded-1">
+                            <i class="o_MessageView_btn fa fa-thumbs-up"/>
+                        </button>
+                    </div>
+                    <div class="position-relative" style="padding:0px 0px 0px 5px;height:20px;display:inline-block;">
+                        <button t-on-click="onClickMarkAsBad" class="btn d-flex p-0 rounded-1">
+                            <i class="o_MessageView_btn fa fa-thumbs-down"/>
+                        </button>
+                    </div>
                 </div>
             </div>
         </xpath>

@@ -21,9 +21,8 @@ class Message(models.Model):
             # 处理反馈
             pass
 
-    def message_format(self, format_reply=True):
-        message_values = super(Message, self).message_format(format_reply=format_reply)
-
+    def message_format(self, format_reply=True, msg_vals=None):
+        message_values = super(Message, self).message_format(format_reply=format_reply, msg_vals=msg_vals)
         for message in message_values:
             message_sudo = self.browse(message['id']).sudo().with_prefetch(self.ids)
             message['human_prompt_tokens'] = message_sudo.human_prompt_tokens

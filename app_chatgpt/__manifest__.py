@@ -10,7 +10,7 @@
 
 {
     'name': 'ChatGPT4, China Ali,AiGC Center.Ai服务中心，聚合全网Ai',
-    'version': '24.03.06',
+    'version': '24.03.28',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
     'maintainer': 'odooai.cn',
@@ -63,13 +63,9 @@
         'views/discuss_channel_views.xml',
     ],
     'assets': {
-        'mail.assets_messaging': [
-            'app_chatgpt/static/src/models/message.js',
-        ],
-        'mail.assets_model_data': [
-            'app_chatgpt/static/src/models_data/*.js',
-        ],
         'web.assets_backend': [
+            'app_chatgpt/static/src/models/message_model.js',
+            'app_chatgpt/static/src/components/message/message.js',
             'app_chatgpt/static/src/components/*/*.xml',
         ],
     },
