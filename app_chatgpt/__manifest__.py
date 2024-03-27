@@ -64,7 +64,7 @@
     ],
     'assets': {
         'mail.assets_messaging': [
-            'app_chatgpt/static/src/models/*.js',
+            'app_chatgpt/static/src/models/message.js',
         ],
         'mail.assets_model_data': [
             'app_chatgpt/static/src/models_data/*.js',
