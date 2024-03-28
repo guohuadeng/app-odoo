@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# import openai.openai_object
-import openai
+from openai import OpenAI
+from openai import AzureOpenAI
 import requests, json
-import openai
 import base64
 
 from odoo import api, fields, models, modules, tools, _
@@ -174,7 +173,8 @@ GPT-3	A set of models that can understand and generate natural language
     
     def get_ai_post(self, res, author_id=False, answer_id=False, param={}):
         # hook，高级版要替代
-        if res and author_id and type(res) == openai.Completion or isinstance(res, list) or isinstance(res, dict):
+        if res and author_id or isinstance(res, list) or isinstance(res, dict):
+            # TODO: and type(res) == openai.Completion
             # 返回是个对象，那么就是ai
             # if isinstance(res, dict):
             if self.provider == 'openai':
@@ -256,8 +256,8 @@ GPT-3	A set of models that can understand and generate natural language
         # 以下处理 open ai
         if self.ai_model in ['gpt-3.5-turbo', 'gpt-3.5-turbo-0301']:
             # 基本与 azure 同，要处理 api_base
-            openai.api_key = self.openapi_api_key
-            openai.api_base = o_url.replace('/chat/completions', '')
+            # openai.api_key = self.openapi_api_key
+            # openai.api_base = o_url.replace('/chat/completions', '')
             if isinstance(data, list):
                 messages = data
             else:
@@ -324,7 +324,8 @@ GPT-3	A set of models that can understand and generate natural language
                 "presence_penalty": 0.1,
                 "stop": stop
             }
-            response = openai.ChatCompletion.create(
+            client = OpenAI(api_key=self.openapi_api_key)
+            response = client.chat.completions.create(
                 model=self.ai_model,
                 messages=data
             )
@@ -339,14 +340,12 @@ GPT-3	A set of models that can understand and generate natural language
     def get_azure(self, data, author_id, answer_id, param={}):
         self.ensure_one()
         # only for azure
-        openai.api_type = self.provider
         if not self.endpoint:
             raise UserError(_("Please Set your AI robot's endpoint first."))
-        openai.api_base = self.endpoint
+        
         if not self.api_version:
             raise UserError(_("Please Set your AI robot's API Version first."))
-        openai.api_version = self.api_version
-        openai.api_key = self.openapi_api_key
+        
         if self.stop:
             stop = self.stop.split(',')
         else:
@@ -370,8 +369,15 @@ GPT-3	A set of models that can understand and generate natural language
             if sys_content:
                 messages.insert(0, sys_content)
         #         暂时不变
-        response = openai.ChatCompletion.create(
-            engine=self.engine,
+        
+        client = AzureOpenAI(
+            api_version=self.api_version,
+            azure_endpoint=self.endpoint,
+            api_key=self.openapi_api_key,
+            timeout=request_timeout
+        )
+        response = client.chat.completions.create(
+            model=self.engine,
             messages=messages,
             # 返回的回答数量
             n=1,
@@ -381,10 +387,10 @@ GPT-3	A set of models that can understand and generate natural language
             frequency_penalty=frequency_penalty,
             presence_penalty=presence_penalty,
             stop=None,
-            request_timeout=request_timeout,
         )
-        if 'choices' in response:
-            return response
+        res = response.model_dump()
+        if 'choices' in res:
+            return res
         else:
             _logger.warning('=====================azure output data: %s' % response.json())
         return _("Response Timeout, please speak again.")
