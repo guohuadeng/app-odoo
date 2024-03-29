@@ -21,8 +21,8 @@ def app_quick_import(cr, content_path, sep=None):
     file_path = modules.get_module_resource(module_name, dir_split[1], file_name)
     content = open(file_path, 'rb').read()
     uid = SUPERUSER_ID
-    if model_name == 'mail.channel':
-        # todo: 创建mail.channel时，如果用root用户会报错
+    if model_name == 'discuss.channel':
+        # todo: 创建discuss.channel时，如果用root用户会报错
         uid = 2
     env = api.Environment(cr, uid, {})
     if file_type == '.csv':
