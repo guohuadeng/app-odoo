@@ -26,7 +26,7 @@
         <field name="provider">azure</field>
         <field name="endpoint">https://my.openai.azure.com</field>
         <field name="engine">gpt35</field>
-        <field name="api_version">2023-07-01-preview</field>
+        <field name="api_version">2024-02-15-preview</field>
         <field name="sequence">8</field>
         <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/chatgpt35_azure.png"/>
     </record>
@@ -36,7 +36,7 @@
         <field name="provider">azure</field>
         <field name="endpoint">https://my.openai.azure.com</field>
         <field name="engine">gpt4</field>
-        <field name="api_version">2023-07-01-preview</field>
+        <field name="api_version">2024-02-15-preview</field>
         <field name="sequence">9</field>
         <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/chatgpt4_azure.png"/>
     </record>
@@ -45,7 +45,7 @@
         <field name="provider">azure</field>
         <field name="endpoint">https://my.openai.azure.com</field>
         <field name="engine">gpt4-32k</field>
-        <field name="api_version">2023-07-01-preview</field>
+        <field name="api_version">2024-02-15-preview</field>
         <field name="sequence">10</field>
         <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/chatgpt4_azure.png"/>
     </record>
