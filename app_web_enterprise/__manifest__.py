@@ -30,6 +30,7 @@
     1. Add dropdown arrow to parent menu.
     2. Replace the odoo logo to your company logo in main menu.
     3. Alway show search in main menu.
+    4. Table and report UI enhance(Grid View).
     """,
     'description': """
     odoo enterprise version UI enhance.
@@ -42,8 +43,10 @@
     替换主菜单界面的logo为你公司的logo。
     4. Add underline for input field.
     在可编辑字段下方增加下划线，易于分辨。
-    5. Add grid line form list view. Easy to read list data.</li>
+    5. Add grid line form list view. Easy to read list data.
     为表格list增加行列分隔线，易于看数据。
+    6. Add grid line to Account Reports. Easy to view Data.
+    为财务报表增加行列分隔线，易于看数据及对账。
     11. Multi-language Support. Multi-Company Support.
     12. Support Odoo 16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.

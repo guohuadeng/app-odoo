@@ -96,6 +96,13 @@
   }
 }
 
+//    report
+.o_account_reports_page .o_account_reports_table {
+  .o_account_report_column_value tr > td.number {
+      border-left: 1px solid var(--AccountFinancial-border-color, #bbb);
+  }
+}
+
 //izi
 .izi_view {
   .izi_dashboard_filter_title span {
