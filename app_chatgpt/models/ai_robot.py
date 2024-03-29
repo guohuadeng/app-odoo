@@ -171,12 +171,15 @@ GPT-3	A set of models that can understand and generate natural language
         res_post, usage, is_ai = self.get_ai_post(res, author_id, answer_id, param)
         return res
     
-    def get_ai_post(self, res, author_id=False, answer_id=False, param={}):
+    def get_ai_post(self, res, author_id=False, answer_id=False, param=None):
         # hook，高级版要替代
-        if res and author_id or isinstance(res, list) or isinstance(res, dict):
-            # TODO: and type(res) == openai.Completion
-            # 返回是个对象，那么就是ai
-            # if isinstance(res, dict):
+        if param is None:
+            param = {}
+        if not res or not author_id or (not isinstance(res, list) and not isinstance(res, dict)):
+            return res, False, False
+        # 返回是个对象，那么就是ai
+        usage = content = data = None
+        try:
             if self.provider == 'openai':
                 # openai 格式处理
                 usage = res['usage']
@@ -184,15 +187,15 @@ GPT-3	A set of models that can understand and generate natural language
                 # _logger.warning('===========Ai响应:%s' % content)
             elif self.provider == 'azure':
                 # azure 格式
-                usage = json.loads(json.dumps(res['usage']))
-                content = json.loads(json.dumps(res['choices'][0]['message']['content']))
+                usage = res['usage']
+                content = res['choices'][0]['message']['content']
             else:
                 usage = False
                 content = res
             data = content.replace(' .', '.').strip()
             return data, usage, True
-        else:
-            # 直接返回错误语句，那么就是非ai
+        except Exception as e:
+            _logger.error('==========app_chatgpt get_ai_post Error: %s' % e)
             return res, False, False
     
     def get_ai_system(self, content=None):
