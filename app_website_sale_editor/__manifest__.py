@@ -39,7 +39,7 @@
 
 {
     'name': "Website Product Editor source code,SEO Editor.Odoo电商产品源码编辑器",
-    'version': '16.24.03.12',
+    'version': '16.24.04.01',
     'author': 'odooai.cn',
     'category': 'Website',
     'website': 'https://www.odooai.cn',
