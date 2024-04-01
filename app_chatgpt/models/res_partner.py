@@ -11,7 +11,7 @@ class ResPartner(models.Model):
     is_chat_private = fields.Boolean('Allow Chat Private', default=False)
 
     @api.model
-    def im_search(self, name, limit=20):
+    def im_search(self, name, limit=20, excluded_ids=None):
         users = self.env['res.users'].search([
             ('id', '!=', self.env.user.id),
             ('name', 'ilike', name),

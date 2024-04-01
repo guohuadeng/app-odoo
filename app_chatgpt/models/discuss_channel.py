@@ -312,10 +312,11 @@ class Channel(models.Model):
 
                     # if msg_len * 2 >= 8000:
                     # messages = [{"role": "user", "content": msg}]
-                if sync_config == 'sync':
-                    self.get_ai_response(ai, messages, channel, user_id, message)
-                else:
-                    self.with_delay().get_ai_response(ai, messages, channel, user_id, message)
+                self.get_ai_response(ai, messages, channel, user_id, message)
+                # if sync_config == 'sync':
+                #     self.get_ai_response(ai, messages, channel, user_id, message)
+                # else:
+                #     self.with_delay().get_ai_response(ai, messages, channel, user_id, message)
             except Exception as e:
                 raise UserError(_(e))
 
