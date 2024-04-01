@@ -66,7 +66,7 @@
     12. Support Odoo 17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
     ==========
-    程序员网站开发专用
+    程序员电商网站开发专用
     1. 快速电商产品页编辑，源码方式编辑网站产品内容
     2. 批量产品网页内容编辑
     3. 批量翻译网站页面，博客，产品信息。快速生成全球化网站，需要额外付费模块 app_ai_seo
