@@ -38,8 +38,8 @@
 ##############################################################################
 
 {
-    'name': "Website Product Editor in Backend",
-    'version': '24.03.15',
+    'name': "Website Product Editor source code,SEO Editor.Odoo电商产品源码编辑器",
+    'version': '24.04.01',
     'author': 'odooai.cn',
     'category': 'Website',
     'website': 'https://www.odooai.cn',
@@ -53,20 +53,26 @@
         'website_sale',
     ],
     'summary': '''
-    Odoo App of odooai.cn
+    Edit odoo Product website description in source code.Make developer to easy build website.
+    Quick seo website product sale page. mass edit page and blog. Website Product SEO editor.
     ''',
-    'description': '''    
-    Support Odoo 17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition
-    1. 
-    2. 
+    'description': '''
+    Make developer to easy build e-commerce website.
+    1. Edit website product page in source code mode. Edit Product Category Page.
+    2. Mass edit website product page seo like title, description, keyword etc..
+    3. Mass translate website page, website blog, website product to any language. this need extra pay for app_ai_seo
+    4. Easy mass seo builder. Use AI to edit website. mass setup seo. this need extra pay for app_ai_seo
     11. Multi-language Support. Multi-Company Support.
     12. Support Odoo 17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
     ==========
-    1. 
-    2. 
+    程序员网站开发专用
+    1. 快速电商产品页编辑，源码方式编辑网站产品内容
+    2. 批量产品网页内容编辑
+    3. 批量翻译网站页面，博客，产品信息。快速生成全球化网站，需要额外付费模块 app_ai_seo
+    4. 批量SEO，提升网站排名。使用Ai编辑及优化网站，需要额外付费模块 app_ai_seo
     11. 多语言支持，多公司支持
-    12. Odoo 16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    12. Odoo 17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
     13. 代码完全开源
     ''',
     'data': [
