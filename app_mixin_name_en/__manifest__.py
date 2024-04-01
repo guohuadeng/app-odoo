@@ -55,18 +55,18 @@
     Default country, timezone, currency, partner... 
     ''',
     'description': '''    
-    Support Odoo 16,15,14,13,12, Enterprise and Community and odoo.sh Edition
+    Support Odoo 17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition
     1. 
     2. 
     11. Multi-language Support. Multi-Company Support.
-    12. Support Odoo 16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    12. Support Odoo 17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
     ==========    
     odoo Chinese Enhance. 中国化增强-基础
     1. mixin, 增加英文名字段, 自动设定lang=en_US的名称为英文名  
     2. 
     11. 多语言支持，多公司支持
-    12. Odoo 16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    12. Odoo 17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
     13. 代码完全开源
     ''',
     'depends': [
