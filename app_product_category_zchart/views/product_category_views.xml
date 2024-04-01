@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_product_category_form_view" model="ir.ui.view">
+        <field name="name">app.product.category.form</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='oe_button_box']" position="after">
+                <div id="o_node_container">
+                    <div id="o_node_main">
+                        <span id="add_title"/>
+                        <span id="add_group"/>
+                    </div>
+                    <div id="o_node_right">
+                        <field name="child_id" widget="ztree_chart" nolabel="1"/>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//span[@id='add_title']" position="after">
+                <xpath expr="//div[@class='oe_title']" position="move"/>
+            </xpath>
+            <xpath expr="//span[@id='add_group']" position="after">
+                <xpath expr="//group[1]" position="move"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
