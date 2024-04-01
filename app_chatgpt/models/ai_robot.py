@@ -35,7 +35,7 @@ class AiRobot(models.Model):
         ('code-davinci-002', 'Chatgpt 2 Code Optimized'),
         ('text-davinci-002', 'Chatgpt 2 Davinci'),
         ('dall-e2', 'Dall-E Image'),
-    ], default='gpt-3.5-turbo-0125',
+    ], default='gpt-4',
                                 help="""
 GPT-4: Can understand Image, generate natural language or code.
 GPT-3.5: A set of models that improve on GPT-3 and can understand as well as generate natural language or code
