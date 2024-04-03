@@ -23,7 +23,8 @@ class AiRobot(models.Model):
     # update ai_robot set ai_model=set_ai_model
     ai_model = fields.Char(string="AI Model", required=True, default='auto', help='Customize input')
     set_ai_model = fields.Selection(string="Quick Set Model", selection=[
-        ('gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0613(Default and Latest)'),
+        ('gpt-3.5-turbo-0125', 'gpt-3.5-turbo-0125(Default and Latest)'),
+        ('gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0613'),
         ('gpt-3.5-turbo-16k-0613', 'gpt-3.5-turbo-16k-0613(Big text)'),
         ('gpt-4', 'Chatgpt 4'),
         ('gpt-4-32k', 'Chatgpt 4 32k'),
@@ -33,7 +34,7 @@ class AiRobot(models.Model):
         ('code-davinci-002', 'Chatgpt 2 Code Optimized'),
         ('text-davinci-002', 'Chatgpt 2 Davinci'),
         ('dall-e2', 'Dall-E Image'),
-    ], default='gpt-3.5-turbo-0613',
+    ], default='gpt-3.5-turbo-0125',
                                 help="""
 GPT-4: Can understand Image, generate natural language or code.
 GPT-3.5: A set of models that improve on GPT-3 and can understand as well as generate natural language or code

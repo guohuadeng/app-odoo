@@ -9,6 +9,7 @@
                 <field name="name"/>
                 <field name="provider" optional="hide"/>
                 <field name="ai_model" optional="show"/>
+                <field name="api_version" optional="hide"/>
                 <field name="openapi_api_key" password="True"/>
                 <field name="max_tokens" optional="show"/>
                 <field name="temperature"/>
