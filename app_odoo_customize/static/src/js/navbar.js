@@ -9,7 +9,8 @@ import {qweb} from 'web.core';
 patch(NavBar.components.MenuDropdown.prototype, 'app_odoo_customize/static/src/js/menu_dropdown.js', {
     setup() {
         this._super();
-        useEffect(() => this.addDebugTooltip());
+        //todo:  鼠标移开要不显示，当前太妨碍
+        // useEffect(() => this.addDebugTooltip());
     },
     addDebugTooltip() {
         if (config.isDebug()) {
@@ -53,7 +54,8 @@ NavBar.components.MenuDropdown.props.payload = {
 patch(NavBar.components.DropdownItem.prototype, 'app_odoo_customize/static/src/js/menu_item.js', {
     setup() {
         this._super();
-        useEffect(() => this.addDebugTooltip());
+        //todo:  鼠标移开要不显示，当前太妨碍
+        // useEffect(() => this.addDebugTooltip());
     },
     addDebugTooltip() {
         if (config.isDebug()) {
@@ -84,6 +86,7 @@ patch(NavBar.components.DropdownItem.prototype, 'app_odoo_customize/static/src/j
         };
     }
 })
+
 NavBar.components.DropdownItem.props.payload = {
     type: Object,
     optional: true,
