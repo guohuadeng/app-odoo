@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api, _
-from odoo.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
-from odoo.http import request
 
 import requests
 import base64
 from io import BytesIO
 import uuid
-
+from PIL import Image
 from datetime import date, datetime, time
 import pytz
 
 import logging
+
+from odoo import models, fields, api, _
+from odoo.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
+from odoo.http import request
 
 _logger = logging.getLogger(__name__)
 
@@ -188,11 +189,16 @@ def get_image_base642attachment(data):
         return None
     try:
         image_data = data.split(',')[1]
-        file_name = str(uuid.uuid4()) + '.png'
-        return image_data, file_name
+        img = Image.open(BytesIO(base64.b64decode(image_data)))
+        img = img.convert('RGB')
+        output = BytesIO()
+        img.save(output, format='JPEG')
+        file_name = str(uuid.uuid4()) + '.jpeg'
+        jpeg_data = output.getvalue()
+        jpeg_base64 = base64.b64encode(jpeg_data)
+        return jpeg_base64, file_name
     except Exception as e:
         return None, None
-
 
 def get_ua_type():
     ua = request.httprequest.headers.get('User-Agent')
