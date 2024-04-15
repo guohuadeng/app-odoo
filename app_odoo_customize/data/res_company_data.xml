@@ -4,7 +4,6 @@
         <!-- 创建数据库时首个公司信息 -->
         <record id="base.main_company" model="res.company">
             <field name="website">https://www.odooai.cn</field>
-            <field name="logo" type="base64" file="app_odoo_customize/static/src/img/logo_odooai.png"/>
         </record>
 	</data>
 </odoo>

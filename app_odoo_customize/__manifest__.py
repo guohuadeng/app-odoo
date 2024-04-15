@@ -23,7 +23,7 @@
 
 {
     'name': 'Customize odoo OEM (Boost, My Odoo)',
-    'version': '12.24.03.11',
+    'version': '12.24.04.15',
     'author': 'odooai.cn',
     'category': 'Productivity',
     'website': 'https://www.odooai.cn',
