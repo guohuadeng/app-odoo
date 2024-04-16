@@ -87,7 +87,7 @@ msgstr "网页"
 #. module: app_website_blog_editor
 #: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_view_blog_post_search
 msgid "Published"
-msgstr "发表"
+msgstr "已发布"
 
 #. module: app_website_blog_editor
 #: model:ir.model.fields,field_description:app_website_blog_editor.field_blog_blog__seo_name
