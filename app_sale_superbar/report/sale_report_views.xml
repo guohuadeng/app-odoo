@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="sale.view_order_product_search"/>
             <field name="arch" type="xml">
                 <xpath expr="//search" position="inside">
-                    <searchpanel view_types="tree,kanban,pivot,graph">
+                    <searchpanel view_types="list,kanban,pivot,graph">
                         <field name="team_id"/>
                         <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     </searchpanel>
