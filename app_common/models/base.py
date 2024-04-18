@@ -128,6 +128,7 @@ class Base(models.AbstractModel):
                     'website_id': False,
                     'res_model': self._name,
                     'res_id': self.id,
+                    'public': True,
                 })
                 attachment.generate_access_token()
                 return attachment
@@ -150,11 +151,35 @@ class Base(models.AbstractModel):
                     'website_id': False,
                     'res_model': self._name,
                     'res_id': self.id,
+                    'public': True,
                 })
                 attachment.generate_access_token()
                 return attachment
             except Exception as e:
                 _logger.error('get_image_base642attachment error: %s' % str(e))
+                return False
+        else:
+            return False
+        
+    @api.model
+    def _get_video_url2attachment(self, url):
+        if not self._app_check_sys_op():
+            return False
+        video, file_name = get_video_url2attachment(url)
+        if video and file_name:
+            try:
+                attachment = self.env['ir.attachment'].create({
+                    'datas': video,
+                    'name': file_name,
+                    'website_id': False,
+                    'res_model': self._name,
+                    'res_id': self.id,
+                    'public': True,
+                })
+                attachment.generate_access_token()
+                return attachment
+            except Exception as e:
+                _logger.error('get_video_url2attachment error: %s' % str(e))
                 return False
         else:
             return False
@@ -203,6 +228,21 @@ def get_image_base642attachment(data):
         return jpeg_base64, file_name
     except Exception as e:
         return None, None
+    
+def get_video_url2attachment(url):
+    if not url:
+        return None
+    try:
+        if url.startswith('//'):
+            url = 'https:%s' % url
+        response = requests.get(url, timeout=90)
+        video_content = response.content
+    except Exception as e:
+        return None, None
+    # return this video in base64
+    base64_video = base64.b64encode(video_content)
+    file_name = url.split('/')[-1]
+    return base64_video, file_name
 
 def get_ua_type():
     ua = request.httprequest.headers.get('User-Agent')
