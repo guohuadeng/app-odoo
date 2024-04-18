@@ -125,6 +125,8 @@ class Base(models.AbstractModel):
                     'datas': image,
                     'name': file_name,
                     'website_id': False,
+                    'res_model': self._name,
+                    'res_id': self.id,
                 })
                 attachment.generate_access_token()
                 return attachment
@@ -145,6 +147,8 @@ class Base(models.AbstractModel):
                     'datas': image,
                     'name': file_name,
                     'website_id': False,
+                    'res_model': self._name,
+                    'res_id': self.id,
                 })
                 attachment.generate_access_token()
                 return attachment
