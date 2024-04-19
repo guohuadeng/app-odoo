@@ -714,13 +714,13 @@ msgstr "Ai用户"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
-msgid "Ai常规设定"
-msgstr ""
+msgid "Ai Parameter"
+msgstr "Ai常规设定"
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
-msgid "Ai智能优化设定，具体参数"
-msgstr ""
+msgid "Ai Response Config"
+msgstr "Ai智能优化设定，具体参数"
 
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__res_users__gpt_policy__all
@@ -27824,8 +27824,8 @@ msgstr ""
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
-msgid "用户设定的角色相关，一般不要调整"
-msgstr ""
+msgid "Ai Config(Default value is prefer)"
+msgstr "用户设定的角色相关，一般不要调整"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_res_config_settings__openapi_context_timeout

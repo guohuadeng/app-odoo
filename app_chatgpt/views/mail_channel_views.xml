@@ -22,9 +22,9 @@
             <field name="inherit_id" ref="mail.mail_channel_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='privacy']" position="before">
-                    <page name="page_user" string="用户设定的角色相关，一般不要调整">
+                    <page name="page_user" string="Ai Config(Default value is prefer)">
                         <group>
-                            <group name="role_set" string="Ai常规设定">
+                            <group name="role_set" string="Ai Parameter">
                                 <field name="channel_type" readonly="1"/>
                                 <field name="ai_partner_id"
                                        options="{'no_open': True, 'no_create': True}"/>
@@ -63,7 +63,7 @@
                     </page>
                 </xpath>
                 <xpath expr="//field[@name='group_public_id']/.." position="after">
-                    <group string="Ai智能优化设定，具体参数">
+                    <group string="Ai Response Config">
                         <field name="chat_count"/>
                         <p class="ml16 my-n1 mb16" colspan="2">0-3，设定后，会将最近n次对话发给Ai，有助于他更好的回答</p>
                         <field name="max_tokens"/>
