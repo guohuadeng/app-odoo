@@ -155,17 +155,17 @@ msgid "0-1，值越大越倾向大众化的连贯思维"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_form
 msgid "0-1，值越大越富有想像力，越小则越保守"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_form
 msgid "0-1，值越大越少使用常用词"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_form
 msgid "0-1，值越大越少重复词"
 msgstr ""
 
@@ -175,7 +175,7 @@ msgid "0-21，值越大越富有想像力，越小则越保守"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_form
 msgid "0-3，设定后，会将最近n次对话发给Ai，有助于他更好的回答"
 msgstr ""
 
@@ -582,7 +582,7 @@ msgid "<div class=\"o_mail_notification\">joined the channel</div>"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_kanban
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_kanban
 msgid "<em>角色:</em>"
 msgstr ""
 
@@ -690,7 +690,7 @@ msgid "Ai Auto"
 msgstr "Ai自动判断"
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_form
 msgid "Ai Character Set"
 msgstr "Ai角色风格设定"
 
@@ -713,14 +713,14 @@ msgid "Ai User"
 msgstr "Ai用户"
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
-msgid "Ai常规设定"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_form
+msgid "Ai Parameter"
+msgstr "Ai常规设定"
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
-msgid "Ai智能优化设定，具体参数"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_form
+msgid "Ai Response Config"
+msgstr "Ai智能优化设定，具体参数"
 
 #. module: app_chatgpt
 #: model:ir.model.fields.selection,name:app_chatgpt.selection__res_users__gpt_policy__all
@@ -920,7 +920,7 @@ msgid "Capricorn"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_search
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_search
 msgid "Channel Type"
 msgstr "频道类型"
 
@@ -962,7 +962,7 @@ msgid "ChatGPT4 Azure"
 msgstr ""
 
 #. module: app_chatgpt
-#: model:discuss.channel,description:app_chatgpt.channel_chatgpt
+#: model:mail.channel,description:app_chatgpt.channel_chatgpt
 msgid "ChatGPT话题"
 msgstr ""
 
@@ -1309,7 +1309,7 @@ msgid "Get Model Info"
 msgstr "获取Model Info"
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_search
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_search
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_search_view
 msgid "Group By"
 msgstr ""
@@ -27759,12 +27759,12 @@ msgid "是否当前用户默认频道"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_kanban
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_kanban
 msgid "智能设定"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_kanban
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_kanban
 msgid "暂时离开"
 msgstr ""
 
@@ -27774,7 +27774,7 @@ msgid "更多强调重复"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_form
 msgid "最大响应Token,控制返回内容长度"
 msgstr ""
 
@@ -27823,9 +27823,9 @@ msgid "理性"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_form
-msgid "用户设定的角色相关，一般不要调整"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_form
+msgid "Ai Config(Default value is prefer)"
+msgstr "用户设定的角色相关，一般不要调整"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_res_config_settings__openapi_context_timeout
@@ -27849,7 +27849,7 @@ msgid "跳跃性"
 msgstr ""
 
 #. module: app_chatgpt
-#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_mail_channel_view_kanban
+#: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_kanban
 msgid "进入频道"
 msgstr ""
 
