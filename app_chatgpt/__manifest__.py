@@ -10,7 +10,7 @@
 
 {
     'name': 'ChatGPT4, China Ali,AiGC Center.Ai服务中心，聚合全网Ai',
-    'version': '24.04.01',
+    'version': '24.04.19',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
     'maintainer': 'odooai.cn',
@@ -69,7 +69,7 @@
             'app_chatgpt/static/src/components/*/*.xml',
         ],
     },
-    'external_dependencies': {'python': ['openai']},
+    'external_dependencies': {'python': ['typing_extensions', 'openai']},
     'installable': True,
     'application': True,
     'auto_install': False,
