@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import openai
+import logging
 import requests, json
 import datetime
 # from transformers import TextDavinciTokenizer, TextDavinciModel
@@ -9,7 +10,7 @@ from odoo.exceptions import UserError
 from odoo.osv import expression
 from odoo.addons.app_common.models.base import get_ua_type
 
-import logging
+
 _logger = logging.getLogger(__name__)
 
 
@@ -249,7 +250,7 @@ class Channel(models.Model):
             msg = _("Please warmly welcome our new partner %s and send him the best wishes.") % message.author_id.name
         else:
             # 不能用 preview， 如果用 : 提示词则 preview信息丢失
-            plaintext_ct = tools.html_to_inner_content(message.body)
+            plaintext_ct = tools.html2plaintext(message.body)
             msg = plaintext_ct.replace('@%s' % answer_id.name, '').lstrip()
 
         if not msg:

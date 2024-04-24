@@ -10,7 +10,7 @@
 
 {
     'name': 'ChatGPT4, China Ali,AiGC Center.Ai服务中心，聚合全网Ai',
-    'version': '16.23.09.22',
+    'version': '15.24.04.24',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
     'maintainer': 'odooai.cn',
@@ -40,7 +40,7 @@
     9. Can set Synchronous or Asynchronous mode for Ai response.
     10.Filter Sensitive Words Setup.
     11. Multi-language Support. Multi-Company Support.
-    12. Support Odoo 16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    12. Support Odoo 17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
     ''',
     'depends': [
@@ -48,7 +48,6 @@
         'app_odoo_customize',
         'base_setup',
         'mail',
-        'queue_job',
     ],
     'data': [
         'security/ir.model.access.csv',

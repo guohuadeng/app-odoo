@@ -19,10 +19,10 @@
 					                <label class="col-4" string="Timout then disconnect(s)" for="openapi_context_timeout"/>
 					                <field name="openapi_context_timeout" title="After timeout seconds then Disconnect" style="width: 200px !important;"/>Seconds
 				                </div>
-				                <div class="row mt0">
+				                <!-- <div class="row mt0">
 					                <label class="col-4" for="openai_sync_config"/>
 					                <field name="openai_sync_config" style="width: 200px !important;"/>
-				                </div>
+				                </div> -->
 			                </div>
 		                </div>
 	                </div>
