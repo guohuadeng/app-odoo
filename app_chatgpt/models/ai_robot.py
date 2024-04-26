@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import openai.openai_object
+import os
+from openai import OpenAI
+from openai import AzureOpenAI
 import requests, json
-import openai
 import base64
 
 from odoo import api, fields, models, modules, tools, _
