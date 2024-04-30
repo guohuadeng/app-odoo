@@ -12,9 +12,9 @@ class IrMailServer(models.Model):
     # 改默认发邮件逻辑
     @api.model
     def send_email(self, message, mail_server_id=None, smtp_server=None, smtp_port=None,
-                   smtp_user=None, smtp_password=None, smtp_encryption=None, smtp_debug=False,
-                   smtp_session=None):
-
+                   smtp_user=None, smtp_password=None, smtp_encryption=None,
+                   smtp_ssl_certificate=None, smtp_ssl_private_key=None,
+                   smtp_debug=False, smtp_session=None):
         email_to = message['To']
         
         # 忽略掉无效email，避免被ban
@@ -26,5 +26,5 @@ class IrMailServer(models.Model):
                 raise AssertionError(_("Email to ignore: %s") % email_to)
 
         return super(IrMailServer, self).send_email(message, mail_server_id, smtp_server, smtp_port,
-                                                    smtp_user, smtp_password, smtp_encryption, smtp_debug,
-                                                    smtp_session)
+                                                    smtp_user, smtp_password, smtp_encryption, smtp_ssl_certificate, smtp_ssl_private_key, 
+                                                    smtp_debug, smtp_session)
