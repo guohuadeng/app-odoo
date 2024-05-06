@@ -9,8 +9,12 @@ class SaleReport(models.Model):
 
     product_brand_id = fields.Many2one('product.brand', string='Product Brand', readonly=True)
     
+    def _select_additional_fields(self):
+        res = super()._select_additional_fields()
+        res['product_brand_id'] = "l.product_brand_id"
+        return res
 
-    def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
-        fields['product_brand_id'] = ", t.product_brand_id as product_brand_id"
-        groupby += ', t.product_brand_id'
-        return super(SaleReport, self)._query(with_clause, fields, groupby, from_clause)
+    def _group_by_sale(self):
+        res = super()._group_by_sale()
+        res = res + ",l.product_brand_id"
+        return res

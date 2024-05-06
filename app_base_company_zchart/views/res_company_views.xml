@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="app_view_company_tree" model="ir.ui.view">
+        <field name="name">app.res.company.tree</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="parent_id" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="app_view_company_form" model="ir.ui.view">
+        <field name="name">app.res.company.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='logo']" position="before">
+                <div id="o_node_container">
+                    <div id="o_node_main">
+                        <span id="add_image"/>
+                        <span id="add_title"/>
+                        <span id="add_notebook"/>
+                    </div>
+                    <div id="o_node_right">
+                        <h4 class="o_chart_hierarchy_title mb16 mt0">Group Company Chart</h4>
+                        <field name="child_ids" widget="ztree_chart" nolabel="1"/>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//span[@id='add_image']" position="after">
+                <xpath expr="//field[@name='logo']" position="move"/>
+            </xpath>
+            <xpath expr="//span[@id='add_title']" position="after">
+                <xpath expr="//div[hasclass('oe_title')]" position="move"/>
+            </xpath>
+            <xpath expr="//span[@id='add_notebook']" position="after">
+                <xpath expr="//notebook" position="move"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -47,7 +47,7 @@
 
 {
     'name': 'Product Brand Manager,产品品牌管理',
-    'version': '16.23.12.29',
+    'version': '16.24.05.06',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -80,6 +80,8 @@
     'depends': [
         'app_purchase_pro',
         'app_sale_pro',
+        'app_product_variant_pro',
+        'app_website_sale',
         ],
     'data': [
         'security/ir.model.access.csv',
