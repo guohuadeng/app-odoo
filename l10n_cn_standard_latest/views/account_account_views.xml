@@ -11,8 +11,9 @@
                   <attribute name="default_order">code</attribute>
               </xpath>
               <xpath expr="field[@name='account_type']" position="after">
-                  <field name="group_id"/>
-                  <field name="tag_ids" widget="many2many_tags"/>
+                  <field name="parent_id" optional="show"/>
+                  <field name="group_id" optional="hide"/>
+                  <field name="tag_ids" widget="many2many_tags" optional="show"/>
               </xpath>
           </field>
       </record>
