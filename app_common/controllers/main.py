@@ -28,7 +28,7 @@ class AppController(http.Controller):
         # 返回这个图片的base64编码
         return base64.b64encode(BytesIO(response.content).read())
 
-    @http.route(['/my/ua', '/wxa/ua', '/web/ua', '/web/ua/show'], auth='public', methods=['GET'])
+    @http.route(['/my/ua'], auth='public', methods=['GET'], sitemap=False)
     def app_ua_show(self):
         # https://github.com/selwin/python-user-agents
         ua_string = request.httprequest.headers.get('User-Agent')
