@@ -101,7 +101,7 @@ msgstr ""
 #. module: app_auto_backup
 #: model:ir.actions.act_window,name:app_auto_backup.action_backup
 #: model:ir.ui.menu,name:app_auto_backup.backup_conf_menu
-msgid "Configure back-ups"
+msgid "Configure backups"
 msgstr "配置备份"
 
 #. module: app_auto_backup

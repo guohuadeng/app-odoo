@@ -100,7 +100,7 @@ background-repeat: no-repeat;background-position: 10px center;color: #9F6000;bac
         </record>
 
         <record id="action_backup" model="ir.actions.act_window">
-            <field name="name">Configure back-ups</field>
+            <field name="name">Configure backups</field>
             <field name="res_model">db.backup</field>
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref="view_backup_config_tree"/>
