@@ -13,9 +13,12 @@
                 <xpath expr="//tree"  position="attributes">
                     <attribute name="multi_edit">1</attribute>
                 </xpath>
+                <field name="sequence" position="after">
+                    <field name="id" optional="hide"/>
+                </field>
                 <field name="complete_name" position="after">
-                    <field name="name"/>
-                    <field name="parent_id"/>
+                    <field name="name" optional="show"/>
+                    <field name="parent_id" optional="show"/>
                 </field>
             </field>
         </record>
