@@ -4,7 +4,7 @@
 
 {
     'name': "Database auto-backup,数据库自动备份",
-    'version': '16.24.03.12',
+    'version': '16.24.05.22',
 
     'summary': 'Automated backups, optimized from auto_backup of Yenthe Van Ginneken',
 
@@ -43,5 +43,6 @@
         'security/ir.model.access.csv',
         'views/backup_view.xml',
         'data/backup_data.xml',
+        'views/db_backup_details.xml',
     ],
 }

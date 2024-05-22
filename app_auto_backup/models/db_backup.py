@@ -73,6 +73,7 @@ class DbBackup(models.Model):
     email_to_notify = fields.Char('E-mail to notify',
                                   help='Fill in the e-mail where you want to be notified that the backup failed on '
                                        'the FTP.')
+    backup_details_ids = fields.One2many('db.backup.details', 'db_backup_id', 'Backup Details')
 
     def test_sftp_connection(self, context=None):
         self.ensure_one()
@@ -136,6 +137,12 @@ class DbBackup(models.Model):
                 fp = open(file_path, 'wb')
                 self._take_dump(rec.name, fp, 'db.backup', rec.backup_type)
                 fp.close()
+                self.backup_details_ids.create({
+                    'name': bkp_file,
+                    'file_path': file_path,
+                    'url': '/download/backupfile/%s' % file_path,
+                    'db_backup_id': rec.id,
+                })
             except Exception as error:
                 _logger.debug(
                     "Couldn't backup database %s. Bad database administrator password for server running at "
@@ -262,6 +269,8 @@ class DbBackup(models.Model):
                             # Only delete files (which are .dump and .zip), no directories.
                             if os.path.isfile(fullpath) and (".dump" in f or '.zip' in f):
                                 _logger.info("Delete local out-of-date file: %s", fullpath)
+                                backup_details_id = self.env['db.backup.details'].search([('file_path', '=', fullpath)])
+                                backup_details_id.unlink()
                                 os.remove(fullpath)
 
     # This is more or less the same as the default Odoo function at
