@@ -4,7 +4,7 @@
 
 {
     'name': "Database auto backup,数据库自动备份",
-    'version': '24.03.27',
+    'version': '24.05.22',
 
     'summary': 'Automated backups, optimized from auto_backup of Yenthe Van Ginneken',
 
@@ -31,7 +31,8 @@
 
     # any module necessary for this one to work correctly
     'depends': [
-        'base'
+        'base',
+        'app_odoo_customize'
     ],
     'external_dependencies': {
         'python': ['paramiko'],
@@ -43,5 +44,6 @@
         'security/ir.model.access.csv',
         'views/backup_view.xml',
         'data/backup_data.xml',
+        'views/db_backup_details.xml',
     ],
 }
