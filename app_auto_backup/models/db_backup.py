@@ -35,7 +35,7 @@ class DbBackup(models.Model):
     port = fields.Char('Port', required=True, default=8069)
     name = fields.Char('Database', required=True, help='Database you want to schedule backups for',
                        default=_get_db_name)
-    folder = fields.Char('Backup Directory', help='Absolute path for storing the backups', required='True',
+    folder = fields.Char('Backup Directory', help='Absolute path for storing the backups', required=True,
                          default='/usr/lib/python3/dist-packages/odoo/backups')
     backup_type = fields.Selection([('zip', 'Zip'), ('dump', 'Dump')], 'Backup Type', required=True, default='zip')
     autoremove = fields.Boolean('Auto. Remove Backups',
