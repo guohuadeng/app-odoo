@@ -137,17 +137,17 @@ class DbBackup(models.Model):
                 fp = open(file_path, 'wb')
                 self._take_dump(rec.name, fp, 'db.backup', rec.backup_type)
                 fp.close()
-                self.backup_details_ids.create({
+                rec.backup_details_ids.create({
                     'name': bkp_file,
                     'file_path': file_path,
                     'url': '/download/backupfile/%s' % file_path,
                     'db_backup_id': rec.id,
                 })
             except Exception as error:
-                _logger.debug(
+                _logger.warning(
                     "Couldn't backup database %s. Bad database administrator password for server running at "
                     "http://%s:%s" % (rec.name, rec.host, rec.port))
-                _logger.debug("Exact error from the exception: %s", str(error))
+                _logger.warning("Exact error from the exception: %s", str(error))
                 continue
 
             # Check if user wants to write to SFTP or not.
@@ -270,8 +270,10 @@ class DbBackup(models.Model):
                             if os.path.isfile(fullpath) and (".dump" in f or '.zip' in f):
                                 _logger.info("Delete local out-of-date file: %s", fullpath)
                                 backup_details_id = self.env['db.backup.details'].search([('file_path', '=', fullpath)])
-                                backup_details_id.unlink()
-                                os.remove(fullpath)
+                                if backup_details_id:
+                                    backup_details_id.unlink()
+                                else:
+                                    os.remove(fullpath)
 
     # This is more or less the same as the default Odoo function at
     # https://github.com/odoo/odoo/blob/e649200ab44718b8faefc11c2f8a9d11f2db7753/odoo/service/db.py#L209

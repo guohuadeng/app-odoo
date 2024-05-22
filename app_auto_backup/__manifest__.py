@@ -31,7 +31,8 @@
 
     # any module necessary for this one to work correctly
     'depends': [
-        'base'
+        'base',
+        'app_odoo_customize'
     ],
     'external_dependencies': {
         'python': ['paramiko'],

@@ -2,7 +2,8 @@
 
 import os
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
+from odoo.exceptions import AccessError, UserError
 
 
 class DbBackupDetails(models.Model):
