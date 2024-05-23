@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 
-import openai.openai_object
-import requests, json
-import openai
+import requests
+import json
 import base64
+import logging
+from openai import OpenAI
+from openai import AzureOpenAI
 
 from odoo import api, fields, models, modules, tools, _
 from odoo.exceptions import UserError
 
-import logging
 _logger = logging.getLogger(__name__)
 
 
@@ -23,19 +24,18 @@ class AiRobot(models.Model):
     # update ai_robot set ai_model=set_ai_model
     ai_model = fields.Char(string="AI Model", required=True, default='auto', help='Customize input')
     set_ai_model = fields.Selection(string="Quick Set Model", selection=[
-        ('gpt-3.5-turbo-0125', 'gpt-3.5-turbo-0125(Default and Latest)'),
-        ('gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0613'),
-        ('gpt-3.5-turbo-16k-0613', 'gpt-3.5-turbo-16k-0613(Big text)'),
+        ('gpt-3.5-turbo-0125', 'GPT 3.5 Turbo(Default and Latest)'),
+        ('gpt-4o', 'GPT-4o'),
+        ('gpt-4-turbo', 'GPT-4 Turbo'),
         ('gpt-4', 'Chatgpt 4'),
         ('gpt-4-32k', 'Chatgpt 4 32k'),
-        ('gpt-3.5-turbo', 'Chatgpt 3.5 Turbo'),
-        ('gpt-3.5-turbo-0301', 'Chatgpt 3.5 Turbo on 20230301'),
         ('text-davinci-003', 'Chatgpt 3 Davinci'),
         ('code-davinci-002', 'Chatgpt 2 Code Optimized'),
         ('text-davinci-002', 'Chatgpt 2 Davinci'),
         ('dall-e2', 'Dall-E Image'),
     ], default='gpt-3.5-turbo-0125',
                                 help="""
+GPT-4o: It is multimodal (accepting text or image inputs and outputting text), and it has the same high intelligence as GPT-4 Turbo but is much more efficient—it generates text 2x faster and is 50% cheaper.
 GPT-4: Can understand Image, generate natural language or code.
 GPT-3.5: A set of models that improve on GPT-3 and can understand as well as generate natural language or code
 DALL·E: A model that can generate and edit images given a natural language prompt
@@ -172,11 +172,14 @@ GPT-3	A set of models that can understand and generate natural language
         res_post, usage, is_ai = self.get_ai_post(res, author_id, answer_id, param)
         return res
     
-    def get_ai_post(self, res, author_id=False, answer_id=False, param={}):
+    def get_ai_post(self, res, author_id=False, answer_id=False, param=None):
         # hook，高级版要替代
-        if res and author_id and isinstance(res, openai.openai_object.OpenAIObject) or isinstance(res, list) or isinstance(res, dict):
-            # 返回是个对象，那么就是ai
-            # if isinstance(res, dict):
+        if param is None:
+            param = {}
+        if not res or not author_id or (not isinstance(res, list) and not isinstance(res, dict)):
+            return res, False, False
+        usage = content = data = None
+        try:
             if self.provider == 'openai':
                 # openai 格式处理
                 usage = res['usage']
@@ -184,16 +187,37 @@ GPT-3	A set of models that can understand and generate natural language
                 # _logger.warning('===========Ai响应:%s' % content)
             elif self.provider == 'azure':
                 # azure 格式
-                usage = json.loads(json.dumps(res['usage']))
-                content = json.loads(json.dumps(res['choices'][0]['message']['content']))
+                usage = res['usage']
+                content = res['choices'][0]['message']['content']
             else:
                 usage = False
                 content = res
             data = content.replace(' .', '.').strip()
             return data, usage, True
-        else:
-            # 直接返回错误语句，那么就是非ai
+        except Exception as e:
+            _logger.error('==========app_chatgpt get_ai_post Error: %s' % e)
             return res, False, False
+          
+        # if res and author_id and isinstance(res, openai.openai_object.OpenAIObject) or isinstance(res, list) or isinstance(res, dict):
+        #     # 返回是个对象，那么就是ai
+        #     # if isinstance(res, dict):
+        #     if self.provider == 'openai':
+        #         # openai 格式处理
+        #         usage = res['usage']
+        #         content = res['choices'][0]['message']['content']
+        #         # _logger.warning('===========Ai响应:%s' % content)
+        #     elif self.provider == 'azure':
+        #         # azure 格式
+        #         usage = json.loads(json.dumps(res['usage']))
+        #         content = json.loads(json.dumps(res['choices'][0]['message']['content']))
+        #     else:
+        #         usage = False
+        #         content = res
+        #     data = content.replace(' .', '.').strip()
+        #     return data, usage, True
+        # else:
+        #     # 直接返回错误语句，那么就是非ai
+        #     return res, False, False
     
     def get_ai_system(self, content=None):
         # 获取基础ai角色设定, role system
@@ -254,56 +278,7 @@ GPT-3	A set of models that can understand and generate natural language
         else:
             stop = ["Human:", "AI:"]
         # 以下处理 open ai
-        if self.ai_model in ['gpt-3.5-turbo', 'gpt-3.5-turbo-0301']:
-            # 基本与 azure 同，要处理 api_base
-            openai.api_key = self.openapi_api_key
-            openai.api_base = o_url.replace('/chat/completions', '')
-            if isinstance(data, list):
-                messages = data
-            else:
-                messages = [{"role": "user", "content": data}]
-            # Ai角色设定，如果没设定则再处理
-            if messages[0].get('role') != 'system':
-                sys_content = self.get_ai_system(param.get('sys_content'))
-                if sys_content:
-                    messages.insert(0, sys_content)
-            # todo: 当前反向代理方式不通，要调整为 远程主机中接受请求，post到openai，再将结果返回给请求者
-            # response = openai.ChatCompletion.create(
-            #     model=self.ai_model,
-            #     messages=messages,
-            #     # 返回的回答数量
-            #     n=1,
-            #     max_tokens=max_tokens,
-            #     temperature=temperature,
-            #     top_p=top_p,
-            #     frequency_penalty=frequency_penalty,
-            #     presence_penalty=presence_penalty,
-            #     stop=stop,
-            #     request_timeout=request_timeout,
-            # )
-            # if 'choices' in response:
-            #     return response
-            # todo: 两种方式一样，要调整 v 服务器的二次处理 /root/toai.py
-            pdata = {
-                "model": self.ai_model,
-                "messages": messages,
-                "max_tokens": max_tokens,
-                "temperature": temperature,
-                "top_p": top_p,
-                "frequency_penalty": frequency_penalty,
-                "presence_penalty": presence_penalty,
-                "stop": stop
-            }
-            response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
-            try:
-                res = response.json()
-                if 'choices' in res:
-                    return res
-            except Exception as e:
-                _logger.warning("Get Response Json failed: %s", e)
-            else:
-                _logger.warning('=====================Openai output data: %s' % response.json())
-        elif self.ai_model == 'dall-e2':
+        if self.ai_model == 'dall-e2':
             # todo: 处理 图像引擎，主要是返回参数到聊天中
             # image_url = response['data'][0]['url']
             # https://platform.openai.com/docs/guides/images/introduction
@@ -324,29 +299,112 @@ GPT-3	A set of models that can understand and generate natural language
                 "presence_penalty": 0.1,
                 "stop": stop
             }
-            response = openai.ChatCompletion.create(
+            client = OpenAI(
+                api_key=self.openapi_api_key,
+                timeout=R_TIMEOUT
+                )
+            response = client.chat.completions.create(
+                messages=data,
                 model=self.ai_model,
-                messages=data
             )
-            # response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
-            if 'choices' in response:
-                return response
+            res = response.model_dump()
+            if 'choices' in res:
+                return res
             else:
                 _logger.warning('=====================openai output data: %s' % response.json())
     
         return _("Response Timeout, please speak again.")
+        # if self.ai_model in ['gpt-3.5-turbo', 'gpt-3.5-turbo-0301']:
+        #     # 基本与 azure 同，要处理 api_base
+        #     openai.api_key = self.openapi_api_key
+        #     openai.api_base = o_url.replace('/chat/completions', '')
+        #     if isinstance(data, list):
+        #         messages = data
+        #     else:
+        #         messages = [{"role": "user", "content": data}]
+        #     # Ai角色设定，如果没设定则再处理
+        #     if messages[0].get('role') != 'system':
+        #         sys_content = self.get_ai_system(param.get('sys_content'))
+        #         if sys_content:
+        #             messages.insert(0, sys_content)
+        #     # todo: 当前反向代理方式不通，要调整为 远程主机中接受请求，post到openai，再将结果返回给请求者
+        #     # response = openai.ChatCompletion.create(
+        #     #     model=self.ai_model,
+        #     #     messages=messages,
+        #     #     # 返回的回答数量
+        #     #     n=1,
+        #     #     max_tokens=max_tokens,
+        #     #     temperature=temperature,
+        #     #     top_p=top_p,
+        #     #     frequency_penalty=frequency_penalty,
+        #     #     presence_penalty=presence_penalty,
+        #     #     stop=stop,
+        #     #     request_timeout=request_timeout,
+        #     # )
+        #     # if 'choices' in response:
+        #     #     return response
+        #     # todo: 两种方式一样，要调整 v 服务器的二次处理 /root/toai.py
+        #     pdata = {
+        #         "model": self.ai_model,
+        #         "messages": messages,
+        #         "max_tokens": max_tokens,
+        #         "temperature": temperature,
+        #         "top_p": top_p,
+        #         "frequency_penalty": frequency_penalty,
+        #         "presence_penalty": presence_penalty,
+        #         "stop": stop
+        #     }
+        #     response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
+        #     try:
+        #         res = response.json()
+        #         if 'choices' in res:
+        #             return res
+        #     except Exception as e:
+        #         _logger.warning("Get Response Json failed: %s", e)
+        #     else:
+        #         _logger.warning('=====================Openai output data: %s' % response.json())
+        # elif self.ai_model == 'dall-e2':
+        #     # todo: 处理 图像引擎，主要是返回参数到聊天中
+        #     # image_url = response['data'][0]['url']
+        #     # https://platform.openai.com/docs/guides/images/introduction
+        #     pdata = {
+        #         "prompt": data,
+        #         "n": 3,
+        #         "size": "1024x1024",
+        #     }
+        #     return '建设中'
+        # else:
+        #     pdata = {
+        #         "model": self.ai_model,
+        #         "prompt": data,
+        #         "temperature": 1,
+        #         "max_tokens": max_tokens,
+        #         "top_p": 0.6,
+        #         "frequency_penalty": 0.1,
+        #         "presence_penalty": 0.1,
+        #         "stop": stop
+        #     }
+        #     response = openai.ChatCompletion.create(
+        #         model=self.ai_model,
+        #         messages=data
+        #     )
+        #     # response = requests.post(o_url, data=json.dumps(pdata), headers=headers, timeout=R_TIMEOUT)
+        #     if 'choices' in response:
+        #         return response
+        #     else:
+        #         _logger.warning('=====================openai output data: %s' % response.json())
+    
+        # return _("Response Timeout, please speak again.")
 
     def get_azure(self, data, author_id, answer_id, param={}):
         self.ensure_one()
         # only for azure
-        openai.api_type = self.provider
         if not self.endpoint:
             raise UserError(_("Please Set your AI robot's endpoint first."))
-        openai.api_base = self.endpoint
+        
         if not self.api_version:
             raise UserError(_("Please Set your AI robot's API Version first."))
-        openai.api_version = self.api_version
-        openai.api_key = self.openapi_api_key
+        
         if self.stop:
             stop = self.stop.split(',')
         else:
@@ -370,8 +428,15 @@ GPT-3	A set of models that can understand and generate natural language
             if sys_content:
                 messages.insert(0, sys_content)
         #         暂时不变
-        response = openai.ChatCompletion.create(
-            engine=self.engine,
+        
+        client = AzureOpenAI(
+            api_version=self.api_version,
+            azure_endpoint=self.endpoint,
+            api_key=self.openapi_api_key,
+            timeout=request_timeout
+        )
+        response = client.chat.completions.create(
+            model=self.engine,
             messages=messages,
             # 返回的回答数量
             n=1,
@@ -381,10 +446,10 @@ GPT-3	A set of models that can understand and generate natural language
             frequency_penalty=frequency_penalty,
             presence_penalty=presence_penalty,
             stop=None,
-            request_timeout=request_timeout,
         )
-        if 'choices' in response:
-            return response
+        res = response.model_dump()
+        if 'choices' in res:
+            return res
         else:
             _logger.warning('=====================azure output data: %s' % response.json())
         return _("Response Timeout, please speak again.")
