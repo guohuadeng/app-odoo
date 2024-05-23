@@ -18,7 +18,7 @@
 
 {
     'name': 'odoo中文版套件之基础,中国会计基础,Chinese Enhance All in One，',
-    'version': '16.23.11.17',
+    'version': '16.24.05.23',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -91,7 +91,6 @@
         'views/ir_default_views.xml',
         # 'views/templates.xml',
         'wizard/sale_make_invoice_advance_views.xml',
-        'data/ir_default_data.xml',
         'data/base_data.xml',
         'data/decimal_precision_data.xml',
         'data/res_country_data.xml',
@@ -104,6 +103,7 @@
         'data/product_pricelist_data.xml',
         'data/stock_location_data.xml',
         'data/sales_team_data.xml',
+        'data/ir_default_data.xml',
         'views/ir_module_module_views.xml',
     ],
     'assets': {
