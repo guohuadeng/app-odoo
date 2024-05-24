@@ -73,6 +73,7 @@
             'app_chatgpt/static/src/components/*/*.xml',
         ],
     },
+    # win: openai=0.27.0
     'external_dependencies': {'python': ['openai']},
     'installable': True,
     'application': True,
