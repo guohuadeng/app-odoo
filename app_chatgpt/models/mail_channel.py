@@ -264,7 +264,7 @@ class Channel(models.Model):
         if ai and answer_id != message.author_id:
             api_key = ai.openapi_api_key
             if not api_key:
-                _logger.warning(_("ChatGPT Robot【%s】have not set open api key."))
+                _logger.warning(_("ChatGPT Robot【%s】have not set open api key.") % ai.name)
                 return rdata
             try:
                 openapi_context_timeout = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_context_timeout')) or 60
