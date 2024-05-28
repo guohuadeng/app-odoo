@@ -1,6 +1,8 @@
 id,code,name,parent_id/id,reconcile,account_type,tag_ids/id,chart_template_id/id
 account_1001,1001,库存现金,,TRUE,asset_cash,,l10n_chart_china_standard_business_latest
 account_1002,1002,银行存款,,TRUE,asset_cash,tag21,l10n_chart_china_standard_business_latest
+account_1002_08,1002.08,银行存款-未付款,,TRUE,asset_cash,tag21,l10n_chart_china_standard_business_latest
+account_1002_09,1002.09,银行存款-未收款,,TRUE,asset_cash,tag21,l10n_chart_china_standard_business_latest
 account_1003,1003,存放中央银行款项,,TRUE,asset_current,tag21,l10n_chart_china_standard_business_latest
 account_1011,1011,存放同业,,FALSE,asset_current,tag21,l10n_chart_china_standard_business_latest
 account_1012,1012,其他货币资金,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
@@ -82,6 +84,8 @@ account_2101,2101,交易性金融负债,,FALSE,liability_current,,l10n_chart_chi
 account_2111,2111,卖出回购金融资产款,,FALSE,liability_current,tag23,l10n_chart_china_standard_business_latest
 account_2201,2201,应付票据,,TRUE,liability_payable,,l10n_chart_china_standard_business_latest
 account_2202,2202,应付账款,,TRUE,liability_payable,,l10n_chart_china_standard_business_latest
+account_2202_01,2202.01,应付账款-暂估,,TRUE,liability_payable,,l10n_chart_china_standard_business_latest
+account_2202_02,2202.02,应付账款-其他,,TRUE,liability_payable,,l10n_chart_china_standard_business_latest
 account_2203,2203,预收账款,,TRUE,liability_payable,,l10n_chart_china_standard_business_latest
 account_2211,2211,应付职工薪酬,,FALSE,liability_current,,l10n_chart_china_standard_business_latest
 account_2221,2221,应交税费,,FALSE,liability_current,,l10n_chart_china_standard_business_latest
