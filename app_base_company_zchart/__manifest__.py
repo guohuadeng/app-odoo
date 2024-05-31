@@ -66,14 +66,8 @@ This module extend to show a Hierarchy chart
         # 'website',
     ],
     'data': [
-        # please add your file
-        # please comment follow on ur produce odoo
-        # 'security/app_security.xml',
-        # 'security/ir.model.access.csv',
-        # 'views/model_new_views.xml',
-        # 'report/model_new_report_views.xml',
-        # 'views/menu_views.xml',
-        # 'views/website_templates.xml',
+        'security/res_group.xml',
+        'views/res_company_views.xml',
     ],
     'assets': {
         'web.assets_frontend': [
@@ -84,12 +78,7 @@ This module extend to show a Hierarchy chart
         ],
     },
     'demo': [
-        'security/res_group.xml',
-        'views/res_company_views.xml',
     ],
-    # 'pre_init_hook': 'pre_init_hook',
-    # 'post_init_hook': 'post_init_hook',
-    # 'uninstall_hook': 'uninstall_hook',
     'installable': True,
     'application': True,
     'auto_install': False,

@@ -16,4 +16,3 @@ class Company(models.Model):
     def _compute_all_child_ids(self):
         pass
         
-
