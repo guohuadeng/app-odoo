@@ -12,8 +12,9 @@ _logger = logging.getLogger(__name__)
 
 class AppAutoBackup(http.Controller):
     
-    @http.route("/download/backupfile/<path:file_path>", type="http", auth="user")
+    @http.route("/dbbackup/download/<path:file_path>", type="http", auth="user")
     def download_backupfile(self, file_path, **kw):
+        _logger.warning('download_backupfile: %s', file_path)
         if os.path.exists(file_path):
             try:
                 with open(file_path, 'rb') as file:

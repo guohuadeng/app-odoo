@@ -140,7 +140,7 @@ class DbBackup(models.Model):
                 rec.backup_details_ids.create({
                     'name': bkp_file,
                     'file_path': file_path,
-                    'url': '/download/backupfile/%s' % file_path,
+                    'url': '/dbbackup/download%s' % file_path,
                     'db_backup_id': rec.id,
                 })
             except Exception as error:
