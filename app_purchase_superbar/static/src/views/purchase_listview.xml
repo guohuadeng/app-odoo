@@ -1,0 +1,9 @@
+<templates>
+<!--    优化原生样式-->
+    <t t-name="app_purchase_superbar.PurchaseListView" t-inherit="purchase.PurchaseListView" t-inherit-mode="extension" owl="1">
+        <xpath expr="//PurchaseDashBoard" position="replace"/>
+        <xpath expr="//table[1]" position="before">
+            <PurchaseDashBoard />
+        </xpath>
+    </t>
+</templates>
