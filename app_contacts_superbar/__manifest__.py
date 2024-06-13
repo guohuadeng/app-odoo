@@ -19,7 +19,7 @@
     'name': "App contacts by category company superbar",
     'version': '16.23.10.26',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',

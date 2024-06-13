@@ -19,7 +19,7 @@
     'name': "App purchase search browse by partner",
     'version': '16.23.12.07',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',

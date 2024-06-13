@@ -19,7 +19,7 @@
     'name': "App sale order browse by partner and channel",
     'version': '16.23.12.06',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',

@@ -35,7 +35,7 @@
     'name': "MRP Workcenter zChart Parent Child Hierarchy,工作中心分级",
     'version': '16.24.04.01',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,

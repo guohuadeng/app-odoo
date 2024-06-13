@@ -31,7 +31,7 @@
     'name': "Apps Navigator by Category, Module Navigator",
     'version': '16.23.10.23',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',

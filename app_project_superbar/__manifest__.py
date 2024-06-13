@@ -19,7 +19,7 @@
     'name': "Project and task browse by partner,user, stage navigator",
     'version': '15.19.12.03',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',

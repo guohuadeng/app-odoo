@@ -41,7 +41,7 @@
     'name': "odooAi Common Util and Tools,欧度智能基础核心优化",
     'version': '16.24.04.18',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',

@@ -31,7 +31,7 @@
     'name': "App Stock location ztree, parent children tree",
     'version': '16.23.10.19',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,

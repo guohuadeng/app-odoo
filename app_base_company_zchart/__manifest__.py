@@ -28,7 +28,7 @@
     'name': 'Group Company Multi Level Chart Hierarchy, 集团公司多层级结构图zChart',
     'version': '16.24.05.06',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',

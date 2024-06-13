@@ -19,7 +19,7 @@
     'name': "App mrp Manufacturing Orders browse by state workcenter navigator",
     'version': '16.22.12.06',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',

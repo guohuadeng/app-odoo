@@ -19,7 +19,7 @@
     'name': "App Documents search browse by workspace",
     'version': '16.24.01.22',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',

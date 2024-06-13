@@ -31,7 +31,7 @@
     'name': 'Crm Advance search, Navigator by stage and team',
     'version': '16.23.09.01',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 10,

@@ -23,7 +23,7 @@
 {
     'name': 'Web Form Fullwidth, Full screen full width. Chatter Position ',
     'version': '16.23.12.12',
-    'category': 'web',
+    'category': 'Extra tools',
     'author': 'odooai.cn',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',

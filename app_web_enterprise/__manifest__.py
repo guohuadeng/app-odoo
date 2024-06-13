@@ -20,7 +20,7 @@
     'name': "odoo Enterprise enhance Pack,企业版界面及操作增强",
     'version': '16.23.10.26',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',

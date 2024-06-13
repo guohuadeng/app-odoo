@@ -19,7 +19,7 @@
     'name': "Product browse by category navigator Pro",
     'version': '16.23.03.05',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
