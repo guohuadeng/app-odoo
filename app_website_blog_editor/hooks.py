@@ -18,15 +18,15 @@
 from odoo import api, SUPERUSER_ID, _
 
 
-def pre_init_hook(cr):
+def pre_init_hook(env):
     pass
     # cr.execute("")
 
-def post_init_hook(cr, registry):
+def post_init_hook(env):
     pass
     # cr.execute("")
 
-def uninstall_hook(cr, registry):
+def uninstall_hook(env):
     pass
     # cr.execute("")
 
