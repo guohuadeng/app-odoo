@@ -11,16 +11,11 @@
 			<xpath expr="//field[@name='name']" position="attributes">
 				<attribute name="optional">show</attribute>
 			</xpath>
-			<xpath expr="//field[@name='website_url']" position="attributes">
-				<attribute name="optional">hide</attribute>
-			</xpath>
-			<xpath expr="//field[@name='is_seo_optimized']" position="attributes">
-				<attribute name="optional">hide</attribute>
-			</xpath>
+
 			<xpath expr="//field[@name='is_published']" position="attributes">
 				<attribute name="optional">show</attribute>
 			</xpath>
-			<xpath expr="//field[@name='website_url']" position="after">
+			<xpath expr="//field[@name='is_published']" position="after">
                 <field name="seo_name" optional="show"/>
                 <field name="website_meta_keywords" optional="show"/>
                 <field name="website_meta_title" optional="hide"/>
@@ -32,7 +27,7 @@
 			<xpath expr="//field[@name='write_date']" position="after">
 				<field name="published_date" optional="hide"/>
 			</xpath>
-            <xpath expr="//field[@name='is_seo_optimized']" position="before">
+            <xpath expr="//field[@name='is_published']" position="before">
 				<button name="action_post_debug_view" type="object" title="Settings" icon="fa-bug fa-lg" groups="base.group_no_one"/>
 				<button name="action_post_code_view" type="object" title="Source Code" icon="fa-code fa-lg" groups="base.group_no_one"/>
 			</xpath>
@@ -49,9 +44,6 @@
 					<field name="content" widget="html" nolabel="1" class="oe-bordered-editor"
 					       options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true}"/>
 				</page>
-			</xpath>
-			<xpath expr="//field[@name='visits']" position="attributes">
-                <attribute name="readonly">0</attribute>
 			</xpath>
 		</field>
 	</record>
