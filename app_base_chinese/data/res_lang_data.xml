@@ -6,6 +6,7 @@
             <field name="name">中文</field>
             <field name="date_format">%Y-%m-%d</field>
             <field name="time_format">%H:%M:%S</field>
+            <field name="active">True</field>
         </record>
         <record id="base.lang_en" model="res.lang" context="{'lang': 'zh_CN'}">
             <field name="name">English</field>
