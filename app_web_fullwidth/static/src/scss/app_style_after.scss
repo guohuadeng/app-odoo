@@ -38,6 +38,10 @@ sheet全宽
 @media (min-width: 1400px) {
   .o_form_view .o_form_view_container .o_form_sheet_bg .o_form_sheet {
     max-width: 98%;
+    //todo: button box 增加数量，当前无效。 button_box.js 中有 visibleButtons
+    //.o-form-buttonbox .btn.oe_stat_button, .o-form-buttonbox > .o_field_widget  {
+    //  width: 10%;
+    //}
   }
 }
 .o_web_client .o_form_view.o_xxl_form_view .o_form_sheet_bg > .o_form_sheet {
