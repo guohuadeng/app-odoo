@@ -71,15 +71,15 @@ class ResConfigSettings(models.TransientModel):
     def set_module_url(self):
         if not self._app_check_sys_op():
             raise UserError(_('Not allow.'))
-        config_parameter = self.env['ir.config_parameter'].sudo()
-        app_enterprise_url = config_parameter.get_param('app_enterprise_url', 'https://www.odooai.cn')
-        modules = self.env['ir.module.module'].search([('license', 'like', 'OEEL%'), ('website', '!=', False)])
-        if modules:
-            sql = "UPDATE ir_module_module SET website = '%s' WHERE id IN %s" % (app_enterprise_url, tuple(modules.ids))
-            try:
+        try:
+            config_parameter = self.env['ir.config_parameter'].sudo()
+            app_enterprise_url = config_parameter.get_param('app_enterprise_url', 'https://www.odooai.cn')
+            modules = self.env['ir.module.module'].search([('license', 'like', 'OEEL%'), ('website', '!=', False)])
+            if modules:
+                sql = "UPDATE ir_module_module SET website = '%s' WHERE id IN %s" % (app_enterprise_url, tuple(modules.ids))
                 self._cr.execute(sql)
-            except Exception as e:
-                pass
+        except Exception as e:
+            pass
 
     # 清数据，o=对象, s=序列 
     def _remove_app_data(self, o, s=[]):
