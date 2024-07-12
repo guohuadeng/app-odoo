@@ -11,8 +11,8 @@
             <field name="name">Manager</field>
             <field name="category_id" ref="app_auto_backup.module_management"/>
         </record>
-        <!-- group_erp_manager自动拥有备份管理员 -->
-        <record id="base.group_erp_manager" model="res.groups">
+        <!-- group_system 系统用户自动拥有备份管理员 -->
+        <record id="base.group_system" model="res.groups">
             <field name="implied_ids" eval="[(4, ref('app_auto_backup.group_manager'))]"/>
         </record>
     </data>
