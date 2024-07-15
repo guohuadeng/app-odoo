@@ -17,6 +17,9 @@
                 <field name="website" position="attributes">
                     <attribute name="optional">hide</attribute>
                 </field>
+                <field name="state" position="before">
+                    <field name="license" optional="hide"/>
+                </field>
             </field>
         </record>
         <!-- Modules search-->
