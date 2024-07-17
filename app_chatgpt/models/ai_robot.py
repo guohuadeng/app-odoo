@@ -24,16 +24,19 @@ class AiRobot(models.Model):
     # update ai_robot set ai_model=set_ai_model
     ai_model = fields.Char(string="AI Model", required=True, default='auto', help='Customize input')
     set_ai_model = fields.Selection(string="Quick Set Model", selection=[
-        ('gpt-3.5-turbo-0125', 'GPT 3.5 Turbo(Default and Latest)'),
-        ('gpt-4o', 'GPT-4o'),
-        ('gpt-4-turbo', 'GPT-4 Turbo'),
+        ('gpt-3.5-turbo-0125', 'gpt-3.5-turbo-0125(Default and Latest)'),
+        ('gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0613'),
+        ('gpt-3.5-turbo-0125', 'gpt-3.5-turbo-0125'),
+        ('gpt-3.5-turbo-16k-0613', 'gpt-3.5-turbo-16k-0613(Big text)'),
         ('gpt-4', 'Chatgpt 4'),
         ('gpt-4-32k', 'Chatgpt 4 32k'),
+        ('gpt-3.5-turbo', 'Chatgpt 3.5 Turbo'),
+        ('gpt-3.5-turbo-0301', 'Chatgpt 3.5 Turbo on 20230301'),
         ('text-davinci-003', 'Chatgpt 3 Davinci'),
         ('code-davinci-002', 'Chatgpt 2 Code Optimized'),
         ('text-davinci-002', 'Chatgpt 2 Davinci'),
         ('dall-e2', 'Dall-E Image'),
-    ], default='gpt-3.5-turbo-0125',
+    ], default='gpt-4o',
                                 help="""
 GPT-4o: It is multimodal (accepting text or image inputs and outputting text), and it has the same high intelligence as GPT-4 Turbo but is much more efficient—it generates text 2x faster and is 50% cheaper.
 GPT-4: Can understand Image, generate natural language or code.
