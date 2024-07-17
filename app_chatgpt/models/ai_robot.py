@@ -22,7 +22,7 @@ class AiRobot(models.Model):
     provider = fields.Selection(string="AI Provider", selection=[('openai', 'OpenAI'), ('azure', 'Azure')],
                                 required=True, default='openai', change_default=True)
     # update ai_robot set ai_model=set_ai_model
-    ai_model = fields.Char(string="AI Model", required=True, default='auto', help='Customize input')
+    ai_model = fields.Char(string="Ai Model", required=True, default='auto', help='Customize input')
     set_ai_model = fields.Selection(string="Quick Set Model", selection=[
         ('gpt-3.5-turbo-0125', 'gpt-3.5-turbo-0125(Default and Latest)'),
         ('gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0613'),

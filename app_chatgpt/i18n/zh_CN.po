@@ -625,7 +625,7 @@ msgstr "Ai回答Token"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__ai_model
-msgid "AI Model"
+msgid "Ai Model"
 msgstr "Ai模型"
 
 #. module: app_chatgpt
