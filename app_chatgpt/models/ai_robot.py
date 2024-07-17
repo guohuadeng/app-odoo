@@ -26,6 +26,7 @@ class AiRobot(models.Model):
     set_ai_model = fields.Selection(string="Quick Set Model", selection=[
         ('gpt-3.5-turbo-0125', 'gpt-3.5-turbo-0125(Default and Latest)'),
         ('gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0613'),
+        ('gpt-3.5-turbo-0125', 'gpt-3.5-turbo-0125'),
         ('gpt-3.5-turbo-16k-0613', 'gpt-3.5-turbo-16k-0613(Big text)'),
         ('gpt-4', 'Chatgpt 4'),
         ('gpt-4-32k', 'Chatgpt 4 32k'),

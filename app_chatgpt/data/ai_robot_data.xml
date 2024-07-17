@@ -3,6 +3,7 @@
     <record id="chatgpt_robot" model="ai.robot">
         <field name="name">ChatGPT odoo</field>
         <field name="provider">openai</field>
+        <field name="ai_model">gpt-4o</field>
         <field name="endpoint">https://api.openai.com/v1/chat/completions</field>
         <field name="sequence">1</field>
         <field name="image_avatar" type="base64" file="app_chatgpt/static/description/src/openai.png"/>
