@@ -18,7 +18,7 @@
 
 {
     'name': "odoo Enterprise enhance Pack,企业版界面及操作增强",
-    'version': '16.23.10.26',
+    'version': '16.24.07.17',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
