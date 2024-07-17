@@ -3,6 +3,9 @@
     <record id="l10n_cn_tax_group_vat_0" model="account.tax.group">
         <field name="name">VAT 0%</field>
     </record>
+    <record id="l10n_cn_tax_group_vat_1" model="account.tax.group">
+        <field name="name">VAT 1%</field>
+    </record>
     <record id="l10n_cn_tax_group_vat_3" model="account.tax.group">
         <field name="name">VAT 3%</field>
     </record>
