@@ -3,7 +3,7 @@
 # Created on 2023-08-28
 # author: 欧度智能，https://www.odooai.cn
 # email: 300883@qq.com
-# Copyright (C) 2009~2023 odooAi.cn
+# Copyright (C) 2009~2024 odooAi.cn
 
 # Odoo16在线用户手册（长期更新）
 # https://www.odooai.cn/documentation/16.0/zh_CN/index.html
