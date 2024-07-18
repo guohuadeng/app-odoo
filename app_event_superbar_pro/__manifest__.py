@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "Event advance search browse by stage",
+    'name': "Event advance search browse by stage and date",
     'version': '16.24.07.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',

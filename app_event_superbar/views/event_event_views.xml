@@ -9,7 +9,6 @@
             <xpath expr="//search" position="inside">
                 <searchpanel view_types="list,kanban,pivot,graph,calendar">
                     <field name="stage_id" enable_counters="1" select="multi"/>
-                    <field name="date_begin"/>
                 </searchpanel>
             </xpath>
         </field>
