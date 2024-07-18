@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+      <!-- Product -->
+    <record id="view_module_filter_superbar" model="ir.ui.view">
+        <field name="name">ir.module.module.list.select</field>
+        <field name="model">ir.module.module</field>
+        <field name="inherit_id" ref="base.view_module_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//searchpanel" position="attributes">
+                <attribute name="view_types">kanban,tree</attribute>
+            </xpath>
+            <xpath expr="//searchpanel" position="inside">
+                <field name="state"/>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

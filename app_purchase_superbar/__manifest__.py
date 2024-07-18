@@ -17,7 +17,7 @@
 
 {
     'name': "App purchase search browse by partner",
-    'version': '24.06.14',
+    'version': '24.07.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

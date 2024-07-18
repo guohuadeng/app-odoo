@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+      <record id="app_discuss_channel_member_view_search" model="ir.ui.view">
+          <field name="name">app.discuss.channel.member.search</field>
+          <field name="model">discuss.channel.member</field>
+          <field name="arch" type="xml">
+              <search string="Search discuss.channel.member">
+                  <field name="partner_id" string="Partner"/>
+                  <searchpanel>
+                      <field name="channel_id" select="multi"/>
+                      <field name="partner_id"/>
+                  </searchpanel>
+              </search>
+          </field>
+      </record>
+  </data>
+</odoo>

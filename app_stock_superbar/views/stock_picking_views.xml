@@ -1,0 +1,19 @@
+<odoo>
+  <data>
+      <!-- stock -->
+    <record id="view_picking_internal_search_superbar" model="ir.ui.view">
+        <field name="name">stock.picking.internal.search.superbar</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="list,kanban,pivot,graph">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="state"/>
+                    <field name="picking_type_id" enable_counters="1"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

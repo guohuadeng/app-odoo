@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_view_department_filter" model="ir.ui.view">
+        <field name="name">app.hr.department.search</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <searchpanel>
+                    <field name="parent_id" widget="ztree_select" text="name"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+</odoo>

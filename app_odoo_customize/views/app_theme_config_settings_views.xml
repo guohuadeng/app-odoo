@@ -46,7 +46,7 @@
 								</div>
 								<div class="o_setting_right_pane">
 									<label for="module_app_odoo_doc"/>
-									<a href="https://apps.odoo.com/apps/modules/16.0/app_odoo_doc"
+									<a href="https://apps.odoo.com/apps/modules/17.0/app_odoo_doc"
 									   title="Get Help Documentation on current odoo operation or topic. Click to get " class="o_doc_link ml8"
 									   target="_blank"/>
 									<div class="">Get Help Documentation on current odoo operation or topic.</div>
@@ -58,7 +58,7 @@
 								</div>
 								<div class="o_setting_right_pane">
 									<label for="module_app_chatgpt"/>
-									<a href="https://apps.odoo.com/apps/modules/16.0/app_chatgpt" class="o_doc_link ml8"
+									<a href="https://apps.odoo.com/apps/modules/17.0/app_chatgpt" class="o_doc_link ml8"
 									   target="_blank"/>
 									<div class="">Use Ai to make odoo more powerful.</div>
 								</div>
