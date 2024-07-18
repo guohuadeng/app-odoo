@@ -22,8 +22,3 @@ def pre_init_hook(env):
 def post_init_hook(env):
     pass
     # cr.execute("")
-
-
-def uninstall_hook(env):
-    pass
-    # cr.execute("")
