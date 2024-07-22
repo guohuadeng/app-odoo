@@ -20,9 +20,9 @@ class MrpWorkCenter(models.Model):
     parent_path = fields.Char(index=True)
     child_ids = fields.One2many('mrp.workcenter', 'parent_id', 'Child WCs')
     child_all_count = fields.Integer(
-        'Indirect Surbordinates Count',
+        'Indirect Surbordinates Count', recursive=True,
         compute='_compute_child_all_count', store=False)
-    level = fields.Integer('Level', compute='_compute_level', inverse=False, readonly=True, default='1', store=True)
+    level = fields.Integer('Level', compute='_compute_level', inverse=False, readonly=True, default='1', store=True, recursive=True,)
 
     @api.depends('child_ids.child_all_count')
     def _compute_child_all_count(self):
