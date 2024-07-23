@@ -6,7 +6,6 @@
         <field name="inherit_id" ref="base.view_view_tree"/>
         <field name="arch" type="xml">
             <field name="model" position="after">
-                <field name="priority"/>
                 <field name="mode"/>
             </field>
         </field>
