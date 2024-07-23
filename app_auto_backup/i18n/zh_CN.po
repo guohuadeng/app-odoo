@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e-20230424\n"
+"Project-Id-Version: Odoo Server 16.0+e-20231112\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-25 06:53+0000\n"
-"PO-Revision-Date: 2023-06-25 06:53+0000\n"
+"POT-Creation-Date: 2024-07-23 08:20+0000\n"
+"PO-Revision-Date: 2024-07-23 08:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -55,6 +55,11 @@ msgid "Back-ups"
 msgstr "备份"
 
 #. module: app_auto_backup
+#: model:ir.model.fields,field_description:app_auto_backup.field_db_backup__backup_details_ids
+msgid "Backup Details"
+msgstr "备份明细"
+
+#. module: app_auto_backup
 #: model:ir.model.fields,field_description:app_auto_backup.field_db_backup__folder
 msgid "Backup Directory"
 msgstr "备份目录"
@@ -68,6 +73,11 @@ msgstr "备份类型"
 #: model:ir.model,name:app_auto_backup.model_db_backup
 msgid "Backup configuration record"
 msgstr "备份配置记录"
+
+#. module: app_auto_backup
+#: model_terms:ir.ui.view,arch_db:app_auto_backup.view_backup_config_form
+msgid "Backup records"
+msgstr "备份记录"
 
 #. module: app_auto_backup
 #: model:ir.actions.server,name:app_auto_backup.backup_scheduler_ir_actions_server
@@ -129,11 +139,13 @@ msgstr "联系 odooai.cn"
 
 #. module: app_auto_backup
 #: model:ir.model.fields,field_description:app_auto_backup.field_db_backup__create_uid
+#: model:ir.model.fields,field_description:app_auto_backup.field_db_backup_details__create_uid
 msgid "Created by"
 msgstr "创建者"
 
 #. module: app_auto_backup
 #: model:ir.model.fields,field_description:app_auto_backup.field_db_backup__create_date
+#: model:ir.model.fields,field_description:app_auto_backup.field_db_backup_details__create_date
 msgid "Created on"
 msgstr "创建时间"
 
@@ -143,14 +155,37 @@ msgid "Database"
 msgstr "数据库"
 
 #. module: app_auto_backup
+#: model:ir.model.fields,field_description:app_auto_backup.field_db_backup_details__db_backup_id
+msgid "Database Backup"
+msgstr "数据库备份"
+
+#. module: app_auto_backup
+#: model:ir.model,name:app_auto_backup.model_db_backup_details
+msgid "Database Backup Details"
+msgstr "数据库备份明细"
+
+#. module: app_auto_backup
+#: model:ir.actions.act_window,name:app_auto_backup.action_db_backup_details
+#: model:ir.ui.menu,name:app_auto_backup.menu_action_db_backup_details
+msgid "Database backups"
+msgstr "数据库备份管理"
+
+#. module: app_auto_backup
 #: model:ir.model.fields,help:app_auto_backup.field_db_backup__name
 msgid "Database you want to schedule backups for"
 msgstr "计划备份的数据库"
 
 #. module: app_auto_backup
 #: model:ir.model.fields,field_description:app_auto_backup.field_db_backup__display_name
+#: model:ir.model.fields,field_description:app_auto_backup.field_db_backup_details__display_name
 msgid "Display Name"
 msgstr "显示名称"
+
+#. module: app_auto_backup
+#: model_terms:ir.ui.view,arch_db:app_auto_backup.db_backup_details_tree_view
+#: model_terms:ir.ui.view,arch_db:app_auto_backup.view_backup_config_form
+msgid "Download File"
+msgstr "下载文件"
 
 #. module: app_auto_backup
 #: model:ir.model.fields.selection,name:app_auto_backup.selection__db_backup__backup_type__dump
@@ -161,6 +196,18 @@ msgstr ""
 #: model:ir.model.fields,field_description:app_auto_backup.field_db_backup__email_to_notify
 msgid "E-mail to notify"
 msgstr "提醒E-mail地址"
+
+#. module: app_auto_backup
+#: model:ir.model.fields,field_description:app_auto_backup.field_db_backup_details__file_path
+msgid "File Path"
+msgstr "文件路径"
+
+#. module: app_auto_backup
+#. odoo-python
+#: code:addons/app_auto_backup/models/db_backup_details.py:0
+#, python-format
+msgid "File Path or URL not found."
+msgstr "无法找到该文件路径或URL"
 
 #. module: app_auto_backup
 #: model:ir.model.fields,help:app_auto_backup.field_db_backup__email_to_notify
@@ -198,6 +245,7 @@ msgstr "服务器"
 
 #. module: app_auto_backup
 #: model:ir.model.fields,field_description:app_auto_backup.field_db_backup__id
+#: model:ir.model.fields,field_description:app_auto_backup.field_db_backup_details__id
 msgid "ID"
 msgstr ""
 
@@ -229,16 +277,19 @@ msgstr "如果勾选此项，您可以进行远程 SFTP 备份。"
 
 #. module: app_auto_backup
 #: model:ir.model.fields,field_description:app_auto_backup.field_db_backup____last_update
+#: model:ir.model.fields,field_description:app_auto_backup.field_db_backup_details____last_update
 msgid "Last Modified on"
 msgstr "最后更新时间"
 
 #. module: app_auto_backup
 #: model:ir.model.fields,field_description:app_auto_backup.field_db_backup__write_uid
+#: model:ir.model.fields,field_description:app_auto_backup.field_db_backup_details__write_uid
 msgid "Last Updated by"
 msgstr "最后更新者"
 
 #. module: app_auto_backup
 #: model:ir.model.fields,field_description:app_auto_backup.field_db_backup__write_date
+#: model:ir.model.fields,field_description:app_auto_backup.field_db_backup_details__write_date
 msgid "Last Updated on"
 msgstr "最后更新日期"
 
@@ -251,6 +302,11 @@ msgstr "本地备份配置"
 #: model:res.groups,name:app_auto_backup.group_manager
 msgid "Manager"
 msgstr "备份管理员"
+
+#. module: app_auto_backup
+#: model:ir.model.fields,field_description:app_auto_backup.field_db_backup_details__name
+msgid "Name"
+msgstr "文件名"
 
 #. module: app_auto_backup
 #: model_terms:ir.ui.view,arch_db:app_auto_backup.view_backup_config_form
@@ -271,6 +327,12 @@ msgstr "服务器目录"
 #: model:ir.model.fields,field_description:app_auto_backup.field_db_backup__port
 msgid "Port"
 msgstr "端口"
+
+#. module: app_auto_backup
+#: model_terms:ir.ui.view,arch_db:app_auto_backup.db_backup_details_tree_view
+#: model_terms:ir.ui.view,arch_db:app_auto_backup.view_backup_config_form
+msgid "Remove File"
+msgstr "删除文件"
 
 #. module: app_auto_backup
 #: model:ir.model.fields,field_description:app_auto_backup.field_db_backup__days_to_keep_sftp
@@ -352,9 +414,14 @@ msgstr "SFTP 连接使用该用户名。这是在SFTP服务器上的用户。"
 msgid ""
 "This configures the scheduler for automatic backup of the given database running on given host\n"
 "                        at given port on regular intervals.\n"
-"                        <br/>\n"
+"                            <br/>\n"
 "                        Automatic backups of the database can be scheduled as follows:"
 msgstr "配置适用指定数据库备份 在设置服务器端口定期运行"
+
+#. module: app_auto_backup
+#: model:ir.model.fields,field_description:app_auto_backup.field_db_backup_details__url
+msgid "URL"
+msgstr ""
 
 #. module: app_auto_backup
 #: model:ir.module.category,description:app_auto_backup.module_management
