@@ -21,6 +21,7 @@
 	                <attribute name="optional">show</attribute>
                 </xpath>
                 <xpath expr="//field[@name='is_published']" position="after">
+	                <field name="website_url" optional="hide"/>
 	                <field name="seo_name" optional="hide"/>
 	                <field name="website_meta_keywords" optional="hide"/>
 	                <field name="website_meta_title" optional="hide"/>
@@ -43,6 +44,7 @@
 								<field name="seo_name"/>
 			                    <field name="website_meta_keywords"/>
 			                    <field name="website_meta_title"/>
+								<field name="website_url"/>
 		                    </group>
 		                    <group>
 			                    <field name="website_meta_description"/>
@@ -95,6 +97,7 @@
                                     <field name="website_meta_title" string="Meta Title"/>
                                     <field name="website_meta_description" string="Meta Description"/>
                                     <field name="website_meta_keywords" string="Meta Keywords" help="Separate every keyword with a comma"/>
+								    <field name="website_url"/>
                                 </group>
                             </page>
                         </notebook>
