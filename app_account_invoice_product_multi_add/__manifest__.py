@@ -34,8 +34,9 @@
     'price': 0.00,
     'currency': 'USD',
     'summary': """
-    App Account Invoice Product Multi Batch Add
-    Odoo App of odooai.cn
+    One Click to add multi product to Account Invoice.
+    Account Invoice Product Multi Batch Add.
+    客户收据与供应商帐单批量增加产品
     """,
     'description': """
     App Account Invoice Product Multi Add
