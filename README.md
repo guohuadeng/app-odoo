@@ -32,7 +32,7 @@ Odoo成功100%，Odoo专业开发实施培训，原广州尚鹏
 
 # Odoo Apps 清单，已上架 [Odoo中文应用商店](https://www.odooapp.cn)，[Odoo官方应用市场](https://apps.odoo.com/apps/modules/browse?search=odooai.cn)
 
-##`app_account_invoice_product_multi_add`
+    app_account_invoice_product_multi_add
 ### App Account Invoice Product Multi Batch Add
 One Click to add multi product to Account Invoice.
 Account Invoice Product Multi Batch Add.
