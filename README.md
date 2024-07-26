@@ -1,4 +1,4 @@
-# Odoo Addon for 17,16,15,14,13,12,11,10，Odoo的全版本开源免费增强集合
+# Odoo Addon for 18,17,16,15,14,13,12,11,10，Odoo的全版本开源免费增强集合
 
 本 Repo 在全球 Github 的最新主版本
 [https://github.com/guohuadeng/app-odoo](https://github.com/guohuadeng/app-odoo)
