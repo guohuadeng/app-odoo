@@ -28,6 +28,8 @@ class AiRobot(models.Model):
         ('gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0613'),
         ('gpt-3.5-turbo-0125', 'gpt-3.5-turbo-0125'),
         ('gpt-3.5-turbo-16k-0613', 'gpt-3.5-turbo-16k-0613(Big text)'),
+        ('gpt-4o', 'GPT-4o'),
+        ('gpt-4-turbo', 'GPT-4 Turbo'),
         ('gpt-4', 'Chatgpt 4'),
         ('gpt-4-32k', 'Chatgpt 4 32k'),
         ('gpt-3.5-turbo', 'Chatgpt 3.5 Turbo'),
