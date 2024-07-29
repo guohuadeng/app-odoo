@@ -17,7 +17,7 @@
 
 {
     'name': "Event advance search browse by stage",
-    'version': '16.24.07.18',
+    'version': '16.24.07.29',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -42,6 +42,7 @@
     'images': ['static/description/banner.png'],
     'data': [
         'views/event_event_views.xml',
+        'views/event_tag_views.xml',
     ],
     'demo': [
     ],
