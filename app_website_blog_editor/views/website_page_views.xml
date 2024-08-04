@@ -39,12 +39,13 @@
                 <field name="website_meta_description" optional="hide"/>
 			</xpath>
             <xpath expr="//field[@name='is_seo_optimized']" position="before">
+                <button name="action_page_form_view" type="object" title="SEO Properties Set of Website Page" icon="fa-file-text-o fa-lg" />
                 <button name="action_page_debug_view" position="move"/>
-                <button name="action_page_code_view" type="object" title="Source Code" icon="fa-code fa-lg"/>
-                <button name="action_page_form_view" type="object" title="Properties Set" icon="fa-file-text-o fa-lg" />
+                <button name="action_page_code_view" type="object" title="Source Code View and edit with relate ir.ui.view" icon="fa-code fa-lg"/>
             </xpath>
             <xpath expr="//button[@name='action_page_debug_view']" position="attributes">
                 <attribute name="groups"/>
+                <attribute name="title">Content View and edit with relate ir.ui.view</attribute>
             </xpath>
 		</field>
 	</record>
@@ -70,6 +71,42 @@
 		<field name="arch" type="xml">
 			<xpath expr="//field[@name='is_published']" position="before">
                 <field name="is_force_all" widget="boolean_toggle"/>
+			</xpath>
+<!--            加button box-->
+			<xpath expr="//sheet/group" position="before">
+                <div class="oe_button_box" name="button_box" attrs="{'invisible': [('active', '=', False)]}">
+                    <field name="active" invisible="1"/>
+                    <field name="type" invisible="1"/>
+                    <field name="id" invisible="1"/>
+                </div>
+			</xpath>
+			<xpath expr="//field[@name='id']" position="after">
+                <field name="is_published" position="move"/>
+			</xpath>
+			<xpath expr="//field[@name='is_published']" position="attributes">
+                <attribute name="widget">website_redirect_button</attribute>
+			</xpath>
+            <xpath expr="//sheet/group" position="after">
+                <notebook>
+                    <page name="page_seo" string="SEO" attrs="{'invisible': [('type', '!=', 'qweb')]}">
+                        <group name="seo_info">
+                            <group>
+                                <field name="seo_name"/>
+                                <field name="website_meta_title"/>
+                                <field name="website_meta_keywords"/>
+                            </group>
+                            <group>
+                                <field name="website_meta_description"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page name="page_menu" string="Menu Items">
+                    </page>
+                </notebook>
+            </xpath>
+			<xpath expr="//page[@name='page_menu']" position="inside">
+                <label for="menu_ids" position="move"/>
+                <field name="menu_ids" position="move"/>
 			</xpath>
 		</field>
 	</record>

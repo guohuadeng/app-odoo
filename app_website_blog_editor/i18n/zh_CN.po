@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e-20230721\n"
+"Project-Id-Version: Odoo Server 16.0+e-20231112\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-01 19:15+0000\n"
-"PO-Revision-Date: 2023-10-01 19:15+0000\n"
+"POT-Creation-Date: 2024-08-04 14:52+0000\n"
+"PO-Revision-Date: 2024-08-04 14:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -48,6 +48,11 @@ msgid "Content"
 msgstr "博客图文"
 
 #. module: app_website_blog_editor
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_website_pages_tree_view
+msgid "Content View and edit with relate ir.ui.view"
+msgstr "可视化内容编辑与查看，设置关联ir.ui.view对象内容"
+
+#. module: app_website_blog_editor
 #: model:ir.model.fields,help:app_website_blog_editor.field_blog_blog__sequence
 #: model:ir.model.fields,help:app_website_blog_editor.field_blog_tag__sequence
 #: model:ir.model.fields,help:app_website_blog_editor.field_blog_tag_category__sequence
@@ -66,13 +71,20 @@ msgstr "分组依据"
 
 #. module: app_website_blog_editor
 #: model:ir.model.fields,help:app_website_blog_editor.field_website_page__is_force_all
-msgid "If check, the page would use to all website, even u change."
-msgstr "如果选中，该页面将用于所有网站，甚至 u 更改。"
+msgid ""
+"If check, the page would use to all website, even u change.\n"
+" Important, The page url must be uniq in all website"
+msgstr "如果选中，该页面将用于所有网站。注意在勾选模式下，页面的 url 必须全局唯一。"
 
 #. module: app_website_blog_editor
 #: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_res_config_settings_form_view
 msgid "If set, replaces the blog post background image as the meta image."
 msgstr "如果设置，默认将博文背景图片替换为元图像。"
+
+#. module: app_website_blog_editor
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_website_pages_form_view
+msgid "Menu Items"
+msgstr "菜单项"
 
 #. module: app_website_blog_editor
 #: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_view_blog_post_search
@@ -90,9 +102,19 @@ msgid "Published"
 msgstr "已发布"
 
 #. module: app_website_blog_editor
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_website_pages_form_view
+msgid "SEO"
+msgstr "SEO优化"
+
+#. module: app_website_blog_editor
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_website_pages_tree_view
+msgid "SEO Properties Set of Website Page"
+msgstr "网页SEO及关键属性设置"
+
+#. module: app_website_blog_editor
 #: model:ir.model.fields,field_description:app_website_blog_editor.field_blog_blog__seo_name
 msgid "Seo name"
-msgstr "SEO链接名"
+msgstr "SEO链接URL"
 
 #. module: app_website_blog_editor
 #: model:ir.model.fields,field_description:app_website_blog_editor.field_blog_blog__sequence
@@ -108,9 +130,13 @@ msgstr "设置"
 
 #. module: app_website_blog_editor
 #: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_view_blog_post_list
-#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_website_pages_tree_view
 msgid "Source Code"
 msgstr "源代码"
+
+#. module: app_website_blog_editor
+#: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_website_pages_tree_view
+msgid "Source Code View and edit with relate ir.ui.view"
+msgstr "源代码查看和编辑,编辑关联ir.ui.view对象"
 
 #. module: app_website_blog_editor
 #: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_view_blog_post_search
@@ -122,6 +148,11 @@ msgstr "标题"
 #: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_res_config_settings_form_view
 msgid "Use a meta image by default for blog post background"
 msgstr "博客文章背景默认使用元图像"
+
+#. module: app_website_blog_editor
+#: model:ir.model,name:app_website_blog_editor.model_ir_ui_view
+msgid "View"
+msgstr "视图"
 
 #. module: app_website_blog_editor
 #: model_terms:ir.ui.view,arch_db:app_website_blog_editor.app_website_pages_view_search
