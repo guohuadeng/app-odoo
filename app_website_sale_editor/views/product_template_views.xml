@@ -51,7 +51,7 @@
 		                    </group>
 	                    </group>
 	                    <group string="Content">
-                            <field name="website_description" nolabel="1"/>
+                            <field name="website_description" nolabel="1" colspan="2"/>
 	                    </group>
                     </page>
                 </xpath>
