@@ -41,7 +41,7 @@
     ],
     'images': ['static/description/banner.png'],
     'data': [
-        'views/purchase_views.xml',
+        'views/purchase_order_views.xml',
     ],
     
     'assets': {

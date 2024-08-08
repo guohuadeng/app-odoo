@@ -7,6 +7,7 @@
         <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
         <field name="arch" type="xml">
             <xpath expr="//searchpanel//field[1]" position="before">
+                <field name="date_approve"/>
                 <field name="date_order"/>
             </xpath>
         </field>
@@ -18,6 +19,7 @@
         <field name="inherit_id" ref="purchase.purchase_order_view_search"/>
         <field name="arch" type="xml">
             <xpath expr="//searchpanel//field[@name='company_id']" position="before">
+                <field name="date_approve"/>
                 <field name="date_order"/>
             </xpath>
         </field>

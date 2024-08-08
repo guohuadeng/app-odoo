@@ -17,7 +17,7 @@
 
 {
     'name': "Advance purchase order navigator by date and vendor",
-    'version': '16.24.06.15',
+    'version': '16.24.08.08',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
