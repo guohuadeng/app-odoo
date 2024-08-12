@@ -61,6 +61,10 @@
 }
 @media (max-width: 768px) {
   .o_form_view .o_form_view_container {
+    //  create 按键
+      button.o_form_button_create {
+        padding: 7px 10px;
+      }
     .o_form_sheet_bg .o_form_sheet {
       margin: 6px auto;
       max-width: 98%;

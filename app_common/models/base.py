@@ -77,9 +77,9 @@ class Base(models.AbstractModel):
                 if not domain:
                     domain = self._fields[fieldname].domain or []
                 try:
-                    rec = self.env[self._fields[fieldname].comodel_name].sudo().search(domain, limit=1)
+                    rec = self.env[self._fields[fieldname].comodel_name].search(domain, limit=1)
                 except Exception as e:
-                    rec = self.env[self._fields[fieldname].comodel_name].sudo().search([], limit=1)
+                    rec = self.env[self._fields[fieldname].comodel_name].search([], limit=1)
                 return rec.id if rec else False
         return False
 
