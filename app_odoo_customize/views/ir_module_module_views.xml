@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <field name="name" position="attributes">
                     <attribute name="groups"/>
+                    <attribute name="optional">show</attribute>
                 </field>
                 <field name="installed_version" position="after">
                     <field name="latest_version" optional="hide"/>
