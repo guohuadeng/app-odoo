@@ -9,8 +9,9 @@
          <function model="ir.default" name="set"
             eval="('res.partner', 'tz', 'Etc/GMT-8')"/>
         <!--设置用户email在odoo内提醒-->
-         <function model="ir.default" name="set"
-            eval="('res.users', 'notification_type', 'inbox')"/>
+<!--        fix，此处不可设置，因为门户用户只能通过 email，不能 inbox-->
+<!--         <function model="ir.default" name="set"-->
+<!--            eval="('res.users', 'notification_type', 'inbox')"/>-->
         <!--设置产品默认是可库存产品-->
          <function model="ir.default" name="set"
             eval="('product.template', 'detailed_type', 'product')"/>
