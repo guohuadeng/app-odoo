@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <!-- todo: Modules list -->
+        <!--  Modules list -->
+        <record id="app_module_tree" model="ir.ui.view">
+            <field name="name">app.ir.module.module.tree</field>
+            <field name="model">ir.module.module</field>
+            <field name="inherit_id" ref="base.module_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="attributes">
+                    <attribute name="groups"/>
+                    <attribute name="optional">show</attribute>
+                </field>
+                <field name="installed_version" position="after">
+                    <field name="addons_path" optional="hide" groups="base.group_no_one"/>
+                </field>
+                <field name="website" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                </field>
+                <field name="state" position="before">
+                    <field name="license" optional="hide"/>
+                </field>
+            </field>
+        </record>
         <!-- Modules search-->
         <record id="app_view_module_filter" model="ir.ui.view">
             <field name="name">app.ir.module.module.list.select</field>
