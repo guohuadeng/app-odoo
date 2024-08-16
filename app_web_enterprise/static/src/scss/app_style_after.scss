@@ -32,6 +32,10 @@
     }
   }
 
+  //列表标头下显示边框，标尾头显示边框
+  > :not(:first-child)  {
+    border-top-width: 2px;
+  }
   //列表标头左右下显示边框
   --ListRenderer-thead-border-end-color: #{map-get($grays, '300')};
 
@@ -55,10 +59,51 @@
       min-width: 4rem;
     }
 }
+@media (max-width: 768px) {
+  .o_form_view .o_form_view_container {
+    //  create 按键
+      button.o_form_button_create {
+        padding: 7px 10px;
+      }
+    .o_form_sheet_bg .o_form_sheet {
+      margin: 6px auto;
+      max-width: 98%;
+    }
+  }
+}
 
 @media (min-width: 768px) {
+  .o_form_view .o_form_view_container .o_form_sheet_bg .o_form_sheet {
+    max-width: 98%;
+  }
   .o_form_view .o_form_view_container .o_notebook .o_notebook_headers {
     overflow-x: inherit;
+  }
+}
+
+@media (min-width: 992px) {
+  .o_form_view .o_form_view_container .o_form_sheet_bg .o_form_sheet {
+    max-width: 98%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .o_form_view .o_form_view_container .o_form_sheet_bg .o_form_sheet {
+    max-width: 98%;
+  }
+}
+
+
+@media (min-width: 1400px) {
+  .o_form_view .o_form_view_container .o_form_sheet_bg .o_form_sheet {
+    max-width: 98%;
+  }
+}
+
+//    report
+.o_account_reports_page .o_account_reports_table {
+  .o_account_report_column_value tr > td.number {
+      border-left: 1px solid var(--AccountFinancial-border-color, #bbb);
   }
 }
 

@@ -18,9 +18,9 @@
 
 {
     'name': "odoo Enterprise enhance Pack,企业版界面及操作增强",
-    'version': '23.11.16',
+    'version': '24.08.17',
     'author': 'odooai.cn',
-    'category': 'Base',
+    'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
@@ -30,6 +30,7 @@
     1. Add dropdown arrow to parent menu.
     2. Replace the odoo logo to your company logo in main menu.
     3. Alway show search in main menu.
+    4. Table and report UI enhance(Grid View).
     """,
     'description': """
     odoo enterprise version UI enhance.
@@ -42,8 +43,10 @@
     替换主菜单界面的logo为你公司的logo。
     4. Add underline for input field.
     在可编辑字段下方增加下划线，易于分辨。
-    5. Add grid line form list view. Easy to read list data.</li>
+    5. Add grid line form list view. Easy to read list data.
     为表格list增加行列分隔线，易于看数据。
+    6. Add grid line to Account Reports. Easy to view Data.
+    为财务报表增加行列分隔线，易于看数据及对账。
     11. Multi-language Support. Multi-Company Support.
     12. Support Odoo 17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
@@ -51,7 +54,7 @@
     1.
     2.
     11. 多语言支持，多公司支持
-    12. Odoo 16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    12. Odoo 17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
     13. 代码完全开源
     """,
     'price': 68.00,
@@ -70,24 +73,23 @@
         'web._assets_primary_variables': [
             ('before', 'web_enterprise/static/src/scss/primary_variables.scss', 'app_web_enterprise/static/src/scss/primary_variables.scss'),
         ],
-        # 处理header 变更
         'web.assets_backend': [
-            ('before', 'web/static/src/webclient/navbar/navbar.scss', 'app_web_enterprise/static/src/scss/navbar_before.scss'),            # ('after', 'web/static/src/webclient/navbar/navbar.scss', 'app_web_enterprise/static/src/scss/navbar.scss'),
+            ('before', 'web/static/src/views/**/*', 'app_web_enterprise/static/src/scss/app_style_before.scss'),
             ('after', 'web/static/src/views/**/*', 'app_web_enterprise/static/src/scss/app_style_after.scss'),
-            # 'app_web_enterprise/static/src/components/*/*.xml',
-            'app_web_enterprise/static/src/webclient/navbar.xml',
-            'app_web_enterprise/static/src/xml/res_config_edition.xml',
-            'app_web_enterprise/static/src/xml/form.xml',
+            'app_web_enterprise/static/src/components/*/*.xml',
+            'app_web_enterprise/static/src/webclient/**/*.xml',
+            'app_web_enterprise/static/src/xml/**/*.xml',
+            # 'app_web_enterprise/static/src/xml/base.xml',
         ],
         # 这里是改样式，要 after处理
         'web.assets_common': [
-            # ('after', 'web/static/lib/jquery.ui/jquery-ui.css', 'app_web_enterprise/static/lib/jquery.ui/jquery-ui.css'),
-            # ('after', 'web_enterprise/static/src/webclient/home_menu/home_menu_background.scss', 'app_web_enterprise/static/src/scss/home_menu_background.scss'),
+            ('after', 'web/static/lib/jquery.ui/jquery-ui.css', 'app_web_enterprise/static/lib/jquery.ui/jquery-ui.css'),
+            ('after', 'web_enterprise/static/src/webclient/home_menu/home_menu_background.scss', 'app_web_enterprise/static/src/scss/home_menu_background.scss'),
         ],
         'web.assets_frontend': [
             # ('after', 'web/static/src/core/**/*', 'app_web_enterprise/static/src/xml/base.xml'),
-            # ('after', 'web_enterprise/static/src/webclient/home_menu/home_menu_background.scss', 'app_web_enterprise/static/src/scss/home_menu_background.scss'),
-            # 'app_web_enterprise/static/src/scss/app_style_website.scss',
+            ('after', 'web_enterprise/static/src/webclient/home_menu/home_menu_background.scss', 'app_web_enterprise/static/src/scss/home_menu_background.scss'),
+            'app_web_enterprise/static/src/scss/app_style_website.scss',
         ],
     },
 
