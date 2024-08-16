@@ -18,7 +18,7 @@
 
 {
     'name': "odoo Enterprise enhance Pack,企业版界面及操作增强",
-    'version': '16.24.08.08',
+    'version': '16.24.08.17',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -78,6 +78,8 @@
             ('after', 'web/static/src/views/**/*', 'app_web_enterprise/static/src/scss/app_style_after.scss'),
             'app_web_enterprise/static/src/components/*/*.xml',
             'app_web_enterprise/static/src/webclient/**/*.xml',
+            'app_web_enterprise/static/src/webclient/**/*.js',
+            'app_web_enterprise/static/src/webclient/**/*.scss',
             'app_web_enterprise/static/src/xml/**/*.xml',
             # 'app_web_enterprise/static/src/xml/base.xml',
         ],
