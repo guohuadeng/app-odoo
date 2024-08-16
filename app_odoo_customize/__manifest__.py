@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo Tweak,Ai Employee,Boost,Customize All in One. Customize,UI,Boost,Security,Data',
-    'version': '16.24.07.23',
+    'version': '16.24.08.14',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
@@ -39,6 +39,7 @@
     'depends': [
         'app_common',
         'base_setup',
+        'base_import',
         'portal',
         'mail',
         # 'digest',
@@ -82,6 +83,7 @@
             'app_odoo_customize/static/src/webclient/user_menu.xml',
             'app_odoo_customize/static/src/xml/res_config_edition.xml',
             'app_odoo_customize/static/src/xml/debug_templates.xml',
+            'app_odoo_customize/static/src/xml/base_import.xml',
         ],
     },
     'pre_init_hook': 'pre_init_hook',
