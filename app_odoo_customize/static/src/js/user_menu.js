@@ -3,7 +3,7 @@
 
 import { _t } from "@web/core/l10n/translation";
 import { UserMenu } from "@web/webclient/user_menu/user_menu";
-import { routeToUrl } from "@web/core/browser/router_service";
+import { router } from "@web/core/browser/router";
 import { patch } from "@web/core/utils/patch";
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
@@ -17,7 +17,6 @@ patch(UserMenu.prototype, {
 
         "use strict";
         // this.companyService = useService("company");
-        this.rpc = useService("rpc");
         this.orm = useService("orm");
         this.app_show_lang = session.app_show_lang;
         this.app_lang_list = session.app_lang_list;
@@ -111,7 +110,7 @@ function debugItem(env) {
         id: "debug",
         description: _t("Activate the developer mode"),
         callback: () => {
-            browser.location.search = "?debug=1";
+            router.pushState({ debug: 1 }, { reload: true });
         },
         sequence: 5,
     };
@@ -123,7 +122,7 @@ function activateAssetsDebugging(env) {
         type: "item",
         description: _t("Activate Assets Debugging"),
         callback: () => {
-            browser.location.search = "?debug=assets";
+            router.pushState({ debug: 'assets' }, { reload: true });
         },
         sequence: 6,
     };
@@ -135,9 +134,7 @@ function leaveDebugMode(env) {
         type: "item",
         description: _t("Leave the Developer Tools"),
         callback: () => {
-            const route = env.services.router.current;
-            route.search.debug = "";
-            browser.location.href = browser.location.origin + routeToUrl(route);
+            router.pushState({ debug: 0 }, { reload: true });
         },
         sequence: 7,
     };

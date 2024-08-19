@@ -6,9 +6,9 @@
             <field name="model">res.config.settings</field>
             <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
             <field name="arch" type="xml">
-                <setting id="appstore" position="attributes">
+				<xpath expr="//block[@name='about_setting_container']//widget[@name='mobile_apps_funnel']" position="attributes">
                     <attribute name="invisible">1</attribute>
-                </setting>
+                </xpath>
             </field>
         </record>
     </data>

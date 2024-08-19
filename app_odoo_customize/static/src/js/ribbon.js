@@ -41,28 +41,28 @@ export class WebEnvironmentRibbon extends Component {
     }
 
     showRibbon() {
-        const ribbon = $(".test-ribbon");
+        const ribbon = document.querySelector('.test-ribbon');
         const self = this;
-        ribbon.hide();
+        ribbon.classList.add('o_hidden');
         // Get ribbon data from backend
         self.orm
             .call("web.environment.ribbon.backend", "get_environment_ribbon")
             .then(function (ribbon_data) {
                 // Ribbon name
                 if (ribbon_data.name && ribbon_data.name !== "False") {
-                    ribbon.show();
+                    ribbon.classList.remove('o_hidden');
                     ribbon.html(ribbon_data.name);
                 }
                 // Ribbon color
                 if (ribbon_data.color && self.validStrColour(ribbon_data.color)) {
-                    ribbon.css("color", ribbon_data.color);
+                    ribbon.style.color = ribbon_data.color;
                 }
                 // Ribbon background color
                 if (
                     ribbon_data.background_color &&
                     self.validStrColour(ribbon_data.background_color)
                 ) {
-                    ribbon.css("background-color", ribbon_data.background_color);
+                    ribbon.style.backgroundColor = ribbon_data.background_color;
                 }
             });
     }

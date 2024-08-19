@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <odoo>
     <record id="app_ir_cron_view_tree" model="ir.ui.view">
         <field name="name">app.ir.cron.tree</field>

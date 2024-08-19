@@ -60,25 +60,25 @@
             <field name="inherit_id" ref="base.module_view_kanban"/>
             <field name="arch" type="xml">
                 <!--点击模块看详情-->
-                <xpath expr="//div[hasclass('oe_module_vignette')]" position="attributes" groups="app_odoo_customize.group_show_quick_upgrade">
-                    <attribute name="class" position="add" separator=" ">oe_kanban_global_click</attribute>
-                </xpath>
+<!--                <xpath expr="//aside/.." position="attributes" groups="app_odoo_customize.group_show_quick_upgrade">-->
+<!--                    <attribute name="class" position="add" separator=" ">oe_kanban_global_click</attribute>-->
+<!--                </xpath>-->
                 <!--让模块名更显眼-->
-                <xpath expr="//div[hasclass('oe_module_desc')]//code" position="replace"/>
-                <xpath expr="//div[hasclass('oe_module_desc')]//h4" position="after">
-                    <code><field name="name"/></code>
+                <xpath expr="//main//code" position="attributes">
+                    <attribute name="groups"></attribute>
                 </xpath>
                 <!--显示快速升级-->
-                <xpath expr="//div[hasclass('oe_module_action')]" position="inside" groups="app_odoo_customize.group_show_quick_upgrade">
-                    <button type="object" class="btn btn-default btn-sm float-right" name="button_uninstall_wizard" t-if="installed">Uninstall</button>
-                    <button type="object" class="btn btn-success btn-sm float-right" name="button_immediate_upgrade" t-if="installed">Upgrade</button>
+                <xpath expr="//button[@name='button_immediate_install']" position="after">
+                    <button type="object" class="btn btn-default btn-sm float-right" name="button_uninstall_wizard"
+                             groups="base.group_system" invisible="state != 'installed'">Uninstall</button>
+                    <button type="object" class="btn btn-success btn-sm float-right" name="button_immediate_upgrade"
+                             groups="base.group_system" invisible="state != 'installed'">Upgrade</button>
                 </xpath>
                 <!--显示导出翻译-->
                 <xpath expr="//t[@t-name='kanban-menu']" position="inside">
                     <a t-if="installed" name="%(app_odoo_customize.action_server_module_multi_get_po)d" type="action" role="menuitem" class="dropdown-item">Export Translation</a>
                     <a t-if="installed" name="%(app_odoo_customize.action_server_module_multi_refresh_po)d" type="action" role="menuitem" class="dropdown-item">Refresh Translation</a>
                 </xpath>
-                <xpath expr="//div[hasclass('oe_module_action')]/a[@target='_blank']" position="replace" groups="app_odoo_customize.group_show_quick_upgrade"/>
             </field>
         </record>
     <!--默认打开可更新模块-->

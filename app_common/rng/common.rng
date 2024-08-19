@@ -348,6 +348,7 @@
             <rng:optional><rng:attribute name="aria-label"/></rng:optional>
             <rng:optional><rng:attribute name="aria-pressed"/></rng:optional>
             <rng:optional><rng:attribute name="display"/></rng:optional>
+            <rng:optional><rng:attribute name="data-hotkey"/></rng:optional>
             <rng:zeroOrMore>
                 <rng:choice>
                     <rng:ref name="field" />
@@ -381,6 +382,10 @@
             <rng:optional><rng:attribute name="help"/></rng:optional>
             <rng:optional><rng:attribute name="domain"/></rng:optional>
             <rng:optional><rng:attribute name="date"/></rng:optional>
+            <rng:optional><rng:attribute name="start_month"/></rng:optional>
+            <rng:optional><rng:attribute name="end_month"/></rng:optional>
+            <rng:optional><rng:attribute name="start_year"/></rng:optional>
+            <rng:optional><rng:attribute name="end_year"/></rng:optional>
             <rng:optional><rng:attribute name="default_period"/></rng:optional>
             <rng:zeroOrMore>
                 <rng:choice>
@@ -422,6 +427,7 @@
         <rng:element name="widget">
             <rng:attribute name="name"/>
             <rng:optional><rng:attribute name="options"/></rng:optional>
+            <rng:optional><rng:attribute name="width"/></rng:optional>
         </rng:element>
     </rng:define>
 
