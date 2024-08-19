@@ -32,9 +32,9 @@
     'sequence': 2,
     'images': ['static/description/banner.gif'],
     'summary': """
-    Ai as employee. 1 click Tweak odoo. 48 Functions odoo enhancement. for Customize, UI, Boost, Security, Development.
+    Odoo18 Supported. Ai as employee. 1 click Tweak odoo. 48 Functions odoo enhancement. for Customize, UI, Boost, Security, Development.
     Easy reset data, clear data, reset account chart, reset Demo data.
-    For quick debug. Set brand,  Language Switcher all in one.
+    For quick debug. Set brand.
     """,
     'depends': [
         'app_common',
