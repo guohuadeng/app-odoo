@@ -1,0 +1,11 @@
+.o_home_menu_background, .o_web_client.o_home_menu_background {
+    background: {
+        size: cover;
+        attachment: fixed;
+        color: var(--homeMenu-bg-color, #00463e);
+        image: var(--homeMenu-bg-image,
+            linear-gradient(to right bottom, #00796B, #00463e),
+            url("/app_web_enterprise/static/src/img/home-menu-bg-overlay.svg")
+        );
+    }
+}

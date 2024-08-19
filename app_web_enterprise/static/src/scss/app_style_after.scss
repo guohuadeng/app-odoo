@@ -1,0 +1,149 @@
+// 不显示 tooltip
+.o_tooltip.o_tooltip_visible  {
+  display: none;
+}
+// 上方菜单下拉，group 也有箭头
+.o_main_navbar {
+  .o-dropdown {
+    .dropdown-menu_group.dropdown-header::after {
+      display: inline-block;
+      margin-left: 3.4px;
+      vertical-align: 3.4px;
+      content: "";
+      border-top: 4px solid;
+      border-right: 4px solid transparent;
+      border-bottom: 0;
+      border-left: 4px solid transparent;
+    }
+  }
+}
+
+//list
+.o_list_renderer.table-responsive .o_list_table {
+  //list 改标头背景，o2m这里分开写
+  :not(.o_field_x2many_list) > & thead, tfoot {
+    tr {
+      background-color: $o-gray-100;
+    }
+  }
+  .o_field_x2many_list > & thead, tfoot {
+    tr {
+      background-color: $o-gray-100;
+    }
+  }
+
+  //列表标头下显示边框，标尾头显示边框
+  > :not(:first-child)  {
+    border-top-width: 2px;
+  }
+  //列表标头左右下显示边框
+  --ListRenderer-thead-border-end-color: #{map-get($grays, '300')};
+
+  //内容显示边框
+  .o_data_row > .o_data_cell {
+    border-left: 1px solid map-get($grays, '300');
+    border-right: 1px solid map-get($grays, '300');
+  }
+
+  .o_data_row:not(.o_selected_row) > .o_data_cell:not(.o_readonly_modifier):not(:last-child) {
+    border-left: 1px solid map-get($grays, '300');
+    border-right: 1px solid map-get($grays, '300');
+  }
+
+}
+
+//form
+  //  create 按键
+.o_form_view .o_form_view_container {
+    button.o_form_button_create {
+      min-width: 4rem;
+    }
+}
+@media (max-width: 768px) {
+  .o_form_view .o_form_view_container {
+    //  create 按键
+      button.o_form_button_create {
+        padding: 7px 10px;
+      }
+    .o_form_sheet_bg .o_form_sheet {
+      margin: 6px auto;
+      max-width: 98%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .o_form_view .o_form_view_container .o_form_sheet_bg .o_form_sheet {
+    max-width: 98%;
+  }
+  .o_form_view .o_form_view_container .o_notebook .o_notebook_headers {
+    overflow-x: inherit;
+  }
+}
+
+@media (min-width: 992px) {
+  .o_form_view .o_form_view_container .o_form_sheet_bg .o_form_sheet {
+    max-width: 98%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .o_form_view .o_form_view_container .o_form_sheet_bg .o_form_sheet {
+    max-width: 98%;
+  }
+}
+
+
+@media (min-width: 1400px) {
+  .o_form_view .o_form_view_container .o_form_sheet_bg .o_form_sheet {
+    max-width: 98%;
+  }
+}
+
+//    report
+.o_account_reports_page .o_account_reports_table {
+  .o_account_report_column_value tr > td.number {
+      border-left: 1px solid var(--AccountFinancial-border-color, #bbb);
+  }
+}
+
+//izi
+.izi_view {
+  .izi_dashboard_filter_title span {
+    background: #00796B;
+  }
+
+  .izi_dashboard_filter {
+    color: #00796B;
+    border: 1px solid #00796B;
+  }
+
+  .izi_dashboard_filter_content .dropdown-toggle {
+    color: #00796B;
+  }
+
+  .izi_btn.izi_btn_wpb {
+    border-color: #00796B;
+    color: #00796B;
+  }
+
+  .izi_btn.izi_btn_wpb:hover,
+  .izi_btn.izi_btn_wpb:not(:disabled):not(.disabled):active,
+  .izi_btn.izi_btn_wpb:not(:disabled):not(.disabled).active,
+  .show > .izi_btn.izi_btn_wpb.dropdown-toggle {
+    background-color: #00796B;
+    border-color: #00796B;
+  }
+
+  /* wlp - White Light Purple*/
+  .izi_btn.izi_btn_wlp {
+    color: #00796B;
+  }
+
+  .izi_btn.izi_btn_wlp:hover,
+  .izi_btn.izi_btn_wlp:not(:disabled):not(.disabled):active,
+  .izi_btn.izi_btn_wlp:not(:disabled):not(.disabled).active,
+  .show > .izi_btn.izi_btn_wlp.dropdown-toggle {
+    color: #00796B;
+  }
+}

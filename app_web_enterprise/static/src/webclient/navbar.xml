@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+<t t-name="app_web_enterprise.EnterpriseNavBar" t-inherit="web_enterprise.EnterpriseNavBar" t-inherit-mode="extension">
+    <xpath expr="//a[hasclass('o_menu_toggle')]" position="replace">
+        <a href="#" class="o_menu_toggle" t-att-class="{'hasImage': currentApp &amp;&amp; currentApp.webIconData}" accesskey="h" t-ref="menuApps" t-on-click.prevent="() => this.hm.toggle()">
+            <i class="o_menu_toggle_icon text-primary fa fa-2x fa-opera" style="padding-right:8px;" role="img"/>
+            <img
+                t-if="currentApp &amp;&amp; currentApp.webIconData"
+                t-att-src="currentApp.webIconData"
+                class="o_menu_brand_icon d-none d-lg-inline position-absolute start-0 h-100 ps-1 ms-2"
+                t-att-alt="currentApp.name"
+                t-ref="appIcon"/>
+
+            <span
+                t-if="currentApp"
+                t-esc="currentApp.name"
+                class="o_menu_brand d-none d-md-flex ms-3 pe-0"/>
+        </a>
+    </xpath>
+</t>
+    <!--    菜单有下拉箭头， owl的在 web.NavBar， 首行用 MenuDropdown， 下拉的用 DropdownItem -->
+    <!--    owl NavBar-->
+<!--    <t t-name="app_web_enterprise.NavBar.SectionsMenu" t-inherit="web.NavBar.SectionsMenu" t-inherit-mode="extension">-->
+<!--        <xpath expr="//MenuDropdown" position="attributes">-->
+<!--            <attribute name="showCaret">true</attribute>-->
+<!--        </xpath>-->
+<!--    </t>-->
+<!--    <t t-name="app_web_enterprise.NavBar.SectionsMenu.Dropdown.MenuSlot" t-inherit="web.NavBar.SectionsMenu.Dropdown.MenuSlot" t-inherit-mode="extension">-->
+<!--        <xpath expr="//DropdownItem[1]" position="attributes">-->
+<!--            <attribute name="showCaret">true</attribute>-->
+<!--        </xpath>-->
+<!--    </t>-->
+</templates>
