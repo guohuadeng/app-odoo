@@ -133,7 +133,7 @@ App MRP Bom Product Multi Batch Add
     For Odoo17. Please get from the follow github. Done for 85%.
     https://github.com/guohuadeng/app-odoo/tree/17.0
     White label odoo. UI and Development Enhance.
-    Support Odoo 17,16,15,14,13,12,11,10,9.
+    Support Odoo 18,17,16,15,14,13,12,11,10,9.
     You can config odoo, make it look like your own platform.
     ============
     1. Deletes Odoo label in footer
@@ -189,7 +189,7 @@ App MRP Bom Product Multi Batch Add
     The user can get the help document just by one click.
     ## 在符合odoo开源协议的前提下，自定义你的odoo系统
     可完全自行设置下列选项，将 odoo 整合进自有软件产品
-    支持odoo 17,16,15,14,13,12, 11, 10, 9 版本，社区版企业版通用
+    支持Odoo 18,17,16,15,14,13,12, 11, 10, 9 版本，社区版企业版通用
     ============
     1. 删除菜单导航页脚的 Odoo 标签
     2. 将弹出窗口中 "Odoo" 设置为自定义名称

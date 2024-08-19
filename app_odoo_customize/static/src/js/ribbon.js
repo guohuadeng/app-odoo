@@ -51,7 +51,7 @@ export class WebEnvironmentRibbon extends Component {
                 // Ribbon name
                 if (ribbon_data.name && ribbon_data.name !== "False") {
                     ribbon.classList.remove('o_hidden');
-                    ribbon.html(ribbon_data.name);
+                    ribbon.innerHTML = ribbon_data.name;
                 }
                 // Ribbon color
                 if (ribbon_data.color && self.validStrColour(ribbon_data.color)) {
