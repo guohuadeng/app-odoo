@@ -23,12 +23,18 @@ Odoo成功100%，Odoo专业开发实施培训，原广州尚鹏
 7. 服务上千客户，多家上市公司
 8. Odoo中文应用商店 [应用商店，海量免费及商业模块主题](https://www.odooapp.cn)
 
-## 最新上架 Odoo17, Odoo16版本模块
-1. Odoo微信相关，企业微信相关
-2. 高级界面UI增强 ztree, superbar 的升级
-3. Odoo供应链、产销一体、业财一体模块
-4. Odoo开箱即用系列功能，让Odoo更快上手，马上用
-5. Odoo18 开发工作进行中，同步官方2024年10月发布
+## 最新上架 Odoo18, Odoo17, Odoo16版本模块
+1. Odoo全面优化，OEM模块。开发使用必备，全球近10万下载
+2. Odoo微信相关，企业微信相关
+3. 高级界面UI增强 ztree, superbar 的升级
+4. Odoo供应链、产销一体、业财一体模块
+5. Odoo开箱即用系列功能，让Odoo更快上手，马上用
+
+# Odoo Apps 清单，已上架 [Odoo中文应用商店](https://www.odooapp.cn)，[Odoo官方应用市场](https://apps.odoo.com/apps/modules/browse?search=odooai.cn)
+
+## 应用 技术名
+### 应用 name
+应用 summary
 
 # Odoo Apps 清单，已上架 [Odoo中文应用商店](https://www.odooapp.cn)，[Odoo官方应用市场](https://apps.odoo.com/apps/modules/browse?search=odooai.cn)
 
