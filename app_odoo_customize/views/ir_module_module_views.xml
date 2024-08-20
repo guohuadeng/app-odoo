@@ -69,9 +69,11 @@
                     <code><field name="name"/></code>
                 </xpath>
                 <!--显示快速升级-->
-                <xpath expr="//div[hasclass('oe_module_action')]" position="inside" groups="app_odoo_customize.group_show_quick_upgrade">
-                    <button type="object" class="btn btn-default btn-sm float-right" name="button_uninstall_wizard" t-if="installed">Uninstall</button>
-                    <button type="object" class="btn btn-success btn-sm float-right" name="button_immediate_upgrade" t-if="installed">Upgrade</button>
+                <xpath expr="//button[@name='button_immediate_install']" position="after">
+                    <button type="object" class="btn btn-default btn-sm float-right" name="button_uninstall_wizard"
+                             groups="base.group_system" invisible="state != 'installed'">Uninstall</button>
+                    <button type="object" class="btn btn-success btn-sm float-right" name="button_immediate_upgrade"
+                             groups="base.group_system" invisible="state != 'installed'">Upgrade</button>
                 </xpath>
                 <!--显示导出翻译-->
                 <xpath expr="//t[@t-name='kanban-menu']" position="inside">
