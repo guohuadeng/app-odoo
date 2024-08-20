@@ -451,6 +451,48 @@ class ResConfigSettings(models.TransientModel):
             'quality.tag',
         ]
         return self._remove_app_data(to_removes)
+    
+    def remove_event(self):
+        to_removes = [
+            # 清除
+            'website.event.menu',
+            'event.sponsor',
+            'event.sponsor.type',
+            'event.meeting.room',
+            'event.registration.answer',
+            'event.question.answer',
+            'event.question',
+            'event.quiz',
+            'event.quiz.answer',
+            'event.quiz.question',
+            'event.track',
+            'event.track.visitor',
+            'event.track.location',
+            'event.track.tag',
+            'event.track.tag.category',
+            'event.track.stage',
+            'event.mail.registration',
+            'event.mail',
+            'event.type.mail',
+            'event.lead.rule',
+            'event.booth.registration',
+            'event.booth',
+            'event.type',
+            'event.type.booth',
+            'event.booth.category',
+            'event.registration',
+            'event.ticket',
+            'event.type.ticket',
+            'event.event',
+            'event.stage',
+            'event.tag',
+            'event.tag.category',
+            'event.type',
+        ]
+        seqs = [
+            'event.event.',
+        ]
+        return self._remove_app_data(to_removes, seqs)
 
     def remove_website(self):
         to_removes = [
@@ -502,6 +544,7 @@ class ResConfigSettings(models.TransientModel):
         self.remove_project()
         self.remove_pos()
         self.remove_expense()
+        self.remove_event()
         self.remove_message()
         return True
 

@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e-20231112\n"
+"Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-12 14:57+0000\n"
-"PO-Revision-Date: 2023-12-12 14:57+0000\n"
+"POT-Creation-Date: 2024-08-20 09:14+0000\n"
+"PO-Revision-Date: 2024-08-20 09:14+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -35,6 +35,11 @@ msgstr "<span class=\"col-3 col-lg-2 text-left\">所有业务数据</span>"
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "<span class=\"col-3 col-lg-2 text-left\">Base Models</span>"
 msgstr "<span class=\"col-3 col-lg-2 text-left\">基础数据</span>"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "<span class=\"col-3 col-lg-2 text-left\">Event</span>"
+msgstr "<span class=\"col-3 col-lg-2 text-left\">活动</span>"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -101,17 +106,9 @@ msgstr "激活开发者模式 (assets)"
 #. module: app_odoo_customize
 #. odoo-javascript
 #: code:addons/app_odoo_customize/static/src/js/user_menu.js:0
-#: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
 #, python-format
 msgid "Activate the developer mode"
 msgstr "激活开发者模式"
-
-#. module: app_odoo_customize
-#. odoo-javascript
-#: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
-#, python-format
-msgid "Activate the developer mode (with assets)"
-msgstr "激活资源调试"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_module__addons_path
@@ -203,13 +200,6 @@ msgid "Data Cleaning (Be careful to do that!)"
 msgstr "数据清理（请谨慎操作！）"
 
 #. module: app_odoo_customize
-#. odoo-javascript
-#: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
-#, python-format
-msgid "Deactivate the developer mode"
-msgstr "退出开发者模式"
-
-#. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_debug_only_admin
 msgid "Debug for Admin"
 msgstr "仅系统管理员可调试"
@@ -218,6 +208,11 @@ msgstr "仅系统管理员可调试"
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Delete All BOM"
 msgstr "删除所有物料清单"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Delete All Event"
+msgstr "删除所有活动"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -305,13 +300,6 @@ msgstr "删除所有工作流"
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_documentation_dev_url
 msgid "Developer Documentation Url"
 msgstr "开发者手册链接"
-
-#. module: app_odoo_customize
-#. odoo-javascript
-#: code:addons/app_odoo_customize/static/src/xml/customize_user_menu.xml:0
-#, python-format
-msgid "Developer Manual"
-msgstr "开发手册"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__display_name
@@ -480,6 +468,14 @@ msgid "No Updatable"
 msgstr "无需更新"
 
 #. module: app_odoo_customize
+#. odoo-python
+#: code:addons/app_odoo_customize/models/res_config_settings.py:0
+#: code:addons/app_odoo_customize/models/res_config_settings.py:0
+#, python-format
+msgid "Not allow."
+msgstr ""
+
+#. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "OEM & Boost"
 msgstr "定制与增强"
@@ -558,6 +554,13 @@ msgstr "计划任务"
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Security and Boost"
 msgstr "安全与提速"
+
+#. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/xml/debug_templates.xml:0
+#, python-format
+msgid "Sequence:"
+msgstr ""
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_system_name
@@ -796,13 +799,20 @@ msgid "When enable,everyone login can see the debug menu"
 msgstr "启用后，会显示快速调试菜单"
 
 #. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/xml/debug_templates.xml:0
+#, python-format
+msgid "XMLID:"
+msgstr ""
+
+#. module: app_odoo_customize
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_group
 msgid "odooAi"
-msgstr "odooAi"
+msgstr ""
 
 #. module: app_odoo_customize
 #. odoo-javascript
 #: code:addons/app_odoo_customize/static/src/xml/res_config_edition.xml:0
 #, python-format
 msgid "odooai.cn"
-msgstr "odooai.cn"
+msgstr ""
