@@ -40,7 +40,7 @@
         'account',
         'l10n_cn_standard_latest',
     ],
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/banner.png'],
     'data': [
         'views/account_account_views.xml',
     ],
