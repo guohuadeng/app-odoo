@@ -112,8 +112,8 @@
         ]
     },
     'demo': [
-        'data/res_company_demo.xml',
-        'data/res_partner_demo.xml',
+        'demo/res_company_demo.xml',
+        'demo/res_partner_demo.xml',
     ],
     'test': [
     ],
