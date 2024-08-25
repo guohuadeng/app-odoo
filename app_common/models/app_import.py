@@ -1,16 +1,12 @@
 # -*- coding: utf-8 -*-
 
-import base64
-import io
-import csv
 import os.path
 
 from odoo import api, fields, models, modules, tools, SUPERUSER_ID, _
-from odoo.tools import pycompat
 from odoo.tests import common
 ADMIN_USER_ID = common.ADMIN_USER_ID
 
-def app_quick_import(env, content_path, sep=None):
+def app_quick_import(env, content_path, sep=None, context={}):
     if not sep:
         sep = '/'
     dir_split = content_path.split(sep)
@@ -28,7 +24,8 @@ def app_quick_import(env, content_path, sep=None):
         file_type = 'text/csv'
     elif file_type in ['.xls', '.xlsx']:
         file_type = 'application/vnd.ms-excel'
-    import_wizard = env['base_import.import'].create({
+    import_wizard = env['base_import.import'].with_context(context)
+    import_wizard = import_wizard.create({
         'res_model': model_name,
         'file_name': file_name,
         'file_type': file_type,
