@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import base64
-import io
-import csv
 import os.path
 
 from odoo import api, fields, models, modules, tools, SUPERUSER_ID, _
-from odoo.tools import pycompat
 from odoo.tests import common
 ADMIN_USER_ID = common.ADMIN_USER_ID
 
