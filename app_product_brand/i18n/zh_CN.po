@@ -55,7 +55,7 @@ msgstr "说明"
 #. module: app_product_brand
 #: model:ir.model.fields,help:app_product_brand.field_product_brand__sequence
 msgid "Determine the display order"
-msgstr "决定显示顺序"
+msgstr "确定显示顺序，值越小越靠前"
 
 #. module: app_product_brand
 #: model:ir.model.fields,field_description:app_product_brand.field_product_brand__display_name

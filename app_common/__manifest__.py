@@ -39,7 +39,7 @@
 
 {
     'name': "odooAi Common Util and Tools,欧度智能基础核心优化",
-    'version': '16.24.08.08',
+    'version': '16.24.08.26',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
