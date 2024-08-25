@@ -44,10 +44,14 @@ def app_quick_import(env, content_path, sep=None):
         preview = import_wizard.parse_preview({
             'has_headers': True,
         })
-    result = import_wizard.execute_import(
-        preview["headers"],
-        preview["headers"],
-        preview["options"]
-    )
+    else:
+        preview = False
+    
+    if preview:
+        import_wizard.execute_import(
+            preview["headers"],
+            preview["headers"],
+            preview["options"]
+        )
 
 
