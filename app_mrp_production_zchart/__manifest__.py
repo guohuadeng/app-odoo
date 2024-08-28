@@ -52,7 +52,7 @@ child_all_count: child_all_count field, count of direct and indirect children.
     'excludes': [
         'app_mrp_production_chart',
     ],
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/banner.png'],
     'data': [
         'views/mrp_production_views.xml',
     ],
