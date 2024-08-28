@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="app_mrp_production_form_view">
+        <field name="name">app.mrp.production.form</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="parent_id" groups="base.group_no_one" readonly="0"/>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_title')]" position="before">
+                <field name="image_128" widget="image" class="oe_avatar"
+                       options="{'preview_image': 'image_128', 'size': [90, 90]}"/>
+            </xpath>
+            <xpath expr="//group[1]" position="inside">
+                <group>
+                    <field name="child_ids" widget="ztree_chart" nolabel="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
