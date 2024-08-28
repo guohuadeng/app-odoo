@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+      <!-- price list -->
+    <record id="product_supplierinfo_search_view_superbar" model="ir.ui.view">
+        <field name="name">product.supplierinfo.search.view.superbar</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel  view_types="list,kanban,search">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="partner_id" select="multi"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>
