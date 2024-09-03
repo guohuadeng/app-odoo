@@ -22,8 +22,8 @@
 # description:
 
 {
-    'name': 'odoo18 17 Tweak,Ai Employee,Boost,Customize All in One. Customize,UI,Boost,Security,Data,Development Enhance',
-    'version': '24.08.20',
+    'name': 'odoo Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Data Clear All in One',
+    'version': '24.09.03',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
