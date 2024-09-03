@@ -22,7 +22,7 @@
 # description:
 
 {
-    'name': 'odoo Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Data Clear All in One',
+    'name': 'odoo Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Remove Data All in One',
     'version': '24.09.03',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
