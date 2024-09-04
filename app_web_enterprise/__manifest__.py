@@ -48,13 +48,13 @@
     6. Add grid line to Account Reports. Easy to view Data.
     为财务报表增加行列分隔线，易于看数据及对账。
     11. Multi-language Support. Multi-Company Support.
-    12. Support Odoo 17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    12. Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
     ==========
     1.
     2.
     11. 多语言支持，多公司支持
-    12. Odoo 17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    12. Odoo 18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
     13. 代码完全开源
     """,
     'price': 68.00,
