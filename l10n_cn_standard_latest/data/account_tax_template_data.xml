@@ -663,5 +663,204 @@
             }),
         ]"/>
     </record>
+    
+    <!-- purchase tax included -->
+    <record id="l10n_cn_standard_purchase_included_13" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest"/>
+        <field name="name">13%进项税(含)</field>
+        <field name="description">13%进项税(含)</field>
+        <field name="amount">13</field>
+        <field name="amount_type">percent</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="price_include" eval="1"/>
+        <field name="tax_group_id" ref="l10n_cn_tax_group_vat_13"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account_2221_1_1'),
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account_2221_1_1'),
+            }),
+        ]"/>
+    </record>
+
+    <record id="l10n_cn_standard_purchase_included_10" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest"/>
+        <field name="name">10%进项税(含)</field>
+        <field name="description">10%进项税(含)</field>
+        <field name="amount">10</field>
+        <field name="amount_type">percent</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="price_include" eval="1"/>
+        <field name="tax_group_id" ref="l10n_cn_tax_group_vat_10"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account_2221_1_1'),
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account_2221_1_1'),
+            }),
+        ]"/>
+    </record>
+
+    <record id="l10n_cn_standard_purchase_included_9" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest"/>
+        <field name="name">9%进项税(含)</field>
+        <field name="description">9%进项税(含)</field>
+        <field name="amount">9</field>
+        <field name="amount_type">percent</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="price_include" eval="1"/>
+        <field name="tax_group_id" ref="l10n_cn_tax_group_vat_9"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account_2221_1_1'),
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account_2221_1_1'),
+            }),
+        ]"/>
+    </record>
+
+    <record id="l10n_cn_standard_purchase_included_6" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest"/>
+        <field name="name">6%进项税(含)</field>
+        <field name="description">6%进项税(含)</field>
+        <field name="amount">6</field>
+        <field name="amount_type">percent</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="price_include" eval="1"/>
+        <field name="tax_group_id" ref="l10n_cn_tax_group_vat_6"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account_2221_1_1'),
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account_2221_1_1'),
+            }),
+        ]"/>
+    </record>
+
+    <record id="l10n_cn_standard_purchase_included_3" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest"/>
+        <field name="name">3%进项税(含)</field>
+        <field name="description">3%进项税(含)</field>
+        <field name="amount">3</field>
+        <field name="amount_type">percent</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="price_include" eval="1"/>
+        <field name="tax_group_id" ref="l10n_cn_tax_group_vat_3"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account_2221_1_1'),
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account_2221_1_1'),
+            }),
+        ]"/>
+    </record>
+
+    <record id="l10n_cn_standard_purchase_included_1" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_chart_china_standard_business_latest"/>
+        <field name="name">1%进项税(含)</field>
+        <field name="description">1%进项税(含)</field>
+        <field name="amount">1</field>
+        <field name="amount_type">percent</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="price_include" eval="1"/>
+        <field name="tax_group_id" ref="l10n_cn_tax_group_vat_1"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account_2221_1_1'),
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account_2221_1_1'),
+            }),
+        ]"/>
+    </record>
 
 </odoo>
