@@ -323,6 +323,7 @@ class ResConfigSettings(models.TransientModel):
             'account.tax',
             # 'wizard_multi_charts_accounts',
             'account.account',
+            # 'account.journal',
         ]
         # todo: 要做 remove_hr，因为工资表会用到 account
         # 更新account关联，很多是多公司字段，故只存在 ir_property，故在原模型，只能用update
@@ -381,7 +382,6 @@ class ResConfigSettings(models.TransientModel):
             pass
         # 日记账处理
         try:
-            #todo: 当前有些日记账的默认值要在 ir.property 处理 _set_default，比较麻烦，先修改下该日记账 code，创建新日记账后删除旧的即可
             rec = self.env['account.journal'].search([])
             rec.write({
                 'account_control_ids': None,
@@ -391,6 +391,7 @@ class ResConfigSettings(models.TransientModel):
                 'profit_account_id': None,
                 'suspense_account_id': None,
             })
+            self._cr.commit()
         except Exception as e:
             pass  # raise Warning(e)
 
@@ -403,9 +404,35 @@ class ResConfigSettings(models.TransientModel):
             })
         except Exception as e:
             pass  # raise Warning(e)
+        # 库存计价默认值处理
+        try:
+            # 当前有些日记账的默认值要在 ir.property 处理 _set_default，比较麻烦
+            todo_list = [
+                'property_stock_account_input_categ_id',
+                'property_stock_account_output_categ_id',
+                'property_stock_valuation_account_id',
+                'property_stock_journal',
+            ]
+            for name in todo_list:
+                field_id = self.env['ir.model.fields']._get('product.category', name).id
+                prop = self.env['ir.property'].sudo().search([
+                    ('fields_id', '=', field_id),
+                ])
+                if prop:
+                    prop.unlink()
+        except Exception as e:
+            pass  # raise Warning(e)
+        # 先 unlink 处理
+        j_ids = self.env['account.journal'].sudo().search([])
+        if j_ids:
+            try:
+                j_ids.unlink()
+            except Exception as e:
+                pass  # raise Warning(e)
+            
         self._cr.commit()
         seqs = []
-        self.env.company.write({
+        self.env.company.sudo().write({
             'chart_template_id': False,
         })
         res = self._remove_app_data(to_removes, seqs)
