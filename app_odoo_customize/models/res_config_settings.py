@@ -314,6 +314,7 @@ class ResConfigSettings(models.TransientModel):
         self = self.with_company(self.env.company)
         to_removes = [
             # 清除财务科目，用于重设
+            'account.reconcile.model',
             'res.partner.bank',
             # 'account.invoice',
             'account.payment',
@@ -348,48 +349,61 @@ class ResConfigSettings(models.TransientModel):
         # partner 处理
         try:
             rec = self.env['res.partner'].search([])
-            for r in rec:
-                r.write({
-                    'property_account_receivable_id': None,
-                    'property_account_payable_id': None,
-                })
+            rec.write({
+                'property_account_receivable_id': None,
+                'property_account_payable_id': None,
+            })
         except Exception as e:
             _logger.error('remove data error: %s,%s', 'account_chart', e)
         # 品类处理
         try:
             rec = self.env['product.category'].search([])
-            for r in rec:
-                r.write({
-                    'property_account_income_categ_id': None,
-                    'property_account_expense_categ_id': None,
-                    'property_account_creditor_price_difference_categ': None,
-                    'property_stock_account_input_categ_id': None,
-                    'property_stock_account_output_categ_id': None,
-                    'property_stock_valuation_account_id': None,
-                })
+            rec.write({
+                'property_account_income_categ_id': None,
+                'property_account_expense_categ_id': None,
+                'property_account_creditor_price_difference_categ': None,
+                'property_stock_account_input_categ_id': None,
+                'property_stock_account_output_categ_id': None,
+                'property_stock_valuation_account_id': None,
+                'property_stock_journal': None,
+            })
         except Exception as e:
             pass
         # 产品处理
         try:
             rec = self.env['product.template'].search([])
-            for r in rec:
-                r.write({
-                    'property_account_income_id': None,
-                    'property_account_expense_id': None,
-                })
+            rec.write({
+                'property_account_income_id': None,
+                'property_account_expense_id': None,
+                'property_account_creditor_price_difference': None,
+            })
         except Exception as e:
             pass
-        # 库存计价处理
+        # 日记账处理
         try:
-            rec = self.env['stock.location'].search([])
-            for r in rec:
-                r.write({
-                    'valuation_in_account_id': None,
-                    'valuation_out_account_id': None,
-                })
+            #todo: 当前有些日记账的默认值要在 ir.property 处理 _set_default，比较麻烦，先修改下该日记账 code，创建新日记账后删除旧的即可
+            rec = self.env['account.journal'].search([])
+            rec.write({
+                'account_control_ids': None,
+                'bank_account_id': None,
+                'default_account_id': None,
+                'loss_account_id': None,
+                'profit_account_id': None,
+                'suspense_account_id': None,
+            })
         except Exception as e:
             pass  # raise Warning(e)
 
+        # 库存计价处理
+        try:
+            rec = self.env['stock.location'].search([])
+            rec.write({
+                'valuation_in_account_id': None,
+                'valuation_out_account_id': None,
+            })
+        except Exception as e:
+            pass  # raise Warning(e)
+        self._cr.commit()
         seqs = []
         self.env.company.write({
             'chart_template_id': False,

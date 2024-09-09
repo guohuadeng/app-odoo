@@ -1,8 +1,11 @@
 id,code,name,parent_id/id,reconcile,account_type,tag_ids/id,chart_template_id/id
 account_1001,1001,库存现金,,TRUE,asset_cash,,l10n_chart_china_standard_business_latest
 account_1002,1002,银行存款,,TRUE,asset_cash,tag21,l10n_chart_china_standard_business_latest
-account_1002_08,1002.08,银行存款-未付款,,TRUE,asset_cash,tag21,l10n_chart_china_standard_business_latest
-account_1002_09,1002.09,银行存款-未收款,,TRUE,asset_cash,tag21,l10n_chart_china_standard_business_latest
+account_1002_01,1002.01,银行存款-人民币,account_1002,TRUE,asset_cash,,l10n_chart_china_standard_business_latest
+account_1002_02,1002.02,银行存款-利息,account_1002,TRUE,asset_cash,,l10n_chart_china_standard_business_latest
+account_1002_07,1002.07,银行暂记科目,account_1002,TRUE,asset_current,,l10n_chart_china_standard_business_latest
+account_1002_08,1002.08,银行存款-未付款,account_1002,TRUE,asset_current,,l10n_chart_china_standard_business_latest
+account_1002_09,1002.09,银行存款-未收款,account_1002,TRUE,asset_current,,l10n_chart_china_standard_business_latest
 account_1003,1003,存放中央银行款项,,TRUE,asset_current,tag21,l10n_chart_china_standard_business_latest
 account_1011,1011,存放同业,,FALSE,asset_current,tag21,l10n_chart_china_standard_business_latest
 account_1012,1012,其他货币资金,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
@@ -32,7 +35,7 @@ account_1402,1402,在途物资,,FALSE,asset_current,,l10n_chart_china_standard_b
 account_1403,1403,原材料,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_1404,1404,材料成本差异,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_1405,1405,库存商品,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
-account_1405_01,1405.01,其中：数据资源,account_1405,FALSE,asset_current,,l10n_chart_china_standard_business_latest
+account_1405_01,1405.01,其中:数据资源,account_1405,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_1406,1406,发出商品,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_1407,1407,商品进销差价,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_1408,1408,委托加工物资,,FALSE,asset_current,,l10n_chart_china_standard_business_latest

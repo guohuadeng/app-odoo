@@ -57,6 +57,14 @@ class AccountChartTemplate(models.Model):
         }
 
     def _load(self, company):
+        if self == self.env.ref('l10n_cn_standard_latest.l10n_chart_china_standard_business_latest', False):
+            # #todo: 当为 标准中国会计的处理
+            # company.write({
+            #     'account_journal_suspense_account_id': self.account_journal_suspense_account_id.id if self.account_journal_suspense_account_id else False,
+            #     'account_journal_payment_credit_account_id': self.account_journal_payment_credit_account_id.id if self.account_journal_payment_credit_account_id else False,
+            #     'account_journal_payment_debit_account_id': self.account_journal_payment_debit_account_id.id if self.account_journal_payment_debit_account_id else False,
+            # })
+            pass
         res = super(AccountChartTemplate, self)._load(company)
         # 更新父级
         company = self.env.user.company_id
@@ -74,8 +82,8 @@ class AccountChartTemplate(models.Model):
                     parent = self.env['account.account'].sudo().search([
                         ('company_id', '=', company.id),
                         ('code', '=', parent_code),
-                    ], limit=1)
-                    if len(parent):
+                    ], limit=1).exists()
+                    if parent:
                         acc.write({
                             'parent_id': parent.id,
                         })
