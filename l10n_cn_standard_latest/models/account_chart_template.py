@@ -66,6 +66,7 @@ class AccountChartTemplate(models.Model):
             # })
             pass
         res = super(AccountChartTemplate, self)._load(company)
+        # todo: 更新已有res.partner 的字段（当原值为空时） 应收账款 = chart.property_account_receivable_id，应付账款=property_account_payable_id
         # 更新父级
         company = self.env.user.company_id
         acc_ids = self.env['account.account'].sudo().search([('company_id', '=', company.id)])
