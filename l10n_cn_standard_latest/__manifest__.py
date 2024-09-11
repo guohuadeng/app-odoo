@@ -9,7 +9,7 @@
 
 {
     'name': '2023最新中国会计科目表.企业标准会计.Latest Chinese Accounting for odoo16',
-    'version': '16.24.09.06',
+    'version': '16.24.09.11',
     'author': 'odooai.cn',
     'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.odooai.cn',
@@ -65,6 +65,7 @@
         'data/account_tax_group_data.xml',
         'data/account_tax_template_data.xml',
         'data/account_chart_template_data.xml',
+        'data/account_chart_template_try_loading.xml',
     ],
     'post_init_hook': 'post_init_hook',
     'installable': True,

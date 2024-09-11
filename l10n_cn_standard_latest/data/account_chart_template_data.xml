@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
-        <record id="l10n_chart_china_standard_business_latest" model="account.chart.template">
-            <field name="property_account_receivable_id" ref="account_1122"/>
-            <field name="property_account_payable_id" ref="account_2202"/>
-            <field name="property_account_expense_categ_id" ref="account_6401"/>
-            <field name="property_account_income_categ_id" ref="account_6001"/>
-            <field name="income_currency_exchange_account_id" ref="account_6061"/>
-            <field name="expense_currency_exchange_account_id" ref="account_6061"/>
-            <field name="default_pos_receivable_account_id" ref="account_1124"/>
-            <field name="account_journal_suspense_account_id" ref="account_1002_07"/>
-            <field name="account_journal_payment_credit_account_id" ref="account_1002_08"/>
-            <field name="account_journal_payment_debit_account_id" ref="account_1002_09"/>
-        </record>
-
-<!--       <function model="account.chart.template" name="try_loading">-->
-<!--           <value eval="[ref('l10n_cn_standard_latest.l10n_chart_china_standard_business_latest')]"/>-->
-<!--       </function>-->
-    </data>
+    <!--    此处不设置为 noupdate，因为要更新-->
+    <record id="l10n_chart_china_standard_business_latest" model="account.chart.template">
+        <field name="property_account_receivable_id" ref="account_1122"/>
+        <field name="property_account_payable_id" ref="account_2202"/>
+        <field name="property_account_income_categ_id" ref="account_6001"/>
+        <field name="property_account_expense_categ_id" ref="account_6401"/>
+        <field name="property_tax_receivable_account_id" ref="account_2221_1_5"/>
+        <field name="property_tax_payable_account_id" ref="account_2221_1_1"/>
+        <field name="income_currency_exchange_account_id" ref="account_6061"/>
+        <field name="expense_currency_exchange_account_id" ref="account_6061"/>
+        <field name="default_pos_receivable_account_id" ref="account_1124"/>
+        <field name="account_journal_suspense_account_id" ref="account_1002_07"/>
+        <field name="account_journal_payment_credit_account_id" ref="account_1002_08"/>
+        <field name="account_journal_payment_debit_account_id" ref="account_1002_09"/>
+<!--        现金差异收入-->
+        <field name="default_cash_difference_income_account_id" ref="account_6603"/>
+<!--        现金差额费用-->
+        <field name="default_cash_difference_expense_account_id" ref="account_6603"/>
+<!--        现金折扣收益科目-->
+        <field name="account_journal_early_pay_discount_gain_account_id" ref="account_6603"/>
+<!--        现金折扣损失科目-->
+        <field name="account_journal_early_pay_discount_loss_account_id" ref="account_6603"/>
+    </record>
 </odoo>

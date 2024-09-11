@@ -313,14 +313,17 @@ class ResConfigSettings(models.TransientModel):
         company_id = self.env.company.id
         self = self.with_company(self.env.company)
         to_removes = [
-            # 清除财务科目，用于重设
+            # 清除财务科目，用于重设。有些是企业版的也处理下
             'account.reconcile.model',
+            'account.transfer.model.line',
+            'account.transfer.model',
             'res.partner.bank',
             # 'account.invoice',
             'account.payment',
             'account.bank.statement',
             # 'account.tax.account.tag',
             'account.tax',
+            'account.tax.template',
             # 'wizard_multi_charts_accounts',
             'account.account',
             # 'account.journal',
@@ -336,7 +339,6 @@ class ResConfigSettings(models.TransientModel):
             sql2 = "update account_journal set bank_account_id=NULL where company_id=%d;" % company_id
             self._cr.execute(sql)
             self._cr.execute(sql2)
-
             self._cr.commit()
         except Exception as e:
             _logger.error('remove data error: %s,%s', 'account_chart: set tax and account_journal', e)
@@ -354,6 +356,7 @@ class ResConfigSettings(models.TransientModel):
                 'property_account_receivable_id': None,
                 'property_account_payable_id': None,
             })
+            self._cr.commit()
         except Exception as e:
             _logger.error('remove data error: %s,%s', 'account_chart', e)
         # 品类处理
@@ -368,6 +371,7 @@ class ResConfigSettings(models.TransientModel):
                 'property_stock_valuation_account_id': None,
                 'property_stock_journal': None,
             })
+            self._cr.commit()
         except Exception as e:
             pass
         # 产品处理
@@ -378,6 +382,7 @@ class ResConfigSettings(models.TransientModel):
                 'property_account_expense_id': None,
                 'property_account_creditor_price_difference': None,
             })
+            self._cr.commit()
         except Exception as e:
             pass
         # 日记账处理
@@ -402,6 +407,7 @@ class ResConfigSettings(models.TransientModel):
                 'valuation_in_account_id': None,
                 'valuation_out_account_id': None,
             })
+            self._cr.commit()
         except Exception as e:
             pass  # raise Warning(e)
         # 库存计价默认值处理
@@ -420,6 +426,7 @@ class ResConfigSettings(models.TransientModel):
                 ])
                 if prop:
                     prop.unlink()
+            self._cr.commit()
         except Exception as e:
             pass  # raise Warning(e)
         # 先 unlink 处理
@@ -427,14 +434,17 @@ class ResConfigSettings(models.TransientModel):
         if j_ids:
             try:
                 j_ids.unlink()
+                self._cr.commit()
             except Exception as e:
                 pass  # raise Warning(e)
-            
-        self._cr.commit()
+        try:
+            c_ids = self.env['res.company'].sudo().search([])
+            c_ids.sudo().write({
+                'chart_template_id': False,
+            })
+        except Exception as e:
+            pass  # raise Warning(e)
         seqs = []
-        self.env.company.sudo().write({
-            'chart_template_id': False,
-        })
         res = self._remove_app_data(to_removes, seqs)
         return res
 
