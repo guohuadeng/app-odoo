@@ -1118,7 +1118,7 @@ msgstr ""
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_users__gpt_demo_time
 msgid "Default Demo Time"
-msgstr ""
+msgstr "默认演示次数"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,help:app_chatgpt.field_ai_robot__sequence
