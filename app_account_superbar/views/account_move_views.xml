@@ -1,0 +1,34 @@
+<odoo>
+  <data>
+      <!-- account.invoice, account.move 发票与帐单 -->
+      <record id="view_account_invoice_filter_superbar" model="ir.ui.view">
+          <field name="name">account.invoice.select.superbar</field>
+          <field name="model">account.move</field>
+          <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+          <field name="arch" type="xml">
+              <xpath expr="//search">
+                  <searchpanel view_types="list,kanban,pivot,graph">
+                      <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                      <field name="partner_id" enable_counters="1" select="multi"/>
+                      <field name="state"/>
+                  </searchpanel>
+              </xpath>
+          </field>
+      </record>
+      <!-- account.move,日记帐分录 -->
+      <record id="view_account_move_filter_superbar" model="ir.ui.view">
+          <field name="name">account.move.select.superbar</field>
+          <field name="model">account.move</field>
+          <field name="inherit_id" ref="account.view_account_move_filter"/>
+          <field name="arch" type="xml">
+              <xpath expr="//search">
+                  <searchpanel view_types="list,kanban,pivot,graph">
+                      <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                      <field name="journal_id" enable_counters="1" select="multi"/>
+                      <field name="partner_id" enable_counters="1" select="multi"/>
+                  </searchpanel>
+              </xpath>
+          </field>
+      </record>
+  </data>
+</odoo>

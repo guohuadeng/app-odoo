@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+      <!-- account.move.line -->
+      <record id="view_account_move_line_filter_superbar" model="ir.ui.view">
+          <field name="name">Journal Items superbar</field>
+          <field name="model">account.move.line</field>
+          <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+          <field name="arch" type="xml">
+              <xpath expr="//search/searchpanel" position="attributes">
+	              <attribute name="view_types">list,kanban,pivot,graph</attribute>
+              </xpath>
+              <xpath expr="//search/searchpanel" position="attributes">
+	              <attribute name="class"/>
+              </xpath>
+	          <xpath expr="//search/searchpanel" position="inside">
+		          <field name="journal_id" enable_counters="1" select="multi"/>
+		          <field name="partner_id" enable_counters="1" select="multi"/>
+		          <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+	          </xpath>
+          </field>
+      </record>
+  </data>
+</odoo>
