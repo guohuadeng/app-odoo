@@ -15,6 +15,7 @@ account_1101,1101,交易性金融资产,,FALSE,asset_current,,l10n_chart_china_s
 account_1111,1111,买入返售金融资产,,FALSE,asset_current,tag23,l10n_chart_china_standard_business_latest
 account_1121,1121,应收票据,,TRUE,asset_receivable,,l10n_chart_china_standard_business_latest
 account_1122,1122,应收账款,,TRUE,asset_receivable,,l10n_chart_china_standard_business_latest
+account_1122_01,1122.01,应收账款-暂估,account_1122,TRUE,asset_receivable,,l10n_chart_china_standard_business_latest
 account_1123,1123,预付账款,,TRUE,asset_current,,l10n_chart_china_standard_business_latest
 account_1124,1124,应收账款(PoS),,TRUE,asset_receivable,,l10n_chart_china_standard_business_latest
 account_1131,1131,应收股利,,TRUE,asset_receivable,,l10n_chart_china_standard_business_latest
