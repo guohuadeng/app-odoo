@@ -17,7 +17,7 @@ account_1121,1121,应收票据,,TRUE,asset_receivable,,l10n_chart_china_standard
 account_1122,1122,应收账款,,TRUE,asset_receivable,,l10n_chart_china_standard_business_latest
 account_1122_01,1122.01,应收账款-应收,account_1122,TRUE,asset_receivable,,l10n_chart_china_standard_business_latest
 account_1122_02,1122.02,应收账款-其它,account_1122,TRUE,asset_receivable,,l10n_chart_china_standard_business_latest
-account_1122_02,1122.03,应收账款-暂估,account_1122,TRUE,asset_receivable,,l10n_chart_china_standard_business_latest
+account_1122_03,1122.03,应收账款-暂估,account_1122,TRUE,asset_receivable,,l10n_chart_china_standard_business_latest
 account_1123,1123,预付账款,,TRUE,asset_current,,l10n_chart_china_standard_business_latest
 account_1124,1124,应收账款(PoS),,TRUE,asset_receivable,,l10n_chart_china_standard_business_latest
 account_1131,1131,应收股利,,TRUE,asset_receivable,,l10n_chart_china_standard_business_latest
@@ -92,7 +92,7 @@ account_2201,2201,应付票据,,TRUE,liability_payable,,l10n_chart_china_standar
 account_2202,2202,应付账款,,TRUE,liability_payable,,l10n_chart_china_standard_business_latest
 account_2202_01,2202.01,应付账款-应付,account_2202,TRUE,liability_payable,,l10n_chart_china_standard_business_latest
 account_2202_02,2202.02,应付账款-其他,account_2202,TRUE,liability_payable,,l10n_chart_china_standard_business_latest
-account_2202_02,2202.03,应付账款-暂估,account_2202,TRUE,liability_payable,,l10n_chart_china_standard_business_latest
+account_2202_03,2202.03,应付账款-暂估,account_2202,TRUE,liability_payable,,l10n_chart_china_standard_business_latest
 account_2203,2203,预收账款,,TRUE,liability_current,,l10n_chart_china_standard_business_latest
 account_2211,2211,应付职工薪酬,,FALSE,liability_current,,l10n_chart_china_standard_business_latest
 account_2221,2221,应交税费,,FALSE,liability_current,,l10n_chart_china_standard_business_latest
