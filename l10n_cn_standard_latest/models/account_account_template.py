@@ -25,6 +25,7 @@ class AccountAccountTemplate(models.Model):
     _parent_order = 'code'
     # _rec_name = 'complete_name'
 
+    # todo: 具体项目中，可以parent_id 处理为 compute, inverse=xxx(直接用pass)，与 code_digits，
     parent_id = fields.Many2one('account.account.template', 'Parent Chart', index=True, ondelete='cascade')
     child_ids = fields.One2many('account.account.template', 'parent_id', 'Child Chart')
     parent_path = fields.Char(index=True, unaccent=False)
