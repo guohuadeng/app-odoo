@@ -12,7 +12,7 @@
                         <span id="add_group"/>
                     </div>
                     <div id="o_node_right">
-                        <field name="child_id" widget="ztree_chart" nolabel="1"/>
+                        <field name="child_id" widget="ztree_chart" nolabel="1" options="'ztree_expend_level': '0'"/>
                     </div>
                 </div>
             </xpath>
