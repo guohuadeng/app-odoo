@@ -28,6 +28,8 @@
     'category': 'Extra tools',
     'installable': True,
     'license': 'LGPL-3',
+    'price': 38.00,
+    'currency': 'EUR',
 
     # any module necessary for this one to work correctly
     'depends': [
