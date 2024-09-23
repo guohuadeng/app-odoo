@@ -44,6 +44,7 @@
         'views/account_account_views.xml',
         'views/account_move_line_views.xml',
         'views/account_move_views.xml',
+        'views/account_analytic_line_views.xml',
     ],
     'demo': [
     ],
