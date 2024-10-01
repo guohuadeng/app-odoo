@@ -12,8 +12,8 @@
         <field name="expense_currency_exchange_account_id" ref="account_6061"/>
         <field name="default_pos_receivable_account_id" ref="account_1124"/>
         <field name="account_journal_suspense_account_id" ref="account_1002_07"/>
-        <field name="account_journal_payment_credit_account_id" ref="account_1002_08"/>
-        <field name="account_journal_payment_debit_account_id" ref="account_1002_09"/>
+        <field name="account_journal_payment_debit_account_id" ref="account_1002_08"/>
+        <field name="account_journal_payment_credit_account_id" ref="account_1002_09"/>
 <!--        现金差异收入-->
         <field name="default_cash_difference_income_account_id" ref="account_6603"/>
 <!--        现金差额费用-->

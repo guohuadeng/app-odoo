@@ -4,8 +4,8 @@ account_1002,1002,银行存款,,TRUE,asset_cash,tag21,l10n_chart_china_standard_
 account_1002_01,1002.01,银行存款-人民币,account_1002,TRUE,asset_cash,,l10n_chart_china_standard_business_latest
 account_1002_02,1002.02,银行存款-利息,account_1002,TRUE,asset_cash,,l10n_chart_china_standard_business_latest
 account_1002_07,1002.07,银行暂记科目,account_1002,TRUE,asset_current,,l10n_chart_china_standard_business_latest
-account_1002_08,1002.08,银行存款-未完成付款,account_1002,TRUE,asset_current,,l10n_chart_china_standard_business_latest
-account_1002_09,1002.09,银行存款-未完成收款,account_1002,TRUE,asset_current,,l10n_chart_china_standard_business_latest
+account_1002_08,1002.08,银行存款-未完成收款,account_1002,TRUE,asset_current,,l10n_chart_china_standard_business_latest
+account_1002_09,1002.09,银行存款-未完成付款,account_1002,TRUE,asset_current,,l10n_chart_china_standard_business_latest
 account_1003,1003,存放中央银行款项,,TRUE,asset_current,tag21,l10n_chart_china_standard_business_latest
 account_1011,1011,存放同业,,FALSE,asset_current,tag21,l10n_chart_china_standard_business_latest
 account_1012,1012,其他货币资金,,FALSE,asset_current,,l10n_chart_china_standard_business_latest

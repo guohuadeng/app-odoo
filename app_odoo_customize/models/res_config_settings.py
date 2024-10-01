@@ -385,6 +385,18 @@ class ResConfigSettings(models.TransientModel):
             self._cr.commit()
         except Exception as e:
             pass
+        # pos处理，清支付，清账本
+        try:
+            rec = self.env['pos.config'].search([])
+            rec.write({
+                'invoice_journal_id': None,
+                'journal_id': None,
+                'payment_method_ids': None,
+                'fiscal_position_ids': None,
+            })
+            self._cr.commit()
+        except Exception as e:
+            pass
         # 日记账处理
         try:
             rec = self.env['account.journal'].search([])
