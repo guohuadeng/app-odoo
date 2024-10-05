@@ -9,7 +9,7 @@
             <field name="website">https://www.odooai.cn</field>
         </record>
 
-        <record model="ir.module.module" id="base.module_account_accountant">
+        <record model="ir.module.module" id="base.module_accountant">
             <field name="website">https://www.odooai.cn</field>
         </record>
 
@@ -30,10 +30,6 @@
         </record>
 
         <record model="ir.module.module" id="base.module_quality_control">
-            <field name="website">https://www.odooai.cn</field>
-        </record>
-
-        <record model="ir.module.module" id="base.module_sale_ebay">
             <field name="website">https://www.odooai.cn</field>
         </record>
 

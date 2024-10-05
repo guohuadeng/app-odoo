@@ -75,7 +75,7 @@
                              groups="base.group_system" invisible="state != 'installed'">Upgrade</button>
                 </xpath>
                 <!--显示导出翻译-->
-                <xpath expr="//t[@t-name='kanban-menu']" position="inside">
+                <xpath expr="//t[@t-name='menu']" position="inside">
                     <a t-if="installed" name="%(app_odoo_customize.action_server_module_multi_get_po)d" type="action" role="menuitem" class="dropdown-item">Export Translation</a>
                     <a t-if="installed" name="%(app_odoo_customize.action_server_module_multi_refresh_po)d" type="action" role="menuitem" class="dropdown-item">Refresh Translation</a>
                 </xpath>

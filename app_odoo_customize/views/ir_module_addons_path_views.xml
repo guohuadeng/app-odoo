@@ -4,10 +4,10 @@
         <field name="name">ir.module.addons.path.tree</field>
         <field name="model">ir.module.addons.path</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
                 <field name="path"/>
-            </tree>
+            </list>
         </field>
     </record>
 
