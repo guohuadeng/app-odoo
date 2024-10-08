@@ -10,4 +10,15 @@
             </xpath>
         </field>
     </record>
+
+    <record id="app_base_chinese_module_kanban_view" model="ir.ui.view">
+        <field name="name">app.base.chinese.module.kanban</field>
+        <field name="model">ir.module.module</field>
+        <field name="inherit_id" ref="base.module_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//a[@t-if='record.to_buy.raw_value']" position="attributes">
+                <attribute name="href">https://www.odooapp.cn/pricing?utm_source=db&amp;utm_medium=module#hosting=on_premise</attribute>
+            </xpath>
+        </field>
+    </record>
 </odoo>
