@@ -76,10 +76,12 @@
   .o_form_view .o_form_view_container .o_form_sheet_bg .o_form_sheet {
     max-width: 98%;
   }
-  //处理 active 的下方无 line
+  //处理 active 的下方无 line，不要滚动
   .o_content .o_notebook .o_notebook_headers {
     overflow-x: inherit;
-    line-height: calc(var(--body-line-height) * 1.2);
+    .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link  {
+      border-bottom: 1.5px solid white;
+    }
   }
 }
 
