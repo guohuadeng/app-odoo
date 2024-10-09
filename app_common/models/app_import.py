@@ -3,8 +3,6 @@
 import os.path
 
 from odoo import api, fields, models, modules, tools, SUPERUSER_ID, _
-from odoo.tests import common
-ADMIN_USER_ID = common.ADMIN_USER_ID
 
 def app_quick_import(env, content_path, sep=None, context={}):
     if not sep:

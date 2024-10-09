@@ -1,14 +1,23 @@
 # -*- coding: utf-8 -*-
 #    'author': "Yenthe Van Ginneken",
 #    'website': "http://www.odoo.yenthevg.com",
+#    'author': "guohuadeng@hotmail.com",
+#    'website': "https://www.odooai.cn",
 
 {
-    'name': "Database auto backup,数据库自动备份",
+    'name': "Database auto backup and Download,数据库自动备份",
     'version': '16.24.10.09',
 
-    'summary': 'Automated backups, optimized from auto_backup of Yenthe Van Ginneken',
+    'summary': 'Automated and odoo database backups. easy download and manage database file. optimized from auto_backup of oca Yenthe Van Ginneken',
 
     'description': """
+    1. Easy schedule database backup
+    2. Set remote backup and cron schedule
+    3. Manual backup database in one click
+    4. Easy download backup file or remove file for System user
+    11. Multi-language Support. Multi-Company Support.
+    12. Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    13. Full Open Source.
         The Database Auto-Backup module enables the user to make configurations for the automatic backup of the database. 
         Backups can be taken on the local system or on a remote server, through SFTP.
         You only have to specify the hostname, port, backup location and databasename (all will be pre-filled by default with correct data.
