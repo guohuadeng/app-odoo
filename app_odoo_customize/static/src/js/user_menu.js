@@ -8,6 +8,7 @@ import { patch } from "@web/core/utils/patch";
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 import { session } from "@web/session";
+import { user } from "@web/core/user";
 import { useService } from "@web/core/utils/hooks";
 const userMenuRegistry = registry.category("user_menuitems");
 
@@ -32,7 +33,7 @@ patch(UserMenu.prototype, {
                 description: _t("Preferences"),
                 callback: async function () {
                     const actionDescription = await env.services.orm.call("res.users", "action_get");
-                    actionDescription.res_id = session.user_id[0];
+                    actionDescription.res_id = user.userId;
                     try {
                         let m = document.getElementsByClassName("o_sidebar_close");
                         if (m) {

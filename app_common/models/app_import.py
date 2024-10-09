@@ -10,7 +10,7 @@ from odoo.tools import pycompat
 from odoo.tests import common
 ADMIN_USER_ID = common.ADMIN_USER_ID
 
-def app_quick_import(cr, content_path, sep=None):
+def app_quick_import(env, content_path, sep=None):
     if not sep:
         sep = '/'
     dir_split = content_path.split(sep)
@@ -24,7 +24,6 @@ def app_quick_import(cr, content_path, sep=None):
     if model_name == 'discuss.channel':
         # todo: 创建discuss.channel时，如果用root用户会报错
         uid = 2
-    env = api.Environment(cr, uid, {})
     if file_type == '.csv':
         file_type = 'text/csv'
     elif file_type in ['.xls', '.xlsx']:
