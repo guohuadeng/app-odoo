@@ -4,7 +4,7 @@
 
 {
     'name': "Database auto backup,数据库自动备份",
-    'version': '16.24.07.12',
+    'version': '16.24.10.09',
 
     'summary': 'Automated backups, optimized from auto_backup of Yenthe Van Ginneken',
 

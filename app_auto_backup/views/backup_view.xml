@@ -69,9 +69,9 @@ background-repeat: no-repeat;background-position: 10px center;color: #9F6000;bac
                             <page name="backup_details" string="Backup records">
                                 <field name="backup_details_ids" readonly="1">
                                     <tree>
-                                        <field name="name"/>
+                                        <field name="name" optional="hide"/>
                                         <field name="file_path"/>
-                                        <field name="url" invisible="0"/>
+                                        <field name="url" optional="hide"/>
                                         <button name="action_download_file" type="object" title="Download File" class="fa fa-download"/>
                                         <button name="action_remove_file" type="object" title="Remove File" class="fa fa-trash"/>
                                     </tree>

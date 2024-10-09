@@ -27,9 +27,13 @@ class DbBackupDetails(models.Model):
             }
             
     def unlink(self):
-        if self.file_path:
-            if os.path.exists(self.file_path):
-                os.remove(self.file_path)
+        for rec in self:
+            try:
+                if rec.file_path:
+                    if os.path.exists(rec.file_path):
+                        os.remove(rec.file_path)
+            except Exception as e:
+                pass
         return super(DbBackupDetails, self).unlink()
 
     def action_remove_file(self):
