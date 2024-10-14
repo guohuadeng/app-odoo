@@ -154,7 +154,7 @@ account_5001,5001,生产成本,,FALSE,asset_current,,l10n_chart_china_standard_b
 account_5101,5101,制造费用,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_5201,5201,劳务成本,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_5301,5301,研发支出,,FALSE,asset_current,,l10n_chart_china_standard_business_latest
-account_5301_01,5301.01,其中：数据资源,asset_current,FALSE,expense_direct_cost,,l10n_chart_china_standard_business_latest
+account_5301_01,5301.01,其中：数据资源,account_5301,FALSE,asset_current,,l10n_chart_china_standard_business_latest
 account_5401,5401,工程施工,,FALSE,asset_current,tag30,l10n_chart_china_standard_business_latest
 account_5402,5402,工程结算,,FALSE,asset_current,tag30,l10n_chart_china_standard_business_latest
 account_5403,5403,机械作业,,FALSE,asset_current,tag30,l10n_chart_china_standard_business_latest
