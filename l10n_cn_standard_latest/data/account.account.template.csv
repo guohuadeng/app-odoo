@@ -49,9 +49,10 @@ account_1441,1441,抵债资产,,FALSE,asset_non_current,tag23,l10n_chart_china_s
 account_1451,1451,损余物资,,FALSE,asset_non_current,tag24,l10n_chart_china_standard_business_latest
 account_1461,1461,融资租赁资产,,FALSE,asset_non_current,tag27,l10n_chart_china_standard_business_latest
 account_1471,1471,存货跌价准备,,FALSE,asset_non_current,,l10n_chart_china_standard_business_latest
-account_1501,1501,持有至到期投资,,FALSE,asset_non_current,,l10n_chart_china_standard_business_latest
-account_1502,1502,持有至到期投资减值准备,,FALSE,asset_non_current,,l10n_chart_china_standard_business_latest
-account_1503,1503,可供出售金融资产,,FALSE,asset_non_current,,l10n_chart_china_standard_business_latest
+account_1501,1501,债权投资,,FALSE,asset_non_current,,l10n_chart_china_standard_business_latest
+account_1502,1502,债权投资减值准备,,FALSE,asset_non_current,,l10n_chart_china_standard_business_latest
+account_1503,1503,其它债权投资,,FALSE,asset_non_current,,l10n_chart_china_standard_business_latest
+account_1504,1504,其它权益工具投资,,FALSE,asset_non_current,,l10n_chart_china_standard_business_latest
 account_1511,1511,长期股权投资,,FALSE,asset_non_current,,l10n_chart_china_standard_business_latest
 account_1512,1512,长期股权投资减值准备,,FALSE,asset_non_current,,l10n_chart_china_standard_business_latest
 account_1521,1521,投资性房地产,,FALSE,asset_non_current,,l10n_chart_china_standard_business_latest
@@ -190,4 +191,4 @@ account_6604,6604,勘探费用,,FALSE,expense,,l10n_chart_china_standard_busines
 account_6701,6701,资产减值损失,,FALSE,expense,,l10n_chart_china_standard_business_latest
 account_6711,6711,营业外支出,,FALSE,expense,,l10n_chart_china_standard_business_latest
 account_6801,6801,所得税费用,,FALSE,expense,,l10n_chart_china_standard_business_latest
-account_6901,6901,以前年度损益调整,,FALSE,expense,,l10n_chart_china_standard_business_latest
+account_6901,6901,以前年度损益调整,,FALSE,equity,,l10n_chart_china_standard_business_latest
