@@ -46,9 +46,10 @@ account_1441,1441,抵债资产,,FALSE,asset_non_current,l10n_cn_standard_latest.
 account_1451,1451,损余物资,,FALSE,asset_non_current,l10n_cn_standard_latest.tag24,损余物资
 account_1461,1461,融资租赁资产,,FALSE,asset_non_current,l10n_cn_standard_latest.tag27,融资租赁资产
 account_1471,1471,存货跌价准备,,FALSE,asset_non_current,,存货跌价准备
-account_1501,1501,持有至到期投资,,FALSE,asset_non_current,,持有至到期投资
-account_1502,1502,持有至到期投资减值准备,,FALSE,asset_non_current,,持有至到期投资减值准备
-account_1503,1503,可供出售金融资产,,FALSE,asset_non_current,,可供出售金融资产
+account_1501,1501,债权投资,,FALSE,asset_non_current,,债权投资
+account_1502,1502,债权投资减值准备,,FALSE,asset_non_current,,债权投资减值准备
+account_1503,1503,其它债权投资,,FALSE,asset_non_current,,其它债权投资
+account_1504,1504,其它权益工具投资,,FALSE,asset_non_current,,其它权益工具投资
 account_1511,1511,长期股权投资,,FALSE,asset_non_current,,长期股权投资
 account_1512,1512,长期股权投资减值准备,,FALSE,asset_non_current,,长期股权投资减值准备
 account_1521,1521,投资性房地产,,FALSE,asset_non_current,,投资性房地产
@@ -159,4 +160,4 @@ account_6031,6031,保费收入,,FALSE,income,l10n_cn_standard_latest.tag24,保�
 account_6041,6041,租赁收入,,FALSE,income,l10n_cn_standard_latest.tag27,租赁收入
 account_6051,6051,其他业务收入,,FALSE,income,,其他业务收入
 account_6061,6061,汇兑损益,,FALSE,income,l10n_cn_standard_latest.tag23,汇兑损益
-account_6101,6101,公允价值变动损益,,FALSE,income,,
+account_6101,6101,公允价值变动损益,,FALSE,equity,,
