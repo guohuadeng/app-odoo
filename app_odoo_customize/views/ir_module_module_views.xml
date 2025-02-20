@@ -1,4 +1,4 @@
- 
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
         <!--  Modules list -->
         <record id="app_module_tree" model="ir.ui.view">

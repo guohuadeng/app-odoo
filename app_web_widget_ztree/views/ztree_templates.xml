@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="ztree assets" inherit_id="web.assets_backend">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/app_web_widget_ztree/static/src/lib/ztree_v3/css/awesomeStyle/fa.scss"/>
+            <link rel="stylesheet" type="text/scss" href="/app_web_widget_ztree/static/src/lib/ztree_v3/css/awesomeStyle/awesome.scss"/>
+            <link rel="stylesheet" type="text/scss" href="/app_web_widget_ztree/static/src/scss/variables.scss"/>
+            <link rel="stylesheet" type="text/scss" href="/app_web_widget_ztree/static/src/scss/views.scss"/>
+        </xpath>
+        <xpath expr="script[last()]" position="after">
+            <script type="text/javascript" src="/app_web_widget_ztree/static/src/lib/ztree_v3/js/jquery.ztree.core.js"/>
+            <script type="text/javascript" src="/app_web_widget_ztree/static/src/js/widget_ztree.js"/>
+        </xpath>
+    </template>
+</odoo>

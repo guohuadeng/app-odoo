@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!--field owl-->
+    <t t-name="App.FieldZtree" t-inherit="web.Many2OneField" t-inherit-mode="primary">
+        <xpath expr="//Many2XAutocomplete" position="replace">
+            <ZtreeMany2X t-props="ZtreeMany2xProps"/>
+        </xpath>
+    </t>
+</templates>

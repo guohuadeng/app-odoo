@@ -1,0 +1,427 @@
+//样式按 mail/client_action.less
+$z-line-color: lighten($o-main-text-color, 30%);
+.ztree {
+  padding: 5px;
+  li {
+    padding: 0px;
+    li  {
+      position: relative;
+    }
+    li:before {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 0;
+      border-top: 1px dotted $z-line-color;
+      position: relative;
+      top: 11px;
+      margin-left: -18px;
+    }
+    ul {
+      position: relative;
+      background: none;
+      margin-left: 5px;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        border-left: 1px dotted $z-line-color;
+      }
+      &.line {
+        background: none;
+      }
+    }
+    li:last-child {
+        &::before {
+          display: inline-block;
+          height: auto;
+          border-left: 1px solid $dropdown-bg;
+          margin-right: 8px;
+          padding-bottom: 2px;
+        }
+        span.node_name {
+          padding-right: 4px;
+        }
+    }
+
+    a {
+      margin-left: -4px;
+      padding-left: 2px;
+      &:hover {
+        color: $o-form-lightsecondary !important;
+      }
+
+      &.curSelectedNode {
+        span.button {
+          color: $o-main-text-color !important;
+        }
+      }
+    }
+
+    span {
+      word-break: break-all;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      width: 100%;
+      overflow: hidden;
+      display: inline-block;
+      padding-left: 2px;
+      margin-left: -4px;
+    }
+
+    span.button {
+      color: $o-main-text-color;
+
+      &.roots_docu {
+        display: none !important;
+      }
+
+      &.center_docu {
+        display: none !important;
+      }
+
+      &.bottom_docu {
+        display: none !important;
+      }
+      &.switch {
+        margin-left: -4px;
+      }
+      &.ico_open::before {
+        display: none;
+      }
+
+      &.ico_close::before {
+        display: none;
+      }
+
+      &.ico_docu::before {
+        display: none;
+      }
+
+      &.roots_docu::before {
+        display: none;
+      }
+
+      &.showAll_ico_docu::before {
+        display: none;
+      }
+    }
+  }
+
+  li:last-child {
+      &::before {
+        display: block;
+        background-color: $dropdown-bg;
+        height: auto;
+        top: 11px;
+        position: absolute;
+        bottom: 0;
+      }
+  }
+}
+
+.o_form_view {
+  .ztree_chart {
+    .ztree {
+      position: relative;
+      border: none;
+      margin-top: -10px;
+      z-index: auto;
+    }
+  }
+  .ztree {
+    position: absolute;
+    width: 100%;
+    background-image: none;
+    background-color: $dropdown-bg;
+    border: 1px solid $z-line-color;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176);
+    z-index: 1051;
+    //大屏幕
+    @media (min-width: 768px) {
+      & {
+        width: 100%;
+      }
+    }
+
+    & > * {
+      background-color: $dropdown-bg;
+    }
+  }
+
+}
+
+.table-responsive > .o_list_view > thead > tr > th {
+  .zTitle {
+    width: 90%;
+    min-height: 24px;
+    font-weight: normal;
+  }
+
+  label {
+    width: 80%;
+    cursor: pointer;
+  }
+}
+
+//chart 相关
+// MOBILE LAYOUT CUSTOMIZATIONS
+@include media-breakpoint-down(sm) {
+    #o_node_right {
+        .o_chart_hierarchy_title {
+            font-size: 20px;
+            padding: 5px 0;
+            border-bottom: 1px solid $o-chart-hierarchy-border-color;
+        }
+    }
+}
+
+// SMALL DESKTOP LAYOUT
+@include media-breakpoint-up(md) {
+    #o_node_container {
+        display: flex;
+        width: 100%;
+    }
+    #o_node_main {
+        flex: 1 1 60%;
+    }
+    #o_node_right {
+        flex: 0 1 35%;
+        margin-left: 2%;
+        padding-left: 2%;
+        border-left: 1px solid $o-chart-hierarchy-border-color;
+
+        .o_chart_hierarchy_title {
+            color: $gray-600;
+        }
+    }
+}
+
+// MEDIUM DESKTOP LAYOUT
+@include media-breakpoint-up(lg) {
+    #o_node_right {
+        flex: 0 1 33%;
+    }
+}
+
+// LARGE DESKTOP LAYOUT
+@include media-breakpoint-up(xl) {
+    #o_node_right {
+        flex: 0 1 30%;
+    }
+}
+
+#o_node_right {
+    $tmp-gap-base: $o-chart-hierarchy-entry-pic-size*0.7;
+
+    // ORGANIGRAM LINES
+    .o_field_widget, .o_chart_hierarchy_group_up, .o_chart_hierarchy_group_down {
+        position: relative;
+        width: 100%;
+    }
+
+    .o_chart_hierarchy_group_up {
+        &:before {
+            @include o-chart-hierarchy-line;
+            border-left-width: $o-chart-hierarchy-entry-line-w;
+            height: calc(100% + #{$o-chart-hierarchy-entry-pic-size*0.5}) ;
+            @include o-position-absolute(
+                $top: $o-chart-hierarchy-entry-pic-size*0.1 + 5px,
+                $left: $o-chart-hierarchy-entry-pic-size*0.5 - $o-chart-hierarchy-entry-line-w*0.5
+            );
+        }
+        .o_chart_hierarchy_entry:last-of-type {
+            &:before {
+                @include o-chart-hierarchy-line;
+                border-width: 0 0 $o-chart-hierarchy-entry-line-w $o-chart-hierarchy-entry-line-w;
+                height: ($o-chart-hierarchy-entry-pic-size*0.5) - ($o-chart-hierarchy-entry-v-gap*2);
+                width:  $o-chart-hierarchy-entry-pic-size*0.5 + $o-chart-hierarchy-entry-v-gap*2;
+                @include o-position-absolute(
+                    $left: $o-chart-hierarchy-entry-pic-size*0.5 - $o-chart-hierarchy-entry-line-w*0.5,
+                    $top: 100%
+                );
+            }
+        }
+    }
+
+    .o_chart_hierarchy_group_up + .o_chart_hierarchy_entry_self {
+        margin-left: $tmp-gap-base;
+
+        & + .o_chart_hierarchy_group_down {
+            padding-left: $tmp-gap-base*2;
+
+            &:before {
+                margin-left: $tmp-gap-base;
+            }
+        }
+    }
+
+    .o_chart_hierarchy_group_down {
+        padding-left: $tmp-gap-base;
+
+        &:before {
+            @include o-chart-hierarchy-line;
+            border-left-width: $o-chart-hierarchy-entry-line-w;
+            height: 100%;
+            @include o-position-absolute(
+                $top: $o-chart-hierarchy-entry-v-gap*-1,
+                $left: $tmp-gap-base*0.5 + $o-chart-hierarchy-entry-pic-size*0.1 + $o-chart-hierarchy-entry-line-w*0.5
+            );
+        }
+
+        .o_chart_hierarchy_entry {
+            &:before {
+                @include o-chart-hierarchy-line;
+                border-top-width:  $o-chart-hierarchy-entry-line-w;
+                height: $tmp-gap-base;
+                width: 0;
+                @include o-position-absolute(
+                    $left: $tmp-gap-base*-0.5 + $o-chart-hierarchy-entry-pic-size*0.1 + $o-chart-hierarchy-entry-line-w*0.5,
+                    $top: $o-chart-hierarchy-entry-pic-size*0.5
+                );
+            }
+
+            &:last-of-type {
+                &:before {
+                    height: 50%;
+                }
+
+            }
+
+            &.o_chart_hierarchy_more {
+                margin-top: $o-chart-hierarchy-entry-v-gap;
+
+                &:before {
+                    top: 15px;
+                }
+            }
+        }
+    }
+
+    // ORGANIGRAM DESIGN
+    .o_chart_hierarchy_entry {
+        margin-bottom: $o-chart-hierarchy-entry-v-gap;
+        overflow: visible;
+        margin-top: 0;
+
+        &, .o_media_left, .media-body {
+            position: relative;
+        }
+
+        .o_media_left {
+            padding-right: 10px;
+        }
+
+        .media-body {
+            vertical-align: middle;
+
+            .badge {
+                float: right;
+                cursor: pointer;
+                margin-right: 5px;
+                color: $gray-600;
+                background: $o-chart-hierarchy-bg;
+                border: 1px solid $gray-600;
+                &:hover {
+                    color: $o-brand-primary;
+                    border-color: $o-brand-primary;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            strong {
+                display: block;
+                line-height: 1.2;
+                font-size: 11px;
+                color: lighten($gray-600, 15%);
+            }
+        }
+
+        .o_media_object {
+            display: block;
+            width: $o-chart-hierarchy-entry-pic-size*0.8;
+            height: $o-chart-hierarchy-entry-pic-size*0.8;
+            margin: $o-chart-hierarchy-entry-pic-size*0.1;
+            box-shadow: 0 0 0 $o-chart-hierarchy-entry-line-w darken($o-chart-hierarchy-bg, 20%);
+            background-size: cover;
+            background-position: center center;
+
+            &.card {
+                height: 20px;
+                box-shadow: none;
+                border-color: transparent;
+                padding: 0;
+                position: relative;
+                color: $body-color;
+
+                .o_chart_hierarchy_show_more {
+                    line-height: 13px;
+                }
+
+                &:hover {
+                    border-color: $o-chart-hierarchy-entry-border-color;
+                    color:$o-brand-primary;
+                }
+            }
+        }
+
+        &.o_chart_hierarchy_entry_parent, &.o_chart_hierarchy_entry_sub {
+            .o_media_left {
+                padding-right: 0;
+            }
+            .media-body > a {
+                padding-left: 10px;
+                max-width: 100%;
+                display: block;
+
+                .o_media_heading {
+                    color: lighten($gray-600, 5%);
+                    font-size: 13px;
+                }
+            }
+
+            &:hover {
+                .o_media_object {
+                    box-shadow: 0 0 0 $o-chart-hierarchy-entry-line-w*2 rgba($o-brand-primary, 0.6);
+                }
+                .media-body > a {
+                    .o_media_heading {
+                        color: $o-brand-primary;
+                    }
+                    strong {
+                        color: lighten($gray-600, 5%);
+                    }
+                }
+            }
+        }
+
+        &.o_chart_hierarchy_entry_self {
+            &:not(:first-child) {
+                margin-top: $o-chart-hierarchy-entry-v-gap*1.5;
+            }
+
+            strong {
+                color: $text-muted;
+            }
+
+            .o_media_object {
+                width: $o-chart-hierarchy-entry-pic-size;
+                height: $o-chart-hierarchy-entry-pic-size;
+                margin: 0;
+                border: $o-chart-hierarchy-entry-line-w*2 solid $o-brand-primary;
+                box-shadow: inset 0 0 0 $o-chart-hierarchy-entry-line-w*2 white;
+            }
+
+            .media-body {
+                opacity: 1;
+            }
+        }
+    }
+}
+

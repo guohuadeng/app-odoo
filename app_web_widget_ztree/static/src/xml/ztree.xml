@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!--常规的-->
+    <t t-name="App.Ztree" t-inherit="web.AutoComplete" t-inherit-mode="primary" owl="1">
+        <xpath expr="//input" position="attributes">
+            <attribute name="t-att-data-ztree_selected_id">props.data.ztree_selected_id</attribute>
+        </xpath>
+        <xpath expr="//ul" position="replace">
+            <div class="ztree o-autocomplete--dropdown-menu dropdown-menu ui-widget ui-autocomplete show"
+                 t-att-isOpened="isOpened"
+                 t-att-hasOptions="hasOptions"
+                 t-on-mousedown.prevent=""
+                 t-ref="sourcesList"
+                 t-att-id="ztree_id"
+                 t-att-data-ztree_field="ztree_field"
+                 t-att-data-ztree_selected_id="ztree_selected_id"
+                 t-att-data-ztree_model="ztree_model"
+                 t-att-data-ztree_parent_key="ztree_parent_key"/>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!--常规的-->
+    <t t-name="App.ZtreeMany2X" t-inherit="web.Many2XAutocomplete" t-inherit-mode="primary">
+        <xpath expr="//AutoComplete" position="replace">
+            <Ztree t-else=""
+                   setting="props.setting"
+                   data="props.data"
+                   value="props.value"
+                   id="props.id"
+                   placeholder="props.placeholder"
+                   sources="sources"
+                   autoSelect="props.autoSelect"
+                   onSelect.bind="onSelect"
+                   onInput.bind="onInput"
+                   onChange.bind="onChange"
+            />
+        </xpath>
+    </t>
+</templates>

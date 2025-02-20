@@ -49,9 +49,9 @@ export class WebEnvironmentRibbon extends Component {
             .call("web.environment.ribbon.backend", "get_environment_ribbon")
             .then(function (ribbon_data) {
                 // Ribbon name
-                if (ribbon_data.dbname && ribbon_data.dbname !== ribbon_data.name) {
+                if (ribbon_data.name && ribbon_data.name !== "False") {
                     ribbon.show();
-                    ribbon.html(ribbon_data.dbname);
+                    ribbon.html(ribbon_data.name);
                 }
                 // Ribbon color
                 if (ribbon_data.color && self.validStrColour(ribbon_data.color)) {

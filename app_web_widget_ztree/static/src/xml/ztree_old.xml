@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!--常规的-->
+    <div t-name="App.zTree" class="ztree"
+                    t-att-id="widget.ztree_id"
+                    t-att-data-ztree_index="widget.ztree_index"
+                    t-att-data-ztree_field="widget.ztree_field"
+                    t-att-data-ztree_model="widget.ztree_model"
+                    t-att-data-ztree_parent_key="widget.ztree_parent_key">
+    </div>
+
+    <!--field 中的widget-->
+    <t t-name="App.FieldZtree">
+        <t t-if="widget.mode === 'readonly'">
+            <a t-if="!widget.noOpen" t-att-tabindex="widget.attrs.tabindex" class="o_form_uri" href="#"/>
+            <span t-if="widget.noOpen"/>
+        </t>
+        <div t-if="widget.mode === 'edit'" class="o_field_widget o_field_many2one" aria-atomic="true">
+            <div class="o_input_dropdown">
+                <input type="text" class="o_input"
+                    t-att-barcode_events="widget.nodeOptions.barcode_events"
+                    t-att-tabindex="widget.attrs.tabindex"
+                    t-att-autofocus="widget.attrs.autofocus"
+                    t-att-placeholder="widget.attrs.placeholder"
+                    t-att-id="widget.idForLabel"/>
+                <a role="button" class="o_dropdown_button" draggable="false"/>
+            </div>
+            <button type="button" t-if="!widget.noOpen" class="fa fa-external-link btn btn-secondary o_external_button" tabindex="-1" draggable="false" aria-label="External link" title="External link"/>
+        </div>
+    </t>
+    <t t-name="App.FieldZtreeChart">
+        <!--只能 readonly，不给编辑 -->
+        <div class="ztree_chart_container" aria-atomic="true" t-att-name="widget.name">
+            <h4 t-if="widget.string and !widget.no_title" class="o_chart_hierarchy_title mb16 mt0"><t t-esc="widget.string"/></h4>
+            <div class="ztree_chart"/>
+        </div>
+    </t>
+</templates>

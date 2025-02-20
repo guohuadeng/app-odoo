@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="App.FieldZtreeChart" owl="1">
+        <!--只能 readonly，不给编辑 -->
+        <div class="ztree_chart" aria-atomic="true" t-att-name="zchart">
+            <h4 t-if="props.string and !props.no_title" class="o_chart_hierarchy_title mb16 mt0"><t t-esc="props.string"/></h4>
+            <div class="ztree show"
+                 t-att-isOpened="isOpened"
+                 t-att-hasOptions="hasOptions"
+                 t-on-mousedown.prevent=""
+                 t-ref="sourcesList"
+                 t-att-id="ztree_id"
+                 t-att-data-ztree_field="ztree_field"
+                 t-att-data-ztree_selected_id="ztree_selected_id"
+                 t-att-data-ztree_model="ztree_model"
+                 t-att-data-ztree_parent_key="ztree_parent_key"/>
+        </div>
+    </t>
+</templates>
