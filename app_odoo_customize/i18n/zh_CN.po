@@ -541,8 +541,8 @@ msgstr "显示应用的作者-在安装面板中"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_ribbon_name
-msgid "Show Demo Ribbon"
-msgstr "显示全站测试标签"
+msgid "Hide Ribbon"
+msgstr "隐藏数据库名称标签"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_show_documentation_dev

@@ -28,7 +28,8 @@ class WebEnvironmentRibbonBackend(models.AbstractModel):
         ir_config_model = self.env["ir.config_parameter"]
         name = self._prepare_ribbon_name()
         return {
-            "name": name,
+            "name": name.upper(),
+            "dbname": self.env.cr.dbname.upper(),
             "color": ir_config_model.sudo().get_param("app_ribbon_color"),
             "background_color": ir_config_model.sudo().get_param(
                 "app_ribbon_background_color"

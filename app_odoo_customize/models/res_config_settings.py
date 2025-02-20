@@ -43,7 +43,7 @@ class ResConfigSettings(models.TransientModel):
     app_account_title = fields.Char('My Odoo.com Account Title', config_parameter='app_account_title')
     app_account_url = fields.Char('My Odoo.com Account Url', config_parameter='app_account_url')
     app_enterprise_url = fields.Char('Customize Module Url(eg. Enterprise)', config_parameter='app_enterprise_url')
-    app_ribbon_name = fields.Char('Show Demo Ribbon', config_parameter='app_ribbon_name')
+    app_ribbon_name = fields.Char('Hide Ribbon', config_parameter='app_ribbon_name')
     app_navbar_pos_pc = fields.Selection(string="Navbar PC", selection=[
         ('top', 'Top(Default)'),
         ('bottom', 'Bottom'),
