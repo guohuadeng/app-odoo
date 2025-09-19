@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+    <record id="app_product_public_category_form_view" model="ir.ui.view">
+        <field name="name">app.product.public.category.form</field>
+        <field name="model">product.public.category</field>
+        <field name="inherit_id" ref="website_sale.product_public_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="id"/>
+            </xpath>
+        </field>
+    </record>
     <record id="app_product_public_category_tree_view" model="ir.ui.view">
         <field name="name">app.product.public.category.tree</field>
         <field name="model">product.public.category</field>
@@ -12,6 +22,7 @@
                 <attribute name="optional">hide</attribute>
             </xpath>
             <xpath expr="//field[@name='display_name']" position="before">
+                <field name="id" optional="show"/>
                 <field name="name" optional="show"/>
             </xpath>
             <xpath expr="//field[@name='website_id']" position="before">

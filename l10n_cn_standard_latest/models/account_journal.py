@@ -5,7 +5,7 @@ from odoo import api, fields, models, _
 
 # 调整初始化算法
 class AccountJournal(models.Model):
-    _inherit = "account.journal"
+    _inherit = 'account.journal'
 
     @api.model
     def _prepare_liquidity_account_vals(self, company, code, vals):

@@ -4,7 +4,7 @@ from odoo import fields, models, _
 
 
 class ResConfigSettings(models.TransientModel):
-    _inherit = "res.config.settings"
+    _inherit = 'res.config.settings'
 
     sync_blog_meta_background_img = fields.Boolean('Use a meta image by default for blog post background', config_parameter='app_website_blog_editor.sync_blog_meta_background_img')
 

@@ -13,7 +13,7 @@ STANDARD_MODULES = ['web', 'web_enterprise', 'theme_common', 'base']
 
 
 class BaseModuleUpdate(models.TransientModel):
-    _inherit = "base.module.update"
+    _inherit = 'base.module.update'
 
     def update_addons_paths(self):
         addons_path_obj = self.env['ir.module.addons.path']

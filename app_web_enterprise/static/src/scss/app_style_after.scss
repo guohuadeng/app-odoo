@@ -53,6 +53,23 @@
 
 }
 
+//kanban
+//用户选择器一直可见
+.o_kanban_view {
+  .o_kanban_record {
+    @include media-breakpoint-up(sm) {
+      .o_field_widget.o_field_many2one_avatar_user .o_quick_assign {
+        visibility: visible;
+      }
+      &:hover {
+        .o_field_widget.o_field_many2one_avatar_user .o_quick_assign {
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
+
 //form
   //  create 按键
 .o_form_view .o_form_view_container {

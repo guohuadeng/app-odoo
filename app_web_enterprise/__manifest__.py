@@ -18,7 +18,7 @@
 
 {
     'name': "!odoo18 Enterprise enhance Pack,企业版界面及操作增强",
-    'version': '18.0.25.04.05',
+    'version': '18.0.25.09.16',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
