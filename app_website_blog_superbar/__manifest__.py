@@ -39,7 +39,7 @@
 
 {
     'name': "Website Blogs Search Enhance",
-    'version': '18.0.24.11.12',
+    'version': '19.0.24.11.12',
     'author': 'odooai.cn',
     'category': 'Website',
     'website': 'https://www.odooai.cn',

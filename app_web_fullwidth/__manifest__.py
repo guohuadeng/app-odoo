@@ -22,7 +22,7 @@
 
 {
     'name': 'Web Form Fullwidth.Chatter Position-表单表格全宽度满屏,自定义备注消息位置',
-    'version': '18.0.25.04.05',
+    'version': '19.0.25.04.05',
     'category': 'Extra tools',
     'author': 'odooai.cn',
     'website': 'https://www.odooai.cn',

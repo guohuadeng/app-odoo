@@ -29,7 +29,7 @@
 
 {
     'name': "Apps Navigator by Category, Module Navigator",
-    'version': '18.0.24.11.12',
+    'version': '19.0.24.11.12',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

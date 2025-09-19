@@ -17,7 +17,7 @@
 
 {
     'name': "Advance sale order navigator by partner and channel",
-    'version': '18.0.24.12.04',
+    'version': '19.0.24.12.04',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

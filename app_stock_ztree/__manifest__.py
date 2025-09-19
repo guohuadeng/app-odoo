@@ -29,7 +29,7 @@
 
 {
     'name': "App Stock location ztree, parent children tree",
-    'version': '18.0.24.12.09',
+    'version': '19.0.24.12.09',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

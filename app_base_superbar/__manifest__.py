@@ -17,7 +17,7 @@
 
 {
     'name': "Easy Admin navigator, quick search filter",
-    'version': '18.0.25.04.13',
+    'version': '19.0.25.04.13',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
