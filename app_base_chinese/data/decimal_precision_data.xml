@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+		 <record id="product.decimal_discount" model="decimal.precision">
+			<field name="digits">0</field>
+		</record>
+		 <record id="product.decimal_product_uom" model="decimal.precision">
+			<field name="digits">2</field>
+		</record>
+		 <record id="account.decimal_payment" model="decimal.precision">
+			<field name="digits">3</field>
+		</record>
+	</data>
+</odoo>

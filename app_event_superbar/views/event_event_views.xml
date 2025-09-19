@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Search -->
+    <record id="app_event_event_search_superbar" model="ir.ui.view">
+        <field name="name">app.event.event.search.superbar</field>
+        <field name="model">event.event</field>
+        <field name="inherit_id" ref="event.view_event_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <searchpanel view_types="list,kanban,pivot,graph,calendar">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="stage_id" enable_counters="1" select="multi"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,20 @@
+$o-home-menu-font-size-base: 1.2rem;
+$o-home-menu-caption-color: #fff !default;
+$o-home-menu-caption-shadow: none !default;
+
+$o-home-menu-custom-caption-color: $o-gray-100 !default;
+$o-home-menu-custom-caption-shadow: 0 1px 2px rgba(255, 255, 255, .15), 0 2px 5px rgba(0, 0, 0, .05), 0 0 5px rgba(0, 0, 0, .05) !default;
+
+.o_home_menu_background, .o_web_client.o_home_menu_background {
+  --homeMenu-bg-color: rgba(#{to-rgb($o-action)}, .9);
+  --homeMenu-bg-image: url("/app_web_enterprise/static/src/img/home-menu-bg-overlay.svg");
+
+  .o_app .o_app_icon {
+    --AppSwitcherIcon-background: rgba(255, 255, 255, 0.05);
+    --AppSwitcherIcon-inset-shadow: #{inset 0 0 0 1px rgba(#000, 0)};
+  }
+
+  .o_app:hover .o_app_icon {
+    --AppSwitcherIcon-inset-shadow: #{inset 0 0 0 2px rgba(#000, .1)};
+  }
+}

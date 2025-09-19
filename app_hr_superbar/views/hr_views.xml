@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="view_employee_filter_superbar" model="ir.ui.view">
+        <field name="name">app.hr.employee.search</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//searchpanel/field[@name='department_id']" position="after">
+                <field name="job_id" enable_counters="1"/>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

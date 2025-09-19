@@ -1,0 +1,53 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* app_mrp_production_zchart
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-20 13:10+0000\n"
+"PO-Revision-Date: 2020-08-20 13:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_mrp_production_zchart
+#: model:ir.model.fields,field_description:app_mrp_production_zchart.field_mrp_production__image_128
+msgid "Image 128"
+msgstr "图片"
+
+#. module: app_mrp_production_zchart
+#: model:ir.model.fields,field_description:app_mrp_production_zchart.field_mrp_production__child_all_count
+msgid "Indirect Surbordinates Count"
+msgstr "子生产单数量"
+
+#. module: app_mrp_production_zchart
+#: model:ir.model.fields,field_description:app_mrp_production_zchart.field_mrp_production__parent_id
+msgid "Parent Manufacturing"
+msgstr ""
+
+#. module: app_mrp_production_zchart
+#: model:ir.model.fields,field_description:app_mrp_production_zchart.field_mrp_production__parent_path
+msgid "Parent Path"
+msgstr "上级生产订单"
+
+#. module: app_mrp_production_zchart
+#: model:ir.model,name:app_mrp_production_zchart.model_mrp_production
+msgid "Production Order"
+msgstr "生产订单"
+
+#. module: app_mrp_production_zchart
+#: model:ir.model.fields,field_description:app_mrp_production_zchart.field_mrp_production__child_ids
+msgid "Sub Manufacturing"
+msgstr "子生产订单"
+
+#. module: app_mrp_production_zchart
+#: model:ir.model.fields,help:app_mrp_production_zchart.field_mrp_production__parent_id
+msgid ""
+"The parent manufacturing orders that generate this order. Follow the rule of"
+" multi level bom."
+msgstr "本生产订单的来源生产订单，根据多级Bom生成"

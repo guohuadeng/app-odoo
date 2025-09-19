@@ -1,0 +1,95 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* app_account_ztree
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e-20231112\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-12 14:09+0000\n"
+"PO-Revision-Date: 2024-12-12 14:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_account_ztree
+#: model:ir.model,name:app_account_ztree.model_account_account
+msgid "Account"
+msgstr "科目"
+
+#. module: app_account_ztree
+#: model:ir.model,name:app_account_ztree.model_account_chart_template
+msgid "Account Chart Template"
+msgstr "科目表模版"
+
+#. module: app_account_ztree
+#: model:ir.model.fields,field_description:app_account_ztree.field_res_company__coa_delimiter
+msgid "COA Delimiter"
+msgstr "会计科目分隔符"
+
+#. module: app_account_ztree
+#. odoo-python
+#: code:addons/app_account_ztree/models/account_chart_template.py:0
+#, python-format
+msgid "Cannot generate an unused account code."
+msgstr "无法生成关联会计科目"
+
+#. module: app_account_ztree
+#: model:ir.model.fields,field_description:app_account_ztree.field_account_account__child_ids
+#: model:ir.model.fields,field_description:app_account_ztree.field_account_account_template__child_ids
+msgid "Child Chart"
+msgstr "下级科目"
+
+#. module: app_account_ztree
+#: model:ir.model.fields,field_description:app_account_ztree.field_account_chart_template__delimiter
+msgid "Code Delimiter"
+msgstr "分隔符"
+
+#. module: app_account_ztree
+#: model:ir.model,name:app_account_ztree.model_res_company
+msgid "Companies"
+msgstr "公司"
+
+#. module: app_account_ztree
+#: model:ir.model.fields,help:app_account_ztree.field_account_chart_template__delimiter
+msgid "Delimiter after parent account chart"
+msgstr "本会计科目与上级科目之前的分隔符"
+
+#. module: app_account_ztree
+#: model:ir.model.fields,help:app_account_ztree.field_res_company__coa_delimiter
+msgid "Delimiter after parent account in Chart of Accounts"
+msgstr "当前会计科目表中，下级科目与上级科目之前的分隔符"
+
+#. module: app_account_ztree
+#. odoo-python
+#: code:addons/app_account_ztree/models/account_chart_template.py:0
+#, python-format
+msgid "Liquidity Transfer"
+msgstr "流动性转移"
+
+#. module: app_account_ztree
+#: model:ir.model.fields,field_description:app_account_ztree.field_account_account__parent_id
+#: model:ir.model.fields,field_description:app_account_ztree.field_account_account_template__parent_id
+msgid "Parent Chart"
+msgstr "上级科目"
+
+#. module: app_account_ztree
+#: model:ir.model.fields,field_description:app_account_ztree.field_account_account__parent_path
+#: model:ir.model.fields,field_description:app_account_ztree.field_account_account_template__parent_path
+msgid "Parent Path"
+msgstr "树状级别路径"
+
+#. module: app_account_ztree
+#: model:ir.model,name:app_account_ztree.model_account_account_template
+msgid "Templates for Accounts"
+msgstr "会计科目模板"
+
+#. module: app_account_ztree
+#. odoo-python
+#: code:addons/app_account_ztree/models/account_account.py:0
+#, python-format
+msgid "Update parent account chart done.<br/>【%s】 records updated."
+msgstr "更新会计科目表上下级关系完成。<br/>【%s】 条记录更新完成。"

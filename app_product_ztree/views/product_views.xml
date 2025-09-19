@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <!-- Product template -->
+        <record id="app_product_template_tree_view" model="ir.ui.view">
+            <field name="name">app.product.template.tree</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="attributes">
+                    <!-- Add your fields or attributes here -->
+                    <attribute name="widget">ztree_select</attribute>
+                    <attribute name="options">{'ztree_parent_key': 'parent_id','ztree_expend_level': '2', 'ztree_name_field': 'name', 'order': 'name' }</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="app_product_template_form_view" model="ir.ui.view">
+            <field name="name">app.product.template.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="attributes">
+                    <!-- Add your fields or attributes here -->
+                    <attribute name="widget">ztree_select</attribute>
+                    <attribute name="options">{'ztree_parent_key': 'parent_id','ztree_expend_level': '2', 'ztree_name_field': 'name', 'order': 'name' }</attribute>
+                </xpath>
+            </field>
+        </record>
+        <!-- Product product -->
+        <record id="app_product_product_tree_view" model="ir.ui.view">
+            <field name="name">app.product.product.tree</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="attributes">
+                    <!-- Add your fields or attributes here -->
+                    <attribute name="widget">ztree_select</attribute>
+                    <attribute name="options">{'ztree_parent_key': 'parent_id','ztree_expend_level': '2', 'ztree_name_field': 'name', 'order': 'name' }</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="app_product_category_form_view" model="ir.ui.view">
+            <field name="name">app.product.category.form</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <!-- Add your fields or attributes here -->
+                    <attribute name="widget">ztree_select</attribute>
+                    <attribute name="options">{'ztree_parent_key': 'parent_id','ztree_expend_level': '2', 'order': 'name' }</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="partner_deepseek_chat" model="res.partner">
+            <field name="name">Deepseek聊天Ai</field>
+            <field name="image_1920" type="base64" file="app_deepseek/static/src/img/deepseek.png"/>
+        </record>
+
+        <record id="user_deepseek_chat" model="res.users">
+            <field name="login">deepseek_chat@example.com</field>
+            <field name="email">deepseek_chat@example.com</field>
+            <field name="partner_id" ref="partner_deepseek_chat"/>
+            <field name="gpt_id" ref="robot_deepseek_chat"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
+            <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+<!--	    todo: 只处理主partern，后续处理其它-->
+        <record id="base.main_partner" model="res.partner">
+            <field name="email">info@odooai.cn</field>
+            <field name="website">www.odooai.cn</field>
+        </record>
+    </data>
+</odoo>
+

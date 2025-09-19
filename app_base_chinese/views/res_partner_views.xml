@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Partner Form视图，用继承方式改写2018-11-21,ivan -->
+        <record id="app_view_partner_form" model="ir.ui.view">
+            <field name="name">app.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- 客户编号设计在重要位置，放到 app_partner_auto_reference -->
+                <!--<xpath expr="//field[@name='type']" position="after">-->
+                <!--<xpath expr="//field[@name='ref']" position="move"/>-->
+                <!--</xpath>-->
+                <xpath expr="//div[hasclass('o_address_format')]" position="after">
+                    <field name="short_name"/>
+                </xpath>
+                <!--res.partner客户，细节调整至 app_base_chinese_city 中处理 -->
+                <xpath expr="//field[@name='street']" position="before">
+                    <xpath expr="//div[@name='partner_address_country']" position="move"/>
+                </xpath>
+                <xpath expr="//page//field[@name='child_ids']//form[1]//field[@name='name']" position="attributes">
+                    <attribute name="required">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']//form[1]//field[@name='email']" position="before">
+                    <field name="category_id" widget="many2many_tags"/>
+                </xpath>
+                <!-- res.partner联系人 kanban -->
+                <!-- 显示类型和地址等 -->
+                <xpath expr="//field[@name='child_ids']//kanban[1]//templates//field[@name='name']" position="before">
+                    <t t-if="record.ref and record.ref.raw_value">[<field name="ref"/>]
+                    </t>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']//kanban[1]//templates//field[@name='name']" position="after">
+                    <div t-if="record.type and record.type.raw_value">
+                        <field name="type"/>
+                    </div>
+                    <div t-if="record.category_id and record.category_id.raw_value">
+                        <field name="category_id" widget="many2many_tags"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+        <!-- 注意，只对 company 设定的国家有效，该公司国籍如果是中国，则会绑定此指定的中国地址格式-->
+        <record id="app_view_partner_form_chinese" model="ir.ui.view">
+            <field name="name">app.res.partner.form.chinese</field>
+            <field name="model">res.partner</field>
+            <field name="priority" eval="900"/>
+            <field name="arch" type="xml">
+                <form class="o_form_address_chinese">
+                    <div class="o_address_format o_address_chinese">
+                        <div name="partner_address_country" class="d-flex">
+                            <field name="country_id" placeholder="Country" class="o_address_country"
+                                   options='{"no_open": True, "no_create": True}'/>
+                            <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                        </div>
+                        <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True, "no_create": True}'
+                               context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}"/>
+                        <field name="city_id" placeholder="Select Chinese City" class="o_address_city_id o_address_city"
+                               domain="[('country_id', '=', country_id), ('state_id', '=', state_id)]"
+                               invisible="not country_enforce_cities"
+                               context="{'default_country_id': country_id, 'default_state_id': state_id, 'default_zipcode': zip}"/>
+                        <field name="city" placeholder="Input City"  class="o_address_city_id"
+                               invisible="country_enforce_cities"/>
+                        <field name="street" placeholder="Street..." class="o_address_street"/>
+                        <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="app_view_partner_tree" model="ir.ui.view">
+            <field name="name">app.res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='email']" position="after">
+                    <field name="category_id" widget="many2many_tags" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

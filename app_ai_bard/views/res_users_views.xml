@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="app_chatgpt_res_users_form" model="ir.ui.view">
+        <field name="name">app.chatgpt.res.users.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="%(app_chatgpt.action_res_users_2_partner_ai_use)d" type="action" string="Partner Ai Use" icon="fa-comments">
+                </button>
+            </xpath>
+            <xpath expr="//page[@name='preferences']" position="after">
+                <page name="page_chatgpt" string="ChatGPT">
+                    <group>
+                        <group>
+                            <field name="gpt_id"/>
+                            <field name="gpt_policy"/>
+                            <field name="gpt_wl_partners" widget="many2many_tags" attrs="{'invisible': [('gpt_policy', '=', 'all')]}"/>
+                            <field name="gpt_demo_time"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+<!--    search-->
+    <record id="app_view_users_search" model="ir.ui.view">
+        <field name="name">app.res.users.search</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='filter_no_share']" position="before">
+                <filter name="is_robot" string="Ai User" domain="[('gpt_id','!=',False)]"/>
+                <filter name="not_robot" string="Not Ai" domain="[('gpt_id','=',False)]"/>
+                <separator/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

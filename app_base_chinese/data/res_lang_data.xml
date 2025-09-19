@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- 时间格式 -->
+        <function model="res.lang" name="write">
+            <value eval="[ref('base.lang_zh_CN')]"/>
+            <value eval="{
+            'active': True,
+            }"/>
+        </function>
+        <record id="base.lang_zh_CN" model="res.lang">
+            <field name="name">中文</field>
+            <field name="date_format">%Y-%m-%d</field>
+<!--            此处将所有默认时间都精确至 秒，如有特殊需求在相关模块再处理-->
+            <field name="time_format">%H:%M</field>
+            <field name="short_time_format">%H:%M</field>
+            <field name="week_start">7</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="base.lang_en" model="res.lang" context="{'lang': 'zh_CN'}">
+            <field name="name">English</field>
+        </record>
+    </data>
+</odoo>
