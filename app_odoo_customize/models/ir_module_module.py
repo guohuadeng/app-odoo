@@ -100,8 +100,7 @@ class IrModuleModule(models.Model):
         return res
 
     def web_read(self, specification):
-        fields = list(specification.keys())
         module_type = self.env.context.get('module_type', 'official')
         if module_type == 'odooapp.cn':
-            self.env.context = {**self.env.context, "module_type": 'official'}
-        return super().web_read(specification)
+            self = self.with_context(module_type='official')
+        return super(IrModuleModule, self).web_read(specification)
