@@ -3,7 +3,6 @@
 import logging
 
 from odoo import api, fields, models, SUPERUSER_ID, tools,  _
-from odoo.osv import expression
 
 _logger = logging.getLogger(__name__)
 
