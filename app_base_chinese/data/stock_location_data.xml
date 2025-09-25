@@ -9,24 +9,26 @@
         </record>
     </data>
     <data noupdate="0">
-        <function model="stock.location" name="write">
-            <value eval="[ref('stock.stock_location_locations', False)]"/>
-            <value model="stock.location" eval="{
-                'name': '物理区位',
-            }"/>
-        </function>
-        <function model="stock.location" name="write">
-            <value eval="[ref('stock.stock_location_locations_partner', False)]"/>
-            <value model="stock.location" eval="{
-                'name': '往来单位',
-            }"/>
-        </function>
-        <function model="stock.location" name="write">
-            <value eval="[ref('stock.stock_location_locations_virtual', False)]"/>
-            <value model="stock.location" eval="{
-                'name': '虚拟区位',
-            }"/>
-        </function>
+<!--        19移除-->
+<!--        <function model="stock.location" name="write">-->
+<!--            <value eval="[ref('stock.stock_location_locations', False)]"/>-->
+<!--            <value model="stock.location" eval="{-->
+<!--                'name': '物理区位',-->
+<!--            }"/>-->
+<!--        </function>-->
+<!--        19移除-->
+<!--        <function model="stock.location" name="write">-->
+<!--            <value eval="[ref('stock.stock_location_locations_partner', False)]"/>-->
+<!--            <value model="stock.location" eval="{-->
+<!--                'name': '往来单位',-->
+<!--            }"/>-->
+<!--        </function>-->
+<!--        <function model="stock.location" name="write">-->
+<!--            <value eval="[ref('stock.stock_location_locations_virtual', False)]"/>-->
+<!--            <value model="stock.location" eval="{-->
+<!--                'name': '虚拟区位',-->
+<!--            }"/>-->
+<!--        </function>-->
         <function model="stock.location" name="write">
             <value eval="[ref('stock.stock_location_suppliers', False)]"/>
             <value model="stock.location" eval="{

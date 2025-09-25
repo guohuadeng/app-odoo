@@ -17,10 +17,10 @@
             <value eval="[ref('spreadsheet_dashboard.spreadsheet_dashboard_group_project', False)]"/>
             <value eval="{'name': '项目'}"/>
         </function>
-        <function model="spreadsheet.dashboard.group" name="write">
-            <value eval="[ref('spreadsheet_dashboard_event_sale.spreadsheet_dashboard_group_marketing', False)]"/>
-            <value eval="{'name': '营销'}"/>
-        </function>
+<!--        <function model="spreadsheet.dashboard.group" name="write">-->
+<!--            <value eval="[ref('spreadsheet_dashboard_event_sale.spreadsheet_dashboard_group_marketing', False)]"/>-->
+<!--            <value eval="{'name': '营销'}"/>-->
+<!--        </function>-->
         <function model="spreadsheet.dashboard.group" name="write">
             <value eval="[ref('spreadsheet_dashboard.spreadsheet_dashboard_group_website', False)]"/>
             <value eval="{'name': '电商'}"/>

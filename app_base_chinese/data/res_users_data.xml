@@ -2,14 +2,14 @@
 <odoo>
     <data noupdate="1">
         <!-- 19已移除，默认user，使用write处理 -->
-        <function model="res.users" name="write" context="{'lang': 'zh_CN', 'active_test':0}">
-            <value eval="[ref('base.default_user')]"/>
-            <value model="res.users" eval="{
-            'lang': 'zh_CN',
-            'tz': 'Etc/GMT-8',
-            'name': '默认内部用户模板',
-            }"/>
-        </function>
+<!--        <function model="res.users" name="write" context="{'lang': 'zh_CN', 'active_test':0}">-->
+<!--            <value eval="[ref('base.default_user')]"/>-->
+<!--            <value model="res.users" eval="{-->
+<!--            'lang': 'zh_CN',-->
+<!--            'tz': 'Etc/GMT-8',-->
+<!--            'name': '默认内部用户模板',-->
+<!--            }"/>-->
+<!--        </function>-->
         <function model="res.users" name="write" context="{'lang': 'zh_CN', 'active_test':0}">
             <value eval="[ref('base.template_portal_user_id')]"/>
             <value model="res.users" eval="{

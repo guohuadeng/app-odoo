@@ -44,10 +44,7 @@ def post_init_hook(env):
         for rec in ids:
             rec._compute_complete_name()
         # 超级用户及模板用户改时区为中国
-        ids = env['res.users'].sudo().with_context(lang='zh_CN', active_test=False).browse([1, 2, 3, 4, 5])
-        # rec_extra = env.ref('base.template_portal_user_id')
-        # if rec_extra:
-        #     ids += rec_extra
+        ids = env['res.users'].sudo().with_context(lang='zh_CN', active_test=False).search([('id', '<=', 4)])
         ids.write({
             'tz': "Etc/GMT-8",
             'lang': "zh_CN",
