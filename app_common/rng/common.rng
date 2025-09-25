@@ -307,8 +307,6 @@
             <rng:ref name="access_rights"/>
             <rng:optional><rng:attribute name="colspan"/></rng:optional>
             <rng:optional><rng:attribute name="rowspan"/></rng:optional>
-            <rng:optional><rng:attribute name="expand"/></rng:optional>
-            <rng:optional><rng:attribute name="string"/></rng:optional>
             <rng:optional><rng:attribute name="fill"/></rng:optional>
             <rng:optional><rng:attribute name="height"/></rng:optional>
             <rng:optional><rng:attribute name="width"/></rng:optional>
@@ -340,6 +338,8 @@
             <rng:optional><rng:attribute name="readonly"/></rng:optional>
             <rng:optional><rng:attribute name="context"/></rng:optional>
             <rng:optional><rng:attribute name="confirm"/></rng:optional>
+            <rng:optional><rng:attribute name="confirm-label"/></rng:optional>
+            <rng:optional><rng:attribute name="cancel-label"/></rng:optional>
             <rng:optional><rng:attribute name="help"/></rng:optional>
             <rng:optional><rng:attribute name="class"/></rng:optional>
             <rng:optional><rng:attribute name="default_focus"/></rng:optional>

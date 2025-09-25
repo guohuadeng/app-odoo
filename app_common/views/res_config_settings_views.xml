@@ -53,14 +53,14 @@
 				</xpath>
 			</field>
 		</record>
-
-		<record id="action_odooai_cloud_config" model="ir.actions.act_window">
-			<field name="name">odooAi Cloud</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">res.config.settings</field>
-			<field name="view_mode">form</field>
-			<field name="target">inline</field>
-			<field name="context">{'module' : 'app_common', 'bin_size': False}</field>
-		</record>
+<!--todo: fix 19-->
+<!--		<record id="action_odooai_cloud_config" model="ir.actions.act_window">-->
+<!--			<field name="name">odooAi Cloud</field>-->
+<!--			<field name="type">ir.actions.act_window</field>-->
+<!--			<field name="res_model">res.config.settings</field>-->
+<!--			<field name="view_mode">form</field>-->
+<!--			<field name="target">inline</field>-->
+<!--			<field name="context">{'module' : 'app_common', 'bin_size': False}</field>-->
+<!--		</record>-->
 	</data>
 </odoo>
