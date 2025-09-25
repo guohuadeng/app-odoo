@@ -83,6 +83,7 @@
     ],
     'data': [
         'data/ir_module_category_data.xml',
+        'data/res_groups_privilege_data.xml',
         'wizard/mail_compose_message_views.xml',
         'views/res_config_settings_views.xml',
         'views/ir_cron_views.xml',
