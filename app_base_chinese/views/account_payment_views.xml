@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="account.action_account_payments" model="ir.actions.act_window" context="{'lang': 'zh_CN'}">
+        <field name="name">客户实收</field>
+    </record>
+
+    <record id="account.menu_action_account_payments_receivable" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
+        <field name="name">客户实收</field>
+    </record>
+    <record id="account.action_account_payments_payable" model="ir.actions.act_window" context="{'lang': 'zh_CN'}">
+        <field name="name">供应商实付</field>
+    </record>
+    <record id="account.menu_action_account_payments_payable" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
+        <field name="name">供应商实付</field>
+    </record>
+</odoo>
