@@ -8,7 +8,7 @@
 # Copyright (C) 2018-now  欧度智能 https://www.odooai.cn
 
 {
-    'name': '!2025最新中国会计科目表.企业标准会计.Latest Chinese Accounting for odoo18',
+    'name': '2025最新中国会计科目表.企业标准会计.Latest Chinese Accounting for odoo18',
     'version': '18.0.25.09.06',
     'author': 'odooai.cn',
     'category': 'Accounting/Localizations/Account Charts',
