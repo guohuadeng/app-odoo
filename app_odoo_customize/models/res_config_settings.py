@@ -232,8 +232,14 @@ class ResConfigSettings(models.TransientModel):
             # 增加我们app模块
             'mrp.production.plan',
             'change.production.qty',
-            # 'sale.forecast.indirect',
-            # 'sale.forecast',
+            'mrp.request.line',
+            'mrp.request.line.merge',
+            'mrp.request.line.semi',
+            'mrp.request.line.semi.merge',
+            'mrp.request.plan.line.merge',
+            'mrp.request.plan.line.semi.merge',
+            'mrp.request',
+            'mrp.request.plan',
         ]
         seqs = [
             'mrp',
