@@ -18,6 +18,18 @@
     }
   }
 }
+// 上方消息，btn
+.o-main-components-container {
+  .o-overlay-container  {
+    .o_popover.o-mail-DiscussSystray  {
+      .o-mail-MessagingMenu {
+        a.btn {
+          min-width: 60px;
+        }
+      }
+    }
+  }
+}
 
 //list
 .o_list_renderer.table-responsive .o_list_table {
