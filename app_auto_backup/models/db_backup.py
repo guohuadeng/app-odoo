@@ -343,7 +343,7 @@ class DbBackup(models.Model):
     def action_view_cron(self):
         self.ensure_one()
 
-        action = self.env.ref('base.ir_cron_act', False).sudo().read()[0]
+        action = self.env["ir.actions.actions"]._for_xml_id('base.ir_cron_act')
         cron = self.env.ref('app_auto_backup.backup_scheduler', False)
         if action and cron:
             action['views'] = [(self.env.ref('base.ir_cron_view_form').id, 'form')]

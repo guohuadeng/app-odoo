@@ -6,7 +6,7 @@
 
 {
     'name': "!Database auto backup and Download,数据库自动备份",
-    'version': '18.0.25.08.13',
+    'version': '18.0.25.10.31',
 
     'summary': 'Automated and odoo database backups. easy download and manage database file. optimized from auto_backup of oca Yenthe Van Ginneken',
 

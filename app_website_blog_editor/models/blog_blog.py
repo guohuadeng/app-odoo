@@ -9,13 +9,13 @@ class BlogBlog(models.Model):
     _order = 'sequence, name'
 
     seo_name = fields.Char(tracking=True)
-    
+
     # 排序
     sequence = fields.Integer(string='Sequence', default=20, index=True, help="Determine the display order")
 
     def action_view_blog_post(self):
         self.ensure_one()
-        action = self.env.ref('website_blog.action_blog_post').sudo().read()[0]
+        action = self.env["ir.actions.actions"]._for_xml_id('website_blog.action_blog_post')
         action['domain'] = [('blog_id', '=', self.id)]
         return action
 
