@@ -18,7 +18,7 @@
 
 {
     'name': "!odoo18 Enterprise enhance Pack,企业版界面及操作增强",
-    'version': '18.0.25.09.16',
+    'version': '18.0.25.11.03',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -74,14 +74,17 @@
             # 'app_web_enterprise/static/src/xml/form.xml',
         ],
         # 黑夜模式
-        "web.dark_mode_variables": [
+        'web.dark_mode_variables': [
             ('remove', 'app_web_enterprise/static/src/scss/primary_variables.scss'),
             ('before', 'web_enterprise/static/src/scss/primary_variables.dark.scss', 'app_web_enterprise/static/src/scss/primary_variables.dark.scss'),
         ],
-        "web.assets_web_dark": [
+        'web.assets_web_dark': [
             ('remove', 'app_web_enterprise/static/src/scss/home_menu.variables.scss'),
             ('remove', 'app_web_enterprise/static/src/webclient/navbar.variables.scss'),
             ('remove', 'app_web_enterprise/static/src/webclient/navbar.scss'),
+        ],
+        'website.assets_editor': [
+            'app_web_enterprise/static/src/scss/app_style_website_editor.scss',
         ],
         # 这里是改样式，要 after处理
         'web.assets_frontend': [
