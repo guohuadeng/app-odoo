@@ -26,7 +26,7 @@
 
 {
     'name': '!odooapp.cn SaaS Client-Ai Passport-Odoo中文应用商店SaaS云服务客户端',
-    'version': '19.0.25.09.25',
+    'version': '19.0.25.04.29',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -52,18 +52,32 @@
     6. 系统出错时一键提交，获取技术支持（会员专属）
     7. 注意，odoo默认新用户都是门户用户，不给访问内部管理内容
     11.多语言支持，多公司支持
-    12.仅从Odoo19-16企业版，社区版版本开始支持
+    12.仅从Odoo18-16企业版，社区版版本开始支持
     13.代码完全开源
     ''',
     'depends': [
         'app_common',
         'auth_oauth',
+        # 'website',
     ],
     'data': [
         'data/auth_oauth_provider_data.xml',
         'views/auth_oauth_provider_views.xml',
         'views/res_config_settings_views.xml',
     ],
+    'assets': {
+        'web.assets_frontend': [
+            # 'app_/static/src/scss/style.scss',
+        ],
+        'web.assets_backend': [
+            # 'app_/static/src/js/*.js',
+        ],
+    },
+    'demo': [
+    ],
+    # 'pre_init_hook': 'pre_init_hook',
+    # 'post_init_hook': 'post_init_hook',
+    # 'uninstall_hook': 'uninstall_hook',
     'installable': True,
     'application': True,
     'auto_install': True,

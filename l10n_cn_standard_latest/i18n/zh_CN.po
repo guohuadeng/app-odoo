@@ -1,0 +1,274 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_cn_standard_latest
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e-20240821\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-04 08:40+0000\n"
+"PO-Revision-Date: 2024-11-04 08:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_cn_standard_latest
+#: model:ir.actions.report,print_report_name:l10n_cn_standard_latest.account_voucher_cn
+msgid "'Voucher_%s' % (object.name)"
+msgstr "'收据_%s' % (object.name)"
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn11_dept
+msgid "11%离境退税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#. odoo-python
+#: code:addons/l10n_cn_standard_latest/models/template_cn_standard.py:0
+#, python-format
+msgid "2025中国企业会计科目表-odoo18"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn08_dept
+msgid "8%离境退税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn09_ex
+msgid "9%出口退税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.report_voucher_document
+msgid "<span>Account</span>"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.report_voucher_document
+msgid "<span>Accounting Voucher</span>"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.report_voucher_document
+msgid "<span>Balance</span>"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.report_voucher_document
+msgid "<span>Credit</span>"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.report_voucher_document
+msgid "<span>Debit</span>"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.report_voucher_document
+msgid "<span>Total:</span>"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.report_voucher_document
+msgid "<strong>Date:</strong>"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.report_voucher_document
+msgid "<strong>Number of attachments:</strong>"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.report_voucher_document
+msgid "<strong>Poster:</strong>"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.report_voucher_document
+msgid "<strong>Reference:</strong>"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.report_voucher_document
+msgid "<strong>Salesperson:</strong>"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.report_voucher_document
+msgid "<strong>Validator:</strong>"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:ir.model,name:l10n_cn_standard_latest.model_account_account
+msgid "Account"
+msgstr "科目"
+
+#. module: l10n_cn_standard_latest
+#: model:ir.model,name:l10n_cn_standard_latest.model_account_chart_template
+msgid "Account Chart Template"
+msgstr "科目表模版"
+
+#. module: l10n_cn_standard_latest
+#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_tax_group__active
+msgid "Active"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#. odoo-python
+#: code:addons/l10n_cn_standard_latest/models/template_cn_standard.py:0
+#, python-format
+msgid "Bank"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#. odoo-python
+#: code:addons/l10n_cn_standard_latest/models/account_account.py:0
+#, python-format
+msgid "Cannot generate an unused account code."
+msgstr "无法生成未使用的科目"
+
+#. module: l10n_cn_standard_latest
+#. odoo-python
+#: code:addons/l10n_cn_standard_latest/models/template_cn_standard.py:0
+#, python-format
+msgid "Cash on Hand"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account__child_ids
+msgid "Child Chart"
+msgstr "下级科目"
+
+#. module: l10n_cn_standard_latest
+#: model:ir.model,name:l10n_cn_standard_latest.model_res_currency
+msgid "Currency"
+msgstr "币种"
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.app_view_account_search
+msgid "Group"
+msgstr "组"
+
+#. module: l10n_cn_standard_latest
+#: model:ir.model,name:l10n_cn_standard_latest.model_account_journal
+msgid "Journal"
+msgstr "日记账"
+
+#. module: l10n_cn_standard_latest
+#: model:ir.model,name:l10n_cn_standard_latest.model_account_move
+msgid "Journal Entry"
+msgstr "日记账分录"
+
+#. module: l10n_cn_standard_latest
+#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.external_layout_boxed
+msgid "Logo"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account__parent_id
+msgid "Parent Chart"
+msgstr "上级科目"
+
+#. module: l10n_cn_standard_latest
+#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:ir.model.fields,help:l10n_cn_standard_latest.field_account_tax_group__active
+msgid "Set active to false to hide the tax without removing it."
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:ir.model,name:l10n_cn_standard_latest.model_account_tax_group
+msgid "Tax Group"
+msgstr "税组"
+
+#. module: l10n_cn_standard_latest
+#: model:ir.actions.report,name:l10n_cn_standard_latest.account_voucher_cn
+msgid "Voucher"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn0_p
+msgid "不计进项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn0_s
+msgid "不计销项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag24
+msgid "保险专用"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag26
+msgid "农业专用"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn13_p
+msgid "增值税13%进项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn13_s
+msgid "增值税13%销项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn16_p
+msgid "增值税16%进项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn16_s
+msgid "增值税16%销项税"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag30
+msgid "建造承包商专用"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag28
+msgid "石油天然气开采专用"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag27
+msgid "租赁专用"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag22
+msgid "证券专用"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag23
+msgid "金融共用"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag21
+msgid "银行专用"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag25
+msgid "银行和保险共用"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:account.account.tag,name:l10n_cn_standard_latest.tag29
+msgid "银行和证券共用"
+msgstr ""

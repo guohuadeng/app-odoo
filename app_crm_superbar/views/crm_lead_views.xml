@@ -1,0 +1,52 @@
+<odoo>
+  <data>
+    <record id="app_view_crm_case_opportunities_filter" model="ir.ui.view">
+        <field name="name">app.crm.lead.search.opportunity</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="list,kanban">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="team_id"/>
+                    <field name="stage_id"/>
+                    <!--<field name="tag_ids"/>-->
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+    <record id="app_view_crm_case_leads_filter" model="ir.ui.view">
+        <field name="name">app.crm.lead.search.lead</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="list,kanban">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="team_id"/>
+                    <field name="campaign_id"/>
+                    <field name="medium_id"/>
+                    <field name="source_id"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+<!--	  report-->
+    <record id="app_crm_opportunity_report_view_search" model="ir.ui.view">
+        <field name="name">app.crm.lead.search</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_opportunity_report_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="list,kanban,pivot,graph">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="team_id"/>
+                    <field name="campaign_id"/>
+                    <field name="medium_id"/>
+                    <field name="source_id"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

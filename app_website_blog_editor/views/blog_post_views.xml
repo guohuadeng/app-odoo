@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="app_view_blog_post_list" model="ir.ui.view">
+		<field name="name">app.blog.post.list</field>
+		<field name="model">blog.post</field>
+		<field name="inherit_id" ref="website_blog.view_blog_post_list"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='name']" position="before">
+				<field name="id" optional="show"/>
+			</xpath>
+			<xpath expr="//field[@name='name']" position="attributes">
+				<attribute name="optional">show</attribute>
+			</xpath>
+			<xpath expr="//field[@name='website_url']" position="attributes">
+				<attribute name="optional">hide</attribute>
+			</xpath>
+			<xpath expr="//field[@name='is_seo_optimized']" position="attributes">
+				<attribute name="optional">show</attribute>
+			</xpath>
+			<xpath expr="//field[@name='is_published']" position="attributes">
+				<attribute name="optional">show</attribute>
+			</xpath>
+			<xpath expr="//field[@name='website_url']" position="after">
+                <field name="seo_name" optional="show"/>
+                <field name="website_meta_keywords" optional="show"/>
+                <field name="website_meta_title" optional="hide"/>
+                <field name="website_meta_description" optional="hide"/>
+                <field name="tag_ids" widget="many2many_tags" optional="hide"/>
+			</xpath>
+			<xpath expr="//field[@name='author_id']" position="before">
+				<field name="visits" optional="show"/>
+			</xpath>
+			<xpath expr="//field[@name='write_date']" position="after">
+				<field name="published_date" optional="hide"/>
+			</xpath>
+            <xpath expr="//field[@name='is_seo_optimized']" position="before">
+				<button name="action_post_debug_view" type="object" title="Settings" icon="fa-bug fa-lg"/>
+				<button name="action_post_code_view" type="object" title="Source Code" icon="fa-code fa-lg"/>
+			</xpath>
+		</field>
+	</record>
+
+	<record id="app_view_blog_post_form" model="ir.ui.view">
+		<field name="name">app.blog.post.form</field>
+		<field name="model">blog.post</field>
+		<field name="inherit_id" ref="website_blog.view_blog_post_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//page[@name='seo']" position="after">
+				<page name="post_content" string="Content">
+					<field name="content" widget="html" nolabel="1" class="oe-bordered-editor"
+					       options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true}"/>
+				</page>
+			</xpath>
+			<xpath expr="//field[@name='visits']" position="attributes">
+                <attribute name="readonly">0</attribute>
+			</xpath>
+			<xpath expr="//field[@name='website_meta_keywords']" position="after">
+                <field name="seo_name"/>
+                <field name="website_url"/>
+			</xpath>
+		</field>
+	</record>
+
+    <record id="app_blog_post_form_view_code" model="ir.ui.view">
+        <field name="name">app.blog.post.code</field>
+        <field name="model">blog.post</field>
+        <field name="priority">99</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="app_view_blog_post_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='content']" position="replace">
+                <field name="content" nolabel="1" widget="ace"/>
+            </xpath>
+        </field>
+    </record>
+    <!--search-->
+    <record id="app_view_blog_post_search" model="ir.ui.view">
+		<field name="name">app.blog.post.search</field>
+		<field name="model">blog.post</field>
+		<field name="inherit_id" ref="website_blog.view_blog_post_search"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='name']" position="replace">
+				<field name="name" string="Title"/>
+				<field name="content" string="Content"/>
+				<field name="seo_name"/>
+				<field name="website_meta_keywords"/>
+				<field name="website_meta_title"/>
+				<field name="website_meta_description"/>
+			</xpath>
+			<xpath expr="//filter[@name='inactive']" position="after">
+				<filter string="Published" name="filter_published" domain="[('is_published','=',True)]"/>
+				<filter string="Not Published" name="filter_un_published" domain="[('is_published','!=',True)]"/>
+            </xpath>
+		</field>
+	</record>
+</odoo>
+
+

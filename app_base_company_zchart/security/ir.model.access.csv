@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_force_set_parent_company_user,force.set.parent.company.user,model_force_set_parent_company,base.group_system,1,1,1,1

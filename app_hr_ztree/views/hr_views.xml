@@ -1,0 +1,29 @@
+<odoo>
+  <data>
+    <!-- hr -->
+    <record id="app_view_department_form" model="ir.ui.view">
+        <field name="name">app.hr.department.form</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="attributes">
+                <!-- Add your fields or attributes here -->
+                <attribute name="widget">ztree_select</attribute>
+                <attribute name="options">{'ztree_parent_key': 'parent_id','ztree_expend_level': '1', 'ztree_name_field': 'name'}</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="app_view_employee_form" model="ir.ui.view">
+        <field name="name">app.hr.employee.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='department_id']" position="attributes">
+                <!-- Add your fields or attributes here -->
+                <attribute name="widget">ztree_select</attribute>
+                <attribute name="options">{'ztree_parent_key': 'parent_id','ztree_expend_level': '1', 'ztree_name_field': 'name'}</attribute>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

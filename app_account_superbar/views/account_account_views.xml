@@ -1,0 +1,21 @@
+<odoo>
+  <data>
+      <!-- account.account -->
+      <record id="view_account_search_superbar" model="ir.ui.view">
+          <field name="name">account.account.search.superbar</field>
+          <field name="model">account.account</field>
+          <field name="inherit_id" ref="account.view_account_search"/>
+          <field name="arch" type="xml">
+                <xpath expr="//searchpanel//field[@name='root_id']" position="before">
+                    <field name="company_ids" select="multi" groups="base.group_multi_company" icon="fa-building"/>
+                </xpath>
+              <xpath expr="//search/searchpanel" position="inside">
+	              <field name="account_type"/>
+              </xpath>
+              <xpath expr="//search/searchpanel" position="attributes">
+	              <attribute name="class"/>
+              </xpath>
+          </field>
+      </record>
+  </data>
+</odoo>

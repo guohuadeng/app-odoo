@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+      <record id="view_account_analytic_line_filter_superbar" model="ir.ui.view">
+          <field name="name">account.analytic.line.select.superbar</field>
+          <field name="model">account.analytic.line</field>
+          <field name="inherit_id" ref="analytic.view_account_analytic_line_filter"/>
+          <field name="arch" type="xml">
+                <xpath expr="//search">
+                    <searchpanel view_types="list,kanban,pivot,graph,search">
+                        <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                        <field name="partner_id" enable_counters="1" select="multi"/>
+                        <field name="account_id" enable_counters="1" select="multi"/>
+                        <field name="journal_id" enable_counters="1" select="multi"/>
+                        <field name="general_account_id" enable_counters="1" select="multi"/>
+                    </searchpanel>
+                </xpath>
+          </field>
+      </record>
+  </data>
+</odoo>

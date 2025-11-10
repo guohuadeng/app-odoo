@@ -51,7 +51,7 @@
     16. 精简语言的显示，如 Chinese简体中文改为 中文
     17. 将'国家'字段处理为'国家/地区'，避免政策敏感问题(需配合我司Odoo中文翻译)
     21. 多语言支持，多公司支持
-    22. Odoo 18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    22. Odoo 19,18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
     23. 代码完全开源
     ======
     1. Chinese address format, applicable to all Chinese customers, suppliers, partners, users, employee information etc.
@@ -70,7 +70,7 @@
     14.Common decimal precision adjustments made.
     15.Sales team changed to [China].
     21. Multi-language Support. Multi-Company Support.
-    22. Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    22. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     23. Full Open Source.
     ''',
     'pre_init_hook': 'pre_init_hook',

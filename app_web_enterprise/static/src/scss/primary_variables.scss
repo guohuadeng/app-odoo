@@ -1,0 +1,16 @@
+$o-white: #FFF !default;
+$o-enterprise-color: #00796B !default;
+$o-enterprise-action-color: #09554c !default;
+
+$o-opacity-disabled: .5 !default;
+$o-opacity-muted: .76 !default;
+
+$o-brand-odoo: $o-enterprise-color !default;
+$o-brand-primary: $o-brand-odoo !default;
+
+$o-action: $o-enterprise-action-color !default;
+
+// Components
+$o-component-active-bg: mix($o-action, $o-white, 10%) !default;
+$o-component-active-border: $o-action !default;
+$o-view-background-color: #fbfbfb !default;

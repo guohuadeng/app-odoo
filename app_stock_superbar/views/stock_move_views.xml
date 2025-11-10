@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        search-->
+        <record id="app_view_move_search" model="ir.ui.view">
+            <field name="name">app.stock.move.search</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <searchpanel view_types="list,kanban,graph">
+                        <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                        <field name="picking_type_id" select="multi"/>
+                        <field name="location_id" select="multi"/>
+                        <field name="location_dest_id" select="multi"/>
+                    </searchpanel>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

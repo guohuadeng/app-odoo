@@ -1,0 +1,32 @@
+<odoo>
+  <data>
+      <!-- stock orderpoint-->
+    <record id="warehouse_orderpoint_search_superbar" model="ir.ui.view">
+        <field name="name">stock.warehouse.orderpoint.search.superbar</field>
+        <field name="model">stock.warehouse.orderpoint</field>
+        <field name="inherit_id" ref="stock.warehouse_orderpoint_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel>
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="location_id" string="Locations" groups="stock.group_stock_multi_locations" enable_counters="1"/>
+                    <field name="trigger" string="Trigger" enable_counters="1"/>
+                    <field name="product_category_id" icon="fa-filter" string="Category" select="multi" enable_counters="1"/>
+                    <field name="warehouse_id" groups="stock.group_stock_multi_warehouses" enable_counters="1"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+<!--      report-->
+    <record id="stock_reorder_report_search_superbar" model="ir.ui.view">
+        <field name="name">stock.warehouse.orderpoint.reorder.search.superbar</field>
+        <field name="model">stock.warehouse.orderpoint</field>
+        <field name="inherit_id" ref="stock.stock_reorder_report_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//searchpanel//field[@name='location_id']" position="after">
+                <field name="warehouse_id" groups="stock.group_stock_multi_warehouses" enable_counters="1"/>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

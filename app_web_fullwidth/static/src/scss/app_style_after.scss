@@ -1,0 +1,23 @@
+//xs: 0,
+//vsm: 475px,
+//sm: 576px,
+//md: 768px,
+//lg: 992px,
+//xl: 1200px,
+//xxl: 1534px,
+
+//16 是在 xxl 才 flex row，故不需要再特殊处理了
+
+@media (min-width: 1400px) {
+  .o-mail-Form-chatter.customBottom {
+    width: 100% !important;
+  }
+
+  .o_form_view.o_xxl_form_view .customBottom {
+    flex: auto !important;
+  }
+
+  .o_form_view .customBottom {
+    max-width: none !important;
+  }
+}

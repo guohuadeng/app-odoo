@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+      <!-- stock -->
+    <record id="view_picking_internal_search_superbar" model="ir.ui.view">
+        <field name="name">stock.picking.internal.search.superbar</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//searchpanel//field[@name='company_id']" position="before">
+                <field name="scheduled_date"/>
+                <field name="date_done"/>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

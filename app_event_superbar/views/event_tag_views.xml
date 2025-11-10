@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_event_tag_search_view" model="ir.ui.view">
+        <field name="name">app.event.tag.search</field>
+        <field name="model">event.tag</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="category_id"/>
+                <searchpanel view_types="list,pivot,graph">
+                    <field name="category_id" select="multi"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+</odoo>
