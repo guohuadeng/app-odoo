@@ -25,7 +25,7 @@
 ##############################################################################
 
 {
-    'name': '!odooapp.cn SaaS Client-Ai Passport-Odoo中文应用商店SaaS云服务客户端',
+    'name': 'odooapp.cn SaaS Client-Ai Passport-Odoo中文应用商店SaaS云服务客户端',
     'version': '19.0.25.04.29',
     'author': 'odooai.cn',
     'category': 'Base',
