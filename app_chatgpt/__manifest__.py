@@ -9,7 +9,7 @@
 # Copyright (c) 2020-Present InTechual Solutions. (<https://intechualsolutions.com/>)
 
 {
-    'name': 'ChatGPT4, China Ali,AiGC Center.Ai服务中心，聚合全网Ai',
+    'name': '!ChatGPT4, China Ali,AiGC Center.Ai服务中心，聚合全网Ai',
     'version': '18.0.25.09.06',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
