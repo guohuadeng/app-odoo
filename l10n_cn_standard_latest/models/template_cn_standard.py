@@ -33,6 +33,7 @@ class AccountChartTemplate(models.AbstractModel):
             'property_account_income_categ_id': 'account_6001',
             'property_account_expense_categ_id': 'account_6401',
             'property_account_downpayment_categ_id': 'account_2203',
+            'property_account_prepay_categ_id': 'account_1123',
             'property_tax_receivable_account_id': 'account_2221_1_5',
             'property_tax_payable_account_id': 'account_2221_1_1',
             # 库存相关科目

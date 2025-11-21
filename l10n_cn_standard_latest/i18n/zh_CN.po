@@ -161,7 +161,7 @@ msgstr "日记账"
 #. module: l10n_cn_standard_latest
 #: model:ir.model,name:l10n_cn_standard_latest.model_account_move
 msgid "Journal Entry"
-msgstr "日记账分录"
+msgstr "会计凭证"
 
 #. module: l10n_cn_standard_latest
 #: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.external_layout_boxed
