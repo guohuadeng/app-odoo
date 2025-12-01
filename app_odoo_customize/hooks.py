@@ -29,7 +29,7 @@ def pre_init_hook(env):
 
 def post_init_hook(env):
     # a = check_module_installed(cr, ['app_web_superbar','aaaaa'])
-    pass
+    env['ir.module.module'].update_list()
     # cr.execute("")
 
 def uninstall_hook(env):
