@@ -29,7 +29,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_cn_standard_latest/models/template_cn_standard.py:0
 #, python-format
-msgid "2025中国企业会计科目表-odoo18"
+msgid "2025中国企业会计科目表-odoo19"
 msgstr ""
 
 #. module: l10n_cn_standard_latest

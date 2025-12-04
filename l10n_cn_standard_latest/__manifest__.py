@@ -9,7 +9,7 @@
 
 {
     'name': '2026最新中国会计科目表.企业标准会计.Latest Chinese Accounting for odoo19',
-    'version': '19.0.25.09.06',
+    'version': '19.0.25.12.04',
     'author': 'odooai.cn',
     'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.odooai.cn',
@@ -23,7 +23,7 @@
     """,
     'description': """
     最新中国化财务会计制度，主要针对标准会计科目表作了优化。
-    1. 2026最新会计科目表，处理营改增后会计科目调整。更新至最新税率。odoo 16专用。
+    1. 2026最新会计科目表，处理营改增后会计科目调整。更新至最新税率。odoo 19专用。
     2. 将菜单中设置为"财务"。
     3. 补充分类及标签信息。
     4. 更新税项信息，增加中国常用增值税率设定。
@@ -36,7 +36,7 @@
     如果是多语种环境需要自行更改翻译，主要体现在1%,3%,6%,13%增值税处理。
     中国财务，中国会计，中国城市
     欧度智能，odooai.cn
-    
+
     The Latest Chinese Account
     Including the following data in the Accounting Standards for Business Enterprises
     包含企业会计准则以下数据

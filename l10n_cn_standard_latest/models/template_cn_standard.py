@@ -20,7 +20,7 @@ class AccountChartTemplate(models.AbstractModel):
     @template('cn_standard')
     def _get_cn_standard_template_data(self):
         return {
-            'name': _('2025中国企业会计科目表-odoo18'),
+            'name': _('2025中国企业会计科目表-odoo19'),
             'code_digits': 4,
             'use_storno_accounting': True,
             # todo: begin 有问题，不该在此
@@ -80,10 +80,14 @@ class AccountChartTemplate(models.AbstractModel):
         return {
             'cash': {
                 'name': _('Cash on Hand'),
+                'code': 'CASH',
+                'type': 'general',
                 'default_account_id': 'account_1001'
             },
             'bank': {
                 'name': _('Bank'),
+                'code': 'BANK',
+                'type': 'general',
                 'default_account_id': 'account_1002_01',
             },
         }
