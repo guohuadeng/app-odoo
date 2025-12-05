@@ -35,18 +35,7 @@ class Message(models.Model):
             # 处理反馈
             pass
 
-    def _to_store(
-        self,
-        store: Store,
-        /,
-        *,
-        fields=None,
-        format_reply=True,
-        msg_vals=None,
-        for_current_user=False,
-        add_followers=False,
-        followers=None,
-    ):
+    def _to_store(self, store: Store, fields, **kwargs):
         default_fields = [
             "body",
             "create_date",
@@ -65,4 +54,4 @@ class Message(models.Model):
             'is_ai'
         ]
         merged_fields = list(set((fields or default_fields) + custom_fields))
-        return super()._to_store(store, fields=merged_fields, format_reply=format_reply, msg_vals=msg_vals, for_current_user=for_current_user, add_followers=add_followers, followers=followers)
+        return super()._to_store(store, fields=merged_fields, **kwargs)

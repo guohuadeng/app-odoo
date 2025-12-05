@@ -8,7 +8,7 @@
 
 {
     'name': 'Deepseek Ai for odoo ai center, 深度求索Ai支持-对话模型',
-    'version': '19.0.25.02.10',
+    'version': '19.0.25.12.05',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
     'maintainer': 'odooai.cn',
