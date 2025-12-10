@@ -33,6 +33,10 @@
 
 //list
 .o_list_renderer.table-responsive .o_list_table {
+  //收藏控制宽度
+  th.o_priority_cell, th.o_boolean_favorite_cell {
+    max-width: 42px;
+  }
   //list 改标头背景，o2m这里分开写
   :not(.o_field_x2many_list) > & thead, tfoot {
     tr {
