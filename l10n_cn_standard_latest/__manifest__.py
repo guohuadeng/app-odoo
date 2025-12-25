@@ -9,7 +9,7 @@
 
 {
     'name': '2026最新中国会计科目表.企业标准会计.Latest Chinese Accounting for odoo19',
-    'version': '19.0.25.12.04',
+    'version': '19.0.25.12.25',
     'author': 'odooai.cn',
     'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.odooai.cn',

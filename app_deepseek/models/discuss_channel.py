@@ -4,7 +4,7 @@ import logging
 import datetime
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import UserError
-from odoo.osv import expression
+from odoo.fields import Domain
 _logger = logging.getLogger(__name__)
 
 
@@ -29,9 +29,9 @@ class Channel(models.Model):
                   ('body', '!=', _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。'))]
             if self.channel_type in ['group', 'channel']:
                 # 群聊增加时间限制，当前找所有人，不限制 author_id
-                domain = expression.AND([domain, [('date', '>=', afterTime)]])
+                domain = Domain.AND([domain, [('date', '>=', afterTime)]])
             else:
-                domain = expression.AND([domain, [('author_id', '=', answer_id.id)]])
+                domain = Domain.AND([domain, [('author_id', '=', answer_id.id)]])
             if chat_count == 0:
                 ai_msg_list = []
             else:
