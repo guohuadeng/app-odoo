@@ -24,7 +24,7 @@
 
 {
     'name': 'Odoo Module Sample. App sample with widget. Odoo开发规范模板',
-    'version': '19.0.24.12.26',
+    'version': '19.0.25.12.25',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
