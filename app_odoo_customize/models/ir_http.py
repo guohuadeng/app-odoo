@@ -27,7 +27,7 @@ class IrHttp(models.AbstractModel):
         result['app_show_account'] = config_parameter.get_param('app_show_account')
         result['app_show_poweredby'] = config_parameter.get_param('app_show_poweredby')
         # 增加多语言
-        result['app_lang_list'] = self.env['res.lang'].search_read([], ['id', 'code', 'name'])
+        result['app_lang_list'] = self.env['res.lang'].search_read([], ['id', 'code', 'name', 'flag_image_url'])
         result['is_erp_manager'] = self.env.user.has_group('base.group_erp_manager')
         # 增加 bar位置处理
         result['app_navbar_pos_pc'] = config_parameter.get_param('app_navbar_pos_pc', 'top')

@@ -1,7 +1,17 @@
-.o-overlay-container  .dropdown-menu img.flag,
-.o_user_menu_mobile  .dropdown-item  img.flag {
-    height: 20px;
-    margin: 2px;
+.o-overlay-container .dropdown-menu,
+.o_user_menu_mobile .dropdown-item {
+  .lang-container span  {
+    line-height: 1.1em;
+  }
+  .image-container {
+    width: 36px;
+    img.flag {
+      height: auto;
+      width: 100%;
+      margin: 2px;
+      object-fit: scale-down;
+    }
+  }
 }
 
 .oe_form_configuration  {
