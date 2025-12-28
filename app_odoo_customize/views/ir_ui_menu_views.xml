@@ -36,11 +36,32 @@
 <!--        <record id="base.grant_menu_access" model="ir.actions.act_window">-->
 <!--            <field name="context">{'ir.ui.menu.full_list': True, 'search_default_top_menu': 1}</field>-->
 <!--        </record>-->
+        <!--调整顺序-->
+        <function model="ir.ui.menu" name="write">
+            <value eval="[ref('base_setup.menu_config')]"/>
+            <value eval="{'sequence': 1}"/>
+        </function>
+        <function model="ir.ui.menu" name="write">
+            <value eval="[ref('base.menu_grant_menu_access')]"/>
+            <value eval="{'sequence': 2, 'parent_id': ref('base.menu_administration')}"/>
+        </function>
+        <function model="ir.ui.menu" name="write">
+            <value eval="[ref('base.menu_users')]"/>
+            <value eval="{'sequence': 3}"/>
+        </function>
+        <function model="ir.ui.menu" name="write">
+            <value eval="[ref('base.menu_translation')]"/>
+            <value eval="{'sequence': 4}"/>
+        </function>
+        <!--end调整顺序-->
+<!--        <record id="base.menu_grant_menu_access" model="ir.ui.menu">-->
+<!--            <field name="parent_id" ref="base.menu_administration"/>-->
+<!--        </record>-->
         <menuitem
                 id="menu_app_group"
                 name="odooAi"
                 parent="base.menu_administration"
-                sequence="1"
+                sequence="0"
                 groups="base.group_system"/>
         <menuitem
                 id="menu_odooai_cloud_config"

@@ -208,7 +208,7 @@
                 </xpath>
             </field>
         </record>
-
+<!--已停用-->
         <record id="action_app_theme_config" model="ir.actions.act_window">
             <field name="name">OEM and Boost</field>
             <field name="type">ir.actions.act_window</field>
