@@ -29,7 +29,7 @@
 
 {
     'name': "App HR department ztree, parent children tree",
-    'version': '19.0.24.12.09',
+    'version': '19.0.25.12.30',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

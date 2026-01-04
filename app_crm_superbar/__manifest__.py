@@ -29,7 +29,7 @@
 
 {
     'name': 'Crm Advance search, Navigator by stage and team',
-    'version': '19.0.24.11.12',
+    'version': '19.0.25.12.30',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

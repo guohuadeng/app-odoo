@@ -114,7 +114,10 @@ class ModelNew(models.Model):
     w_res_partner_many2one = fields.Char(string='Boolean toggle')
     w_int_time_delta = fields.Integer(string='time_delta', default=50)
 
-    _sql_constraints = [('uniq_ref', 'unique(ref)', 'The reference must be unique.')]
+    _ref_uniques = models.Constraint(
+        'UNIQUE(ref)',
+        'The reference must be unique.',
+    )
 
     @api.depends('date', 'date_end')
     def _compute_gauge(self):

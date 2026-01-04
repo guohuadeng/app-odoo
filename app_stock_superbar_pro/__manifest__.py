@@ -17,7 +17,7 @@
 
 {
     'name': "Stock Superbar Pro with date search, parent children tree",
-    'version': '19.0.25.09.08',
+    'version': '19.0.25.12.30',
     'author': 'odooai.cn',
     'category': 'Inventory/Inventory',
     'website': 'https://www.odooai.cn',
