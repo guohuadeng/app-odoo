@@ -9,6 +9,7 @@
             <field name="login">chatgpt@example.com</field>
             <field name="partner_id" ref="app_chatgpt.partner_chatgpt"/>
             <field name="gpt_id" ref="app_chatgpt.chatgpt_robot"/>
+            <field name="is_chat_private" eval="True"/>
             <field name="company_id" ref="base.main_company"/>
             <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
             <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
@@ -54,6 +55,7 @@
             <field name="email">chatgpt3_azure@example.com</field>
             <field name="partner_id" ref="app_chatgpt.partner_chatgpt3_azure"/>
             <field name="gpt_id" ref="app_chatgpt.chatgpt3_azure"/>
+            <field name="is_chat_private" eval="True"/>
             <field name="company_id" ref="base.main_company"/>
             <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
             <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
@@ -68,6 +70,7 @@
             <field name="email">chatgpt4_azure@example.com</field>
             <field name="partner_id" ref="app_chatgpt.partner_chatgpt4_azure"/>
             <field name="gpt_id" ref="app_chatgpt.chatgpt4_azure"/>
+            <field name="is_chat_private" eval="True"/>
             <field name="company_id" ref="base.main_company"/>
             <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
             <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
@@ -82,6 +85,7 @@
             <field name="email">chatgpt4_32k_azure@example.com</field>
             <field name="partner_id" ref="app_chatgpt.partner_chatgpt4_32k_azure"/>
             <field name="gpt_id" ref="app_chatgpt.chatgpt4_32k_azure"/>
+            <field name="is_chat_private" eval="True"/>
             <field name="company_id" ref="base.main_company"/>
             <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
             <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>

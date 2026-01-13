@@ -9,7 +9,8 @@
                 <field name="name"/>
                 <field name="provider" optional="hide"/>
                 <field name="ai_model" optional="show"/>
-                <field name="openapi_api_key" password="True"/>
+                <field name="api_version" optional="hide"/>
+                <field name="openapi_api_key" password="True" column_invisible="1"/>
                 <field name="max_tokens" optional="show"/>
                 <field name="temperature"/>
                 <field name="max_send_char"/>
@@ -23,6 +24,7 @@
         <field name="arch" type="xml">
             <kanban class="o_ai_robot_kanban">
                 <field name="id"/>
+                <field name="sequence"/>
                 <field name="name"/>
                 <field name="provider"/>
                 <field name="set_ai_model"/>
@@ -68,8 +70,8 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button string="Get List Model" type="object" name="get_ai_list_model" invisible="provider != 'openai'"/>
-                    <button string="Get Model Info" type="object" name="get_ai_model_info" invisible="provider != 'openai'"/>
+                    <button string="Get List Model" type="object" name="get_ai_list_model"/>
+                    <button string="Get Model Info" type="object" name="get_ai_model_info"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
@@ -102,7 +104,7 @@
                             <label class="o_form_label" for="provider">
                                 OpenAI Document
                             </label>
-                            <div>
+                            <div name="div_provider">
                                 <field name="provider" class="oe_inline"/>
                                 <a href="https://platform.openai.com/docs/introduction" title="OpenAI Document" class="o_doc_link" target="_blank" invisible="provider != 'openai'"/>
                                 <a href="https://learn.microsoft.com/zh-cn/azure/ai-services/openai/how-to/chatgpt" title="Azure AI Document" class="o_doc_link" target="_blank" invisible="provider != 'openai'"/>
@@ -143,6 +145,7 @@
         <field name="name">Ai Robot</field>
         <field name="res_model">ai.robot</field>
         <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_groupby_provider': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Let's create a Ai Robot.

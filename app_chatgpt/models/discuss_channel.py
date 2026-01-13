@@ -1,8 +1,22 @@
 # -*- coding: utf-8 -*-
 
+##############################################################################
+#    Copyright (C) 2009-TODAY odooai.cn Ltd.(广州欧度智能科技有限公司) https://www.odooai.cn
+#    Author: Ivan Deng，ivan@odooai.cn   300883@qq.com
+#    You can modify it under the terms of the GNU LESSER
+#    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
+#    See <http://www.gnu.org/licenses/>.
+#
+#    It is forbidden to publish, distribute, sublicense, or sell copies
+#    of the Software or modified copies of the Software.
+
+#    Create on 2024-10-06
+##############################################################################
+
 import openai
 import requests, json
 import datetime
+from markupsafe import Markup
 # from transformers import TextDavinciTokenizer, TextDavinciModel
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import UserError
@@ -33,7 +47,7 @@ class Channel(models.Model):
         ('2000', 'Long'),
         ('3000', 'Overlength'),
         ('32000', '32K'),
-    ], string='Max Response', default='600', help="越大返回内容越多，计费也越多")
+    ], string='Max Response', default='1000', help="越大返回内容越多，计费也越多")
     set_chat_count = fields.Selection([
         ('none', 'Ai Auto'),
         ('1', '1标准'),
@@ -81,11 +95,26 @@ class Channel(models.Model):
 
     is_current_channel = fields.Boolean('是否当前用户默认频道', compute='_compute_is_current_channel', help='是否当前用户默认微信对话频道')
 
+    # begin 处理Ai对话
+    is_ai_conversation = fields.Boolean('Ai Conversation', default=False,
+                                        help='Set active to make conversation between 2+ Ai Employee. You Just say first word, then Ai robots Auto Chat.')
+    # 主Ai角色设定
+    ai_sys_content = fields.Char('Main Robot Role', change_default=True,
+                                 help='The Role the First Ai robot play for. This is for Ai Conversation.')
+    # 辅助Ai角色设定
+    ext_ai_sys_content = fields.Char('Extend Robot Role', change_default=True,
+                                     help='The Role the Second Ai robot play for. This is for Ai Conversation.')
+
+    # end 处理Ai对话
+
     def name_get(self):
         result = []
         for c in self:
-            pre = '[私]' if c.channel_type == 'channel' and c.is_private else ''
-            result.append((c.id, f"{pre}{c.name or ''}"))
+            if c.channel_type == 'channel' and c.is_private:
+                pre = '[私]'
+            else:
+                pre = ''
+            result.append((c.id, "%s%s" % (pre, c.name or '')))
         return result
 
     def get_openai_context(self, channel_id, author_id, answer_id, minutes=60, chat_count=0):
@@ -126,7 +155,7 @@ class Channel(models.Model):
                     'content': ai_content,
                 })
             if not user_msg.author_id.gpt_id:
-                user_content = user_msg.description.replace("<p>", "").replace("</p>", "").replace('@%s' % answer_id.name, '').lstrip()
+                user_content = user_msg.body.replace("<p>", "").replace("</p>", "").replace('@%s' % answer_id.name, '').lstrip()
                 context_history.insert(0, {
                     'role': 'user',
                     'content': user_content,
@@ -147,6 +176,7 @@ class Channel(models.Model):
             if get_ua_type() != 'wxweb':
                 # 处理当微信语音返回时，是直接回文本信息，不需要转换回车
                 res = res.replace('\n', '<br/>')
+                res = Markup(res)
             new_msg = channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
             if usage:
                 if ai.provider == 'ali':
@@ -165,7 +195,6 @@ class Channel(models.Model):
 
     def _notify_thread(self, message, msg_vals=False, **kwargs):
         rdata = super(Channel, self)._notify_thread(message, msg_vals=msg_vals, **kwargs)
-        # print(f'rdata:{rdata}')
         answer_id = self.env['res.partner']
         user_id = self.env['res.users']
         author_id = msg_vals.get('author_id')
@@ -173,6 +202,7 @@ class Channel(models.Model):
         channel = self.env['discuss.channel']
         channel_type = self.channel_type
         messages = []
+        add_sys_content = ''
 
         # 不处理 一般notify，但处理欢迎
         if '<div class="o_mail_notification' in message.body and message.body != _('<div class="o_mail_notification">joined the channel</div>'):
@@ -180,6 +210,7 @@ class Channel(models.Model):
         if 'o_odoobot_command' in message.body:
             return rdata
 
+        # begin: 找ai，增加 ai二人转功能。 chat类型不用管， 使用其中一个ai登录即可。 author_id 是 res.partner 模型
         if channel_type == 'chat':
             channel_partner_ids = self.channel_partner_ids
             answer_id = channel_partner_ids - message.author_id
@@ -195,12 +226,20 @@ class Channel(models.Model):
             # partner_ids = @ ids
             partner_ids = list(msg_vals.get('partner_ids'))
             if hasattr(self, 'ai_partner_id') and self.ai_partner_id:
-                # 当有主id时，使用主id
-                if self.ai_partner_id.id in partner_ids:
+                if self.is_ai_conversation and self.ext_ai_partner_id:
+                    # 二人转模式时，处理回答ai，以及叠加角色的设定
+                    if author_id == self.ai_partner_id.id:
+                        partner_ids = [self.ext_ai_partner_id.id]
+                        add_sys_content = self.ext_ai_sys_content
+                    else:
+                        partner_ids = [self.ai_partner_id.id]
+                        add_sys_content = self.ai_sys_content
+                elif self.ai_partner_id.id in partner_ids:
+                    # 其它，普通Ai群。当有主id时，使用主id
                     partner_ids = [self.ai_partner_id.id]
             if partner_ids:
                 # 常规群聊 @
-                partners = self.env['res.partner'].search([('id', 'in', partner_ids)])
+                partners = self.env['res.partner'].search([('id', 'in', partner_ids)]) - message.author_id
                 # user_id = user, who has binded gpt robot
                 user_id = partners.mapped('user_ids').sudo().filtered(lambda r: r.gpt_id)[:1]
             elif message.body == _('<div class="o_mail_notification">joined the channel</div>'):
@@ -238,6 +277,8 @@ class Channel(models.Model):
             #     elif user_id.gpt_id and not is_allow:
             #         # 暂时有限用户的Ai
             #         raise UserError(_('此Ai暂时未开放，请联系管理员。'))
+        # end: 找ai，增加 ai二人转功能
+
         if hasattr(ai, 'is_translator') and ai.is_translator and ai.ai_model == 'translator':
             return rdata
         chatgpt_channel_id = self.env.ref('app_chatgpt.channel_chatgpt')
@@ -246,7 +287,7 @@ class Channel(models.Model):
             msg = _("Please warmly welcome our new partner %s and send him the best wishes.") % message.author_id.name
         else:
             # 不能用 preview， 如果用 : 提示词则 preview信息丢失
-            plaintext_ct = tools.html_to_inner_content(message.body)
+            plaintext_ct = tools.mail.html_to_inner_content(message.body)
             msg = plaintext_ct.replace('@%s' % answer_id.name, '').lstrip()
 
         if not msg:
@@ -256,27 +297,30 @@ class Channel(models.Model):
             sync_config = self._context.get('app_ai_sync_config')
         else:
             sync_config = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openai_sync_config')
+
+        if self._context.get('app_ai_chat_padding_time'):
+            padding_time = int(self._context.get('app_ai_chat_padding_time'))
+        else:
+            padding_time = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.ai_chat_padding_time'))
+
         # api_key = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_api_key')
         # ai处理，不要自问自答
         if ai and answer_id != message.author_id:
             api_key = ai.openapi_api_key
             if not api_key:
-                _logger.warning(_("ChatGPT Robot【%s】have not set open api key."))
+                _logger.warning(_("ChatGPT Robot【%s】have not set open api key.") % ai.name)
                 return rdata
+
             try:
                 openapi_context_timeout = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_context_timeout')) or 60
             except:
                 openapi_context_timeout = 60
             openai.api_key = api_key
             # 非4版本，取0次。其它取3 次历史
-            chat_count = 3
             if '4' in ai.ai_model or '4' in ai.name:
                 chat_count = 1
-                if hasattr(self, 'chat_count'):
-                    if self.chat_count > 0:
-                        chat_count = 1
             else:
-                chat_count = chat_count
+                chat_count = self.chat_count or 3
 
             if author_id != answer_id.id and self.channel_type == 'chat':
                 # 私聊
@@ -333,11 +377,11 @@ class Channel(models.Model):
                 #     if hasattr(channel, 'is_private') and channel.description:
                 #         messages.append({"role": "system", "content": channel.description})
                 #     messages.append({"role": "user", "content": msg})
-                #     msg_len = sum(len(str(m)) for m in messages)
-                #     if msg_len * 2 > ai.max_send_char:
-                #         new_msg = channel.with_user(user_id).message_post(body=_('您所发送的提示词已超长。'), message_type='comment',
-                #                                                           subtype_xmlid='mail.mt_comment',
-                #                                                           parent_id=message.id)
+                # msg_len = sum(len(str(m)) for m in messages)
+                # if msg_len * 2 > ai.max_send_char:
+                #     new_msg = channel.with_user(user_id).message_post(body=_('您所发送的提示词已超长。'), message_type='comment',
+                #                                                         subtype_xmlid='mail.mt_comment',
+                #                                                         parent_id=message.id)
 
                     # if msg_len * 2 >= 8000:
                     # messages = [{"role": "user", "content": msg}]
@@ -345,11 +389,11 @@ class Channel(models.Model):
                     self.get_ai_response(ai, messages, channel, user_id, message)
                 else:
                     if hasattr(self, 'with_delay'):
-                        self.with_delay().get_ai_response(ai, messages, channel, user_id, message)
+                        self.with_delay(priority=30, eta=padding_time).get_ai_response(ai, messages, channel, user_id, message)
                     else:
                         self.get_ai_response(ai, messages, channel, user_id, message)
             except Exception as e:
-                raise UserError(_(e))
+                raise UserError(e)
 
         return rdata
 
@@ -387,3 +431,17 @@ class Channel(models.Model):
     def _onchange_ai_partner_id(self):
         if self.ai_partner_id and self.ai_partner_id.image_1920:
             self.image_128 = self.ai_partner_id.avatar_128
+        if self.ai_partner_id and not self.ai_sys_content:
+            if self.ai_partner_id.gpt_id:
+                self.ai_sys_content = self.ai_partner_id.gpt_id.sys_content
+
+    @api.onchange('ext_ai_partner_id')
+    def _onchange_ext_ai_partner_id(self):
+        if self.ext_ai_partner_id and not self.ext_ai_sys_content:
+            if self.ext_ai_partner_id.gpt_id:
+                self.ai_sys_content = self.ext_ai_partner_id.gpt_id.sys_content
+
+    @api.onchange('set_chat_count')
+    def _onchange_set_chat_count(self):
+        if self.set_chat_count:
+            self.chat_count = int(self.set_chat_count) if self.set_chat_count != 'none' else 0

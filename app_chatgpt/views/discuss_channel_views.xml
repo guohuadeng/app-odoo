@@ -10,6 +10,7 @@
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="ai_partner_id" optional="show"/>
                     <field name="description" optional="show"/>
+                    <field name="is_private" optional="show"/>
                     <field name="set_max_tokens" optional="hide"/>
                 </xpath>
             </field>
@@ -24,12 +25,17 @@
                 <xpath expr="//page[@name='privacy']" position="before">
                     <page name="page_user" string="Ai Config(Default value is prefer)">
                         <group>
-                            <group name="role_set" string="Ai常规设定">
+                            <group name="role_set" string="Ai Parameter">
                                 <field name="channel_type" readonly="1"/>
-                                <field name="ai_partner_id"
+                                <field name="ai_partner_id" widget="many2one_avatar"
                                        options="{'no_open': True, 'no_create': True}"/>
-                                <field name="ext_ai_partner_id"
+                                <field name="ext_ai_partner_id" widget="many2one_avatar"
                                        options="{'no_open': True, 'no_create': True}"/>
+                                <field name="is_ai_conversation" widget="boolean_toggle"/>
+                                <field name="ai_sys_content" invisible="not is_ai_conversation"
+                                       widget="text" rowCount="4" colspan="2"/>
+                                <field name="ext_ai_sys_content" invisible="not is_ai_conversation"
+                                       widget="text" rowCount="4" colspan="2"/>
                             </group>
                             <group  name="param_set" string="Ai Character Set">
                                 <div class="o_td_label">
@@ -87,16 +93,31 @@
             <field name="arch" type="xml">
                 <xpath expr="//kanban//field[1]" position="before">
                     <field name="is_private"/>
+                    <field name="ai_partner_id"/>
+                    <field name="ext_ai_partner_id"/>
+                    <field name="is_ai_conversation"/>
                 </xpath>
                 <xpath expr="//field[@name='description']" position="before">
-                    <em>角色:</em>
+                    <em>Role:</em>
                 </xpath>
                 <xpath expr="//button[@name='channel_join']" position="replace">
-                    <button invisible="is_private and group_ids"
+                    <div class="row mt4 mb4">
+                        <span class="mr4">
+                            Main Ai:<field name="ai_partner_id" widget="many2one_avatar" class="ml4 mr8"
+                               options="{'no_open': True, 'no_create': True}"/>
+                        </span>
+                        <span>
+                            Ai Conversation:<field name="is_ai_conversation" widget="boolean_toggle"/>
+                        </span>
+                    </div>
+                    <button invisible="is_member or group_ids"
                             class="btn btn-warning float-end" type="edit">
                         智能设定
                     </button>
-                    <button type="object" invisible="is_member or group_ids" class="btn btn-primary float-end" name="channel_join">进入频道</button>
+                    <button type="object" invisible="is_member or group_ids"
+                            class="btn btn-primary float-end" name="channel_join">
+                        进入频道
+                    </button>
                 </xpath>
                 <xpath expr="//button[@name='action_unfollow']" position="replace">
                     <button type="object" invisible="is_member or group_ids"
