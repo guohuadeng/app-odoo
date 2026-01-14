@@ -248,12 +248,8 @@ class Channel(models.Model):
                 user_id = partners.mapped('user_ids')[:1]
             elif self.member_count == 2:
                 # 处理独聊频道
-                if hasattr(self, 'is_private') and not self.is_private:
-                    # 2个人的非私有频道不处理
-                    pass
-                else:
-                    partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id and r != message.author_id)[:1]
-                    user_id = partners.mapped('user_ids')[:1]
+                partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id and r != message.author_id)[:1]
+                user_id = partners.mapped('user_ids')[:1]
             elif not message.author_id.gpt_id:
                 # 没有@时，默认第一个robot
                 # robot = self.env.ref('app_chatgpt.chatgpt_robot')
