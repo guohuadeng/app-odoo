@@ -242,6 +242,12 @@ class Base(models.AbstractModel):
 def get_image_from_url(url):
     if not url:
         return None
+    if url.startswith('//') or url.startswith('http://') or url.startswith('https://'):
+        pass
+    else:
+        # 处理相对路径
+        web_base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url', '')
+        url = web_base_url + url
     try:
         response = requests.get(url, timeout=5)
     except Exception as e:
