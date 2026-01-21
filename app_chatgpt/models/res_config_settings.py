@@ -19,7 +19,7 @@ from odoo import fields, models
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    openapi_context_timeout = fields.Integer(string="Connect Timout", help="群聊中多少分钟以内的聊天信息作为上下文继续",
+    openapi_context_timeout = fields.Integer(string="Connect Timeout", help="How many minutes of chat information in the group chat will be used as context to continue",
                                              config_parameter="app_chatgpt.openapi_context_timeout")
     openai_sync_config = fields.Selection([
         ('sync', 'Synchronous'),

@@ -18,7 +18,7 @@ from odoo import fields, models
 
 class ResPartnerAiUse(models.Model):
     _name = "res.partner.ai.use"
-    _description = '消费者Ai使用情况'
+    _description = 'Consumer AI Usage'
 
     name = fields.Many2one('res.partner', 'Partner')
     ai_user_id = fields.Many2one('res.users', 'Ai User', domain=[('gpt_id', '!=', False)])
