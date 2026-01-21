@@ -71,15 +71,15 @@
                 <xpath expr="//field[@name='group_public_id']/.." position="after">
                     <group string="Ai Response Config">
                         <field name="chat_count"/>
-                        <p class="ml16 my-n1 mb16" colspan="2">0-3，设定后，会将最近n次对话发给Ai，有助于他更好的回答</p>
+                        <p class="ml16 my-n1 mb16" colspan="2">0-3, After setting, the last n conversations will be sent to AI to help it respond better</p>
                         <field name="max_tokens"/>
-                        <p class="ml16 my-n1 mb16" colspan="2">最大响应Token,控制返回内容长度</p>
+                        <p class="ml16 my-n1 mb16" colspan="2">Maximum response tokens, controls return content length</p>
                         <field name="temperature"/>
-                        <p class="ml16 my-n1 mb16" colspan="2">0-1，值越大越富有想像力，越小则越保守</p>
+                        <p class="ml16 my-n1 mb16" colspan="2">0-1, the larger the value, the more imaginative, the smaller the value, the more conservative</p>
                         <field name="frequency_penalty"/>
-                        <p class="ml16 my-n1 mb16" colspan="2">0-1，值越大越少使用常用词</p>
+                        <p class="ml16 my-n1 mb16" colspan="2">0-1, the larger the value, the less common words are used</p>
                         <field name="presence_penalty"/>
-                        <p class="ml16 my-n1 mb16" colspan="2">0-1，值越大越少重复词</p>
+                        <p class="ml16 my-n1 mb16" colspan="2">0-1, the larger the value, the less repetitive words</p>
                     </group>
                 </xpath>
             </field>
@@ -112,11 +112,11 @@
                     </div>
                     <button invisible="is_member or group_ids"
                             class="btn btn-warning float-end" type="edit">
-                        智能设定
+                        Settings
                     </button>
                     <button type="object" invisible="is_member or group_ids"
                             class="btn btn-primary float-end" name="channel_join">
-                        进入频道
+                        Join Channel
                     </button>
                 </xpath>
                 <xpath expr="//button[@name='action_unfollow']" position="replace">

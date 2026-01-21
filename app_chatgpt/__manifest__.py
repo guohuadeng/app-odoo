@@ -10,7 +10,7 @@
 
 {
     'name': '!ChatGPT4, China Ali,AiGC Center.Ai服务中心，聚合全网Ai',
-    'version': '17.0.26.01.13',
+    'version': '17.0.26.01.21',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
     'maintainer': 'odooai.cn',
