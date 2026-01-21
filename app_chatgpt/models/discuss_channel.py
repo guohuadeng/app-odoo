@@ -47,53 +47,53 @@ class Channel(models.Model):
         ('2000', 'Long'),
         ('3000', 'Overlength'),
         ('32000', '32K'),
-    ], string='Max Response', default='1000', help="越大返回内容越多，计费也越多")
+    ], string='Max Response', default='1000', help="The larger the value, the more content returned, and the higher the cost")
     set_chat_count = fields.Selection([
         ('none', 'Ai Auto'),
-        ('1', '1标准'),
-        ('3', '3强关联'),
-        ('5', '5超强关联'),
-    ], string="History Count", default='1', help="0-5，设定后，会将最近n次对话发给Ai，有助于他更好的回答，但太大费用也高")
+        ('1', '1 Standard'),
+        ('3', '3 Strong Association'),
+        ('5', '5 Super Association'),
+    ], string="History Count", default='1', help="0-5, After setting, the last n conversations will be sent to Ai, which helps him better answer, but too large will also increase costs")
     set_temperature = fields.Selection([
-        ('2', '天马行空'),
-        ('1.5', '创造性'),
-        ('1', '标准'),
-        ('0.6', '理性'),
-        ('0.1', '保守'),
-    ], string="Set Temperature", default='1', help="0-21，值越大越富有想像力，越小则越保守")
+        ('2', 'Highly random'),
+        ('1.5', 'More creative'),
+        ('1', 'Default'),
+        ('0.6', 'Balanced-conservative'),
+        ('0.1', 'Most deterministic'),
+    ], string="Set Temperature", default='1', help="0-2, The larger the value, the more imaginative, the smaller the more conservative")
     set_top_p = fields.Selection([
-        ('0.9', '严谨惯性思维'),
-        ('0.6', '标准推理'),
-        ('0.4', '跳跃性'),
-        ('0.1', '随便'),
-    ], string="Top Probabilities", default='0.6', help="0-1，值越大越倾向大众化的连贯思维")
+        ('0.9', 'More Random'),
+        ('0.6', 'Balanced'),
+        ('0.4', 'Focused'),
+        ('0.1', 'Conservative'),
+    ], string="Top Probabilities", default='0.6', help="0-1, Higher values consider more possibilities for diverse output")
     # 避免使用常用词
     set_frequency_penalty = fields.Selection([
-        ('2', '老学究-晦涩难懂'),
-        ('1.5', '学院派-较多高级词'),
-        ('1', '标准'),
-        ('0.1', '少常用词'),
-        ('-1', '通俗易懂'),
-        ('-2', '大白话'),
-    ], string='Frequency Penalty', default='1', help="-2~2，值越大越少使用常用词")
+        ('2', 'Pedantic - Obscure and Difficult'),
+        ('1.5', 'Academic - More Advanced Words'),
+        ('1', 'Standard'),
+        ('0.1', 'Fewer Common Words'),
+        ('-1', 'Simple and Understandable'),
+        ('-2', 'Plain Language'),
+    ], string='Frequency Penalty', default='1', help="-2~2, Higher values use fewer common words")
     set_presence_penalty = fields.Selection([
-        ('2', '多样强迫症'),
-        ('1.5', '新颖化'),
-        ('1', '标准'),
-        ('0.1', '允许常规重复'),
-        ('-1', '允许较多重复'),
-        ('-2', '更多强调重复'),
-    ], string='Presence penalty', default='1', help="-2~2，值越大越少重复词")
+        ('2', 'Compulsive Diversity'),
+        ('1.5', 'Novelization'),
+        ('1', 'Standard'),
+        ('0.1', 'Allow Regular Repetition'),
+        ('-1', 'Allow More Repetition'),
+        ('-2', 'Emphasize More Repetition'),
+    ], string='Presence penalty', default='1', help="-2~2, Higher values use fewer repeated words")
 
     # todo: 这里用 compute?
-    max_tokens = fields.Integer('最长响应Token', default=600, help="越大返回内容越多，计费也越多")
-    chat_count = fields.Integer(string="上下文数量", default=0, help="0~3，设定后，会将最近n次对话发给Ai，有助于他更好的回答")
-    temperature = fields.Float(string="创造性值", default=1, help="0~2，值越大越富有想像力，越小则越保守")
-    top_p = fields.Float(string="连贯性值", default=0.6, help="0~1，值越大越富有想像力，越小则越保守")
-    frequency_penalty = fields.Float('避免常用词值', default=1, help="-2~2，值越大越少使用常用词")
-    presence_penalty = fields.Float('避免重复词值', default=1, help="-2~2，值越大越少重复词")
+    max_tokens = fields.Integer('Max Response Tokens', default=600, help="The larger the value, the more content returned, and the higher the cost")
+    chat_count = fields.Integer(string="Context Count", default=0, help="0~3, After setting, the last n conversations will be sent to Ai, which helps him better answer")
+    temperature = fields.Float(string="Creativity Value", default=1, help="0~2, The larger the value, the more imaginative, the smaller the more conservative")
+    top_p = fields.Float(string="Coherence Value", default=0.6, help="0~1, The larger the value, the more imaginative, the smaller the more conservative")
+    frequency_penalty = fields.Float('Avoid Common Words Value', default=1, help="-2~2, Higher values use fewer common words")
+    presence_penalty = fields.Float('Avoid Repeated Words Value', default=1, help="-2~2, Higher values use fewer repeated words")
 
-    is_current_channel = fields.Boolean('是否当前用户默认频道', compute='_compute_is_current_channel', help='是否当前用户默认微信对话频道')
+    is_current_channel = fields.Boolean('Is Current User Default Channel', compute='_compute_is_current_channel', help='Whether this is the current user\'s default WeChat conversation channel')
 
     # begin 处理Ai对话
     is_ai_conversation = fields.Boolean('Ai Conversation', default=False,
@@ -111,7 +111,7 @@ class Channel(models.Model):
         result = []
         for c in self:
             if c.channel_type == 'channel' and c.is_private:
-                pre = '[私]'
+                pre = _('[Private]')
             else:
                 pre = ''
             result.append((c.id, "%s%s" % (pre, c.name or '')))
@@ -134,7 +134,7 @@ class Channel(models.Model):
                   ('parent_id', '!=', False),
                   ('is_ai', '=', True),
                   ('body', '!=', '<p>%s</p>' % _('Response Timeout, please speak again.')),
-                  ('body', '!=', _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。'))]
+                  ('body', '!=', _('Warning: The content you sent contains sensitive words, please modify the content before sending it to me.'))]
 
         if self.channel_type in ['group', 'channel']:
             # 群聊增加时间限制，当前找所有人，不限制 author_id
@@ -399,8 +399,8 @@ class Channel(models.Model):
 
     def _message_post_after_hook(self, message, msg_vals):
         if message.author_id.gpt_id:
-            if msg_vals['body'] not in [_('Response Timeout, please speak again.'), _('温馨提示：您发送的内容含有敏感词，请修改内容后再向我发送。'),
-                                        _('此Ai暂时未开放，请联系管理员。'), _('您所发送的提示词已超长。')]:
+            if msg_vals['body'] not in [_('Response Timeout, please speak again.'), _('Warning: The content you sent contains sensitive words, please modify the content before sending it to me.'),
+                                        _('This AI is temporarily unavailable, please contact the administrator.'), _('The prompt you sent is too long.')]:
                 message.is_ai = True
         return super(Channel, self)._message_post_after_hook(message, msg_vals)
 
