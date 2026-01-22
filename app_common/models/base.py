@@ -337,7 +337,7 @@ def get_ua_type():
         # 微信小程序及开发者工具
         utype = 'wxapp'
     elif 'wxwork' in ua:
-        utype = 'qwapp'
+        utype = 'wxwork'
     elif 'MicroMessenger' in ua:
         # 微信浏览器
         utype = 'wxweb'
