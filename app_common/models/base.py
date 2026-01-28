@@ -351,6 +351,7 @@ def get_ua_type():
         utype = 'mweb'
     # _logger.warning('=========get ua %s,%s' % (utype, ua))
     return utype
+
 def deep_merge(a, b):
     """
     深度合并两个二级 dict，对数值进行叠加，以b为主。
