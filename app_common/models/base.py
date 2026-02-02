@@ -242,6 +242,12 @@ class Base(models.AbstractModel):
 def get_image_from_url(url):
     if not url:
         return None
+    if url.startswith('//') or url.startswith('http://') or url.startswith('https://'):
+        pass
+    else:
+        # 处理相对路径
+        web_base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url', '')
+        url = web_base_url + url
     try:
         response = requests.get(url, timeout=5)
     except Exception as e:
@@ -331,7 +337,7 @@ def get_ua_type():
         # 微信小程序及开发者工具
         utype = 'wxapp'
     elif 'wxwork' in ua:
-        utype = 'qwapp'
+        utype = 'wxwork'
     elif 'MicroMessenger' in ua:
         # 微信浏览器
         utype = 'wxweb'
@@ -345,6 +351,7 @@ def get_ua_type():
         utype = 'mweb'
     # _logger.warning('=========get ua %s,%s' % (utype, ua))
     return utype
+
 def deep_merge(a, b):
     """
     深度合并两个二级 dict，对数值进行叠加，以b为主。

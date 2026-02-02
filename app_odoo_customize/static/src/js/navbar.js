@@ -10,7 +10,7 @@ import { renderToString } from "@web/core/utils/render";
 patch(NavBar.components.Dropdown.prototype, {
     setup() {
         super.setup();
-        useEffect(() => this.addDebugTooltip());
+        // useEffect(() => this.addDebugTooltip());
     },
 
     addDebugTooltip() {
@@ -46,7 +46,7 @@ NavBar.components.Dropdown.props.payload = {
 patch(NavBar.components.DropdownItem.prototype, {
     setup() {
         super.setup();
-        useEffect(() => this.addDebugTooltip());
+        // useEffect(() => this.addDebugTooltip());
     },
     addDebugTooltip() {
         let is_asset = browser.location.search.includes('?debug=assets');

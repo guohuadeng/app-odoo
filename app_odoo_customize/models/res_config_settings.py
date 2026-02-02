@@ -174,7 +174,7 @@ class ResConfigSettings(models.TransientModel):
             'pos.session',
         ]
         seqs = [
-            'pos.',
+            'pos',
         ]
         res = self._remove_app_data(to_removes, seqs)
 
@@ -202,7 +202,7 @@ class ResConfigSettings(models.TransientModel):
             'purchase.requisition',
         ]
         seqs = [
-            'purchase.',
+            'purchase',
         ]
         return self._remove_app_data(to_removes, seqs)
 
@@ -215,7 +215,7 @@ class ResConfigSettings(models.TransientModel):
             'hr.payslip.run',
         ]
         seqs = [
-            'hr.expense.',
+            'hr.expense',
         ]
         return self._remove_app_data(to_removes, seqs)
 
@@ -232,11 +232,17 @@ class ResConfigSettings(models.TransientModel):
             # 增加我们app模块
             'mrp.production.plan',
             'change.production.qty',
-            # 'sale.forecast.indirect',
-            # 'sale.forecast',
+            'mrp.request.line',
+            'mrp.request.line.merge',
+            'mrp.request.line.semi',
+            'mrp.request.line.semi.merge',
+            'mrp.request.plan.line.merge',
+            'mrp.request.plan.line.semi.merge',
+            'mrp.request',
+            'mrp.request.plan',
         ]
         seqs = [
-            'mrp.',
+            'mrp',
         ]
         return self._remove_app_data(to_removes, seqs)
 
@@ -272,8 +278,8 @@ class ResConfigSettings(models.TransientModel):
             'procurement.group',
         ]
         seqs = [
-            'stock.',
-            'picking.',
+            'stock',
+            'picking',
             'procurement.group',
             'product.tracking.default',
             'WH/',
@@ -563,16 +569,34 @@ class ResConfigSettings(models.TransientModel):
             'event.type',
         ]
         seqs = [
-            'event.event.',
+            'event.event',
         ]
         return self._remove_app_data(to_removes, seqs)
     
-    def remove_website(self):
+    def remove_website_blog(self):
         to_removes = [
             # 清除网站数据，w, w_blog
             'blog.tag.category',
             'blog.tag',
             'blog.post',
+            # 'blog.blog',
+            # 'product.wishlist',
+            # 'website.published.multi.mixin',
+            # 'website.published.mixin',
+            # 'website.multi.mixin',
+            # 'website.visitor',
+            # 'website.rewrite',
+            # 'website.seo.metadata',
+            # 'website.page',
+            # 'website.menu',
+            # 'website',
+        ]
+        seqs = []
+        return self._remove_app_data(to_removes, seqs)
+
+    def remove_website(self):
+        to_removes = [
+            # 清除网站基础
             'blog.blog',
             'product.wishlist',
             'website.published.multi.mixin',

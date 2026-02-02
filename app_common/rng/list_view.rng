@@ -58,7 +58,6 @@
             <rng:optional><rng:attribute name="bg-warning"/></rng:optional>
             <rng:optional><rng:attribute name="bg-black"/></rng:optional>
             <rng:optional><rng:attribute name="bg-white"/></rng:optional>
-            <rng:optional><rng:attribute name="multi_group_select"/></rng:optional>
             <rng:optional><rng:attribute name="sample"/></rng:optional>
             <rng:optional><rng:attribute name="action"/></rng:optional>
             <rng:optional><rng:attribute name="type"/></rng:optional>
