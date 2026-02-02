@@ -605,7 +605,7 @@ class ResConfigSettings(models.TransientModel):
             'website.visitor',
             'website.rewrite',
             'website.seo.metadata',
-            'website.page',
+            # 'website.page',
             # 'website.menu',
             # 'website',
         ]
