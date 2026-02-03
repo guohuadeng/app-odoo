@@ -3,15 +3,15 @@
     <data noupdate="1">
         <!-- 注意，品类名默认是无中文的 -->
         <function model="product.category" name="write" context="{'lang': 'zh_CN'}">
-            <value eval="[ref('product.product_category_all', False)]"/>
+            <value eval="[ref('product.product_category_goods', False)]"/>
             <value eval="{'name': '全部'}"/>
         </function>
         <function model="product.category" name="write" context="{'lang': 'zh_CN'}">
-            <value eval="[ref('product.product_category_1', False)]"/>
+            <value eval="[ref('product.product_category_goods', False)]"/>
             <value eval="{'name': '在售'}"/>
         </function>
         <function model="product.category" name="write" context="{'lang': 'zh_CN'}">
-            <value eval="[ref('product.cat_expense', False)]"/>
+            <value eval="[ref('product.product_category_expenses', False)]"/>
             <value eval="{'name': '费用'}"/>
         </function>
         <function model="product.category" name="write" context="{'lang': 'zh_CN'}">
@@ -22,10 +22,10 @@
             <value eval="[ref('event_sale.product_category_events', False)]"/>
             <value eval="{'name': '活动票'}"/>
         </function>
-        <!--<record id="product.product_category_all" model="product.category">-->
+        <!--<record id="product.product_category_goods" model="product.category">-->
             <!--<field name="name">全部</field>-->
         <!--</record>-->
-        <!--<record id="product.product_category_1" model="product.category">-->
+        <!--<record id="product.product_category_goods" model="product.category">-->
             <!--<field name="name">在售</field>-->
         <!--</record>-->
     </data>
