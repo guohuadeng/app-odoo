@@ -7,11 +7,18 @@
             <field name="name">ai.discuss.channel.tree</field>
             <field name="inherit_id" ref="mail.discuss_channel_view_tree"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="sequence" widget="handle"/>
+                    <field name="id" optional="show" groups="base.group_no_one"/>
+                </xpath>
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="ai_partner_id" optional="show"/>
                     <field name="description" optional="show"/>
                     <field name="is_private" optional="show"/>
                     <field name="set_max_tokens" optional="hide"/>
+                </xpath>
+                <xpath expr="//list" position="inside">
+                    <field name="group_public_id" optional="hide" groups="base.group_no_one"/>
                 </xpath>
             </field>
         </record>
@@ -93,6 +100,7 @@
             <field name="mode">extension</field>
             <field name="arch" type="xml">
                 <xpath expr="//kanban//field[1]" position="before">
+                    <field name="sequence"/>
                     <field name="is_private"/>
                     <field name="ai_partner_id"/>
                     <field name="ext_ai_partner_id"/>
@@ -111,18 +119,16 @@
                             Ai Conversation:<field name="is_ai_conversation" widget="boolean_toggle"/>
                         </span>
                     </div>
-                    <button invisible="is_member or group_ids"
-                            class="btn btn-warning float-end" type="edit">
+                    <button class="btn btn-warning float-end" type="edit">
                         Settings
                     </button>
-                    <button type="object" invisible="is_member or group_ids"
+                    <button type="object" invisible="not is_member"
                             class="btn btn-primary float-end" name="channel_join">
                         Join Channel
                     </button>
                 </xpath>
                 <xpath expr="//button[@name='action_unfollow']" position="replace">
                     <button type="object" invisible="is_member or group_ids"
-
                             class="btn btn-secondary float-end" name="action_unfollow">Leave Temporarily</button>
                 </xpath>
             </field>
@@ -138,6 +144,9 @@
                     <group expand="0" string="Group By">
                         <filter string="Channel Type" name="groupby_channel_type" domain="[]" context="{'group_by': 'channel_type'}"/>
                     </group>
+                </xpath>
+                <xpath expr="//filter[@name='inactive']" position="before">
+                    <filter string="Ai Channel" name="is_ai" domain="[('ai_partner_id', '!=', False)]"/>
                 </xpath>
             </field>
         </record>
