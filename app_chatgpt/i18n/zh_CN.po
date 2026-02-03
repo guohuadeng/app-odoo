@@ -310,7 +310,7 @@ msgstr "开启Ai二人转"
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_discuss_channel_view_kanban
 msgid "Ai Conversation:"
-msgstr "Ai二人转"
+msgstr "Ai二人转:"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_res_config_settings__ai_chat_padding_time
