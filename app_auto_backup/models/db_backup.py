@@ -315,6 +315,7 @@ class DbBackup(models.Model):
             # todo: 排除掉backup目录
             with tempfile.TemporaryDirectory() as dump_dir:
                 filestore = odoo.tools.config.filestore(db_name)
+                _logger.warning('-------------- _take_dump, filestore_path: %s', filestore)
                 if os.path.exists(filestore):
                     shutil.copytree(filestore, os.path.join(dump_dir, 'filestore'))
                 with open(os.path.join(dump_dir, 'manifest.json'), 'w') as fh:
@@ -324,15 +325,18 @@ class DbBackup(models.Model):
                 cmd.insert(-1, '--file=' + os.path.join(dump_dir, 'dump.sql'))
                 subprocess.run(cmd, env=env, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT, check=True)
                 if stream:
-                    self.zip_dir_pro(dump_dir, stream, include_dir=False, fnct_sort=lambda file_name: file_name != 'dump.sql')
+                    # self.zip_dir_pro(dump_dir, stream, include_dir=False, fnct_sort=lambda file_name: file_name != 'dump.sql')
+                    odoo.tools.osutil.zip_dir(dump_dir, stream, include_dir=False, fnct_sort=lambda file_name: file_name != 'dump.sql')
                 else:
                     t=tempfile.TemporaryFile()
-                    self.zip_dir_pro(dump_dir, t, include_dir=False, fnct_sort=lambda file_name: file_name != 'dump.sql')
+                    # self.zip_dir_pro(dump_dir, t, include_dir=False, fnct_sort=lambda file_name: file_name != 'dump.sql')
+                    odoo.tools.osutil.zip_dir(dump_dir, t, include_dir=False, fnct_sort=lambda file_name: file_name != 'dump.sql')
                     t.seek(0)
                     return t
         else:
             cmd.insert(-1, '--format=c')
-            stdin, stdout = odoo.tools.exec_pg_command_pipe(*cmd)
+            # stdin, stdout = odoo.tools.exec_pg_command_pipe(*cmd)
+            stdout = subprocess.Popen(cmd, env=env, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE).stdout
             if stream:
                 shutil.copyfileobj(stdout, stream)
             else:
@@ -372,26 +376,26 @@ class DbBackup(models.Model):
             cron.method_direct_trigger()
             return True
 
-    def zip_dir_pro(self, path, stream, include_dir=True, fnct_sort=None):
-        """
-         增加的要排除的文件，主要是 xxxdump.zip，及整个目录
-        """
-        path = os.path.normpath(path)
-        len_prefix = len(os.path.dirname(path)) if include_dir else len(path)
-        if len_prefix:
-            len_prefix += 1
+    # def zip_dir_pro(self, path, stream, include_dir=True, fnct_sort=None):
+    #     """
+    #      增加的要排除的文件，主要是 xxxdump.zip，及整个目录
+    #     """
+    #     path = os.path.normpath(path)
+    #     len_prefix = len(os.path.dirname(path)) if include_dir else len(path)
+    #     if len_prefix:
+    #         len_prefix += 1
 
-        with zipfile.ZipFile(stream, 'w', compression=zipfile.ZIP_DEFLATED, allowZip64=True) as zipf:
-            for dirpath, dirnames, filenames in os.walk(path):
-                filenames = sorted(filenames, key=fnct_sort)
-                for fname in filenames:
-                    if fname.find('dump.zip') != -1:
-                        continue
-                    if fname.find(self.folder) != -1:
-                        continue
-                    bname, ext = os.path.splitext(fname)
-                    ext = ext or bname
-                    if ext not in ['.pyc', '.pyo', '.swp', '.DS_Store']:
-                        path = os.path.normpath(os.path.join(dirpath, fname))
-                        if os.path.isfile(path):
-                            zipf.write(path, path[len_prefix:])
+    #     with zipfile.ZipFile(stream, 'w', compression=zipfile.ZIP_DEFLATED, allowZip64=True) as zipf:
+    #         for dirpath, dirnames, filenames in os.walk(path):
+    #             filenames = sorted(filenames, key=fnct_sort)
+    #             for fname in filenames:
+    #                 if fname.find('dump.zip') != -1:
+    #                     continue
+    #                 if fname.find(self.folder) != -1:
+    #                     continue
+    #                 bname, ext = os.path.splitext(fname)
+    #                 ext = ext or bname
+    #                 if ext not in ['.pyc', '.pyo', '.swp', '.DS_Store']:
+    #                     path = os.path.normpath(os.path.join(dirpath, fname))
+    #                     if os.path.isfile(path):
+    #                         zipf.write(path, path[len_prefix:])

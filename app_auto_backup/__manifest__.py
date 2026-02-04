@@ -6,7 +6,7 @@
 
 {
     'name': "Database auto backup,database restore Download manager,数据库自动备份",
-    'version': '16.0.25.02.25',
+    'version': '16.0.26.02.04',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
