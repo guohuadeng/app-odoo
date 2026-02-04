@@ -9,7 +9,7 @@
 # Copyright (c) 2020-Present InTechual Solutions. (<https://intechualsolutions.com/>)
 
 {
-    'name': '!ChatGPT4, China Ali,AiGC Center.Ai服务中心，聚合全网Ai',
+    'name': 'Deepseek, ChatGPT4,China Ali,AiGC Center.Ai服务中心，聚合全网Ai',
     'version': '18.0.26.02.03',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
