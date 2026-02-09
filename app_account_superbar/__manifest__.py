@@ -17,7 +17,7 @@
 
 {
     'name': "App account superbar navigator",
-    'version': '18.0.25.06.10',
+    'version': '18.0.26.02.09',
     'author': 'odooai.cn',
     'category': 'Accounting/Accounting',
     'website': 'https://www.odooai.cn',

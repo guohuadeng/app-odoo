@@ -20,10 +20,10 @@
             <field name="name">销项订单收据</field>
         </record>
         <record id="account.action_move_out_refund_type" model="ir.actions.act_window" context="{'lang': 'zh_CN'}">
-            <field name="name">销项冲销</field>
+            <field name="name">销项红字应收</field>
         </record>
         <record id="account.menu_action_move_out_refund_type" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
-            <field name="name">销项冲销</field>
+            <field name="name">销项红字应收</field>
         </record>
 
     </data>

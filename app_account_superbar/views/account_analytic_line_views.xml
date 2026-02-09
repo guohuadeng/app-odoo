@@ -1,20 +1,20 @@
 <odoo>
-  <data>
-      <record id="view_account_analytic_line_filter_superbar" model="ir.ui.view">
-          <field name="name">account.analytic.line.select.superbar</field>
-          <field name="model">account.analytic.line</field>
-          <field name="inherit_id" ref="analytic.view_account_analytic_line_filter"/>
-          <field name="arch" type="xml">
-                <xpath expr="//search">
-                    <searchpanel view_types="list,kanban,pivot,graph,search">
-                        <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
-                        <field name="partner_id" enable_counters="1" select="multi"/>
-                        <field name="account_id" enable_counters="1" select="multi"/>
-                        <field name="journal_id" enable_counters="1" select="multi"/>
-                        <field name="general_account_id" enable_counters="1" select="multi"/>
-                    </searchpanel>
-                </xpath>
-          </field>
-      </record>
-  </data>
+<!--    注意，此处必须继承 account 中，不可使用 analytic 中，因为在 hr_timesheet 中 report的 timesheets.analysis.report 是从 a.a.line 取数据。
+有继承 hr_timesheet_line_search，至 view_account_analytic_line_filter -->
+    <record id="view_account_analytic_line_filter_superbar" model="ir.ui.view">
+        <field name="name">account.analytic.line.select.superbar</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="account.view_account_analytic_line_filter_inherit_account"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="list,kanban,pivot,graph,search">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="partner_id" enable_counters="1" select="multi"/>
+                    <field name="account_id" enable_counters="1" select="multi"/>
+                    <field name="journal_id" enable_counters="1" select="multi"/>
+                    <field name="general_account_id" enable_counters="1" select="multi"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
 </odoo>
