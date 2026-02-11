@@ -462,12 +462,12 @@ msgstr "我的帐户链接"
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_navbar_pos_mobile
 msgid "Navbar Mobile"
-msgstr "导航栏移动"
+msgstr "导航栏移动端"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_navbar_pos_pc
 msgid "Navbar PC"
-msgstr "导航栏电脑"
+msgstr "导航栏电脑端"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
