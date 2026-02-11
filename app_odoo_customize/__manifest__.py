@@ -22,7 +22,7 @@
 # description:
 
 {
-    'name': '53+ Odoo18 Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Remove Data All in One-优化提速53+项大全',
+    'name': '54+ Odoo18 Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Remove Data All in One-优化提速53+项大全',
     'version': '18.0.26.02.11',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
@@ -155,6 +155,7 @@
     51. Show menu xml_id in debug asset mode.  easy for menu and action development.
     52. Quick View Fields list and View List of every model.
     53. Quick management and view of [Application Access Category].
+    54. Quick set database to test Neutralize DB, or restore to Production.
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -216,5 +217,6 @@
     51. 在开发者Assets模式中，快速查看菜单Menu 的 xml_id.
     52. 快速管理查看模型的字段和视图列表.
     53. 快速管理查看应用权限分类管理.
+    54. 快速设定全数据库为测试实例(Neutralize)，或恢复为生产实例.
     """,
 }
