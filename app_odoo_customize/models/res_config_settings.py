@@ -4,6 +4,7 @@ import logging
 
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError
+from odoo.modules import neutralize as modules_neutralize
 
 _logger = logging.getLogger(__name__)
 
@@ -667,6 +668,62 @@ class ResConfigSettings(models.TransientModel):
     def action_set_app_doc_root_to_my(self):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         self.app_doc_root_url = base_url
+
+    def action_neutralize_database(self):
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
+        try:
+            modules_neutralize.neutralize_database(self.env.cr)
+        except Exception as e:
+            _logger.exception('Neutralize database error: %s', e)
+            raise UserError(_('Failed to neutralize database. Please check server logs.'))
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': _('Neutralization complete'),
+                'message': _('The current database has been successfully neutralized and marked as test.'),
+                'type': 'success',
+                'sticky': False,
+                'next': {
+                    'type': 'ir.actions.client',
+                    'tag': 'reload',
+                },
+            }
+        }
+
+    def action_mark_database_as_production(self):
+        """将数据库转换为生产库。注意：已匿名化或删除的数据无法恢复！各个功能如邮件、支付等的参数需要重新配置。"""
+        if not self._app_check_sys_op():
+            raise UserError(_('Not allow.'))
+        try:
+            banner_view = self.env.ref('web.neutralize_banner', raise_if_not_found=False)
+            if banner_view:
+                banner_view.sudo().write({'active': False})
+            ribbon_view = self.env.ref('website.neutralize_ribbon', raise_if_not_found=False)
+            if ribbon_view:
+                ribbon_view.sudo().write({'active': False})
+        except Exception as e:
+            _logger.exception('Unneutralize database error: %s', e)
+            raise UserError(_('Failed to mark database as production. Please check server logs.'))
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': _('Production mode enabled'),
+                'message': _(
+                    'This database is now marked as production-like. '
+                    'Anonymized or deleted data cannot be restored automatically. '
+                    'Please review and reconfigure outgoing email servers, payment providers, and other integrations before using it as a real production database.'
+                ),
+                'type': 'success',
+                'sticky': False,
+                'next': {
+                    'type': 'ir.actions.client',
+                    'tag': 'reload',
+                },
+            }
+        }
 
     # def action_set_all_to_app_doc_root_url(self):
     #     if self.app_doc_root_url:

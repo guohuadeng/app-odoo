@@ -201,6 +201,18 @@
                             <button string="Delete All MRP/Sale/Purchase/Account/MRP/Inventory/Project/Message/Workflow" type="object" name="remove_all_biz"
                                     confirm="Please confirm to delete the select data?" class="oe_highlight"/>
                         </div>
+                        <div class="col-12 col-lg-12 mb4">
+                            <span class="col-3 col-lg-2 text-left">Database Settings</span>
+                            <button string="Neutralize Database" type="object" name="action_neutralize_database"
+                                    groups="base.group_system"
+                                    confirm="This operation will convert this database into a test database, deactivate email sending, deactivate payment functions, and cannot be undone on this database."
+                                    class="oe_highlight"/>
+                            |
+                            <button string="Mark As Production Database" type="object" name="action_mark_database_as_production"
+                                    groups="base.group_system"
+                                    confirm="This will mark the current database as production-like. It will NOT restore anonymized or deleted data. You MUST manually review and reconfigure outgoing email servers, payment providers, and other integrations before using it as a real production database."
+                                    class="oe_highlight"/>
+                        </div>
                     </div>
                 </xpath>
 				<xpath expr="//block[@name='about_setting_container']//widget[@name='mobile_apps_funnel']" position="attributes">
