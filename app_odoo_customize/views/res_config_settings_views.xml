@@ -212,6 +212,10 @@
                                     groups="base.group_system"
                                     confirm="This will mark the current database as production-like. It will NOT restore anonymized or deleted data. You MUST manually review and reconfigure outgoing email servers, payment providers, and other integrations before using it as a real production database."
                                     class="oe_highlight"/>
+                            |
+                            <button string="Load demo data" name="%(base.demo_force_install_action)d" type="action"
+                                    groups="base.group_user"
+                                    class="oe_highlight"/>
                         </div>
                     </div>
                 </xpath>

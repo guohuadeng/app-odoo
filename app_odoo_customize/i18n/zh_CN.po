@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e-20260208\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-11 10:09+0000\n"
-"PO-Revision-Date: 2026-02-11 10:09+0000\n"
+"POT-Creation-Date: 2026-02-12 10:08+0000\n"
+"PO-Revision-Date: 2026-02-12 10:08+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -489,6 +489,7 @@ msgstr "许可"
 
 #. module: app_odoo_customize
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_demo_data
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Load demo data"
 msgstr "加载演示数据"
 
@@ -574,6 +575,12 @@ msgstr "无需更新"
 #: model_terms:ir.actions.act_window,help:app_odoo_customize.action_ir_module_category_list
 msgid "No data yet!"
 msgstr "没有数据。"
+
+#. module: app_odoo_customize
+#. odoo-python
+#: code:addons/app_odoo_customize/models/ir_module_module.py:0
+msgid "No installed modules selected."
+msgstr "未选择已安装的模块。"
 
 #. module: app_odoo_customize
 #. odoo-python
@@ -785,11 +792,8 @@ msgstr "本数据库已成功设为测试归档库。"
 #. module: app_odoo_customize
 #. odoo-python
 #: code:addons/app_odoo_customize/models/ir_module_module.py:0
-msgid ""
-"The languages that you selected have been successfully update."
-"                            You still need to Upgrade the apps to make it "
-"worked."
-msgstr "你选择的翻译语言已更新。但你仍然需要更新相关模块才可生效。"
+msgid "The languages that you selected have been successfully updated."
+msgstr "你选择的翻译语言已更新。"
 
 #. module: app_odoo_customize
 #. odoo-python
@@ -800,8 +804,7 @@ msgid ""
 "email servers, payment providers, and other integrations before using it as "
 "a real production database."
 msgstr ""
-"此数据库现已标记为生产环境类型。匿名化或删除的数据无法自动恢复。"
-"在将其用作真正的生产数据库之前，请检查并重新配置邮件服务、支付服务和其他功能的参数设置。"
+"此数据库现已标记为生产环境类型。匿名化或删除的数据无法自动恢复。在将其用作真正的生产数据库之前，请检查并重新配置邮件服务、支付服务和其他功能的参数设置。"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -809,8 +812,7 @@ msgid ""
 "This operation will convert this database into a test database, deactivate "
 "email sending, deactivate payment functions, and cannot be undone on this "
 "database."
-msgstr ""
-"此操作将把当前数据库转换为测试数据库，停用邮件发送功能、停用支付功能。此操作过程中删除的数据无法恢复。"
+msgstr "此操作将把当前数据库转换为测试数据库，停用邮件发送功能、停用支付功能。此操作过程中删除的数据无法恢复。"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -820,8 +822,7 @@ msgid ""
 "outgoing email servers, payment providers, and other integrations before "
 "using it as a real production database."
 msgstr ""
-"此操作将把当前数据设为为生产库。此操作不会恢复匿名化或删除的数据。"
-"在将其用作真正的生产数据库之前，请检查并重新配置邮件服务、支付服务和其他功能的参数设置。"
+"此操作将把当前数据设为为生产库。此操作不会恢复匿名化或删除的数据。在将其用作真正的生产数据库之前，请检查并重新配置邮件服务、支付服务和其他功能的参数设置。"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.app_edit_menu_access_search
