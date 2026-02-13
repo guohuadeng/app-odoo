@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <!-- VIEWS -->
+    <!-- VIEWS -->
+    <record id="app_view_move_form" model="ir.ui.view">
+        <field name="name">app.account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <!--                过帐操作-->
+            <xpath expr="//header//button[@name='action_post']" position="attributes">
+                <attribute name="string">Post Entry</attribute>
+            </xpath>
+        </field>
+    </record>
 
-        <record id="app_view_move_form" model="ir.ui.view">
-            <field name="name">app.account.move.form</field>
-            <field name="model">account.move</field>
-            <field name="inherit_id" ref="account.view_move_form"/>
-            <field name="arch" type="xml">
-<!--                过帐操作-->
-                <xpath expr="//header//button[@name='action_post']" position="attributes">
-                    <attribute name="string">Post Entry</attribute>
-                </xpath>
-            </field>
-        </record>
-
-
-        <record id="account.menu_action_move_out_invoice_type" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
-            <field name="name">销项订单收据</field>
-        </record>
-        <record id="account.action_move_out_refund_type" model="ir.actions.act_window" context="{'lang': 'zh_CN'}">
-            <field name="name">销项冲销</field>
-        </record>
-        <record id="account.menu_action_move_out_refund_type" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
-            <field name="name">销项冲销</field>
-        </record>
-
-    </data>
+    <record id="account.menu_action_move_out_invoice_type" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
+        <field name="name">销项订单收据</field>
+    </record>
+    <record id="account.action_move_out_refund_type" model="ir.actions.act_window" context="{'lang': 'zh_CN'}">
+        <field name="name">销项红字应收</field>
+    </record>
+    <record id="account.menu_action_move_out_refund_type" model="ir.ui.menu" context="{'lang': 'zh_CN'}">
+        <field name="name">销项红字应收</field>
+    </record>
 </odoo>

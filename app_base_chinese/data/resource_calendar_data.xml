@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- 默认user，使用write处理 -->
+        <function model="resource.calendar" name="write" context="{'active_test':0}">
+            <value eval="[ref('resource.resource_calendar_std')]"/>
+            <value eval="{
+            'name': '标准工时表-每周40小时'
+            }"/>
+        </function>
+    </data>
+</odoo>
