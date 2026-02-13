@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_asset_view_tree" model="ir.ui.view">
+        <field name="name">app.ir.asset.tree</field>
+        <field name="model">ir.asset</field>
+        <field name="inherit_id" ref="base.asset_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="id" optional="show"/>
+            </field>
+        </field>
+    </record>
+</odoo>

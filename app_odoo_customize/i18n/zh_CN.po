@@ -793,7 +793,7 @@ msgstr "本数据库已成功设为测试归档库。"
 #. odoo-python
 #: code:addons/app_odoo_customize/models/ir_module_module.py:0
 msgid "The languages that you selected have been successfully updated."
-msgstr "你选择的翻译语言已更新。"
+msgstr "你选择的翻译语言已更新。如涉及静态资源，有时需重启前端服务器如 Nginx 才可生效。"
 
 #. module: app_odoo_customize
 #. odoo-python
