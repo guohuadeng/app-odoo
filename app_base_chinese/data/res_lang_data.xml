@@ -24,6 +24,12 @@
             }"/>
         </function>
         <function model="res.lang" name="write">
+            <value eval="[ref('base.lang_zh_HK')]"/>
+            <value eval="{
+            'sequence': 2,
+            }"/>
+        </function>
+        <function model="res.lang" name="write">
             <value eval="[ref('base.lang_zh_TW')]"/>
             <value eval="{
             'name': '繁體中文',
