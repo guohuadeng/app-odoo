@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- lang视图, tree -->
+    <record id="app_view_lang_tree" model="ir.ui.view">
+        <field name="name">app.res.lang.tree</field>
+        <field name="model">res.lang</field>
+        <field name="inherit_id" ref="base.res_lang_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="sequence" widget="handle"/>
+            </xpath>
+        </field>
+    </record>
+    <!-- lang视图, form -->
+    <record id="app_view_lang_form" model="ir.ui.view">
+        <field name="name">app.res.lang.form</field>
+        <field name="model">res.lang</field>
+        <field name="inherit_id" ref="base.res_lang_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='active']" position="before">
+                <field name="sequence"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

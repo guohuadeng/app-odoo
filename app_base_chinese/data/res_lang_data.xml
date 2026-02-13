@@ -15,12 +15,33 @@
         </function>
     </data>
     <data noupdate="1">
-        <record id="base.lang_zh_CN" model="res.lang">
-            <field name="name">中文</field>
-            <field name="week_start">7</field>
-        </record>
-        <record id="base.lang_en" model="res.lang" context="{'lang': 'zh_CN'}">
-            <field name="name">English</field>
-        </record>
+        <!-- 此处将所有默认时间都精确至 秒，如有特殊需求在相关模块再处理-->
+        <function model="res.lang" name="write">
+            <value eval="[ref('base.lang_zh_CN')]"/>
+            <value eval="{
+            'name': '中文',
+            'sequence': 1,
+            }"/>
+        </function>
+        <function model="res.lang" name="write">
+            <value eval="[ref('base.lang_zh_TW')]"/>
+            <value eval="{
+            'name': '繁體中文',
+            'sequence': 3,
+            }"/>
+        </function>
+        <function model="res.lang" name="write">
+            <value eval="[ref('base.lang_en')]"/>
+            <value eval="{
+            'name': 'English',
+            'sequence': 4,
+            }"/>
+        </function>
+        <function model="res.lang" name="write">
+            <value eval="[ref('base.lang_es')]"/>
+            <value eval="{
+            'sequence': 5,
+            }"/>
+        </function>
     </data>
 </odoo>

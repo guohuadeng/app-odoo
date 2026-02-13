@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <!--        数据修正-->
-        <record id="ir_actions_server_res_company_app_set_chinese" model="ir.actions.server">
-            <field name="name">库存区位数据修正</field>
-            <field name="model_id" ref="base.model_res_company"/>
-            <field name="binding_model_id" ref="base.model_res_company"/>
-            <field name="binding_view_types">form,list</field>
-            <field name="state">code</field>
-            <field name="code">action = records._adjust_wh_cn_name()</field>
-        </record>
-    </data>
+    <!--        数据修正-->
+    <record id="ir_actions_server_res_company_app_set_chinese" model="ir.actions.server">
+        <field name="name">库存区位数据修正</field>
+        <field name="model_id" ref="base.model_res_company"/>
+        <field name="binding_model_id" ref="base.model_res_company"/>
+        <field name="binding_view_types">form,list</field>
+        <field name="state">code</field>
+        <field name="code">action = records._adjust_wh_cn_name()</field>
+    </record>
 </odoo>
