@@ -246,7 +246,7 @@ def get_image_from_url(url):
         pass
     else:
         # 处理相对路径
-        web_base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url', '')
+        web_base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url', '')
         url = web_base_url + url
     try:
         response = requests.get(url, timeout=5)
