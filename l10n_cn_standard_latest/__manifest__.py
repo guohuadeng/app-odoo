@@ -9,7 +9,7 @@
 
 {
     'name': '2025最新中国会计科目表.企业标准会计.Latest Chinese Accounting for odoo18',
-    'version': '18.0.25.09.06',
+    'version': '18.0.26.03.06',
     'author': 'odooai.cn',
     'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.odooai.cn',

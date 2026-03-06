@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-      <!-- account.account -->
+        <record id="action_update_account_codes_from_csv" model="ir.actions.server">
+            <field name="name">恢复编码(仅对无编码的会计科目)</field>
+            <field name="model_id" ref="account.model_account_account"/>
+            <field name="binding_model_id" ref="account.model_account_account"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="state">code</field>
+            <field name="code">action = records.action_update_account_codes_from_csv()</field>
+        </record>
+
     </data>
 </odoo>

@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0+e-20240821\n"
+"Project-Id-Version: Odoo Server 18.0+e-20260208\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-04 08:40+0000\n"
-"PO-Revision-Date: 2024-11-04 08:40+0000\n"
+"POT-Creation-Date: 2026-03-06 10:30+0000\n"
+"PO-Revision-Date: 2026-03-06 10:30+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,6 @@ msgstr ""
 #. module: l10n_cn_standard_latest
 #. odoo-python
 #: code:addons/l10n_cn_standard_latest/models/template_cn_standard.py:0
-#, python-format
 msgid "2025中国企业会计科目表-odoo18"
 msgstr ""
 
@@ -120,38 +119,24 @@ msgstr ""
 #. module: l10n_cn_standard_latest
 #. odoo-python
 #: code:addons/l10n_cn_standard_latest/models/template_cn_standard.py:0
-#, python-format
 msgid "Bank"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
 #. odoo-python
-#: code:addons/l10n_cn_standard_latest/models/account_account.py:0
-#, python-format
-msgid "Cannot generate an unused account code."
-msgstr "无法生成未使用的科目"
-
-#. module: l10n_cn_standard_latest
-#. odoo-python
 #: code:addons/l10n_cn_standard_latest/models/template_cn_standard.py:0
-#, python-format
 msgid "Cash on Hand"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account__child_ids
-msgid "Child Chart"
-msgstr "下级科目"
+#: model:ir.model,name:l10n_cn_standard_latest.model_res_company
+msgid "Companies"
+msgstr "公司"
 
 #. module: l10n_cn_standard_latest
 #: model:ir.model,name:l10n_cn_standard_latest.model_res_currency
 msgid "Currency"
 msgstr "币种"
-
-#. module: l10n_cn_standard_latest
-#: model_terms:ir.ui.view,arch_db:l10n_cn_standard_latest.app_view_account_search
-msgid "Group"
-msgstr "组"
 
 #. module: l10n_cn_standard_latest
 #: model:ir.model,name:l10n_cn_standard_latest.model_account_journal
@@ -169,16 +154,6 @@ msgid "Logo"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account__parent_id
-msgid "Parent Chart"
-msgstr "上级科目"
-
-#. module: l10n_cn_standard_latest
-#: model:ir.model.fields,field_description:l10n_cn_standard_latest.field_account_account__parent_path
-msgid "Parent Path"
-msgstr ""
-
-#. module: l10n_cn_standard_latest
 #: model:ir.model.fields,help:l10n_cn_standard_latest.field_account_tax_group__active
 msgid "Set active to false to hide the tax without removing it."
 msgstr ""
@@ -187,6 +162,12 @@ msgstr ""
 #: model:ir.model,name:l10n_cn_standard_latest.model_account_tax_group
 msgid "Tax Group"
 msgstr "税组"
+
+#. module: l10n_cn_standard_latest
+#. odoo-python
+#: code:addons/l10n_cn_standard_latest/models/account_account.py:0
+msgid "Updated %d account codes successfully"
+msgstr "已成功更新 %d 条记录"
 
 #. module: l10n_cn_standard_latest
 #: model:ir.actions.report,name:l10n_cn_standard_latest.account_voucher_cn
@@ -214,28 +195,13 @@ msgid "农业专用"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn13_p
-msgid "增值税13%进项税"
-msgstr ""
-
-#. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn13_s
-msgid "增值税13%销项税"
-msgstr ""
-
-#. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn16_p
-msgid "增值税16%进项税"
-msgstr ""
-
-#. module: l10n_cn_standard_latest
-#: model:account.account.tag,name:l10n_cn_standard_latest.tag_cn16_s
-msgid "增值税16%销项税"
-msgstr ""
-
-#. module: l10n_cn_standard_latest
 #: model:account.account.tag,name:l10n_cn_standard_latest.tag30
 msgid "建造承包商专用"
+msgstr ""
+
+#. module: l10n_cn_standard_latest
+#: model:ir.actions.server,name:l10n_cn_standard_latest.action_update_account_codes_from_csv
+msgid "恢复编码(仅对无编码的会计科目)"
 msgstr ""
 
 #. module: l10n_cn_standard_latest
