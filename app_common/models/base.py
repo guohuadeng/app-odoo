@@ -341,6 +341,8 @@ def get_ua_type():
     elif 'MicroMessenger' in ua:
         # 微信浏览器
         utype = 'wxweb'
+    elif 'DingTalk' in ua:
+        utype = 'dingtalk'
     elif 'cn.erpapp.o20sticks.App' in ua:
         # 安卓app
         utype = 'native_android'
