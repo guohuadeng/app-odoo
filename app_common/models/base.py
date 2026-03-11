@@ -242,7 +242,7 @@ class Base(models.AbstractModel):
         return deep_merge(a, b)
 
     @api.model
-    def cOw(self, vals, ref='name', domain=None):
+    def CoW(self, vals, ref='name', domain=None):
         if domain is None:
             domain = []
         ref_value = vals.get(ref)
@@ -260,13 +260,13 @@ class Base(models.AbstractModel):
         return record
 
     @api.model
-    def cOw_list(self, vals_list, ref='name', domain=None):
+    def CoW_list(self, vals_list, ref='name', domain=None):
         if domain is None:
             domain = []
 
         records = self.env[self._name]
         for vals in vals_list:
-            record = self.cOw(vals, ref=ref, domain=domain)
+            record = self.CoW(vals, ref=ref, domain=domain)
             records |= record
 
         return records
