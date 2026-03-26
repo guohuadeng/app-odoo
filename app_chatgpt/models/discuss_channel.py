@@ -40,7 +40,7 @@ class Channel(models.Model):
     # 主Ai
     ai_partner_id = fields.Many2one(comodel_name='res.partner', string='Main Ai', required=False,
                                     domain=[('gpt_id', '!=', None), ('is_chat_private', '=', True)],
-                                    default=lambda self: self._app_get_m2o_default('ai_partner_id'),
+                                    # default=lambda self: self._app_get_m2o_default('ai_partner_id'),
                                     help='Main Ai is the robot help you default.')
     ext_ai_partner_id = fields.Many2one(comodel_name='res.partner', string='Secondary Ai',
                                         domain=[('gpt_id', '!=', None), ('is_chat_private', '=', True)])
