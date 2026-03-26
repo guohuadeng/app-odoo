@@ -17,7 +17,7 @@
 
 {
     'name': "Project and task browse by partner,user, stage navigator",
-    'version': '18.0.26.03.25',
+    'version': '18.0.26.03.26',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
