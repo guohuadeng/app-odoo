@@ -107,3 +107,16 @@ class ResUsers(models.Model):
         # 当 not 时可直接使用 oauth_access_token 作为 password 登录
         self.ensure_one()
         return not self.oauth_access_token or super()._rpc_api_keys_only()
+
+    def clean_user_oauth_token_window(self):
+        self.write({
+            'oauth_access_token': False,
+            'oauth_provider_id': False,
+            'oauth_uid': False,
+        })
+        return {
+            'effect': {
+                'type': 'rainbow_man',
+                'message': _("Successfully clear the token of [%s] oauth users. " % len(self)),
+            }
+        }

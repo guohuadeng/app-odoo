@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e-20241226\n"
+"Project-Id-Version: Odoo Server 18.0+e-20260208\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-06 10:11+0000\n"
-"PO-Revision-Date: 2025-01-06 10:11+0000\n"
+"POT-Creation-Date: 2026-03-30 18:02+0000\n"
+"PO-Revision-Date: 2026-03-30 18:02+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -33,6 +33,7 @@ msgstr "勾选后即可启用Odoo中文云翻译，相关服务由 www.odooapp.c
 
 #. module: app_saas
 #: model:ir.model.fields,field_description:app_saas.field_res_config_settings__app_saas_db_token
+#: model_terms:ir.ui.view,arch_db:app_saas.app_res_config_settings_view_form
 msgid "Cloud DB Token"
 msgstr "数据库令牌"
 
@@ -47,14 +48,14 @@ msgid "Get Token from Code. Only for Code response type."
 msgstr "通过Code获取Access Token。仅在 Code 响应模式下生效"
 
 #. module: app_saas
-#: model_terms:ir.ui.view,arch_db:app_saas.app_res_config_settings_view_form
-msgid "https://www.odooapp.cn/apps/modules/app_cn_po"
-msgstr "https://www.odooapp.cn/apps/modules/app_cn_po"
+#: model:ir.model.fields,field_description:app_saas.field_auth_oauth_provider__user_template_id
+msgid "New User Template"
+msgstr "新用户模板"
 
 #. module: app_saas
-#: model_terms:ir.ui.view,arch_db:app_saas.app_res_config_settings_view_form
-msgid "https://www.odooapp.cn/my/"
-msgstr "https://www.odooapp.cn/my/"
+#: model:ir.model,name:app_saas.model_auth_oauth_provider
+msgid "OAuth2 provider"
+msgstr "OAuth2服务商"
 
 #. module: app_saas
 #: model_terms:ir.ui.view,arch_db:app_saas.app_res_config_settings_view_form
@@ -66,6 +67,11 @@ msgstr "您可以在此获取本应用模块"
 #: model_terms:ir.ui.view,arch_db:app_saas.app_res_config_settings_view_form
 msgid "SaaS Chinese PO"
 msgstr "中文云翻译PO"
+
+#. module: app_saas
+#: model:ir.model,name:app_saas.model_ir_config_parameter
+msgid "System Parameter"
+msgstr "系统参数"
 
 #. module: app_saas
 #: model:ir.model.fields,help:app_saas.field_res_config_settings__app_saas_db_token
@@ -90,3 +96,18 @@ msgstr "Code取Token入口"
 #: model:ir.model,name:app_saas.model_res_users
 msgid "User"
 msgstr "用户"
+
+#. module: app_saas
+#: model:ir.actions.server,name:app_saas.ir_actions_server_clean_user_oauth_token_window
+msgid "User: Clean Oauth Token"
+msgstr "用户：清理Token"
+
+#. module: app_saas
+#: model_terms:ir.ui.view,arch_db:app_saas.app_res_config_settings_view_form
+msgid "https://www.odooapp.cn/apps/modules/app_cn_po"
+msgstr ""
+
+#. module: app_saas
+#: model_terms:ir.ui.view,arch_db:app_saas.app_res_config_settings_view_form
+msgid "https://www.odooapp.cn/my/"
+msgstr ""
