@@ -160,31 +160,42 @@ class Base(models.AbstractModel):
         if not self._app_check_sys_op():
             return False
         return get_image_from_url(url)
-
+    
     @api.model
     def _get_image_url2attachment(self, url, mimetype_list=None):
         # Todo: mimetype filter
+        # 根据远程url生成本地附件，当前主要处理 image
         if not self._app_check_sys_op():
             return False
         image, file_name = get_image_url2attachment(url)
         if image and file_name:
             try:
-                attachment = self.env['ir.attachment'].create({
+                attachment = self.env['ir.attachment'].sudo()
+                res = {
                     'datas': image,
                     'name': file_name,
                     'website_id': False,
                     'res_model': self._name,
                     'res_id': self.id,
                     'public': True,
-                })
-                attachment.generate_access_token()
+                }
+                if hasattr(attachment, 'is_from_remote'):
+                    # 处理先找历史已存附件
+                    res.update({
+                        'is_from_remote': True,
+                        'remote_url': url,
+                    })
+                    attachment = attachment.search([('is_from_remote', '=', True), ('remote_url', '=', url)], limit=1)
+                if not attachment:
+                    attachment = attachment.create(res)
+                    attachment.generate_access_token()
                 return attachment
             except Exception as e:
                 _logger.error('get_image_url2attachment error: %s' % str(e))
                 return False
         else:
             return False
-
+        
     @api.model
     def _get_image_base642attachment(self, data):
         if not self._app_check_sys_op():
@@ -192,14 +203,15 @@ class Base(models.AbstractModel):
         image, file_name = get_image_base642attachment(data)
         if image and file_name:
             try:
-                attachment = self.env['ir.attachment'].create({
+                res = {
                     'datas': image,
                     'name': file_name,
                     'website_id': False,
                     'res_model': self._name,
                     'res_id': self.id,
                     'public': True,
-                })
+                }
+                attachment = self.env['ir.attachment'].create(res)
                 attachment.generate_access_token()
                 return attachment
             except Exception as e:
