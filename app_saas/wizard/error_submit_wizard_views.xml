@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="error_submit_wizard_form" model="ir.ui.view">
+            <field name="name">error.submit.wizard.form</field>
+            <field name="model">error.submit.wizard</field>
+            <field name="arch" type="xml">
+                <form js_class="error_submit_form">
+                    <sheet>
+                        <div class="alert alert-info" role="alert">
+                            <strong>Tip:</strong> Please confirm the following error information, and we will provide technical support for you as soon as possible.
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="issue_title"/>
+                                <field name="issue_url" placeholder="http://localhost"/>
+                            </group>
+                            <group>
+                                <field name="submit_login" readonly="1"/>
+                                <field name="odoo_version" readonly="1"/>
+                                <field name="dbuuid" readonly="1"/>
+                                <field name="error_report_url" readonly="True" force_save="1"/>
+                                <field name="submit_type" widget="radio" options="{'horizontal': True}"/>
+                            </group>
+                        </group>
+
+                        <group string="Issue Content">
+                            <field name="issue_body" readonly="1" nolabel="1"
+                                   style="font-family: monospace; background-color: #f5f5f5;"/>
+                        </group>
+                    </sheet>
+
+                    <footer>
+                        <button name="action_submit_error"
+                                string="Submit"
+                                type="object"
+                                class="btn-primary oe_highlight"
+                                icon="fa-paper-plane"/>
+                        <button string="Cancel"
+                                class="btn-secondary"
+                                special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_error_submit_wizard" model="ir.actions.act_window">
+            <field name="name">Submit Error</field>
+            <field name="res_model">error.submit.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="error_submit_wizard_form"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

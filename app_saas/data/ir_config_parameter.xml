@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="error_report_url" model="ir.config_parameter" forcecreate="1">
+            <field name="key">app_saas.error_report_url</field>
+            <field name="value">https://www.odooai.cn/service/error-report</field>
+        </record>
+    </data>
+</odoo>

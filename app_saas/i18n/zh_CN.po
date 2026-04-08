@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e-20260208\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-30 18:02+0000\n"
-"PO-Revision-Date: 2026-03-30 18:02+0000\n"
+"POT-Creation-Date: 2026-04-08 10:17+0000\n"
+"PO-Revision-Date: 2026-04-08 10:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,9 +21,29 @@ msgid "<strong>Save</strong> to Install Chinese PO App if downloaded."
 msgstr "<strong>保存</strong> 后可以安装本地的Odoo中文翻译模块，安装时会自动用最新 .po 文件覆盖本地的文件。"
 
 #. module: app_saas
+#: model_terms:ir.ui.view,arch_db:app_saas.error_submit_wizard_form
+msgid ""
+"<strong>Tip:</strong> Please confirm the following error information, and we"
+" will provide technical support for you as soon as possible."
+msgstr ""
+"<strong>提示:</strong> 请确认以下错误信息，"
+"我们将尽快为您提供技术支持。"
+
+#. module: app_saas
 #: model:auth.oauth.provider,body:app_saas.provider_app_saas
 msgid "Ai Passport of odooapp.cn"
 msgstr "Ai通行证-Odoo中文应用商店"
+
+#. module: app_saas
+#. odoo-javascript
+#: code:addons/app_saas/static/src/xml/error_dialog_extend.xml:0
+msgid "Apply Support"
+msgstr "申请支持"
+
+#. module: app_saas
+#: model_terms:ir.ui.view,arch_db:app_saas.error_submit_wizard_form
+msgid "Cancel"
+msgstr "取消"
 
 #. module: app_saas
 #: model:ir.model.fields,help:app_saas.field_res_config_settings__module_app_cn_po
@@ -43,9 +63,94 @@ msgid "Config Settings"
 msgstr "设置"
 
 #. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__dbuuid
+msgid "Database UUID"
+msgstr "数据库UUID"
+
+#. module: app_saas
+#: model:ir.model.fields,help:app_saas.field_error_submit_wizard__dbuuid
+msgid "Database UUID of the current instance of Odoo"
+msgstr ""
+
+#. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__error_report_url
+msgid "Error Report URL"
+msgstr "报错提交URL"
+
+#. module: app_saas
+#: model:ir.model,name:app_saas.model_error_submit_wizard
+msgid "Error Submit Wizard"
+msgstr "报错提交向导"
+
+#. module: app_saas
 #: model:ir.model.fields,help:app_saas.field_auth_oauth_provider__code_endpoint
 msgid "Get Token from Code. Only for Code response type."
 msgstr "通过Code获取Access Token。仅在 Code 响应模式下生效"
+
+#. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__issue_body
+msgid "Issue Body"
+msgstr "技术报错信息"
+
+#. module: app_saas
+#: model:ir.model.fields,help:app_saas.field_error_submit_wizard__issue_body
+msgid "Issue Body, typically traceback traceback information"
+msgstr ""
+
+#. module: app_saas
+#: model_terms:ir.ui.view,arch_db:app_saas.error_submit_wizard_form
+msgid "Issue Content"
+msgstr "报错信息"
+
+#. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__issue_title
+msgid "Issue Title"
+msgstr "报错标题"
+
+#. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__issue_url
+msgid "Issue URL"
+msgstr "报错URL"
+
+#. module: app_saas
+#: model:ir.model.fields,help:app_saas.field_error_submit_wizard__issue_url
+msgid "Issue URL where the error occurred"
+msgstr ""
+
+#. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: app_saas
+#: model:ir.model.fields,help:app_saas.field_error_submit_wizard__submit_login
+msgid "Login ID of the user submitting the error report"
+msgstr ""
 
 #. module: app_saas
 #: model:ir.model.fields,field_description:app_saas.field_auth_oauth_provider__user_template_id
@@ -58,15 +163,63 @@ msgid "OAuth2 provider"
 msgstr "OAuth2服务商"
 
 #. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__odoo_version
+msgid "Odoo Version"
+msgstr "Odoo版本"
+
+#. module: app_saas
 #: model_terms:ir.ui.view,arch_db:app_saas.app_res_config_settings_view_form
 msgid "Or get the app from"
 msgstr "您可以在此获取本应用模块"
+
+#. module: app_saas
+#: model:ir.model.fields.selection,name:app_saas.selection__error_submit_wizard__submit_type__public
+msgid "Public"
+msgstr "公开"
+
+#. module: app_saas
+#. odoo-javascript
+#: code:addons/app_saas/static/src/xml/error_dialog_extend.xml:0
+msgid "Report this error to OdooAi.cn for support Via Ai Passport"
+msgstr "使用Ai通行证提交报错信息到OdooAi.cn"
 
 #. module: app_saas
 #: model:ir.model.fields,field_description:app_saas.field_res_config_settings__module_app_cn_po
 #: model_terms:ir.ui.view,arch_db:app_saas.app_res_config_settings_view_form
 msgid "SaaS Chinese PO"
 msgstr "中文云翻译PO"
+
+#. module: app_saas
+#: model:ir.model.fields,help:app_saas.field_error_submit_wizard__submit_type
+msgid ""
+"Select how to submit the error report: Ticket (private) or Public (forum)."
+msgstr "选择提交报错类型：工单(私密)或公开(论坛)。"
+
+#. module: app_saas
+#: model_terms:ir.ui.view,arch_db:app_saas.error_submit_wizard_form
+msgid "Submit"
+msgstr "提交"
+
+#. module: app_saas
+#: model:ir.actions.act_window,name:app_saas.action_error_submit_wizard
+msgid "Submit Error"
+msgstr "提交报错"
+
+#. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__submit_login
+msgid "Submit Login"
+msgstr "提交人"
+
+#. module: app_saas
+#: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__submit_type
+msgid "Submit Type"
+msgstr "提交类型"
+
+#. module: app_saas
+#. odoo-python
+#: code:addons/app_saas/models/res_users.py:0
+msgid "Successfully clear the token of [%s] oauth users. "
+msgstr ""
 
 #. module: app_saas
 #: model:ir.model,name:app_saas.model_ir_config_parameter
@@ -88,9 +241,19 @@ msgid ""
 msgstr "本数据库实例的令牌。首次使用Ai通行证时自动生成，您也可以在我们的网站上重新生成。请访问 https://www.odooapp.cn"
 
 #. module: app_saas
+#: model:ir.model.fields.selection,name:app_saas.selection__error_submit_wizard__submit_type__ticket
+msgid "Ticket"
+msgstr "工单"
+
+#. module: app_saas
 #: model:ir.model.fields,field_description:app_saas.field_auth_oauth_provider__code_endpoint
 msgid "Token by Code Endpoint"
 msgstr "Code取Token入口"
+
+#. module: app_saas
+#: model:ir.model.fields,help:app_saas.field_error_submit_wizard__error_report_url
+msgid "URL to submit the error report to"
+msgstr ""
 
 #. module: app_saas
 #: model:ir.model,name:app_saas.model_res_users
@@ -103,6 +266,11 @@ msgid "User: Clean Oauth Token"
 msgstr "用户：清理Token"
 
 #. module: app_saas
+#: model_terms:ir.ui.view,arch_db:app_saas.error_submit_wizard_form
+msgid "http://localhost"
+msgstr ""
+
+#. module: app_saas
 #: model_terms:ir.ui.view,arch_db:app_saas.app_res_config_settings_view_form
 msgid "https://www.odooapp.cn/apps/modules/app_cn_po"
 msgstr ""
@@ -110,4 +278,34 @@ msgstr ""
 #. module: app_saas
 #: model_terms:ir.ui.view,arch_db:app_saas.app_res_config_settings_view_form
 msgid "https://www.odooapp.cn/my/"
+msgstr ""
+
+#. module: app_saas
+#. odoo-javascript
+#: code:addons/app_saas/static/src/js/error_submit_form_view.js:0
+msgid "提交失败"
+msgstr ""
+
+#. module: app_saas
+#. odoo-javascript
+#: code:addons/app_saas/static/src/js/error_submit_form_view.js:0
+msgid "提交失败: %s。请检查网络连接后重试。"
+msgstr ""
+
+#. module: app_saas
+#. odoo-javascript
+#: code:addons/app_saas/static/src/js/error_submit_form_view.js:0
+msgid "提交成功"
+msgstr ""
+
+#. module: app_saas
+#. odoo-javascript
+#: code:addons/app_saas/static/src/js/error_submit_form_view.js:0
+msgid "正在提交错误报告..."
+msgstr ""
+
+#. module: app_saas
+#. odoo-javascript
+#: code:addons/app_saas/static/src/js/error_submit_form_view.js:0
+msgid "错误报告已提交到 odooai.cn，工单号: %s。我们会尽快处理！"
 msgstr ""
