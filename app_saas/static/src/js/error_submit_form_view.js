@@ -98,7 +98,7 @@ class ErrorSubmitFormController extends FormController {
 
                 // 显示成功通知
                 this.notification.add(
-                    _t("错误报告已提交到 odooai.cn，工单号: %s。我们会尽快处理！", ticketId),
+                    _t("错误报告已提交到 odooai.cn。我们会尽快处理！"),
                     {
                         type: "success",
                         sticky: false,
@@ -120,7 +120,7 @@ class ErrorSubmitFormController extends FormController {
 
             // 显示失败通知
             this.notification.add(
-                _t("提交失败: %s。请检查网络连接后重试。", error.message),
+                _t("提交失败: %s", error.message),
                 {
                     type: "danger",
                     sticky: true,
