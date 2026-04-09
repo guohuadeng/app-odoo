@@ -60,17 +60,40 @@ class ErrorSubmitFormController extends FormController {
             });
 
             // 发送HTTP请求
-            const response = await fetch(errorReportUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'User-Agent': 'OdooAppSaas-Client/18.0',
-                },
-                body: JSON.stringify(submitData),
-            });
+            let response;
+            try {
+                console.log("开始发送请求到:", errorReportUrl);
+                console.log("请求数据:", submitData);
+                response = await fetch(errorReportUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'User-Agent': 'OdooAppSaas-Client/18.0',
+                    },
+                    body: JSON.stringify(submitData),
+                });
+                console.log("收到响应:", response.status, response.statusText);
+                console.log("响应头:", [...response.headers.entries()]);
+            } catch (fetchError) {
+                // 网络请求失败（CORS、DNS、连接失败等）
+                console.error("Fetch 请求失败详情:", fetchError);
+                console.error("Fetch 错误名称:", fetchError.name);
+                console.error("Fetch 错误消息:", fetchError.message);
+                throw new Error(_t("无法连接到服务器，请检查网络或联系管理员 (" + fetchError.message + ")"));
+            }
 
-            if (response.ok) {
-                const resultData = await response.json().catch(() => ({}));
+            // 解析响应数据
+            let resultData;
+            try {
+                const responseText = await response.text();
+                console.log("响应内容:", responseText);
+                resultData = responseText ? JSON.parse(responseText) : {};
+            } catch (parseError) {
+                console.error("解析响应失败:", parseError);
+                resultData = {};
+            }
+
+            if (response.ok && resultData.success) {
                 const ticketId = resultData.ticket_id || 'N/A';
 
                 // 显示成功通知
@@ -83,10 +106,14 @@ class ErrorSubmitFormController extends FormController {
                     }
                 );
 
-                // 关闭向导
-                this.env.services.action.doAction({ type: "ir.actions.act_window_close" });
+                // 3秒后关闭向导
+                setTimeout(() => {
+                    this.env.services.action.doAction({ type: "ir.actions.act_window_close" });
+                }, 3000);
             } else {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                // 处理服务器返回的错误
+                const errorMessage = resultData.message || `HTTP ${response.status}: ${response.statusText}`;
+                throw new Error(errorMessage);
             }
         } catch (error) {
             console.error("提交错误报告失败:", error);
