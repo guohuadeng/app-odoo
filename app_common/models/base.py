@@ -160,7 +160,7 @@ class Base(models.AbstractModel):
         if not self._app_check_sys_op():
             return False
         return get_image_from_url(url)
-    
+
     @api.model
     def _get_image_url2attachment(self, url, mimetype_list=None):
         # Todo: mimetype filter
@@ -195,7 +195,7 @@ class Base(models.AbstractModel):
                 return False
         else:
             return False
-        
+
     @api.model
     def _get_image_base642attachment(self, data):
         if not self._app_check_sys_op():
@@ -414,3 +414,13 @@ def deep_merge(a, b):
         else:
             a[key] = b[key]
     return a
+
+def int_to_hex_color(color_index):
+    color_map = [
+        '#a2a2a2', '#ee2d2d', '#dc8534', '#e8bb1d', '#5794dd',
+        '#9f628f', '#db8865', '#41a9a2', '#304be0', '#ee2f8a',
+        '#61c36e', '#9872e6'
+    ]
+    if 0 <= color_index < len(color_map):
+        return color_map[color_index]
+    return color_map[0]
