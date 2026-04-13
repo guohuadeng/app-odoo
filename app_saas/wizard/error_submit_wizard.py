@@ -44,9 +44,9 @@ class ErrorSubmitWizard(models.TransientModel):
 
     submit_type = fields.Selection(
         selection=[
-            ('ticket', 'Ticket'),
             ('public', 'Public'),
-        ], string='Submit Type', default='ticket', required=True,
+            ('ticket', 'Ticket'),
+        ], string='Submit Type', default='public', required=True,
         help='Select how to submit the error report: Ticket (private) or Public (forum).'
     )
 

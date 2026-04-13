@@ -38,7 +38,7 @@ class ErrorSubmitFormController extends FormController {
             issue_body: record.data.issue_body || '',
             dbuuid: record.data.dbuuid || '',
             submit_login: record.data.submit_login || '',
-            submit_type: record.data.submit_type || 'ticket',
+            submit_type: record.data.submit_type || 'public',
             odoo_version: record.data.odoo_version || '',
             timestamp: new Date().toISOString(),
         };

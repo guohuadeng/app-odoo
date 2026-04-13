@@ -27,7 +27,7 @@ msgid ""
 " will provide technical support for you as soon as possible."
 msgstr ""
 "<strong>提示:</strong> 请确认以下错误信息，"
-"我们将尽快为您提供技术支持。"
+"我们将尽快为您提供技术支持。工单模式仅限制VIP/项目客户，非vip将自动公布此报错至互联网寻求支持。"
 
 #. module: app_saas
 #: model:auth.oauth.provider,body:app_saas.provider_app_saas
@@ -193,7 +193,7 @@ msgstr "中文云翻译PO"
 #: model:ir.model.fields,help:app_saas.field_error_submit_wizard__submit_type
 msgid ""
 "Select how to submit the error report: Ticket (private) or Public (forum)."
-msgstr "选择提交报错类型：工单(私密)或公开(论坛)。"
+msgstr "选择提交报错类型：公开(论坛)或工单(私密)。工单模式仅限VIP/项目客户，如果您不是我们的VIP，此技术支持将自动公开至互联网。"
 
 #. module: app_saas
 #: model_terms:ir.ui.view,arch_db:app_saas.error_submit_wizard_form
@@ -243,7 +243,7 @@ msgstr "本数据库实例的令牌。首次使用Ai通行证时自动生成，�
 #. module: app_saas
 #: model:ir.model.fields.selection,name:app_saas.selection__error_submit_wizard__submit_type__ticket
 msgid "Ticket"
-msgstr "工单"
+msgstr "工单(仅Vip)"
 
 #. module: app_saas
 #: model:ir.model.fields,field_description:app_saas.field_auth_oauth_provider__code_endpoint
