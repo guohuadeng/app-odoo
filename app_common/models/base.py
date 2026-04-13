@@ -7,6 +7,8 @@ import uuid
 from PIL import Image
 from datetime import date, datetime, time
 import pytz
+import re
+import unicodedata
 
 import logging
 
@@ -282,6 +284,40 @@ class Base(models.AbstractModel):
             records |= record
 
         return records
+    
+    def _app_sanitize_filename(self, filename):
+        """将字符串转换为安全的文件名，去掉非法字符并避免乱码
+
+        :param filename: 原始文件名字符串
+        :return: 清理后的安全文件名
+        """
+        if not filename:
+            return 'unnamed'
+        
+        # 1. Unicode标准化，将字符转换为NFKC形式（兼容性分解后再组合）
+        sanitized = unicodedata.normalize('NFKC', filename)
+        
+        # 2. 替换常见的非法文件名字符为下划线或连字符
+        # Windows和Unix系统不允许的字符: < > : " / \ | ? *
+        # 同时替换空格、制表符等为连字符
+        sanitized = re.sub(r'[<>:"/\\|?*]', '_', sanitized)
+        sanitized = re.sub(r'[\s\t]+', '-', sanitized)
+        
+        # 3. 移除控制字符和其他不可打印字符（保留中文、英文、数字、常见符号）
+        sanitized = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', sanitized)
+        
+        # 4. 移除开头和结尾的空格、点号、连字符、下划线
+        sanitized = sanitized.strip(' ._-')
+        
+        # 5. 如果文件名为空，返回默认名称
+        if not sanitized:
+            return 'unnamed'
+        
+        # 6. 限制文件名长度（Windows最大255字符，留一些空间给扩展名和前缀）
+        if len(sanitized) > 200:
+            sanitized = sanitized[:200]
+        
+        return sanitized
 
 def get_image_from_url(url):
     if not url:
