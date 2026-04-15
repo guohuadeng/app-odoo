@@ -17,7 +17,7 @@
 
 {
     'name': "App account superbar navigator",
-    'version': '18.0.26.02.09',
+    'version': '18.0.26.04.15',
     'author': 'odooai.cn',
     'category': 'Accounting/Accounting',
     'website': 'https://www.odooai.cn',
@@ -42,6 +42,7 @@
     'images': ['static/description/banner.png'],
     'data': [
         'views/account_account_views.xml',
+        'views/account_analytic_account_views.xml',
         'views/account_move_line_views.xml',
         'views/account_move_views.xml',
         'views/account_analytic_line_views.xml',

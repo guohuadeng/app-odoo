@@ -1,0 +1,16 @@
+<odoo>
+    <record id="app_view_account_analytic_account_search" model="ir.ui.view">
+        <field name="name">account.analytic.account.search.superbar</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel view_types="list,kanban,pivot,graph,search">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="plan_id" enable_counters="1" select="multi"/>
+                    <field name="partner_id" enable_counters="1" select="multi"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+</odoo>
