@@ -20,7 +20,7 @@
                                 <field name="submit_login" readonly="1"/>
                                 <field name="odoo_version" readonly="1"/>
                                 <field name="dbuuid" readonly="1"/>
-                                <field name="error_report_url" readonly="True" force_save="1"/>
+                                <field name="error_report_url" readonly="True" force_save="1" invisible="1"/>
                                 <field name="submit_type" widget="radio" options="{'horizontal': True}"/>
                             </group>
                         </group>

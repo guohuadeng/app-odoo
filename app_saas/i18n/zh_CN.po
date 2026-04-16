@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e-20260208\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-08 10:17+0000\n"
-"PO-Revision-Date: 2026-04-08 10:17+0000\n"
+"POT-Creation-Date: 2026-04-16 03:36+0000\n"
+"PO-Revision-Date: 2026-04-16 03:36+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -120,12 +120,12 @@ msgstr ""
 #. module: app_saas
 #: model_terms:ir.ui.view,arch_db:app_saas.error_submit_wizard_form
 msgid "Issue Content"
-msgstr "报错信息"
+msgstr "需求说明"
 
 #. module: app_saas
 #: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__issue_title
 msgid "Issue Title"
-msgstr "报错标题"
+msgstr "简述"
 
 #. module: app_saas
 #: model:ir.model.fields,field_description:app_saas.field_error_submit_wizard__issue_url
@@ -301,11 +301,17 @@ msgstr ""
 #. module: app_saas
 #. odoo-javascript
 #: code:addons/app_saas/static/src/js/error_submit_form_view.js:0
+msgid "无法连接到服务器，请检查网络或联系管理员 ()"
+msgstr ""
+
+#. module: app_saas
+#. odoo-javascript
+#: code:addons/app_saas/static/src/js/error_submit_form_view.js:0
 msgid "正在提交错误报告..."
 msgstr ""
 
 #. module: app_saas
 #. odoo-javascript
 #: code:addons/app_saas/static/src/js/error_submit_form_view.js:0
-msgid "错误报告已提交到 odooai.cn，工单号: %s。我们会尽快处理！"
+msgid "错误报告已提交到 odooai.cn。我们会尽快处理！"
 msgstr ""
