@@ -91,5 +91,19 @@ msgstr "会计科目模板"
 #. odoo-python
 #: code:addons/app_account_ztree/models/account_account.py:0
 #, python-format
+msgid "Cannot change the code of account '%s' because it has child accounts. Please reassign or remove the child accounts first."
+msgstr "无法修改科目 %s 的编码，因为它存在下级科目。请先重新分配或移除下级科目。"
+
+#. module: app_account_ztree
+#. odoo-python
+#: code:addons/app_account_ztree/models/account_account.py:0
+#, python-format
+msgid "Cannot delete account '%s' because it has child accounts. Please delete or reassign the child accounts first."
+msgstr "无法删除科目 %s ，因为它存在下级科目。请先删除或重新分配下级科目。"
+
+#. module: app_account_ztree
+#. odoo-python
+#: code:addons/app_account_ztree/models/account_account.py:0
+#, python-format
 msgid "Update parent account chart done.<br/>【%s】 records updated."
 msgstr "更新会计科目表上下级关系完成。<br/>【%s】 条记录更新完成。"

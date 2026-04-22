@@ -17,7 +17,7 @@
 
 {
     'name': "!Account Multi Level Chart,parent children tree,多层级会计科目",
-    'version': '18.0.24.12.12',
+    'version': '18.0.26.04.22',
     'author': 'odooai.cn',
     'category': 'Accounting/Accounting',
     'website': 'https://www.odooai.cn',
