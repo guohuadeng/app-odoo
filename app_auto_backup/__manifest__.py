@@ -16,7 +16,7 @@
     3. Manual backup database in one click
     4. Easy download backup file or remove file for System user
     11. Multi-language Support. Multi-Company Support.
-    12. Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    12. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
         The Database Auto-Backup module enables the user to make configurations for the automatic backup of the database. 
         Backups can be taken on the local system or on a remote server, through SFTP.

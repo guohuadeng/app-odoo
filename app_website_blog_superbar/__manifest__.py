@@ -57,11 +57,11 @@
     Odoo App of odooai.cn
     ''',
     'description': '''
-    Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition
+    Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition
     1.
     2.
     11. Multi-language Support. Multi-Company Support.
-    12. Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    12. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
     ==========
     1.

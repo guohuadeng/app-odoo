@@ -46,7 +46,7 @@ Need extra paid apps https://www.odoo.com/apps/modules/16.0/app_web_widget_ztree
 This module extend to show a Hierarchy chart
     1. Group Company Chart Hierarchy with zchart Widget. Hierarchy Chart, Hierarchy Tree for multi level Parent Children relation tree.
     11. Multi-language Support. Multi-Company Support.
-    12. Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    12. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
     ========== 中文说明
     1. 多层级公司树状展示

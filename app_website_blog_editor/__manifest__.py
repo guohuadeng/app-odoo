@@ -63,7 +63,7 @@
     3. Mass translate website page, website blog, website product to any language. this need extra pay for app_ai_seo
     4. Easy mass seo builder. Use AI to edit website. mass setup seo. this need extra pay for app_ai_seo
     11. Multi-language Support. Multi-Company Support.
-    12. Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    12. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
     ==========
     程序员网站开发专用

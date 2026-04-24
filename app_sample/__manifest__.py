@@ -42,7 +42,7 @@
     'description': '''
     Just Rename the sample app to your name to quick create new module.
     All file follow odoo rule with comments.
-    Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition
+    Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition
     Odoo Developr rule from here
     https://www.odooai.cn/documentation/16.0/developer.html
     1. A full Sample module app of odoo addons. All the code, views, data ,banner, icon and description sample follow the odoo rule.
@@ -59,7 +59,7 @@
     9. Odoo Widget sample. 170+ widget list document and Frequently Used Sample.
     10. Quick access odoo developer Tutorials online. Document online for chinese and english. Fast visit in China.
     11. Multi-language Support. Multi-Company Support.
-    12. Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    12. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
     ========== 中文说明
     1. 一个完整的odoo插件模块应用程序示例，所有代码、视图和数据都遵循odoo规则

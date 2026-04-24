@@ -70,7 +70,7 @@
     14.Common decimal precision adjustments made.
     15.Sales team changed to [China].
     21. Multi-language Support. Multi-Company Support.
-    22. Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    22. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     23. Full Open Source.
     ''',
     'pre_init_hook': 'pre_init_hook',
