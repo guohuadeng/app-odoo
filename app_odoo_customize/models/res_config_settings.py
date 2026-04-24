@@ -498,7 +498,24 @@ class ResConfigSettings(models.TransientModel):
             'project.task.stage.personal',
         ]
         seqs = []
-        return self._remove_app_data(to_removes, seqs)
+        # 先缓存所有 project 的 alias_id，清除 project 记录后再清除对应的 mail.alias
+        alias_ids = []
+        try:
+            projects = self.env['project.project'].sudo().with_context(active_test=False).search([])
+            alias_ids = projects.mapped('alias_id').ids
+        except Exception as e:
+            pass  # raise Warning(e)
+        res = self._remove_app_data(to_removes, seqs)
+        # 清除项目记录后，清除之前缓存的 alias_id
+        if alias_ids:
+            try:
+                aliases = self.env['mail.alias'].sudo().browse(alias_ids).exists()
+                if aliases:
+                    aliases.unlink()
+                    self._cr.commit()
+            except Exception as e:
+                pass  # raise Warning(e)
+        return res
 
     def remove_quality(self):
         to_removes = [
