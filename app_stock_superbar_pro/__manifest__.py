@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "Stock Superbar Pro with date search, parent children tree",
+    'name': '库存高级超级搜索栏 / Stock Superbar Pro with Date Search',
     'version': '18.0.25.09.08',
     'author': 'odooai.cn',
     'category': 'Inventory/Inventory',
@@ -24,15 +24,28 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Use for parent children tree list select navigator. stock location tree, filter by parent location.
-    ztree widget.
-    """,
+    'summary': '库存高级搜索，支持日期搜索和父子树导航 / Advance stock search with date range and parent children tree',
     'description': """
-    zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView ,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+1. Pro version of Stock Superbar with advanced date search capabilities.
+2. Support instant mode for one-click search and lazy mode for big data performance.
+3. Advance search with real parent children tree in ListView, KanbanView, Pivot and Graph view.
+4. Support stock picking, stock picking batch, stock move and stock move line views.
+5. Support date range search for stock operations.
+6. Easy to customize for any Odoo module with simple XML configuration.
+7. Multi-Language Support.
+8. Multi-Company Support.
+9. Full Version Support for Odoo 19,18,17,16,15,14,13,12, Enterprise and Community Edition.
+10. Full Open Source under LGPL-3 license.
+1. 库存超级搜索栏专业版，提供高级日期搜索功能。
+2. 支持即时模式一键搜索，延迟模式适合大数据量性能优化。
+3. 使用父子树结构在列表、看板、透视和图表视图中进行高级搜索。
+4. 支持调拨单、批次调拨、库存移动和移动线视图。
+5. 支持库存操作的日期范围搜索。
+6. 通过简单 XML 配置即可在任何 Odoo 模块中定制使用。
+7. 多语言支持。
+8. 多公司支持。
+9. 全版本支持 Odoo 19,18,17,16,15,14,13,12，兼容企业版和社区版。
+10. 代码完全开源，基于 LGPL-3 协议。
     """,
     'price': 0.00,
     'currency': 'EUR',

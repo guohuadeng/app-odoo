@@ -2,156 +2,443 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 # Copyright (C) 2009~2026 odooAi.cn
+# 此 index.html 遵循 Odoo 官方模块描述规范。
+# 样式：Bootstrap 5 + Odoo Website Snippet + FontAwesome
+# GEO: 含 JSON-LD Structured Data (SoftwareApplication)
 ##############################################################################
 -->
 <html>
 <head><meta charset="utf-8"/></head>
-<!-- begin title-->
-<section class="oe_container container o_cc o_cc2">
-    <h2 class="text-center bg-warning text-white pt24 pb24">odoo Enterprise version enhance Pack All in One</h2>
-    <h3 class="text-center">Replace odoo logo with yours And Better UI for user</h3>
-    <h4 class="text-center">将Odoo企业版OEM，同时使用更舒服的主色及界面，细节全面完善</h4>
+
+<!-- JSON-LD Structured Data for Generative Engine Optimization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Enterprise UI Enhance Pack - Odoo 企业版界面增强",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "68",
+    "priceCurrency": "EUR"
+  },
+  "description": "UI Enhance pack of Odoo Enterprise version with comfortable green color, menu arrows, field underline and grid lines.",
+  "softwareVersion": "18.0",
+  "programmingLanguage": "Python, JavaScript, SCSS",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "Comfortable green color theme for Enterprise edition",
+    "Dropdown arrow for parent menu group navigation",
+    "Replace Odoo logo with company logo OEM",
+    "Underline for editable input fields",
+    "Grid lines for list view data reading",
+    "Grid lines for Account Reports",
+    "Dark mode theme support",
+    "Easy config all UI settings",
+    "Multi-language and multi-company support",
+    "Full open source under LGPL-3"
+  ]
+}
+</script>
+
+<!-- begin header / hero -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">Odoo 企业版界面增强 / Enterprise UI Enhance Pack</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Enterprise UI enhance with green theme, menu arrows, field underline and grid lines</p>
+            <p class="lead">
+                将 Odoo 企业版 OEM，同时使用更舒服的主色及界面，细节全面完善<br/>
+                Replace Odoo logo with yours and better UI for user
+            </p>
+            <div class="pt16">
+                <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版 / Enterprise</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">EUR 68</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司 / Multi-Company</span>
+            </div>
+        </div>
+    </div>
 </section>
-<!-- end title-->
+<!-- end header -->
 
-<!-- begin snapshot-->
-<!-- quick demo-->
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述 / Overview</h2>
+            <p class="lead pt16">
+                Odoo 企业版界面增强套件 All in One
+            </p>
+            <p class="text-muted">
+                UI Enhance pack with comfortable green color, menu dropdown arrows, field underline, grid lines and dark mode support.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- end overview -->
 
-<section class="oe_container container">
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
+<!-- begin Feature List -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>完整功能列表 / Complete Feature List</h2>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>1. UI Enhance pack of Odoo Enterprise version / 企业版界面增强套件，护眼绿色主色</b><br/>
+                    <small class="text-muted">Use comfortable green color for better eye protection</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>2. Add dropdown arrow to parent menu group / 多级菜单下拉箭头</b><br/>
+                    <small class="text-muted">Navigation made easier with dropdown arrows</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>3. Replace Odoo logo with company logo / 替换 Logo 为公司 Logo</b><br/>
+                    <small class="text-muted">Replace logo and URL to your company in menu and page</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>4. Add underline for input field / 可编辑字段下划线</b><br/>
+                    <small class="text-muted">Add underline for editable fields for better visibility</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>5. Add grid line for list view / 表格行列分隔线</b><br/>
+                    <small class="text-muted">Add grid line to list view for easier data reading</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>6. Add grid line to Account Reports / 财务报表分隔线</b><br/>
+                    <small class="text-muted">Add grid lines to account reports for data viewing and reconciliation</small>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end Feature List -->
+
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="container">
         <div class="row">
-            <div class="oe_demo" style=" margin: 30px auto 0; padding: 0 15px 0 0; border:none; width: 96%;">
-                <h2 class="mt32 mb32">More Powerful addons:
-                    <a class="btn btn-primary mb16" href="http://www.odoo.com/apps/modules/browse?author=odooai.cn">odooai.cn Odoo Addons</a>
-                </h2>
-                <h3>Latest update: v18.0.25.11.03</h3>
-                <p>This moduld allows user to</p>
-                <ul>
-                    <li class="mb8">
-                        1. Ui Enhance pack of odoo Enterprise version. Use comfortable green color
-                        odoo企业版界面增强套件，更方便操作。使用更舒适护眼的绿色作为主色。
-                    </li>
-                    <li class="mb8">
-                        2. Add dropdown arrow to parent menu group.
-                        多级菜单中出现箭头，导航操作更方便。
-                    </li>
-                    <li class="mb8">
-                        3. Replace the odoo logo or url to your company in menu and page.
-                        替换主菜单界面的logo为你公司的logo。
-                    </li>
-                    <li class="mb8">
-                        4. Add underline for input field.
-                        在可编辑字段下方增加下划线，易于分辨。
-                    </li>
-                    <li class="mb8">
-                        5. Add grid line form list view. Easy to read list data.
-                        为表格list增加行列分隔线，易于看数据。
-                    </li>
-                    <li class="mb8">
-                        6. Add grid line to Account Reports. Easy to view Data.
-                        为财务报表增加行列分隔线，易于看数据及对账。
-                    </li>
-                </ul>
+            <div class="col-lg-12 text-center pb32">
+                <h2>核心亮点 / Key Highlights</h2>
+                <p class="lead">All in One UI Enhance Pack / 界面增强全家桶</p>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2 class="bg-warning text-center pt8 pb8">1. Ui Enhance pack of odoo Enterprise version. Use comfortable green color</h2>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="app_web_enterprise_01.jpg"/>
-        </div>
-        <h4 class="oe_slogan"> Better for mobile</h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="app_web_enterprise_02.jpg"/>
-        </div>
-        <h4 class="oe_slogan"> Better for DarkMode. Good for your Eyes</h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="app_web_enterprise_03.jpg"/>
-        </div>
-        <h4 class="oe_slogan"> Easy config all UI and OEM. Navbar at bottom quick operation</h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="app_web_enterprise_04.jpg"/>
-        </div>
-        <h4 class="oe_slogan"> The dropdown arrow to show you action menu or group menu.</h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="app_web_enterprise_05.jpg"/>
-        </div>
-        <h4 class="oe_slogan"> Easy setup you logo and menu OEM. And quick remove data </h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="app_web_enterprise_06.jpg"/>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2 class="bg-warning text-center pt8 pb8">4. Add underline for input field.    在可编辑字段下方增加下划线，易于分辨。</h2>
-        <h4 class="oe_slogan"> </h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="b03.jpg"/>
-        </div>
-    </div>
-</section>
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2 class="bg-warning text-center pt8 pb8">5. Add grid line form list view. Easy to read list data.为表格list增加行列分隔线，易于看数据。</h2>
-        <h4 class="oe_slogan"> </h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="b04.jpg"/>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2 class="bg-warning text-center pt8 pb8">6. Add grid line to Account Reports. Easy to view Data.为财务报表增加行列分隔线，易于看数据及对账。</h2>
-        <h4 class="oe_slogan"> </h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="b05.jpg"/>
-        </div>
-    </div>
-</section>
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2 class="bg-warning text-center pt8 pb8">Multi language support. 多语种支持</h2>
-        <h4 class="oe_slogan"> </h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="set21.jpg"/>
-        </div>
-    </div>
-</section>
-
-<!-- end quick demo-->
-
- <section class="container oe_dark">
-    <div class="oe_row oe_spaced text-center">
         <div class="row">
-            <h2 class="oe_slogan">Technical Help & Support</h2>
-        </div>
-        <div class="col-md-12 pad0">
-            <div class="oe_mt16">
-                <p><h4>
-                For any type of technical help & support requests, Feel free to contact us</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:odoo@china.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> odoo@china.com</a>
-                <p><h4>
-                Via QQ: 300883 (App user would not get QQ or any other IM support. Only for odoo project customize.)</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:300883@qq.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> 300883@qq.com</a>
+            <div class="col-lg-3 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-palette fa-lg"></i>
+                        </div>
+                        <h5>1. 护眼绿色 / Green Theme</h5>
+                        <p class="card-text">更舒适护眼的绿色主色</p>
+                    </div>
+                </div>
             </div>
-            <div class="oe_mt16">
-                <h4>
-                Visit our website for more support.</h4>
-<h4>https://www.odooai.cn</h4>
+            <div class="col-lg-3 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-caret-down fa-lg"></i>
+                        </div>
+                        <h5>2. 菜单箭头 / Menu Arrows</h5>
+                        <p class="card-text">多级菜单下拉箭头导航</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-building fa-lg"></i>
+                        </div>
+                        <h5>3. Logo OEM / Logo 定制</h5>
+                        <p class="card-text">替换为公司 Logo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-minus fa-lg"></i>
+                        </div>
+                        <h5>4. 字段下划线 / Field Underline</h5>
+                        <p class="card-text">可编辑字段下划线</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-table fa-lg"></i>
+                        </div>
+                        <h5>5. 表格分隔线 / Grid Lines</h5>
+                        <p class="card-text">列表视图行列分隔线</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-file-text-o fa-lg"></i>
+                        </div>
+                        <h5>6. 报表分隔线 / Report Grid</h5>
+                        <p class="card-text">财务报表行列分隔线</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-moon-o fa-lg"></i>
+                        </div>
+                        <h5>7. 黑夜模式 / Dark Mode</h5>
+                        <p class="card-text">支持黑夜模式主题</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-cog fa-lg"></i>
+                    </div>
+                        <h5>8. 一键配置 / Easy Config</h5>
+                        <p class="card-text">全部 UI 设置一键配置</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<!-- end key highlights -->
 
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性 / General Features</h2>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-globe fa-lg"></i>
+                </div>
+                <h5>多语言与多公司<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code-fork fa-lg"></i>
+                </div>
+                <h5>全版本兼容<br/><small class="text-muted">Full Version Support</small></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code fa-lg"></i>
+                </div>
+                <h5>代码完全开源<br/><small class="text-muted">Full Open Source</small></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end general features -->
+
+<!-- begin screenshots -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>界面截图 / Screenshots</h2>
+            <p class="lead">核心功能界面一览</p>
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-palette text-o-color-1 me-2"></i>1. UI Enhance pack with green color / 护眼绿色界面</h3>
+            <img class="img-fluid rounded shadow" src="app_web_enterprise_01.jpg" alt="Green theme UI">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-mobile text-o-color-1 me-2"></i>Better for mobile / 移动端优化</h3>
+            <img class="img-fluid rounded shadow" src="app_web_enterprise_02.jpg" alt="Mobile UI">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-moon-o text-o-color-1 me-2"></i>Better for DarkMode / 黑夜模式</h3>
+            <img class="img-fluid rounded shadow" src="app_web_enterprise_03.jpg" alt="Dark mode">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-cog text-o-color-1 me-2"></i>Easy config all UI and OEM / 一键配置 OEM</h3>
+            <img class="img-fluid rounded shadow" src="app_web_enterprise_04.jpg" alt="Easy config">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-caret-down text-o-color-1 me-2"></i>Dropdown arrow for action menu / 菜单下拉箭头</h3>
+            <img class="img-fluid rounded shadow" src="app_web_enterprise_05.jpg" alt="Menu arrows">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-building text-o-color-1 me-2"></i>Easy setup logo and OEM / Logo 和 OEM 设置</h3>
+            <img class="img-fluid rounded shadow" src="app_web_enterprise_06.jpg" alt="Logo setup">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-minus text-o-color-1 me-2"></i>4. Add underline for input field / 字段下划线</h3>
+            <img class="img-fluid rounded shadow" src="b03.jpg" alt="Field underline">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-table text-o-color-1 me-2"></i>5. Add grid line for list view / 表格分隔线</h3>
+            <img class="img-fluid rounded shadow" src="b04.jpg" alt="Grid lines list">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-file-text-o text-o-color-1 me-2"></i>6. Add grid line to Account Reports / 财务报表分隔线</h3>
+            <img class="img-fluid rounded shadow" src="b05.jpg" alt="Grid lines report">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-language text-o-color-1 me-2"></i>Multi language support / 多语种支持</h3>
+            <img class="img-fluid rounded shadow" src="set21.jpg" alt="Multi language">
+        </div>
+    </div>
+</section>
+<!-- end screenshots -->
+
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程 / How It Works</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <div class="row text-center">
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">购买安装</p>
+                    <p class="small text-muted mb-0">Buy &amp; Install</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-cog"></i>
+                    </div>
+                    <p class="fw-bold mb-1">配置 OEM</p>
+                    <p class="small text-muted mb-0">Set logo &amp; URL</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-check-circle"></i>
+                    </div>
+                    <p class="fw-bold mb-1">即享增强</p>
+                    <p class="small text-muted mb-0">Enjoy UI enhance</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end how it works -->
+
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-wrench text-o-color-1 me-2"></i>
+                    app_odoo_customize / Odoo 定制基础模块
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-desktop text-o-color-1 me-2"></i>
+                    web_enterprise / Odoo 企业版基础模块
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">专业Odoo服务伙伴-开发实施咨询培训全套解决方案 / Professional Odoo Solutions</p>
+            <div class="pt16">
+                <p>
+                    <i class="fa fa-globe me-2"></i>
+                    Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-desktop me-2"></i>
+                    Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-envelope me-2"></i>
+                    Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a>
+                </p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
+
+</html>

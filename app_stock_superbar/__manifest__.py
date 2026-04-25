@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "Stock Superbar ztree, parent children tree",
+    'name': '库存超级搜索栏 / Stock Superbar zTree Navigator',
     'version': '18.0.25.09.08',
     'author': 'odooai.cn',
     'category': 'Inventory/Inventory',
@@ -24,15 +24,26 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Use for parent children tree list select navigator. stock location tree, filter by parent location.
-    ztree widget.
-    """,
+    'summary': '按库存位置和类型树状导航，支持调拨单、批次、移动线 / Stock location tree navigator for picking, batch, move and lot',
     'description': """
-    zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView ,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+1. Stock Superbar with zTree widget for parent children tree navigation.
+2. Advance search with real parent children tree in ListView, KanbanView, Pivot and Graph view.
+3. Support stock location, stock picking, stock picking batch, stock picking type views.
+4. Support stock warehouse orderpoint, stock rule, stock lot, stock move and move line views.
+5. Easy to customize, you can use it anywhere in Odoo.
+6. Multi-Language Support.
+7. Multi-Company Support.
+8. Full Version Support for Odoo 19,18,17,16,15,14,13,12, Enterprise and Community Edition.
+9. Full Open Source under LGPL-3 license.
+1. 库存超级搜索栏（Superbar），使用 zTree 控件实现父子树导航。
+2. 使用父子树结构在列表、看板、透视和图表视图中进行高级搜索。
+3. 支持库存位置、调拨单、批次调拨、调拨类型视图。
+4. 支持补货规则、库存批次、库存移动和移动线视图。
+5. 易于定制，可在 Odoo 任何模块中使用。
+6. 多语言支持。
+7. 多公司支持。
+8. 全版本支持 Odoo 19,18,17,16,15,14,13,12，兼容企业版和社区版。
+9. 代码完全开源，基于 LGPL-3 协议。
     """,
     'price': 0.00,
     'currency': 'EUR',

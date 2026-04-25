@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "Advance purchase order navigator by date and vendor",
+    'name': "采购订单高级搜索Pro / Purchase Order Navigator Pro",
     'version': '18.0.24.12.04',
     'author': 'odooai.cn',
     'category': 'Extra tools',
@@ -24,15 +24,26 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Browse purchase order by date, partner vendor, status. Use for parent children tree list kanban navigator.
-    Hierarchy Tree.Parent Children relation tree..
-    """,
+    'summary': '按日期和供应商浏览采购订单，Superbar Pro高级搜索。/ Browse purchase orders by date and vendor with Superbar Pro.',
     'description': """
-    Superbar, zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+English Features:
+1. Superbar Pro for purchase order advance search.
+2. Browse purchase orders by date, partner vendor and status.
+3. Advance search sidebar for multiple field types.
+4. Search sidebar available for list, kanban, pivot and graph views.
+5. Pro features for enhanced purchase browsing experience.
+6. Multi-language Support. Multi-Company Support.
+7. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+8. Full Open Source.
+
+中文功能：
+1. 采购订单Superbar Pro高级搜索组件。
+2. 按日期、供应商和状态浏览采购订单。
+3. 高级搜索侧栏，支持多种字段类型。
+4. Pro增强功能，提升采购浏览体验。
+5. 多语言支持。多公司支持。
+6. 支持Odoo 19,18,17,16,15,14,13,12，企业版、社区版及odoo.sh。
+7. 代码完全开源。
     """,
     'price': 0.00,
     'currency': 'EUR',

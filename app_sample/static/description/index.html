@@ -2,426 +2,432 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 # Copyright (C) 2009~2026 odooAi.cn
+# Copyright (C) 2009-TODAY odooAi.cn Ltd. https://www.odooai.cn
 ##############################################################################
 -->
 <html>
 <head><meta charset="utf-8"/></head>
-<!-- begin title-->
-<section class="oe_container container o_cc o_cc2">
-    <h2 class="text-center bg-warning text-white pt24 pb24">Odoo Module Template. App sample with widget. </h2>
-    <h3 class="text-center">Odoo开发规范模板,Widget清单与使用样例</h3>
-    <h4 class="text-center">Sample Description of app. video and brief and detail demo snap and text</h4>
-</section>
-<!-- end title-->
 
-<!-- begin video-->
-<section class="s_text_block o_colored_level pt16 pb16">
-    <div class="container s_allow_columns">
-        <p class="text-center bg-info text-white pt16 pb16">Just Clone this sample to your name to quick create your odoo addons</p>
-        <h2 class="text-center bg-info text-white pt16 pb16">- Sample Local Video. Change to your video -</h2>
-    </div>
-    <!--    local video-->
-    <div class="container">
-        <div class="row s_nb_column_fixed">
-            <div class="o_colored_level col-lg-12">
-                <video controls="controls" loop="1" preload="auto" muted autoplay src="odoo17.mp4" class="o_video" style="width: 100%; height: 100%;">
-                    <source type="video/mp4" src="odoo17.mp4"/>
-                    <a href="">
-                        Download the demo video.
-                    </a>
-                </video>
+<!-- JSON-LD Structured Data for Generative Engine Optimization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Odoo 模块开发模板 - Odoo Module Sample with Widget",
+  "applicationCategory": "DeveloperTool",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "2",
+    "priceCurrency": "EUR"
+  },
+  "description": "A full Odoo module development template with 170+ widget list, manifest, models, views, controllers, reports, actions and menus sample code.",
+  "softwareVersion": "18.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "Full sample module with all Odoo file types",
+    "Manifest with all field samples",
+    "Python models for new and inherited models",
+    "XML views with list, kanban, form, search",
+    "Controllers for website and API",
+    "Report design with SQL and graph/pivot",
+    "Action and menu samples",
+    "UI misc samples with alert and field setup",
+    "170+ widget list and usage guide",
+    "Online developer tutorials"
+  ]
+}
+</script>
+
+<!-- begin header / hero -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">Odoo 模块开发模板 / Odoo Module Sample</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">含170+ Widget 清单与使用样例</p>
+            <p class="lead">
+                克隆此模板快速创建新的 Odoo 模块，包含完整的代码示例和开发规范<br/>
+                Clone this sample to your name to quick create new Odoo addons with complete code samples
+            </p>
+            <div class="pt16">
+                <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版 / Enterprise &amp; Community</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司 / Multi-Company</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言 / Multi-Language</span>
             </div>
         </div>
     </div>
 </section>
+<!-- end header -->
 
-<section class="oe_container container s_text_block pt24 pb24 o_colored_level" data-snippet="s_text_block" data-name="文本">
-    <!--    remote video-->
-    <div class="s_allow_columns container">
-    <div class="container s_allow_columns">
-        <h2 class="text-center bg-info text-white pt16 pb16">- Sample Video on youtube remote. Change to your video -</h2>
-    </div>
-        <div data-oe-expression="//www.youtube.com/embed/whnmkTWsQkQ?rel=0&amp;autoplay=0" class="media_iframe_video">
-            <div class="css_editable_mode_display"></div>
-            <div class="media_iframe_video_size"></div>
-            <iframe src="//www.youtube.com/embed/whnmkTWsQkQ?rel=0&amp;autoplay=1" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述 / Overview</h2>
+            <p class="lead pt16">
+                一个完整的 Odoo 模块开发模板，包含 manifest、模型、视图、控制器、报表、动作、菜单等所有文件类型的示例代码，以及 170+ Widget 清单和常用用法指南。
+            </p>
+            <p class="text-muted">
+                A complete Odoo module template with manifest, models, views, controllers, reports, actions, menus sample code, plus 170+ widget list and frequently used widget samples.
+            </p>
         </div>
-        <p class="o_default_snippet_text"><br></p>
-    </div>
-    <div class="oe_row text-center">
-        <span>Click above Play. or go </span>
-        <a href="https://youtu.be/whnmkTWsQkQ" target="_blank" role="button" class="btn btn-link btn-lg">Youtube Video of odoo Advance Search Superbar</a>
-    </div>
-    <div class="oe_row text-center">
-        <p class="o_default_snippet_text">Demo Gif Animation if you can not get video</p>
-        <img class="oe_demo oe_screenshot img img-fluid" src="banner.gif">
     </div>
 </section>
-<!-- end video-->
+<!-- end overview -->
 
-<!-- begin grid features-->
-<section class="oe_container container s_text_block o_colored_level pt16 pb16">
-    <h2 class="text-center bg-info text-white pt16 pb16">- Features -</h2>
-</section>
-<section class="s_features_grid pt24 pb24 o_colored_level" data-snippet="s_features_grid" data-name="Features Grid">
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 s_col_no_bgcolor pb24">
-                <div class="row">
-                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
-                        <i class="fa bg-primary text-white s_features_grid_icon rounded fa-2x">1</i>
-                        <div class="s_features_grid_content">
-                            <h4 class="pt16">
-                                A full Sample module app of odoo addons.
-                            </h4>
-                            <p>All the code, views, data ,banner, icon and description sample follow the odoo rule.</p>
+            <div class="col-lg-12 text-center pb32">
+                <h2>核心亮点 / Key Highlights</h2>
+                <p class="lead">一站式 Odoo 开发模板</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-cube fa-lg"></i>
                         </div>
-                    </div>
-                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box">
-                        <i class="fa fa-2x rounded bg-primary text-white s_features_grid_icon">2</i>
-                        <div class="s_features_grid_content">
-                            <h4 class="pt16">
-                                Sample manifest file.
-                            </h4>
-                            <p>Including structure and name and description etc, all field sample. Security xml and csv file for role group access rule. Follow most odoo rule follow </p>
-                            <p>https://www.odooai.cn/documentation/16.0/contributing/development/coding_guidelines.html</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
-                        <i class="fa bg-primary text-white s_features_grid_icon rounded fa-2x">3</i>
-                        <div class="s_features_grid_content">
-                            <h4 class="pt16">
-                                Sample .py models file
-                            </h4>
-                            <p>for new model and inherit model<br></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
-                        <i class="fa bg-primary text-white s_features_grid_icon rounded fa-2x">4</i>
-                        <div class="s_features_grid_content">
-                            <h4 class="pt16">
-                                Sample .xml views file for models
-                            </h4>
-                            <p>Sample xml views file for models, with list, kanban, form, search<br></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
-                        <i class="fa bg-primary text-white s_features_grid_icon rounded fa-2x">5</i>
-                        <div class="s_features_grid_content">
-                            <h4 class="pt16">
-                                Sample controllers file
-                            </h4>
-                            <p> for website data publish and api developer. including how inherit odoo portal home<br></p>
-                        </div>
+                        <h5>1. 完整示例模块 / Full Sample Module</h5>
+                        <p class="small text-muted">All code and views</p>
+                        <p class="card-text">包含完整的 Odoo 模块代码、视图和数据示例，遵循 Odoo 规范</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 s_col_no_bgcolor pb24">
-                <div class="row">
-                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
-                        <i class="fa bg-primary text-white s_features_grid_icon rounded fa-2x">6</i>
-                        <div class="s_features_grid_content">
-                            <h4 class="pt16">
-                                 Sample report design file
-                            </h4>
-                            <p> .py file with how sql define. .xml file for graph and pivot</p>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-file-code-o fa-lg"></i>
                         </div>
+                        <h5>2. Manifest 示例 / Manifest File</h5>
+                        <p class="small text-muted">All field samples</p>
+                        <p class="card-text">包含所有字段的清单示例，安全 XML 和 CSV 文件</p>
                     </div>
-                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
-                        <i class="fa fa-2x rounded bg-primary text-white s_features_grid_icon">7</i>
-                        <div class="s_features_grid_content">
-                            <h4 class="pt16">
-                                Sample action and menu file
-                            </h4>
-                            <p>Root menu and menu group and action menu</p>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-code fa-lg"></i>
                         </div>
+                        <h5>3. 模型示例 / Python Models</h5>
+                        <p class="small text-muted">New and inherit models</p>
+                        <p class="card-text">包含新模型和继承模型的 Python 示例文件</p>
                     </div>
-                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
-                        <i class="fa fa-2x rounded bg-primary text-white s_features_grid_icon">8</i>
-                        <div class="s_features_grid_content">
-                            <h4 class="pt16">
-                                Ui misc sample
-                            </h4>
-                            <p>Alert like info and special field setup.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-th-large fa-lg"></i>
                         </div>
+                        <h5>4. 视图示例 / XML Views</h5>
+                        <p class="small text-muted">List, Kanban, Form, Search</p>
+                        <p class="card-text">包含列表、看板、表单和搜索视图的 XML 示例</p>
                     </div>
-                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
-                        <i class="fa fa-2x rounded bg-primary text-white s_features_grid_icon">9</i>
-                        <div class="s_features_grid_content">
-                            <h4 class="pt16">
-                                Odoo Widget sample
-                            </h4>
-                            <p>170+ widget list document and Frequently Used Sample.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-globe fa-lg"></i>
                         </div>
+                        <h5>5. 控制器示例 / Controllers</h5>
+                        <p class="small text-muted">Website and API</p>
+                        <p class="card-text">网站数据发布和 API 接口开发示例，含 Portal 继承</p>
                     </div>
-                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
-                        <i class="fa fa-2x rounded bg-primary text-white s_features_grid_icon">10</i>
-                        <div class="s_features_grid_content">
-                            <h4 class="pt16">
-                                Quick access odoo developer Tutorials online.
-                            </h4>
-                            <p>Document online for chinese and english. Fast visit in China.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-bar-chart fa-lg"></i>
                         </div>
+                        <h5>6. 报表示例 / Report Design</h5>
+                        <p class="small text-muted">SQL, Graph, Pivot</p>
+                        <p class="card-text">报表设计示例，含 SQL 定义和图表/透视视图</p>
                     </div>
-                    <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box" data-tilt-feature="">
-                        <i class="fa fa-2x rounded bg-primary text-white s_features_grid_icon">11</i>
-                        <div class="s_features_grid_content">
-                            <h4 class="pt16">
-                                Full Open Source.Multi-language Support. Multi-Company Support
-                            </h4>
-                            <p>Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.</p>
-                            <p>代码完全开源，多语言支持，多公司支持。Odoo 18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持</p>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-puzzle-piece fa-lg"></i>
                         </div>
+                        <h5>7. 170+ Widget 清单 / Widget Guide</h5>
+                        <p class="small text-muted">Frequently used samples</p>
+                        <p class="card-text">170+ Widget 使用清单和常用 Widget 用法指南</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-book fa-lg"></i>
+                        </div>
+                        <h5>8. 开发教程 / Developer Tutorials</h5>
+                        <p class="small text-muted">Chinese and English</p>
+                        <p class="card-text">快速访问在线中英文 Odoo 开发教程，国内快速访问</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- end grid features-->
+<!-- end key highlights -->
 
-<!-- begin snapshot-->
-<!-- quick demo-->
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2 class="bg-warning text-center pt8 pb8 mt16 mb16">So Easy to navigator and search any data.</h2>
-        <h4 class="oe_slogan"> </h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src=".jpg"/>
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性 / General Features</h2>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-globe fa-lg"></i>
+                </div>
+                <h5>多语言与多公司<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code-fork fa-lg"></i>
+                </div>
+                <h5>全版本兼容<br/><small class="text-muted">Full Version Support</small></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code fa-lg"></i>
+                </div>
+                <h5>代码完全开源<br/><small class="text-muted">Full Open Source</small></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
+            </div>
         </div>
     </div>
 </section>
-<!-- end quick demo-->
+<!-- end general features -->
 
-<section class="s_text_block o_colored_level pt16 pb16">
-    <div class="container s_allow_columns">
-        <h2 class="text-center bg-info text-white pt16 pb16">- Feature Guide -</h2>
+<!-- begin screenshots -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>界面截图 / Screenshots</h2>
+            <p class="lead">模板内容一览</p>
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-cube text-o-color-1 me-2"></i>A full Sample module app / 完整示例模块</h3>
+            <img class="img-fluid rounded shadow" src="demo1.jpg" alt="Full Sample Module">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-file-code-o text-o-color-1 me-2"></i>Sample manifest file / Manifest 示例文件</h3>
+            <img class="img-fluid rounded shadow" src="demo2.jpg" alt="Manifest file">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-code text-o-color-1 me-2"></i>Sample .py models file / Python 模型示例</h3>
+            <img class="img-fluid rounded shadow" src="demo3.jpg" alt="Python models">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-list text-o-color-1 me-2"></i>Sample list view / 列表视图示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_list.jpg" alt="List view">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-th-large text-o-color-1 me-2"></i>Sample kanban view / 看板视图示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_kanban.jpg" alt="Kanban view">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-edit text-o-color-1 me-2"></i>Sample form view / 表单视图示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_form.jpg" alt="Form view">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-search text-o-color-1 me-2"></i>Sample search view / 搜索视图示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_search.jpg" alt="Search view">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-globe text-o-color-1 me-2"></i>Sample controllers / 控制器示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_controler.jpg" alt="Controllers">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-bar-chart text-o-color-1 me-2"></i>Sample report design / 报表设计示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_report.jpg" alt="Report design">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-puzzle-piece text-o-color-1 me-2"></i>170+ Widget list / Widget 清单</h3>
+            <img class="img-fluid rounded shadow" src="demo_widget_list.jpg" alt="Widget list">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-wrench text-o-color-1 me-2"></i>Widget usage sample / Widget 用法示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_widget_use.jpg" alt="Widget usage">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-book text-o-color-1 me-2"></i>Developer Tutorials / 开发教程</h3>
+            <img class="img-fluid rounded shadow" src="demo10.jpg" alt="Developer tutorials">
+        </div>
     </div>
 </section>
-<section class="s_table_of_content pt24 pb24 o_cc o_cc1 o_colored_level" data-snippet="s_table_of_content" data-name="Table of Content">
-    <div class="container">
-        <div class="row s_nb_column_fixed">
-            <div class="col-lg-2 col-md-3 s_table_of_content_navbar_wrap s_table_of_content_navbar_sticky s_table_of_content_vertical_navbar d-print-none d-none d-lg-block o_not_editable o_cc o_cc1 o_colored_level"
-                 data-name="Navbar">
-                <div class="s_table_of_content_navbar list-group o_no_link_popover" style="top: 82px; max-height: calc(100vh - 102px);">
-                    <a href="#toc_01" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0 active">
-                        A full Sample app
-                    </a>
-                    <a href="#toc_02" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
-                        Sample manifest
-                    </a>
-                    <a href="#toc_03" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
-                        Sample .py
-                    </a>
-                    <a href="#toc_04" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
-                        Sample .xml
-                    </a>
-                    <a href="#toc_05" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
-                        Sample controllers
-                    </a>
-                    <a href="#toc_06" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
-                        Sample report
-                    </a>
-                    <a href="#toc_07" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
-                        Sample action and menu
-                    </a>
-                    <a href="#toc_08" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
-                        Ui misc sample
-                    </a>
-                    <a href="#toc_09" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
-                        Odoo Widget sample
-                    </a>
-                    <a href="#toc_10" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
-                        Quick developer Tutorials
-                    </a>
-                    <a href="#toc_11" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">
-                        Multi-language,Multi-Company
-                    </a>
+<!-- end screenshots -->
+
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程 / How It Works</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">安装模板</p>
+                    <p class="small text-muted mb-0">Install sample module</p>
+                </div>
+                <div class="col-md-3 col-6 pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-copy"></i>
+                    </div>
+                    <p class="fw-bold mb-1">克隆重命名</p>
+                    <p class="small text-muted mb-0">Clone and rename</p>
+                </div>
+                <div class="col-md-3 col-6 pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-pencil"></i>
+                    </div>
+                    <p class="fw-bold mb-1">修改代码</p>
+                    <p class="small text-muted mb-0">Customize your code</p>
+                </div>
+                <div class="col-md-3 col-6 pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-rocket"></i>
+                    </div>
+                    <p class="fw-bold mb-1">发布使用</p>
+                    <p class="small text-muted mb-0">Deploy and use</p>
                 </div>
             </div>
-            <div class="col-lg-10 col-md9 s_table_of_content_main oe_structure oe_empty o_colored_level" data-name="Content">
-                <section class="pb16 o_colored_level" style="background-image: none;">
-                    <h3 data-anchor="true" id="toc_01">
-                        A full Sample module app of odoo addons.
-                    </h3>
-                    <h4 class="oe_slogan">All the code, views, data ,banner, icon and description sample follow the odoo rule.</h4>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo1.jpg">
-                    </div>
-                </section>
-                <section class="pb16 o_colored_level" style="background-image: none;">
-                    <h3 data-anchor="true" id="toc_02">
-                        Sample manifest file.
-                    </h3>
-                    <h4 class="oe_slogan">Including structure and name and description etc, all field sample. </h4>
-                    <p>Security xml and csv file for role group access rule.
-                        Sample icon, banner, index.html, install/uninstall hooks.
-                        Follow most odoo rule follow</p>
-                    <p>https://www.odooai.cn/documentation/16.0/contributing/development/coding_guidelines.html</p>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo2.jpg">
-                    </div>
-                </section>
-                <section class="pb16 o_colored_level" style="background-image: none;">
-                    <h3 data-anchor="true" id="toc_03">
-                        Sample .py models file, for new model and inherit model
-                    </h3>
-                    <p>Please comment the inherit .py file of product_template.py in produce odoo.</p>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo3.jpg">
-                    </div>
-                </section>
-                <section class="pb16 o_colored_level" style="background-image: none;">
-                    <h3 data-anchor="true" id="toc_04">
-                        Sample .xml views file for models, with list, kanban, form, search
-                    </h3>
-                    <p>List</p>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo_list.jpg">
-                    </div>
-                    <p>Kanban</p>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo_kanban.jpg">
-                    </div>
-                    <p>Form</p>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo_form.jpg">
-                    </div>
-                    <p>Search</p>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo_search.jpg">
-                    </div>
-                </section>
-                <section class="pb16 o_colored_level" style="background-image: none;">
-                    <h3 data-anchor="true" id="toc_05">
-                        Sample controllers file for website data publish and api developer
-                    </h3>
-                    <p>including how inherit odoo portal home.</p>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo_controler.jpg">
-                    </div>
-                </section>
-                <section class="pb16 o_colored_level" style="background-image: none;">
-                    <h3 data-anchor="true" id="toc_06">
-                        Sample report design file.
-                    </h3>
-                    <p> .py file with how sql define.</p>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo_report.jpg">
-                    </div>
-                    <p> .xml file for graph and pivot.</p>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo_graph.jpg">
-                    </div>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo_pivot.jpg">
-                    </div>
-                </section>
-                <section class="pb16 o_colored_level" style="background-image: none;">
-                    <h3 data-anchor="true" id="toc_07">
-                        Sample action and menu file.
-                    </h3>
-                    <p>Root menu and menu group and action menu.</p>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo_menu.jpg">
-                    </div>
-                </section>
-                <section class="pb16 o_colored_level" style="background-image: none;">
-                    <h3 data-anchor="true" id="toc_08">
-                        Ui misc sample. Alert like info and special field setup.
-                    </h3>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo_ui.jpg">
-                    </div>
-                </section>
-                <section class="pb16 o_colored_level" style="background-image: none;">
-                    <h3 data-anchor="true" id="toc_09">
-                         Odoo Widget sample.
-                    </h3>
-                    <p>170+ widget list document</p>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo_widget_list.jpg">
-                    </div>
-                    <p> Frequently Used Sample.</p>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo_widget_use.jpg">
-                    </div>
-                </section>
-                <section class="pb16 o_colored_level" style="background-image: none;">
-                    <h3 data-anchor="true" id="toc_10">
-                        Quick access odoo developer Tutorials online.
-                    </h3>
-                    <p>Click alert info to visit. Document online for chinese and english. Fast visit in China.</p>
-                    <div class="oe_demo oe_screenshot img img-fluid">
-                        <img src="demo10.jpg">
-                    </div>
-                </section>
+        </div>
+    </div>
+</section>
+<!-- end how it works -->
+
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-cog text-o-color-1 me-2"></i>
+                    app_common / 公共模块
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-calculator text-o-color-1 me-2"></i>
+                    account / 会计模块
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">专业Odoo服务伙伴-开发实施咨询培训全套解决方案 / Professional Odoo Solutions</p>
+            <div class="pt16">
+                <p>
+                    <i class="fa fa-globe me-2"></i>
+                    Website: <a href="https://www.odooai.cn" target="_blank">www.odooai.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-desktop me-2"></i>
+                    Demo: <a href="https://demo.odooapp.cn" target="_blank">demo.odooapp.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-envelope me-2"></i>
+                    Support: <a href="mailto:odoo@china.com">odoo@china.com</a>
+                </p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
             </div>
         </div>
     </div>
 </section>
-<!-- end snapshot-->
+<!-- end footer -->
 
-<!-- begin free-->
-<!-- end free-->
-
-<!-- begin howto-->
-<section class="oe_container container s_text_block o_colored_level pt16 pb16">
-    <h2 class="text-center bg-info text-white pt16 pb16">- How to setup and use -</h2>
-    <h3>This app need no extra module. The price already included</h3>
-</section>
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="pt16">
-            1. Buy and Install
-        </h4>
-        <h4 class="pt16">
-            2. Clone this sample and rename to your module name to quick create your odoo addons.
-        </h4>
-        <h4 class="pt16">3. Check the demo we create</h4>
-        <div class="row">
-            <div class="oe_demo oe_screenshot img img-fluid">
-                <img src="demo_use.jpg">
-            </div>
-        </div>
-        <h4 class="pt16">4. More information in our FAQ</h4>
-        <div class="row">
-            <a href="https://www.odooai.cn/faq" target="_blank">https://www.odooai.cn/faq</a>
-        </div>
-    </div>
-</section>
-<!-- end howto-->
-
-<!-- begin upsell-->
-<!-- end upsell-->
-
-<!-- begin support-->
-<section class="container oe_dark">
-    <div class="oe_row oe_spaced text-center">
-        <div class="row">
-            <h2 class="oe_slogan">Technical Help & Support</h2>
-        </div>
-        <div class="col-md-12 pad0">
-            <div class="oe_mt16">
-                <p><h4 class="pt16">
-                For any type of technical help & support requests, Feel free to contact us</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:odoo@china.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> odoo@china.com</a>
-                <p><h4 class="pt16">
-                Via QQ: 300883 (App user would not get QQ or any other IM support. Only for odoo project customize.)</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:300883@qq.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> 300883@qq.com</a>
-            </div>
-            <div class="oe_mt16">
-                <h4 class="pt16">Visit our website for more support.</h4>
-                <h4 class="pt16">https://www.odooai.cn</h4>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end support-->
 </html>

@@ -22,26 +22,34 @@
 
 
 {
-    'name': 'MRP Production zChart Hierarchy, 生产单多层级结构图',
+    'name': "MRP生产单层级图 / MRP Production zChart Hierarchy",
     'version': '18.0.25.08.26',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Manufacture Order multi level. For Multi level MO MRP Production Order from multi bom. MRP Hierarchy. MO hierarchy
-    Chart Hierarchy Widget. Hierarchy Chart, Hierarchy Tree for multi level Parent Children relation tree.
-    """,
+    'summary': 'MRP制造单多层级结构图，支持N+1、N+2级直接下属展示。/ Multi level MO hierarchy chart for MRP production order with N+1/N+2 subordinates.',
     'description': """
-    MRP Hierarchy chart,  MO Hierarchy chart, mrp multi level.
-Need extra paid apps https://www.odoo.com/apps/modules/13.0/app_web_chart_hierarchy/
-This module extend to show a Hierarchy chart.
-(N+1, N+2, direct subordinates)
-image: image_field,
-desc: descript_field,
-direct_sub: children_field, must be one2many,
-child_all_count: child_all_count field, count of direct and indirect children.
+English Features:
+1. MRP Hierarchy chart for Manufacturing Orders (MO).
+2. Multi level MO production order from multi BOM support.
+3. Hierarchy Tree for multi level parent children relation.
+4. Show N+1, N+2 direct subordinates in chart.
+5. Chart Hierarchy Widget with image, description and children count fields.
+6. Multi-language Support. Multi-Company Support.
+7. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+8. Full Open Source.
+
+中文功能：
+1. MRP制造单层级图。
+2. 支持多级BOM展开的多层级制造单。
+3. 多层级父子关系层级树。
+4. 图表中展示N+1、N+2级直接下属。
+5. 层级图组件，支持图片、描述和子项计数字段。
+6. 多语言支持。多公司支持。
+7. 支持Odoo 19,18,17,16,15,14,13,12，企业版、社区版及odoo.sh。
+8. 代码完全开源。
     """,
     'price': 0.00,
     'currency': 'EUR',

@@ -28,7 +28,7 @@
 # description:
 
 {
-    'name': "App MRP Bom Product Multi Batch Add",
+    'name': "MRP Bom批量添加产品 / MRP Bom Product Multi Batch Add",
     'version': '18.0.25.09.16',
     'author': 'odooai.cn',
     'category': 'Base',
@@ -38,17 +38,23 @@
     'sequence': 2,
     'price': 0.00,
     'currency': 'USD',
-    'summary': """
-    App MRP Bom Product Multi Batch Add, 制造Bom批量增加产品.
-    Odoo App of odooai.cn
-    """,
+    'summary': '一键批量将多个产品添加到制造BOM中，支持过滤和分组。/ One click to batch add multiple products to MRP BOM with filter and group.',
     'description': """
-    App MRP Bom Product Multi Add.
-    1. One Click to add multi product to MRP Bom.
-    2. All the product can filter and group.
-    制造Bom批量增加产品
-    1. 可以一键快速将多个产品加到制造Bom中
-    2. 可对产品进行过滤、分组，然后批量加入
+English Features:
+1. One click to add multi products to MRP BOM.
+2. All the products can be filtered and grouped before adding.
+3. Support batch selection and quick addition.
+4. Multi-language Support. Multi-Company Support.
+5. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+6. Full Open Source.
+
+中文功能：
+1. 一键快速将多个产品加到制造BOM中。
+2. 可对产品进行过滤、分组，然后批量加入。
+3. 支持批量选择和快速添加。
+4. 多语言支持。多公司支持。
+5. 支持Odoo 19,18,17,16,15,14,13,12，企业版、社区版及odoo.sh。
+6. 代码完全开源。
     """,
     'depends': [
         # 'app_web_one2many_multi_add',

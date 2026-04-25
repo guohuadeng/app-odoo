@@ -6,186 +6,413 @@
 -->
 <html>
 <head><meta charset="utf-8"/></head>
-<!-- begin title-->
-<section class="oe_container container o_cc o_cc2">
-    <h2 class="text-center bg-warning text-white pt24 pb24">Odoo Chinese localization Enhance All in One.Local customize for china user</h2>
-    <h3 class="text-center">odoo中国版，中文本土化套件之基础框架,中国会计基础</h3>
-    <h4 class="text-center">20+项中文优化，配合 www.odooapp.cn 的Odoo中文翻译版使用最佳</h4>
-</section>
-<!-- end title-->
 
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "app_base_chinese - Odoo Chinese Localization Enhance All in One",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  },
+  "description": "Comprehensive Chinese localization for Odoo. Chinese address format, default timezone/currency, policy-sensitive translations, 20+ optimizations.",
+  "softwareVersion": "18.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "Chinese address format for all partners",
+    "Default country/timezone/currency for China",
+    "Customer abbreviation and code priority display",
+    "Phone and mobile display in address",
+    "CNY currency enhancement with sorting",
+    "Fix category m2o Chinese name display bug",
+    "Fix warehouse location m2o Chinese name display bug",
+    "China timezone for superuser",
+    "Chinese date format (YYYY-MM-DD)",
+    "Country sorting with China ranked first",
+    "Chinese payment display conventions",
+    "Default export translation to Chinese po",
+    "name_en_US field for base model",
+    "Common decimal precision adjustments",
+    "Sales team default to China",
+    "Simplified Chinese language display",
+    "Policy-sensitive Country/Country-Region naming",
+    "Multi-language and Multi-company support",
+    "Full Open Source"
+  ]
+}
+</script>
+
+<!-- begin header / hero -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">odoo中国版中文本土化套件 / Odoo Chinese Localization Enhance</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">开箱即用的中国本土化增强，20+项中文优化 / Out-of-the-box Chinese Localization with 20+ Enhancements</p>
+            <p class="lead">
+                中国地址格式、默认时区货币、政策敏感翻译、品类/仓库中文显示修复，配合中文翻译包最佳<br/>
+                Chinese address format, default timezone/currency, policy-sensitive translations, category/warehouse Chinese display fix
+            </p>
+            <div class="pt16">
+                <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版 / Enterprise &amp; Community</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司 / Multi-Company</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言 / Multi-Language</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end header -->
+
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述 / Overview</h2>
+            <p class="lead pt16">
+                本模块为 Odoo 提供全面的中文本土化增强，包含 20+ 项优化：中国地址格式、默认国家/时区/货币、客户简称与编码优先显示、品类和仓库位置中文目录名显示修复、日期格式年月日、国家排序中国第一、政策敏感词处理（国家→国家/地区）等。配合 www.odooapp.cn 的中文翻译包使用效果最佳。
+            </p>
+            <p class="text-muted">
+                This module provides comprehensive Chinese localization with 20+ enhancements: Chinese address format, default country/timezone/currency, customer abbreviation display, category and warehouse location Chinese name fix, date format YYYY-MM-DD, country sorting, policy-sensitive naming (Country→Country/Region). Best used with Chinese translation pack.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- end overview -->
+
+<!-- begin feature list -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>完整功能列表 / Complete Feature List</h2>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>1. 中文地址格式，适用于所有客户、供应商、合作伙伴、用户、员工信息</b><br/>
+                    <small class="text-muted">Chinese address format for all customers, suppliers, partners, users, employees.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>2. 中文默认值：国家/地区、时区、货币等</b><br/>
+                    <small class="text-muted">Default values: country, timezone, currency. Processing module base, product.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>3. 客户加简称，地址显示中文化，客户编码显示优先</b><br/>
+                    <small class="text-muted">Customer abbreviation, Chinese address display, code priority.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>4. 客户地址显示增加手机号与电话号码</b><br/>
+                    <small class="text-muted">Display phone numbers along with mobile numbers for customer addresses.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>5. 货币处理，人民币增强，增加排序显示</b><br/>
+                    <small class="text-muted">Currency processing with added sorting display.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>6. 修正品类列表及m2o字段中不显示中文目录名的Bug</b><br/>
+                    <small class="text-muted">Fixed bug where category list and m2o field did not display Chinese name.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>7. 修正仓库位置列表及m2o字段中不显示中文目录名的Bug</b><br/>
+                    <small class="text-muted">Fixed bug where warehouse location list and m2o field did not display Chinese name.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>8. 超级用户改时区为中国</b><br/>
+                    <small class="text-muted">Superuser changed timezone to China.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>9. 时间格式年月日为中国格式（2023-08-08），时间为12:34</b><br/>
+                    <small class="text-muted">Date format YYYY-MM-DD and time HH:MM.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>10. 国家/地区增加排序，中国排第一</b><br/>
+                    <small class="text-muted">Country sorting added; China ranked first.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>11. 收款相关显示中国习惯</b><br/>
+                    <small class="text-muted">Display payment-related information according to Chinese conventions.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>12. 翻译导出默认中文，默认po</b><br/>
+                    <small class="text-muted">Default export translation set to Chinese (po).</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>13. base模型增加name_en_US字段，赋值后同时改翻译值</b><br/>
+                    <small class="text-muted">Added name_en_US field in base model which updates translation value.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>14. 常用小数精度调整</b><br/>
+                    <small class="text-muted">Common decimal precision adjustments.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>15. 销售团队改为中国</b><br/>
+                    <small class="text-muted">Sales team changed to China.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>16. 精简语言显示，如Chinese简体中文改为中文</b><br/>
+                    <small class="text-muted">Simplified Chinese language display.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>17. 将"国家"处理为"国家/地区"，避免政策敏感问题</b><br/>
+                    <small class="text-muted">Correct "Country" to "Country/Region" for policy sensitivity.</small>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end feature list -->
+
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="container">
         <div class="row">
-            <h3>Latest update: v18.0.25.07.29</h3>
-            <div class="oe_span12 oe_spaced">
-                <div class="alert alert-info" style="padding:8px;font-weight: 300; font-size: 20px;">
-                    <i class="fa fa-hand-o-right"></i><b> Key features: </b>
-                    <ul class="list-unstyled">
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            1. Chinese address format, applicable to all Chinese customers, suppliers, partners, users, employee information etc.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            2. Default values in Chinese such as country, time zone and currency. Processing module base, product.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            3. Add customer abbreviation and display addresses in Chinese; prioritize displaying customer codes.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            4. Display phone numbers along with mobile numbers for customer addresses.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            5. Currency processing with added sorting display.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            6. Fixed bug where the category list and m2o field did not display the name of the Chinese directory.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            7. Fixed bug where warehouse location list and m2o field did not display the name of the Chinese directory.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            8. Superuser changed time zone to China.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            9. Date format is year-month-day (e.g., 2023-08-08) and time is 12:34
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            10.Country sorting added; China ranked first
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            11.Display payment-related information according to typical practices in China.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            12.Default export translation is set to Mandarin (po).
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            13.Added 'name_en_US' field in base model which updates translation value when assigned a value.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            14.Common decimal precision adjustments made.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            15.Sales team changed to "China".
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            16.Correct the 'Country' to '国家/地区', More Policy sensitivity.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            21. Multi-language Support. Multi-Company Support.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            22. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
-                        </li>
-                        <li>
-                            <i class="fa fa-check-square-o text-primary"></i>
-                            23. Full Open Source..
-                        </li>
-                    </ul>
+            <div class="col-lg-12 text-center pb32">
+                <h2>核心亮点 / Key Highlights</h2>
+                <p class="lead">开箱即用的中国本土化 / Out-of-the-box Chinese Localization</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-map-marker fa-lg"></i>
+                        </div>
+                        <h5>1. 中国地址格式 / Chinese Address</h5>
+                        <p class="small text-muted">Address Format</p>
+                        <p class="card-text">适用于所有客户、供应商、用户的中国地址格式</p>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <img class="oe_demo oe_screenshot img img-fluid" src="cnreadme.png">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-globe fa-lg"></i>
+                        </div>
+                        <h5>2. 默认值配置 / Default Values</h5>
+                        <p class="small text-muted">Country/Timezone/Currency</p>
+                        <p class="card-text">默认国家中国、时区、货币人民币</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-bug fa-lg"></i>
+                        </div>
+                        <h5>3. Bug修复 / Bug Fixes</h5>
+                        <p class="small text-muted">Category &amp; Location</p>
+                        <p class="card-text">修复品类和仓库位置m2o不显示中文名的问题</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<!-- end key highlights -->
 
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Set the address format to chinese. Including all customer, supplier, users</h4>
-        <p>使用中国地址格式处理：国家，邮编，省份，城市，地址</p>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo1.jpg">
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性 / General Features</h2>
         </div>
-        <p>如果您需要中国省市国标数据和三级联动，您可以从此获取
-            <a href="./app_base_chinese_city"> app_base_chinese_city 应用</a>
-        </p>
-        <p>如果您需要国家、省市区多级树状展现，您可以从此获取
-            <a href="./app_web_widget_ztree"> app_web_widget_ztree 应用</a> </p>
-        <h5 class="text-danger">以下为另行购买增值应用模块的效果截图</h5>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo1-2.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Set Default country, state, timezone, currency.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo2.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Fix Category Display not in english bug.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo3.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">将'国家'字段处理为'国家/地区'，避免政策敏感问题(需配合我司Odoo中文翻译)</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo4.jpg">
-        </div>
-    </div>
-</section>
-
- <section class="container oe_dark">
-    <div class="oe_row oe_spaced text-center">
-        <div class="row">
-            <h2 class="oe_slogan">Technical Help & Support</h2>
-        </div>
-        <div class="col-md-12 pad0">
-            <div class="oe_mt16">
-                <p><h4>
-                For any type of technical help & support requests, Feel free to contact us</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:odoo@china.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> odoo@china.com</a>
-                <p><h4>
-                Via QQ: 300883 (App user would not get QQ or any other IM support. Only for odoo project customize.)</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:300883@qq.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> 300883@qq.com</a>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-globe fa-lg"></i>
+                </div>
+                <h5>多语言与多公司<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
             </div>
-            <div class="oe_mt16">
-                <h4>
-                Visit our website for more support.</h4>
-<h4>https://www.odooai.cn</h4>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code-fork fa-lg"></i>
+                </div>
+                <h5>全版本兼容<br/><small class="text-muted">Full Version Support</small></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code fa-lg"></i>
+                </div>
+                <h5>代码完全开源<br/><small class="text-muted">Full Open Source</small></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
             </div>
         </div>
     </div>
-    <div class="oe_row oe_spaced text-center">
-        <h2>More Powerful addons, Make your odoo very easy to use, easy customize:
-            <a class="btn btn-primary mb16" href="http://www.odoo.com/apps/modules/browse?author=odooai.cn">odooai.cn Odoo Addons</a>
-        </h2>
+</section>
+<!-- end general features -->
+
+<!-- begin screenshots -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>界面截图 / Screenshots</h2>
+            <p class="lead">核心功能界面一览</p>
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Chinese Address Format / 中国地址格式</h3>
+            <img class="img-fluid rounded shadow" src="demo1.jpg" alt="Chinese Address Format">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Default Country, Timezone, Currency / 默认国家时区货币</h3>
+            <img class="img-fluid rounded shadow" src="demo2.jpg" alt="Default Values">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Fix Category Display Bug / 修复品类中文显示Bug</h3>
+            <img class="img-fluid rounded shadow" src="demo3.jpg" alt="Fix Category Bug">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Policy-Sensitive Country Naming / 政策敏感的国家/地区命名</h3>
+            <img class="img-fluid rounded shadow" src="demo4.jpg" alt="Policy Sensitive Naming">
+        </div>
     </div>
 </section>
-<!-- end support-->
+<!-- end screenshots -->
+
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程 / How It Works</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <div class="row text-center">
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">安装模块</p>
+                    <p class="small text-muted mb-0">Install Module</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-language"></i>
+                    </div>
+                    <p class="fw-bold mb-1">加载翻译</p>
+                    <p class="small text-muted mb-0">Load Translation</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <p class="fw-bold mb-1">自动配置</p>
+                    <p class="small text-muted mb-0">Auto Configured</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-smile-o"></i>
+                    </div>
+                    <p class="fw-bold mb-1">开箱即用</p>
+                    <p class="small text-muted mb-0">Ready to Use</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end how it works -->
+
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-cube text-o-color-1 me-2"></i>
+                    base_address_extended / 扩展地址
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-cube text-o-color-1 me-2"></i>
+                    account / 会计
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-cube text-o-color-1 me-2"></i>
+                    sale / 销售
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-cube text-o-color-1 me-2"></i>
+                    stock / 库存
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-wrench text-o-color-1 me-2"></i>
+                    app_odoo_customize / Odoo自定义基础
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">专业Odoo服务伙伴-开发实施咨询培训全套解决方案 / Professional Odoo Solutions</p>
+            <div class="pt16">
+                <p>
+                    <i class="fa fa-globe me-2"></i>
+                    Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-desktop me-2"></i>
+                    Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-envelope me-2"></i>
+                    Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a>
+                </p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
+
 </html>

@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "!Account Multi Level Chart,parent children tree,多层级会计科目",
+    'name': "多层级会计科目树,Account Multi Level Chart Tree",
     'version': '18.0.26.04.22',
     'author': 'odooai.cn',
     'category': 'Accounting/Accounting',
@@ -24,15 +24,25 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Use for parent children tree list select navigator. Multi Level Account Chart tree.
-    ztree widget.
-    """,
+    'summary': "会计科目多层级父子树状选择器，zTree widget。Multi Level Account Chart tree with parent-children zTree widget for list select navigator.",
     'description': """
-    zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView ,
-    eg: Account Chart tree, Product category tree,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+    1. zTree widget for Account Chart with parent-children hierarchy tree.
+    2. Advance search with real parent-children tree in ListView or KanbanView.
+    3. Easy to setup with widget='widget_select' and XML parameters.
+    4. Support ztree_parent_key, ztree_expend_level, limit, order parameters.
+    5. Reusable widget for any parent-child relationship model.
+    6. Multi-language Support. Multi-Company Support.
+    7. Support Odoo 18, 17, 16, 15, 14, 13, 12, Enterprise and Community and odoo.sh Edition.
+    8. Full Open Source.
+
+    1. 会计科目多层级父子树状选择器，zTree widget
+    2. 在列表或看板视图中通过父子树进行高级搜索
+    3. 使用 widget='widget_select' 和 XML 参数轻松配置
+    4. 支持 ztree_parent_key、ztree_expend_level、limit、order 参数
+    5. 可复用的通用父子关系树控件
+    6. 多语言支持，多公司支持
+    7. Odoo 18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    8. 代码完全开源
     """,
     'price': 0.00,
     'currency': 'EUR',

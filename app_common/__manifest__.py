@@ -38,7 +38,7 @@
 ##############################################################################
 
 {
-    'name': "odooAi Common Util and Tools,欧度智能基础功能及面板",
+    'name': "欧度智能基础功能及面板,odooAi Common Util and Tools",
     'version': '18.0.26.04.13',
     'author': 'odooai.cn',
     'category': 'Extra tools',
@@ -49,32 +49,37 @@
     'price': 0.00,
     'currency': 'EUR',
     'images': ['static/description/banner.png'],
-    'summary': '''
-    Core for common use for odooai.cn apps.
-    基础核心及云面板，必须没有要被依赖字段及视图等，实现auto_install
-    ''',
+    'summary': "odooai.cn应用核心基础模块，提供通用工具函数和面板。Core module for odooai.cn apps with common utilities and tools.",
     'description': '''
-    need to setup odoo.conf, add follow:
-    server_wide_modules = web,app_common
-    1. Quick import data from excel with .py code
-    2. Quick m2o default value
-    3. Filter for useless field
-    4. UTC local timezone convert
-    5. Get browser ua, user-agent
-    6. Image to local, image url to local, media to local attachment
-    7. Log cron job
-    8. Boost for less no use mail
-    9. Customize .rng file
-    10. Misc like get distance between two points
+    1. Quick import data from excel with .py code.
+    2. Quick m2o default value helper.
+    3. Filter for useless field.
+    4. UTC local timezone convert.
+    5. Get browser user-agent.
+    6. Image to local, image URL to local, media to local attachment.
+    7. Log cron job management.
+    8. Boost for less no-use mail.
+    9. Customize .rng file.
+    10. Misc utilities like get distance between two points.
     11. Multi-language Support. Multi-Company Support.
     12. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
-    ==========
-    1.
-    2.
-    3. 多语言支持
-    4. 多公司支持
-    5. Odoo 16, 企业版，社区版，多版本支持
+
+    Setup: server_wide_modules = web,app_common
+
+    1. 通过.py代码快速从Excel导入数据
+    2. Many2One默认值快捷设置
+    3. 无用字段过滤器
+    4. UTC本地时区转换
+    5. 获取浏览器User-Agent
+    6. 图片转本地、图片URL转本地、媒体转附件
+    7. 日志定时任务管理
+    8. 减少无用邮件提升性能
+    9. 自定义.rng文件
+    10. 通用工具如计算两点距离等
+    11. 多语言支持，多公司支持
+    12. Odoo 19,18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    13. 代码完全开源
     ''',
     'depends': [
         'mail',

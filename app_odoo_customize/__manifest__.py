@@ -22,7 +22,7 @@
 # description:
 
 {
-    'name': '54+ Tweak OEM Boost Customize Ai Employee UI Security Data All in One,Odoo18优化提速OEM去标大全',
+    'name': '54+ Tweak OEM Boost Customize AI UI Security Data All in One / 54+项Odoo优化提速OEM去标大全',
     'version': '18.0.26.04.24',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
@@ -31,7 +31,7 @@
     'license': 'LGPL-3',
     'sequence': 2,
     'images': ['static/description/banner.gif', 'static/description/banner.png'],
-    'summary': '54+ Tweak OEM Boost Customize AI UI Security Data Reset All in One for Odoo18. 54+项Odoo优化提速OEM去标大全',
+    'summary': '54+ Tweak OEM Boost Customize AI UI Security Data All in One for Odoo18 / 54+项Odoo优化提速OEM去标大全',
     'depends': [
         'app_common',
         'base_setup',

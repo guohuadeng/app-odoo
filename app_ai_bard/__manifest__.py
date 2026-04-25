@@ -7,7 +7,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Google Gemini (Bard) Ai for odoo ai center, 谷歌Ai支持',
+    'name': '谷歌Gemini AI支持,Google Gemini (Bard) AI for Odoo',
     'version': '18.0.25.07.26',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
@@ -18,11 +18,7 @@
     'license': 'LGPL-3',
     'sequence': 10,
     'images': ['static/description/banner.gif', 'static/description/banner.png'],
-    'summary': '''
-    Google Gemini Ai for Odoo AI Center. Ai Aigc Center including Google Gemini Ai(Bard before), Azure Ai, Baidu Ai.
-    Support chatgpt 4 image. DALLE, Integration All ChatGpt Api and Azure OpenAI Service.
-    Easy Chat channel with several ChatGPT Robots and train.
-    ''',
+    'summary': "Odoo AI中心集成Google Gemini(Bard)AI，支持多AI机器人对话与训练。Google Gemini AI integration for Odoo AI Center with multi-robot chat and training.",
     'description': '''
     Chat with google Gemini ai with odoo.
     Allows the application to leverage the capabilities of the GPT language model to generate human-like responses,

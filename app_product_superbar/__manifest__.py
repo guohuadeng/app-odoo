@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "!Product browse by category navigator",
+    'name': "产品分类导航 / Product Browse by Category Navigator",
     'version': '18.0.25.04.02',
     'author': 'odooai.cn',
     'category': 'Extra tools',
@@ -24,16 +24,25 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Browse Product by category tree. Use for parent children tree list kanban navigator.
-    Easy to navigator and browse any data. Support list, kanban, pivot, graph view.
-    Hierarchy Tree.Parent Children relation tree..
-    """,
+    'summary': '按分类树形浏览产品，Superbar高级搜索。/ Browse products by category tree with Superbar advance search.',
     'description': """
-    Superbar, zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图
+English Features:
+1. Superbar and zTree widget for product advance search.
+2. Browse products by category tree with real parent children hierarchy.
+3. Advance search sidebar for many2one, many2many, date range, boolean, selection, number fields.
+4. Search sidebar available for list, kanban, pivot and graph views.
+5. Multi-language Support. Multi-Company Support.
+6. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+7. Full Open Source.
+
+中文功能：
+1. 产品Superbar和zTree高级搜索组件。
+2. 按分类树形浏览产品，支持真实父子层级关系。
+3. 高级搜索侧栏，支持many2one、many2many、日期范围、布尔、选择、数字字段。
+4. 搜索侧栏支持列表、看板、数据透视和图表视图。
+5. 多语言支持。多公司支持。
+6. 支持Odoo 19,18,17,16,15,14,13,12，企业版、社区版及odoo.sh。
+7. 代码完全开源。
     """,
     'price': 0.00,
     'currency': 'EUR',

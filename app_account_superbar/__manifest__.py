@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "App account superbar navigator",
+    'name': "会计科目树状导航,Account Superbar Navigator",
     'version': '18.0.26.04.15',
     'author': 'odooai.cn',
     'category': 'Accounting/Accounting',
@@ -24,15 +24,27 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Browse journal by account chart... Use for parent children tree list kanban navigator.
-    Hierarchy Tree.Parent Children relation tree..
-    """,
+    'summary': "会计科目树状导航，按科目表结构浏览日记账、凭证行、辅助核算。Browse journal by account chart with parent-children tree navigator for list, kanban, pivot, graph view.",
     'description': """
-    Superbar, zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+    1. Advance search with real parent-children tree navigator for Account Chart views.
+    2. Browse Account Account, Analytic Account, Journal Items, Journal Entries, Analytic Lines by tree structure.
+    3. Support tree view, list view, kanban view, pivot view and graph view.
+    4. Click to expand/collapse tree nodes, Ctrl/Cmd to multi-select nodes.
+    5. Set checkbox to include or exclude child nodes data.
+    6. Multi-field search and filter support.
+    7. Multi-language Support. Multi-Company Support.
+    8. Support Odoo 18, 17, 16, 15, 14, 13, 12, Enterprise and Community and odoo.sh Edition.
+    9. Full Open Source.
+
+    1. 会计科目树状高级导航，支持科目、辅助核算、凭证、凭证行、辅助核算明细
+    2. 按科目表父子结构浏览会计数据
+    3. 支持树形、列表、看板、透视表、图表等多种视图
+    4. 点击展开/折叠树节点，Ctrl/Cmd多选节点
+    5. 勾选控制是否包含子节点数据
+    6. 支持多字段搜索与过滤
+    7. 多语言支持，多公司支持
+    8. Odoo 18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    9. 代码完全开源
     """,
     'price': 0.00,
     'currency': 'EUR',

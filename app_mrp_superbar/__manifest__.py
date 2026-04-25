@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "App mrp Manufacturing Orders browse by state workcenter navigator",
+    'name': "MRP制造单导航 / MRP Manufacturing Orders Navigator",
     'version': '18.0.25.06.10',
     'author': 'odooai.cn',
     'category': 'Extra tools',
@@ -24,16 +24,29 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Browse mrp order, Manufacturing Orders by Materials Availability, work center.
-    Easy to navigator and browse any data. Support list, kanban, pivot, graph view.
-    Hierarchy Tree.
-    """,
+    'summary': '按物料可用性和工作中心浏览制造单，Superbar高级搜索。/ Browse manufacturing orders by materials availability and work center with Superbar.',
     'description': """
-    Superbar, zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+English Features:
+1. Superbar and zTree widget for MRP manufacturing orders advance search.
+2. Browse manufacturing orders by state, work center and materials availability.
+3. Advance search sidebar for many2one, many2many, date range, boolean, selection, number fields.
+4. Search sidebar available for list, kanban, pivot and graph views.
+5. Support navigate in search more windows for m2o or m2m fields.
+6. Easy customize for any app with extra param for searchpanel.
+7. Multi-language Support. Multi-Company Support.
+8. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+9. Full Open Source.
+
+中文功能：
+1. MRP制造单Superbar和zTree高级搜索组件。
+2. 按状态、工作中心和物料可用性浏览制造单。
+3. 高级搜索侧栏，支持many2one、many2many、日期范围、布尔、选择、数字字段。
+4. 搜索侧栏支持列表、看板、数据透视和图表视图。
+5. 支持在搜索更多窗口中为m2o/m2m字段导航筛选。
+6. 易于自定义，支持searchpanel额外参数。
+7. 多语言支持。多公司支持。
+8. 支持Odoo 19,18,17,16,15,14,13,12，企业版、社区版及odoo.sh。
+9. 代码完全开源。
     """,
     'price': 0.00,
     'currency': 'EUR',

@@ -25,7 +25,7 @@
 ##############################################################################
 
 {
-    'name': 'Group Company Multi Level Chart Hierarchy, 集团公司多层级结构图zChart',
+    'name': "集团公司多层级结构图,Group Company Multi Level Chart Hierarchy",
     'version': '18.0.25.06.10',
     'author': 'odooai.cn',
     'category': 'Extra tools',
@@ -36,24 +36,21 @@
     'price': 0.00,
     'currency': 'EUR',
     'images': ['static/description/banner.png'],
-    'summary': '''
-    Group Company Chart Hierarchy with zchart Widget. Hierarchy Chart, Hierarchy Tree for multi level Parent Children relation tree.
-    Free Plugin for Multi company Hierarchy chart category Hierarchy chart.
-    Paid widget app_web_widget_ztree, also support stock Hierarchy chart. account chart. user multi level chart.
-    ''',
+    'summary': "集团公司多层级树状结构图，zChart widget。Multi level company hierarchy chart with zChart widget for parent-children relation.",
     'description': '''
-Need extra paid apps https://www.odoo.com/apps/modules/16.0/app_web_widget_ztree/
-This module extend to show a Hierarchy chart
-    1. Group Company Chart Hierarchy with zchart Widget. Hierarchy Chart, Hierarchy Tree for multi level Parent Children relation tree.
-    11. Multi-language Support. Multi-Company Support.
-    12. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
-    13. Full Open Source.
-    ========== 中文说明
-    1. 多层级公司树状展示
-    2. 核心商业模块 app_web_widget_ztree 的扩展插件。
-    11. 多语言支持，多公司支持
-    12. Odoo 18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
-    13. 代码完全开源
+    1. Group Company Chart Hierarchy with zChart widget for multi level parent-children relation tree.
+    2. Visualize company structure hierarchy with interactive chart.
+    3. Support force set parent company wizard for batch updates.
+    4. Multi-language Support. Multi-Company Support.
+    5. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    6. Full Open Source.
+
+    1. 集团公司多层级树状结构图，zChart widget
+    2. 可视化展示公司层级结构
+    3. 支持批量设置上级公司的向导
+    4. 多语言支持，多公司支持
+    5. Odoo 19,18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    6. 代码完全开源
     ''',
     'depends': [
         'app_common',

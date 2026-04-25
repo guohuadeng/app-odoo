@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "Project and task browse by partner,user, stage navigator",
+    'name': "项目任务导航 / Project &amp; Task Navigator",
     'version': '18.0.26.03.26',
     'author': 'odooai.cn',
     'category': 'Extra tools',
@@ -24,17 +24,27 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Browse project by company / partner / user. Project task by user, tags.
-    project superbar.
-    Easy to navigator and browse any data. Support list, kanban, pivot, graph view.
-    Hierarchy Tree.
-    """,
+    'summary': '按公司、客户、用户和阶段浏览项目和任务。/ Browse projects by company, partner, user and stage with Superbar.',
     'description': """
-    Superbar, zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+English Features:
+1. Superbar and zTree widget for Project and Task advance search.
+2. Browse projects by company, partner and user.
+3. Browse project tasks by user, tags and stage.
+4. Advance search sidebar for multiple field types.
+5. Search sidebar available for list, kanban, pivot and graph views.
+6. Multi-language Support. Multi-Company Support.
+7. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+8. Full Open Source.
+
+中文功能：
+1. 项目和任务Superbar和zTree高级搜索组件。
+2. 按公司、客户和用户浏览项目。
+3. 按用户、标签和阶段浏览项目任务。
+4. 高级搜索侧栏，支持多种字段类型。
+5. 搜索侧栏支持列表、看板、数据透视和图表视图。
+6. 多语言支持。多公司支持。
+7. 支持Odoo 19,18,17,16,15,14,13,12，企业版、社区版及odoo.sh。
+8. 代码完全开源。
     """,
     'price': 0.00,
     'currency': 'EUR',

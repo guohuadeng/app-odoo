@@ -23,7 +23,7 @@
 ##############################################################################
 
 {
-    'name': "App Account Invoice Product Multi Batch Add",
+    'name': "客户发票与供应商账单批量添加产品,Account Invoice Product Multi Add",
     'version': '18.0.24.12.03',
     'author': 'odooai.cn',
     'category': 'Accounting/Accounting',
@@ -33,17 +33,25 @@
     'sequence': 2,
     'price': 0.00,
     'currency': 'USD',
-    'summary': """
-    App Account Invoice Product Multi Batch Add
-    Odoo App of odooai.cn
-    """,
+    'summary': "一键批量将多个产品添加到客户发票与供应商账单中，支持过滤与分组。One Click to batch add multiple products to Customer Invoice and Vendor Bill with filter and group.",
     'description': """
-    App Account Invoice Product Multi Add
-    1. One Click to add multi product to Account Invoice.
-    2. All the product can filter and group.
-    客户收据与供应商帐单批量增加产品
-    1. 可以一键快速将多个产品加到客户收据与供应商帐单中
-    2. 可对产品进行过滤、分组，然后批量加入
+    1. One Click to add multi product to Account Customer Invoice and Vendor Bill.
+    2. All the products can be filtered and grouped by category in the popup window.
+    3. Multi select products and batch add to invoice lines.
+    4. Supports any one2many field to get this feature by XML configuration.
+    5. Also works with Sale Order, Purchase Order, MRP BOM, and Stock Picking.
+    6. Multi-language Support. Multi-Company Support.
+    7. Support Odoo 18, 17, 16, 15, 14, 13, 12, Enterprise and Community and odoo.sh Edition.
+    8. Full Open Source.
+
+    1. 一键快速将多个产品批量添加到客户收据与供应商账单中
+    2. 可在弹窗中对产品进行过滤、分组，然后批量加入发票行
+    3. 支持多选产品，一次性添加到账单明细
+    4. 可通过XML配置让任意one2many字段获得此功能
+    5. 同样适用于销售订单、采购订单、MRP BOM和库存拣货
+    6. 多语言支持，多公司支持
+    7. Odoo 18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    8. 代码完全开源
     """,
     'depends': [
         # 'app_web_one2many_multi_add',

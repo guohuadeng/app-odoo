@@ -6,44 +6,34 @@
 # resource of odooai
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-# Odoo16在线用户手册（长期更新）
-# https://www.odooai.cn/documentation/16.0/zh_CN/index.html
-
-# Odoo16在线开发者手册（长期更新）
-# https://www.odooai.cn/documentation/16.0/zh_CN/developer.html
-
-# Odoo13在线用户手册（长期更新）
-# https://www.odooai.cn/documentation/user/13.0/zh_CN/index.html
-
-# Odoo13在线开发者手册（长期更新）
-# https://www.odooai.cn/documentation/13.0/index.html
-
-# Odoo在线中文用户手册（长期更新）
-# https://www.odooai.cn/documentation/user/10.0/zh_CN/index.html
-
-# Odoo10离线中文用户手册下载
-# https://www.odooai.cn/odoo10_user_manual_document_offline/
-# Odoo10离线开发手册下载-含python教程，jquery参考，Jinja2模板，PostgresSQL参考（odoo开发必备）
-# https://www.odooai.cn/odoo10_developer_document_offline/
 # description:
 
 {
-    'name': "App Stock location ztree, parent children tree",
+    'name': '库存位置树控件 / Stock Location zTree Parent Children Tree',
     'version': '18.0.24.12.09',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Use for parent children tree list select navigator. stock location tree.
-    ztree widget.
-    """,
+    'summary': '库存位置父子树选择器，在many2one字段中显示树状层级 / Stock location parent children tree selector in many2one field',
     'description': """
-    zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView ,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+1. zTree widget for stock location parent children tree in many2one select.
+2. Advance search with real parent children tree in ListView or KanbanView.
+3. Support stock location, product category and department tree.
+4. Easy to customize widget parameters for tree level, limit, order.
+5. Multi-Language Support.
+6. Multi-Company Support.
+7. Full Version Support for Odoo 19,18,17,16,15,14,13,12, Enterprise and Community Edition.
+8. Full Open Source under LGPL-3 license.
+1. zTree 控件实现库存位置在 many2one 字段中的父子树选择器。
+2. 在列表和看板视图中进行父子树高级搜索。
+3. 支持库存位置、产品分类和部门树。
+4. 可自定义树控件参数，包括展开层级、记录限制、排序方式。
+5. 多语言支持。
+6. 多公司支持。
+7. 全版本支持 Odoo 19,18,17,16,15,14,13,12，兼容企业版和社区版。
+8. 代码完全开源，基于 LGPL-3 协议。
     """,
     'price': 0.00,
     'currency': 'EUR',
