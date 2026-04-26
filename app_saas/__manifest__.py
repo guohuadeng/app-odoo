@@ -26,7 +26,23 @@
 
 {
     'name': "SaaS云服务客户端 / odooapp.cn SaaS Client - Ai Passport",
-    'summary': 'AiSaas云服务，Ai通行证全社交媒体SSO登录，中文翻译更新，模块更新推送。/ AiSaas cloud service with Ai Passport SSO login, Chinese translation update and module update push.',
+    'version': '18.0.26.04.16',
+    'author': 'odooai.cn',
+    'category': 'Base',
+    'website': 'https://www.odooai.cn',
+    'live_test_url': 'https://demo.odooapp.cn',
+    'license': 'LGPL-3',
+    'sequence': 2,
+    'price': 0.00,
+    'currency': 'EUR',
+    'images': ['static/description/banner.png'],
+    'summary': '''
+    AiSaas云服务，使用Ai通行证，一键实现全社交媒体统一登录SSO。
+    支持微信、抖音、QQ、淘宝、钉钉、支付宝、企业微信、Facebook、Google、微软Azure等整合登录。
+    在Odoo中获取最新的中文翻译（会员专属），获取当前Odoo模块最新版本更新等。
+    支持Odoo中文版在线更新及 www.odooapp.cn 的信息推送等。
+    安装即代表同意我司云服务用户协议及隐私政策。 https://www.odooapp.cn/conditions
+    ''',
     'description': '''
     1. Ai通行证实现全社交媒体登录支持
     2. 快速访问Odoo中文应用商店并获取独享Odoo中文通行码，可随时断开云服务连接
