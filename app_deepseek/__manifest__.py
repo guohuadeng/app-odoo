@@ -21,7 +21,13 @@
     'price': 0.00,
     'currency': 'EUR',
     'images': ['static/description/banner.png'],
-    'summary': 'DeepSeek深度求索AI对话模型，支持V3/R1等。Ai服务中心的DeepSeek支持，多Ai机器人对接，聊天与训练。/ Deepseek AI support for Odoo AI Center, including V3/R1 models. Multi Ai robot connector with chat and training capabilities.',
+    'summary': '''
+    Deepseek AI for Odoo AI Center. Ai Aigc Center including Deepseek, Azure Chatgpt Ai, OpenAi Chatgpt Ai.
+    Ai服务中心的DeepSeek支持，包括V3和R1等，本版本只支持开放对话模型。
+    Integration All Ai robot Api, like Azure OpenAI Chatgpt Service.
+    Also support(need extra pay) Ali Ai, Baidu Ai, Kimi Ai.
+    Easy Chat channel with several Ai Robots and train.
+    ''',
     'description': '''
 English Features:
 1. Chat with Deepseek AI in Odoo, leveraging GPT-like language model for human-like responses.
