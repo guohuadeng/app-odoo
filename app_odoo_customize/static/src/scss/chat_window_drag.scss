@@ -1,0 +1,67 @@
+// ---------------------------------------------------------------------------
+// ChatWindow drag & resize styles – app_odoo_customize
+// ---------------------------------------------------------------------------
+
+// Resize handle (bottom-right corner grip)
+.o_odoo_customize_chat_resize {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 14px;
+    height: 14px;
+    cursor: nwse-resize;
+    z-index: 10;
+
+    // Visual grip indicator (bottom-right triangle lines)
+    &::after {
+        content: "";
+        position: absolute;
+        right: 2px;
+        bottom: 2px;
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid rgba(0, 0, 0, 0.15);
+        border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+    }
+}
+
+// Resize handle (bottom-left corner grip)
+.o_odoo_customize_chat_resize_left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 14px;
+    height: 14px;
+    cursor: nesw-resize;
+    z-index: 10;
+
+    // Visual grip indicator (bottom-left triangle lines)
+    &::after {
+        content: "";
+        position: absolute;
+        left: 2px;
+        bottom: 2px;
+        width: 8px;
+        height: 8px;
+        border-left: 2px solid rgba(0, 0, 0, 0.15);
+        border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+    }
+}
+
+// When ChatWindow is being dragged or resized, disable pointer events
+// on the content to avoid text selection and iframe capture issues
+.o-mail-ChatWindow[style*="transition: none"] {
+    user-select: none;
+
+    .o-mail-ChatWindow-header,
+    .o-mail-ChatWindow-header > * {
+        user-select: none;
+    }
+}
+
+// Ensure ChatWindow keeps its position when dragged
+.o-mail-ChatWindow {
+    // Smooth transition when releasing drag/resize
+    transition: left 0.05s ease-out, top 0.05s ease-out,
+                width 0.05s ease-out, height 0.05s ease-out;
+}

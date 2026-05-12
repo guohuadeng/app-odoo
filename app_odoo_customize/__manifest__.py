@@ -22,8 +22,8 @@
 # description:
 
 {
-    'name': '54+ Tweak OEM Boost Customize AI UI Security Data All in One / 54+项Odoo优化提速OEM去标大全',
-    'version': '18.0.26.04.24',
+    'name': '56+ Tweak OEM Boost Customize AI UI Security Data All in One / 56+项Odoo优化提速OEM去标大全',
+    'version': '18.0.26.05.12',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
@@ -31,7 +31,7 @@
     'license': 'LGPL-3',
     'sequence': 2,
     'images': ['static/description/banner.gif', 'static/description/banner.png'],
-    'summary': '54+ Tweak OEM Boost Customize AI UI Security Data All in One for Odoo18 / 54+项Odoo优化提速OEM去标大全',
+    'summary': '56+ Tweak OEM Boost Customize AI UI Security Data All in One for Odoo18 / 56+项Odoo优化提速OEM去标大全',
     'depends': [
         'app_common',
         'base_setup',
@@ -74,12 +74,14 @@
             'app_odoo_customize/static/src/scss/app.scss',
             'app_odoo_customize/static/src/scss/ribbon.scss',
             'app_odoo_customize/static/src/scss/dialog.scss',
+            'app_odoo_customize/static/src/scss/chat_window_drag.scss',
             'app_odoo_customize/static/src/js/user_menu.js',
             'app_odoo_customize/static/src/js/ribbon.js',
             'app_odoo_customize/static/src/js/dialog.js',
             'app_odoo_customize/static/src/js/navbar.js',
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
+            'app_odoo_customize/static/src/js/chat_window_drag.js',
             'app_odoo_customize/static/src/webclient/*.js',
             'app_odoo_customize/static/src/webclient/user_menu.xml',
             'app_odoo_customize/static/src/xml/res_config_edition.xml',
@@ -150,6 +152,7 @@
 55. Multi-language Support. Multi-Company Support.
 56. Support Odoo 18, 17, 16, 15, 14, 13, 12, Enterprise and Community and odoo.sh Edition.
 57. Full Open Source.
+58. ChatWindow draggable and resizable with min width/height.
 
 1. 删除菜单导航页脚的 Odoo 标签
 2. 将弹出窗口中 "Odoo" 设置为自定义名称
@@ -208,5 +211,6 @@
 55. 多语言支持，多公司支持
 56. Odoo 18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
 57. 代码完全开源
+58. 聊天窗口可拖拽和调整大小（最小宽/高限制）
     """,
 }

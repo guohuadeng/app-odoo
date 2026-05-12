@@ -23,6 +23,9 @@ msgid ""
 "\n"
 "Note: this might be a multi-company issue. Switching company may help - in Odoo, not in real life!"
 msgstr ""
+"\n"
+"\n"
+"请注意：这可能是多公司问题。切换公司可能有所帮助 - 在Odoo中操作！"
 
 #. module: app_odoo_customize
 #. odoo-python
@@ -32,6 +35,9 @@ msgid ""
 "\n"
 "This seems to be a multi-company issue, but you do not have access to the proper company to access the record anyhow."
 msgstr ""
+"\n"
+"\n"
+"这可能是多公司问题，但您无法访问正确的公司来访问记录。"
 
 #. module: app_odoo_customize
 #. odoo-python
@@ -41,12 +47,15 @@ msgid ""
 "\n"
 "This seems to be a multi-company issue, you might be able to access the record by switching to the company: %s."
 msgstr ""
+"\n"
+"\n"
+"当存在多公司问题时，您可能能够通过切换到公司：%s来访问记录。"
 
 #. module: app_odoo_customize
 #. odoo-python
 #: code:addons/app_odoo_customize/models/ir_rule.py:0
 msgid "- %(description)s (%(model)s), ids:[%(ids)r]"
-msgstr ""
+msgstr "- %(description)s (%(model)s), 记录ids:[%(ids)r]"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -955,7 +964,7 @@ msgstr "XmlId"
 #. odoo-python
 #: code:addons/app_odoo_customize/models/ir_rule.py:0
 msgid "create"
-msgstr ""
+msgstr "创建"
 
 #. module: app_odoo_customize
 #: model:ir.ui.menu,name:app_odoo_customize.menu_app_group
@@ -977,16 +986,29 @@ msgstr "odooAi.cn"
 #. odoo-python
 #: code:addons/app_odoo_customize/models/ir_rule.py:0
 msgid "read"
-msgstr ""
+msgstr "读取"
 
 #. module: app_odoo_customize
 #. odoo-python
 #: code:addons/app_odoo_customize/models/ir_rule.py:0
 msgid "unlink"
-msgstr ""
+msgstr "删除"
 
 #. module: app_odoo_customize
 #. odoo-python
 #: code:addons/app_odoo_customize/models/ir_rule.py:0
 msgid "write"
-msgstr ""
+msgstr "写入"
+
+
+#. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/chat_window_drag.js:0
+msgid "Press to drag the dialog window"
+msgstr "按住以拖动对话框窗口"
+
+#. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/chat_window_drag.js:0
+msgid "Drag to resize the dialog window"
+msgstr "拖动以调整对话框窗口大小"
