@@ -115,6 +115,7 @@ function attachDragResize(chatWindowEl) {
         header.style.cursor = "move";
         header.title = _t("Press to drag the dialog window");
         header.addEventListener("mousedown", (e) => {
+            wasDragged = false;
             if (
                 e.target.closest(
                     "button, .btn, i.fa, i.oi, input, textarea, select, a"
@@ -122,7 +123,6 @@ function attachDragResize(chatWindowEl) {
             ) {
                 return;
             }
-            wasDragged = false;
             e.preventDefault();
             normalizePosition(chatWindowEl);
             const rect = chatWindowEl.getBoundingClientRect();
