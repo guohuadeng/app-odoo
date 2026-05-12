@@ -22,7 +22,7 @@
 # description:
 
 {
-    'name': 'Odoo19 Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Remove Data All in One-优化提速53+项大全',
+    'name': 'Odoo19 Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Remove Data All in One-优化提速56+项大全',
     'version': '19.0.26.04.24',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
@@ -32,8 +32,8 @@
     'sequence': 2,
     'images': ['static/description/banner.gif', 'static/description/banner.png'],
     'summary': """
-    53+ Odoo Enhance in 1 click Tweak odoo. Change Odoo to your OEM brand.all in one odoo enhancement. for Customize,UI,Boost Security,Development.
-    Easy reset data, clear data, reset account chart, reset Demo data.
+    56+ Odoo Enhance in 1 click Tweak odoo. Change Odoo to your OEM brand.all in one odoo enhancement. for Customize,UI,Boost Security,Development.
+    ChatWindow drag and resize (bottom-left & bottom-right). Easy reset data, clear data, reset account chart, reset Demo data.
     For quick debug. Set brand,Language Switcher all in one.
     """,
     'depends': [
@@ -77,12 +77,14 @@
             'app_odoo_customize/static/src/scss/app.scss',
             'app_odoo_customize/static/src/scss/ribbon.scss',
             'app_odoo_customize/static/src/scss/dialog.scss',
+            'app_odoo_customize/static/src/scss/chat_window_drag.scss',
             'app_odoo_customize/static/src/js/user_menu.js',
             'app_odoo_customize/static/src/js/ribbon.js',
             'app_odoo_customize/static/src/js/dialog.js',
             'app_odoo_customize/static/src/js/navbar.js',
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
+            'app_odoo_customize/static/src/js/chat_window_drag.js',
             'app_odoo_customize/static/src/webclient/*.js',
             'app_odoo_customize/static/src/webclient/user_menu.xml',
             'app_odoo_customize/static/src/xml/res_config_edition.xml',
@@ -155,6 +157,7 @@
     51. Show menu xml_id in debug asset mode.  easy for menu and action development.
     52. Quick View Fields list and View List of every model.
     53. Quick management and view of [Application Access Category].
+    54. ChatWindow Draggable and Resizable with Min W/H Constraints (Bottom-Left & Bottom-Right).
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -216,5 +219,6 @@
     51. 在开发者Assets模式中，快速查看菜单Menu 的 xml_id.
     52. 快速管理查看模型的字段和视图列表.
     53. 快速管理查看应用权限分类管理.
+    54. 聊天窗口可拖拽和调整大小，含最小宽/高限制（左下角和右下角双角缩放）.
     """,
 }
