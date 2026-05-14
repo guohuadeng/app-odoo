@@ -20,6 +20,9 @@
                             </group>
                             <group>
                                 <field name="app_stop_subscribe"/>
+                                <div role="alert" class="alert alert-warning">
+                                    <p>Be careful! This will stop all subscribe notifications. Also the document permission will be affected.</p>
+                                </div>
                             </group>
                         </group>
                     </div>
