@@ -1,0 +1,24 @@
+Create a professional app banner image (1000x500 pixels, PNG format) for an Odoo ERP module, based on the provided reference image.
+
+**Critical style requirements:**
+- The background color, gradient direction, and overall layout MUST exactly match the reference image. Do NOT invent your own color scheme.
+- All visual elements (decorative shapes, bottom branding bar) MUST follow the reference image's style and placement.
+
+**Content (left-aligned):**
+- Main title in Chinese (large white bold text): 产品英文名称（Mixin）
+- Subtitle in English (medium light gray text): Product English Name (Mixin)
+- Feature list with numbered items (white text):
+  1. Mixin方式为产品增加英文名字段，不侵入现有模型
+  2. 自动设定lang=en_US的名称为英文名，统一处理
+  3. 中国化增强组件，配置默认国家/时区/币种/伙伴格式
+- English summary (light gray italic, wrap every ≤12 words, each line separated):
+  Mixin-based English name field for
+  products with auto en_US name mapping
+
+**Bottom-right icon:**
+- A small icon in the bottom-right area (same size and position as the reference image's icon). Design the icon based on the module's core function: a product label/tag with "EN" text and a puzzle piece (representing Mixin integration). Keep it simple, flat, and professional.
+
+**Bottom strip (MUST exactly match the reference image - do NOT modify):**
+- The bottom branding bar including layout, text, colors, logo position MUST be identical to the reference image. Copy it exactly as-is. "odooAi 欧度智能" branding with green logo and text, same size, same position, same colors.
+
+**Critical:** All Chinese and English text MUST be rendered clearly and legibly. The final PNG file MUST be under 300KB. Feature items MUST use numbered format (1. 2. 3.) instead of bullet points. The bottom-right icon MUST match the reference image's icon in size and position. The bottom "odooAi 欧度智能" branding bar MUST be copied exactly from the reference image with no modifications whatsoever.
