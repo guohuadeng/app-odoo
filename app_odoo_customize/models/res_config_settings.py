@@ -90,7 +90,8 @@ class ResConfigSettings(models.TransientModel):
         for line in o:
             # 检查是否存在
             try:
-                if not self.env['ir.model']._get(line):
+                ir_model = self.env['ir.model'].get(line)
+                if not ir_model:
                     continue
             except Exception as e:
                 _logger.warning('remove data error get ir.model: %s,%s', line, e)
@@ -102,9 +103,15 @@ class ResConfigSettings(models.TransientModel):
                 t_name = obj_name.replace('.', '_')
             else:
                 t_name = obj._table
-
+            
             sql = "delete from %s" % t_name
-            # 增加多公司处理
+
+            # 额外处理 template mixin 的数据,模板不删除
+            if hasattr(ir_model, 'is_mixin_template') and hasattr(obj, 'is_template'):
+                where_str = " where is_template = false"
+                sql = sql + where_str
+
+            # todo: 增加多公司处理
             try:
                 self._cr.execute(sql)
                 self._cr.commit()
