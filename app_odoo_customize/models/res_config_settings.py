@@ -90,7 +90,7 @@ class ResConfigSettings(models.TransientModel):
         for line in o:
             # 检查是否存在
             try:
-                ir_model = self.env['ir.model'].get(line)
+                ir_model = self.env['ir.model']._get(line)
                 if not ir_model:
                     continue
             except Exception as e:
