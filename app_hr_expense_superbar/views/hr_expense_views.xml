@@ -9,6 +9,7 @@
                 <searchpanel view_types="list,pivot,graph,search">
                     <field name="company_id" groups="base.group_multi_company"/>
                     <field name="state"/>
+                    <field name="employee_id" enable_counters="1" select="multi"/>
                 </searchpanel>
             </xpath>
         </field>

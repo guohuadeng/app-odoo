@@ -11,6 +11,7 @@
                     <field name="state"/>
                     <field name="payment_state"/>
                     <field name="department_id" enable_counters="1" select="multi"/>
+                    <field name="employee_id" enable_counters="1" select="multi"/>
                 </searchpanel>
             </xpath>
         </field>
