@@ -1,0 +1,7 @@
+// Fix: hr_expense.ListRenderer adds "h-auto" (height: auto !important) to o_list_renderer,
+// which overrides the "height: 100%" from .o_component_with_search_panel .o_renderer.
+// When searchpanel is active, we need height: 100% so the list fills the remaining space
+// and scrolls internally instead of the whole page scrolling.
+.o_component_with_search_panel .o_renderer_with_searchpanel.h-auto {
+    height: 100% !important;
+}
