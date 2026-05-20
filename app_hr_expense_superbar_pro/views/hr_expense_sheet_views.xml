@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_hr_expense_sheet_view_search" model="ir.ui.view">
+        <field name="name">app.hr.expense.sheet.search</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_sheet_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//searchpanel" position="inside">
+                <field name="accounting_date"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
