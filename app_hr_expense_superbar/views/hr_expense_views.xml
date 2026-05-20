@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="hr_expense.hr_expense_view_search"/>
         <field name="arch" type="xml">
             <xpath expr="//search" position="inside">
-                <searchpanel view_types="list,kanban,pivot,graph,search">
+                <searchpanel view_types="list,pivot,graph,search">
                     <field name="company_id" groups="base.group_multi_company"/>
                     <field name="state"/>
                 </searchpanel>
