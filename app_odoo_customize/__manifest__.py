@@ -23,7 +23,7 @@
 
 {
     'name': 'Odoo19 Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Remove Data All in One-优化提速56+项大全',
-    'version': '19.0.26.04.24',
+    'version': '19.0.26.05.21',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
