@@ -728,7 +728,7 @@ msgstr ""
 
 #. module: app_chatgpt
 #: model_terms:ir.ui.view,arch_db:app_chatgpt.ai_robot_form_view
-msgid "Get List Model"
+msgid "Get Model List"
 msgstr "获取Model List"
 
 #. module: app_chatgpt
