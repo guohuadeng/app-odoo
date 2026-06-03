@@ -48,7 +48,6 @@
     'images': ['static/description/banner.png'],
     'data': [
         'views/account_account_views.xml',
-        'data/account_account_tag_data.xml',
         'report/account_report.xml',
         'report/report_voucher.xml',
     ],
