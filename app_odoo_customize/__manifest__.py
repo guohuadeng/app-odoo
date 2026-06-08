@@ -23,7 +23,7 @@
 
 {
     'name': '56+ Tweak OEM Boost Customize AI UI Security Data All in One / 56+项Odoo优化提速OEM去标大全',
-    'version': '18.0.26.05.13',
+    'version': '18.0.26.06.08',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',

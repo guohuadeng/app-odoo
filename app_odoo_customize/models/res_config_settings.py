@@ -55,7 +55,7 @@ class ResConfigSettings(models.TransientModel):
         ('bottom', 'Bottom'),
         # ('left', 'Left'),
     ], config_parameter='app_navbar_pos_mobile')
-    
+
     # 安全与提速
     app_debug_only_admin = fields.Boolean('Debug for Admin', config_parameter='app_debug_only_admin',
                                           help="Check to only Debug / Debug Assets for Odoo Admin. Deny debug from url for other user.")
@@ -65,7 +65,7 @@ class ResConfigSettings(models.TransientModel):
     # 处理额外模块
     module_app_odoo_doc = fields.Boolean("Help Document Anywhere", help='Get Help Documentation on current odoo operation or topic.')
     module_app_chatgpt = fields.Boolean("Ai Center", help='Use Ai to boost you business.')
-    
+
     # 应用帮助文档
     app_doc_root_url = fields.Char('Help of topic domain', config_parameter='app_doc_root_url', default='https://odooai.cn')
 
@@ -83,7 +83,7 @@ class ResConfigSettings(models.TransientModel):
             except Exception as e:
                 pass
 
-    # 清数据，o=对象, s=序列 
+    # 清数据，o=对象, s=序列
     def _remove_app_data(self, o, s=[]):
         if not self._app_check_sys_op():
             raise UserError(_('Not allow.'))
@@ -103,12 +103,12 @@ class ResConfigSettings(models.TransientModel):
                 t_name = obj_name.replace('.', '_')
             else:
                 t_name = obj._table
-            
+
             sql = "delete from %s" % t_name
 
             # 额外处理 template mixin 的数据,模板不删除
             if hasattr(ir_model, 'is_mixin_template') and hasattr(obj, 'is_template'):
-                where_str = " where is_template = false"
+                where_str = " where is_template is not true"
                 sql = sql + where_str
 
             # todo: 增加多公司处理
@@ -116,6 +116,7 @@ class ResConfigSettings(models.TransientModel):
                 self._cr.execute(sql)
                 self._cr.commit()
             except Exception as e:
+                # self._cr.rollback()
                 _logger.warning('remove data error: %s,%s', line, e)
         # 更新序号
         for line in s:
@@ -129,7 +130,7 @@ class ResConfigSettings(models.TransientModel):
             except Exception as e:
                 _logger.warning('reset sequence data error: %s,%s', line, e)
         return True
-    
+
     def remove_sales(self):
         to_removes = [
             # 清除销售单据
@@ -218,8 +219,8 @@ class ResConfigSettings(models.TransientModel):
     def remove_expense(self):
         to_removes = [
             # 清除
-            'hr.expense.sheet',
             'hr.expense',
+            'hr.expense.sheet',
             'hr.payslip',
             'hr.payslip.run',
         ]
@@ -598,7 +599,7 @@ class ResConfigSettings(models.TransientModel):
             'event.event',
         ]
         return self._remove_app_data(to_removes, seqs)
-    
+
     def remove_website_blog(self):
         to_removes = [
             # 清除网站数据，w, w_blog
