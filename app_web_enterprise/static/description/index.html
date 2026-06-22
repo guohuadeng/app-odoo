@@ -40,6 +40,7 @@
     "Grid lines for list view data reading",
     "Grid lines for Account Reports",
     "Dark mode theme support",
+    "Optimize one2many list empty row: compact layout with only 1 filler row when no data",
     "Easy config all UI settings",
     "Multi-language and multi-company support",
     "Full open source under LGPL-3"
@@ -118,6 +119,10 @@
                 <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
                     <b>6. Add grid line to Account Reports / 财务报表分隔线</b><br/>
                     <small class="text-muted">Add grid lines to account reports for data viewing and reconciliation</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>7. Optimize one2many empty row / One2Many 空行优化</b><br/>
+                    <small class="text-muted">Compact layout: only 1 filler row when no data, no extra empty rows when data exists</small>
                 </li>
             </ul>
         </div>
@@ -220,6 +225,17 @@
                     </div>
                         <h5>8. 一键配置 / Easy Config</h5>
                         <p class="card-text">全部 UI 设置一键配置</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-compress fa-lg"></i>
+                        </div>
+                        <h5>9. 空行优化 / Compact Row</h5>
+                        <p class="card-text">One2Many 列表仅无数据时填充1空行，布局更紧凑</p>
                     </div>
                 </div>
             </div>
