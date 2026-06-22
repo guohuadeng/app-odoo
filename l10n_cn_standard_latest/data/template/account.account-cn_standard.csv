@@ -169,6 +169,8 @@
 "account_6041","6041","租赁收入","","False","income","l10n_cn_standard_latest.tag27"
 "account_6051","6051","其他业务收入","","False","income",""
 "account_6061","6061","汇兑损益","","False","income","l10n_cn_standard_latest.tag23"
+"account_6061_01","6061.01","汇兑损益-收入","account_6061","False","expense","l10n_cn_standard_latest.tag23"
+"account_6061_02","6061.02","汇兑损益-支出","account_6061","False","income","l10n_cn_standard_latest.tag23"
 "account_6101","6101","公允价值变动损益","","False","income",""
 "account_6111","6111","投资收益","","False","income",""
 "account_6201","6201","摊回保险责任准备金","","False","expense","l10n_cn_standard_latest.tag24"
