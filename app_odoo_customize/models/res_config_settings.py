@@ -124,8 +124,11 @@ class ResConfigSettings(models.TransientModel):
             params = []
 
             # 额外处理 template mixin 的数据,模板不删除
-            if obj and hasattr(ir_model, 'is_mixin_template') and hasattr(obj, 'is_template'):
-                where_clauses.append("is_template is not true")
+            try:
+                if obj and hasattr(ir_model, 'is_mixin_template') and hasattr(obj, 'is_template'):
+                    where_clauses.append("is_template is not true")
+            except Exception as e:
+                _logger.exception('remove data error check is_template: %s', e)
 
             # 多公司处理：检测 company_id 字段
             if not global_clear and obj and 'company_id' in obj._fields and obj._fields['company_id'].store:
@@ -147,7 +150,10 @@ class ResConfigSettings(models.TransientModel):
                 self._cr.execute(sql, tuple(params) if params else ())
                 self._cr.commit()
             except Exception as e:
-                # self._cr.rollback()
+                try:
+                    self._cr.rollback()
+                except Exception:
+                    pass
                 failed_models.append(line)
                 _logger.warning('remove data error: %s,%s', line, e)
         # 更新序号
@@ -405,6 +411,7 @@ class ResConfigSettings(models.TransientModel):
         except Exception as e:
             _logger.error('reset sequence data error: %s,%s', domain, e)
         return res
+
     def remove_account_chart(self):
         to_removes = [
             # 清除财务科目，用于重设。有些是企业版的也处理下
@@ -416,6 +423,7 @@ class ResConfigSettings(models.TransientModel):
             'account.payment',
             'account.bank.statement',
             'account.fiscal.position.account',
+            'account.fiscal.position.tax',
             'account.tax.repartition.line',
             # 'account.tax.account.tag',
             'account.tax',
@@ -447,6 +455,10 @@ class ResConfigSettings(models.TransientModel):
             self._cr.execute(sql2)
             self._cr.commit()
         except Exception as e:
+            try:
+                self._cr.rollback()
+            except Exception:
+                pass
             _logger.error('remove data error: %s,%s', 'account_chart: set tax and account_journal', e)
 
         # 增加对 pos的处理
@@ -464,6 +476,10 @@ class ResConfigSettings(models.TransientModel):
             })
             self._cr.commit()
         except Exception as e:
+            try:
+                self._cr.rollback()
+            except Exception:
+                pass
             _logger.error('remove data error: %s,%s', 'account_chart', e)
         # 品类处理
         try:
@@ -479,6 +495,10 @@ class ResConfigSettings(models.TransientModel):
             })
             self._cr.commit()
         except Exception as e:
+            try:
+                self._cr.rollback()
+            except Exception:
+                pass
             pass
         # 产品处理
         try:
@@ -490,6 +510,10 @@ class ResConfigSettings(models.TransientModel):
             })
             self._cr.commit()
         except Exception as e:
+            try:
+                self._cr.rollback()
+            except Exception:
+                pass
             pass
         # pos处理，清支付，清账本
         try:
@@ -502,6 +526,10 @@ class ResConfigSettings(models.TransientModel):
             })
             self._cr.commit()
         except Exception as e:
+            try:
+                self._cr.rollback()
+            except Exception:
+                pass
             pass
         # 日记账处理
         try:
@@ -516,6 +544,10 @@ class ResConfigSettings(models.TransientModel):
             })
             self._cr.commit()
         except Exception as e:
+            try:
+                self._cr.rollback()
+            except Exception:
+                pass
             pass  # raise Warning(e)
 
         # 库存计价处理
@@ -527,6 +559,10 @@ class ResConfigSettings(models.TransientModel):
             })
             self._cr.commit()
         except Exception as e:
+            try:
+                self._cr.rollback()
+            except Exception:
+                pass
             pass  # raise Warning(e)
         # 库存计价默认值处理
         try:
@@ -546,6 +582,10 @@ class ResConfigSettings(models.TransientModel):
                     prop.unlink()
             self._cr.commit()
         except Exception as e:
+            try:
+                self._cr.rollback()
+            except Exception:
+                pass
             pass  # raise Warning(e)
         # 先 unlink 处理
         j_ids = self.env['account.journal'].sudo().search([])
@@ -554,6 +594,10 @@ class ResConfigSettings(models.TransientModel):
                 j_ids.unlink()
                 self._cr.commit()
             except Exception as e:
+                try:
+                    self._cr.rollback()
+                except Exception:
+                    pass
                 pass  # raise Warning(e)
         try:
             c_ids = self.env['res.company'].sudo().search([])
@@ -561,6 +605,10 @@ class ResConfigSettings(models.TransientModel):
                 'chart_template_id': False,
             })
         except Exception as e:
+            try:
+                self._cr.rollback()
+            except Exception:
+                pass
             pass  # raise Warning(e)
         return res
 
