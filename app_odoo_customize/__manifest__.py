@@ -48,6 +48,7 @@
         'security/ir.model.access.csv',
         'views/app_odoo_customize_views.xml',
         'views/res_config_settings_views.xml',
+        'wizard/clear_data_wizard_views.xml',
         'views/ir_views.xml',
         'views/ir_actions_actions_views.xml',
         'views/ir_actions_act_window_views.xml',

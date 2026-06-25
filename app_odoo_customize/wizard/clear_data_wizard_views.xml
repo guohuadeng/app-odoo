@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="clear_data_wizard_form" model="ir.ui.view">
+            <field name="name">clear.data.wizard.form</field>
+            <field name="model">clear.data.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="alert alert-info" role="alert">
+If you choose to clear only the current company's data, cross-company data will not be cleared.
+                    </div>
+                    <group>
+                        <field name="clear_scope" widget="radio"/>
+                    </group>
+                    <footer>
+                        <button name="action_confirm" string="Confirm Clear" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_clear_data_wizard" model="ir.actions.act_window">
+            <field name="name">Clear Confirmation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clear.data.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

@@ -83,10 +83,25 @@ class ResConfigSettings(models.TransientModel):
             except Exception as e:
                 pass
 
+    def _check_clear_scope(self, method_name):
+        """如果 clear_scope 未设置，返回向导 action 让用户选择清除范围。"""
+        if not self.env.context.get('clear_scope'):
+            action = self.env['ir.actions.actions']._for_xml_id('app_odoo_customize.action_clear_data_wizard')
+            action['context'] = {'clear_method': method_name}
+            return action
+        return None
+
     # 清数据，o=对象, s=序列
-    def _remove_app_data(self, o, s=[]):
+    def _remove_app_data(self, o, s=[], method_name=None):
+        if method_name:
+            wizard = self._check_clear_scope(method_name)
+            if wizard:
+                return wizard
         if not self._app_check_sys_op():
             raise UserError(_('Not allow.'))
+        global_clear = self.env.context.get('clear_scope') == 'global'
+        company_id = self.env.company.id if not global_clear else None
+        failed_models = []
         for line in o:
             # 检查是否存在
             try:
@@ -104,23 +119,46 @@ class ResConfigSettings(models.TransientModel):
             else:
                 t_name = obj._table
 
-            sql = "delete from %s" % t_name
+            # 构建 DELETE 语句
+            where_clauses = []
+            params = []
 
             # 额外处理 template mixin 的数据,模板不删除
-            if hasattr(ir_model, 'is_mixin_template') and hasattr(obj, 'is_template'):
-                where_str = " where is_template is not true"
-                sql = sql + where_str
+            if obj and hasattr(ir_model, 'is_mixin_template') and hasattr(obj, 'is_template'):
+                where_clauses.append("is_template is not true")
 
-            # todo: 增加多公司处理
+            # 多公司处理：检测 company_id 字段
+            if not global_clear and obj and 'company_id' in obj._fields and obj._fields['company_id'].store:
+                where_clauses.append("company_id = %s")
+                params.append(company_id)
+            elif not global_clear and obj and 'record_company_id' in obj._fields:
+                # mail.message 使用 record_company_id 代替 company_id
+                where_clauses.append("record_company_id = %s")
+                params.append(company_id)
+            elif not global_clear:
+                # 无公司字段的模型（如 mail.followers、mail.activity），公司模式下跳过不删
+                continue
+
+            sql = "delete from %s" % t_name
+            if where_clauses:
+                sql += " where " + " and ".join(where_clauses)
+
             try:
-                self._cr.execute(sql)
+                self._cr.execute(sql, tuple(params) if params else ())
                 self._cr.commit()
             except Exception as e:
                 # self._cr.rollback()
+                failed_models.append(line)
                 _logger.warning('remove data error: %s,%s', line, e)
         # 更新序号
         for line in s:
-            domain = ['|', ('code', '=ilike', line + '%'), ('prefix', '=ilike', line + '%')]
+            if global_clear:
+                domain = ['|', ('code', '=ilike', line + '%'), ('prefix', '=ilike', line + '%')]
+            else:
+                domain = [
+                    '|', ('code', '=ilike', line + '%'), ('prefix', '=ilike', line + '%'),
+                    ('company_id', '=', company_id),
+                ]
             try:
                 seqs = self.env['ir.sequence'].sudo().search(domain)
                 if seqs.exists():
@@ -129,6 +167,18 @@ class ResConfigSettings(models.TransientModel):
                     })
             except Exception as e:
                 _logger.warning('reset sequence data error: %s,%s', line, e)
+        if failed_models:
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': _('Partial Cleanup Failed'),
+                    'message': _('The following models failed to clean up and were skipped: %s') % ', '.join(failed_models),
+                    'type': 'warning',
+                    'sticky': True,
+                    'next': 'soft_reload',
+                }
+            }
         return True
 
     def remove_sales(self):
@@ -153,7 +203,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'sale',
         ]
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_sales')
 
     def remove_product(self):
         to_removes = [
@@ -164,7 +214,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'product.product',
         ]
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_product')
 
     def remove_product_attribute(self):
         to_removes = [
@@ -173,7 +223,7 @@ class ResConfigSettings(models.TransientModel):
             'product.attribute',
         ]
         seqs = []
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_product_attribute')
 
     def remove_pos(self):
         to_removes = [
@@ -186,7 +236,9 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'pos',
         ]
-        res = self._remove_app_data(to_removes, seqs)
+        res = self._remove_app_data(to_removes, seqs, 'remove_pos')
+        if isinstance(res, dict):
+            return res
 
         # 更新要关帐的值，因为 store=true 的计算字段要重置
 
@@ -214,7 +266,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'purchase',
         ]
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_purchase')
 
     def remove_expense(self):
         to_removes = [
@@ -227,7 +279,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'hr.expense',
         ]
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_expense')
 
     def remove_mrp(self):
         to_removes = [
@@ -254,7 +306,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'mrp',
         ]
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_mrp')
 
     def remove_mrp_bom(self):
         to_removes = [
@@ -263,7 +315,7 @@ class ResConfigSettings(models.TransientModel):
             'mrp.bom',
         ]
         seqs = []
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_mrp_bom')
 
     def remove_inventory(self):
         to_removes = [
@@ -294,7 +346,7 @@ class ResConfigSettings(models.TransientModel):
             'product.tracking.default',
             'WH/',
         ]
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_inventory')
 
     def remove_account(self):
         to_removes = [
@@ -315,20 +367,35 @@ class ResConfigSettings(models.TransientModel):
             'hr.expense.sheet',
             'account.move',
         ]
-        res = self._remove_app_data(to_removes, [])
+        res = self._remove_app_data(to_removes, [], 'remove_account')
+        if isinstance(res, dict):
+            return res
 
         # extra 更新序号
-        domain = [
-            ('company_id', '=', self.env.company.id),
-            '|', ('code', '=ilike', 'account.%'),
-            '|', ('prefix', '=ilike', 'BNK1/%'),
-            '|', ('prefix', '=ilike', 'CSH1/%'),
-            '|', ('prefix', '=ilike', 'INV/%'),
-            '|', ('prefix', '=ilike', 'EXCH/%'),
-            '|', ('prefix', '=ilike', 'MISC/%'),
-            '|', ('prefix', '=ilike', '账单/%'),
-            ('prefix', '=ilike', '杂项/%')
-        ]
+        global_clear = self.env.context.get('clear_scope') == 'global'
+        if global_clear:
+            domain = [
+                '|', ('code', '=ilike', 'account.%'),
+                '|', ('prefix', '=ilike', 'BNK1/%'),
+                '|', ('prefix', '=ilike', 'CSH1/%'),
+                '|', ('prefix', '=ilike', 'INV/%'),
+                '|', ('prefix', '=ilike', 'EXCH/%'),
+                '|', ('prefix', '=ilike', 'MISC/%'),
+                '|', ('prefix', '=ilike', '账单/%'),
+                ('prefix', '=ilike', '杂项/%')
+            ]
+        else:
+            domain = [
+                ('company_id', '=', self.env.company.id),
+                '|', ('code', '=ilike', 'account.%'),
+                '|', ('prefix', '=ilike', 'BNK1/%'),
+                '|', ('prefix', '=ilike', 'CSH1/%'),
+                '|', ('prefix', '=ilike', 'INV/%'),
+                '|', ('prefix', '=ilike', 'EXCH/%'),
+                '|', ('prefix', '=ilike', 'MISC/%'),
+                '|', ('prefix', '=ilike', '账单/%'),
+                ('prefix', '=ilike', '杂项/%')
+            ]
         try:
             seqs = self.env['ir.sequence'].search(domain)
             if seqs.exists():
@@ -338,10 +405,7 @@ class ResConfigSettings(models.TransientModel):
         except Exception as e:
             _logger.error('reset sequence data error: %s,%s', domain, e)
         return res
-
     def remove_account_chart(self):
-        company_id = self.env.company.id
-        self = self.with_company(self.env.company)
         to_removes = [
             # 清除财务科目，用于重设。有些是企业版的也处理下
             'account.reconcile.model',
@@ -360,15 +424,25 @@ class ResConfigSettings(models.TransientModel):
             'account.account',
             # 'account.journal',
         ]
+        seqs = []
+        res = self._remove_app_data(to_removes, seqs, 'remove_account_chart')
+        if isinstance(res, dict):
+            return res
+        global_clear = self.env.context.get('clear_scope') == 'global'
+        company_id = self.env.company.id if not global_clear else None
         # todo: 要做 remove_hr，因为工资表会用到 account
         # 更新account关联，很多是多公司字段，故只存在 ir_property，故在原模型，只能用update
         try:
             field1 = self.env['ir.model.fields']._get('product.template', "taxes_id").id
             field2 = self.env['ir.model.fields']._get('product.template', "supplier_taxes_id").id
-
-            sql = "delete from ir_default where (field_id = %s or field_id = %s) and company_id=%d" \
-                  % (field1, field2, company_id)
-            sql2 = "update account_journal set bank_account_id=NULL where company_id=%d;" % company_id
+            if global_clear:
+                sql = "delete from ir_default where (field_id = %s or field_id = %s)" \
+                      % (field1, field2)
+                sql2 = "update account_journal set bank_account_id=NULL"
+            else:
+                sql = "delete from ir_default where (field_id = %s or field_id = %s) and company_id=%d" \
+                      % (field1, field2, company_id)
+                sql2 = "update account_journal set bank_account_id=NULL where company_id=%d;" % company_id
             self._cr.execute(sql)
             self._cr.execute(sql2)
             self._cr.commit()
@@ -488,8 +562,6 @@ class ResConfigSettings(models.TransientModel):
             })
         except Exception as e:
             pass  # raise Warning(e)
-        seqs = []
-        res = self._remove_app_data(to_removes, seqs)
         return res
 
     def remove_project(self):
@@ -515,7 +587,9 @@ class ResConfigSettings(models.TransientModel):
             alias_ids = projects.mapped('alias_id').ids
         except Exception as e:
             pass  # raise Warning(e)
-        res = self._remove_app_data(to_removes, seqs)
+        res = self._remove_app_data(to_removes, seqs, 'remove_project')
+        if isinstance(res, dict):
+            return res
         # 清除项目记录后，清除之前缓存的 alias_id
         if alias_ids:
             try:
@@ -544,7 +618,7 @@ class ResConfigSettings(models.TransientModel):
             'quality.alert',
             # 'quality.point',
         ]
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_quality')
 
     def remove_quality_setting(self):
         to_removes = [
@@ -556,7 +630,7 @@ class ResConfigSettings(models.TransientModel):
             'quality.reason',
             'quality.tag',
         ]
-        return self._remove_app_data(to_removes)
+        return self._remove_app_data(to_removes, method_name='remove_quality_setting')
 
     def remove_event(self):
         to_removes = [
@@ -598,7 +672,7 @@ class ResConfigSettings(models.TransientModel):
         seqs = [
             'event.event',
         ]
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_event')
 
     def remove_website_blog(self):
         to_removes = [
@@ -619,7 +693,7 @@ class ResConfigSettings(models.TransientModel):
             # 'website',
         ]
         seqs = []
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_website_blog')
 
     def remove_website(self):
         to_removes = [
@@ -637,7 +711,7 @@ class ResConfigSettings(models.TransientModel):
             # 'website',
         ]
         seqs = []
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_website')
 
     def remove_message(self):
         to_removes = [
@@ -647,7 +721,7 @@ class ResConfigSettings(models.TransientModel):
             'mail.activity',
         ]
         seqs = []
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_message')
 
     def remove_workflow(self):
         to_removes = [
@@ -656,9 +730,12 @@ class ResConfigSettings(models.TransientModel):
             # 'wkf.instance',
         ]
         seqs = []
-        return self._remove_app_data(to_removes, seqs)
+        return self._remove_app_data(to_removes, seqs, 'remove_workflow')
 
     def remove_all_biz(self):
+        wizard = self._check_clear_scope('remove_all_biz')
+        if wizard:
+            return wizard
         self.remove_account()
         self.remove_quality()
         self.remove_inventory()

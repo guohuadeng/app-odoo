@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e-20260208\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-14 10:45+0000\n"
-"PO-Revision-Date: 2026-05-14 10:45+0000\n"
+"POT-Creation-Date: 2026-06-25 09:05+0000\n"
+"PO-Revision-Date: 2026-06-25 09:05+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -178,6 +178,11 @@ msgid "Ai Center"
 msgstr "Ai服务中心"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields.selection,name:app_odoo_customize.selection__clear_data_wizard__clear_scope__global
+msgid "All Companies"
+msgstr "全局删除（所有公司）"
+
+#. module: app_odoo_customize
 #: model:ir.actions.act_window,name:app_odoo_customize.action_ir_module_category_list
 #: model:ir.ui.menu,name:app_odoo_customize.menu_ir_module_category_list
 #: model:ir.ui.menu,name:app_odoo_customize.menu_ir_module_category_list_user
@@ -189,8 +194,7 @@ msgstr "应用权限分类"
 msgid ""
 "Be careful! This will stop all subscribe notifications. Also the document "
 "permission will be affected."
-msgstr ""
-"请谨慎操作！这将停止所有订阅通知。同时，基于订阅的权限将受到影响，比如项目，销售订单门户。"
+msgstr "请谨慎操作！这将停止所有订阅通知。同时，基于订阅的权限将受到影响，比如项目，销售订单门户。"
 
 #. module: app_odoo_customize
 #. odoo-python
@@ -207,6 +211,11 @@ msgstr ""
 #: model:ir.model.fields.selection,name:app_odoo_customize.selection__res_config_settings__app_navbar_pos_pc__bottom
 msgid "Bottom"
 msgstr "底部"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.clear_data_wizard_form
+msgid "Cancel"
+msgstr "取消"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_debug_only_admin
@@ -226,6 +235,18 @@ msgid "Clean and reset Account Chart"
 msgstr "清除会计科目，便于重置"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_clear_data_wizard__clear_scope
+msgid "Clear Scope"
+msgstr "清除范围"
+
+#. module: app_odoo_customize
+#. odoo-python
+#: code:addons/app_odoo_customize/models/res_config_settings.py:0
+#: model:ir.actions.act_window,name:app_odoo_customize.action_clear_data_wizard
+msgid "Clear Confirmation"
+msgstr "确认清除？"
+
+#. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Click to set"
 msgstr "点击设置"
@@ -241,6 +262,11 @@ msgid "Config Settings"
 msgstr "设置"
 
 #. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.clear_data_wizard_form
+msgid "Confirm Clear"
+msgstr "确认清除"
+
+#. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.replace_copyright_name
 msgid ""
 "Copyright &amp;copy;\n"
@@ -250,14 +276,21 @@ msgstr ""
 "\t            <span class=\"copyright_name_before\" contenteditable=\"true\">2010-2026 </span>"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_clear_data_wizard__create_uid
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__create_uid
 msgid "Created by"
 msgstr "创建者"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_clear_data_wizard__create_date
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__create_date
 msgid "Created on"
 msgstr "创建于"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields.selection,name:app_odoo_customize.selection__clear_data_wizard__clear_scope__company
+msgid "Current Company Only"
+msgstr "仅清除本公司数据"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_enterprise_url
@@ -268,6 +301,11 @@ msgstr "自定义模块链接(如企业版)"
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Data Cleaning (Be careful to do that!)"
 msgstr "数据清理（请谨慎操作！）"
+
+#. module: app_odoo_customize
+#: model:ir.model,name:app_odoo_customize.model_clear_data_wizard
+msgid "Data Clear Scope Wizard"
+msgstr "清除数据范围向导"
 
 #. module: app_odoo_customize
 #. odoo-python
@@ -381,6 +419,7 @@ msgid "Developer Documentation Url"
 msgstr "开发者手册链接"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_clear_data_wizard__display_name
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__display_name
 msgid "Display Name"
 msgstr "显示名称"
@@ -474,9 +513,17 @@ msgid "Help of topic domain"
 msgstr "支持文档根域名"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_clear_data_wizard__id
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__id
 msgid "ID"
 msgstr "Id"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.clear_data_wizard_form
+msgid ""
+"If you choose to clear only the current company's data, cross-company data "
+"will not be cleared."
+msgstr "如您选择仅删除本公司数据，跨公司数据将不会被删除。"
 
 #. module: app_odoo_customize
 #. odoo-python
@@ -492,11 +539,13 @@ msgid "Install Language"
 msgstr "安装语言"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_clear_data_wizard__write_uid
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__write_uid
 msgid "Last Updated by"
 msgstr "最后更新者"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_clear_data_wizard__write_date
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__write_date
 msgid "Last Updated on"
 msgstr "最后更新于"
@@ -597,6 +646,12 @@ msgid "No Updatable"
 msgstr "无需更新"
 
 #. module: app_odoo_customize
+#. odoo-python
+#: code:addons/app_odoo_customize/wizard/clear_data_wizard.py:0
+msgid "No clear method specified."
+msgstr "未指定清除方法。"
+
+#. module: app_odoo_customize
 #: model_terms:ir.actions.act_window,help:app_odoo_customize.action_ir_module_category_list
 msgid "No data yet!"
 msgstr "没有数据。"
@@ -647,11 +702,6 @@ msgstr "路径"
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__path_temp
 msgid "Path Temp"
 msgstr "路径Temp"
-
-#. module: app_odoo_customize
-#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Please confirm to delete the select data?"
-msgstr "您确认要删除指定数据？"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.replace_login
@@ -1021,3 +1071,15 @@ msgstr "删除"
 #: code:addons/app_odoo_customize/models/ir_rule.py:0
 msgid "write"
 msgstr "写入"
+
+#. module: app_odoo_customize
+#. odoo-python
+#: code:addons/app_odoo_customize/models/res_config_settings.py:0
+msgid "The following models failed to clean up and were skipped: %s"
+msgstr "以下模型清理失败，已跳过：%s"
+
+#. module: app_odoo_customize
+#. odoo-python
+#: code:addons/app_odoo_customize/models/res_config_settings.py:0
+msgid "Partial Cleanup Failed"
+msgstr "部分清理失败"
