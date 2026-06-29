@@ -107,6 +107,7 @@ class ResConfigSettings(models.TransientModel):
                 self._cr.execute(sql)
                 self._cr.commit()
             except Exception as e:
+                self._cr.rollback()
                 _logger.warning('remove data error: %s,%s', line, e)
         # 更新序号
         for line in s:
@@ -334,6 +335,8 @@ class ResConfigSettings(models.TransientModel):
         self = self.with_company(self.env.company)
         to_removes = [
             # 清除财务科目，用于重设。有些是企业版的也处理下
+            'account.report.budget.item',
+            'account.report.budget',
             'account.reconcile.model',
             'account.transfer.model.line',
             'account.transfer.model',
