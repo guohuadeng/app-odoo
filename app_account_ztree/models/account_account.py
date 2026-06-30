@@ -26,37 +26,75 @@ class AccountAccount(models.Model):
     # ----------------------------------------------------------
 
     def _get_parent_from_code(self, code, company):
-        """Determine the parent account based on code and delimiter.
+        """根据科目编码和公司确定上级科目。
 
-        Supports two hierarchy styles:
-        - Delimiter-based (e.g. '1122.01.03' -> parent '1122.01')
-        - Fixed-length   (e.g. '112201'       -> parent '1122')
+        支持两种层级风格：
+        1) 分隔符模式 (如 '.' 作分隔符)，叠加两层规则：
+           a) 置零规则：从左到右找到第一个非全零段（跳过首段），将其置零
+              得到上级编码。如所有段均为零则为顶级科目，无上级。
+              '101.01.0000' -> 上级 '101.00.0000'
+              '101.01.0001' -> 上级 '101.01.0000'
+              '101.00.0000' -> 顶级，无上级
+           b) 去尾规则（兼容回退）：去掉最后一段
+              '1122.01.03'  -> 上级 '1122.01'
+           先尝试置零规则，若在数据库中找不到对应科目，
+           则回退到去尾规则。
+        2) 定长模式 (如 '112201' -> 上级 '1122')
 
-        :param code:    account code string
-        :param company: res.company record to scope the search
-        :return:        account.account recordset (empty if no parent found)
+        :param code:    科目编码字符串
+        :param company: res.company 记录，用于限定搜索范围
+        :return:        account.account 记录集（无上级时返回空）
         """
         if not code or not company:
             return self.env['account.account'].browse()
 
         delimiter = company.coa_delimiter or ''
-        parent_code = False
+        search_domain_base = [('company_ids', '=', company.id)]
 
         if delimiter and delimiter in code:
-            parts = code.rsplit(delimiter, 1)
-            if len(parts) > 1 and parts[1]:
-                parent_code = parts[0]
-        elif len(code) > 2:
-            parent_code = code[:len(code) - 2]
+            parts = code.split(delimiter)
 
-        if not parent_code:
+            # ── 第一层：置零规则 ──
+            # 从左到右找第一个非全零段（跳过首段），将其置零
+            parent_code_zero = False
+            for i in range(1, len(parts)):
+                if parts[i].replace('0', ''):
+                    parent_parts = parts[:]
+                    parent_parts[i] = '0' * len(parts[i])
+                    parent_code_zero = delimiter.join(parent_parts)
+                    break
+
+            if parent_code_zero:
+                parent = self.search(
+                    search_domain_base + [('code', '=', parent_code_zero)],
+                    limit=1,
+                )
+                if parent:
+                    return parent
+
+            # ── 第二层：去尾规则（兼容回退） ──
+            # 去掉最后一段作为上级编码
+            parent_code_rsplit = delimiter.join(parts[:-1]) if len(parts) > 1 else False
+            if parent_code_rsplit:
+                parent = self.search(
+                    search_domain_base + [('code', '=', parent_code_rsplit)],
+                    limit=1,
+                )
+                if parent:
+                    return parent
+
             return self.env['account.account'].browse()
 
-        parent = self.search([
-            ('company_ids', '=', company.id),
-            ('code', '=', parent_code),
-        ], limit=1)
-        return parent
+        # ── 定长模式：去掉最后两位 ──
+        if len(code) > 2:
+            parent_code = code[:len(code) - 2]
+            parent = self.search(
+                search_domain_base + [('code', '=', parent_code)],
+                limit=1,
+            )
+            return parent
+
+        return self.env['account.account'].browse()
 
     # ----------------------------------------------------------
     # CRUD overrides
