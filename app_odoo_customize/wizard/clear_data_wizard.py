@@ -9,9 +9,9 @@ class ClearDataWizard(models.TransientModel):
     _description = 'Data Clear Scope Wizard'
 
     clear_scope = fields.Selection([
-        ('company', 'Current Company Only'),
         ('global', 'All Companies'),
-    ], string='Clear Scope', default='company', required=True)
+        ('company', 'Current Company Only'),
+    ], string='Clear Scope', default='global', required=True)
 
     def action_confirm(self):
         self.ensure_one()

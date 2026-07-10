@@ -386,6 +386,7 @@ class ResConfigSettings(models.TransientModel):
             'account.move.line',
             'hr.expense.sheet',
             'account.move',
+            'account.billing',
         ]
         res = self._remove_app_data(to_removes, [], 'remove_account')
         if isinstance(res, dict):
