@@ -381,7 +381,7 @@ class ResConfigSettings(models.TransientModel):
             'account.payment',
             'account.batch.payment',
             'account.analytic.line',
-            'account.analytic.account',
+            # 'account.analytic.account',
             'account.partial.reconcile',
             'account.move.line',
             'hr.expense.sheet',
@@ -430,6 +430,7 @@ class ResConfigSettings(models.TransientModel):
     def remove_account_chart(self):
         to_removes = [
             # 清除财务科目，用于重设。有些是企业版的也处理下
+            'account.analytic.account',
             'account.reconcile.model',
             'account.transfer.model.line',
             'account.transfer.model',
