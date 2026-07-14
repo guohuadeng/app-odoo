@@ -39,9 +39,12 @@ class AccountChartTemplate(models.AbstractModel):
             'property_tax_payable_account_id': 'account_2221_1_1',
             # 库存相关科目
             'property_stock_account_input_categ_id': 'account_1401',
-            'property_stock_account_output_categ_id': 'account_1406',
+            # 出库科目：发出商品，关闭自动存货凭证时 property_stock_account_output_categ_id 是无效的
+            # 'property_stock_account_output_categ_id': False,
+            # 出库科目：存货过渡，开启自动存货凭证时用
+            'property_stock_account_output_categ_id': 'account_1901',
             'property_stock_valuation_account_id': 'account_1405_01',
-            'property_stock_account_production_cost_id': 'account_1405_01',
+            'property_stock_account_production_cost_id': 'account_5001',
         }
 
     @template('cn_standard', 'res.company')
