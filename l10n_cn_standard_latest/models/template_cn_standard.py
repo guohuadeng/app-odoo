@@ -22,7 +22,9 @@ class AccountChartTemplate(models.AbstractModel):
         return {
             'name': _('2025中国企业会计科目表-odoo18'),
             'code_digits': 4,
-            'use_storno_accounting': True,
+            # 开发票的时候才一次性生成成本出库凭证，大陆模式（永续简化模式 / 欧洲大陆会计 Continental）
+            'anglo_saxon_accounting': False,
+            'use_storno_accounting': False,
             # todo: begin 有问题，不该在此
             'cash_account_code_prefix': '1001',
             'bank_account_code_prefix': '1002',
@@ -41,7 +43,7 @@ class AccountChartTemplate(models.AbstractModel):
             'property_stock_account_input_categ_id': 'account_1401',
             # 出库科目：发出商品，关闭自动存货凭证时 property_stock_account_output_categ_id 是无效的
             # 'property_stock_account_output_categ_id': False,
-            # 出库科目：存货过渡，开启自动存货凭证时用
+            # 出库科目：存货过渡，开启自动存货凭证时用。最好新建 account_6401 下子科目 存货成本中转
             'property_stock_account_output_categ_id': 'account_1901',
             'property_stock_valuation_account_id': 'account_1405_01',
             'property_stock_account_production_cost_id': 'account_5001',
