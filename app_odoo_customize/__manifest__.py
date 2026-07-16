@@ -88,6 +88,8 @@
             'app_odoo_customize/static/src/xml/res_config_edition.xml',
             'app_odoo_customize/static/src/xml/base_import.xml',
             'app_odoo_customize/static/src/xml/debug_templates.xml',
+            'app_odoo_customize/static/src/js/debug_xmlid.js',
+            'app_odoo_customize/static/src/xml/debug_xmlid.xml',
         ],
     },
     'pre_init_hook': 'pre_init_hook',
@@ -154,6 +156,7 @@
 56. Support Odoo 18, 17, 16, 15, 14, 13, 12, Enterprise and Community and odoo.sh Edition.
 57. Full Open Source.
 58. ChatWindow draggable and resizable with min width/height.
+59. Show record XML ID in debug menu with one-click copy to clipboard.
 
 1. 删除菜单导航页脚的 Odoo 标签
 2. 将弹出窗口中 "Odoo" 设置为自定义名称
@@ -213,5 +216,6 @@
 56. Odoo 18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
 57. 代码完全开源
 58. 聊天窗口可拖拽和调整大小（最小宽/高限制）
+59. 开发者菜单中显示当前记录的 XML ID，支持一键复制到剪贴板
     """,
 }

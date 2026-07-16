@@ -1033,6 +1033,18 @@ msgid "XMLID:"
 msgstr "XmlId"
 
 #. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/xml/debug_xmlid.xml:0
+msgid "Copy XML ID"
+msgstr "复制 XML ID"
+
+#. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/debug_xmlid.js:0
+msgid "XML ID copied: %(xmlid)s"
+msgstr "已复制 XML ID: %(xmlid)s"
+
+#. module: app_odoo_customize
 #. odoo-python
 #: code:addons/app_odoo_customize/models/ir_rule.py:0
 msgid "create"
