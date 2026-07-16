@@ -430,7 +430,8 @@ class ResConfigSettings(models.TransientModel):
     def remove_account_chart(self):
         to_removes = [
             # 清除财务科目，用于重设。有些是企业版的也处理下
-            'account.analytic.account',
+            # 辅助核算项是基础数据，都用手机工删除
+            # 'account.analytic.account',
             'account.reconcile.model',
             'account.transfer.model.line',
             'account.transfer.model',
