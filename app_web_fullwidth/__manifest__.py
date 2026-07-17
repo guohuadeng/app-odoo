@@ -32,7 +32,7 @@
 9. 代码完全开源，基于 LGPL-3 协议。
     """,
     'depends': [
-        'app_odoo_customize'
+        'app_common'
     ],
     'data': [
         'views/res_users_views.xml',
