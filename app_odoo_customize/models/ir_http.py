@@ -35,4 +35,5 @@ class IrHttp(models.AbstractModel):
         # 此处直接取，不用 session
         result['app_debug_only_admin'] = config_parameter.get_param('app_debug_only_admin')
         result['app_stop_subscribe'] = config_parameter.get_param('app_stop_subscribe')
+        result['app_doc_root_url'] = config_parameter.get_param('app_doc_root_url', 'https://www.odoo.com')
         return result

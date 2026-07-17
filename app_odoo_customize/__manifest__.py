@@ -22,8 +22,8 @@
 # description:
 
 {
-    'name': '56+ Tweak OEM Boost Customize AI UI Security Data All in One / 56+项Odoo优化提速OEM去标大全',
-    'version': '18.0.26.07.13',
+    'name': 'Hide Powered by Odoo and Boost with 60+ Tweak Pack All in One / 60+项Odoo优化提速OEM去标大全',
+    'version': '18.0.26.07.17',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
@@ -31,7 +31,7 @@
     'license': 'LGPL-3',
     'sequence': 2,
     'images': ['static/description/banner.gif', 'static/description/banner.png'],
-    'summary': '56+ Tweak OEM Boost Customize AI UI Security Data All in One for Odoo18 / 56+项Odoo优化提速OEM去标大全',
+    'summary': '60+ Tweak OEM Boost Customize AI UI Security Data All in One for Odoo18 / 60+项Odoo优化提速OEM去标大全',
     'depends': [
         'app_common',
         'base_setup',
@@ -83,6 +83,7 @@
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
             'app_odoo_customize/static/src/js/chat_window_drag.js',
+            'app_odoo_customize/static/src/js/documentation_link.js',
             'app_odoo_customize/static/src/webclient/*.js',
             'app_odoo_customize/static/src/webclient/user_menu.xml',
             'app_odoo_customize/static/src/xml/res_config_edition.xml',
@@ -157,6 +158,7 @@
 57. Full Open Source.
 58. ChatWindow draggable and resizable with min width/height.
 59. Show record XML ID in debug menu with one-click copy to clipboard.
+60. Redirect native Odoo documentation help links (e.g. Check why) to configurable app_doc_root_url domain.
 
 1. 删除菜单导航页脚的 Odoo 标签
 2. 将弹出窗口中 "Odoo" 设置为自定义名称
@@ -217,5 +219,6 @@
 57. 代码完全开源
 58. 聊天窗口可拖拽和调整大小（最小宽/高限制）
 59. 开发者菜单中显示当前记录的 XML ID，支持一键复制到剪贴板
+60. 将原生Odoo文档帮助链接（如 Check why）重定向至可配置的 app_doc_root_url 域名
     """,
 }

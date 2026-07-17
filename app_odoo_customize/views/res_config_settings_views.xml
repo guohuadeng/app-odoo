@@ -112,6 +112,14 @@
                                 <field name="app_enterprise_url" class="oe_inline"/>
                                 <button string="Click to set" type="object" name="set_module_url" class="ml8 oe_highlight"/>
                             </div>
+                            <label for="app_doc_root_url"/>
+                            <div>
+                                <field name="app_doc_root_url" class="oe_inline"/>
+                                <button string="Set to current URL" type="object" name="action_set_app_doc_root_to_my" class="ml8"/>
+                                <div>
+                                    <span>Replace odoo.com help links (e.g. Check why) to this domain</span>
+                                </div>
+                            </div>
                         </group>
                     </div>
 
