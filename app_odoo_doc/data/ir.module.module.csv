@@ -1,0 +1,12 @@
+id,base_url_doc
+base.module_sale,/documentation/18.0/applications/sales.html
+base.module_sale_management,/documentation/18.0/applications/sales.html
+base.module_website,/documentation/18.0/applications/websites/website.html
+base.module_website_sale,/documentation/18.0/applications/website.html
+base.module_stock,/documentation/18.0/applications/inventory_and_mrp.html
+base.module_mrp,/documentation/18.0/applications/inventory_and_mrp.html
+base.module_purchase,/documentation/18.0/applications/inventory_and_mrp.html
+base.module_account,/documentation/18.0/applications/finance.html
+base.module_hr,/documentation/18.0/applications/hr.html
+base.module_crm,/documentation/18.0/applications/sales.html
+base.module_base,/documentation/18.0/applications/general.html

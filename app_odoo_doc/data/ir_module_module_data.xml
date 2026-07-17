@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <function model="ir.module.module" name="app_quick_import_data" context="{'install_mode' : True}"/>
+    </data>
+</odoo>

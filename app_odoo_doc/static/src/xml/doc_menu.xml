@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template id="template" xml:space="preserve">
+    <t t-name="app_odoo_doc.DocMenu" owl="1">
+        <div>
+            <button class="o_nav_entry" title="帮助文档 / Help Doc" t-on-click="() => this.actionOpenDoc()">
+                <i class="fa fa-lg fa-book" role="img" aria-label="Help Doc"/>
+            </button>
+        </div>
+    </t>
+</template>

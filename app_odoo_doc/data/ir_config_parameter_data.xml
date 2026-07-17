@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <function model="ir.config_parameter" name="set_param" eval="('app_doc_root_url', 'https://www.odooai.cn')"/>
+    </data>
+</odoo>
