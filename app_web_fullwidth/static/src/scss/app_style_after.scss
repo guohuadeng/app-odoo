@@ -20,4 +20,11 @@
   .o_form_view .customBottom {
     max-width: none !important;
   }
+  .o_base_settings_view .o_form_renderer {
+    .o_setting_container .settings {
+      > .app_settings_block[data-key="account"] .o_settings_container {
+          max-width: 1300px!important;
+      }
+    }
+  }
 }
