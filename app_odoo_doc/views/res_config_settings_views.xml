@@ -10,7 +10,7 @@
                 <xpath expr="//label[@for='module_app_odoo_doc']/.." position="inside">
                     <div>
                         <field name="app_doc_root_url" class="oe_inline mt8"/>
-                        <button string="Set to My Odoo" type="object" name="action_set_app_doc_root_to_my" class="ml4 oe_highlight"/>
+<!--                        <button string="Set to My Odoo" type="object" name="action_set_app_doc_root_to_my" class="ml4 oe_highlight"/>-->
                         <button string="Set to odooAi" type="object" name="action_set_app_doc_root_to_odooai" class="ml4 oe_highlight"/>
                     </div>
                 </xpath>
