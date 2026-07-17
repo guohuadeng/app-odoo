@@ -109,6 +109,17 @@
 // Colors replace to ent
 //$o-community-color: #875A7B;
 
+.o_debug_xmlid_item {
+  .o_debug_xmlid_copy {
+    opacity: 0.55;
+    transition: opacity 0.15s;
+    line-height: 1;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 .custom-tooltip {
   background: #222;
   color: #fff;

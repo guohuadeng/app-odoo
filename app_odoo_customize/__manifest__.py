@@ -22,8 +22,8 @@
 # description:
 
 {
-    'name': 'Odoo19 Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Remove Data All in One-优化提速56+项大全',
-    'version': '19.0.26.05.21',
+    'name': 'Odoo19 Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Remove Data All in One-优化提速60+项大全',
+    'version': '19.0.26.07.17',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
@@ -32,8 +32,9 @@
     'sequence': 2,
     'images': ['static/description/banner.gif', 'static/description/banner.png'],
     'summary': """
-    56+ Odoo Enhance in 1 click Tweak odoo. Change Odoo to your OEM brand.all in one odoo enhancement. for Customize,UI,Boost Security,Development.
+    60+ Odoo Enhance in 1 click Tweak odoo. Change Odoo to your OEM brand.all in one odoo enhancement. for Customize,UI,Boost Security,Development.
     ChatWindow drag and resize (bottom-left & bottom-right). Easy reset data, clear data, reset account chart, reset Demo data.
+    Show XML ID in debug menu. Neutralize/Production DB switch. Documentation link redirect.
     For quick debug. Set brand,Language Switcher all in one.
     """,
     'depends': [
@@ -52,10 +53,12 @@
         'security/ir.model.access.csv',
         'views/app_odoo_customize_views.xml',
         'views/res_config_settings_views.xml',
+        'wizard/clear_data_wizard_views.xml',
         'views/ir_views.xml',
         'views/ir_actions_actions_views.xml',
         'views/ir_actions_act_window_views.xml',
         'views/ir_actions_server_views.xml',
+        'views/ir_asset_views.xml',
         'views/ir_module_addons_path_views.xml',
         'views/ir_module_module_views.xml',
         'views/ir_module_category_views.xml',
@@ -85,11 +88,14 @@
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
             'app_odoo_customize/static/src/js/chat_window_drag.js',
+            'app_odoo_customize/static/src/js/documentation_link.js',
             'app_odoo_customize/static/src/webclient/*.js',
             'app_odoo_customize/static/src/webclient/user_menu.xml',
             'app_odoo_customize/static/src/xml/res_config_edition.xml',
             'app_odoo_customize/static/src/xml/base_import.xml',
             'app_odoo_customize/static/src/xml/debug_templates.xml',
+            'app_odoo_customize/static/src/js/debug_xmlid.js',
+            'app_odoo_customize/static/src/xml/debug_xmlid.xml',
         ],
     },
     'pre_init_hook': 'pre_init_hook',
@@ -158,6 +164,12 @@
     52. Quick View Fields list and View List of every model.
     53. Quick management and view of [Application Access Category].
     54. ChatWindow Draggable and Resizable with Min W/H Constraints (Bottom-Left & Bottom-Right).
+    55. Quick set database to test Neutralize DB, or restore to Production.
+    56. Multi-language Support. Multi-Company Support.
+    57. Support Odoo 19, 18, 17, 16, 15, 14, 13, 12, Enterprise and Community and odoo.sh Edition.
+    58. Full Open Source.
+    59. Show record XML ID in debug menu with one-click copy to clipboard.
+    60. Redirect native Odoo documentation help links (e.g. Check why) to configurable app_doc_root_url domain.
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -220,5 +232,11 @@
     52. 快速管理查看模型的字段和视图列表.
     53. 快速管理查看应用权限分类管理.
     54. 聊天窗口可拖拽和调整大小，含最小宽/高限制（左下角和右下角双角缩放）.
+    55. 快速设定全数据库为测试实例(Neutralize)，或恢复为生产实例.
+    56. 多语言支持，多公司支持.
+    57. Odoo 19,18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持.
+    58. 代码完全开源.
+    59. 开发者菜单中显示当前记录的 XML ID，支持一键复制到剪贴板.
+    60. 将原生Odoo文档帮助链接（如 Check why）重定向至可配置的 app_doc_root_url 域名.
     """,
 }

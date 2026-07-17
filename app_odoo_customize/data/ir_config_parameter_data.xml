@@ -17,6 +17,7 @@
         <function model="ir.config_parameter" name="set_param" eval="('app_account_title', '我的Ai服务中心')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_account_url', 'https://www.odooai.cn/my')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_enterprise_url', 'https://www.odooai.cn')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_doc_root_url', 'https://www.odooai.cn')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_name', 'odooai.cn')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_color', '#f0f0f0')"/>
         <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_background_color', 'rgba(255,0,0,.4)')"/>
