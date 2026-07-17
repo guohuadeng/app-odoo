@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
+import logging
 from odoo import models, _
 from odoo.addons.account.models.chart_template import template
+
+_logger = logging.getLogger(__name__)
 
 
 class AccountChartTemplate(models.AbstractModel):
@@ -103,6 +106,10 @@ class AccountChartTemplate(models.AbstractModel):
     def _post_load_data(self, template_code, company, template_data):
         # 处理安装后
         if template_code == 'cn_standard':
-            pass
-        res = super()._post_load_data(template_code, company, template_data)
-        return res
+            _logger.info(
+                '_post_load_data: cn_standard on company %s (id=%s), '
+                'chart_template=%s, template_data keys=%s',
+                company.name, company.id, company.chart_template,
+                list(template_data.keys()) if template_data else 'empty',
+            )
+        return super()._post_load_data(template_code, company, template_data)

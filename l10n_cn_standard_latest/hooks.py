@@ -36,7 +36,10 @@ def post_init_hook(env):
     """
     ids = env['res.company'].search([('currency_id', '=', env.ref('base.CNY').id)])
     if ids:
+        _logger.info('post_init_hook: found %d CNY companies, calling app_set_to_odooai_cn', len(ids))
         ids.app_set_to_odooai_cn()
+    else:
+        _logger.info('post_init_hook: no CNY companies found, skipping chart template loading')
 
     _load_account_tag_data(env)
 
@@ -64,7 +67,7 @@ def _load_account_tag_data(env):
     cr.execute("SAVEPOINT load_tag_data")
     try:
         convert_file(
-            cr, 'l10n_cn_standard_latest',
+            env, 'l10n_cn_standard_latest',
             'data/account_account_tag_data.xml',
             None, mode='init', noupdate=True, kind='data',
         )

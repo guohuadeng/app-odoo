@@ -22,5 +22,12 @@ class ResCompany(models.Model):
                     ], limit=1)
                     if account:
                         account.unlink()
-                    rec.chart_template = 'cn_standard'
-                    self.env['account.chart.template'].try_loading(rec.chart_template, company=rec)
+                    # 注意：不要在此处手动设置 chart_template，
+                    # 让 try_loading -> _load() 内部设置，
+                    # 否则 reload_template=True 会触发 _pre_reload_data 清空数据，
+                    # 导致 res.company 配置和 property_* 字段无法写入
+                    _logger.info(
+                        'Loading cn_standard chart template for company %s (current chart_template=%s)',
+                        rec.name, rec.chart_template,
+                    )
+                    self.env['account.chart.template'].try_loading('cn_standard', company=rec)
