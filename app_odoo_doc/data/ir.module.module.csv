@@ -8,5 +8,6 @@ base.module_mrp,/documentation/18.0/applications/inventory_and_mrp.html
 base.module_purchase,/documentation/18.0/applications/inventory_and_mrp.html
 base.module_account,/documentation/18.0/applications/finance.html
 base.module_hr,/documentation/18.0/applications/hr.html
+base.module_hr_expense,/documentation/18.0/zh_CN/applications/finance/expenses.html
 base.module_crm,/documentation/18.0/applications/sales.html
 base.module_base,/documentation/18.0/applications/general.html
