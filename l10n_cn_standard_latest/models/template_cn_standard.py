@@ -22,6 +22,8 @@ class AccountChartTemplate(models.AbstractModel):
 
     @template('cn_standard')
     def _get_cn_standard_template_data(self):
+        # coa会计科目级，覆盖设置
+        # 中国默认要开 盎格鲁撒克逊会计，不开权责
         return {
             'name': _('2025中国企业会计科目表-odoo18'),
             'code_digits': 4,
@@ -37,7 +39,7 @@ class AccountChartTemplate(models.AbstractModel):
             'property_account_payable_id': 'account_2202',
             'property_account_income_categ_id': 'account_6001',
             'property_account_expense_categ_id': 'account_6401',
-            # 默认销售预收款用 2203.02 服务的处理
+            # 默认销售预收款用 2203.02 服务的处理，每品类不同，故不在公司字段定义，原生是在品类中处理
             'property_account_downpayment_categ_id': 'account_2203_02',
             'property_account_prepay_categ_id': 'account_1123',
             'property_tax_receivable_account_id': 'account_2221_1_5',
@@ -54,6 +56,7 @@ class AccountChartTemplate(models.AbstractModel):
 
     @template('cn_standard', 'res.company')
     def _get_cn_standard_res_company(self):
+        # 公司级，覆盖设置
         res = {
             self.env.company.id: {
                 'account_fiscal_country_id': 'base.cn',
@@ -71,6 +74,9 @@ class AccountChartTemplate(models.AbstractModel):
                 'account_journal_suspense_account_id': 'account_1002_07',
                 'account_journal_payment_debit_account_id': 'account_1002_08',
                 'account_journal_payment_credit_account_id': 'account_1002_09',
+                # 备用金备处理款，安装备用金模块后有效，但无该字段也不报错。实际可用原生 expense_outstanding_account_id
+                'account_journal_suspense_pc_account_id': 'account_1002_10',
+                'expense_outstanding_account_id': 'account_1002_10',
                 'deferred_expense_account_id': 'account_1801',
                 'deferred_revenue_account_id': 'account_2401',
                 #  现金差异收入
@@ -87,6 +93,7 @@ class AccountChartTemplate(models.AbstractModel):
 
     @template('cn_standard', 'account.journal')
     def _get_cn_account_journal(self):
+        # 日记账级，覆盖设置
         return {
             'cash': {
                 'name': _('Cash on Hand'),
@@ -98,6 +105,11 @@ class AccountChartTemplate(models.AbstractModel):
             },
         }
 
+    @template('cn_standard_rz', 'account.account')
+    def _get_cn_standard_rz_account_account(self):
+        # 科目级，覆盖设置
+        return {}
+    
     # @template('cn_standard', 'account.account')
     # def _get_cn_standard_account_account(self):
     #     # 处理指定文件

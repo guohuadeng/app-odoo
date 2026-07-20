@@ -6,6 +6,7 @@
 "account_1002_07","1002.07","银行暂记科目","account_1002","True","asset_current","",""
 "account_1002_08","1002.08","银行存款-未收款","account_1002","True","asset_current","",""
 "account_1002_09","1002.09","银行存款-未付款","account_1002","True","asset_current","",""
+"account_1002_10","1002.10","银行存款-备用金待处理款","account_1002","True","asset_current","",""
 "account_1003","1003","存放中央银行款项","","True","asset_current","l10n_cn_standard_latest.tag21",""
 "account_1011","1011","存放同业","","False","asset_current","l10n_cn_standard_latest.tag21",""
 "account_1012","1012","其他货币资金","","False","asset_current","",""
