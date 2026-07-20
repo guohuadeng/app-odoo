@@ -23,11 +23,11 @@ class AccountChartTemplate(models.AbstractModel):
     @template('cn_standard')
     def _get_cn_standard_template_data(self):
         # coa会计科目级，覆盖设置
-        # 中国默认要开 盎格鲁撒克逊会计，不开权责
+        # 中国：小企业默认不给开 盎格鲁撒克逊会计，不开权责。  大企业关闭盎格鲁撒克逊会计（=不自动在销售出库时结转成本），用存货成本账+月结时结转出库成本处理
         return {
             'name': _('2025中国企业会计科目表-odoo18'),
             'code_digits': 4,
-            # 开发票的时候才一次性生成成本出库凭证，大陆模式（永续简化模式 / 欧洲大陆会计 Continental）
+            # 不做存货账：关闭，小企业让其关闭开启，实际因为不开存货成本账，开启也无用.
             'anglo_saxon_accounting': False,
             'use_storno_accounting': False,
             # todo: begin 有问题，不该在此
@@ -47,9 +47,9 @@ class AccountChartTemplate(models.AbstractModel):
             # 库存相关科目
             'property_stock_account_input_categ_id': 'account_1401',
             # 出库科目：发出商品，关闭自动存货凭证时 property_stock_account_output_categ_id 是无效的
-            # 'property_stock_account_output_categ_id': False,
+            'property_stock_account_output_categ_id': 'account_1406',
             # 出库科目：存货过渡，开启自动存货凭证时用。最好新建 account_6401 下子科目 存货成本中转
-            'property_stock_account_output_categ_id': 'account_1901',
+            # 'property_stock_account_output_categ_id': 'account_1901',
             'property_stock_valuation_account_id': 'account_1405_01',
             'property_stock_account_production_cost_id': 'account_5001',
         }
