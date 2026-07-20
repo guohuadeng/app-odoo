@@ -189,6 +189,16 @@
     border-bottom: 1.5px solid #{$o-brand-lightsecondary};
   }
 }
+//设置 form，会计相关设置显示全屏
+@media (min-width: 1400px) {
+  .o_base_settings_view .o_form_renderer {
+    .o_setting_container .settings {
+      > .app_settings_block[data-key="account"] .o_settings_container {
+        max-width: 1300px !important;
+      }
+    }
+  }
+}
 //end form
 
 //    report
