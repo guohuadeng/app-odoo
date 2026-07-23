@@ -102,7 +102,7 @@
 "account_2202","2202","应付账款","","True","liability_payable","",""
 "account_2202_01","2202.01","应付账款-应付","account_2202","True","liability_payable","",""
 "account_2202_02","2202.02","应付账款-其他","account_2202","True","liability_payable","",""
-"account_2202_03","2202.03","应付账款-暂估","account_2202","True","liability_payable","","月末货已入库、采购货物发票完全未收到，需要暂估采购货款（货值暂估）"
+"account_2202_03","2202.03","应付账款-预付过渡","account_2202","True","liability_payable","","核算向供应商预先支付、暂未匹配采购订单及供应商发票的款项。应付时贷记本科目；付款时借记本科目；取得采购发票确认应付货款后，进行往来核销结转。"
 "account_2203","2203","预收账款","","True","liability_current","","小企业会计准则适用"
 "account_2203_01","2203.01","预收账款_商品销售预收","account_2203","True","liability_current","","小企业会计准则适用"
 "account_2203_02","2203.02","预收账款_服务类预收","account_2203","True","liability_current","","小企业会计准则适用"

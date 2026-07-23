@@ -40,7 +40,7 @@ class AccountChartTemplate(models.AbstractModel):
             'property_account_income_categ_id': 'account_6001',
             'property_account_expense_categ_id': 'account_6401',
             # 默认销售预收款用 2203.02 服务的处理，每品类不同，故不在公司字段定义，原生是在品类中处理
-            'property_account_downpayment_categ_id': 'account_2203_02',
+            'property_account_downpayment_categ_id': 'account_2203',
             'property_account_prepay_categ_id': 'account_1123',
             'property_tax_receivable_account_id': 'account_2221_1_5',
             'property_tax_payable_account_id': 'account_2221_1_1',
@@ -74,6 +74,8 @@ class AccountChartTemplate(models.AbstractModel):
                 'account_journal_suspense_account_id': 'account_1002_07',
                 'account_journal_payment_debit_account_id': 'account_1002_08',
                 'account_journal_payment_credit_account_id': 'account_1002_09',
+                # 采购预付过渡，应付账款-预付过渡
+                'purchase_iap_account_id': 'account_2202_03',
                 # 备用金备处理款，安装备用金模块后有效，但无该字段也不报错。实际可用原生 expense_outstanding_account_id
                 'account_journal_suspense_pc_account_id': 'account_1002_10',
                 'expense_outstanding_account_id': 'account_1002_10',
