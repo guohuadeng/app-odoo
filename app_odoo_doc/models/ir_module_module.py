@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, fields, models, modules, tools, _
+import logging
+
+from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 import odoo.release
 from odoo.tools import get_lang
 from odoo.addons.app_common.models.app_import import app_quick_import
+
+_logger = logging.getLogger(__name__)
 
 
 class IrModule(models.Model):
@@ -58,7 +62,8 @@ class IrModule(models.Model):
         try:
             app_quick_import(self.env, 'app_odoo_doc/data/ir.module.module.csv')
         except Exception as e:
-            pass
+            # 快速导入失败不阻断安装，仅记录日志便于排查
+            _logger.warning('app_odoo_doc quick import data/ir.module.module.csv failed: %s' % str(e))
 
     @api.model
     def action_error_notify(self):

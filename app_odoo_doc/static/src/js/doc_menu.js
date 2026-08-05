@@ -6,6 +6,8 @@ import {Component} from '@odoo/owl';
 
 
 export class DocMenu extends Component {
+    static props = {};
+
     setup() {
         this.orm = useService('orm');
         this.actionService = useService('action');
