@@ -34,6 +34,19 @@ class IrModuleModule(models.Model):
     def module_multi_refresh_po(self):
         lang = self.env.user.lang
         modules = self.filtered(lambda r: r.state == 'installed')
+        if not modules:
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'target': 'new',
+                'params': {
+                    'message': _("No installed modules selected."),
+                    'type': 'warning',
+                    'sticky': False,
+                    'next': {'type': 'ir.actions.act_window_close'},
+                }
+            }
+
         # 先清理, odoo原生经常清理不干净
         # odoo 16中，不再使用 ir.translation，直接使用json字段
         # for rec in modules:
@@ -44,14 +57,15 @@ class IrModuleModule(models.Model):
         #     translate.sudo().unlink()
         # 再重载
         modules._update_translations(filter_lang=lang, overwrite=True)
-        # odoo 16翻译模式改变，仍需更新模块
+
+        self.env.registry.clear_cache('default', 'templates')
+
         return {
             'type': 'ir.actions.client',
             'tag': 'display_notification',
             'target': 'new',
             'params': {
-                'message': _("The languages that you selected have been successfully update.\
-                            You still need to Upgrade the apps to make it worked."),
+                'message': _("The languages that you selected have been successfully updated."),
                 'type': 'success',
                 'sticky': False,
                 'next': {'type': 'ir.actions.act_window_close'},
