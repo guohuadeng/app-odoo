@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="app_blog_tag_category_tree" model="ir.ui.view">
         <field name="name">app.blog_tag_category_tree</field>

@@ -7,12 +7,16 @@ import uuid
 from PIL import Image
 from datetime import date, datetime, time
 import pytz
+import re
+import unicodedata
 
 import logging
 
 from odoo import models, fields, api, _
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
 from odoo.http import request
+from odoo.exceptions import UserError
+from odoo.osv import expression
 from ..lib.user_agents import parse
 
 _logger = logging.getLogger(__name__)
@@ -162,20 +166,31 @@ class Base(models.AbstractModel):
     @api.model
     def _get_image_url2attachment(self, url, mimetype_list=None):
         # Todo: mimetype filter
+        # 根据远程url生成本地附件，当前主要处理 image
         if not self._app_check_sys_op():
             return False
         image, file_name = get_image_url2attachment(url)
         if image and file_name:
             try:
-                attachment = self.env['ir.attachment'].create({
+                attachment = self.env['ir.attachment'].sudo()
+                res = {
                     'datas': image,
                     'name': file_name,
                     'website_id': False,
                     'res_model': self._name,
                     'res_id': self.id,
                     'public': True,
-                })
-                attachment.generate_access_token()
+                }
+                if hasattr(attachment, 'is_from_remote'):
+                    # 处理先找历史已存附件
+                    res.update({
+                        'is_from_remote': True,
+                        'remote_url': url,
+                    })
+                    attachment = attachment.search([('is_from_remote', '=', True), ('remote_url', '=', url)], limit=1)
+                if not attachment:
+                    attachment = attachment.create(res)
+                    attachment.generate_access_token()
                 return attachment
             except Exception as e:
                 _logger.error('get_image_url2attachment error: %s' % str(e))
@@ -239,6 +254,70 @@ class Base(models.AbstractModel):
         # from deepmerge import always_merger
         return deep_merge(a, b)
 
+    @api.model
+    def CoW(self, vals, ref='name', domain=None):
+        if domain is None:
+            domain = []
+        ref_value = vals.get(ref)
+        if ref_value is None:
+            raise UserError(_('创建或更新时，必须提供关键字段信息: %s') % ref)
+
+        search_domain = expression.AND([domain, [(ref, '=', ref_value)]])
+        record = self.search(search_domain, limit=1)
+
+        if record:
+            record.write(vals)
+        else:
+            record = self.create(vals)
+
+        return record
+
+    @api.model
+    def CoW_list(self, vals_list, ref='name', domain=None):
+        if domain is None:
+            domain = []
+
+        records = self.env[self._name]
+        for vals in vals_list:
+            record = self.CoW(vals, ref=ref, domain=domain)
+            records |= record
+
+        return records
+    
+    def _app_sanitize_filename(self, filename):
+        """将字符串转换为安全的文件名，去掉非法字符并避免乱码
+
+        :param filename: 原始文件名字符串
+        :return: 清理后的安全文件名
+        """
+        if not filename:
+            return 'unnamed'
+        
+        # 1. Unicode标准化，将字符转换为NFKC形式（兼容性分解后再组合）
+        sanitized = unicodedata.normalize('NFKC', filename)
+        
+        # 2. 替换常见的非法文件名字符为下划线或连字符
+        # Windows和Unix系统不允许的字符: < > : " / \ | ? *
+        # 同时替换空格、制表符等为连字符
+        sanitized = re.sub(r'[<>:"/\\|?*]', '_', sanitized)
+        sanitized = re.sub(r'[\s\t]+', '-', sanitized)
+        
+        # 3. 移除控制字符和其他不可打印字符（保留中文、英文、数字、常见符号）
+        sanitized = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', sanitized)
+        
+        # 4. 移除开头和结尾的空格、点号、连字符、下划线
+        sanitized = sanitized.strip(' ._-')
+        
+        # 5. 如果文件名为空，返回默认名称
+        if not sanitized:
+            return 'unnamed'
+        
+        # 6. 限制文件名长度（Windows最大255字符，留一些空间给扩展名和前缀）
+        if len(sanitized) > 200:
+            sanitized = sanitized[:200]
+        
+        return sanitized
+
 def get_image_from_url(url):
     if not url:
         return None
@@ -246,7 +325,7 @@ def get_image_from_url(url):
         pass
     else:
         # 处理相对路径
-        web_base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url', '')
+        web_base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url', '')
         url = web_base_url + url
     try:
         response = requests.get(url, timeout=5)
@@ -341,6 +420,8 @@ def get_ua_type():
     elif 'MicroMessenger' in ua:
         # 微信浏览器
         utype = 'wxweb'
+    elif 'DingTalk' in ua:
+        utype = 'dingtalk'
     elif 'cn.erpapp.o20sticks.App' in ua:
         # 安卓app
         utype = 'native_android'
@@ -368,3 +449,13 @@ def deep_merge(a, b):
         else:
             a[key] = b[key]
     return a
+
+def int_to_hex_color(color_index):
+    color_map = [
+        '#a2a2a2', '#ee2d2d', '#dc8534', '#e8bb1d', '#5794dd',
+        '#9f628f', '#db8865', '#41a9a2', '#304be0', '#ee2f8a',
+        '#61c36e', '#9872e6'
+    ]
+    if 0 <= color_index < len(color_map):
+        return color_map[color_index]
+    return color_map[0]

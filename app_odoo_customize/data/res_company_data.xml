@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
         <!-- 创建数据库时首个公司信息 -->

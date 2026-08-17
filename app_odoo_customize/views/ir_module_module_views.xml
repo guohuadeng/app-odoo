@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
         <!--  Modules list -->
         <record id="app_module_tree" model="ir.ui.view">
@@ -37,8 +36,16 @@
                 <filter name="not_installed" position="after">
                     <filter name="is_local_updatable" string="Local updatable" domain="[('local_updatable', '=', True)]"/>
                 </filter>
+                <xpath expr="//searchpanel//field[@name='module_type']" position="attributes">
+                    <attribute name="enable_counters">1</attribute>
+                    <attribute name="select">multi</attribute>
+                </xpath>
+                <xpath expr="//searchpanel//field[@name='category_id']" position="attributes">
+                    <attribute name="enable_counters">1</attribute>
+                    <attribute name="select">multi</attribute>
+                </xpath>
                 <xpath expr="//searchpanel/field[@name='category_id']" position="before">
-                    <field name="state"/>
+                    <field name="state" enable_counters="1" select="multi"/>
                 </xpath>
                 <xpath expr="//search/group" position="inside">
                     <filter string="Addons Path" name="addons_path" domain="[]" context="{'group_by': 'addons_path_id'}" groups="base.group_no_one"/>

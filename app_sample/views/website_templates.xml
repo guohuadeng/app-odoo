@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 <!--    sample add same logo-->
 	<template id="option_header_brand_logo" inherit_id="website.option_header_brand_logo">

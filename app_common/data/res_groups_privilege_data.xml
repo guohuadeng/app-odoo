@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="0">
         <!--        注意，同权限内的，可以形成树。故额外设置不能放到原来的 privilege，但可以放同cate-->

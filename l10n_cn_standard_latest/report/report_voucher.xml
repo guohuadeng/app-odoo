@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
         <template id="external_layout_boxed" inherit_id="web.external_layout_boxed" primary="True">

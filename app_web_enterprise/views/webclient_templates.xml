@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- 企业版变色   -->
     <template id="app_layout" inherit_id="web.layout" name="app Web layout">

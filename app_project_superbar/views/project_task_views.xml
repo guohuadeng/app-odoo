@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<!--搜索加 superbar-->
 	<record model="ir.ui.view" id="app_view_task_search_form">

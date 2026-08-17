@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
         <!-- Partner Form视图，用继承方式改写2018-11-21,ivan -->

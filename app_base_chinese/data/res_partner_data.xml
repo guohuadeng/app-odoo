@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
         <record id="base.public_partner" model="res.partner" context="{'lang': 'zh_CN'}">

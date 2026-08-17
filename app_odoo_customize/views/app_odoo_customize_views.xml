@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <!--    处理 title 及 theme-color-->
     <template id="app_layout" inherit_id="web.layout" name="app Web layout">

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<record id="app_view_blog_post_search" model="ir.ui.view">
 		<field name="name">app.blog.post.search</field>

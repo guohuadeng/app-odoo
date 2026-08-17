@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record model="ir.ui.view" id="app_mrp_production_form_view">
         <field name="name">app.mrp.production.form</field>

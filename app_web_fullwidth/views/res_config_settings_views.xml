@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- <record id="view_app_theme_config_settings" model="ir.ui.view">
         <field name="name">res.config.settings.view.form.inherit.app_odoo_customize</field>

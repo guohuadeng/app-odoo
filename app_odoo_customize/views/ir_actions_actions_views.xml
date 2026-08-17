@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- list-->
     <record id="app_action_view_tree" model="ir.ui.view">
