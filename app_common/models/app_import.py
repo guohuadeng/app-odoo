@@ -2,20 +2,18 @@
 
 import os.path
 
-from odoo import SUPERUSER_ID, _
-from odoo.tools import misc
+from odoo import api, fields, models, modules, tools, SUPERUSER_ID, _
 
 def app_quick_import(env, content_path, sep=None, context={}):
     if not sep:
         sep = '/'
     dir_split = content_path.split(sep)
+    module_name = dir_split[0]
     file_name = dir_split[2]
-    file_base, file_type = os.path.splitext(content_path)
+    file_path, file_type = os.path.splitext(content_path)
     model_name = file_name.replace(file_type, '')
-    # Odoo 17.0+ 弃用 modules.get_module_resource，改用 tools.misc.file_path
-    full_path = misc.file_path(content_path)
-    with open(full_path, 'rb') as f:
-        content = f.read()
+    file_path = modules.get_module_resource(module_name, dir_split[1], file_name)
+    content = open(file_path, 'rb').read()
     uid = SUPERUSER_ID
     if model_name == 'discuss.channel':
         # todo: 创建discuss.channel时，如果用root用户会报错

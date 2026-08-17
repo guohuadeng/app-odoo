@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- VIEWS -->
     <record id="app_view_move_form" model="ir.ui.view">

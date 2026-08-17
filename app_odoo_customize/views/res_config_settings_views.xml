@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
         <record id="view_app_theme_config_settings" model="ir.ui.view">
@@ -210,6 +211,9 @@
                         </div>
                     </div>
                 </xpath>
+                <xpath expr="//block[@name='about_setting_container']//widget[@name='mobile_apps_funnel']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
             </field>
         </record>
 <!--已停用-->
@@ -218,6 +222,7 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">res.config.settings</field>
             <field name="view_mode">form</field>
+            <field name="target">inline</field>
             <field name="context">{'module' : 'app_odoo_customize', 'bin_size': False}</field>
         </record>
     </data>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <templates xml:space="preserve">
 <!--    <t t-name="mail.TrackingValue" t-inherit="mail.TrackingValue" t-inherit_mode="extension" owl="1">-->
 <!--        <xpath expr="//span[hasclass('o_TrackingValue_fieldName')]" position="replace">-->

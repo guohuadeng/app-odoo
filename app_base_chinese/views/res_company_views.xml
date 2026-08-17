@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!--        数据修正-->
     <record id="ir_actions_server_res_company_app_set_chinese" model="ir.actions.server">

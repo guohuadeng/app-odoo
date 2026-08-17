@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
     <t t-name="app_odoo_customize.XmlIdDebugItem">

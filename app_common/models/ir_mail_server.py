@@ -2,7 +2,6 @@
 
 from odoo import api, fields, models, _
 
-import re
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -20,16 +19,9 @@ class IrMailServer(models.Model):
         
         # 忽略掉无效email，避免被ban
         if email_to:
-            BLOCK_EMAIL_PATTERNS = [
-                re.compile(r'example\.com'),                     # 阻止包含example.的邮箱
-                re.compile(r'@sunpop\.cn'),                   # 阻止sunpop.cn域名
-                re.compile(r'@odooapp\.cn'),                  # 阻止odooapp.cn域名
-            ]
-            
-            # 检查是否匹配阻止的邮箱模式
-            is_blocked = any(pattern.search(email_to) for pattern in BLOCK_EMAIL_PATTERNS)
-            
-            if is_blocked:
+            if email_to.find('no-reply@odooai.cn') != -1 or email_to.find('postmaster-odoo@odooai.cn') != -1:
+                pass
+            elif email_to.find('example.') != -1 or email_to.find('@sunpop.cn') != -1 or email_to.find('@odooapp.cn') != -1:
                 _logger.warning(_("=================Email to ignore: %s") % email_to)
                 raise AssertionError(_("Email to ignore: %s") % email_to)
 

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="digest.digest_mail_template" model="mail.template">
         <field name="body_html"><![CDATA[

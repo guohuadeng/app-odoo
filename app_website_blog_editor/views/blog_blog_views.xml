@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="app_view_blog_blog_list" model="ir.ui.view">
         <field name="name">app.blog.blog.list</field>

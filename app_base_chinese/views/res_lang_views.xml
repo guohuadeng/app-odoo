@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- lang视图, tree -->
     <record id="app_view_lang_tree" model="ir.ui.view">

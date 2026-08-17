@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
         <!--改search中英文-->
     <t t-extend="SearchPanel.Category">

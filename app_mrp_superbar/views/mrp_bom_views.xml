@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!--搜索加 superbar-->
     <record model="ir.ui.view" id="view_mrp_bom_filter_superbar">

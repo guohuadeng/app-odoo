@@ -641,8 +641,6 @@ class ResConfigSettings(models.TransientModel):
         except Exception as e:
             pass  # raise Warning(e)
         res = self._remove_app_data(to_removes, seqs, 'remove_project')
-        if isinstance(res, dict):
-            return res
         # 清除项目记录后，清除之前缓存的 alias_id
         if alias_ids:
             try:

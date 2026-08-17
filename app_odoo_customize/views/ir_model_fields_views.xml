@@ -1,12 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="app_view_model_fields_tree" model="ir.ui.view">
         <field name="name">app.ir.model.fields tree</field>
         <field name="model">ir.model.fields</field>
         <field name="inherit_id" ref="base.view_model_fields_tree"/>
         <field name="arch" type="xml">
-            <field name="model_id" position="before">
-                <field name="help" optional="hide"/>
-            </field>
             <field name="readonly" position="before">
                 <field name="required"/>
             </field>
