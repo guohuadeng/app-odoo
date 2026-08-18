@@ -17,7 +17,7 @@
 
 {
     'name': "项目任务导航 / Project &amp; Task Navigator",
-    'version': '18.0.26.03.26',
+    'version': '18.0.26.08.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
