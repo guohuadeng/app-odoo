@@ -6,7 +6,7 @@
 
 {
     'name': "数据库自动备份,Database Auto Backup and Download",
-    'version': '18.0.25.10.31',
+    'version': '18.0.26.08.18',
 
     'summary': "Odoo数据库自动备份、远程SFTP备份、一键手动备份、备份文件下载管理。Automated database backup with SFTP remote backup, manual one-click backup and easy download.",
 
@@ -61,4 +61,5 @@
         'data/backup_data.xml',
         'views/db_backup_details.xml',
     ],
+    'post_init_hook': 'post_init_hook',
 }
