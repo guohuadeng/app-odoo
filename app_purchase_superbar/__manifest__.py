@@ -17,7 +17,7 @@
 
 {
     'name': "采购超级搜索导航 / Purchase Superbar Navigator",
-    'version': '18.0.24.11.12',
+    'version': '18.0.26.08.19',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -69,6 +69,7 @@
     'assets': {
         'web.assets_backend': [
             'app_purchase_superbar/static/src/views/*.xml',
+            'app_purchase_superbar/static/src/scss/app_style_after.scss',
         ],
     },
     'demo': [
