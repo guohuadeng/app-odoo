@@ -93,11 +93,6 @@
             'app_odoo_customize/static/src/xml/debug_xmlid.xml',
         ],
     },
-    'pre_init_hook': 'pre_init_hook',
-    'post_init_hook': 'post_init_hook',
-    'installable': True,
-    'application': True,
-    'auto_install': True,
     'description': """
 1. Deletes Odoo label in footer
 2. Replaces "Odoo" in Windows title
@@ -221,4 +216,9 @@
 59. 开发者菜单中显示当前记录的 XML ID，支持一键复制到剪贴板
 60. 将原生Odoo文档帮助链接（如 Check why）重定向至可配置的 app_doc_root_url 域名
     """,
+    'pre_init_hook': 'pre_init_hook',
+    'post_init_hook': 'post_init_hook',
+    'installable': True,
+    'application': True,
+    'auto_install': True,
 }

@@ -105,6 +105,6 @@
     # 可以不需要，因为直接放 common中了
     # 'external_dependencies': {'python': ['pyyaml', 'ua-parser', 'user-agents']},
     'installable': True,
-    'application': True,
+    'application': False,
     'auto_install': True,
 }

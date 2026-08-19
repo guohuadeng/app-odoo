@@ -88,7 +88,7 @@ class ResUsers(models.Model):
                     odoo_user.write(vals)
                     _logger.info('========= _auth_oauth_signin res.users write：%s' % vals)
                     self._cr.commit()
-                    return odoo_user.user_id.login
+                    return odoo_user.login
         res = super(ResUsers, self)._auth_oauth_signin(provider, validation, params)
         return res
 
