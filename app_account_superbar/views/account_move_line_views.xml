@@ -12,14 +12,13 @@
                 <xpath expr="//search/searchpanel" position="attributes">
                     <attribute name="class"/>
                 </xpath>
-                <xpath expr="//searchpanel//field[@name='account_root_id']" position="before">
-                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
-                </xpath>
                 <xpath expr="//search/searchpanel" position="inside">
+                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="journal_id" enable_counters="1" select="multi"/>
                     <field name="partner_id" enable_counters="1" select="multi"/>
-                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="account_id" name_field="display_name" context="{'name_field': 'display_name'}"/>
                 </xpath>
+                <xpath expr="//searchpanel//field[@name='account_root_id']" position="replace"/>
             </field>
         </record>
     </data>

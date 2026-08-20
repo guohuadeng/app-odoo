@@ -17,7 +17,7 @@
 
 {
     'name': "会计科目树状导航,Account Superbar Navigator",
-    'version': '18.0.26.04.15',
+    'version': '18.0.26.08.21',
     'author': 'odooai.cn',
     'category': 'Accounting/Accounting',
     'website': 'https://www.odooai.cn',
