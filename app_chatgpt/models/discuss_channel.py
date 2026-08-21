@@ -360,18 +360,17 @@ class Channel(models.Model):
                 if c_history:
                     messages += c_history
                 if message.attachment_ids:
-                    attachment = message.attachment_ids[:1]
-                    file_content = ai.get_msg_file_content(message)
-                    if not file_content:
-                        messages.append({"role": "user", "content": msg})
-                    if attachment.mimetype in ['image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/webp']:
+                    attachment = message.attachment_ids[:1].sudo()
+                    file_info = ai.get_msg_file_content(message)
+                    if file_info and file_info.get('type') == 'image':
+                        # Images: keep the original behaviour unchanged
                         messages.append({
                             "role": "user",
                             "content": [
                                 {
                                     "type": "image_url",
                                     "image_url": {
-                                        "url": file_content,
+                                        "url": file_info['url'],
                                     },
                                 },
                                 {
@@ -380,8 +379,34 @@ class Channel(models.Model):
                                 }
                             ]
                         })
+                    elif file_info and file_info.get('type') == 'text':
+                        # Extracted PDF text or plain-text file
+                        messages.append({
+                            "role": "user",
+                            "content": "%s\n\n[Attached file: %s]\n%s" % (
+                                msg, attachment.name or 'file', file_info['content'],
+                            ),
+                        })
+                    elif file_info and file_info.get('type') == 'file':
+                        # Binary we cannot read as text (scanned PDF, docx, ...):
+                        # send it as an OpenAI / OpenRouter file input.
+                        messages.append({
+                            "role": "user",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": msg,
+                                },
+                                {
+                                    "type": "file",
+                                    "file": {
+                                        "filename": file_info['filename'],
+                                        "file_data": file_info['data_uri'],
+                                    },
+                                },
+                            ],
+                        })
                     else:
-                        messages.append({"role": "system", "content": file_content})
                         messages.append({"role": "user", "content": msg})
                 else:
                     messages.append({"role": "user", "content": msg})
@@ -400,6 +425,7 @@ class Channel(models.Model):
 
                     # if msg_len * 2 >= 8000:
                     # messages = [{"role": "user", "content": msg}]
+                _logger.warning("AI send messages to %s: %s", ai.name, messages)
                 if sync_config == 'sync':
                     self.get_ai_response(ai, messages, channel, user_id, message)
                 else:

@@ -14,6 +14,8 @@
 ##############################################################################
 
 import os
+from io import BytesIO
+
 from openai import OpenAI
 from openai import AzureOpenAI
 # from openai.error import OpenAIError
@@ -22,6 +24,7 @@ import base64
 
 from odoo import api, fields, models, modules, tools, _
 from odoo.exceptions import UserError
+from odoo.tools.pdf import OdooPdfFileReader, PdfReadError
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -147,8 +150,96 @@ GPT-3	A set of models that can understand and generate natural language
         return False
 
     def get_msg_file_content(self, message):
-        # hook
-        return False
+        """Return a structured description of the (first) attachment of ``message``.
+
+        The caller (``discuss_channel._notify_thread``) decides how to inject it
+        into the LLM messages.  Return value is a dict with a ``type`` key:
+
+        * ``{'type': 'image', 'url': data_uri}``
+            Image attachments -> a ``data:<mime>;base64,...`` data URI usable as
+            an OpenAI / OpenRouter ``image_url``.
+        * ``{'type': 'text', 'content': text}``
+            Text-like attachments (txt/csv/json/...) or a **PDF whose text layer
+            could be extracted** with Odoo's pdf tooling.
+        * ``{'type': 'file', 'filename': name, 'mimetype': mime, 'data_uri': data_uri}``
+            A binary file (e.g. a scanned PDF, docx, xlsx) that we cannot read as
+            text; the provider may still ingest it as a file input.
+        * ``False`` when there is no usable attachment.
+        """
+        if not message.attachment_ids:
+            return False
+        attachment = message.attachment_ids[:1].sudo()
+        mimetype = attachment.mimetype or ''
+        datas = attachment.datas
+        if not datas:
+            return False
+
+        try:
+            decoded = base64.b64decode(datas)
+        except Exception:
+            return False
+
+        # --- Images: keep the original behaviour unchanged ---
+        if mimetype.startswith('image/'):
+            return {
+                'type': 'image',
+                'url': "data:%s;base64,%s" % (mimetype, datas.decode('ascii')),
+            }
+
+        # --- Plain text-like files ---
+        if mimetype in ('text/plain', 'text/csv', 'application/json',
+                        'text/markdown', 'application/xml', 'text/xml'):
+            try:
+                return {'type': 'text', 'content': decoded.decode('utf-8', errors='replace')}
+            except Exception:
+                return False
+
+        # --- PDF: try to extract the text layer with Odoo's pdf tooling ---
+        if mimetype == 'application/pdf':
+            text = self._extract_pdf_text(decoded)
+            if text:
+                return {'type': 'text', 'content': text}
+            # Extraction failed (scanned PDF, encrypted, ...): fall back to file input
+            return {
+                'type': 'file',
+                'filename': attachment.name or 'file.pdf',
+                'mimetype': mimetype,
+                'data_uri': "data:%s;base64,%s" % (mimetype, datas.decode('ascii')),
+            }
+
+        # --- Other binary (docx/xlsx/...): file input ---
+        return {
+            'type': 'file',
+            'filename': attachment.name or 'file',
+            'mimetype': mimetype,
+            'data_uri': "data:%s;base64,%s" % (mimetype, datas.decode('ascii')),
+        }
+
+    @api.model
+    def _extract_pdf_text(self, raw_bytes):
+        """Extract text from a PDF using Odoo's bundled pdf utilities.
+
+        Returns the concatenated text (stripped of excessive whitespace) or
+        ``False`` when no text could be read (e.g. a scanned/image-only PDF).
+        """
+        try:
+            reader = OdooPdfFileReader(BytesIO(raw_bytes), strict=False)
+        except (PdfReadError, Exception):
+            return False
+        if not reader or getattr(reader, 'numPages', 0) == 0:
+            return False
+        parts = []
+        for page in reader.pages:
+            try:
+                page_text = page.extract_text() or ''
+            except Exception:
+                continue
+            if page_text:
+                parts.append(page_text)
+        text = '\n'.join(parts).strip()
+        # Collapse long runs of whitespace to keep the prompt manageable
+        text = '\n'.join(line.strip() for line in text.splitlines() if line.strip())
+        return text or False
 
     def get_ai(self, data, author_id=False, answer_id=False, param={}):
         #     通用方法
@@ -307,13 +398,25 @@ GPT-3	A set of models that can understand and generate natural language
                 "presence_penalty": 0.1,
                 "stop": stop
             }
+            base_url = self.endpoint.replace('/chat/completions', '') if self.endpoint else None
             client = OpenAI(
                 api_key=self.openapi_api_key,
+                base_url=base_url,
                 timeout=R_TIMEOUT
             )
+            if isinstance(data, str):
+                messages = [{"role": "user", "content": data}]
+            else:
+                messages = data
             response = client.chat.completions.create(
-                messages=data,
                 model=self.ai_model,
+                messages=messages,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                top_p=top_p,
+                frequency_penalty=frequency_penalty,
+                presence_penalty=presence_penalty,
+                stop=stop,
             )
             res = response.model_dump()
             if 'choices' in res:
