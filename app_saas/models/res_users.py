@@ -75,7 +75,7 @@ class ResUsers(models.Model):
         # todo: 当前不管多公司，在 social_login 里有更细节判断，后续优化
         # todo: 当前同名就写 oauth 信息，不安全，要优化
         oauth_provider = self.env['auth.oauth.provider'].sudo().browse(provider)
-        if oauth_provider and oauth_provider.scope.find('odoo') >= 0:
+        if oauth_provider and ('odoo' in (oauth_provider.scope or '') or 'client' in (oauth_provider.scope or '')):
             oauth_uid = validation.get('user_id')
             if oauth_uid:
                 odoo_user = self.sudo().search([('login', '=', oauth_uid)], limit=1)

@@ -6,7 +6,7 @@
             <field name="body">Ai Passport of odooapp.cn</field>
             <field name="auth_endpoint">https://www.odooapp.cn/oauth/authorize</field>
             <field name="code_endpoint">https://www.odooapp.cn/oauth/token</field>
-            <field name="scope">odoo,profile</field>
+            <field name="scope">client,profile</field>
             <field name="validation_endpoint">https://www.odooapp.cn/oauth/profile</field>
             <field name="data_endpoint"></field>
             <field name="css_class">fa fa-2x fa-fw fa-sign-in text-primary</field>
