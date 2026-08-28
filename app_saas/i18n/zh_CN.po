@@ -55,7 +55,7 @@ msgstr "勾选后即可启用Odoo中文云翻译，相关服务由 www.odooapp.c
 #: model:ir.model.fields,field_description:app_saas.field_res_config_settings__app_saas_db_token
 #: model_terms:ir.ui.view,arch_db:app_saas.app_res_config_settings_view_form
 msgid "Cloud DB Token"
-msgstr "数据库令牌"
+msgstr "实例令牌"
 
 #. module: app_saas
 #: model:ir.model,name:app_saas.model_res_config_settings

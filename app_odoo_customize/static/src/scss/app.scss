@@ -33,7 +33,17 @@
   @media (max-width: 768px) {
     --o-navbar-height: 46px;
   }
-  flex-direction: column-reverse!important;
+  flex-direction: column-reverse !important;
+
+  &.app_sidebar {
+    //处理sidebar 用 grid 时的特殊情况
+    grid-template-columns:1fr;
+
+    > *[class*="o_navbar"] {
+      order: 999;
+    }
+  }
+
   .o_navbar {
     display: block;
 
