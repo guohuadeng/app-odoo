@@ -1,25 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- 企业版变色   -->
-    <template id="app_layout" inherit_id="web.layout" name="app Web layout">
-        <xpath expr="//meta[last()]" position="after">
-            <meta name="mobile-web-app-capable" content="yes"/>
-            <!-- Windows Phone -->
-            <meta name="msapplication-navbutton-color" t-att-content="'#242733' if request.cookies.get('color_scheme') == 'dark' else '#00796B'"/>
-            <meta name="msapplication-TileColor" t-att-content="'#242733' if request.cookies.get('color_scheme') == 'dark' else '#00796B'"/>
-            <!-- iOS Safari -->
-            <meta name="theme-color" t-att-content="'#242733' if request.cookies.get('color_scheme') == 'dark' else '#00796B'"/>
-        </xpath>
-    </template>
-<!--    <template id="replace_theme_color" name="Replace theme color" inherit_id="web.webclient_bootstrap">-->
-<!--        <xpath expr="//meta[@name='theme-color']" position="replace">-->
-<!--            <meta name="theme-color" content="#875A7B"/>-->
-<!--            &lt;!&ndash; Windows Phone &ndash;&gt;-->
-<!--            <meta name="msapplication-navbutton-color" content="#00796B"/>-->
-<!--            &lt;!&ndash; iOS Safari &ndash;&gt;-->
-<!--            <meta name="apple-mobile-web-app-capable" content="yes"/>-->
-<!--            <meta name="theme-color" content="#875A7B" media="(prefers-color-scheme: light)"/>-->
-<!--            <meta name="theme-color" content="#242733" media="(prefers-color-scheme: dark)"/>-->
-<!--        </xpath>-->
-<!--    </template>-->
 </odoo>

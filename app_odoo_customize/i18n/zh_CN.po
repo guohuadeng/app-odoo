@@ -919,7 +919,7 @@ msgstr "顶部（默认）"
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "UI Config"
-msgstr "用户界面配置"
+msgstr "主题与界面"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__group_show_author_in_apps

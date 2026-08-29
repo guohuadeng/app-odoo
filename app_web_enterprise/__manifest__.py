@@ -1,6 +1,6 @@
 {
     'name': 'Odoo 企业版界面增强 / Enterprise UI Enhance Pack',
-    'version': '18.0.26.08.11',
+    'version': '18.0.26.08.29',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
