@@ -17,7 +17,7 @@
 
 {
     'name': '销售订单超级搜索栏 / App Sale Order Browse by Partner and Channel',
-    'version': '18.0.25.06.10',
+    'version': '18.0.26.08.30',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

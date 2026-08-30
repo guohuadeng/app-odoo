@@ -24,7 +24,7 @@
         <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
         <field name="arch" type="xml">
             <xpath expr="//search">
-                <searchpanel view_types="list,kanban,pivot,graph">
+                <searchpanel view_types="list,kanban,calendar,pivot,graph">
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="invoice_status" enable_counters="1" select="multi"/>
                     <field name="team_id" enable_counters="1" select="multi"/>
