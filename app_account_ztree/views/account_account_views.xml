@@ -10,7 +10,8 @@
                   <attribute name="default_order">code</attribute>
               </xpath>
                 <xpath expr="field[@name='account_type']" position="after">
-                    <field name="parent_id" optional="show"/>
+                    <field name="parent_id" optional="show"
+                    context="{'show_short_account': 1}"/>
                 </xpath>
             </field>
         </record>

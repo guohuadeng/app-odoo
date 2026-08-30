@@ -6,126 +6,217 @@
 -->
 <html>
 <head><meta charset="utf-8"/></head>
-<!-- begin title-->
-<section class="oe_container container">
-    <div class="oe_row oe_spaced" >
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "app_common - odooAi Common Util and Tools",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
+  "description": "Core utility module for odooai.cn apps. Quick Excel import, timezone convert, image download, UA parser, cron log, misc tools.",
+  "softwareVersion": "18.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": { "@type": "Organization", "name": "odooAi.cn", "url": "https://www.odooai.cn" },
+  "featureList": ["Quick Excel import with .py code","M2O default value helper","UTC timezone convert","Browser user-agent parser","Image URL to local attachment","Log cron job management","Mail boost optimization","Custom .rng file","Misc distance calculation","Multi-language and Multi-company support","Full Open Source"]
+}
+</script>
+
+<!-- begin header -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">娆у害鏅鸿兘鍩虹鍔熻兘鍙婇潰鏉?/ odooAi Common Util and Tools</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">odooai.cn搴旂敤鏍稿績鍩虹妯″潡 / Core Module for odooai.cn Apps</p>
+            <p class="lead">
+                鎻愪緵閫氱敤宸ュ叿鍑芥暟锛欵xcel瀵煎叆銆佹椂鍖鸿浆鎹€佸浘鐗囦笅杞姐€乁A瑙ｆ瀽銆佸畾鏃朵换鍔＄鐞嗙瓑<br/>
+                Common utilities: Excel import, timezone convert, image download, UA parser, cron management
+            </p>
+            <div class="pt16">
+                <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">浼佷笟鐗堜笌绀惧尯鐗?/ Enterprise &amp; Community</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">澶氬叕鍙?/ Multi-Company</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">澶氳瑷€ / Multi-Language</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end header -->
+
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>鍔熻兘姒傝堪 / Overview</h2>
+            <p class="lead pt16">
+                鏈ā鍧楁槸 odooai.cn 鎵€鏈夊簲鐢ㄧ殑鏍稿績鍩虹妯″潡锛屾彁渚涢€氱敤宸ュ叿鍑芥暟鍜岄潰鏉裤€傚寘鍚?Excel 蹇€熷鍏ャ€丮2O 榛樿鍊笺€乁TC 鏃跺尯杞崲銆佹祻瑙堝櫒 UA 鑾峰彇銆佸浘鐗囪浆鏈湴闄勪欢銆佸畾鏃朵换鍔℃棩蹇楃鐞嗐€侀偖浠舵€ц兘浼樺寲銆佽嚜瀹氫箟 RNG銆佽窛绂昏绠楃瓑銆?
+            </p>
+            <p class="text-muted">
+                Core utility module for odooai.cn apps. Quick Excel import, M2O default value, UTC timezone convert, browser UA parser, image to local attachment, cron log management, mail boost, custom RNG, distance calculation.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- end overview -->
+
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="container">
         <div class="row">
-            <h2 class="oe_slogan">odooAi Common Util and Tools</h2>
-            <h3 class="oe_slogan"> Network and media and base tools </h3>
-            <div class="oe_row">
-                <h3>Lastest update: v18.24.12.13</h3>
-                <div class="row">
-                    <img class="oe_demo  oe_screenshot img img-fluid"  style="max-height: 100%;" src="banner.png">
+            <div class="col-lg-12 text-center pb32">
+                <h2>鏍稿績浜偣 / Key Highlights</h2>
+                <p class="lead">閫氱敤宸ュ叿闆嗭紝鎻愬崌寮€鍙戞晥鐜?/ Utility Toolkit for Developer Efficiency</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-file-excel-o fa-lg"></i>
+                        </div>
+                        <h5>1. Excel蹇€熷鍏?/ Quick Excel Import</h5>
+                        <p class="small text-muted">.py Code</p>
+                        <p class="card-text">閫氳繃Python浠ｇ爜蹇€熶粠Excel瀵煎叆鏁版嵁</p>
+                    </div>
                 </div>
-                <div class="oe_span12 oe_spaced">
-                    <div class="alert alert-info" style="padding:8px;font-weight: 300; font-size: 20px;">
-                        <i class="fa fa-hand-o-right"></i><b> Key features: </b>
-                        <ul class="list-unstyled">
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                1. Quick import data from excel with .py code
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                2. Quick m2o default value
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                3. Filter for useless field
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                4. UTC local timezone convert
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                5. Get browser ua, user-agent
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                6. Image to local, image url to local, media to local attachment
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                7. Log cron job
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                8. Boost for less no use mail
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                9. Customize .rng file
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                10. Misc like get distance between two points
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                11. Multi-language Support. Multi-Company Support
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                12. Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                11. Multi-language Support. Multi-Company Support
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                13. Full Open Source.
-                            </li>
-                        </ul>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-globe fa-lg"></i>
+                        </div>
+                        <h5>2. 鏃跺尯涓嶶A宸ュ叿 / Timezone &amp; UA</h5>
+                        <p class="small text-muted">Convert &amp; Parse</p>
+                        <p class="card-text">UTC鏈湴鏃跺尯杞崲鍜屾祻瑙堝櫒UA瑙ｆ瀽</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-image fa-lg"></i>
+                        </div>
+                        <h5>3. 鍥剧墖涓庡獟浣?/ Image &amp; Media</h5>
+                        <p class="small text-muted">Download &amp; Attach</p>
+                        <p class="card-text">鍥剧墖URL杞湰鍦伴檮浠躲€佸獟浣撲笅杞?/p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- end key highlights -->
 
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2 class="bg-warning text-center pt8 pb8">Setup, please run the follow command to install the lib.</h2>
-        <h4 class="oe_slogan"> pip install pyyaml ua-parser user-agents </h4>
-        <h4 class="oe_slogan"> After that, install the app_common </h4>
-    </div>
-</section>
-
-
- <section class="container oe_dark">
-    <div class="oe_row oe_spaced text-center">
-        <div class="row">
-            <h2 class="oe_slogan">Technical Help & Support</h2>
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>閫氱敤鐗规€?/ General Features</h2>
         </div>
-        <div class="col-md-12 pad0">
-            <div class="oe_mt16">
-                <p><h4>
-                For any type of technical help & support requests, Feel free to contact us</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:odoo@china.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> odoo@china.com</a>
-                <p><h4>
-                Via QQ: 300883 (App user would not get QQ or any other IM support. Only for odoo project customize.)</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:300883@qq.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> 300883@qq.com</a>
-            </div>
-            <div class="oe_mt16">
-                <h4>
-                Visit our website for more support.</h4>
-<h4>https://www.odooai.cn</h4>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-globe fa-lg"></i>
+                </div>
+                <h5>澶氳瑷€涓庡鍏徃<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
+                <p>瀹屾暣鐨勫璇█缈昏瘧鏀寔锛岄€傞厤鍏ㄧ悆鍖栦紒涓氶儴缃层€傚師鐢熷鍏徃鏋舵瀯锛屾暟鎹弗鏍奸殧绂汇€?/p>
             </div>
         </div>
-    </div>
-    <div class="oe_row oe_spaced text-center">
-        <h2>More Powerful addons, Make your odoo very easy to use, easy customize:
-            <a class="btn btn-primary mb16" href="http://www.odoo.com/apps/modules/browse?author=odooai.cn">odooai.cn Odoo Addons</a>
-        </h2>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code-fork fa-lg"></i>
+                </div>
+                <h5>鍏ㄧ増鏈吋瀹?br/><small class="text-muted">Full Version Support</small></h5>
+                <p>鏀寔 Odoo 19, 18, 17, 16, 15, 14, 13, 12锛孍E/CE/.SH锛屽吋瀹逛紒涓氱増銆佺ぞ鍖虹増鍙婂湪绾?SaaS銆?/p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code fa-lg"></i>
+                </div>
+                <h5>浠ｇ爜瀹屽叏寮€婧?br/><small class="text-muted">Full Open Source</small></h5>
+                <p>鍩轰簬 LGPL-3 鍗忚寮€婧愶紝浠ｇ爜閫忔槑鍙璁★紝鏀寔浜屾寮€鍙戜笌瀹氬埗銆?/p>
+            </div>
+        </div>
     </div>
 </section>
+<!-- end general features -->
+
+<!-- begin screenshots -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>鐣岄潰鎴浘 / Screenshots</h2>
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <img class="img-fluid rounded shadow" src="banner.png" alt="Banner">
+        </div>
+    </div>
+</section>
+<!-- end screenshots -->
+
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>鏀寔涓庝緷璧栨ā鍧?/ Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-cube text-o-color-1 me-2"></i>mail / 閭欢
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-cube text-o-color-1 me-2"></i>base_setup / 鍩虹璁剧疆
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-cube text-o-color-1 me-2"></i>web / Web鍩虹
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner1.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">涓撲笟Odoo鏈嶅姟浼欎即-寮€鍙戝疄鏂藉挩璇㈠煿璁叏濂楄В鍐虫柟妗?/ Professional Odoo Solutions</p>
+            <div class="pt16">
+                <p><i class="fa fa-globe me-2"></i>Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p>
+                <p><i class="fa fa-desktop me-2"></i>Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p>
+                <p><i class="fa fa-envelope me-2"></i>Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a></p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
 
 </html>

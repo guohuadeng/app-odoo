@@ -16,23 +16,41 @@
 # description:
 
 {
-    'name': "Event advance search browse by stage and date",
-    'version': '19.0.25.12.30',
+    'name': "活动高级搜索 / Event Advance Search Browse by Stage and Date",
+    'version': '19.0.24.12.04',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Browse event by stage. Use for parent children tree list kanban navigator.
-    ztree widget.
-    """,
+    'summary': '按阶段和日期浏览活动，Superbar高级搜索侧栏。/ Browse event by stage and date with Superbar advance search sidebar.',
     'description': """
-    Superbar, zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+English Features:
+1. Superbar and zTree widget for Event module advance search.
+2. Advance search with real parent children tree, ListView or KanbanView.
+3. Support parent tree, children tree navigation (e.g., event stage tree).
+4. Quick advance search and navigator for all app data in tree list header.
+5. Advance search sidebar for many2one, many2many, date range, datetime, boolean, selection, number fields.
+6. Search sidebar available for list, kanban, pivot and graph views.
+7. Support navigate in search more windows for m2o or m2m fields.
+8. Easy customize for any app with extra param for searchpanel.
+9. Multi-language Support. Multi-Company Support.
+10. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+11. Full Open Source.
+
+中文功能：
+1. Event模块Superbar和zTree高级搜索组件。
+2. 支持真实父子树形结构的高级搜索，列表视图和看板视图。
+3. 支持父级树、子级树导航浏览（如活动阶段树）。
+4. 树形列表头部快速高级搜索和数据导航。
+5. 高级搜索侧栏，支持many2one、many2many、日期范围、日期时间、布尔、选择、数字字段。
+6. 搜索侧栏支持列表、看板、数据透视和图表视图。
+7. 支持在搜索更多窗口中为m2o/m2m字段导航筛选。
+8. 易于自定义，支持searchpanel额外参数。
+9. 多语言支持。多公司支持。
+10. 支持Odoo 19,18,17,16,15,14,13,12，企业版、社区版及odoo.sh。
+11. 代码完全开源。
     """,
     'price': 0.00,
     'currency': 'EUR',

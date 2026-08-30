@@ -6,483 +6,323 @@
 -->
 <html>
 <head><meta charset="utf-8"/></head>
-<!-- begin title-->
-<section class="oe_container container">
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <h2 class="oe_slogan" style="color:#875A7B;">Mail addon for Advance Search Superbar</h2>
-    </div>
 
-    <div class="oe_row text-center">
-        <h2>Free addons of Superbar. !This moduld Do Need extra paid Apps.</h2>
-    </div>
+<!-- JSON-LD Structured Data for Generative Engine Optimization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "邮件高级搜索 - Mail Quick Navigator",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  },
+  "description": "Advance search for Odoo Mail module with Superbar sidebar. Browse messages, mails, channels, followers and tracking values by category.",
+  "softwareVersion": "18.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "Message navigator",
+    "Mail search and filter",
+    "Channel partner navigator",
+    "Mail followers search",
+    "Mail tracking value search",
+    "Advance sidebar with multiple field types",
+    "Multi-view support (list, kanban, pivot, graph)"
+  ]
+}
+</script>
 
-    <p>
-        <a href="http://www.odoo.com/apps/modules/19.0/app_web_superbar/" target="_blank">
-            <i class="fa fa-download text-warning"></i>odoo Advance Search Superbar. Quick search any data for any Apps. Click to download.
-        </a>
-    </p>
-</section>
-
-<section class="oe_container container s_text_block pt40 pb40 o_colored_level" data-snippet="s_text_block" data-name="文本" style="background-image: none;" data-tilt-feature="">
-    <div class="s_allow_columns container">
-        <div data-oe-expression="//www.youtube.com/embed/whnmkTWsQkQ?rel=0&amp;autoplay=0" class="media_iframe_video">
-            <div class="css_editable_mode_display"></div>
-            <div class="media_iframe_video_size"></div>
-            <iframe src="//www.youtube.com/embed/whnmkTWsQkQ?rel=0&amp;autoplay=1" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<!-- begin header / hero -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">邮件高级搜索 / Mail Quick Navigator</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">按多种分类浏览邮件 / Browse mail by all kinds of category</p>
+            <p class="lead">
+                Superbar高级搜索侧栏，涵盖消息、邮件、频道成员等<br/>
+                Advance search sidebar for messages, mails, channels and followers
+            </p>
+            <div class="pt16">
+                <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版 / Enterprise &amp; Community</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司 / Multi-Company</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言 / Multi-Language</span>
+            </div>
         </div>
-        <p class="o_default_snippet_text"><br></p>
-    </div>
-    <div class="oe_row text-center">
-        <span>Click above video to Play. or go </span>
-        <a href="https://youtu.be/whnmkTWsQkQ" target="_blank" role="button" class="btn btn-primary btn-lg">Youtube Video of odoo Advance Search Superbar</a>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <h4 class="oe_slogan">Message navigator</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img oe_demo oe_screenshot img img-fluid src="mail1.jpg"/>
-        </div>
-        <h4 class="oe_slogan">Mail navigator</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img oe_demo oe_screenshot img img-fluid src="mail2.jpg"/>
-        </div>
-        <h4 class="oe_slogan">Channels Partner navigator</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img oe_demo oe_screenshot img img-fluid src="mail3.jpg"/>
-        </div>
-        <h4 class="oe_slogan">Mail navigator</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img oe_demo oe_screenshot img img-fluid src="mail4.jpg"/>
-        </div>
-        <h2>The following is the feather of extra paid Apps, which support this apps.</h2>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <h2 class="oe_slogan" style="color:#875A7B;">App Advance Search Sidebar with Hierarchy Parent Children Tree</h2>
     </div>
 </section>
-<section class="oe_container container">
-    <div class="oe_row">
+<!-- end header -->
+
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述 / Overview</h2>
+            <p class="lead pt16">
+                为Odoo邮件模块提供Superbar高级搜索，支持消息、邮件、频道成员、关注者和跟踪值的快速浏览和筛选。
+            </p>
+            <p class="text-muted">
+                Provides Superbar advance search for Odoo Mail module. Browse messages, mails, channel partners, followers and tracking values.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- end overview -->
+
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="container">
         <div class="row">
-            <img class="oe_demo oe_screenshot img img-fluid" src="http://www.odoo.com/apps/modules/19.0/app_web_superbar/superbar.gif">
-        </div>
-        <h3 class="oe_slogan">Advance Search, Advance Filter with Parent Children Tree.</h3>
-        <h2 class="bg-warning text-center pt8 pb8 mt16 mb16">Buy
-            <a href="https://www.odoo.com/apps/modules/19.0/app_web_superbar/">
-            this 1 Advance Search Apps
-            </a>
-                in odoo Store. Get
-            <a href="https://www.odoo.com/apps/modules/browse?search=superbar" target="_blank">
-                free 10+ related apps.
-            </a>
-        </h2>
-        <h3 class="oe_slogan">Easy to navigator and browse any data. Support list, kanban, pivot, graph view. </h3>
-        <h2><span class="text-warning">What you see is what you get. </span>
-            Online demo <i class="fa fa-user text-primary"></i>  user/password: demo/demo
-                        <a href="http://demo.odooapp.cn/web?#action=263&model=sale.order&view_type=list&menu_id=141" target="_blank">
-                        <i class="fa fa-arrow-right text-warning"></i>Click to get demo.
-                        </a>
-        </h2>
-        <div class="oe_span12 oe_spaced">
-            <div class="alert alert-info" style="padding:8px;font-weight: 300; font-size: 20px;">
-                <i class="fa fa-hand-o-right"></i><b> Key features: </b>
-                <ul class="list-unstyled">
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Update: v12.19.05.23, Enhance UI. Add Pos Function.
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Easy to show parent children tree for tree, kanban, pivot, graph view.(Note that there would be little different in UI between odoo12,11,10)
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Responsive UI.Only show when width > 992px;
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Product navigate by category or type is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_product_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Pos navigate by category or store is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_pos_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Account chart navigate by type is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_account_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Contacts navigate by company is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_contacts_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Sale order navigate by partner and channel is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_sale_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        CRM browse by stage and team is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_crm_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Purchase order navigate by partner is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_purchase_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Stock location navigate by parent, Picking by type is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_stock_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        HR employee navigate by department is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_hr_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        MRP manufacture order navigate by state workcenter is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_mrp_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Apps Navigator by Category, Module Navigator is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_module_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        It is so easy to customize, you can use it in anywhere in odoo
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Extra bonus apps. This apps depend on [app_web_widget_ztree]<br/>
-                        <a href="https://www.odoo.com/apps/modules/19.0/app_web_widget_ztree/" target="_blank">
-                        click to get free apps Hierarchy Parent tree in m2o select.
-                        </a>
-                        you can get follow
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Stock Location Hierarchy Parent tree in m2o select
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_stock_ztree/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Product category Hierarchy Parent tree in m2o select
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_product_ztree/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Hr Department Parent tree in m2o select
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_hr_ztree/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2>&nbsp;</h2>
-        <h2 class="bg-warning text-center pt8 pb8 mt16 mb16">So Easy to navigator and search any data.</h2>
-        <h4 class="oe_slogan">Product by category or type in kanban view</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img oe_demo oe_screenshot img img-fluid src="use.jpg"/>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Free to Use in product category.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="product1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Free to Use in POS point of sale.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="pos1.jpg">
-        </div>
-        <h4 class="oe_slogan">POS product and order.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="pos2.jpg">
-        </div>
-        <h4 class="oe_slogan">POS report.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="pos3.jpg">
-        </div>
-    </div>
-</section>
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in HR employee.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="hr2.gif">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in Account.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="account1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in Sale.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="sale1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in CRM.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="crm1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in purchase.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="purchase1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in MRP.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="mrp1.gif">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in stock.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="stock1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in contacts.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="contacts1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Apps Navigator by Category, Module Navigator is ready.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo_module1.jpg">
-        </div>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo_module2.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2 class="bg-warning text-center pt8 pb8 mt16 mb16">Buy this apps, get Extra bonus apps, App zTree widget, Hierarchy Parent tree in m2o select</h2>
-        <h4 class="oe_slogan">Ready for product category Hierarchy Parent tree in m2o select</h4>
-        <div class="oe_screenshot img img-fluid">
-            <img src="z_product1.gif">
-        </div>
-        <h4 class="oe_slogan">Ready for Stock Location Hierarchy Parent tree in m2o select</h4>
-        <div class="oe_screenshot img img-fluid">
-            <img src="z_stock1.gif">
-        </div>
-        <h4 class="oe_slogan">Ready for Hr Department Hierarchy Parent tree in m2o select</h4>
-        <div class="oe_screenshot img img-fluid">
-            <img src="z_hr1.gif">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2>&nbsp;</h2>
-        <h2 class="bg-warning text-center pt8 pb8 mt16 mb16">How to use! This app no need extra module. The price already included</h2>
-        <div class="row">
-            <h4 class="oe_slogan oe_spaced">2. Buy and Install <a href="http://www.odoo.com/apps/modules/19.0/app_web_superbar/" target="_blank">app_web_superbar. </a> <span class="text-warning">Important! Reboot odoo after installed.</span>
-            </h4>
-        </div>
-        <div class="row">
-            <h4 class="oe_slogan oe_spaced">3. Easy use of superbar</h4>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Show superbar in list view.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use7.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Show superbar in kanban view.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use8.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Show superbar in pivot view.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use9.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Show superbar in graph view.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="usea.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Click switch to show or hide superbar.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use1.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Click checkbox to set whether to show child nodes data.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use2.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Press Ctrl(Windows) / Cmd(Mac) to Select Multi Nodes</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use3.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Set multi field to search or filter</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use4.jpg">
-                </div>
+            <div class="col-lg-12 text-center pb32">
+                <h2>核心亮点 / Key Highlights</h2>
+                <p class="lead">邮件模块全方位高级搜索</p>
             </div>
         </div>
         <div class="row">
-            <h4 class="oe_slogan oe_spaced">4. If you want to customize, Use follow param to setup widget</h4>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="superbar_use.gif">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-envelope-o fa-lg"></i>
+                        </div>
+                        <h5>1. 消息导航 / Message Navigator</h5>
+                        <p class="small text-muted">Quick message search</p>
+                        <p class="card-text">快速浏览和搜索所有消息记录</p>
+                    </div>
                 </div>
-                <ul class="oe_spaced" style="padding:8px;font-weight: 300; font-size: 20px;">
-                    <li>In search view xml, Write the &lt;superbar&gt; tag,</li>
-                    <li>position: [left, right]</li>
-                    <li>view_types: [kanban,tree, pivot, graph view.]</li>
-                    <li>parent_key: key field name of parent child relation. leave blank would auto set.</li>
-                    <li>level: how many level to expend the tree for initialize. Default is 2</li>
-                    <li>limit: how many record to show ztree. Default is 16</li>
-                    <li>order: the field name to order by</li>
-                    <li>domain: set the domain for data, eg: [[('is_company', '=', 1)]]</li>
-                    <li>--</li>
-                    <li>Or you can set dynamic domain in .py file.</li>
-                    <li>use param: searchpanel_domain_xxx , xxx is a field name.</li>
-                </ul>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-search fa-lg"></i>
+                        </div>
+                        <h5>2. 邮件搜索 / Mail Search</h5>
+                        <p class="small text-muted">Advance mail filter</p>
+                        <p class="card-text">高级侧栏搜索，支持多种字段类型筛选</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-users fa-lg"></i>
+                        </div>
+                        <h5>3. 频道成员 / Channel Partner</h5>
+                        <p class="small text-muted">Channel partner navigator</p>
+                        <p class="card-text">按频道浏览成员，快速定位相关人员</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-bell-o fa-lg"></i>
+                        </div>
+                        <h5>4. 邮件关注者 / Mail Followers</h5>
+                        <p class="small text-muted">Follower management</p>
+                        <p class="card-text">快速搜索和管理邮件关注者</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-exchange fa-lg"></i>
+                        </div>
+                        <h5>5. 跟踪值搜索 / Tracking Value</h5>
+                        <p class="small text-muted">Mail tracking value search</p>
+                        <p class="card-text">搜索邮件跟踪值，追踪字段变更记录</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<!-- end key highlights -->
 
- <section class="container oe_dark">
-    <div class="oe_row oe_spaced text-center">
-        <div class="row">
-            <h2 class="oe_slogan">Technical Help & Support</h2>
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性 / General Features</h2>
         </div>
-        <div class="col-md-12 pad0">
-            <div class="oe_mt16">
-                <p><h4>
-                For any type of technical help & support requests, Feel free to contact us</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:odoo@china.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> odoo@china.com</a>
-                <p><h4>
-                Via QQ: 300883 (App user would not get QQ or any other IM support. Only for odoo project customize.)</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:300883@qq.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> 300883@qq.com</a>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-globe fa-lg"></i>
+                </div>
+                <h5>多语言与多公司<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
             </div>
-            <div class="oe_mt16">
-                <h4>
-                Visit our website for more support.</h4>
-<h4>https://www.odooai.cn</h4>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code-fork fa-lg"></i>
+                </div>
+                <h5>全版本兼容<br/><small class="text-muted">Full Version Support</small></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code fa-lg"></i>
+                </div>
+                <h5>代码完全开源<br/><small class="text-muted">Full Open Source</small></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
             </div>
         </div>
     </div>
 </section>
+<!-- end general features -->
+
+<!-- begin screenshots -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>界面截图 / Screenshots</h2>
+            <p class="lead">核心功能界面一览</p>
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Message navigator / 消息导航</h3>
+            <img class="img-fluid rounded shadow" src="mail1.jpg" alt="Message Navigator">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Mail navigator / 邮件导航</h3>
+            <img class="img-fluid rounded shadow" src="mail2.jpg" alt="Mail Navigator">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Channels Partner navigator / 频道成员导航</h3>
+            <img class="img-fluid rounded shadow" src="mail3.jpg" alt="Channel Partner">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Mail tracking / 邮件跟踪</h3>
+            <img class="img-fluid rounded shadow" src="mail4.jpg" alt="Mail Tracking">
+        </div>
+    </div>
+</section>
+<!-- end screenshots -->
+
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程 / How It Works</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <div class="row text-center">
+                <div class="col-md-3 pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">安装模块</p>
+                    <p class="small text-muted mb-0">Install Module</p>
+                </div>
+                <div class="col-md-3 pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-envelope"></i>
+                    </div>
+                    <p class="fw-bold mb-1">打开邮件列表</p>
+                    <p class="small text-muted mb-0">Open Mail List</p>
+                </div>
+                <div class="col-md-3 pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-filter"></i>
+                    </div>
+                    <p class="fw-bold mb-1">侧栏搜索</p>
+                    <p class="small text-muted mb-0">Sidebar Search</p>
+                </div>
+                <div class="col-md-3 pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <p class="fw-bold mb-1">快速定位</p>
+                    <p class="small text-muted mb-0">Quick Navigate</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end how it works -->
+
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-globe text-o-color-1 me-2"></i>
+                    web / Web基础模块
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-envelope text-o-color-1 me-2"></i>
+                    mail / 邮件模块 (Mail)
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">专业Odoo服务伙伴-开发实施咨询培训全套解决方案 / Professional Odoo Solutions</p>
+            <div class="pt16">
+                <p><i class="fa fa-globe me-2"></i>Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p>
+                <p><i class="fa fa-desktop me-2"></i>Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p>
+                <p><i class="fa fa-envelope me-2"></i>Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a></p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
 
 </html>

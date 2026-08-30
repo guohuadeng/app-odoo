@@ -28,34 +28,36 @@
 # description:
 
 {
-    'name': 'Crm Advance search, Navigator by stage and team',
-    'version': '19.0.25.12.30',
+    'name': 'CRM商机线索超级导航 / CRM Superbar',
+    'version': '19.0.24.11.12',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 10,
-    'summary': """
-    CRM Superbar.
-    odoo Seo Advance Search, Advance Filter for Date search. date range search. Datetime search.
-    M2M, selection, boolean, number search. Quick search in header.
-    Support list, kanban, pivot, graph, search more view.
-    """,
+    'summary': '按阶段、团队、营销活动树状浏览商机与线索 / Navigate CRM leads and opportunities by stage, team and campaign',
     'description': """
-    Crm free app for app_web_superbar.
-    Advance quick search for various field in all odoo app. Support list, kanban, pivot, graph, search more views.
-    Search with Hierarchy Parent Children Tree. seo search.
-    odoo高级搜索，日期搜索，时间搜索，字符串搜索，数字搜索，下拉搜索. 列表快速搜索。
-    超级方便的查询，树状视图导航。可用在任何模块中。
-    1. Quick Advance Search and navigator for all app data. 10+ free odoo app search in box.
-    2. Quick search in tree list header. Date range, Datetime, selection, number supported.
-    3. Advance search sidebar for many2one, many2many field. m2o search, m2m search for multi select.
-    4. Advance sidebar for date range search, datetime search, boolean search, selection search, number search.
-    5. Search sidebar for list, kanban.Add more pivot, graph views than origin odoo.
-    6. Support navigate in search more. Quick filter and search for m2o or m2m field.
-    7. Easy customize for any app. any module. Use extra param for searchpanel of odoo. Para: view_types, class, name_field, icon, groups, filter_domain
-    8. Advance search in box: Product, CRM, Sales, Purchase, MRP, Stock, Accounting, HR, Project, Etc.
-    Extra param for searchpanel. view_types, class, name_field, icon, groups, filter_domain.
+1. Navigate CRM opportunities by sales pipeline stage and team.
+2. Navigate leads by UTM campaign, medium and source.
+3. CRM report navigation with pivot and graph views.
+4. Multi-company grouping support.
+5. List and kanban view sidebar search panel.
+6. Easy to customize with searchpanel extra params.
+
+1. 按销售管道阶段和团队导航商机。
+2. 按 UTM 营销活动、媒介和来源筛选线索。
+3. CRM 报表支持透视和图表视图导航。
+4. 多公司分组支持。
+5. 列表和看板视图侧边栏搜索面板。
+6. 可通过 searchpanel 参数灵活定制。
+
+7. Multi-language support for global teams.
+8. Full version support: Odoo 19, 18, 17, 16, 15, 14, 13, 12.
+9. Full open source under LGPL-3 license.
+
+7. 多语言支持，适配全球团队。
+8. 全版本支持：Odoo 19, 18, 17, 16, 15, 14, 13, 12。
+9. 代码完全开源，基于 LGPL-3 协议。
     """,
     'price': 0.00,
     'currency': 'EUR',

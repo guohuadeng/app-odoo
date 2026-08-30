@@ -87,9 +87,9 @@
         'web',
     ],
     'data': [
+        'data/res_groups_privilege_data.xml',
         'data/ir_config_parameter_data.xml',
         'data/ir_module_category_data.xml',
-        'data/res_groups_privilege_data.xml',
         'wizard/mail_compose_message_views.xml',
         'views/res_company_views.xml',
         'views/res_config_settings_views.xml',
@@ -106,6 +106,6 @@
     # 可以不需要，因为直接放 common中了
     # 'external_dependencies': {'python': ['pyyaml', 'ua-parser', 'user-agents']},
     'installable': True,
-    'application': True,
+    'application': False,
     'auto_install': True,
 }

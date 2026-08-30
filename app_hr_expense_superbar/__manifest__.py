@@ -29,7 +29,7 @@
 
 {
     'name': "Hr Expense Superbar",
-    'version': '19.0.26.07.21',
+    'version': '19.0.26.05.20',
     'author': 'odooai.cn',
     'category': 'Human Resources',
     'website': 'https://www.odooai.cn',
@@ -54,6 +54,7 @@
     'images': ['static/description/hr2.gif'],
     'data': [
         'views/hr_expense_views.xml',
+        'views/hr_expense_sheet_views.xml',
     ],
     'assets': {
         'web.assets_backend': [

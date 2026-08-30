@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "Easy Admin navigator, quick search filter",
+    'name': "基础管理快速导航,Easy Admin Navigator with Superbar",
     'version': '19.0.25.04.13',
     'author': 'odooai.cn',
     'category': 'Extra tools',
@@ -24,15 +24,21 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 10,
-    'summary': """
-    menu admin, fields admin, action admin, views easy admin and search, quick admin navigator by all kind of category. Use for parent children tree list kanban navigator.
-    Hierarchy Tree.Parent Children relation tree..
-    """,
+    'summary': "菜单/视图/字段/动作/用户等管理项快速树状导航。Quick admin navigator for menu, views, fields, actions, users with Superbar tree.",
     'description': """
-    Superbar, zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+    1. Superbar tree navigator for admin settings: menus, views, fields, actions, reports, server actions, attachments, defaults, access rights, constraints, users.
+    2. Navigate and search technical settings by category tree with list/kanban/pivot/graph views.
+    3. Support parent-children hierarchy, Ctrl/Cmd multi-select, child node inclusion control.
+    4. Multi-language Support. Multi-Company Support.
+    5. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    6. Full Open Source.
+
+    1. 菜单、视图、字段、动作、报表、服务端动作、附件、默认值、权限、约束、用户等管理项树状导航
+    2. 按分类树浏览和搜索技术设置
+    3. 支持父子层级、Ctrl/Cmd多选、子节点包含控制
+    4. 多语言支持，多公司支持
+    5. Odoo 19,18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    6. 代码完全开源
     """,
     'price': 0.00,
     'currency': 'EUR',

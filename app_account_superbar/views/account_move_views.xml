@@ -9,8 +9,9 @@
                 <xpath expr="//search">
                     <searchpanel view_types="list,kanban,pivot,graph">
                         <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
-                        <field name="partner_id" enable_counters="1" select="multi"/>
                         <field name="journal_id" enable_counters="1" select="multi"/>
+                        <field name="currency_id" groups="base.group_multi_currency" enable_counters="1" select="multi"/>
+                        <field name="partner_id" enable_counters="1" select="multi"/>
                         <field name="state"/>
                     </searchpanel>
                 </xpath>
@@ -24,6 +25,7 @@
                 <xpath expr="//search">
                     <searchpanel view_types="list,kanban,pivot,graph">
                         <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                        <field name="currency_id" groups="base.group_multi_currency" enable_counters="1" select="multi"/>
                         <field name="partner_id" enable_counters="1" select="multi"/>
                         <field name="state"/>
                     </searchpanel>

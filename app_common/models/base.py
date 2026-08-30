@@ -16,7 +16,7 @@ from odoo import models, fields, api, _
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
 from odoo.http import request
 from odoo.exceptions import UserError
-from odoo.osv import expression
+from odoo.fields import Domain
 from ..lib.user_agents import parse
 
 _logger = logging.getLogger(__name__)
@@ -87,7 +87,7 @@ class Base(models.AbstractModel):
                     rec = self.env[self._fields[fieldname].comodel_name].search([], limit=1)
                 return rec.id if rec else False
         return False
-    
+
     @api.model
     def _app_dt2local(self, dt_value, return_format=False):
         """
@@ -110,18 +110,18 @@ class Base(models.AbstractModel):
 
         # 用户时区，默认中国
         local_tz = pytz.timezone(self.env.user.tz or 'Etc/GMT-8')
-        
+
         # 如果输入是字符串，先解析为datetime对象, 假设输入是标准的数据库时间格式
         if isinstance(dt_value, str):
             dt_value = datetime.strptime(dt_value, return_format)
-            
+
         # 设置原始时区为UTC（PostgreSQL数据库通常存储UTC时间）
         if dt_value.tzinfo is None:
             dt_value = pytz.utc.localize(dt_value)
-        
+
         local_dt = dt_value.astimezone(local_tz)
         return local_dt.strftime(return_format)
-    
+
     @api.model
     def _app_dt2utc(self, dt_value, return_format=False):
         """
@@ -144,15 +144,15 @@ class Base(models.AbstractModel):
 
         # 用户时区，默认中国
         local_tz = pytz.timezone(self.env.user.tz or 'Etc/GMT-8')
-        
+
         # 如果输入是字符串，先解析为datetime对象, 假设输入是标准的数据库时间格式, 时区为默认用户时区
         if isinstance(dt_value, str):
             dt_value = datetime.strptime(dt_value, return_format)
-            
+
         # 设置原始时区为用户时区（PostgreSQL数据库通常存储UTC时间）
         if dt_value.tzinfo is None:
             dt_value = local_tz.localize(dt_value)
-        
+
         utc_dt = dt_value.replace(tzinfo=pytz.timezone('UTC'))
         return utc_dt.strftime(return_format)
 
@@ -205,14 +205,15 @@ class Base(models.AbstractModel):
         image, file_name = get_image_base642attachment(data)
         if image and file_name:
             try:
-                attachment = self.env['ir.attachment'].create({
+                res = {
                     'datas': image,
                     'name': file_name,
                     'website_id': False,
                     'res_model': self._name,
                     'res_id': self.id,
                     'public': True,
-                })
+                }
+                attachment = self.env['ir.attachment'].create(res)
                 attachment.generate_access_token()
                 return attachment
             except Exception as e:
@@ -220,7 +221,7 @@ class Base(models.AbstractModel):
                 return False
         else:
             return False
-        
+
     @api.model
     def _get_video_url2attachment(self, url):
         if not self._app_check_sys_op():
@@ -243,11 +244,11 @@ class Base(models.AbstractModel):
                 return False
         else:
             return False
-    
+
     @api.model
     def get_ua_type(self):
         return get_ua_type()
-    
+
     @api.model
     def deep_merge(self, a, b):
         # todo: 此处只处理2级，后续如需更深级别可以使用第三方库
@@ -262,7 +263,7 @@ class Base(models.AbstractModel):
         if ref_value is None:
             raise UserError(_('创建或更新时，必须提供关键字段信息: %s') % ref)
 
-        search_domain = expression.AND([domain, [(ref, '=', ref_value)]])
+        search_domain = Domain.AND([domain, [(ref, '=', ref_value)]])
         record = self.search(search_domain, limit=1)
 
         if record:
@@ -365,7 +366,7 @@ def get_image_base642attachment(data):
         return jpeg_base64, file_name
     except Exception as e:
         return None, None
-    
+
 def get_video_url2attachment(url):
     if not url:
         return None

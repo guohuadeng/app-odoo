@@ -16,23 +16,41 @@
 # description:
 
 {
-    'name': "App contacts by category company superbar",
-    'version': '19.0.25.12.30',
+    'name': '通讯录联系人超级导航 / Contacts Partner Superbar',
+    'version': '19.0.25.08.15',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Browse contacts by company. Use for parent children tree list kanban navigator.
-    Hierarchy Tree.Parent Children relation tree..
-    """,
+    'summary': '按公司、类别、行业树状浏览联系人 / Browse contacts by company, category and industry with hierarchical tree navigator',
     'description': """
-    Superbar, zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+1. Navigate contacts by company hierarchy with parent-children tree structure.
+2. Filter contacts by partner category with multi-select and counters.
+3. Filter contacts by industry type for quick segmentation.
+4. Multi-company grouping support for enterprise deployment.
+5. Support list, kanban, pivot and graph views.
+6. One-click toggle to show or hide superbar panel.
+7. Multi-node selection with Ctrl(Windows) / Cmd(Mac).
+8. Easy to customize with searchpanel extra params.
+
+1. 按公司父子公司关系树状浏览联系人。
+2. 按合作伙伴类别筛选，支持多选和计数。
+3. 按行业类型快速筛选联系人。
+4. 多公司分组支持，适配企业级部署。
+5. 支持列表、看板、透视和图表视图。
+6. 一键切换显示或隐藏超级导航栏。
+7. 支持 Ctrl(Windows) / Cmd(Mac) 多选节点。
+8. 可通过 searchpanel 参数灵活定制。
+
+9. Multi-language support for global teams.
+10. Full version support: Odoo 19, 18, 17, 16, 15, 14, 13, 12.
+11. Full open source under LGPL-3 license.
+
+9. 多语言支持，适配全球团队。
+10. 全版本支持：Odoo 19, 18, 17, 16, 15, 14, 13, 12。
+11. 代码完全开源，基于 LGPL-3 协议。
     """,
     'price': 0.00,
     'currency': 'EUR',

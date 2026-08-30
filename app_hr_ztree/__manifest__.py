@@ -28,23 +28,33 @@
 # description:
 
 {
-    'name': "App HR department ztree, parent children tree",
-    'version': '19.0.25.12.30',
+    'name': "HR部门树形组件 / HR Department zTree Widget",
+    'version': '19.0.24.12.09',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Use for parent children tree list select navigator. hr department employee tree.
-    ztree widget.
-    """,
+    'summary': 'HR部门员工父子树形选择器，zTree组件。/ HR department and employee parent children tree selector with zTree widget.',
     'description': """
-    zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView ,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+English Features:
+1. zTree widget for HR department and employee parent children tree navigation.
+2. Advance search with real parent children tree in ListView or KanbanView.
+3. Easy to use in product category, stock location, HR department.
+4. Widget-based design, can be used anywhere in Odoo.
+5. Multi-language Support. Multi-Company Support.
+6. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+7. Full Open Source.
+
+中文功能：
+1. HR部门和员工父子树形导航zTree组件。
+2. 支持在列表视图和看板视图中使用真实父子树形结构搜索。
+3. 可用于产品分类、库存位置、HR部门等多种场景。
+4. 基于组件设计，可在Odoo任何地方使用。
+5. 多语言支持。多公司支持。
+6. 支持Odoo 19,18,17,16,15,14,13,12，企业版、社区版及odoo.sh。
+7. 代码完全开源。
     """,
     'price': 0.00,
     'currency': 'EUR',

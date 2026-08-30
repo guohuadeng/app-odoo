@@ -22,21 +22,30 @@
 
 
 {
-    'name': 'Category zChart Hierarchy, 产品目录多层级结构图',
+    'name': "产品目录层级图 / Category zChart Hierarchy",
     'version': '19.0.25.02.27',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Chart Hierarchy Widget. Hierarchy Chart, Hierarchy Tree for multi level Parent Children relation tree.
-    Free for category Hierarchy chart, stock Hierarchy chart. account chart.
-    """,
+    'summary': '产品目录多层级结构图组件，支持N+1/N+2级展示。/ Product category multi level hierarchy chart widget with N+1/N+2 support.',
     'description': """
-Need extra paid apps https://www.odoo.com/apps/modules/16.0/app_web_widget_ztree/
-This module extend to show a Hierarchy chart.
-(N+1, N+2, direct subordinates)
+English Features:
+1. Hierarchy chart widget for product category multi level visualization.
+2. Support N+1, N+2 direct subordinates in chart.
+3. Free for category, stock and account hierarchy chart.
+4. Multi-language Support. Multi-Company Support.
+5. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+6. Full Open Source.
+
+中文功能：
+1. 产品目录多层级结构图组件。
+2. 支持N+1、N+2级直接下属展示。
+3. 免费用于产品分类、库存位置和会计科目层级图。
+4. 多语言支持。多公司支持。
+5. 支持Odoo 19,18,17,16,15,14,13,12，企业版、社区版及odoo.sh。
+6. 代码完全开源。
     """,
     'price': 0.00,
     'currency': 'EUR',

@@ -1,6 +1,6 @@
 <odoo>
   <data>
-      <!-- Product -->
+<!--      在 app_odoo_customize中有，不需要安装-->
     <record id="view_module_filter_superbar" model="ir.ui.view">
         <field name="name">ir.module.module.list.select</field>
         <field name="model">ir.module.module</field>

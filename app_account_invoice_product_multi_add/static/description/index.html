@@ -2,141 +2,437 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 # Copyright (C) 2009~2026 odooAi.cn
+# 此 index.html 遵循 Odoo 官方模块描述规范。
+# 样式：Bootstrap 5 + Odoo Website Snippet + FontAwesome
+# 布局参考：website/static/src/snippets/ & web_editor/static/scss/
+# GEO: 含 JSON-LD Structured Data (SoftwareApplication)
 ##############################################################################
 -->
 <html>
 <head><meta charset="utf-8"/></head>
-<!-- begin title-->
-<section class="oe_container container">
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <h2 class="oe_slogan" style="color:#875A7B;">Account Invoice Product Multi Add</h2>
-        <h3>One Click to add multi product to Account Customer Invoice, Vendor Bill.</h3>
-        <h2>Important: This app is depends on a Paid App.
-            <a class="btn btn-danger mb4" href="http://www.odoo.com/apps/modules/18.0/app_web_one2many_multi_add/" target="_blank">app_web_one2many_multi_add</a>
-        </h2>
-        <div class="oe_row oe_spaced" style="max-width: 95%;">
-            <div class="oe_demo"
-                 style="margin: 20px auto; padding: 0 15px 0 0; border:none; border-top:solid 1px #dedede; width: 96%; ">
-                <h2 class='oe_mt32'>One Click to add multi product to Account Customer Invoice, Vendor Bill.</h2>
-            </div>
-            <div class="oe_demo oe_screenshot">
-                <img src="account1.gif" style="border:1px solid black"/>
-                <br/>
-            </div>
-        </div>
-        <h3>You may also like these free Apps for odoo.</h3>
-        <ul>
-            <li>1. One Click to add multi product to Sale Order.
-                <a class="btn btn-primary mb4" href="http://www.odoo.com/apps/modules/18.0/app_sale_product_multi_add/" target="_blank">Free Download from here.</a></li>
-            <li>2. One Click to add multi product to Purchase Order.
-                <a class="btn btn-primary mb4" href="http://www.odoo.com/apps/modules/18.0/app_purchase_product_multi_add/" target="_blank">Free Download from here.</a></li>
-            <li>3. One Click to add multi product to MRP Bom.
-                <a class="btn btn-primary mb4" href="http://www.odoo.com/apps/modules/18.0/app_mrp_bom_product_multi_add/" target="_blank">Free Download from here.</a></li>
-            <li>4. One Click to add multi product to Stock Picking Order.
-                <a class="btn btn-primary mb4" href="http://www.odoo.com/apps/modules/18.0/app_stock_picking_product_multi_add/" target="_blank">Free Download from here.</a></li>
-            <li>5. One Click to add multi product to Account Customer Invoice, Vendor Bill.
-                <a class="btn btn-primary mb4" href="http://www.odoo.com/apps/modules/18.0/app_account_invoice_product_multi_add/" target="_blank">Free Download from here.</a></li>
-            <li>6. You can also make any one2many field to get this feature by config the xml.</li>
-            <li>7. You can filter or group the product / object, in the pop windows, and the multi select and add to the order</li>
-        </ul>
-        <div class="oe_demo oe_screenshot">
-            <img src="cnreadme.jpg" style="border:1px solid black"/>
-            <br/>
-        </div>
-        <h3 class="oe_slogan">Easy to Use. Click "Multi Add Items" in the one2many tree view.</h3>
-        <div class="oe_demo oe_screenshot">
-            <h2 class='oe_mt32'>Step1. Click "Multi Add Items" in any order form.</h2>
-            <img src="use1.jpg" style="border:1px solid black"/>
-            <br/>
-            <h2 class='oe_mt32'>Step2. Select product (or any item you setup in xml).</h2>
-            <img src="use2.jpg" style="border:1px solid black"/>
-            <br/>
-            <h2 class='oe_mt32'>Step3. Click "Select", then all product you select would add to the order.</h2>
-            <img src="use3.jpg" style="border:1px solid black"/>
-            <br/>
-        </div>
-    </div>
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <div class="oe_demo"
-             style="margin: 20px auto; padding: 0 15px 0 0; border:none; border-top:solid 1px #dedede; width: 96%; ">
-            <h2 class='oe_mt32'>1. One Click to add multi product to Sale Order.</h2>
-        </div>
-        <div class="oe_demo oe_screenshot">
-            <img src="sale1.gif" style="border:1px solid black"/>
-            <br/>
-        </div>
-    </div>
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <div class="oe_demo"
-             style="margin: 20px auto; padding: 0 15px 0 0; border:none; border-top:solid 1px #dedede; width: 96%; ">
-            <h2 class='oe_mt32'>2. One Click to add multi product to Purchase Order.</h2>
-        </div>
-        <div class="oe_demo oe_screenshot">
-            <img src="purchase1.gif" style="border:1px solid black"/>
-            <br/>
-        </div>
-    </div>
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <div class="oe_demo"
-             style="margin: 20px auto; padding: 0 15px 0 0; border:none; border-top:solid 1px #dedede; width: 96%; ">
-            <h2 class='oe_mt32'>3. One Click to add multi product to MRP Bom.</h2>
-        </div>
-        <div class="oe_demo oe_screenshot">
-            <img src="mrp1.gif" style="border:1px solid black"/>
-            <br/>
-        </div>
-    </div>
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <div class="oe_demo"
-             style="margin: 20px auto; padding: 0 15px 0 0; border:none; border-top:solid 1px #dedede; width: 96%; ">
-            <h2 class='oe_mt32'>4. One Click to add multi product to Stock Picking Order.</h2>
-        </div>
-        <div class="oe_demo oe_screenshot">
-            <img src="stock1.gif" style="border:1px solid black"/>
-            <br/>
-        </div>
-    </div>
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <div class="oe_demo"
-             style="margin: 20px auto; padding: 0 15px 0 0; border:none; border-top:solid 1px #dedede; width: 96%; ">
-            <h2 class='oe_mt32'>6. You can also make any one2many field to get this feature by config the xml.</h2>
-        </div>
-        <div class="oe_demo oe_screenshot">
-            <p>Check this example.</p>
-            <img src="guide1.jpg" style="border:1px solid black"/>
-            <br/>
-        </div>
-    </div>
-</section>
 
+<!-- JSON-LD Structured Data for Generative Engine Optimization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "app_account_invoice_product_multi_add - Account Invoice Product Multi Add",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  },
+  "description": "One Click to batch add multiple products to Customer Invoice and Vendor Bill. Filter and group products in popup window, multi select and add to invoice lines.",
+  "softwareVersion": "18.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "Batch add products to Customer Invoice",
+    "Batch add products to Vendor Bill",
+    "Filter and group products in popup window",
+    "Multi select and batch add",
+    "Supports any one2many field via XML config",
+    "Compatible with Sale, Purchase, MRP, Stock modules",
+    "Multi-language and Multi-company support",
+    "Full Open Source"
+  ]
+}
+</script>
 
-<section class="oe_container oe_dark">
-    <div class="oe_row oe_spaced text-center">
-        <div class="oe_span12">
-            <h2 class="oe_slogan">Technical Help & Support</h2>
-        </div>
-        <div class="col-md-12 pad0">
-            <div class="oe_mt16">
-                <p><h4>
-                For any type of technical help & support requests, Feel free to contact us</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:odoo@china.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> odoo@china.com</a>
-                <p><h4>
-                Via QQ: 300883 (App user would not get QQ or any other IM support. Only for odoo project customize.)</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:300883@qq.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> 300883@qq.com</a>
+<!-- begin header / hero -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">客户发票与供应商账单批量添加产品 / Account Invoice Product Multi Add</h2>
             </div>
-            <div class="oe_mt16">
-                <h4>
-                Visit our website for more support.</h4>
-<h4>https://www.odooai.cn</h4>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">一键批量将多个产品添加到客户发票与供应商账单 / One Click to Batch Add Multiple Products to Invoice &amp; Bill</p>
+            <p class="lead">
+                在弹窗中过滤、分组产品，多选后一键批量添加到发票行，大幅提升开票效率<br/>
+                Filter, group and multi-select products in popup, batch add to invoice lines with one click
+            </p>
+            <div class="pt16">
+                <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版 / Enterprise &amp; Community</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司 / Multi-Company</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言 / Multi-Language</span>
             </div>
         </div>
     </div>
 </section>
+<!-- end header -->
+
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述 / Overview</h2>
+            <p class="lead pt16">
+                本模块为客户发票（Customer Invoice）和供应商账单（Vendor Bill）提供一键批量添加产品功能。点击"Multi Add Items"按钮，在弹窗中可按分类过滤和分组产品，多选后一键批量添加到发票明细行。
+            </p>
+            <p class="text-muted">
+                This module provides one-click batch product addition for Customer Invoice and Vendor Bill. Click "Multi Add Items" to open a popup where you can filter, group and multi-select products, then batch add them to invoice lines.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- end overview -->
+
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center pb32">
+                <h2>核心亮点 / Key Highlights</h2>
+                <p class="lead">一键批量添加，告别逐行手动录入 / Batch Add Products with One Click</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-plus-circle fa-lg"></i>
+                        </div>
+                        <h5>1. 批量添加产品 / Batch Add Products</h5>
+                        <p class="small text-muted">One Click Multi Add</p>
+                        <p class="card-text">一键将多个产品批量添加到客户发票和供应商账单</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-filter fa-lg"></i>
+                        </div>
+                        <h5>2. 过滤与分组 / Filter &amp; Group</h5>
+                        <p class="small text-muted">Smart Product Selection</p>
+                        <p class="card-text">弹窗中支持按分类过滤和分组产品，快速定位目标产品</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-cogs fa-lg"></i>
+                        </div>
+                        <h5>3. 任意One2Many扩展 / Extend Any One2Many</h5>
+                        <p class="small text-muted">XML Configuration</p>
+                        <p class="card-text">通过XML配置，可让任意one2many字段获得批量添加功能</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end key highlights -->
+
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性 / General Features</h2>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-globe fa-lg"></i>
+                </div>
+                <h5>多语言与多公司<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code-fork fa-lg"></i>
+                </div>
+                <h5>全版本兼容<br/><small class="text-muted">Full Version Support</small></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code fa-lg"></i>
+                </div>
+                <h5>代码完全开源<br/><small class="text-muted">Full Open Source</small></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end general features -->
+
+<!-- begin screenshots -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>界面截图 / Screenshots</h2>
+            <p class="lead">核心功能界面一览</p>
+        </div>
+    </div>
+
+    <!-- screenshot 1 -->
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>One Click to Add Multi Product to Account Invoice / 一键批量添加产品到发票</h3>
+            <img class="img-fluid rounded shadow" src="account1.gif" alt="One Click to add multi product to Account Invoice">
+        </div>
+    </div>
+
+    <!-- screenshot 2 -->
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-book text-o-color-1 me-2"></i>Chinese Usage Guide / 中文使用说明</h3>
+            <img class="img-fluid rounded shadow" src="cnreadme.jpg" alt="Chinese Usage Guide">
+        </div>
+    </div>
+
+    <!-- screenshot 3 -->
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-mouse-pointer text-o-color-1 me-2"></i>Step1. Click "Multi Add Items" in Any Order Form / 步骤一：点击"Multi Add Items"</h3>
+            <img class="img-fluid rounded shadow" src="use1.jpg" alt="Step1 Click Multi Add Items">
+        </div>
+    </div>
+
+    <!-- screenshot 4 -->
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-check-square text-o-color-1 me-2"></i>Step2. Select Product in Popup / 步骤二：在弹窗中选择产品</h3>
+            <img class="img-fluid rounded shadow" src="use2.jpg" alt="Step2 Select Product">
+        </div>
+    </div>
+
+    <!-- screenshot 5 -->
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-check text-o-color-1 me-2"></i>Step3. Click "Select" to Batch Add / 步骤三：点击"Select"批量添加</h3>
+            <img class="img-fluid rounded shadow" src="use3.jpg" alt="Step3 Batch Add">
+        </div>
+    </div>
+
+    <!-- screenshot 6 -->
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-shopping-cart text-o-color-1 me-2"></i>One Click to Add Multi Product to Sale Order / 一键添加产品到销售订单</h3>
+            <img class="img-fluid rounded shadow" src="sale1.gif" alt="Sale Order Multi Add">
+        </div>
+    </div>
+
+    <!-- screenshot 7 -->
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-truck text-o-color-1 me-2"></i>One Click to Add Multi Product to Purchase Order / 一键添加产品到采购订单</h3>
+            <img class="img-fluid rounded shadow" src="purchase1.gif" alt="Purchase Order Multi Add">
+        </div>
+    </div>
+
+    <!-- screenshot 8 -->
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-cubes text-o-color-1 me-2"></i>One Click to Add Multi Product to MRP BOM / 一键添加产品到MRP BOM</h3>
+            <img class="img-fluid rounded shadow" src="mrp1.gif" alt="MRP BOM Multi Add">
+        </div>
+    </div>
+
+    <!-- screenshot 9 -->
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-archive text-o-color-1 me-2"></i>One Click to Add Multi Product to Stock Picking / 一键添加产品到库存拣货</h3>
+            <img class="img-fluid rounded shadow" src="stock1.gif" alt="Stock Picking Multi Add">
+        </div>
+    </div>
+
+    <!-- screenshot 10 -->
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-cog text-o-color-1 me-2"></i>XML Configuration Example for Any One2Many Field / XML配置任意One2Many字段</h3>
+            <img class="img-fluid rounded shadow" src="guide1.jpg" alt="XML Configuration Guide">
+        </div>
+    </div>
+</section>
+<!-- end screenshots -->
+
+<!-- begin free related apps -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(7,89,133,.1);color:#075985;">
+                <i class="fa fa-gift fa-lg"></i>
+            </div>
+            <h2>免费关联模块 / Free Related Apps</h2>
+            <p class="lead">安装本模块后，以下关联模块可免费下载使用</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card border-0 shadow-sm" style="border-radius:12px;">
+                <div class="card-header text-white text-center py-3" style="background:linear-gradient(135deg,#0ea5e9,#0284c7);border-radius:12px 12px 0 0;">
+                    <i class="fa fa-download me-2"></i>
+                    <b>Free Download</b>
+                    <span class="ms-2 badge rounded-pill bg-light text-primary">6 Apps</span>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span class="flex-grow-1">One Click to add multi product to Sale Order</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_sale_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>Download
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span class="flex-grow-1">One Click to add multi product to Purchase Order</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_purchase_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>Download
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span class="flex-grow-1">One Click to add multi product to MRP BOM</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_mrp_bom_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>Download
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span class="flex-grow-1">One Click to add multi product to Stock Picking Order</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_stock_picking_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>Download
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span class="flex-grow-1">One Click to add multi product to Account Invoice</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_account_invoice_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>Download
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span class="flex-grow-1">Config XML to enable multi add for any one2many field</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center py-3 bg-transparent border-top-0">
+                    <i class="fa fa-lightbulb-o text-warning me-1"></i>
+                    <small class="text-muted">Easy to customize, you can use it anywhere in Odoo</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end free related apps -->
+
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程 / How It Works</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <div class="row text-center">
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-mouse-pointer"></i>
+                    </div>
+                    <p class="fw-bold mb-1">点击按钮</p>
+                    <p class="small text-muted mb-0">Click "Multi Add Items"</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-filter"></i>
+                    </div>
+                    <p class="fw-bold mb-1">过滤分组</p>
+                    <p class="small text-muted mb-0">Filter &amp; Group Products</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-check-square"></i>
+                    </div>
+                    <p class="fw-bold mb-1">多选产品</p>
+                    <p class="small text-muted mb-0">Multi Select Products</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <p class="fw-bold mb-1">批量添加</p>
+                    <p class="small text-muted mb-0">Click "Select" to Add</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end how it works -->
+
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-book text-o-color-1 me-2"></i>
+                    account / 会计
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">专业Odoo服务伙伴-开发实施咨询培训全套解决方案 / Professional Odoo Solutions</p>
+            <div class="pt16">
+                <p>
+                    <i class="fa fa-globe me-2"></i>
+                    Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-desktop me-2"></i>
+                    Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-envelope me-2"></i>
+                    Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a>
+                </p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
 
 </html>
