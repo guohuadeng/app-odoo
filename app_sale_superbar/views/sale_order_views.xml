@@ -11,7 +11,7 @@
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="state" enable_counters="1" select="multi"/>
                     <field name="invoice_status" enable_counters="1" select="multi"/>
-                    <field name="partner_id" filter_domain="[('customer_rank','&gt;', 0)]" limit="1000"  enable_counters="1" select="multi"/>
+                    <field name="partner_id" domain="[('customer_rank','&gt;', 0)]" limit="1000"  enable_counters="1" select="multi"/>
                     <field name="team_id" enable_counters="1" select="multi"/>
                 </searchpanel>
             </xpath>
@@ -28,7 +28,7 @@
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="invoice_status" enable_counters="1" select="multi"/>
                     <field name="team_id" enable_counters="1" select="multi"/>
-                    <field name="partner_id" filter_domain="[('customer_rank','&gt;', 0)]" limit="1000" enable_counters="1" select="multi"/>
+                    <field name="partner_id" domain="[('customer_rank','&gt;', 0)]" limit="1000" enable_counters="1" select="multi"/>
                 </searchpanel>
             </xpath>
         </field>
