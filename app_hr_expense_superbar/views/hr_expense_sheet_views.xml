@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_hr_expense_sheet_view_search" model="ir.ui.view">
+        <field name="name">app.hr.expense.sheet.search</field>
+        <field name="model">hr.expense.sheet</field>
+        <!-- o19: 原生 hr_expense 已无 sheet 视图，改指 app_hr_expense_pro 兼容层 -->
+        <field name="inherit_id" ref="app_hr_expense_pro.hr_expense_sheet_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <searchpanel view_types="list,kanban,pivot,graph,search">
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="state" expand="1" select="multi" icon="fa-check-square-o" enable_counters="1"/>
+                    <field name="payment_state" expand="1" select="multi" icon="fa-money" enable_counters="1"/>
+                    <field name="department_id" enable_counters="1" select="multi"/>
+                    <field name="employee_id" enable_counters="1" select="multi"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+</odoo>

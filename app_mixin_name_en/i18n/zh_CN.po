@@ -1,0 +1,53 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* app_mixin_name_en
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20260208\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-14 10:18+0000\n"
+"PO-Revision-Date: 2026-05-14 10:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_mixin_name_en
+#: model:ir.model.fields,field_description:app_mixin_name_en.field_mixin_name_en__name_en_US
+#: model:ir.model.fields,field_description:app_mixin_name_en.field_product_product__name_en_US
+#: model:ir.model.fields,field_description:app_mixin_name_en.field_product_template__name_en_US
+msgid "English Name"
+msgstr "英文名"
+
+#. module: app_mixin_name_en
+#. odoo-python
+#: code:addons/app_mixin_name_en/hooks.py:0
+msgid ""
+"English language (en_US) must be enabled before installing this module.\n"
+"Please install it from Settings > Translations > Languages."
+msgstr ""
+"英文语言（en_US）必须启用后才能使用此模块。\n"
+"请从设置 > 多语言 > 语言中安装。"
+
+#. module: app_mixin_name_en
+#: model:ir.model,name:app_mixin_name_en.model_mixin_name_en
+msgid "Mixin Auto english name"
+msgstr "Mixin 自动英文名"
+
+#. module: app_mixin_name_en
+#: model:ir.model,name:app_mixin_name_en.model_product_template
+msgid "Product"
+msgstr "产品模板SPU"
+
+#. module: app_mixin_name_en
+#: model:ir.model.fields,help:app_mixin_name_en.field_product_template__name_en_US
+msgid "Standard English name. Used for customs declaration, international trade import/export and other business scenarios."
+msgstr "产品标准英文名称。用于报关、国际贸易进出口等业务场景。"
+
+#. module: app_mixin_name_en
+#: model:ir.model.fields,field_description:app_mixin_name_en.field_product_template__name_en_US
+msgid "SPU English Name"
+msgstr "产品英文名"

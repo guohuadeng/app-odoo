@@ -21,12 +21,11 @@ class ProductCategory(models.Model):
     _inherit = 'product.category'
 
     # 更新 complete_name 算法，当有context: show_short =1 时，只显示短名
-    def name_get(self):
-        if self._context.get('show_short_category'):
-            new_res = []
+    @api.depends('name', 'complete_name')
+    @api.depends_context('show_short_category')
+    def _compute_display_name(self):
+        if self.env.context.get('show_short_category'):
             for category in self:
-                name = category.name
-                new_res.append((category.id, name))
-            return new_res
+                category.display_name = category.name
         else:
-            return super(ProductCategory, self).name_get()
+            return super()._compute_display_name()
