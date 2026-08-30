@@ -17,7 +17,7 @@
 
 {
     'name': "App sale order browse by partner and channel",
-    'version': '19.0.25.12.30',
+    'version': '19.0.26.08.30',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
