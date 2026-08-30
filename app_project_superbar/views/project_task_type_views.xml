@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- search-->
+    <record id="app_task_type_search" model="ir.ui.view">
+        <field name="name">app.project.task.type.search</field>
+        <field name="model">project.task.type</field>
+        <field name="inherit_id" ref="project.task_type_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+				<searchpanel>
+					<field name="project_ids"/>
+				</searchpanel>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -16,23 +16,31 @@
 # description:
 
 {
-    'name': "!Product category ztree, parent children tree",
-    'version': '19.0.25.12.30',
+    'name': "产品分类树形组件 / Product Category zTree Widget",
+    'version': '19.0.24.12.09',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Use for parent children tree list select navigator. Product category tree.
-    ztree widget.
-    """,
+    'summary': '产品分类父子树形选择器，zTree组件。/ Product category parent children tree selector with zTree widget.',
     'description': """
-    zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView ,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+English Features:
+1. zTree widget for product category parent children tree navigation.
+2. Advance search with real parent children tree in ListView or KanbanView.
+3. Widget-based design, can be used anywhere in Odoo.
+4. Multi-language Support. Multi-Company Support.
+5. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+6. Full Open Source.
+
+中文功能：
+1. 产品分类父子树形导航zTree组件。
+2. 支持在列表视图和看板视图中使用真实父子树形结构搜索。
+3. 基于组件设计，可在Odoo任何地方使用。
+4. 多语言支持。多公司支持。
+5. 支持Odoo 19,18,17,16,15,14,13,12，企业版、社区版及odoo.sh。
+6. 代码完全开源。
     """,
     'price': 0.00,
     'currency': 'EUR',

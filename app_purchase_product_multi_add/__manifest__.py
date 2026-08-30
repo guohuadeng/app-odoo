@@ -16,8 +16,8 @@
 # description:
 
 {
-    'name': "Multi Add Purchase Product,采购订单批量加产品",
-    'version': '19.0.24.12.03',
+    'name': "采购订单批量添加产品 / Purchase Order Product Multi Batch Add",
+    'version': '18.0.24.12.03',
     'author': 'odooai.cn',
     'category': 'Inventory/Purchase',
     'website': 'https://www.odooai.cn',
@@ -25,19 +25,24 @@
     'sequence': 2,
     'price': 0.00,
     'currency': 'USD',
-    'summary': """
-    App Purchase Order Product Multi Batch Add.
-    Odoo App of odooai.cn
-    """,
+    'summary': '一键批量将多个产品添加到采购订单，支持过滤、分组和明细录入。/ One click batch add products to purchase order with filter, group and detail form.',
     'description': """
-    App Purchase Order Product Multi Add.
-    1. One Click to add multi product to Purchase Order.
-    2. All the product can filter and group.
-    3. Pop a detail form to add purchase line with detail.
-    采购订单批量增加产品
-    1. 可以一键快速将多个产品加到采购订单中
-    2. 可对产品进行过滤、分组，然后批量加入
-    3. 可以弹出一个明细录入界面添加，便于同时支持列表添加及表单添加
+English Features:
+1. One click to add multi products to purchase order.
+2. All the products can be filtered and grouped before adding.
+3. Pop a detail form to add purchase line with detail information.
+4. Support both list-add and form-add modes.
+5. Multi-language Support. Multi-Company Support.
+6. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+7. Full Open Source.
+
+中文功能：
+1. 一键快速将多个产品加到采购订单中。
+2. 可对产品进行过滤、分组，然后批量加入。
+3. 可以弹出明细录入界面添加，便于同时支持列表添加及表单添加。
+4. 多语言支持。多公司支持。
+5. 支持Odoo 19,18,17,16,15,14,13,12，企业版、社区版及odoo.sh。
+6. 代码完全开源。
     """,
     'depends': [
         # 'app_web_one2many_multi_add',
