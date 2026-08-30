@@ -3,7 +3,7 @@
     <record id="app_hr_expense_sheet_view_search" model="ir.ui.view">
         <field name="name">app.hr.expense.sheet.search</field>
         <field name="model">hr.expense.sheet</field>
-        <!-- o19: 原生 hr_expense 已无 sheet 视图，改指 app_hr_expense_pro 兼容层 -->
+        <!-- o19：原生 hr_expense 已无 sheet 视图，sheet 搜索视图由 app_hr_expense_pro 兼容层提供（plan 4.5 完整改法，保留 sheet 侧栏） -->
         <field name="inherit_id" ref="app_hr_expense_pro.hr_expense_sheet_view_search"/>
         <field name="arch" type="xml">
             <xpath expr="//search" position="inside">

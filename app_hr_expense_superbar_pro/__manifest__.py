@@ -28,7 +28,7 @@
 # description:
 
 {
-    'name': "Hr Expense Superbar",
+    'name': "Hr Expense Superbar Pro",
     'version': '19.0.26.05.20',
     'author': 'odooai.cn',
     'category': 'Human Resources',
@@ -49,8 +49,9 @@
     'price': 0.00,
     'currency': 'EUR',
     'depends': [
-        'hr_expense',
-        # o19：sheet 模型/视图由 app_hr_expense_pro 兼容层提供，必须声明依赖以保证加载顺序
+        'app_hr_expense_superbar',
+        # o19：hr.expense.sheet 模型与 sheet 搜索视图由 app_hr_expense_pro 兼容层提供，
+        # 本模块 sheet 侧栏视图 inherit_id 引用兼容层 xmlid，必须声明依赖保证加载顺序
         'app_hr_expense_pro',
     ],
     'images': ['static/description/hr2.gif'],
@@ -60,9 +61,6 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'app_hr_expense_superbar/static/src/scss/hr_expense_superbar.scss',
-            'app_hr_expense_superbar/static/src/views/list.xml',
-            'app_hr_expense_superbar/static/src/views/list.js',
         ],
     },
     'demo': [

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_hr_expense_sheet_view_search" model="ir.ui.view">
+        <field name="name">app.hr.expense.sheet.search</field>
+        <field name="model">hr.expense.sheet</field>
+        <!-- o19：原生 hr_expense 已无 sheet 视图，sheet 搜索视图由 app_hr_expense_pro 兼容层提供（与 superbar 侧栏同挂兼容层基础视图，合并顺序在其后，xpath 可定位 searchpanel 节点） -->
+        <field name="inherit_id" ref="app_hr_expense_pro.hr_expense_sheet_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//searchpanel" position="inside">
+                <field name="accounting_date"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
