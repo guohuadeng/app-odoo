@@ -6,7 +6,8 @@
             <field name="model">stock.picking</field>
             <field name="inherit_id" ref="stock.view_picking_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//page/field[@name='move_ids_without_package']/list/field[1]" position="before">
+                <!-- o19 已删除 move_ids_without_package，统一为 move_ids（stock_picking.py :617） -->
+                <xpath expr="//page/field[@name='move_ids']/list/field[1]" position="before">
                     <control>
                         <create name="add_line" string="Add a line"/>
                         <create name="multi_add_line" string="Multi add line" context="{

@@ -25,8 +25,8 @@
 ##############################################################################
 
 {
-    'name': '!odooapp.cn SaaS Client-Ai Passport-Odoo中文应用商店SaaS云服务客户端',
-    'version': '19.0.25.04.29',
+    'name': "SaaS云服务客户端 / odooapp.cn SaaS Client - Ai Passport",
+    'version': '19.0.26.08.26',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -61,16 +61,22 @@
         # 'website',
     ],
     'data': [
+        'security/ir.model.access.csv',
         'data/auth_oauth_provider_data.xml',
+        'data/ir_config_parameter.xml',
         'views/auth_oauth_provider_views.xml',
         'views/res_config_settings_views.xml',
+        'views/res_users_views.xml',
+        'wizard/error_submit_wizard_views.xml',
     ],
     'assets': {
         'web.assets_frontend': [
             # 'app_/static/src/scss/style.scss',
         ],
         'web.assets_backend': [
-            # 'app_/static/src/js/*.js',
+            'app_saas/static/src/js/error_dialog_extend.js',
+            'app_saas/static/src/xml/error_dialog_extend.xml',
+            'app_saas/static/src/js/error_submit_form_view.js',
         ],
     },
     'demo': [

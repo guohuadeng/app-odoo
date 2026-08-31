@@ -2,138 +2,330 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 # Copyright (C) 2009~2026 odooAi.cn
+# 此 index.html 遵循 Odoo 官方模块描述规范。
+# 样式：Bootstrap 5 + Odoo Website Snippet + FontAwesome
+# GEO: 含 JSON-LD Structured Data (SoftwareApplication)
 ##############################################################################
 -->
 <html>
 <head><meta charset="utf-8"/></head>
-<!-- begin title-->
-<section class="oe_container container o_cc o_cc2">
-    <h2 class="text-center bg-warning text-white pt24 pb24">Web Form Fullwidth-表单表格全宽度满屏，30%可视数据提升</h2>
-    <h3 class="text-center">Chatter Position-自定义备注消息位置</h3>
-    <h4 class="text-center">可配置的全屏详情界面，便于在表单Form中显示更多的数据列</h4>
-</section>
 
-<section class="oe_container container">
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
+<!-- JSON-LD Structured Data for Generative Engine Optimization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Web Form Fullwidth & Chatter Position - 表单全宽度满屏",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "18",
+    "priceCurrency": "EUR"
+  },
+  "description": "Form view responsive full screen with configurable chatter position. 30% more visible data in fullwidth mode.",
+  "softwareVersion": "18.0",
+  "programmingLanguage": "Python, JavaScript, SCSS",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "Form view fullwidth and full screen",
+    "Configurable chatter position per user",
+    "Global chatter position for all company users",
+    "Responsive for small, medium, large screens",
+    "Compatible with enterprise and community edition",
+    "Multi-language and multi-company support",
+    "Full open source under LGPL-3"
+  ]
+}
+</script>
+
+<!-- begin header / hero -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">表单全宽度满屏 / Web Form Fullwidth &amp; Chatter Position</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Form responsive full screen with configurable chatter position</p>
+            <p class="lead">
+                表单表格全宽度满屏，30% 可视数据提升<br/>
+                Show form view into full width, more screen about 30%
+            </p>
+            <div class="pt16">
+                <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版 / Enterprise &amp; Community</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">EUR 18</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司 / Multi-Company</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end header -->
+
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述 / Overview</h2>
+            <p class="lead pt16">
+                Web Form Responsive Fullwidth，可配置的全屏详情界面
+            </p>
+            <p class="text-muted">
+                Form view responsive full width (fullwidth) for better screen utilization. Custom chatter position support.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- end overview -->
+
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="container">
         <div class="row">
-            <h2 class="oe_slogan">App Web Responsive Fullwidth(form view fullwidth)</h2>
-            <div class="alert alert-info" style="padding:8px;font-weight: 300; font-size: 20px;">
-                <i class="fa fa-hand-o-right"></i><b> Key features: </b>
-                <ul class="list-unstyled">
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Show the form view into full width, More screen show about 30%.
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Form view Responsive full width (fullwidth)
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Ready for small, medium, large, extra large screen.
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Ready for enterprise and communicate version.
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Easy set all company user UI for chatter position
-                    </li>
-                </ul>
+            <div class="col-lg-12 text-center pb32">
+                <h2>核心亮点 / Key Highlights</h2>
+                <p class="lead">Fullwidth form &amp; chatter position / 全屏表单与消息位置</p>
             </div>
         </div>
-    </div>
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <div class="oe_demo"
-             style="margin: 20px auto; padding: 0 15px 0 0; border:none; border-top:solid 1px #dedede; width: 96%;">
-            <h2 class='oe_mt32'>Set chatter bottom and full width full screen Form</h2>
-        </div>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo4.jpg" style="border:1px solid black"/>
-            <br/>
-        </div>
-        <h4>Easy set all company user UI for chatter position</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo5.jpg" style="border:1px solid black"/>
-            <br/>
-        </div>
-    </div>
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <div class="oe_demo"
-             style="margin: 20px auto; padding: 0 15px 0 0; border:none; border-top:solid 1px #dedede; width: 96%;">
-            <h2 class='oe_mt32'>Small screen. With or without this module</h2>
-        </div>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo_s.png" style="border:1px solid black"/>
-            <br/>
-        </div>
-    </div>
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <div class="oe_demo"
-             style="margin: 20px auto; padding: 0 15px 0 0; border:none; border-top:solid 1px #dedede; width: 96%;">
-            <h2 class='oe_mt32'>Medium screen. With or without this module</h2>
-        </div>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo_m.png" style="border:1px solid black"/>
-            <br/>
-        </div>
-    </div>
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <div class="oe_demo"
-             style="margin: 20px auto; padding: 0 15px 0 0; border:none; border-top:solid 1px #dedede; width: 96%;">
-            <h2 class='oe_mt32'>Large and extra large screen. Perfect for lots of columns.</h2>
-        </div>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo_l_1.jpg" style="border:1px solid black"/>
-            <br/>
-        </div>
-    </div>
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <div class="oe_demo"
-             style="margin: 20px auto; padding: 0 15px 0 0; border:none; border-top:solid 1px #dedede; width: 96%;">
-            <h2 class='oe_mt32'>User can easy switch to normal chatter with width form</h2>
-        </div>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo3.jpg" style="border:1px solid black"/>
-            <br/>
-        </div>
-        <h4>Easy set all company user UI for chatter position</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo5.jpg" style="border:1px solid black"/>
-            <br/>
-        </div>
-    </div>
-</section>
-
-
- <section class="container oe_dark">
-    <div class="oe_row oe_spaced text-center">
         <div class="row">
-            <h2 class="oe_slogan">Technical Help & Support</h2>
-        </div>
-        <div class="col-md-12 pad0">
-            <div class="oe_mt16">
-                <p><h4>
-                For any type of technical help & support requests, Feel free to contact us</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:odoo@china.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> odoo@china.com</a>
-                <p><h4>
-                Via QQ: 300883 (App user would not get QQ or any other IM support. Only for odoo project customize.)</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:300883@qq.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> 300883@qq.com</a>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-expand fa-lg"></i>
+                        </div>
+                        <h5>1. 全屏全宽 / Fullwidth</h5>
+                        <p class="small text-muted">30% more data</p>
+                        <p class="card-text">表单视图全屏全宽显示，更好利用屏幕空间</p>
+                    </div>
+                </div>
             </div>
-            <div class="oe_mt16">
-                <h4>
-                Visit our website for more support.</h4>
-<h4>https://www.odooai.cn</h4>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-comments fa-lg"></i>
+                        </div>
+                        <h5>2. 消息位置 / Chatter Position</h5>
+                        <p class="small text-muted">Per user config</p>
+                        <p class="card-text">可为每个用户配置备注消息位置：底部、侧边或响应式</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-mobile fa-lg"></i>
+                        </div>
+                        <h5>3. 响应式 / Responsive</h5>
+                        <p class="small text-muted">All screen sizes</p>
+                        <p class="card-text">适配小、中、大、超大屏幕尺寸</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-users fa-lg"></i>
+                        </div>
+                        <h5>4. 全局设置 / Global Config</h5>
+                        <p class="small text-muted">All users</p>
+                        <p class="card-text">可全局设置所有公司用户的备注消息位置</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<!-- end key highlights -->
+
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性 / General Features</h2>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-globe fa-lg"></i>
+                </div>
+                <h5>多语言与多公司<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code-fork fa-lg"></i>
+                </div>
+                <h5>全版本兼容<br/><small class="text-muted">Full Version Support</small></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code fa-lg"></i>
+                </div>
+                <h5>代码完全开源<br/><small class="text-muted">Full Open Source</small></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end general features -->
+
+<!-- begin screenshots -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>界面截图 / Screenshots</h2>
+            <p class="lead">核心功能界面一览</p>
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-expand text-o-color-1 me-2"></i>Set chatter bottom and full width form / 底部消息全屏表单</h3>
+            <img class="img-fluid rounded shadow" src="demo4.jpg" alt="Fullwidth form bottom chatter">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-users text-o-color-1 me-2"></i>Easy set all company user chatter position / 全局设置消息位置</h3>
+            <img class="img-fluid rounded shadow" src="demo5.jpg" alt="Global chatter position">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-mobile text-o-color-1 me-2"></i>Small screen comparison / 小屏对比</h3>
+            <img class="img-fluid rounded shadow" src="demo_s.png" alt="Small screen">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-tablet fa-lg text-o-color-1 me-2"></i>Medium screen comparison / 中屏对比</h3>
+            <img class="img-fluid rounded shadow" src="demo_m.png" alt="Medium screen">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-desktop text-o-color-1 me-2"></i>Large and extra large screen / 大屏全宽</h3>
+            <img class="img-fluid rounded shadow" src="demo_l_1.jpg" alt="Large screen">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-exchange text-o-color-1 me-2"></i>Switch to normal chatter / 切换普通模式</h3>
+            <img class="img-fluid rounded shadow" src="demo3.jpg" alt="Normal chatter">
+        </div>
+    </div>
+</section>
+<!-- end screenshots -->
+
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程 / How It Works</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <div class="row text-center">
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">购买安装</p>
+                    <p class="small text-muted mb-0">Buy &amp; Install</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-cog"></i>
+                    </div>
+                    <p class="fw-bold mb-1">设置位置</p>
+                    <p class="small text-muted mb-0">Set chatter position</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-check-circle"></i>
+                    </div>
+                    <p class="fw-bold mb-1">即享全屏</p>
+                    <p class="small text-muted mb-0">Enjoy fullwidth</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end how it works -->
+
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-wrench text-o-color-1 me-2"></i>
+                    app_odoo_customize / Odoo 定制基础模块
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">专业Odoo服务伙伴-开发实施咨询培训全套解决方案 / Professional Odoo Solutions</p>
+            <div class="pt16">
+                <p>
+                    <i class="fa fa-globe me-2"></i>
+                    Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-desktop me-2"></i>
+                    Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-envelope me-2"></i>
+                    Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a>
+                </p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
 
 </html>

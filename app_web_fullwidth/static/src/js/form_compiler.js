@@ -7,7 +7,7 @@ patch(FormCompiler.prototype, {
         const res = super.compileForm(el, params);
         if (odoo.web_chatter_position === "sided") {
             const classes = res.getAttribute("t-attf-class");
-            const newClasses = classes.replace('{{ __comp__.uiService.size < 6 ? "flex-column" : "flex-nowrap h-100" }}', 'flex-nowrap h-100')
+            const newClasses = classes.replace('{{ __comp__.uiService.size < 5 ? "flex-column" : "flex-nowrap h-100" }}', 'flex-nowrap h-100')
             res.setAttribute("t-attf-class", `${newClasses}`);
             return res;
         }
@@ -27,7 +27,7 @@ patch(FormCompiler.prototype, {
                     }
                 }
 
-                const newClasses = classes.replace('{{ __comp__.uiService.size < 6 ? "flex-column" : "flex-nowrap h-100" }}', 'flex-column');
+                const newClasses = classes.replace('{{ __comp__.uiService.size < 5 ? "flex-column" : "flex-nowrap h-100" }}', 'flex-column');
                 res.setAttribute("t-attf-class", `${newClasses}`);
             }
 

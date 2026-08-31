@@ -1,39 +1,30 @@
-# -*- coding: utf-8 -*-
-
-# Created on 2018-08-15
-# author: 欧度智能，https://www.odooai.cn
-# email: 300883@qq.com
-# resource of odooai
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
-
-# Odoo在线中文用户手册（长期更新）
-# https://www.odooai.cn/documentation/user/10.0/zh_CN/index.html
-
-# Odoo10离线中文用户手册下载
-# https://www.odooai.cn/odoo10_user_manual_document_offline/
-# Odoo10离线开发手册下载-含python教程，jquery参考，Jinja2模板，PostgresSQL参考（odoo开发必备）
-# https://www.odooai.cn/odoo10_developer_document_offline/
-# description:
-
 {
-    'name': "App Website Product browse by category navigator",
-    'version': '19.0.25.12.30',
+    'name': '网站产品按分类超级搜索栏 / Website Product Browse by Category Superbar',
+    'version': '19.0.24.11.12',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Browse Product by website category tree. Use for parent children tree list kanban navigator.
-    Easy to navigator and browse any data. Support list, kanban, pivot, graph view.
-    Hierarchy Tree.Parent Children relation tree..
-    """,
+    'summary': '按网站产品分类树状导航浏览产品 / Browse website products by category tree with parent children navigator',
     'description': """
-    Superbar, zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图
+1. Browse website products by category tree with parent children navigator.
+2. Advance search with real parent children tree in ListView, KanbanView, Pivot and Graph view.
+3. Support search more view for quick product lookup.
+4. Easy to customize for any Odoo module.
+5. Multi-Language Support.
+6. Multi-Company Support.
+7. Full Version Support for Odoo 19,18,17,16,15,14,13,12, Enterprise and Community Edition.
+8. Full Open Source under LGPL-3 license.
+1. 按网站产品分类树状导航浏览产品。
+2. 使用父子树结构在列表、看板、透视和图表视图中进行高级搜索。
+3. 支持搜索更多视图，快速查找产品。
+4. 易于定制，可在 Odoo 任何模块中使用。
+5. 多语言支持。
+6. 多公司支持。
+7. 全版本支持 Odoo 19,18,17,16,15,14,13,12，兼容企业版和社区版。
+8. 代码完全开源，基于 LGPL-3 协议。
     """,
     'price': 0.00,
     'currency': 'EUR',

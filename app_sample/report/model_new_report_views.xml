@@ -48,18 +48,17 @@
                 <field name="name"/>
                 <field name="user_id"/>
                 <filter string="Trailing 12 months" name="completion_date" domain="[
-                        ('date', '>=', (datetime.datetime.combine(context_today() + relativedelta(days=-365), datetime.time(0,0,0)).to_utc()).strftime('%Y-%m-%d %H:%M:%S')),
-                        ('date', '>=', (datetime.datetime.combine(context_today(), datetime.time(0,0,0)).to_utc()).strftime('%Y-%m-%d %H:%M:%S'))]"/>
+                        ('date', '&gt;=', '-1y'),
+                        ('date', '&lt;', '+1d =0H')]"/>
                 <separator/>
                 <filter name="filter_date" date="date"/>
                 <separator/>
                 <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
-                <group expand="1" string="Group By">
-                    <filter string="Date" name="group_by_date" context="{'group_by': 'date:month'}"/>
-                    <separator/>
-                    <filter string="User" name="group_by_user_id" context="{'group_by': 'user_id'}"/>
-                    <filter string="Company" name="company" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
-                </group>
+                <separator/>
+                <filter string="Date" name="group_by_date" context="{'group_by': 'date:month'}"/>
+                <separator/>
+                <filter string="User" name="group_by_user_id" context="{'group_by': 'user_id'}"/>
+                <filter string="Company" name="company" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
             </search>
         </field>
     </record>

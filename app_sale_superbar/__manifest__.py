@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "App sale order browse by partner and channel",
+    'name': '销售订单超级搜索栏 / App Sale Order Browse by Partner and Channel',
     'version': '19.0.26.08.30',
     'author': 'odooai.cn',
     'category': 'Extra tools',
@@ -24,15 +24,24 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Browse sale order by partner and sale channel. Use for parent children tree list kanban navigator.
-    Hierarchy Tree.Parent Children relation tree..
-    """,
+    'summary': '按客户和销售渠道浏览销售订单，树状层级导航 / Browse sale order by partner and sale channel with parent children tree navigator',
     'description': """
-    Superbar, zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+1. Browse sale orders by partner and sale channel with parent children tree navigator.
+2. Advance search with real parent children tree in ListView, KanbanView, Pivot and Graph view.
+3. Support search more view for quick product lookup.
+4. Easy to customize, you can use it anywhere in Odoo.
+5. Multi-Language Support.
+6. Multi-Company Support.
+7. Full Version Support for Odoo 19,18,17,16,15,14,13,12, Enterprise and Community Edition.
+8. Full Open Source under LGPL-3 license.
+1. 按客户和销售渠道浏览销售订单，支持树状层级导航。
+2. 使用父子树结构在列表、看板、数据透视和图表视图中进行高级搜索。
+3. 支持搜索更多视图，快速查找产品。
+4. 易于定制，可在 Odoo 任何模块中使用。
+5. 多语言支持。
+6. 多公司支持。
+7. 全版本支持 Odoo 19,18,17,16,15,14,13,12，兼容企业版和社区版。
+8. 代码完全开源，基于 LGPL-3 协议。
     """,
     'price': 0.00,
     'currency': 'EUR',

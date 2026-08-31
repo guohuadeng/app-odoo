@@ -65,7 +65,7 @@ class ModelNewReport(models.Model):
         return ''
 
     def init(self):
-        tools.drop_view_if_exists(self._cr, self._table)
+        tools.drop_view_if_exists(self.env.cr, self._table)
         sql = '''
             CREATE OR REPLACE VIEW %s AS (
                 %s
@@ -74,4 +74,4 @@ class ModelNewReport(models.Model):
                 %s
             )
         ''' % (self._table, self._select(), self._from(), self._join(), self._where())
-        self._cr.execute(sql)
+        self.env.cr.execute(sql)

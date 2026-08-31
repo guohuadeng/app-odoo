@@ -7,11 +7,16 @@
             <field name="description">Helps you manage your ...</field>
             <field name="sequence">8</field>
         </record>
+        <!-- Create new App privilege, 权限（o19 权限组按 privilege 分组） -->
+        <record model="res.groups.privilege" id="app_groups_privilege_1">
+            <field name="name">App...</field>
+            <field name="category_id" ref="app_module_category_1"/>
+        </record>
         <!-- Cretate new App security group, 权限组 -->
         <!-- User group, 普通用记 -->
         <record id="group_app_user" model="res.groups">
             <field name="name">App User</field>
-            <field name="category_id" ref="app_module_category_1"/>
+            <field name="privilege_id" ref="app_groups_privilege_1"/>
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
             <field name="comment">The user will be able to ...</field>
         </record>
@@ -19,7 +24,7 @@
         <!-- Admin group，管理员，可以配置 -->
         <record id="group_app_admin" model="res.groups">
             <field name="name">App Admin</field>
-            <field name="category_id" ref="app_module_category_1"/>
+            <field name="privilege_id" ref="app_groups_privilege_1"/>
             <field name="implied_ids" eval="[(4, ref('group_app_user'))]"/>
             <field name="comment">The user will be able to config ...</field>
         </record>

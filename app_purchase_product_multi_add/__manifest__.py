@@ -17,7 +17,7 @@
 
 {
     'name': "采购订单批量添加产品 / Purchase Order Product Multi Batch Add",
-    'version': '18.0.24.12.03',
+    'version': '19.0.24.12.03',
     'author': 'odooai.cn',
     'category': 'Inventory/Purchase',
     'website': 'https://www.odooai.cn',

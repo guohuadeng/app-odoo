@@ -1,45 +1,11 @@
-# -*- coding: utf-8 -*-
-
-# Created on 2022-09-01
-# author: 欧度智能，https://www.odooai.cn
-# email: 300883@qq.com
-# resource of odooai
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
-
-# Odoo16在线用户手册（长期更新）
-# https://www.odooai.cn/documentation/16.0/zh_CN/index.html
-
-# Odoo16在线开发者手册（长期更新）
-# https://www.odooai.cn/documentation/16.0/zh_CN/developer.html
-
-# Odoo13在线用户手册（长期更新）
-# https://www.odooai.cn/documentation/user/13.0/zh_CN/index.html
-
-# Odoo13在线开发者手册（长期更新）
-# https://www.odooai.cn/documentation/13.0/index.html
-
-# Odoo10在线中文用户手册（长期更新）
-# https://www.odooai.cn/documentation/user/10.0/zh_CN/index.html
-
-# Odoo10离线中文用户手册下载
-# https://www.odooai.cn/odoo10_user_manual_document_offline/
-# Odoo10离线开发手册下载-含python教程，jquery参考，Jinja2模板，PostgresSQL参考（odoo开发必备）
-# https://www.odooai.cn/odoo10_developer_document_offline/
-
 ##############################################################################
 #    Copyright (C) 2009-TODAY odooai.cn Ltd. https://www.odooai.cn
 #    Author: Ivan Deng，300883@qq.com
-#    You can modify it under the terms of the GNU LESSER
-#    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
-#    See <http://www.gnu.org/licenses/>.
-#
-#    It is forbidden to publish, distribute, sublicense, or sell copies
-#    of the Software or modified copies of the Software.
 ##############################################################################
 
 {
-    'name': "Website Blogs Search Enhance",
-    'version': '19.0.25.12.30',
+    'name': '网站博文超级搜索栏 / Website Blog Search Enhance Superbar',
+    'version': '19.0.24.11.12',
     'author': 'odooai.cn',
     'category': 'Website',
     'website': 'https://www.odooai.cn',
@@ -53,32 +19,28 @@
         'website_blog',
         'app_base_superbar',
     ],
-    'summary': '''
-    Odoo App of odooai.cn
-    ''',
-    'description': '''
-    Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition
-    1.
-    2.
-    11. Multi-language Support. Multi-Company Support.
-    12. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
-    13. Full Open Source.
-    ==========
-    1.
-    2.
-    11. 多语言支持，多公司支持
-    12. Odoo 19,18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
-    13. 代码完全开源
-    ''',
+    'summary': '网站博文增强搜索，树状导航浏览博客文章 / Enhanced blog search with tree navigation for browsing posts',
+    'description': """
+1. Enhanced search for website blog posts.
+2. Tree navigation for blog categories and tags.
+3. Support list and kanban view for blog post browsing.
+4. Multi-Language Support.
+5. Multi-Company Support.
+6. Full Version Support for Odoo 19,18,17,16,15,14,13,12, Enterprise and Community Edition.
+7. Full Open Source under LGPL-3 license.
+1. 网站博文增强搜索功能。
+2. 博客分类和标签的树状导航。
+3. 支持列表和看板视图浏览博文。
+4. 多语言支持。
+5. 多公司支持。
+6. 全版本支持 Odoo 19,18,17,16,15,14,13,12，兼容企业版和社区版。
+7. 代码完全开源，基于 LGPL-3 协议。
+    """,
     'data': [
         'views/blog_post_views.xml',
         'views/ir_attachment_views.xml',
-        # 'report/.xml',
     ],
     'demo': [],
-    # 'pre_init_hook': 'pre_init_hook',
-    # 'post_init_hook': 'post_init_hook',
-    # 'uninstall_hook': 'uninstall_hook',
     'installable': True,
     'application': True,
     'auto_install': False,

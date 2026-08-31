@@ -1,0 +1,5 @@
+div:has(> .o_kanban_renderer) {
+  > .o_purchase_dashboard {
+    display: none;
+  }
+}

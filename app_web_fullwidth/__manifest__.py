@@ -1,27 +1,5 @@
-# -*- coding: utf-8 -*-
-
-# Created on 2019-01-04
-# author: 欧度智能，https://www.odooai.cn
-# email: 300883@qq.com
-# resource of odooai
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
-# Odoo12在线用户手册（长期更新）
-# https://www.odooai.cn/documentation/user/12.0/en/index.html
-
-# Odoo12在线开发者手册（长期更新）
-# https://www.odooai.cn/documentation/12.0/index.html
-
-# Odoo10在线中文用户手册（长期更新）
-# https://www.odooai.cn/documentation/user/10.0/zh_CN/index.html
-
-# Odoo10离线中文用户手册下载
-# https://www.odooai.cn/odoo10_user_manual_document_offline/
-# Odoo10离线开发手册下载-含python教程，jquery参考，Jinja2模板，PostgresSQL参考（odoo开发必备）
-# https://www.odooai.cn/odoo10_developer_document_offline/
-
 {
-    'name': 'Web Form Fullwidth.Chatter Position-表单表格全宽度满屏,自定义备注消息位置',
+    'name': '表单全宽度满屏 / Web Form Fullwidth &amp; Chatter Position',
     'version': '19.0.25.04.05',
     'category': 'Extra tools',
     'author': 'odooai.cn',
@@ -29,21 +7,32 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    "price": 18.00,
-    "currency": "EUR",
+    'price': 18.00,
+    'currency': 'EUR',
     'images': ['static/description/banner.png'],
-    'summary': """
-    Chatter Position set and Form Responsive full screen, full width (fullwidth). Form Full screen full width.
-    Ready for small, medium, large, extra large screen.Ready for enterprise and communicate version.
-    Easy config the chatter position to bottom or side or Responsive.
-    """,
+    'summary': '表单全屏全宽显示，自定义备注消息位置 / Form responsive full screen with configurable chatter position',
     'description': """
-    UI Enhance for Odoo. Form view fullwidth, full screen.
-    Easy config the chatter position to bottom or side or Responsive form every user.
-    Easy set all company user UI for chatter position
+1. Form view fullwidth and full screen for better use of screen space.
+2. Easy config the chatter position to bottom, side or responsive per user.
+3. Easy set all company user UI for chatter position globally.
+4. Ready for small, medium, large and extra large screens.
+5. Ready for enterprise and community edition.
+6. Multi-Language Support.
+7. Multi-Company Support.
+8. Full Version Support for Odoo 19,18,17,16,15,14,13,12, Enterprise and Community Edition.
+9. Full Open Source under LGPL-3 license.
+1. 表单视图全屏全宽显示，更好利用屏幕空间。
+2. 可为每个用户配置备注消息（Chatter）位置：底部、侧边或响应式。
+3. 可全局设置所有公司用户的备注消息位置。
+4. 适配小、中、大、超大屏幕尺寸。
+5. 兼容企业版和社区版。
+6. 多语言支持。
+7. 多公司支持。
+8. 全版本支持 Odoo 19,18,17,16,15,14,13,12，兼容企业版和社区版。
+9. 代码完全开源，基于 LGPL-3 协议。
     """,
     'depends': [
-        'app_odoo_customize'
+        'app_common'
     ],
     'data': [
         'views/res_users_views.xml',
@@ -56,7 +45,6 @@
             '/app_web_fullwidth/static/src/js/form_compiler.js'
         ],
     },
-
     'installable': True,
     'auto_install': False,
     'application': True,

@@ -240,10 +240,9 @@
                 <field name="ref"/>
                 <field name="note"/>
                 <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
-                <group expand="0" string="Group By">
-                    <filter string="State" name="groupby_state" context="{'group_by': 'state'}"/>
-                    <filter string="User" name="groupby_user_id" context="{'group_by': 'user_id'}"/>
-                </group>
+                <separator/>
+                <filter string="State" name="groupby_state" context="{'group_by': 'state'}"/>
+                <filter string="User" name="groupby_user_id" context="{'group_by': 'user_id'}"/>
                 <searchpanel>
                 </searchpanel>
             </search>

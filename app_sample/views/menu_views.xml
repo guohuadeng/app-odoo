@@ -27,7 +27,7 @@
 
         <!-- Exist Menu，改当前存在菜单，Change exist menu, use context if you are using multi language-->
 <!--        <record id="Exist_ID_menu" model="ir.ui.menu" context="{'lang': 'zh_CN}">-->
-<!--            <field name="group_ids"-->
+<!--            <field name="groups_id"-->
 <!--                   eval="[(6,0,[ref('Exist_ID')])]"/>-->
 <!--        </record>-->
     </data>

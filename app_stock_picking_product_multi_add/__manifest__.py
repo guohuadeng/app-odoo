@@ -16,7 +16,7 @@
 # description:
 
 {
-    'name': "App Stock Picking Order Product Multi Batch Add",
+    'name': '库存调拨单批量添加产品 / Stock Picking Order Product Multi Batch Add',
     'version': '19.0.24.12.03',
     'author': 'odooai.cn',
     'category': 'Inventory/Inventory',
@@ -25,17 +25,24 @@
     'sequence': 2,
     'price': 0.00,
     'currency': 'USD',
-    'summary': """
-    App Stock Picking Order Product Multi Batch Add
-    Odoo App of odooai.cn
-    """,
+    'summary': '一键批量将多个产品添加到库存调拨单 / One-click to add multi products to stock picking order',
     'description': """
-    App Stock Picking Order Product Multi Add.
-    1. One Click to add multi product to Stock Picking Order.
-    2. All the product can filter and group.
-    库存调拨单批量增加产品.
-    1. 可以一键快速将多个产品加到库存调拨单中
-    2. 可对产品进行过滤、分组，然后批量加入
+1. One-click to add multi products to Stock Picking Order.
+2. All products can be filtered and grouped before adding.
+3. Support sale order, purchase order, MRP BOM and account invoice multi-add.
+4. You can make any one2many field to get this feature by configuring the XML.
+5. Multi-Language Support.
+6. Multi-Company Support.
+7. Full Version Support for Odoo 19,18,17,16,15,14,13,12, Enterprise and Community Edition.
+8. Full Open Source under LGPL-3 license.
+1. 一键快速将多个产品添加到库存调拨单中。
+2. 可对产品进行过滤、分组，然后批量加入调拨单。
+3. 支持销售订单、采购订单、MRP BOM 和会计发票的多行添加。
+4. 通过 XML 配置可为任何 one2many 字段启用此功能。
+5. 多语言支持。
+6. 多公司支持。
+7. 全版本支持 Odoo 19,18,17,16,15,14,13,12，兼容企业版和社区版。
+8. 代码完全开源，基于 LGPL-3 协议。
     """,
     'depends': [
         # 'app_web_one2many_multi_add',
