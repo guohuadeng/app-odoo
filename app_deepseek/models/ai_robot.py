@@ -30,7 +30,7 @@ class AiRobot(models.Model):
             # 取头像
             module_path = modules.get_module_path('app_ai', display_warning=False)
             if module_path:
-                path = modules.check_resource_path(module_path, ('static/description/src/%s.png' % self.provider))
+                path = modules.check_resource_path(module_path, ('static/img/%s.png' % self.provider))
                 if path:
                     image_file = tools.file_open(path, 'rb')
                     self.image_avatar = base64.b64encode(image_file.read())

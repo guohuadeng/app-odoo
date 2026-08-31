@@ -1,0 +1,13 @@
+id,base_url_doc
+base.module_sale,/documentation/19.0/applications/sales.html
+base.module_sale_management,/documentation/19.0/applications/sales.html
+base.module_website,/documentation/19.0/applications/websites/website.html
+base.module_website_sale,/documentation/19.0/applications/website.html
+base.module_stock,/documentation/19.0/applications/inventory_and_mrp.html
+base.module_mrp,/documentation/19.0/applications/inventory_and_mrp.html
+base.module_purchase,/documentation/19.0/applications/inventory_and_mrp.html
+base.module_account,/documentation/19.0/applications/finance.html
+base.module_hr,/documentation/19.0/applications/hr.html
+base.module_hr_expense,/documentation/19.0/zh_CN/applications/finance/expenses.html
+base.module_crm,/documentation/19.0/applications/sales.html
+base.module_base,/documentation/19.0/applications/general.html
