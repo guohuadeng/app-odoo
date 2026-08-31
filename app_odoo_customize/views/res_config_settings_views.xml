@@ -55,7 +55,7 @@
 
                     <h2>UI Config</h2>
                     <div class="row mt16 o_settings_container" name="app_ui_config">
-                        <group string="Navigator">
+                        <group string="Navigator" name="app_ui_nav_group">
                             <group>
                                 <field name="app_navbar_pos_pc"/>
                             </group>
@@ -63,7 +63,7 @@
                                 <field name="app_navbar_pos_mobile"/>
                             </group>
                         </group>
-                        <group string="User Menu">
+                        <group string="User Menu" name="app_ui_usermenu_group">
                             <group>
                                 <field name="app_show_lang"/>
                                 <field name="app_show_debug"/>

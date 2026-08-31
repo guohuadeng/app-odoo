@@ -36,12 +36,6 @@
   flex-direction: column-reverse !important;
 
   &.app_sidebar {
-    //处理sidebar 用 grid 时的特殊情况
-    grid-template-columns:1fr;
-
-    > *[class*="o_navbar"] {
-      order: 999;
-    }
   }
 
   .o_navbar {
@@ -50,7 +44,7 @@
     .o_main_navbar {
       @media (max-width: 768px) {
         --o-navbar-height: 46px;
-        padding: 0 var(--o-navbar-height);
+        align-items: flex-end;
         .o_navbar_apps_menu .dropdown-toggle, .o_nav_entry, .dropdown-toggle:not(.o-dropdown-toggle-custo), .o_menu_toggle {
           align-items: baseline;
           font-size: 1.5rem;
@@ -85,9 +79,15 @@
     top: auto;
   }
   .o_MessagingMenu_dropdownMenu.o-isDeviceSmall {
-    bottom: var(--o-navbar-height)+6!important; ;
+    bottom: calc(var(--o-navbar-height) + 6px) !important;
     height: calc(100% - var(--o-navbar-height));
     top: 0;
+  }
+  .o-mail-ChatWindow.fixed-bottom.mb-2 {
+    margin-bottom: calc(var(--o-navbar-height) + 8px) !important;
+  }
+  .o-mail-ChatHub-bubbles.bottom-0  {
+    bottom: var(--o-navbar-height)!important;
   }
   //Activity
   .o_ActivityMenuView_dropdownMenu  {
