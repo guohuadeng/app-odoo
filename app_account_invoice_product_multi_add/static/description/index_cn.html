@@ -2,21 +2,21 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 # Copyright (C) 2009~2026 odooAi.cn
-# This index.html follows the Odoo module description standard.
-# Style: Bootstrap 5 + Odoo Website Snippet + FontAwesome
-# Layout ref: website/static/src/snippets/ & web_editor/static/scss/
-# GEO: JSON-LD Structured Data (SoftwareApplication)
+# 此 index.html 遵循 Odoo 官方模块描述规范。
+# 样式：Bootstrap 5 + Odoo Website Snippet + FontAwesome
+# 布局参考：website/static/src/snippets/ & web_editor/static/scss/
+# GEO：含 JSON-LD 结构化数据（SoftwareApplication）
 ##############################################################################
 -->
 <html>
 <head><meta charset="utf-8"/></head>
 
-<!-- JSON-LD Structured Data for Generative Engine Optimization -->
+<!-- JSON-LD 结构化数据，用于生成式引擎优化 -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "app_account_superbar - Account Superbar Navigator",
+  "name": "app_account_invoice_product_multi_add - 客户发票与供应商账单批量添加产品",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "offers": {
@@ -24,7 +24,7 @@
     "price": "0",
     "priceCurrency": "CNY"
   },
-  "description": "Account chart tree navigator for Odoo. Browse accounts, journals, journal items and analytic lines by parent-children tree in list, kanban, pivot and graph view.",
+  "description": "一键批量添加多个产品到客户发票与供应商账单。弹窗中过滤分组产品，多选后一次添加到发票行。",
   "softwareVersion": "18.0",
   "programmingLanguage": "Python, JavaScript",
   "license": "LGPL-3",
@@ -34,17 +34,14 @@
     "url": "https://www.odooai.cn"
   },
   "featureList": [
-    "Account chart tree navigator",
-    "Analytic account tree navigation",
-    "Journal entries tree browser",
-    "Journal items tree filter",
-    "Analytic lines tree view",
-    "Support list/kanban/pivot/graph views",
-    "Ctrl/Cmd multi-select tree nodes",
-    "Include/exclude child nodes data",
-    "Multi-field search and filter",
-    "Multi-language and Multi-company support",
-    "Full Open Source"
+    "批量添加产品到客户发票",
+    "批量添加产品到供应商账单",
+    "弹窗中过滤与分组产品",
+    "多选后批量添加",
+    "XML 配置支持任意 one2many 字段",
+    "兼容销售、采购、MRP、库存模块",
+    "多语言与多公司支持",
+    "完全开源"
   ]
 }
 </script>
@@ -55,18 +52,18 @@
         <div class="col-lg-8 text-center">
             <div class="d-inline-flex align-items-center mb-3">
                 <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
-                <h2 class="ms-3 mb-0" style="font-weight:700;">Account Superbar Navigator</h2>
+                <h2 class="ms-3 mb-0" style="font-weight:700;">客户发票与供应商账单批量添加产品</h2>
             </div>
-            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Browse Accounting Data by Account Chart Tree</p>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">一键批量添加多个产品到发票与账单</p>
             <p class="lead">
-                Tree navigator for accounts, analytic accounts, journals and journal items, with list, kanban, pivot and graph views<br/>
-                Navigate accounting records the way your chart of accounts is structured
+                在弹窗中过滤、分组产品，多选后一次添加到发票行<br/>
+                告别逐行手动录入
             </p>
             <div class="pt16">
                 <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Enterprise &amp; Community</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Company</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Language</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言</span>
             </div>
         </div>
     </div>
@@ -77,12 +74,12 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
-            <h2>Overview</h2>
+            <h2>功能概述</h2>
             <p class="lead pt16">
-                This module adds a tree navigator (Superbar) to Odoo Accounting. Browse journals, entries, journal items and analytic lines by account chart or analytic account hierarchy. It works with list, kanban, pivot and graph views, supports Ctrl/Cmd multi-select, and lets you include or exclude child node data with a checkbox.
+                本模块为客户发票（Customer Invoice）和供应商账单（Vendor Bill）提供一键批量添加产品功能。点击「Multi Add Items」按钮打开弹窗，按分类过滤、分组产品，多选后一次添加到发票明细行。
             </p>
             <p class="text-muted">
-                Search across multiple fields, filter by tree nodes, and drill into accounting data from any view.
+                适用于客户发票、供应商账单，以及通过 XML 配置的任意 one2many 明细行。
             </p>
         </div>
     </div>
@@ -94,8 +91,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center pb32">
-                <h2>Key Highlights</h2>
-                <p class="lead">Tree Navigation for Accounting Data</p>
+                <h2>核心亮点</h2>
+                <p class="lead">一键批量添加产品</p>
             </div>
         </div>
         <div class="row">
@@ -103,11 +100,11 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-sitemap fa-lg"></i>
+                            <i class="fa fa-plus-circle fa-lg"></i>
                         </div>
-                        <h5>1. Account Chart Tree</h5>
-                        <p class="small text-muted">Parent-Children Hierarchy</p>
-                        <p class="card-text">Browse journals and entries by account parent-children hierarchy</p>
+                        <h5>1. 批量添加产品</h5>
+                        <p class="small text-muted">一次点击，多选添加</p>
+                        <p class="card-text">一次点击即可将多个产品添加到客户发票和供应商账单</p>
                     </div>
                 </div>
             </div>
@@ -115,11 +112,11 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-th-list fa-lg"></i>
+                            <i class="fa fa-filter fa-lg"></i>
                         </div>
-                        <h5>2. Multi-View Support</h5>
-                        <p class="small text-muted">List/Kanban/Pivot/Graph</p>
-                        <p class="card-text">Available in list, kanban, pivot and graph views</p>
+                        <h5>2. 过滤与分组</h5>
+                        <p class="small text-muted">按分类快速定位</p>
+                        <p class="card-text">弹窗中按分类过滤和分组产品，快速找到目标产品</p>
                     </div>
                 </div>
             </div>
@@ -127,11 +124,11 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-check-square fa-lg"></i>
+                            <i class="fa fa-cogs fa-lg"></i>
                         </div>
-                        <h5>3. Multi-Select &amp; Child Control</h5>
-                        <p class="small text-muted">Ctrl/Cmd Multi-Select</p>
-                        <p class="card-text">Select multiple nodes with Ctrl/Cmd, include or exclude child nodes with a checkbox</p>
+                        <h5>3. 任意 One2Many 扩展</h5>
+                        <p class="small text-muted">XML 配置</p>
+                        <p class="card-text">通过 XML 配置，可让任意 one2many 字段获得批量添加功能</p>
                     </div>
                 </div>
             </div>
@@ -144,15 +141,15 @@
 <section class="oe_container container o_cc o_cc5 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>General Features</h2>
+            <h2>通用特性</h2>
         </div>
         <div class="col-lg-4 pb24">
             <div class="text-center">
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-globe fa-lg"></i>
                 </div>
-                <h5>Multi-Language &amp; Multi-Company<br/><small class="text-muted">Built for Global Teams</small></h5>
-                <p>Full translation support for global deployments. Native multi-company architecture with strict data isolation.</p>
+                <h5>多语言与多公司<br/><small class="text-muted">适配全球化部署</small></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -160,8 +157,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code-fork fa-lg"></i>
                 </div>
-                <h5>Full Version Support<br/><small class="text-muted">Odoo 12 to 19</small></h5>
-                <p>Works with Odoo 19, 18, 17, 16, 15, 14, 13, 12, EE/CE/.SH, compatible with Enterprise, Community and Odoo Online SaaS.</p>
+                <h5>全版本兼容<br/><small class="text-muted">Odoo 12 至 19</small></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -169,8 +166,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code fa-lg"></i>
                 </div>
-                <h5>Full Open Source<br/><small class="text-muted">LGPL-3 Licensed</small></h5>
-                <p>Released under LGPL-3. Transparent, auditable code, open for further development and customization.</p>
+                <h5>代码完全开源<br/><small class="text-muted">LGPL-3 协议</small></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
             </div>
         </div>
     </div>
@@ -181,152 +178,88 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>Screenshots</h2>
-            <p class="lead">Core features at a glance</p>
+            <h2>界面截图</h2>
+            <p class="lead">核心功能界面一览</p>
         </div>
     </div>
 
     <!-- screenshot 1 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Use in Account</h3>
-            <img class="img-fluid rounded shadow" src="account1.jpg" alt="Use in Account">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>一键批量添加产品到发票</h3>
+            <img class="img-fluid rounded shadow" src="account1.gif" alt="一键批量添加产品到发票">
         </div>
     </div>
 
     <!-- screenshot 2 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Product by Category or Type in Kanban View</h3>
-            <img class="img-fluid rounded shadow" src="product1.jpg" alt="Product by category or type">
+            <h3 class="pb16"><i class="fa fa-book text-o-color-1 me-2"></i>中文使用说明</h3>
+            <img class="img-fluid rounded shadow" src="cnreadme.jpg" alt="中文使用说明">
         </div>
     </div>
 
     <!-- screenshot 3 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Free to Use in Product Category</h3>
-            <img class="img-fluid rounded shadow" src="banner.png" alt="Banner Overview">
+            <h3 class="pb16"><i class="fa fa-mouse-pointer text-o-color-1 me-2"></i>步骤一：点击「Multi Add Items」</h3>
+            <img class="img-fluid rounded shadow" src="use1.jpg" alt="步骤一：点击 Multi Add Items">
         </div>
     </div>
 
     <!-- screenshot 4 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Free to Use in POS</h3>
-            <img class="img-fluid rounded shadow" src="pos1.jpg" alt="POS Superbar">
+            <h3 class="pb16"><i class="fa fa-check-square text-o-color-1 me-2"></i>步骤二：在弹窗中选择产品</h3>
+            <img class="img-fluid rounded shadow" src="use2.jpg" alt="步骤二：选择产品">
         </div>
     </div>
 
     <!-- screenshot 5 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>POS Product and Order</h3>
-            <img class="img-fluid rounded shadow" src="pos2.jpg" alt="POS Product and Order">
+            <h3 class="pb16"><i class="fa fa-check text-o-color-1 me-2"></i>步骤三：点击「Select」批量添加</h3>
+            <img class="img-fluid rounded shadow" src="use3.jpg" alt="步骤三：批量添加">
         </div>
     </div>
 
     <!-- screenshot 6 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>POS Report</h3>
-            <img class="img-fluid rounded shadow" src="pos3.jpg" alt="POS Report">
+            <h3 class="pb16"><i class="fa fa-shopping-cart text-o-color-1 me-2"></i>一键添加产品到销售订单</h3>
+            <img class="img-fluid rounded shadow" src="sale1.gif" alt="销售订单批量添加">
         </div>
     </div>
 
     <!-- screenshot 7 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Use in Sale</h3>
-            <img class="img-fluid rounded shadow" src="sale1.jpg" alt="Sale Superbar">
+            <h3 class="pb16"><i class="fa fa-truck text-o-color-1 me-2"></i>一键添加产品到采购订单</h3>
+            <img class="img-fluid rounded shadow" src="purchase1.gif" alt="采购订单批量添加">
         </div>
     </div>
 
     <!-- screenshot 8 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Use in Purchase</h3>
-            <img class="img-fluid rounded shadow" src="purchase1.jpg" alt="Purchase Superbar">
+            <h3 class="pb16"><i class="fa fa-cubes text-o-color-1 me-2"></i>一键添加产品到 MRP BOM</h3>
+            <img class="img-fluid rounded shadow" src="mrp1.gif" alt="MRP BOM 批量添加">
         </div>
     </div>
 
     <!-- screenshot 9 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Use in Contacts</h3>
-            <img class="img-fluid rounded shadow" src="contacts1.jpg" alt="Contacts Superbar">
+            <h3 class="pb16"><i class="fa fa-archive text-o-color-1 me-2"></i>一键添加产品到库存拣货单</h3>
+            <img class="img-fluid rounded shadow" src="stock1.gif" alt="库存拣货批量添加">
         </div>
     </div>
 
     <!-- screenshot 10 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Show Superbar in List View</h3>
-            <img class="img-fluid rounded shadow" src="use7.jpg" alt="List View Superbar">
-        </div>
-    </div>
-
-    <!-- screenshot 11 -->
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Show Superbar in Kanban View</h3>
-            <img class="img-fluid rounded shadow" src="use8.jpg" alt="Kanban View Superbar">
-        </div>
-    </div>
-
-    <!-- screenshot 12 -->
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Show Superbar in Pivot View</h3>
-            <img class="img-fluid rounded shadow" src="use9.jpg" alt="Pivot View Superbar">
-        </div>
-    </div>
-
-    <!-- screenshot 13 -->
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Show Superbar in Graph View</h3>
-            <img class="img-fluid rounded shadow" src="usea.jpg" alt="Graph View Superbar">
-        </div>
-    </div>
-
-    <!-- screenshot 14 -->
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Click Switch to Show or Hide Superbar</h3>
-            <img class="img-fluid rounded shadow" src="use1.jpg" alt="Toggle Superbar">
-        </div>
-    </div>
-
-    <!-- screenshot 15 -->
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Click Checkbox to Set Child Nodes</h3>
-            <img class="img-fluid rounded shadow" src="use2.jpg" alt="Child Nodes Control">
-        </div>
-    </div>
-
-    <!-- screenshot 16 -->
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Press Ctrl/Cmd to Select Multi Nodes</h3>
-            <img class="img-fluid rounded shadow" src="use3.jpg" alt="Multi Select Nodes">
-        </div>
-    </div>
-
-    <!-- screenshot 17 -->
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Set Multi Field to Search or Filter</h3>
-            <img class="img-fluid rounded shadow" src="use4.jpg" alt="Multi Field Search">
-        </div>
-    </div>
-
-    <!-- screenshot 18 -->
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Customize Widget Configuration</h3>
-            <img class="img-fluid rounded shadow" src="superbar_use.gif" alt="Customize Widget">
+            <h3 class="pb16"><i class="fa fa-cog text-o-color-1 me-2"></i>XML 配置任意 one2many 字段</h3>
+            <img class="img-fluid rounded shadow" src="guide1.jpg" alt="XML 配置指南">
         </div>
     </div>
 </section>
@@ -339,8 +272,8 @@
             <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(7,89,133,.1);color:#075985;">
                 <i class="fa fa-gift fa-lg"></i>
             </div>
-            <h2>Free Related Apps</h2>
-            <p class="lead">Install this module and get the related apps below for free</p>
+            <h2>免费关联模块</h2>
+            <p class="lead">安装本模块后，以下关联模块可免费下载使用</p>
         </div>
     </div>
     <div class="row">
@@ -348,58 +281,55 @@
             <div class="card border-0 shadow-sm" style="border-radius:12px;">
                 <div class="card-header text-white text-center py-3" style="background:linear-gradient(135deg,#0ea5e9,#0284c7);border-radius:12px 12px 0 0;">
                     <i class="fa fa-download me-2"></i>
-                    <b>Free Download</b>
-                    <span class="ms-2 badge rounded-pill bg-light text-primary">8+ Apps</span>
+                    <b>免费下载</b>
+                    <span class="ms-2 badge rounded-pill bg-light text-primary">6 个模块</span>
                 </div>
                 <div class="card-body p-0">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
                             <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">Product navigate by category or type</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_product_superbar/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
-                                <i class="fa fa-download me-1"></i>Download
+                            <span class="flex-grow-1">一键添加多个产品到销售订单</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_sale_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>下载
                             </a>
                         </li>
                         <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
                             <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">Sale order navigate by partner and channel</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_sale_superbar/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
-                                <i class="fa fa-download me-1"></i>Download
+                            <span class="flex-grow-1">一键添加多个产品到采购订单</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_purchase_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>下载
                             </a>
                         </li>
                         <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
                             <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">Purchase order navigate by partner</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_purchase_superbar/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
-                                <i class="fa fa-download me-1"></i>Download
+                            <span class="flex-grow-1">一键添加多个产品到 MRP BOM</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_mrp_bom_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>下载
                             </a>
                         </li>
                         <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
                             <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">HR employee navigate by department</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_hr_superbar/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
-                                <i class="fa fa-download me-1"></i>Download
+                            <span class="flex-grow-1">一键添加多个产品到库存拣货单</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_stock_picking_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>下载
                             </a>
                         </li>
                         <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
                             <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">Contacts navigate by company</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_contacts_superbar/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
-                                <i class="fa fa-download me-1"></i>Download
+                            <span class="flex-grow-1">一键添加多个产品到客户发票</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_account_invoice_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>下载
                             </a>
                         </li>
                         <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
                             <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">POS navigate by category or store</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_pos_superbar/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
-                                <i class="fa fa-download me-1"></i>Download
-                            </a>
+                            <span class="flex-grow-1">XML 配置可为任意 one2many 字段启用批量添加</span>
                         </li>
                     </ul>
                 </div>
                 <div class="card-footer text-center py-3 bg-transparent border-top-0">
                     <i class="fa fa-lightbulb-o text-warning me-1"></i>
-                    <small class="text-muted">Easy to customize, works anywhere in Odoo</small>
+                    <small class="text-muted">易于定制，可在 Odoo 任意界面使用</small>
                 </div>
             </div>
         </div>
@@ -411,37 +341,37 @@
 <section class="oe_container container o_cc o_cc2 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>How It Works</h2>
+            <h2>使用流程</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <div class="row text-center">
                 <div class="col pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-download"></i>
+                        <i class="fa fa-mouse-pointer"></i>
                     </div>
-                    <p class="fw-bold mb-1">Install Module</p>
-                    <p class="small text-muted mb-0">Install Module</p>
+                    <p class="fw-bold mb-1">点击按钮</p>
+                    <p class="small text-muted mb-0">点击「Multi Add Items」</p>
                 </div>
                 <div class="col pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-sitemap"></i>
+                        <i class="fa fa-filter"></i>
                     </div>
-                    <p class="fw-bold mb-1">Expand Tree</p>
-                    <p class="small text-muted mb-0">Expand Tree Nodes</p>
+                    <p class="fw-bold mb-1">过滤分组</p>
+                    <p class="small text-muted mb-0">按分类过滤分组产品</p>
                 </div>
                 <div class="col pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
                         <i class="fa fa-check-square"></i>
                     </div>
-                    <p class="fw-bold mb-1">Multi-Select</p>
-                    <p class="small text-muted mb-0">Multi-Select &amp; Filter</p>
+                    <p class="fw-bold mb-1">多选产品</p>
+                    <p class="small text-muted mb-0">勾选多个产品</p>
                 </div>
                 <div class="col pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-check"></i>
                     </div>
-                    <p class="fw-bold mb-1">Browse Data</p>
-                    <p class="small text-muted mb-0">Browse Filtered Data</p>
+                    <p class="fw-bold mb-1">批量添加</p>
+                    <p class="small text-muted mb-0">点击「Select」完成添加</p>
                 </div>
             </div>
         </div>
@@ -453,13 +383,13 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>Supported &amp; Dependent Modules</h2>
+            <h2>支持与依赖模块</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
                     <i class="fa fa-book text-o-color-1 me-2"></i>
-                    account
+                    account / 会计
                 </li>
             </ul>
         </div>
@@ -482,19 +412,19 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <h2>odooai.cn</h2>
-            <p class="lead" style="opacity:0.7;">Professional Odoo Solutions: Development, Implementation, Consulting &amp; Training</p>
+            <p class="lead" style="opacity:0.7;">专业 Odoo 服务伙伴，开发实施咨询培训全套解决方案</p>
             <div class="pt16">
                 <p>
                     <i class="fa fa-globe me-2"></i>
-                    Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a>
+                    网站：<a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a>
                 </p>
                 <p>
                     <i class="fa fa-desktop me-2"></i>
-                    Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a>
+                    演示：<a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a>
                 </p>
                 <p>
                     <i class="fa fa-envelope me-2"></i>
-                    Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a>
+                    支持：<a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a>
                 </p>
             </div>
             <div class="pt16">

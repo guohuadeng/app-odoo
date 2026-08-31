@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 # Copyright (C) 2009~2026 odooAi.cn
-# 此 index.html 遵循 Odoo 官方模块描述规范。
-# 样式：Bootstrap 5 + Odoo Website Snippet + FontAwesome
-# 布局参考：website/static/src/snippets/ & web_editor/static/scss/
-# GEO: 含 JSON-LD Structured Data (SoftwareApplication)
+# This index.html follows the Odoo module description standard.
+# Style: Bootstrap 5 + Odoo Website Snippet + FontAwesome
+# Layout ref: website/static/src/snippets/ & web_editor/static/scss/
+# GEO: JSON-LD Structured Data (SoftwareApplication)
 ##############################################################################
 -->
 <html>
@@ -52,18 +52,18 @@
         <div class="col-lg-8 text-center">
             <div class="d-inline-flex align-items-center mb-3">
                 <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
-                <h2 class="ms-3 mb-0" style="font-weight:700;">多层级会计科目树 / Account Multi Level Chart Tree</h2>
+                <h2 class="ms-3 mb-0" style="font-weight:700;">Account Multi Level Chart Tree</h2>
             </div>
-            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">会计科目父子层级树状选择器 / Account Chart Parent-Children zTree Widget</p>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Account Chart Parent-Children zTree Widget</p>
             <p class="lead">
-                基于 zTree 控件为会计科目提供多层级父子树状选择，支持列表和看板视图<br/>
-                zTree widget for Account Chart hierarchy with parent-children tree in list and kanban view
+                zTree widget for Account Chart hierarchy with parent-children tree in list and kanban view<br/>
+                Enable with a single widget attribute, configurable via XML parameters
             </p>
             <div class="pt16">
                 <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版 / Enterprise &amp; Community</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司 / Multi-Company</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言 / Multi-Language</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Enterprise &amp; Community</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Company</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Language</span>
             </div>
         </div>
     </div>
@@ -74,12 +74,12 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
-            <h2>功能概述 / Overview</h2>
+            <h2>Overview</h2>
             <p class="lead pt16">
-                本模块为会计科目提供多层级父子树状选择器（zTree widget）。通过 widget='widget_select' 即可启用，支持 ztree_parent_key、ztree_expend_level、limit、order 等参数配置。可复用于任何父子关系模型，如产品分类、库存位置、部门等。
+                This module provides a parent-children hierarchy tree widget (zTree) for Account Chart. Enable with widget='ztree_select', configurable with ztree_parent_key, ztree_expend_level, limit, order parameters. Reusable for any parent-child relationship model.
             </p>
             <p class="text-muted">
-                This module provides a parent-children hierarchy tree widget (zTree) for Account Chart. Enable with widget='widget_select', configurable with ztree_parent_key, ztree_expend_level, limit, order parameters. Reusable for any parent-child relationship model.
+                Works for product categories, stock locations, departments and any model with parent-child relations.
             </p>
         </div>
     </div>
@@ -91,8 +91,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center pb32">
-                <h2>核心亮点 / Key Highlights</h2>
-                <p class="lead">简洁配置即可使用父子树 / Easy Setup Parent-Children Tree Widget</p>
+                <h2>Key Highlights</h2>
+                <p class="lead">Easy Setup Parent-Children Tree Widget</p>
             </div>
         </div>
         <div class="row">
@@ -102,9 +102,9 @@
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
                             <i class="fa fa-sitemap fa-lg"></i>
                         </div>
-                        <h5>1. 多层级树状控件 / Multi-Level Tree Widget</h5>
+                        <h5>1. Multi-Level Tree Widget</h5>
                         <p class="small text-muted">zTree Parent-Children</p>
-                        <p class="card-text">为会计科目提供父子层级树状选择</p>
+                        <p class="card-text">Parent-children hierarchy tree selection for Account Chart</p>
                     </div>
                 </div>
             </div>
@@ -114,9 +114,9 @@
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
                             <i class="fa fa-cogs fa-lg"></i>
                         </div>
-                        <h5>2. 灵活参数配置 / Flexible Configuration</h5>
+                        <h5>2. Flexible Configuration</h5>
                         <p class="small text-muted">XML Parameters</p>
-                        <p class="card-text">支持 parent_key、expend_level、limit、order 参数</p>
+                        <p class="card-text">Supports parent_key, expend_level, limit and order parameters</p>
                     </div>
                 </div>
             </div>
@@ -126,9 +126,9 @@
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
                             <i class="fa fa-puzzle-piece fa-lg"></i>
                         </div>
-                        <h5>3. 通用可复用 / Universal Reusable</h5>
+                        <h5>3. Universal Reusable</h5>
                         <p class="small text-muted">Any Parent-Child Model</p>
-                        <p class="card-text">可用于产品分类、库存位置、部门等任何父子关系</p>
+                        <p class="card-text">Works for any parent-child model: product categories, stock locations, departments and more</p>
                     </div>
                 </div>
             </div>
@@ -141,15 +141,15 @@
 <section class="oe_container container o_cc o_cc5 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>通用特性 / General Features</h2>
+            <h2>General Features</h2>
         </div>
         <div class="col-lg-4 pb24">
             <div class="text-center">
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-globe fa-lg"></i>
                 </div>
-                <h5>多语言与多公司<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
-                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
+                <h5>Multi-Language &amp; Multi-Company<br/><small class="text-muted">Built for Global Teams</small></h5>
+                <p>Full translation support for global deployments. Native multi-company architecture with strict data isolation.</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -157,8 +157,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code-fork fa-lg"></i>
                 </div>
-                <h5>全版本兼容<br/><small class="text-muted">Full Version Support</small></h5>
-                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
+                <h5>Full Version Support<br/><small class="text-muted">Odoo 12 to 19</small></h5>
+                <p>Works with Odoo 19, 18, 17, 16, 15, 14, 13, 12, EE/CE/.SH, compatible with Enterprise, Community and Odoo Online SaaS.</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -166,8 +166,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code fa-lg"></i>
                 </div>
-                <h5>代码完全开源<br/><small class="text-muted">Full Open Source</small></h5>
-                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
+                <h5>Full Open Source<br/><small class="text-muted">LGPL-3 Licensed</small></h5>
+                <p>Released under LGPL-3. Transparent, auditable code, open for further development and customization.</p>
             </div>
         </div>
     </div>
@@ -178,15 +178,15 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>界面截图 / Screenshots</h2>
-            <p class="lead">核心功能界面一览</p>
+            <h2>Screenshots</h2>
+            <p class="lead">Core features at a glance</p>
         </div>
     </div>
 
     <!-- screenshot 1 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Free to Use in Product Category / 产品分类中使用</h3>
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Free to Use in Product Category</h3>
             <img class="img-fluid rounded shadow" src="demo1.jpg" alt="Product Category zTree">
         </div>
     </div>
@@ -194,7 +194,7 @@
     <!-- screenshot 2 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Use in Product / 在产品中使用</h3>
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Use in Product</h3>
             <img class="img-fluid rounded shadow" src="demo2.jpg" alt="Product zTree">
         </div>
     </div>
@@ -202,7 +202,7 @@
     <!-- screenshot 3 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Free to Use in Stock Location / 库存位置中使用</h3>
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Free to Use in Stock Location</h3>
             <img class="img-fluid rounded shadow" src="demo3.jpg" alt="Stock Location zTree">
         </div>
     </div>
@@ -210,7 +210,7 @@
     <!-- screenshot 4 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Use in HR Department / 在HR部门中使用</h3>
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Use in HR Department</h3>
             <img class="img-fluid rounded shadow" src="demo4.jpg" alt="HR Department zTree">
         </div>
     </div>
@@ -218,7 +218,7 @@
     <!-- screenshot 5 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Use in HR Employee / 在HR员工中使用</h3>
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Use in HR Employee</h3>
             <img class="img-fluid rounded shadow" src="demo5.jpg" alt="HR Employee zTree">
         </div>
     </div>
@@ -226,7 +226,7 @@
     <!-- screenshot 6 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Easy to Setup Widget Configuration / 轻松配置Widget参数</h3>
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Easy to Setup Widget Configuration</h3>
             <img class="img-fluid rounded shadow" src="setup1.jpg" alt="Widget Setup">
         </div>
     </div>
@@ -234,7 +234,7 @@
     <!-- screenshot 7 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Product, Employee in Kanban View / 产品和员工看板视图</h3>
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Product, Employee in Kanban View</h3>
             <img class="img-fluid rounded shadow" src="demo11.jpg" alt="Kanban View zTree">
         </div>
     </div>
@@ -242,7 +242,7 @@
     <!-- screenshot 8 -->
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>List View / 列表视图</h3>
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>List View</h3>
             <img class="img-fluid rounded shadow" src="demo12.jpg" alt="List View zTree">
         </div>
     </div>
@@ -253,7 +253,7 @@
 <section class="oe_container container o_cc o_cc2 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>使用流程 / How It Works</h2>
+            <h2>How It Works</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <div class="row text-center">
@@ -261,29 +261,29 @@
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
                         <i class="fa fa-download"></i>
                     </div>
-                    <p class="fw-bold mb-1">安装模块</p>
-                    <p class="small text-muted mb-0">Install Module</p>
+                    <p class="fw-bold mb-1">Install Module</p>
+                    <p class="small text-muted mb-0">Install and update</p>
                 </div>
                 <div class="col pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
                         <i class="fa fa-pencil"></i>
                     </div>
-                    <p class="fw-bold mb-1">配置Widget</p>
+                    <p class="fw-bold mb-1">Configure Widget</p>
                     <p class="small text-muted mb-0">Set widget_select</p>
                 </div>
                 <div class="col pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
                         <i class="fa fa-sitemap"></i>
                     </div>
-                    <p class="fw-bold mb-1">树状选择</p>
-                    <p class="small text-muted mb-0">Tree Selection</p>
+                    <p class="fw-bold mb-1">Tree Selection</p>
+                    <p class="small text-muted mb-0">Pick from the tree</p>
                 </div>
                 <div class="col pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
                         <i class="fa fa-check"></i>
                     </div>
-                    <p class="fw-bold mb-1">完成过滤</p>
-                    <p class="small text-muted mb-0">Filter Applied</p>
+                    <p class="fw-bold mb-1">Filter Applied</p>
+                    <p class="small text-muted mb-0">Records filtered</p>
                 </div>
             </div>
         </div>
@@ -295,13 +295,13 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+            <h2>Supported &amp; Dependent Modules</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
                     <i class="fa fa-book text-o-color-1 me-2"></i>
-                    account / 会计
+                    account
                 </li>
             </ul>
         </div>
@@ -324,7 +324,7 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <h2>odooai.cn</h2>
-            <p class="lead" style="opacity:0.7;">专业Odoo服务伙伴-开发实施咨询培训全套解决方案 / Professional Odoo Solutions</p>
+            <p class="lead" style="opacity:0.7;">Professional Odoo Solutions: Development, Implementation, Consulting &amp; Training</p>
             <div class="pt16">
                 <p>
                     <i class="fa fa-globe me-2"></i>

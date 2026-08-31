@@ -12,7 +12,7 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "app_ai_bard - Google Gemini (Bard) AI for Odoo",
+  "name": "深度求索AI集成 - Deepseek AI for Odoo AI Center",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "offers": {
@@ -20,7 +20,7 @@
     "price": "0",
     "priceCurrency": "CNY"
   },
-  "description": "Google Gemini AI integration for Odoo AI Center. Multi AI robot chat, training, Azure OpenAI support, white/black list, sync/async mode.",
+  "description": "Deepseek AI integration for Odoo AI Center. Multi AI robot connector with chat and training capabilities, supporting Deepseek V3/R1, ChatGPT, Azure OpenAI, Google Bard and more.",
   "softwareVersion": "18.0",
   "programmingLanguage": "Python, JavaScript",
   "license": "LGPL-3",
@@ -30,17 +30,18 @@
     "url": "https://www.odooai.cn"
   },
   "featureList": [
-    "Google Gemini (Bard) AI connector",
+    "Deepseek AI chat integration",
     "Multi ChatGPT OpenAI robot connector",
-    "Azure OpenAI Service support",
-    "Bind AI robot to Odoo user",
-    "White and black list control",
-    "Demo chat time setup for new users",
+    "Multi AI platform support (Bard, Azure, ChatGPT 4/3.5/3/2, Dall-E)",
+    "Bind AI API to user for robot chat and group channel",
+    "White and black list access control",
+    "Demo chat time management",
+    "Easy start and stop AI service",
     "AI response evaluation and training",
-    "Synchronous and Asynchronous mode",
+    "Microsoft Azure OpenAI Service support",
+    "Synchronous and Asynchronous response mode",
     "Sensitive words filter",
-    "Multi-language and Multi-company support",
-    "Full Open Source"
+    "Multi-language and Multi-company support"
   ]
 }
 </script>
@@ -51,18 +52,18 @@
         <div class="col-lg-8 text-center">
             <div class="d-inline-flex align-items-center mb-3">
                 <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
-                <h2 class="ms-3 mb-0" style="font-weight:700;">Google Gemini (Bard) AI for Odoo</h2>
+                <h2 class="ms-3 mb-0" style="font-weight:700;">深度求索AI集成 / Deepseek AI for Odoo AI Center</h2>
             </div>
-            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Google Gemini AI Integration for Odoo AI Center</p>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">DeepSeek深度求索AI对话模型，支持V3/R1等 / Multi AI robot connector with chat and training</p>
             <p class="lead">
-                Chat with Google Gemini AI in Odoo, multi-robot support, Azure OpenAI, evaluation training, whitelist/blacklist<br/>
-                Bind AI robots to users, chat one-on-one or in AI group channels
+                Ai服务中心的DeepSeek支持，包括V3和R1等对话模型<br/>
+                AI Center supporting Deepseek, ChatGPT, Azure OpenAI, Google Bard and more
             </p>
             <div class="pt16">
                 <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Enterprise &amp; Community</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Company</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Language</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版 / Enterprise &amp; Community</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司 / Multi-Company</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言 / Multi-Language</span>
             </div>
         </div>
     </div>
@@ -73,79 +74,79 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
-            <h2>Overview</h2>
+            <h2>功能概述 / Overview</h2>
             <p class="lead pt16">
-                This module adds Google Gemini (formerly Bard) AI support to Odoo AI Center. It integrates multiple AI robots (Google Gemini, Azure AI, ChatGPT 4/3.5/3, DALL-E) and supports binding AI to users for chat or group chat, whitelist/blacklist control, demo time setup, response evaluation training, sync/async mode, and sensitive words filter.
+                将DeepSeek深度求索AI无缝集成到Odoo中，支持V3和R1等开放对话模型，提供自然流畅的AI对话体验。
             </p>
             <p class="text-muted">
-                Works with the app_chatgpt base module, configurable API keys, per-user robot binding.
+                Seamlessly integrate DeepSeek AI into Odoo, supporting V3/R1 open chat models for natural and intuitive AI conversation experience.
             </p>
         </div>
     </div>
 </section>
 <!-- end overview -->
 
-<!-- begin feature list -->
+<!-- begin Feature List -->
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>Complete Feature List</h2>
+            <h2>完整功能列表 / Complete Feature List</h2>
         </div>
         <div class="col-lg-10 offset-lg-1">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>1. Multi ChatGPT OpenAI robot connector, chat and train</b><br/>
-                    <small class="text-muted">Multi ChatGPT OpenAI robot Connector. Chat and train.</small>
+                    <b>1. Deepseek Ai支持-多Ai机器人连接器，聊天与训练</b><br/>
+                    <small class="text-muted">Deepseek AI support for Multi Ai robot Connector. Ai Chat, character setup and train.</small>
                 </li>
                 <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>2. Multi AI support: Google Bard AI, Azure AI, ChatGPT 4, 3.5 Turbo, 3 Davinci, 2 Code, DALL-E Image</b><br/>
-                    <small class="text-muted">Multi AI support including Google Bard AI, Azure AI, ChatGPT 4, 3.5 Turbo, 3 Davinci, 2 Code, DALL-E Image.</small>
+                    <b>2. 多AI平台支持，包括Google Bard AI、Azure AI、ChatGPT 4、3.5 Turbo、3 Davinci、2 Code Optimized、Dall-E图像</b><br/>
+                    <small class="text-muted">Multi Ai support including Google Bard Ai, Azure Ai, Chatgpt 4, Chatgpt 3.5 Turbo, Chatgpt 3 Davinci, Chatgpt 2 Code Optimized, Dall-E Image.</small>
                 </li>
                 <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>3. Bind ChatGPT API to user for robot chat or AI group channel</b><br/>
-                    <small class="text-muted">Bind ChatGPT API to user for robot chat or group AI channel.</small>
+                    <b>3. 将ChatGPT API绑定到用户，支持机器人私聊或群聊频道</b><br/>
+                    <small class="text-muted">Bind ChatGpt Api to user. So we can chat to robot user or use ChatGpt Channel for Group Chat.</small>
                 </li>
                 <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>4. ChatGPT whitelist and blacklist</b><br/>
-                    <small class="text-muted">White and black list for ChatGPT.</small>
+                    <b>4. ChatGPT白名单和黑名单管理</b><br/>
+                    <small class="text-muted">White and black List for ChatGpt.</small>
                 </li>
                 <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>5. Setup demo chat time for new users</b><br/>
-                    <small class="text-muted">Setup demo chat time for every new user.</small>
+                    <b>5. 为新用户设置演示聊天时长</b><br/>
+                    <small class="text-muted">Setup Demo Chat time for every new user.</small>
                 </li>
                 <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>6. Easy start and stop ChatGPT</b><br/>
-                    <small class="text-muted">Easy start and stop ChatGPT.</small>
+                    <b>6. 轻松启动和停止ChatGPT服务</b><br/>
+                    <small class="text-muted">Easy Start and Stop ChatGpt.</small>
                 </li>
                 <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>7. Evaluate AI robot responses to improve quality (training)</b><br/>
-                    <small class="text-muted">Evaluation the AI robot to make better response. This training.</small>
+                    <b>7. 评估AI机器人回复质量，通过训练持续改进</b><br/>
+                    <small class="text-muted">Evaluation the ai robot to make better response. This training.</small>
                 </li>
                 <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>8. Connect to Microsoft Azure OpenAI Service</b><br/>
-                    <small class="text-muted">API support for Microsoft Azure OpenAI Service.</small>
+                    <b>8. Microsoft Azure OpenAI服务API对接支持</b><br/>
+                    <small class="text-muted">Add api support Connect the Microsoft Azure OpenAI Service.</small>
                 </li>
                 <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>9. Synchronous or asynchronous AI response mode</b><br/>
-                    <small class="text-muted">Set synchronous or asynchronous mode for AI response.</small>
+                    <b>9. 支持同步或异步模式获取AI回复</b><br/>
+                    <small class="text-muted">Can set Synchronous or Asynchronous mode for Ai response.</small>
                 </li>
                 <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>10. Sensitive words filter setup</b><br/>
-                    <small class="text-muted">Filter sensitive words setup.</small>
+                    <b>10. 敏感词过滤设置</b><br/>
+                    <small class="text-muted">Filter Sensitive Words Setup.</small>
                 </li>
             </ul>
         </div>
     </div>
 </section>
-<!-- end feature list -->
+<!-- end Feature List -->
 
 <!-- begin key highlights -->
 <section class="oe_container container o_cc o_cc2 pt64 pb64">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center pb32">
-                <h2>Key Highlights</h2>
-                <p class="lead">One-Stop AI Center with Multi-Robot Integration</p>
+                <h2>核心亮点 / Key Highlights</h2>
+                <p class="lead">DeepSeek深度求索，多AI平台无缝集成</p>
             </div>
         </div>
         <div class="row">
@@ -155,9 +156,21 @@
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
                             <i class="fa fa-robot fa-lg"></i>
                         </div>
-                        <h5>1. Google Gemini Integration</h5>
-                        <p class="small text-muted">Bard AI Connector</p>
-                        <p class="card-text">Chat with Google Gemini (Bard) AI directly in Odoo</p>
+                        <h5>1. Deepseek AI对话 / Deepseek AI Chat</h5>
+                        <p class="small text-muted">V3/R1 model support</p>
+                        <p class="card-text">支持DeepSeek V3和R1等开放对话模型，中国用户可直接使用</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-plug fa-lg"></i>
+                        </div>
+                        <h5>2. 多AI机器人连接 / Multi AI Robot Connector</h5>
+                        <p class="small text-muted">ChatGPT, Bard, Azure &amp; more</p>
+                        <p class="card-text">支持多个AI机器人同时在线，可@指定机器人进行对话</p>
                     </div>
                 </div>
             </div>
@@ -167,9 +180,9 @@
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
                             <i class="fa fa-comments fa-lg"></i>
                         </div>
-                        <h5>2. Multi AI Robots</h5>
-                        <p class="small text-muted">GPT-4, Azure, DALL-E</p>
-                        <p class="card-text">Integrate multiple AI models, chat directly via Odoo IM</p>
+                        <h5>3. 用户绑定AI / Bind AI to User</h5>
+                        <p class="small text-muted">Robot chat &amp; group channel</p>
+                        <p class="card-text">将AI API绑定到Odoo用户，支持机器人私聊或群聊频道</p>
                     </div>
                 </div>
             </div>
@@ -177,11 +190,35 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-graduation-cap fa-lg"></i>
+                            <i class="fa fa-shield fa-lg"></i>
                         </div>
-                        <h5>3. Evaluation Training</h5>
-                        <p class="small text-muted">Improve AI Response</p>
-                        <p class="card-text">Rate AI responses, mark good or bad answers to keep improving</p>
+                        <h5>4. 访问控制 / Access Control</h5>
+                        <p class="small text-muted">White &amp; black list</p>
+                        <p class="card-text">白名单和黑名单管理，敏感词过滤，演示时长限制</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-star-half-o fa-lg"></i>
+                        </div>
+                        <h5>5. AI评估训练 / AI Evaluation &amp; Training</h5>
+                        <p class="small text-muted">Improve response quality</p>
+                        <p class="card-text">评估AI回复质量，标记好/差回答，通过训练持续改进</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-exchange fa-lg"></i>
+                        </div>
+                        <h5>6. 同步异步模式 / Sync &amp; Async Mode</h5>
+                        <p class="small text-muted">Flexible response mode</p>
+                        <p class="card-text">支持同步和异步两种AI回复模式，异步模式可在等待时处理其他事务</p>
                     </div>
                 </div>
             </div>
@@ -194,15 +231,15 @@
 <section class="oe_container container o_cc o_cc5 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>General Features</h2>
+            <h2>通用特性 / General Features</h2>
         </div>
         <div class="col-lg-4 pb24">
             <div class="text-center">
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-globe fa-lg"></i>
                 </div>
-                <h5>Multi-Language &amp; Multi-Company<br/><small class="text-muted">Built for Global Teams</small></h5>
-                <p>Full translation support for global deployments. Native multi-company architecture with strict data isolation.</p>
+                <h5>多语言与多公司<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -210,8 +247,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code-fork fa-lg"></i>
                 </div>
-                <h5>Full Version Support<br/><small class="text-muted">Odoo 12 to 19</small></h5>
-                <p>Works with Odoo 19, 18, 17, 16, 15, 14, 13, 12, EE/CE/.SH, compatible with Enterprise, Community and Odoo Online SaaS.</p>
+                <h5>全版本兼容<br/><small class="text-muted">Full Version Support</small></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -219,8 +256,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code fa-lg"></i>
                 </div>
-                <h5>Full Open Source<br/><small class="text-muted">LGPL-3 Licensed</small></h5>
-                <p>Released under LGPL-3. Transparent, auditable code, open for further development and customization.</p>
+                <h5>代码完全开源<br/><small class="text-muted">Full Open Source</small></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
             </div>
         </div>
     </div>
@@ -231,113 +268,92 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>Screenshots</h2>
-            <p class="lead">Core features at a glance</p>
+            <h2>界面截图 / Screenshots</h2>
+            <p class="lead">核心功能界面一览</p>
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Add Google Bard Support</h3>
-            <img class="img-fluid rounded shadow" src="demo02.jpg" alt="Google Bard Support">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Add more Ai support like Deepseek Ai, google bard, chatgpt 4, baidu china</h3>
+            <img class="img-fluid rounded shadow" src="demo01.jpg" alt="Add more Ai support">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Add More AI Support</h3>
-            <img class="img-fluid rounded shadow" src="demo01.jpg" alt="Add More AI Support">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Deepseek API Application / 申请Deepseek API</h3>
+            <img class="img-fluid rounded shadow" src="apply1.jpg" alt="Apply Deepseek API">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Apply Bard API from Google</h3>
-            <img class="img-fluid rounded shadow" src="demo03.jpg" alt="Apply Bard API">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Setup for your own key / 设置API密钥</h3>
+            <img class="img-fluid rounded shadow" src="apply5.jpg" alt="Setup API Key">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Setup Your Own API Key</h3>
-            <img class="img-fluid rounded shadow" src="demo04.jpg" alt="Setup API Key">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Easy to use Ai Robot with multi Provider / 多Ai供应商便捷使用</h3>
+            <img class="img-fluid rounded shadow" src="demo_deepseek.jpg" alt="Easy Ai Robot">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Easy Chat with AI Robot</h3>
-            <img class="img-fluid rounded shadow" src="demob.jpg" alt="Easy Chat with AI Robot">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Multi ChatGpt openAI robot Connector / 多ChatGPT机器人连接器</h3>
+            <img class="img-fluid rounded shadow" src="demo1.jpg" alt="Multi ChatGPT Robot">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Multi ChatGPT Robot Connector</h3>
-            <img class="img-fluid rounded shadow" src="demo1.jpg" alt="Robot Connector Setup">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Multi Api support / 多API模型支持</h3>
+            <img class="img-fluid rounded shadow" src="demo2.jpg" alt="Multi API support">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Multi Model Selection</h3>
-            <img class="img-fluid rounded shadow" src="demo2.jpg" alt="Multi Model Selection">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Bind ChatGpt Api to user / 绑定AI到用户</h3>
+            <img class="img-fluid rounded shadow" src="demo4.jpg" alt="Bind AI to User">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Bind AI Robot to User</h3>
-            <img class="img-fluid rounded shadow" src="demo4.jpg" alt="Bind Robot to User">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>White and black List / 白名单黑名单管理</h3>
+            <img class="img-fluid rounded shadow" src="demo6.jpg" alt="White and black List">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>AI Pool with Multiple Robots</h3>
-            <img class="img-fluid rounded shadow" src="demo5.jpg" alt="AI Pool">
-        </div>
-    </div>
-
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Black List and Demo Time</h3>
-            <img class="img-fluid rounded shadow" src="demo6.jpg" alt="Black List and Demo Time">
-        </div>
-    </div>
-
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Easy Start and Stop ChatGPT</h3>
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Easy Start and Stop ChatGpt / 启动和停止AI服务</h3>
             <img class="img-fluid rounded shadow" src="demo7.jpg" alt="Start and Stop ChatGPT">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Chat with Several Robots</h3>
-            <img class="img-fluid rounded shadow" src="demo8.jpg" alt="Chat with Several Robots">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Evaluation the ai robot / AI评估训练</h3>
+            <img class="img-fluid rounded shadow" src="demo71.jpg" alt="AI Evaluation">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Evaluation AI Response</h3>
-            <img class="img-fluid rounded shadow" src="demo71.jpg" alt="Evaluation AI Response">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Microsoft Azure OpenAI Service / Azure OpenAI服务</h3>
+            <img class="img-fluid rounded shadow" src="demo81.jpg" alt="Azure OpenAI">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Azure OpenAI Service</h3>
-            <img class="img-fluid rounded shadow" src="demo81.jpg" alt="Azure OpenAI Service">
-        </div>
-    </div>
-
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Sync and Async Mode</h3>
-            <img class="img-fluid rounded shadow" src="demo91.jpg" alt="Sync and Async Mode">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Synchronous or Asynchronous mode / 同步异步模式</h3>
+            <img class="img-fluid rounded shadow" src="demo91.jpg" alt="Sync Async Mode">
         </div>
     </div>
 </section>
@@ -347,37 +363,37 @@
 <section class="oe_container container o_cc o_cc2 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>How It Works</h2>
+            <h2>使用流程 / How It Works</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <div class="row text-center">
-                <div class="col pb16">
-                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-download"></i>
-                    </div>
-                    <p class="fw-bold mb-1">Install Module</p>
-                    <p class="small text-muted mb-0">Install and update</p>
-                </div>
-                <div class="col pb16">
+                <div class="col-md-3 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
                         <i class="fa fa-key"></i>
                     </div>
-                    <p class="fw-bold mb-1">Configure API</p>
-                    <p class="small text-muted mb-0">Setup API Key</p>
+                    <p class="fw-bold mb-1">获取API密钥</p>
+                    <p class="small text-muted mb-0">Get API Key</p>
                 </div>
-                <div class="col pb16">
+                <div class="col-md-3 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-user-plus"></i>
+                        <i class="fa fa-cog"></i>
                     </div>
-                    <p class="fw-bold mb-1">Bind to User</p>
-                    <p class="small text-muted mb-0">Assign AI robot</p>
+                    <p class="fw-bold mb-1">配置AI机器人</p>
+                    <p class="small text-muted mb-0">Setup AI Robot</p>
                 </div>
-                <div class="col pb16">
+                <div class="col-md-3 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-comments"></i>
+                        <i class="fa fa-link"></i>
                     </div>
-                    <p class="fw-bold mb-1">Start Chatting</p>
-                    <p class="small text-muted mb-0">Chat in Odoo</p>
+                    <p class="fw-bold mb-1">绑定用户频道</p>
+                    <p class="small text-muted mb-0">Bind User &amp; Channel</p>
+                </div>
+                <div class="col-md-3 pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-comments-o"></i>
+                    </div>
+                    <p class="fw-bold mb-1">开始AI对话</p>
+                    <p class="small text-muted mb-0">Start AI Chat</p>
                 </div>
             </div>
         </div>
@@ -389,13 +405,13 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>Supported &amp; Dependent Modules</h2>
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <i class="fa fa-book text-o-color-1 me-2"></i>
-                    app_chatgpt
+                    <i class="fa fa-comment text-o-color-1 me-2"></i>
+                    app_chatgpt / AI聊天中心 (ChatGPT AI Center)
                 </li>
             </ul>
         </div>
@@ -418,7 +434,7 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <h2>odooai.cn</h2>
-            <p class="lead" style="opacity:0.7;">Professional Odoo Solutions: Development, Implementation, Consulting &amp; Training</p>
+            <p class="lead" style="opacity:0.7;">专业Odoo服务伙伴-开发实施咨询培训全套解决方案 / Professional Odoo Solutions</p>
             <div class="pt16">
                 <p>
                     <i class="fa fa-globe me-2"></i>

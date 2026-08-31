@@ -2,24 +2,28 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 # Copyright (C) 2009~2026 odooAi.cn
+# 此 index.html 遵循 Odoo 官方模块描述规范。
+# 样式：Bootstrap 5 + Odoo Website Snippet + FontAwesome
+# GEO: 含 JSON-LD Structured Data (SoftwareApplication)
 ##############################################################################
 -->
 <html>
 <head><meta charset="utf-8"/></head>
 
+<!-- JSON-LD Structured Data for Generative Engine Optimization -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "app_auto_backup - Database Auto Backup and Download",
+  "name": "Website Blog Search Enhance Superbar - 网站博文超级搜索栏",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "offers": {
     "@type": "Offer",
     "price": "0",
-    "priceCurrency": "CNY"
+    "priceCurrency": "EUR"
   },
-  "description": "Automated Odoo database backup with SFTP remote backup, one-click manual backup, backup file download management, e-mail failure notification.",
+  "description": "Enhanced search for website blog posts with tree navigation for blog categories and tags.",
   "softwareVersion": "18.0",
   "programmingLanguage": "Python, JavaScript",
   "license": "LGPL-3",
@@ -29,15 +33,11 @@
     "url": "https://www.odooai.cn"
   },
   "featureList": [
-    "Scheduled database backup via cron",
-    "Remote SFTP backup with SSH tunnel",
-    "One-click manual database backup",
-    "Download and manage backup files",
-    "Test SFTP connection",
-    "E-mail notification on backup failure",
-    "Auto cleanup old backups",
-    "Multi-language and Multi-company support",
-    "Full Open Source"
+    "Enhanced search for website blog posts",
+    "Tree navigation for blog categories and tags",
+    "List and kanban view support",
+    "Multi-language and multi-company support",
+    "Full open source under LGPL-3"
   ]
 }
 </script>
@@ -48,18 +48,18 @@
         <div class="col-lg-8 text-center">
             <div class="d-inline-flex align-items-center mb-3">
                 <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
-                <h2 class="ms-3 mb-0" style="font-weight:700;">Database Auto Backup and Download</h2>
+                <h2 class="ms-3 mb-0" style="font-weight:700;">网站博文超级搜索栏 / Website Blog Search Enhance Superbar</h2>
             </div>
-            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Automated Backup with SFTP Remote &amp; Easy Download</p>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Enhanced blog search with tree navigation for browsing posts</p>
             <p class="lead">
-                Schedule automated database backups with local and remote SFTP storage, one-click manual backup and download<br/>
-                Failure e-mail alerts, connection testing and auto cleanup of old backups
+                网站博文增强搜索，树状导航浏览博客文章<br/>
+                Enhanced blog search with tree navigation for browsing posts
             </p>
             <div class="pt16">
                 <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Enterprise &amp; Community</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Company</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Language</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版 / Enterprise &amp; Community</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司 / Multi-Company</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言 / Multi-Language</span>
             </div>
         </div>
     </div>
@@ -70,55 +70,25 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
-            <h2>Overview</h2>
+            <h2>功能概述 / Overview</h2>
             <p class="lead pt16">
-                This module provides a complete database auto-backup solution for Odoo. It supports cron scheduled backups, remote SFTP encrypted backup, one-click manual backup, backup file download and management, connection testing, failure e-mail notification, and auto cleanup of old backups.
+                Website Blog search for Advance Search Superbar
             </p>
             <p class="text-muted">
-                Runs as a scheduled cron job, stores backups locally or on a remote SFTP server.
+                Free addons of Superbar. Enhanced blog post browsing with tree navigation.
             </p>
         </div>
     </div>
 </section>
 <!-- end overview -->
 
-<!-- begin feature list -->
-<section class="oe_container container o_cc o_cc1 pt64 pb64">
-    <div class="row">
-        <div class="col-lg-12 text-center pb32">
-            <h2>Complete Feature List</h2>
-        </div>
-        <div class="col-lg-10 offset-lg-1">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>1. Easy schedule database backup via cron job</b><br/>
-                    <small class="text-muted">Easy schedule database backup via cron job.</small>
-                </li>
-                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>2. Set remote SFTP backup and cron schedule</b><br/>
-                    <small class="text-muted">Set remote SFTP backup and cron schedule.</small>
-                </li>
-                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>3. Manual backup database in one click</b><br/>
-                    <small class="text-muted">Manual backup database in one click.</small>
-                </li>
-                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <b>4. Download or remove backup files as a System user</b><br/>
-                    <small class="text-muted">Easy download backup file or remove file for System user.</small>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
-<!-- end feature list -->
-
 <!-- begin key highlights -->
 <section class="oe_container container o_cc o_cc2 pt64 pb64">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center pb32">
-                <h2>Key Highlights</h2>
-                <p class="lead">Secure and Reliable Backup Solution</p>
+                <h2>核心亮点 / Key Highlights</h2>
+                <p class="lead">Enhanced blog browsing / 增强博文浏览</p>
             </div>
         </div>
         <div class="row">
@@ -126,11 +96,11 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-clock-o fa-lg"></i>
+                            <i class="fa fa-search fa-lg"></i>
                         </div>
-                        <h5>1. Scheduled Backup</h5>
-                        <p class="small text-muted">Cron Job Automation</p>
-                        <p class="card-text">Run database backups automatically through a cron job</p>
+                        <h5>1. 增强搜索 / Enhanced Search</h5>
+                        <p class="small text-muted">Blog Posts</p>
+                        <p class="card-text">网站博文增强搜索功能</p>
                     </div>
                 </div>
             </div>
@@ -138,11 +108,11 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-server fa-lg"></i>
+                            <i class="fa fa-sitemap fa-lg"></i>
                         </div>
-                        <h5>2. Remote SFTP Backup</h5>
-                        <p class="small text-muted">SSH Encrypted Tunnel</p>
-                        <p class="card-text">Back up to a remote server over an encrypted SFTP tunnel</p>
+                        <h5>2. 树状导航 / Tree Navigation</h5>
+                        <p class="small text-muted">Categories &amp; Tags</p>
+                        <p class="card-text">博客分类和标签的树状导航</p>
                     </div>
                 </div>
             </div>
@@ -150,11 +120,11 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-envelope fa-lg"></i>
+                            <i class="fa fa-th-list fa-lg"></i>
                         </div>
-                        <h5>3. Failure Notification</h5>
-                        <p class="small text-muted">Auto E-mail Alert</p>
-                        <p class="card-text">Send an e-mail alert automatically when a backup fails</p>
+                        <h5>3. 多视图支持 / Multi-View</h5>
+                        <p class="small text-muted">List &amp; Kanban</p>
+                        <p class="card-text">支持列表和看板视图浏览博文</p>
                     </div>
                 </div>
             </div>
@@ -167,15 +137,15 @@
 <section class="oe_container container o_cc o_cc5 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>General Features</h2>
+            <h2>通用特性 / General Features</h2>
         </div>
         <div class="col-lg-4 pb24">
             <div class="text-center">
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-globe fa-lg"></i>
                 </div>
-                <h5>Multi-Language &amp; Multi-Company<br/><small class="text-muted">Built for Global Teams</small></h5>
-                <p>Full translation support for global deployments. Native multi-company architecture with strict data isolation.</p>
+                <h5>多语言与多公司<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -183,8 +153,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code-fork fa-lg"></i>
                 </div>
-                <h5>Full Version Support<br/><small class="text-muted">Odoo 12 to 19</small></h5>
-                <p>Works with Odoo 19, 18, 17, 16, 15, 14, 13, 12, EE/CE/.SH, compatible with Enterprise, Community and Odoo Online SaaS.</p>
+                <h5>全版本兼容<br/><small class="text-muted">Full Version Support</small></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -192,8 +162,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code fa-lg"></i>
                 </div>
-                <h5>Full Open Source<br/><small class="text-muted">LGPL-3 Licensed</small></h5>
-                <p>Released under LGPL-3. Transparent, auditable code, open for further development and customization.</p>
+                <h5>代码完全开源<br/><small class="text-muted">Full Open Source</small></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
             </div>
         </div>
     </div>
@@ -204,64 +174,22 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>Screenshots</h2>
-            <p class="lead">Core features at a glance</p>
+            <h2>界面截图 / Screenshots</h2>
+            <p class="lead">核心功能界面一览</p>
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Easy Schedule Database Backup</h3>
-            <img class="img-fluid rounded shadow" src="demo1.jpg" alt="Schedule Backup">
+            <h3 class="pb16"><i class="fa fa-search text-o-color-1 me-2"></i>So Easy to navigator and search any data / 轻松导航搜索</h3>
+            <img class="img-fluid rounded shadow" src="banner.png" alt="Easy navigation">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Set Remote Backup and Cron Schedule</h3>
-            <img class="img-fluid rounded shadow" src="demo2.jpg" alt="Remote Backup Setup">
-        </div>
-    </div>
-
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Manual Backup Database in One Click</h3>
-            <img class="img-fluid rounded shadow" src="demo3.jpg" alt="Manual Backup">
-        </div>
-    </div>
-
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Download and Manage Backup Files</h3>
-            <img class="img-fluid rounded shadow" src="demo4.jpg" alt="Download Backup Files">
-        </div>
-    </div>
-
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Database Automated Backups Overview</h3>
-            <img class="img-fluid rounded shadow" src="overview.png" alt="Overview">
-        </div>
-    </div>
-
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Connect with FTP Server via SSH</h3>
-            <img class="img-fluid rounded shadow" src="terminalssh.png" alt="SSH Terminal">
-        </div>
-    </div>
-
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Test SFTP Connection</h3>
-            <img class="img-fluid rounded shadow" src="testconnection.png" alt="Test Connection">
-        </div>
-    </div>
-
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>E-mail Notification on Backup Failure</h3>
-            <img class="img-fluid rounded shadow" src="emailnotification.png" alt="Email Notification">
+            <h3 class="pb16"><i class="fa fa-language text-o-color-1 me-2"></i>Multi-language Support / 多语种支持</h3>
+            <img class="img-fluid rounded shadow" src="cnreadme.jpg" alt="Multi language support">
         </div>
     </div>
 </section>
@@ -271,7 +199,7 @@
 <section class="oe_container container o_cc o_cc2 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>How It Works</h2>
+            <h2>使用流程 / How It Works</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <div class="row text-center">
@@ -279,29 +207,22 @@
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
                         <i class="fa fa-download"></i>
                     </div>
-                    <p class="fw-bold mb-1">Install Module</p>
-                    <p class="small text-muted mb-0">Install and update</p>
+                    <p class="fw-bold mb-1">安装模块</p>
+                    <p class="small text-muted mb-0">Install app_web_superbar</p>
                 </div>
                 <div class="col pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-cog"></i>
+                        <i class="fa fa-sitemap"></i>
                     </div>
-                    <p class="fw-bold mb-1">Configure Backup</p>
-                    <p class="small text-muted mb-0">Set schedule and SFTP</p>
+                    <p class="fw-bold mb-1">树状导航</p>
+                    <p class="small text-muted mb-0">Browse by category</p>
                 </div>
                 <div class="col pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-check"></i>
+                        <i class="fa fa-check-circle"></i>
                     </div>
-                    <p class="fw-bold mb-1">Activate Cron</p>
-                    <p class="small text-muted mb-0">Backups run on schedule</p>
-                </div>
-                <div class="col pb16">
-                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-shield"></i>
-                    </div>
-                    <p class="fw-bold mb-1">Auto Protected</p>
-                    <p class="small text-muted mb-0">Alerts on failure</p>
+                    <p class="fw-bold mb-1">即用即享</p>
+                    <p class="small text-muted mb-0">Easy to use</p>
                 </div>
             </div>
         </div>
@@ -313,17 +234,17 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>Supported &amp; Dependent Modules</h2>
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <i class="fa fa-cube text-o-color-1 me-2"></i>
-                    base
+                    <i class="fa fa-pencil text-o-color-1 me-2"></i>
+                    website_blog / 网站博客模块
                 </li>
                 <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <i class="fa fa-wrench text-o-color-1 me-2"></i>
-                    app_odoo_customize
+                    <i class="fa fa-bars text-o-color-1 me-2"></i>
+                    app_base_superbar / 基础超级搜索栏
                 </li>
             </ul>
         </div>
@@ -346,7 +267,7 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <h2>odooai.cn</h2>
-            <p class="lead" style="opacity:0.7;">Professional Odoo Solutions: Development, Implementation, Consulting &amp; Training</p>
+            <p class="lead" style="opacity:0.7;">专业Odoo服务伙伴-开发实施咨询培训全套解决方案 / Professional Odoo Solutions</p>
             <div class="pt16">
                 <p>
                     <i class="fa fa-globe me-2"></i>
