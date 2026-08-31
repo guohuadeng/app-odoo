@@ -5,31 +5,35 @@
 #    'website': "https://www.odooai.cn",
 
 {
-    'name': "!Database auto backup and Download,数据库自动备份",
-    'version': '19.0.25.10.31',
+    'name': "数据库自动备份,Database Auto Backup and Download",
+    'version': '19.0.26.08.25',
 
-    'summary': 'Automated and odoo database backups. easy download and manage database file. optimized from auto_backup of oca Yenthe Van Ginneken',
+    'summary': "Odoo数据库自动备份、远程SFTP备份、一键手动备份、备份文件下载管理。Automated database backup with SFTP remote backup, manual one-click backup and easy download.",
 
     'description': """
-    1. Easy schedule database backup
-    2. Set remote backup and cron schedule
-    3. Manual backup database in one click
-    4. Easy download backup file or remove file for System user
-    11. Multi-language Support. Multi-Company Support.
-    12. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
-    13. Full Open Source.
-        The Database Auto-Backup module enables the user to make configurations for the automatic backup of the database. 
-        Backups can be taken on the local system or on a remote server, through SFTP.
-        You only have to specify the hostname, port, backup location and databasename (all will be pre-filled by default with correct data.
-        If you want to write to an external server with SFTP you will need to provide the IP, username and password for the remote backups.
-        The base of this module is taken from Odoo SA V6.1 (https://www.odoo.com/apps/modules/6.0/auto_backup/) and then upgraded and heavily expanded.
-        This module is made and provided by Yenthe Van Ginneken (Oocademy).
-        Automatic backup for all such configured databases can then be scheduled as follows:
+    1. Easy schedule database backup via cron job.
+    2. Set remote SFTP backup with encrypted SSH tunnel.
+    3. Manual backup database in one click.
+    4. Easy download backup file or remove file for System user.
+    5. Test SFTP connection in one click.
+    6. Auto e-mail notification on backup failure.
+    7. Specify how long local and remote backups should be kept.
+    8. Based on Yenthe Van Ginneken's auto_backup, upgraded and expanded.
+    9. Multi-language Support. Multi-Company Support.
+    10. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+    11. Full Open Source.
 
-        1) Go to Settings / Technical / Automation / Scheduled actions.
-        2) Search the action 'Backup scheduler'.
-        3) Set it active and choose how often you wish to take backups.
-        4) If you want to write backups to a remote location you should fill in the SFTP details.
+    1. 通过定时任务轻松设置数据库自动备份
+    2. 支持远程SFTP加密SSH隧道备份
+    3. 一键手动备份数据库
+    4. 系统用户可直接下载或删除备份文件
+    5. 一键测试SFTP连接
+    6. 备份失败自动邮件通知
+    7. 可设置本地和远程备份保留天数
+    8. 基于Yenthe Van Ginneken的auto_backup升级扩展
+    9. 多语言支持，多公司支持
+    10. Odoo 19,18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    11. 代码完全开源
     """,
 
     'author': 'odooai.cn',
@@ -57,4 +61,5 @@
         'data/backup_data.xml',
         'views/db_backup_details.xml',
     ],
+    'post_init_hook': 'post_init_hook',
 }

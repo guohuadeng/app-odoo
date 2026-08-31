@@ -9,7 +9,7 @@
         </record>
         <function model="res.country" name="write" context="{'lang': 'zh_CN'}">
             <value eval="[ref('base.cn')]"/>
-            <value eval="{'sequence': 2}"/>
+            <value eval="{'sequence': 2, 'vat_label': '税号'}"/>
         </function>
         <function model="res.country" name="write" context="{'lang': 'zh_CN'}">
             <value eval="[ref('base.hk')]"/>

@@ -10,4 +10,4 @@ class Location(models.Model):
     _inherit = 'stock.location'
     
     name = fields.Char(translate=True)
-    complete_name = fields.Char(translate=True)
+    complete_name = fields.Char(translate=True, compute='_compute_complete_name', recursive=True, store=True)

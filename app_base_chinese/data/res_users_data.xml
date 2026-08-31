@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <!-- 19已移除，默认user，使用write处理 -->
-<!--        <function model="res.users" name="write" context="{'lang': 'zh_CN', 'active_test':0}">-->
-<!--            <value eval="[ref('base.default_user')]"/>-->
-<!--            <value model="res.users" eval="{-->
-<!--            'lang': 'zh_CN',-->
-<!--            'tz': 'Etc/GMT-8',-->
-<!--            'name': '默认内部用户模板',-->
-<!--            }"/>-->
-<!--        </function>-->
-        <function model="res.users" name="write" context="{'lang': 'zh_CN', 'active_test':0}">
+        <!-- 默认user，使用write处理（o19 已删 base.default_user 内部用户模板，仅保留门户/游客模板） -->
+        <function model="res.users" name="write" context="{'lang': 'zh_CN', 'active_test': False}">
             <value eval="[ref('base.template_portal_user_id')]"/>
             <value model="res.users" eval="{
             'lang': 'zh_CN',
@@ -19,7 +11,7 @@
             }"/>
         </function>
 <!--        游客-->
-        <function model="res.users" name="write" context="{'lang': 'zh_CN', 'active_test':0}">
+        <function model="res.users" name="write" context="{'lang': 'zh_CN', 'active_test': False}">
             <value eval="[ref('base.public_user')]"/>
             <value model="res.users" eval="{
             'lang': 'zh_CN',

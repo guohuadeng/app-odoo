@@ -16,6 +16,7 @@
 # description:
 
 from odoo import api, SUPERUSER_ID, _
+from odoo.exceptions import UserError
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -44,7 +45,7 @@ def post_init_hook(env):
         for rec in ids:
             rec._compute_complete_name()
         # 超级用户及模板用户改时区为中国
-        ids = env['res.users'].sudo().with_context(lang='zh_CN', active_test=False).search([('id', '<=', 4)])
+        ids = env['res.users'].sudo().with_context(lang='zh_CN', active_test=False).search([('id', '<=', 5)])
         ids.write({
             'tz': "Etc/GMT-8",
             'lang': "zh_CN",
@@ -64,7 +65,7 @@ def post_init_hook(env):
             except Exception as e:
                 _logger.error('cn: pricelist write currency_id error.')
     except Exception as e:
-        raise Warning(e)
+        raise UserError(e)
 
 def uninstall_hook(env):
     """

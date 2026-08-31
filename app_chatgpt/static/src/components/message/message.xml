@@ -9,7 +9,7 @@
                         <br/>
                         ------------------
                         <br/>
-                        <span title="提问/答复 消耗Token">
+                        <span title="Tokens consumed by question/reply">
                             <t t-esc="message.human_prompt_tokens"/> / <t t-esc="message.ai_completion_tokens"/>
                         </span>
                     </div>

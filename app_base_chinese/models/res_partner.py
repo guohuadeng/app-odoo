@@ -12,18 +12,21 @@ class ResPartner(models.Model):
     fax = fields.Char('Fax')  # 简称
 
     # 增加地址显示中的手机号与电话号码
-    # 选项 show_address 开启则增加显示手机与电话号
-    def _get_name(self):
-        name = super(ResPartner, self)._get_name()
-        partner = self
+    # 选项 show_address 开启则增加显示手机与电话号（o19 已删 _get_name/mobile 字段，迁移至 _compute_display_name 仅用 phone）
+    @api.depends('complete_name', 'email', 'vat', 'state_id', 'country_id', 'commercial_company_name',
+                 'phone')
+    @api.depends_context(
+        'show_address', 'partner_show_db_id',
+        'show_email', 'show_vat', 'lang', 'formatted_display_name'
+    )
+    def _compute_display_name(self):
+        super(ResPartner, self)._compute_display_name()
         if self._context.get('show_address'):
-            if partner.mobile and partner.phone:
-                name = name + "\n" + partner.mobile + "," + partner.phone
-            elif partner.mobile:
-                name = name + "\n" + partner.mobile
-            elif partner.phone:
-                name = name + "\n" + partner.phone
-        return name.strip()
+            for partner in self:
+                name = partner.display_name
+                if partner.phone:
+                    name = name + "\n" + partner.phone
+                partner.display_name = name.strip()
 
     @api.model_create_multi
     def create(self, vals_list):

@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 # -*- coding: utf-8 -*-
 ##############################################################################
 # Copyright (C) 2009~2026 odooAi.cn
@@ -6,407 +6,44 @@
 -->
 <html>
 <head><meta charset="utf-8"/></head>
-<!-- begin title-->
-<section class="oe_container container">
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <h2 class="oe_slogan" style="color:#875A7B;">POS addon for Advance Search Superbar</h2>
-    </div>
-
-    <div class="oe_row text-center">
-        <h2>Free addons of Superbar. !This moduld Do Need extra paid Apps.</h2>
-    </div>
-
-    <p>
-        <a href="http://www.odoo.com/apps/modules/19.0/app_web_superbar/" target="_blank">
-            <i class="fa fa-download text-warning"></i>odoo Advance Search Superbar. Quick search any data for any Apps. Click to download.
-        </a>
-    </p>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"POS销售单导航 - POS Order Navigator by Store","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"},"description":"Advance search for POS orders with Superbar sidebar. Browse POS orders by store, salesperson and status.","softwareVersion":"18.0","programmingLanguage":"Python, JavaScript","license":"LGPL-3","author":{"@type":"Organization","name":"odooAi.cn","url":"https://www.odooai.cn"}}
+</script>
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center"><div class="col-lg-8 text-center">
+        <div class="d-inline-flex align-items-center mb-3"><img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon"><h2 class="ms-3 mb-0" style="font-weight:700;">POS销售单导航 / POS Order Navigator</h2></div>
+        <p class="pb8" style="opacity:0.7;font-size:1.1rem;">按门店销售员状态浏览 / Browse by store, salesperson and status</p>
+        <p class="lead">Superbar高级搜索侧栏，POS订单全方位导航<br/>Advance search sidebar for POS orders</p>
+        <div class="pt16"><span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版 / Enterprise &amp; Community</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司 / Multi-Company</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言 / Multi-Language</span></div>
+    </div></div>
 </section>
-
-<section class="oe_container container s_text_block pt40 pb40 o_colored_level" data-snippet="s_text_block" data-name="文本" style="background-image: none;" data-tilt-feature="">
-    <div class="s_allow_columns container">
-        <div data-oe-expression="//www.youtube.com/embed/whnmkTWsQkQ?rel=0&amp;autoplay=0" class="media_iframe_video">
-            <div class="css_editable_mode_display"></div>
-            <div class="media_iframe_video_size"></div>
-            <iframe src="//www.youtube.com/embed/whnmkTWsQkQ?rel=0&amp;autoplay=1" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-        </div>
-        <p class="o_default_snippet_text"><br></p>
-    </div>
-    <div class="oe_row text-center">
-        <span>Click above video to Play. or go </span>
-        <a href="https://youtu.be/whnmkTWsQkQ" target="_blank" role="button" class="btn btn-primary btn-lg">Youtube Video of odoo Advance Search Superbar</a>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row">
-        <div class="oe_demo">
-            <img class="oe_demo oe_screenshot img img-fluid" src="banner.gif">
-        </div>
-        <h3 class="oe_slogan">Advance Search, Advance Filter with Parent Children Tree.</h3>
-        <h2 class="bg-warning text-center pt8 pb8 mt16 mb16">Buy
-            <a href="https://www.odoo.com/apps/modules/19.0/app_web_superbar/">
-            this 1 Advance Search Apps
-            </a>
-                in odoo Store. Get
-            <a href="https://www.odoo.com/apps/modules/browse?search=superbar" target="_blank">
-                free 10+ related apps.
-            </a>
-        </h2>
-        <h3 class="oe_slogan">Easy to navigator and browse any data. Support list, kanban, pivot, graph view. </h3>
-        <h2>Online demo <i class="fa fa-user text-primary"></i>  user/password: demo/demo
-                        <a href="http://demo.odooapp.cn/web?#action=263&model=sale.order&view_type=list&menu_id=141" target="_blank">
-                        <i class="fa fa-arrow-right text-warning"></i>Click to get demo.
-                        </a> </h2>
-        <div class="oe_span12 oe_spaced">
-            <div class="alert alert-info" style="padding:8px;font-weight: 300; font-size: 20px;">
-                <i class="fa fa-hand-o-right"></i><b> Key features: </b>
-                <ul class="list-unstyled">
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Update: v12.19.05.23, Enhance UI. Add Pos Function.
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Easy to show parent children tree for tree, kanban, pivot, graph view.(Note that there would be little different in UI between odoo12,11,10)
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Responsive UI.Only show when width > 992px;
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Product navigate by category or type is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_product_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Pos navigate by category or store is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_pos_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Account chart navigate by type is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_account_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Contacts navigate by company is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_contacts_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Sale order navigate by partner and channel is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_sale_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        CRM browse by stage and team is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_crm_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Purchase order navigate by partner is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_purchase_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Stock location navigate by parent, Picking by type is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_stock_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        HR employee navigate by department is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_hr_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        MRP manufacture order navigate by state workcenter is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_mrp_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Apps Navigator by Category, Module Navigator is ready.
-                        <a href="http://www.odoo.com/apps/modules/19.0/app_module_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        It is so easy to customize, you can use it in anywhere in odoo
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2>&nbsp;</h2>
-        <h2 class="bg-warning text-center pt8 pb8 mt16 mb16">So Easy to navigator and search any data.</h2>
-        <h4 class="oe_slogan">Product by category or type in kanban view</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img oe_demo oe_screenshot img img-fluid src="use.jpg"/>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Free to Use in product category.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="product1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Free to Use in POS point of sale.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="pos1.jpg">
-        </div>
-        <h4 class="oe_slogan">POS product and order.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="pos2.jpg">
-        </div>
-        <h4 class="oe_slogan">POS report.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="pos3.jpg">
-        </div>
-    </div>
-</section>
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in HR employee.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="hr2.gif">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in Account.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="account1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in Sale.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="sale1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in CRM.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="crm1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in purchase.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="purchase1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in MRP.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="mrp1.gif">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in stock.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="stock1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in contacts.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="contacts1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Apps Navigator by Category, Module Navigator is ready.</h4>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo_module1.jpg">
-        </div>
-        <div class="oe_demo oe_screenshot img img-fluid">
-            <img src="demo_module2.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2>&nbsp;</h2>
-        <h2 class="bg-warning text-center pt8 pb8 mt16 mb16">How to use! This app no need extra module. The price already included</h2>
-        <div class="row">
-            <h4 class="oe_slogan oe_spaced">2. Buy and Install <a href="http://www.odoo.com/apps/modules/19.0/app_web_superbar/" target="_blank">app_web_superbar. </a> <span class="text-warning">Important! Reboot odoo after installed.</span>
-            </h4>
-        </div>
-        <div class="row">
-            <h4 class="oe_slogan oe_spaced">3. Easy use of superbar</h4>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Show superbar in list view.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use7.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Show superbar in kanban view.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use8.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Show superbar in pivot view.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use9.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Show superbar in graph view.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="usea.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Click switch to show or hide superbar.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use1.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Click checkbox to set whether to show child nodes data.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use2.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Press Ctrl(Windows) / Cmd(Mac) to Select Multi Nodes</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use3.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Set multi field to search or filter</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="use4.jpg">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <h4 class="oe_slogan oe_spaced">4. If you want to customize, Use follow param to setup widget</h4>
-            <div class="row">
-                <div class="oe_demo oe_screenshot img img-fluid">
-                    <img src="superbar_use.gif">
-                </div>
-                <ul class="oe_spaced" style="padding:8px;font-weight: 300; font-size: 20px;">
-                    <li>In search view xml, Write the &lt;superbar&gt; tag,</li>
-                    <li>position: [left, right]</li>
-                    <li>view_mode: [kanban,tree, pivot, graph view.]</li>
-                    <li>parent_key: key field name of parent child relation. leave blank would auto set.</li>
-                    <li>level: how many level to expend the tree for initialize. Default is 2</li>
-                    <li>limit: how many record to show ztree. Default is 16</li>
-                    <li>order: the field name to order by</li>
-                    <li>domain: set the domain for data, eg: [[('is_company', '=', 1)]]</li>
-                    <li>--</li>
-                    <li>Or you can set dynamic domain in .py file.</li>
-                    <li>use param: searchpanel_domain_xxx , xxx is a field name.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
- <section class="container oe_dark">
-    <div class="oe_row oe_spaced text-center">
-        <div class="row">
-            <h2 class="oe_slogan">Technical Help & Support</h2>
-        </div>
-        <div class="col-md-12 pad0">
-            <div class="oe_mt16">
-                <p><h4>
-                For any type of technical help & support requests, Feel free to contact us</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:odoo@china.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> odoo@china.com</a>
-                <p><h4>
-                Via QQ: 300883 (App user would not get QQ or any other IM support. Only for odoo project customize.)</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:300883@qq.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> 300883@qq.com</a>
-            </div>
-            <div class="oe_mt16">
-                <h4>
-                Visit our website for more support.</h4>
-<h4>https://www.odooai.cn</h4>
-            </div>
-        </div>
-    </div>
-</section>
-
+<section class="oe_container container o_cc o_cc1 pt64 pb64"><div class="row"><div class="col-lg-8 offset-lg-2 text-center">
+    <h2>功能概述 / Overview</h2>
+    <p class="lead pt16">为POS模块提供Superbar高级搜索侧栏，按门店、销售员和订单状态浏览POS销售单。</p>
+    <p class="text-muted">Provides Superbar advance search sidebar for POS module. Browse orders by store, salesperson and status.</p>
+</div></div></section>
+<section class="oe_container container o_cc o_cc2 pt64 pb64"><div class="container"><div class="row">
+    <div class="col-lg-12 text-center pb32"><h2>核心亮点 / Key Highlights</h2><p class="lead">POS模块专用Superbar</p></div>
+    <div class="col-lg-4 pb24"><div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''"><div class="card-body text-center p-4"><div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;"><i class="fa fa-store fa-lg"></i></div><h5>1. 门店导航 / Store Navigator</h5><p class="card-text">按门店树形浏览POS订单</p></div></div></div>
+    <div class="col-lg-4 pb24"><div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''"><div class="card-body text-center p-4"><div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;"><i class="fa fa-search fa-lg"></i></div><h5>2. 高级搜索 / Advance Search</h5><p class="card-text">多种字段类型的高级侧栏搜索</p></div></div></div>
+    <div class="col-lg-4 pb24"><div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''"><div class="card-body text-center p-4"><div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;"><i class="fa fa-th-large fa-lg"></i></div><h5>3. 多视图支持 / Multi-View</h5><p class="card-text">搜索侧栏适用于多种视图类型</p></div></div></div>
+</div></div></section>
+<section class="oe_container container o_cc o_cc5 pt64 pb64"><div class="row">
+    <div class="col-lg-12 text-center pb32"><h2>通用特性 / General Features</h2></div>
+    <div class="col-lg-4 pb24"><div class="text-center"><div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;"><i class="fa fa-globe fa-lg"></i></div><h5>多语言与多公司<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5></div></div>
+    <div class="col-lg-4 pb24"><div class="text-center"><div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;"><i class="fa fa-code-fork fa-lg"></i></div><h5>全版本兼容<br/><small class="text-muted">Full Version Support</small></h5></div></div>
+    <div class="col-lg-4 pb24"><div class="text-center"><div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;"><i class="fa fa-code fa-lg"></i></div><h5>代码完全开源<br/><small class="text-muted">Full Open Source</small></h5></div></div>
+</div></section>
+<section class="oe_container container o_cc o_cc1 pt64 pb64"><div class="row"><div class="col-lg-12 text-center pb32"><h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2></div><div class="col-lg-8 offset-lg-2">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><i class="fa fa-shopping-cart text-o-color-1 me-2"></i>point_of_sale / 销售点 (Point of Sale)</li>
+        <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><i class="fa fa-cube text-o-color-1 me-2"></i>app_product_superbar / 产品分类导航</li>
+    </ul>
+</div></div></section>
+<section class="oe_container container pt32 pb32"><div class="row"><div class="col-lg-12"><img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;"></div></div></section>
+<section class="oe_container container o_cc o_cc5 pt64 pb64"><div class="row"><div class="col-lg-12 text-center">
+    <h2>odooai.cn</h2><p class="lead" style="opacity:0.7;">专业Odoo服务伙伴-开发实施咨询培训全套解决方案 / Professional Odoo Solutions</p>
+    <div class="pt16"><p><i class="fa fa-globe me-2"></i>Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p><p><i class="fa fa-desktop me-2"></i>Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p><p><i class="fa fa-envelope me-2"></i>Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a></p></div>
+    <div class="pt16"><img src="qr.png" alt="QR Code" style="width:120px;"></div>
+</div></div></section>
 </html>

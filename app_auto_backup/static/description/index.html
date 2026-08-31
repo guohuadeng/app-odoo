@@ -6,262 +6,367 @@
 -->
 <html>
 <head><meta charset="utf-8"/></head>
-<!-- begin title-->
-<section class="oe_container container o_cc o_cc2">
-    <h2 class="text-center bg-warning text-white pt24 pb24">Database auto backup. Easy schedule backup and Download </h2>
-    <h3 class="text-center">数据库自动备份及快速下载</h3>
-</section>
-<!-- end title-->
 
-<section class="oe_container container">
-    <div class="oe_row oe_spaced" >
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "app_auto_backup - Database Auto Backup and Download",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  },
+  "description": "Automated Odoo database backup with SFTP remote backup, one-click manual backup, backup file download management, e-mail failure notification.",
+  "softwareVersion": "18.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "Scheduled database backup via cron",
+    "Remote SFTP backup with SSH tunnel",
+    "One-click manual database backup",
+    "Download and manage backup files",
+    "Test SFTP connection",
+    "E-mail notification on backup failure",
+    "Auto cleanup old backups",
+    "Multi-language and Multi-company support",
+    "Full Open Source"
+  ]
+}
+</script>
+
+<!-- begin header / hero -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">数据库自动备份 / Database Auto Backup and Download</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Odoo数据库定时备份、远程SFTP备份、一键下载 / Automated Backup with SFTP Remote &amp; Easy Download</p>
+            <p class="lead">
+                通过定时任务自动备份数据库，支持本地和远程SFTP加密传输，一键手动备份与下载<br/>
+                Schedule automated database backups with local and remote SFTP storage, one-click manual backup and download
+            </p>
+            <div class="pt16">
+                <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版 / Enterprise &amp; Community</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司 / Multi-Company</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言 / Multi-Language</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end header -->
+
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述 / Overview</h2>
+            <p class="lead pt16">
+                本模块为 Odoo 提供完整的数据库自动备份解决方案。支持定时任务（cron）自动备份、远程 SFTP 加密传输备份、一键手动备份、备份文件下载与管理、连接测试、备份失败邮件通知、自动清理过期备份。
+            </p>
+            <p class="text-muted">
+                This module provides a complete database auto-backup solution for Odoo. Supports cron scheduled backups, remote SFTP encrypted backup, one-click manual backup, backup file download/management, connection testing, failure e-mail notification, and auto cleanup of old backups.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- end overview -->
+
+<!-- begin feature list -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>完整功能列表 / Complete Feature List</h2>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>1. 快速按日程自动备份数据库</b><br/>
+                    <small class="text-muted">Easy schedule database backup via cron job.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>2. 设置远程SFTP备份和定时计划</b><br/>
+                    <small class="text-muted">Set remote SFTP backup and cron schedule.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>3. 一键手动备份数据库</b><br/>
+                    <small class="text-muted">Manual backup database in one click.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>4. 系统用户可直接下载或删除备份文件</b><br/>
+                    <small class="text-muted">Easy download backup file or remove file for System user.</small>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end feature list -->
+
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="container">
         <div class="row">
-            <div class="oe_row">
-                <h3>Latest update: v18.25.02.26</h3>
-                <div class="row">
-                    <img class="oe_demo  oe_screenshot img img-fluid"  style="max-height: 100%;" src="banner.png">
+            <div class="col-lg-12 text-center pb32">
+                <h2>核心亮点 / Key Highlights</h2>
+                <p class="lead">安全可靠的数据备份方案 / Secure and Reliable Backup Solution</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-clock-o fa-lg"></i>
+                        </div>
+                        <h5>1. 定时自动备份 / Scheduled Backup</h5>
+                        <p class="small text-muted">Cron Job Automation</p>
+                        <p class="card-text">通过定时任务自动执行数据库备份</p>
+                    </div>
                 </div>
-                <div class="oe_span12 oe_spaced">
-                    <div class="alert alert-info" style="padding:8px;font-weight: 300; font-size: 20px;">
-                        <i class="fa fa-hand-o-right"></i><b> Key features: </b>
-                        <ul class="list-unstyled">
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                1. Easy schedule database backup
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                2. Set remote backup and cron schedule
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                3. Manual backup database in one click
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                4. Easy download backup file or remove file for System user
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                11. Multi-language Support. Multi-Company Support.
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                12. Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                13. Full Open Source.
-                            </li>
-                        </ul>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-server fa-lg"></i>
+                        </div>
+                        <h5>2. 远程SFTP备份 / Remote SFTP Backup</h5>
+                        <p class="small text-muted">SSH Encrypted Tunnel</p>
+                        <p class="card-text">通过SFTP加密隧道备份到远程服务器</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-envelope fa-lg"></i>
+                        </div>
+                        <h5>3. 失败邮件通知 / Failure Notification</h5>
+                        <p class="small text-muted">Auto E-mail Alert</p>
+                        <p class="card-text">备份失败时自动发送邮件通知</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- end key highlights -->
 
-<!-- quick demo-->
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2 class="bg-warning text-center pt8 pb8 mt16 mb16">1. Easy schedule database backup</h2>
-        <h4 class="oe_slogan">快速按日程自动备份，方便的直接下载 </h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="demo1.jpg"/>
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性 / General Features</h2>
         </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2 class="bg-warning text-center pt8 pb8 mt16 mb16">2. Set remote backup and cron schedule</h2>
-        <h4 class="oe_slogan">支持远程备份 </h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="demo2.jpg"/>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2 class="bg-warning text-center pt8 pb8 mt16 mb16">3. Manual backup database in one click</h2>
-        <h4 class="oe_slogan">一键手动备份 </h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="demo3.jpg"/>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h2 class="bg-warning text-center pt8 pb8 mt16 mb16">4. Easy download backup file or remove file for System user</h2>
-        <h4 class="oe_slogan">系统用户可以直接下载所有数据库备份文件，进行备份管理</h4>
-        <div class="oe_demo  oe_screenshot img img-fluid">
-            <img  src="demo4.jpg"/>
-        </div>
-    </div>
-</section>
-
-<!-- end quick demo-->
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <div class="row">
-            <h2 class="oe_slogan">Database Automated backups</h2>
-            <p>optimized from auto_backup of Yenthe Van Ginneken</p>
-            <h3 class="oe_slogan">A tool for all your back-ups, internal and external!</h3>
-        </div>
-	<div class="oe_span6">
-            <div class="oe_demo oe_picture oe_screenshot img img-fluid">
-                    <img src="overview.png">
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-globe fa-lg"></i>
+                </div>
+                <h5>多语言与多公司<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
             </div>
         </div>
-	<div class="oe_span6">
-            <p class="oe_mt32">
-		Keep your Odoo data safe with this module. Take automated back-ups, remove them automatically
-		and even write them to an external server through an encrypted tunnel.
-		You can even specify how long local backups and external backups should be kept, automatically!
-            </p>
-            <div class="oe_centeralign oe_websiteonly">
-                <a href="http://www.openerp.com/start?app=mail" class="oe_button oe_big oe_tacky">Start your <span class="oe_emph">free</span> trial</a>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code-fork fa-lg"></i>
+                </div>
+                <h5>全版本兼容<br/><small class="text-muted">Full Version Support</small></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code fa-lg"></i>
+                </div>
+                <h5>代码完全开源<br/><small class="text-muted">Full Open Source</small></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
             </div>
         </div>
     </div>
 </section>
-<!-- Second block -->
- <section class="container oe_dark">
-    <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan">Connect with an FTP Server</h2>
-        <h3 class="oe_slogan">Keep your data safe, through an SSH tunnel!</h3>
-        <div class="oe_span6">
-            <p class="oe_mt32">
-		Want to go even further and write your backups to an external server?
-		You can with this module! Specify the credentials to the server, specify a path and 			everything will be backed up automatically. This is done through an SSH (encrypted) tunnel, 			thanks to pysftp, so your data is safe!
+<!-- end general features -->
 
-            </p>
-        </div>
-        <div class="oe_span6">
-            <div class="oe_row_img oe_centered">
-                <img class="oe_picture oe_screenshot img img-fluid" src="terminalssh.png">
-            </div>
-        </div>
-    </div>
-</section>
-<!--Third block -->
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <div class="row">
-            <h2 class="oe_slogan">Test connection</h2>
-            <h3 class="oe_slogan">Checks your credentials in one click</h3>
-        </div>
-	<div class="oe_span6">
-            <div class="oe_demo oe_picture oe_screenshot img img-fluid">
-                    <img src="testconnection.png">
-		    <img src="testconnectionfailed.png">
-            </div>
-        </div>
-	<div class="oe_span6">
-            <p class="oe_mt32">
-		Want to make sure if the connection details are correct and if Odoo can automatically write them to the remote server? Simply click on the 'Test SFTP Connection' button and you will get message telling you if everything is OK, or what is wrong!
-            </p>
+<!-- begin screenshots -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>界面截图 / Screenshots</h2>
+            <p class="lead">核心功能界面一览</p>
         </div>
     </div>
-</section>
-<!-- Fourth block -->
- <section class="container oe_dark">
-    <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan">E-mail on backup failure</h2>
-        <h3 class="oe_slogan">Stay informed of problems, automatically!</h3>
-        <div class="oe_span6">
-            <p class="oe_mt32">
-		Do you want to know if the database backup failed? Check the checkbox 'Auto. E-mail on backup fail' and fill in your e-mail.
-		Every time a backup fails you will get an e-mail in your mailbox with technical details.
-            </p>
-        </div>
-        <div class="oe_span6">
-            <div class="oe_row_img oe_centered">
-                <img class="oe_picture oe_screenshot img img-fluid" src="emailnotification.png">
-            </div>
-        </div>
-    </div>
-</section>
-<!--Fifth block -->
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <div class="row">
-            <h2 class="oe_slogan">Contact / Support</h2>
-            <h3 class="oe_slogan">Need help or want extra features?</h3>
-        </div>
-	<div class="oe_span6">
-            <p class="oe_mt32">
-		Need help with the configuration or want this module to have more functionalities?
-		Please create a bug report <a href="https://github.com/Yenthe666/auto_backup/issues">on the Github issue tracker</a>
-            </p>
-        </div>
-    </div>
-</section>
 
-<!-- begin free-->
-<!-- end free-->
-
-<!-- begin howto-->
-<section class="oe_container container s_text_block o_colored_level pt16 pb16">
-    <h2 class="text-center bg-info text-white pt16 pb16">- How to setup and use -</h2>
-    <h3>This app need no extra module. The price already included</h3>
-</section>
-<section class="oe_container container">
-    <div class="oe_row oe_spaced">
-        <h4 class="pt16">
-            1. Buy and Install
-        </h4>
-        <h4 class="pt16">
-            2. Read the app description for user guide
-        </h4>
-        <h4 class="pt16">
-            3. Enjoy and easy use
-        </h4>
-        <div class="row">
-            <div class="oe_demo oe_screenshot img img-fluid">
-                <img src="banner.png">
-            </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Easy Schedule Database Backup / 快速按日程自动备份</h3>
+            <img class="img-fluid rounded shadow" src="demo1.jpg" alt="Schedule Backup">
         </div>
-        <h4 class="pt16">4. More information in our FAQ</h4>
-        <div class="row">
-            <a href="https://www.odooai.cn/faq" target="_blank">https://www.odooai.cn/faq</a>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Set Remote Backup and Cron Schedule / 设置远程备份和定时计划</h3>
+            <img class="img-fluid rounded shadow" src="demo2.jpg" alt="Remote Backup Setup">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Manual Backup Database in One Click / 一键手动备份</h3>
+            <img class="img-fluid rounded shadow" src="demo3.jpg" alt="Manual Backup">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Download and Manage Backup Files / 下载和管理备份文件</h3>
+            <img class="img-fluid rounded shadow" src="demo4.jpg" alt="Download Backup Files">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Database Automated Backups Overview / 数据库自动备份概览</h3>
+            <img class="img-fluid rounded shadow" src="overview.png" alt="Overview">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Connect with FTP Server via SSH / 通过SSH连接FTP服务器</h3>
+            <img class="img-fluid rounded shadow" src="terminalssh.png" alt="SSH Terminal">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Test SFTP Connection / 测试SFTP连接</h3>
+            <img class="img-fluid rounded shadow" src="testconnection.png" alt="Test Connection">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>E-mail Notification on Backup Failure / 备份失败邮件通知</h3>
+            <img class="img-fluid rounded shadow" src="emailnotification.png" alt="Email Notification">
         </div>
     </div>
 </section>
-<!-- end howto-->
+<!-- end screenshots -->
 
-<!-- begin upsell-->
-<!-- end upsell-->
-
-<!-- begin support-->
-<section class="container oe_dark">
-    <div class="oe_row oe_spaced text-center">
-        <div class="row">
-            <h2 class="oe_slogan">Technical Help & Support</h2>
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程 / How It Works</h2>
         </div>
-        <div class="col-md-12 pad0">
-            <div class="oe_mt16">
-                <p><h4 class="pt16">
-                For any type of technical help & support requests, Feel free to contact us</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:odoo@china.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> odoo@china.com</a>
-                <p><h4 class="pt16">
-                Via QQ: 300883 (App user would not get QQ or any other IM support. Only for odoo project customize.)</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:300883@qq.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> 300883@qq.com</a>
-            </div>
-            <div class="oe_mt16">
-                <h4 class="pt16">Visit our website for more support.</h4>
-                <h4 class="pt16">https://www.odooai.cn</h4>
+        <div class="col-lg-8 offset-lg-2">
+            <div class="row text-center">
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">安装模块</p>
+                    <p class="small text-muted mb-0">Install Module</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-cog"></i>
+                    </div>
+                    <p class="fw-bold mb-1">配置备份</p>
+                    <p class="small text-muted mb-0">Configure Backup</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <p class="fw-bold mb-1">激活定时</p>
+                    <p class="small text-muted mb-0">Activate Cron</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-shield"></i>
+                    </div>
+                    <p class="fw-bold mb-1">自动保护</p>
+                    <p class="small text-muted mb-0">Auto Protected</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<!-- end support-->
+<!-- end how it works -->
+
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-cube text-o-color-1 me-2"></i>
+                    base / 基础模块
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-wrench text-o-color-1 me-2"></i>
+                    app_odoo_customize / Odoo自定义基础模块
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">专业Odoo服务伙伴-开发实施咨询培训全套解决方案 / Professional Odoo Solutions</p>
+            <div class="pt16">
+                <p>
+                    <i class="fa fa-globe me-2"></i>
+                    Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-desktop me-2"></i>
+                    Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-envelope me-2"></i>
+                    Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a>
+                </p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
+
 </html>

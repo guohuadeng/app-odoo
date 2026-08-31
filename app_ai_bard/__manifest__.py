@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
 # Created on 2023-02-016
-# author: 欧度智能，https://www.odooai.cn
+# author: 娆у害鏅鸿兘锛宧ttps://www.odooai.cn
 # email: 300883@qq.com
 # resource of odooai
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Google Gemini (Bard) Ai for odoo ai center, 谷歌Ai支持',
+    'name': '璋锋瓕Gemini AI鏀寔,Google Gemini (Bard) AI for Odoo',
     'version': '19.0.25.07.26',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
@@ -18,11 +18,7 @@
     'license': 'LGPL-3',
     'sequence': 10,
     'images': ['static/description/banner.gif', 'static/description/banner.png'],
-    'summary': '''
-    Google Gemini Ai for Odoo AI Center. Ai Aigc Center including Google Gemini Ai(Bard before), Azure Ai, Baidu Ai.
-    Support chatgpt 4 image. DALLE, Integration All ChatGpt Api and Azure OpenAI Service.
-    Easy Chat channel with several ChatGPT Robots and train.
-    ''',
+    'summary': "Odoo AI涓績闆嗘垚Google Gemini(Bard)AI锛屾敮鎸佸AI鏈哄櫒浜哄璇濅笌璁粌銆侴oogle Gemini AI integration for Odoo AI Center with multi-robot chat and training.",
     'description': '''
     Chat with google Gemini ai with odoo.
     Allows the application to leverage the capabilities of the GPT language model to generate human-like responses,

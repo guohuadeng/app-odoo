@@ -7,11 +7,18 @@
             <field name="name">ai.discuss.channel.tree</field>
             <field name="inherit_id" ref="mail.discuss_channel_view_tree"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="sequence" widget="handle"/>
+                    <field name="id" optional="show" groups="base.group_no_one"/>
+                </xpath>
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="ai_partner_id" optional="show"/>
                     <field name="description" optional="show"/>
                     <field name="is_private" optional="show"/>
                     <field name="set_max_tokens" optional="hide"/>
+                </xpath>
+                <xpath expr="//list" position="inside">
+                    <field name="group_public_id" optional="hide" groups="base.group_no_one"/>
                 </xpath>
             </field>
         </record>
@@ -71,6 +78,7 @@
                 <xpath expr="//field[@name='group_public_id']/.." position="after">
                     <group string="Ai Response Config">
                         <field name="chat_count"/>
+
                         <p class="ml16 my-n1 mb16" colspan="2">0-3, After setting, the last n conversations will be sent to AI to help it respond better</p>
                         <field name="max_tokens"/>
                         <p class="ml16 my-n1 mb16" colspan="2">Maximum response tokens, controls return content length</p>
@@ -92,36 +100,31 @@
             <field name="mode">extension</field>
             <field name="arch" type="xml">
                 <xpath expr="//kanban//field[1]" position="before">
+                    <field name="sequence"/>
                     <field name="is_private"/>
                     <field name="ai_partner_id"/>
                     <field name="ext_ai_partner_id"/>
                     <field name="is_ai_conversation"/>
                 </xpath>
-                <xpath expr="//field[@name='description']" position="before">
-                    <em>Role:</em>
-                </xpath>
-                <xpath expr="//button[@name='channel_join']" position="replace">
-                    <div class="row mt4 mb4">
-                        <span class="mr4">
-                            Main Ai:<field name="ai_partner_id" widget="many2one_avatar" class="ml4 mr8"
-                               options="{'no_open': True, 'no_create': True}"/>
-                        </span>
-                        <span>
-                            Ai Conversation:<field name="is_ai_conversation" widget="boolean_toggle"/>
-                        </span>
+                <xpath expr="//templates//field[@name='description']" position="after">
+                    <div class="d-flex mt4">
+                        Main Ai:
+                        <field name="ai_partner_id" widget="many2one_avatar" class="col-8 ml4 ml-auto"
+                           options="{'no_open': True, 'no_create': True}"/>
                     </div>
-                    <button invisible="is_member or group_ids"
-                            class="btn btn-warning float-end" type="edit">
-                        Settings
-                    </button>
-                    <button type="object" invisible="is_member or group_ids"
-                            class="btn btn-primary float-end" name="channel_join">
-                        Join Channel
-                    </button>
+                    <div class="d-flex mt4">
+                        Ai Conversation:
+                        <field name="is_ai_conversation" widget="boolean_toggle" class="col-8 ml4 ml-auto"/>
+                    </div>
+                    <div class="btn-group mt4" role="group" name="op">
+                        <button class="btn btn-warning float-end mr4" type="edit" id="channel_edit">
+                            Settings
+                        </button>
+                    </div>
                 </xpath>
-                <xpath expr="//button[@name='action_unfollow']" position="replace">
-                    <button type="object" invisible="is_member or group_ids"
-                            class="btn btn-secondary float-end" name="action_unfollow">暂时离开</button>
+                <xpath expr="//div[@name='op']" position="inside">
+                    <xpath expr="//templates//button[@name='channel_join']" position="move"/>
+                    <xpath expr="//templates//button[@name='action_unfollow']" position="move"/>
                 </xpath>
             </field>
         </record>
@@ -133,9 +136,11 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="channel_type"/>
-                    <group expand="0" string="Group By">
-                        <filter string="Channel Type" name="groupby_channel_type" domain="[]" context="{'group_by': 'channel_type'}"/>
-                    </group>
+                    <separator/>
+                    <filter string="Channel Type" name="groupby_channel_type" domain="[]" context="{'group_by': 'channel_type'}"/>
+                </xpath>
+                <xpath expr="//filter[@name='inactive']" position="before">
+                    <filter string="Ai Channel" name="is_ai" domain="[('ai_partner_id', '!=', False)]"/>
                 </xpath>
             </field>
         </record>

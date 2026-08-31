@@ -8,6 +8,8 @@
                 <field name="id" optional="hide"/>
                 <field name="name"/>
                 <field name="file_path"/>
+                <field name="create_uid" optional="hide"/>
+                <field name="create_date" optional="whow"/>
                 <field name="url" invisible="1"/>
                 <button name="action_download_file" type="object" title="Download File" class="fa fa-download"/>
                 <button name="action_remove_file" type="object" title="Remove File" class="fa fa-trash"/>

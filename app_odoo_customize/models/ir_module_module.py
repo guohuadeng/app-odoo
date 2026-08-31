@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
+import operator
+
 from odoo import api, fields, models, modules, tools, _
 from odoo.addons.base.models.ir_module import assert_log_admin_access
-
-import operator
 
 
 class IrModuleModule(models.Model):

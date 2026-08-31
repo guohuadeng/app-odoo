@@ -17,7 +17,7 @@
 
 
 {
-    'name': 'odoo中国版，中文本土化套件,中国会计基础,Odoo Chinese localization Enhance All in One',
+    'name': "odoo中国版中文本土化套件,Odoo Chinese Localization Enhance All in One",
     'version': '19.0.26.02.13',
     'author': 'odooai.cn',
     'category': 'Base',
@@ -27,10 +27,7 @@
     'sequence': 2,
     'price': 0,
     'currency': 'EUR',
-    'summary': '''
-    odoo简体中文版全面增强. 更具政策敏感性的翻译。Chinese enhance. Out of the box use odoo in china. Chinese address format, number format, money format.
-    Set all chinese default value. Default country, timezone, currency, partner.中国会计基础模块.
-    ''',
+    'summary': "Odoo简体中文版全面增强，开箱即用的中国本土化。Chinese enhance with address format, timezone, currency, policy sensitivity.",
     'description': '''
     odoo Chinese Enhance. odoo中国版增强-基础
     1. 中文地址格式，适用于所有中国中文客户、供应商、合作伙伴、用户、员工信息等
@@ -51,7 +48,7 @@
     16. 精简语言的显示，如 Chinese简体中文改为 中文
     17. 将'国家'字段处理为'国家/地区'，避免政策敏感问题(需配合我司Odoo中文翻译)
     21. 多语言支持，多公司支持
-    22. Odoo 19,18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    22. Odoo 18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
     23. 代码完全开源
     ======
     1. Chinese address format, applicable to all Chinese customers, suppliers, partners, users, employee information etc.

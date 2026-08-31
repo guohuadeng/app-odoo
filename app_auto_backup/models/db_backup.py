@@ -29,7 +29,7 @@ class DbBackup(models.Model):
     _description = 'Backup configuration record'
 
     def _get_db_name(self):
-        dbName = self._cr.dbname
+        dbName = self.env.cr.dbname
         return dbName
 
     # Columns for local server configuration
@@ -244,7 +244,7 @@ class DbBackup(models.Model):
                                       "\n\nWith kind regards"
                             catch_all_domain = self.env["ir.config_parameter"].sudo().get_param("mail.catchall.domain")
                             response_mail = "auto_backup@%s" % catch_all_domain if catch_all_domain else self.env.user.partner_id.email
-                            msg = ir_mail_server.build_email(response_mail, [rec.email_to_notify],
+                            msg = ir_mail_server._build_email__(response_mail, [rec.email_to_notify],
                                                              "Backup from " + rec.host + "(" + rec.sftp_host +
                                                              ") failed",
                                                              message)

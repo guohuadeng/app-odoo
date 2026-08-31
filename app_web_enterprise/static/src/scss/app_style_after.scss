@@ -1,8 +1,8 @@
-
 // 不显示 tooltip
-.o_tooltip.o_tooltip_visible  {
+.o_tooltip.o_tooltip_visible {
   display: none;
 }
+
 // 上方菜单下拉，group 也有箭头
 .o_main_navbar {
   .o-dropdown {
@@ -18,10 +18,11 @@
     }
   }
 }
+
 // 上方消息，btn
 .o-main-components-container {
-  .o-overlay-container  {
-    .o_popover.o-mail-DiscussSystray  {
+  .o-overlay-container {
+    .o_popover.o-mail-DiscussSystray {
       .o-mail-MessagingMenu {
         a.btn {
           min-width: 60px;
@@ -32,13 +33,26 @@
 }
 
 //list
+
+@media (min-width: 1534px) {
+  .o_form_view.o_xxl_form_view .o_form_sheet {
+    --formView-sheet-padding-x: var(--formView-sheet-padding-x-lg, 24px);
+  }
+}
+
 .o_list_renderer.table-responsive .o_list_table {
+  //收藏控制宽度
+  th.o_priority_cell, th.o_boolean_favorite_cell {
+    max-width: 42px;
+  }
+
   //list 改标头背景，o2m这里分开写
   :not(.o_field_x2many_list) > & thead, tfoot {
     tr {
       background-color: $o-gray-100;
     }
   }
+
   .o_field_x2many_list > & thead, tfoot {
     tr {
       background-color: $o-gray-100;
@@ -46,9 +60,10 @@
   }
 
   //列表标头下显示边框，标尾头显示边框
-  > :not(:first-child)  {
+  > :not(:first-child) {
     border-top-width: 2px;
   }
+
   //列表标头左右下显示边框
   --ListRenderer-thead-border-end-color: #{map-get($grays, '300')};
 
@@ -83,18 +98,20 @@
 }
 
 //form
-  //  create 按键
+//  create 按键
 .o_form_view .o_form_view_container {
-    button.o_form_button_create {
-      min-width: 4rem;
-    }
+  button.o_form_button_create {
+    min-width: 4rem;
+  }
 }
+
 @media (max-width: 768px) {
   .o_form_view .o_form_view_container {
     //  create 按键
-      button.o_form_button_create {
-        padding: 7px 10px;
-      }
+    button.o_form_button_create {
+      padding: 7px 10px;
+    }
+
     .o_form_sheet_bg .o_form_sheet {
       margin: 6px auto;
     }
@@ -121,6 +138,7 @@
     &:not(.o_field_highlight) .o_field_widget:not(.o_field_invalid):not(.o_field_highlight) .o_input:not(:hover):not(:focus) {
       --o-input-border-color: #{map-get($grays, '200')};
     }
+
     &:not(.o_field_highlight) .o_required_modifier.o_field_widget:not(.o_field_invalid):not(.o_field_highlight) .o_input:not(:hover):not(:focus) {
       --o-input-border-color: #{map-get($grays, '600')};
     }
@@ -132,6 +150,7 @@
     &:not(.o_field_highlight) .o_field_widget:not(.o_field_invalid):not(.o_field_highlight) .o_input:not(:hover):not(:focus) {
       --o-input-border-color: #{map-get($grays, '200')};
     }
+
     &:not(.o_field_highlight) .o_required_modifier.o_field_widget:not(.o_field_invalid):not(.o_field_highlight) .o_input:not(:hover):not(:focus) {
       --o-input-border-color: #{map-get($grays, '600')};
     }
@@ -145,12 +164,14 @@
     }
   }
 }
+
 // 编辑模式默认 input下方border 有颜色。必填的深色
 .o_form_view {
   .o_form_view_container {
     &:not(.o_field_highlight) .o_field_widget:not(.o_field_invalid):not(.o_field_highlight) .o_input:not(:hover):not(:focus) {
       --o-input-border-color: #{map-get($grays, '200')};
     }
+
     &:not(.o_field_highlight) .o_required_modifier.o_field_widget:not(.o_field_invalid):not(.o_field_highlight) .o_input:not(:hover):not(:focus) {
       --o-input-border-color: #{map-get($grays, '600')};
     }
@@ -162,6 +183,7 @@
     &:not(.o_field_highlight) .o_field_widget:not(.o_field_invalid):not(.o_field_highlight) .o_input:not(:hover):not(:focus) {
       --o-input-border-color: #{map-get($grays, '200')};
     }
+
     &:not(.o_field_highlight) .o_required_modifier.o_field_widget:not(.o_field_invalid):not(.o_field_highlight) .o_input:not(:hover):not(:focus) {
       --o-input-border-color: #{map-get($grays, '600')};
     }
@@ -179,18 +201,31 @@
 //page 中优化
 .o_notebook {
   --notebook-link-border-color-active: #{$border-color};
+
   .nav-link.active, .nav-link.active:hover, .nav-link.active:focus, .nav-link.active:active {
     border-left-color: var(--notebook-link-border-color-active-accent, var(--notebook-link-border-color-active));
     border-right-color: var(--notebook-link-border-color-active-accent, var(--notebook-link-border-color-active));
     border-bottom: 1.5px solid #{$o-brand-lightsecondary};
   }
 }
+
+//设置 form，会计相关设置显示全屏
+@media (min-width: 1400px) {
+  .o_base_settings_view .o_form_renderer {
+    .o_setting_container .settings {
+      > .app_settings_block[data-key="account"] .o_settings_container {
+        max-width: 1300px !important;
+      }
+    }
+  }
+}
+
 //end form
 
 //    report
 .o_account_reports_page .o_account_reports_table {
   .o_account_report_column_value tr > td.number {
-      border-left: 1px solid var(--AccountFinancial-border-color, #bbb);
+    border-left: 1px solid var(--AccountFinancial-border-color, #bbb);
   }
 }
 

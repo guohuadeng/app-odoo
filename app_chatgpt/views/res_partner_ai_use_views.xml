@@ -78,7 +78,7 @@
         <field name="res_model">res.partner.ai.use</field>
         <field name="view_mode">list,form</field>
         <field name="domain">[('ai_user_id', 'in', active_ids)]</field>
-        <field name="context">{'default_ai_user_id':active_id,}</field>
+        <field name="context">{'default_ai_user_id': id,}</field>
     </record>
 
     <menuitem

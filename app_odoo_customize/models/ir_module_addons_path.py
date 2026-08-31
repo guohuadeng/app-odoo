@@ -34,7 +34,7 @@ class IrModuleAddonsPath(models.Model):
 
         return {'type': 'ir.actions.act_window',
                 'name': 'Apps',
-                'view_mode': 'kanban,tree,form',
+                'view_mode': 'kanban,list,form',
                 'res_model': 'ir.module.module',
                 'context': {},
                 'domain': [('addons_path_id', '=', self.id)],

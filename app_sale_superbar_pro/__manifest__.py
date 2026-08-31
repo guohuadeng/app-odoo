@@ -16,23 +16,38 @@
 # description:
 
 {
-    'name': "Advance sale order navigator by partner and channel",
-    'version': '19.0.25.12.30',
+    'name': '销售订单高级超级搜索栏 / Advance Sale Order Navigator by Partner and Channel',
+    'version': '19.0.24.12.04',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 2,
-    'summary': """
-    Browse sale order by partner and sale channel. Use for parent children tree list kanban navigator.
-    Hierarchy Tree.Parent Children relation tree..
-    """,
+    'summary': '按客户和销售渠道高级浏览销售订单，即时和延迟搜索模式 / Advance browse sale orders by partner and channel with instant and lazy search mode',
     'description': """
-    Superbar, zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+1. Pro version of Sale Order Superbar with advanced search capabilities.
+2. Support instant mode for one-click search and lazy mode for big data performance.
+3. Advance search with real parent children tree in ListView, KanbanView, Pivot and Graph view.
+4. Support search more view for quick product lookup.
+5. Support multi-field search and filter.
+6. Mobile responsive view, optimized for big screen HD view.
+7. Easy to customize for any Odoo module with simple XML configuration.
+8. Multi-Language Support.
+9. Multi-Company Support.
+10. Full Version Support for Odoo 19,18,17,16,15,14,13,12, Enterprise and Community Edition.
+11. Full Open Source under LGPL-3 license.
+1. 销售订单超级搜索栏专业版，提供高级搜索功能。
+2. 支持即时模式一键搜索，延迟模式适合大数据量性能优化。
+3. 使用父子树结构在列表、看板、透视和图表视图中进行高级搜索。
+4. 支持搜索更多视图，快速查找产品。
+5. 支持多字段搜索和筛选。
+6. 移动端自适应响应式视图，优化大屏幕高清显示。
+7. 通过简单 XML 配置即可在任何 Odoo 模块中定制使用。
+8. 多语言支持。
+9. 多公司支持。
+10. 全版本支持 Odoo 19,18,17,16,15,14,13,12，兼容企业版和社区版。
+11. 代码完全开源，基于 LGPL-3 协议。
     """,
     'price': 0.00,
     'currency': 'EUR',

@@ -55,16 +55,17 @@ class ResConfigSettings(models.TransientModel):
         ('bottom', 'Bottom'),
         # ('left', 'Left'),
     ], config_parameter='app_navbar_pos_mobile')
-    
+
     # 安全与提速
     app_debug_only_admin = fields.Boolean('Debug for Admin', config_parameter='app_debug_only_admin',
                                           help="Check to only Debug / Debug Assets for Odoo Admin. Deny debug from url for other user.")
-    app_stop_subscribe = fields.Boolean('Stop Odoo Subscribe', help="Check to stop subscribe and follow. This to make odoo speed up.",
+    app_stop_subscribe = fields.Boolean('Stop Odoo Subscribe',
+                                        help="Check to stop subscribe and follow. This to make odoo speed up.",
                                         config_parameter='app_stop_subscribe')
     # 处理额外模块
     module_app_odoo_doc = fields.Boolean("Help Document Anywhere", help='Get Help Documentation on current odoo operation or topic.')
     module_app_chatgpt = fields.Boolean("Ai Center", help='Use Ai to boost you business.')
-    
+
     # 应用帮助文档
     app_doc_root_url = fields.Char('Help of topic domain', config_parameter='app_doc_root_url', default='https://odooai.cn')
 
@@ -185,7 +186,7 @@ class ResConfigSettings(models.TransientModel):
                 }
             }
         return True
-    
+
     def remove_sales(self):
         to_removes = [
             # 清除销售单据
@@ -726,7 +727,7 @@ class ResConfigSettings(models.TransientModel):
             'event.event',
         ]
         return self._remove_app_data(to_removes, seqs, 'remove_event')
-    
+
     def remove_website_blog(self):
         to_removes = [
             # 清除网站数据，w, w_blog

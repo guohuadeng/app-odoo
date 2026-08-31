@@ -3,15 +3,15 @@
     <data noupdate="1">
 
         <record id="product_category_2" model="product.category">
-            <field name="parent_id" ref="product.product_category_goods"/>
+            <field name="parent_id" ref="product.product_category_all"/>
             <field name="name">Internal</field>
         </record>
         <record id="product_category_3" model="product.category">
-            <field name="parent_id" ref="product.product_category_goods"/>
+            <field name="parent_id" ref="product.product_category_1"/>
             <field name="name">Services</field>
         </record>
         <record id="product_category_4" model="product.category">
-            <field name="parent_id" ref="product.product_category_goods"/>
+            <field name="parent_id" ref="product.product_category_1"/>
             <field name="name">Software</field>
         </record>
         <record id="product_category_5" model="product.category">
@@ -493,14 +493,14 @@
         <record id="membership_0" model="product.product">
             <field name="name">Gold Membership</field>
             <field name="list_price">180</field>
-            <field name="categ_id" ref="product.product_category_goods"/>
+            <field name="categ_id" ref="product.product_category_1"/>
             <field name="type">service</field>
             <field name="active" eval="False"/>
         </record>
 
         <record id="membership_1" model="product.product">
             <field name="name">Silver Membership</field>
-            <field name="categ_id" ref="product.product_category_goods"/>
+            <field name="categ_id" ref="product.product_category_1"/>
             <field name="list_price">80</field>
             <field name="type">service</field>
             <field name="active" eval="False"/>
@@ -508,7 +508,7 @@
 
         <record id="membership_2" model="product.product">
             <field name="name">Basic Membership</field>
-            <field name="categ_id" ref="product.product_category_goods"/>
+            <field name="categ_id" ref="product.product_category_1"/>
             <field name="list_price">40</field>
             <field name="type">service</field>
             <field name="active" eval="False"/>

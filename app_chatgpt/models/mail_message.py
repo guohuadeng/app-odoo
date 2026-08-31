@@ -29,29 +29,22 @@ class Message(models.Model):
     ai2model = fields.Char('Ai Response model')
     ai2id = fields.Integer('Ai Response id')
 
-    def _message_add_reaction(self, content):
-        super(Message, self)._message_add_reaction(content)
-        if self.create_uid.gpt_id:
-            # 处理反馈
-            pass
-
-    def _to_store(self, store: Store, fields, **kwargs):
-        default_fields = [
-            "body",
-            "create_date",
-            "date",
-            "message_type",
-            "model",  # keep for iOS app
-            "pinned_at",
-            "res_id",  # keep for iOS app
-            "subject",
-            "write_date",
-        ]
+    def _to_store(
+        self,
+        store: Store,
+        fields,
+        *,
+        format_reply=True,
+        msg_vals=False,
+        add_followers=False,
+        followers=None,
+    ):
+        # Odoo 19: fields 为必传位置参数，移除 for_current_user，msg_vals 默认 False
         custom_fields = [
             'human_prompt_tokens',
             'ai_completion_tokens',
             'cost_tokens',
             'is_ai'
         ]
-        merged_fields = list(set((fields or default_fields) + custom_fields))
-        return super()._to_store(store, fields=merged_fields, **kwargs)
+        merged_fields = list(set(list(fields) + custom_fields))
+        return super()._to_store(store, merged_fields, format_reply=format_reply, msg_vals=msg_vals, add_followers=add_followers, followers=followers)

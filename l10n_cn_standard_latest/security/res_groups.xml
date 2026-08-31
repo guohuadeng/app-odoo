@@ -5,8 +5,6 @@
         <record id="base.group_erp_manager" model="res.groups">
             <field name="implied_ids" eval="[Command.link(ref('account.group_account_user'))]"/>
         </record>
-        <record id="base.user_admin" model="res.groups">
-            <field name="group_ids" eval="[(4, ref('account.group_account_user'))]"/>
-        </record>
+        <!-- o19：base.user_admin 为 res.users 记录且 admin 为超管，原 res.groups+groups_id 写法失效，删除 -->
     </data>
 </odoo>

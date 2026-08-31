@@ -16,24 +16,33 @@
 # description:
 
 {
-    'name': "App Pos order browse by store salesperson status",
-    'version': '19.0.25.12.30',
+    'name': "POS销售单导航 / POS Order Navigator by Store",
+    'version': '19.0.25.06.10',
     'author': 'odooai.cn',
     'category': 'Point of Sale',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 12,
-    'summary': """
-    Browse pos order by store tree. Use for parent children tree list kanban navigator.
-    Easy to navigator and browse any data. Support list, kanban, pivot, graph view.
-    Hierarchy Tree.Parent Children relation tree
-    """,
+    'summary': '按门店、销售员和状态浏览POS订单，Superbar高级搜索。/ Browse POS orders by store, salesperson and status with Superbar.',
     'description': """
-    Superbar, zTree widget.
-    Advance search with real parent children tree, ListView or KanbanView. parent tree, children tree,
-    eg: Product category tree ,Department tree, stock location tree.
-    超级方便的查询，树状视图。
+English Features:
+1. Superbar and zTree widget for POS order advance search.
+2. Browse POS orders by store, salesperson and order status.
+3. Advance search sidebar for many2one, many2many, date range, boolean, selection, number fields.
+4. Search sidebar available for list, kanban, pivot and graph views.
+5. Multi-language Support. Multi-Company Support.
+6. Support Odoo 19,18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
+7. Full Open Source.
+
+中文功能：
+1. POS订单Superbar和zTree高级搜索组件。
+2. 按门店、销售员和订单状态浏览POS订单。
+3. 高级搜索侧栏，支持many2one、many2many、日期范围、布尔、选择、数字字段。
+4. 搜索侧栏支持列表、看板、数据透视和图表视图。
+5. 多语言支持。多公司支持。
+6. 支持Odoo 19,18,17,16,15,14,13,12，企业版、社区版及odoo.sh。
+7. 代码完全开源。
     """,
     'price': 0.00,
     'currency': 'EUR',

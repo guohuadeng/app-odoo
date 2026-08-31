@@ -16,10 +16,11 @@ patch(Message.prototype, {
     document.body.removeChild(tempInput);
   },
   async onClickMarkAsGood() {
-    this.messageService.react(this.message, '👍');
+    // Odoo 19: messageService.react 已移除，改用 message.react
+    this.message.react('👍');
   },
 
   async onClickMarkAsBad() {
-    this.messageService.react(this.message, '👎');
+    this.message.react('👎');
   },
 });

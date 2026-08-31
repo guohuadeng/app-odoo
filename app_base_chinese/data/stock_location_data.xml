@@ -9,40 +9,20 @@
         </record>
     </data>
     <data noupdate="0">
-<!--        19移除-->
-<!--        <function model="stock.location" name="write">-->
-<!--            <value eval="[ref('stock.stock_location_locations', False)]"/>-->
-<!--            <value model="stock.location" eval="{-->
-<!--                'name': '物理区位',-->
-<!--            }"/>-->
-<!--        </function>-->
-<!--        19移除-->
-<!--        <function model="stock.location" name="write">-->
-<!--            <value eval="[ref('stock.stock_location_locations_partner', False)]"/>-->
-<!--            <value model="stock.location" eval="{-->
-<!--                'name': '往来单位',-->
-<!--            }"/>-->
-<!--        </function>-->
-<!--        <function model="stock.location" name="write">-->
-<!--            <value eval="[ref('stock.stock_location_locations_virtual', False)]"/>-->
-<!--            <value model="stock.location" eval="{-->
-<!--                'name': '虚拟区位',-->
-<!--            }"/>-->
-<!--        </function>-->
         <function model="stock.location" name="write">
-            <value eval="[ref('stock.stock_location_suppliers', False)]"/>
+            <value eval="[id for id in [ref('stock.stock_location_suppliers', False)] if id]"/>
             <value model="stock.location" eval="{
                 'name': '供应商区位',
             }"/>
         </function>
         <function model="stock.location" name="write">
-            <value eval="[ref('stock.stock_location_customers', False)]"/>
+            <value eval="[id for id in [ref('stock.stock_location_customers', False)] if id]"/>
             <value model="stock.location" eval="{
                 'name': '客户区位',
             }"/>
         </function>
         <function model="stock.location" name="write">
-            <value eval="[ref('stock.stock_location_inter_company', False)]"/>
+            <value eval="[id for id in [ref('stock.stock_location_inter_company', False)] if id]"/>
             <value model="stock.location" eval="{
                 'name': '多公司中转区',
             }"/>

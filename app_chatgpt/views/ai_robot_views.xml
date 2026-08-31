@@ -45,7 +45,7 @@
                             </div>
                             <div class="mt-1">
                                 <strong>
-                                    <t t-esc="record.partner_count.value"/>
+                                    <t t-out="record.partner_count.value"/>
                                 </strong>
                                 Bind Partner
                             </div>
@@ -62,7 +62,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button string="Get List Model" type="object" name="get_ai_list_model"/>
+                    <button string="Get Model List" type="object" name="get_ai_list_model"/>
                     <button string="Get Model Info" type="object" name="get_ai_model_info"/>
                 </header>
                 <sheet>
@@ -126,9 +126,8 @@
                 <field name="name"/>
                 <field name="ai_model"/>
                 <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
-                <group expand="0" name="group_by" string="Group By">
-                    <filter name="groupby_provider" string="Ai Provider" domain="[]" context="{'group_by' : 'provider'}"/>
-                </group>
+                <separator/>
+                <filter name="groupby_provider" string="Ai Provider" domain="[]" context="{'group_by' : 'provider'}"/>
             </search>
         </field>
     </record>

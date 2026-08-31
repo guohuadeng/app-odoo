@@ -16,6 +16,10 @@
 # description:
 
 from odoo import api, SUPERUSER_ID
+from odoo.tools.convert import convert_file
+import logging
+
+_logger = logging.getLogger(__name__)
 
 def pre_init_hook(env):
     """
@@ -32,7 +36,13 @@ def post_init_hook(env):
     """
     ids = env['res.company'].search([('currency_id', '=', env.ref('base.CNY').id)])
     if ids:
+        _logger.info('post_init_hook: found %d CNY companies, calling app_set_to_odooai_cn', len(ids))
         ids.app_set_to_odooai_cn()
+    else:
+        _logger.info('post_init_hook: no CNY companies found, skipping chart template loading')
+
+    _load_account_tag_data(env)
+
     # cr.execute("UPDATE account_account_template set group_id = "
     #            "(select id from account_group where account_group.code_prefix_start=trim(substring(account_account_template.code from 1 for 1)) limit 1);")
 
@@ -49,4 +59,21 @@ def post_init_hook(env):
     #         res.write({'group_id': g.id})
     #     env.cr.commit()
     pass
+
+
+def _load_account_tag_data(env):
+    """加载 account.account.tag 数据，同名标签已存在时静默跳过"""
+    cr = env.cr
+    cr.execute("SAVEPOINT load_tag_data")
+    try:
+        convert_file(
+            env, 'l10n_cn_standard_latest',
+            'data/account_account_tag_data.xml',
+            None, mode='init', noupdate=True, kind='data',
+        )
+        cr.execute("RELEASE SAVEPOINT load_tag_data")
+        _logger.info('account.account.tag data loaded successfully.')
+    except Exception as e:
+        cr.execute("ROLLBACK TO SAVEPOINT load_tag_data")
+        _logger.info('account.account.tag data skipped (may already exist): %s', e)
 

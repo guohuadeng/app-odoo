@@ -20,7 +20,7 @@ from markupsafe import Markup
 # from transformers import TextDavinciTokenizer, TextDavinciModel
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import UserError
-from odoo.fields import Domain
+from odoo.osv import expression
 from odoo.addons.app_common.models.base import get_ua_type
 
 import logging
@@ -28,17 +28,24 @@ _logger = logging.getLogger(__name__)
 
 
 class Channel(models.Model):
-    _inherit = 'discuss.channel'
+    _inherit = 'discuss.channel'  
+    _order = 'sequence,id desc'
 
-    is_private = fields.Boolean(string="Private", default=False, help="Check to set Private, Can only use by user, not Public")
+
+    sequence = fields.Integer('Sequence', default=99, 
+                              help='Determine the display order')
+    is_private = fields.Boolean(string='Private', default=False, 
+                                help='Check to set Private, Can only use by user, not Public')
     # 因为 channel_member_ids 不好处理，在此增加此字段
     # 主Ai
-    ai_partner_id = fields.Many2one(comodel_name="res.partner", string="Main Ai", required=False,
+    ai_partner_id = fields.Many2one(comodel_name='res.partner', string='Main Ai', required=False,
                                     domain=[('gpt_id', '!=', None), ('is_chat_private', '=', True)],
-                                    help="Main Ai is the robot help you default.")
-    ext_ai_partner_id = fields.Many2one(comodel_name="res.partner", string="Secondary Ai",
+                                    # default=lambda self: self._app_get_m2o_default('ai_partner_id'),
+                                    help='Main Ai is the robot help you default.')
+    ext_ai_partner_id = fields.Many2one(comodel_name='res.partner', string='Secondary Ai',
                                         domain=[('gpt_id', '!=', None), ('is_chat_private', '=', True)])
-    description = fields.Text('Ai Character', help="Ai would help you act as the Character set.")
+    description = fields.Text('Ai Character', 
+                              help='Ai would help you act as the Character set.')
     set_max_tokens = fields.Selection([
         ('300', 'Short'),
         ('600', 'Standard'),
@@ -46,26 +53,30 @@ class Channel(models.Model):
         ('2000', 'Long'),
         ('3000', 'Overlength'),
         ('32000', '32K'),
-    ], string='Max Response', default='1000', help="The larger the value, the more content returned, and the higher the cost")
+    ], string='Max Response', default='1000', 
+        help='The larger the value, the more content returned, and the higher the cost') # 越大返回内容越多،计费也越多
     set_chat_count = fields.Selection([
         ('none', 'Ai Auto'),
         ('1', '1 Standard'),
         ('3', '3 Strong Association'),
         ('5', '5 Super Association'),
-    ], string="History Count", default='1', help="0-5, After setting, the last n conversations will be sent to Ai, which helps him better answer, but too large will also increase costs")
+    ], string='History Count', default='1', 
+        help='0-5, After setting, the last n conversations will be sent to Ai, which helps him better answer, but too large will also increase costs')
     set_temperature = fields.Selection([
         ('2', 'Highly random'),
         ('1.5', 'More creative'),
         ('1', 'Default'),
         ('0.6', 'Balanced-conservative'),
         ('0.1', 'Most deterministic'),
-    ], string="Set Temperature", default='1', help="0-2, The larger the value, the more imaginative, the smaller the more conservative")
+    ], string='Set Temperature', default='1', 
+        help='0-2, The larger the value, the more imaginative, the smaller the more conservative') # 越大越富有想像力，越小则越保守
     set_top_p = fields.Selection([
         ('0.9', 'More Random'),
         ('0.6', 'Balanced'),
         ('0.4', 'Focused'),
         ('0.1', 'Conservative'),
-    ], string="Top Probabilities", default='0.6', help="0-1, Higher values consider more possibilities for diverse output")
+    ], string='Top Probabilities', default='0.6', 
+        help='0-1, Higher values consider more possibilities for diverse output')
     # 避免使用常用词
     set_frequency_penalty = fields.Selection([
         ('2', 'Pedantic - Obscure and Difficult'),
@@ -74,7 +85,8 @@ class Channel(models.Model):
         ('0.1', 'Fewer Common Words'),
         ('-1', 'Simple and Understandable'),
         ('-2', 'Plain Language'),
-    ], string='Frequency Penalty', default='1', help="-2~2, Higher values use fewer common words")
+    ], string='Frequency Penalty', default='1', 
+        help='-2~2, Higher values use fewer common words')
     set_presence_penalty = fields.Selection([
         ('2', 'Compulsive Diversity'),
         ('1.5', 'Novelization'),
@@ -82,17 +94,25 @@ class Channel(models.Model):
         ('0.1', 'Allow Regular Repetition'),
         ('-1', 'Allow More Repetition'),
         ('-2', 'Emphasize More Repetition'),
-    ], string='Presence penalty', default='1', help="-2~2, Higher values use fewer repeated words")
+    ], string='Presence penalty', default='1', 
+        help='-2~2, Higher values use fewer repeated words')
 
     # todo: 这里用 compute?
-    max_tokens = fields.Integer('Max Response Tokens', default=600, help="The larger the value, the more content returned, and the higher the cost")
-    chat_count = fields.Integer(string="Context Count", default=0, help="0~3, After setting, the last n conversations will be sent to Ai, which helps him better answer")
-    temperature = fields.Float(string="Creativity Value", default=1, help="0~2, The larger the value, the more imaginative, the smaller the more conservative")
-    top_p = fields.Float(string="Coherence Value", default=0.6, help="0~1, The larger the value, the more imaginative, the smaller the more conservative")
-    frequency_penalty = fields.Float('Avoid Common Words Value', default=1, help="-2~2, Higher values use fewer common words")
-    presence_penalty = fields.Float('Avoid Repeated Words Value', default=1, help="-2~2, Higher values use fewer repeated words")
 
-    is_current_channel = fields.Boolean('Is Current User Default Channel', compute='_compute_is_current_channel', help='Whether this is the current user\'s default WeChat conversation channel')
+    max_tokens = fields.Integer('Max Response Tokens', default=600, 
+                                help='The larger the value, the more content returned, and the higher the cost')
+    chat_count = fields.Integer(string='Context Count', default=0,
+                                help='0~3, After setting, the last n conversations will be sent to Ai, which helps him better answer')
+    temperature = fields.Float(string='Creativity Value', default=1,
+                               help='0~2, The larger the value, the more imaginative, the smaller the more conservative')
+    top_p = fields.Float(string='Coherence Value', default=0.6,
+                         help='0~1, The larger the value, the more imaginative, the smaller the more conservative')
+    frequency_penalty = fields.Float('Avoid Common Words Value', default=1,
+                                     help='-2~2, Higher values use fewer common words')
+    presence_penalty = fields.Float('Avoid Repeated Words Value', default=1,
+                                    help='-2~2, Higher values use fewer repeated words')
+    is_current_channel = fields.Boolean('Is Current User Default Channel', compute='_compute_is_current_channel',
+                                        help='Whether this is the current user\'s default WeChat conversation channel')
 
     # begin 处理Ai对话
     is_ai_conversation = fields.Boolean('Ai Conversation', default=False,
@@ -106,15 +126,13 @@ class Channel(models.Model):
 
     # end 处理Ai对话
 
-    def name_get(self):
-        result = []
+    @api.depends('name', 'channel_type', 'is_private')
+    def _compute_display_name(self):
+        # Odoo 19: name_get 已移除，改用 _compute_display_name
+        super()._compute_display_name()
         for c in self:
             if c.channel_type == 'channel' and c.is_private:
-                pre = _('[Private]')
-            else:
-                pre = ''
-            result.append((c.id, "%s%s" % (pre, c.name or '')))
-        return result
+                c.display_name = "%s%s" % (_('[Private]'), c.name or '')
 
     def get_openai_context(self, channel_id, author_id, answer_id, minutes=60, chat_count=0):
         # 上下文处理，要处理群的方式，以及独聊的方式
@@ -137,9 +155,9 @@ class Channel(models.Model):
 
         if self.channel_type in ['group', 'channel']:
             # 群聊增加时间限制，当前找所有人，不限制 author_id
-            domain = Domain.AND([domain, [('date', '>=', afterTime)]])
+            domain = expression.AND([domain, [('date', '>=', afterTime)]])
         else:
-            domain = Domain.AND([domain, [('author_id', '=', answer_id.id)]])
+            domain = expression.AND([domain, [('author_id', '=', answer_id.id)]])
         if chat_count == 0:
             ai_msg_list = []
         else:
@@ -247,12 +265,8 @@ class Channel(models.Model):
                 user_id = partners.mapped('user_ids')[:1]
             elif self.member_count == 2:
                 # 处理独聊频道
-                if hasattr(self, 'is_private') and not self.is_private:
-                    # 2个人的非私有频道不处理
-                    pass
-                else:
-                    partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id and r != message.author_id)[:1]
-                    user_id = partners.mapped('user_ids')[:1]
+                partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id and r != message.author_id)[:1]
+                user_id = partners.mapped('user_ids')[:1]
             elif not message.author_id.gpt_id:
                 # 没有@时，默认第一个robot
                 # robot = self.env.ref('app_chatgpt.chatgpt_robot')
@@ -344,18 +358,17 @@ class Channel(models.Model):
                 if c_history:
                     messages += c_history
                 if message.attachment_ids:
-                    attachment = message.attachment_ids[:1]
-                    file_content = ai.get_msg_file_content(message)
-                    if not file_content:
-                        messages.append({"role": "user", "content": msg})
-                    if attachment.mimetype in ['image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/webp']:
+                    attachment = message.attachment_ids[:1].sudo()
+                    file_info = ai.get_msg_file_content(message)
+                    if file_info and file_info.get('type') == 'image':
+                        # Images: keep the original behaviour unchanged
                         messages.append({
                             "role": "user",
                             "content": [
                                 {
                                     "type": "image_url",
                                     "image_url": {
-                                        "url": file_content,
+                                        "url": file_info['url'],
                                     },
                                 },
                                 {
@@ -364,8 +377,34 @@ class Channel(models.Model):
                                 }
                             ]
                         })
+                    elif file_info and file_info.get('type') == 'text':
+                        # Extracted PDF text or plain-text file
+                        messages.append({
+                            "role": "user",
+                            "content": "%s\n\n[Attached file: %s]\n%s" % (
+                                msg, attachment.name or 'file', file_info['content'],
+                            ),
+                        })
+                    elif file_info and file_info.get('type') == 'file':
+                        # Binary we cannot read as text (scanned PDF, docx, ...):
+                        # send it as an OpenAI / OpenRouter file input.
+                        messages.append({
+                            "role": "user",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": msg,
+                                },
+                                {
+                                    "type": "file",
+                                    "file": {
+                                        "filename": file_info['filename'],
+                                        "file_data": file_info['data_uri'],
+                                    },
+                                },
+                            ],
+                        })
                     else:
-                        messages.append({"role": "system", "content": file_content})
                         messages.append({"role": "user", "content": msg})
                 else:
                     messages.append({"role": "user", "content": msg})
@@ -384,6 +423,7 @@ class Channel(models.Model):
 
                     # if msg_len * 2 >= 8000:
                     # messages = [{"role": "user", "content": msg}]
+                _logger.warning("AI send messages to %s: %s", ai.name, messages)
                 if sync_config == 'sync':
                     self.get_ai_response(ai, messages, channel, user_id, message)
                 else:
