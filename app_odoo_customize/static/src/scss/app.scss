@@ -29,6 +29,7 @@
 }
 // navbar在下方的特殊处理
 .o_web_client.navbar_pos_bottom {
+  --o-navbar-height: 46px;
 
   @media (max-width: 768px) {
     --o-navbar-height: 46px;
@@ -43,7 +44,6 @@
 
     .o_main_navbar {
       @media (max-width: 768px) {
-        --o-navbar-height: 46px;
         align-items: flex-end;
         .o_navbar_apps_menu .dropdown-toggle, .o_nav_entry, .dropdown-toggle:not(.o-dropdown-toggle-custo), .o_menu_toggle {
           align-items: baseline;
