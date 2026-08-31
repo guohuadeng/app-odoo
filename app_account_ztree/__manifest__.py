@@ -28,7 +28,7 @@
     'description': """
     1. zTree widget for Account Chart with parent-children hierarchy tree.
     2. Advance search with real parent-children tree in ListView or KanbanView.
-    3. Easy to setup with widget='widget_select' and XML parameters.
+    3. Easy to setup with widget='ztree_select' and XML parameters.
     4. Support ztree_parent_key, ztree_expend_level, limit, order parameters.
     5. Reusable widget for any parent-child relationship model.
     6. Multi-language Support. Multi-Company Support.
@@ -37,7 +37,7 @@
 
     1. 会计科目多层级父子树状选择器，zTree widget
     2. 在列表或看板视图中通过父子树进行高级搜索
-    3. 使用 widget='widget_select' 和 XML 参数轻松配置
+    3. 使用 widget='ztree_select' 和 XML 参数轻松配置
     4. 支持 ztree_parent_key、ztree_expend_level、limit、order 参数
     5. 可复用的通用父子关系树控件
     6. 多语言支持，多公司支持
