@@ -13,15 +13,15 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Stock Picking Product Multi Add",
+  "name": "库存超级搜索栏 - Stock Superbar",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "offers": {
     "@type": "Offer",
     "price": "0",
-    "priceCurrency": "USD"
+    "priceCurrency": "EUR"
   },
-  "description": "One-click to add multi products to Stock Picking Order. Products can be filtered and grouped before adding.",
+  "description": "Stock Superbar with zTree widget for parent children tree navigation across stock location, picking, batch, move and lot views.",
   "softwareVersion": "18.0",
   "programmingLanguage": "Python, JavaScript",
   "license": "LGPL-3",
@@ -31,32 +31,33 @@
     "url": "https://www.odooai.cn"
   },
   "featureList": [
-    "One-click multi-product add to picking",
-    "Filter and group products",
-    "Support any one2many field",
-    "Multi-Language Support",
-    "Multi-Company Support"
+    "Stock location tree navigation",
+    "Stock picking navigator",
+    "Stock picking batch navigator",
+    "Stock move and move line views",
+    "Stock lot and orderpoint views",
+    "Multi-view support (list, kanban, pivot, graph)"
   ]
 }
 </script>
 
-<!-- begin header / hero -->
+<!-- begin header>
 <section class="oe_container container o_cc o_cc5 pt64 pb64">
     <div class="row align-items-center justify-content-center">
         <div class="col-lg-8 text-center">
             <div class="d-inline-flex align-items-center mb-3">
                 <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
-                <h2 class="ms-3 mb-0" style="font-weight:700;">Stock Picking Product Multi Add</h2>
+                <h2 class="ms-3 mb-0" style="font-weight:700;">库存超级搜索栏</h2>
             </div>
-            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Add multiple products to a stock picking in one click</p>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">按库存位置和类型树状导航搜索</p>
             <p class="lead">
-                One-click to add multi products to stock picking order with filter and group
+                使用 zTree 父子树结构快速导航库存位置、调拨单、批次和移动数据<br/>
             </p>
             <div class="pt16">
                 <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Enterprise &amp; Community</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Company</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Language</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言</span>
             </div>
         </div>
     </div>
@@ -67,11 +68,11 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
-            <h2>Overview</h2>
-                        <p class="text-muted">
-                Click "Multi Add Items" in the stock picking one2many tree view to open a product selection popup where you can filter, group and multi-select products to add.
+            <h2>功能概述</h2>
+            <p class="lead pt16">
+                库存超级搜索栏（Superbar）通过库存位置的父子树结构，让您在列表、看板、透视和图表视图中快速导航和搜索库存相关数据，包括调拨单、批次、移动和库存批次等。
             </p>
-        </div>
+                    </div>
     </div>
 </section>
 <!-- end overview -->
@@ -81,8 +82,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center pb32">
-                <h2>Key Highlights</h2>
-                <p class="lead">Fast and efficient batch operations</p>
+                <h2>核心亮点</h2>
+                <p class="lead">覆盖库存全模块的树状导航</p>
             </div>
         </div>
         <div class="row">
@@ -90,11 +91,10 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-mouse-pointer fa-lg"></i>
+                            <i class="fa fa-sitemap fa-lg"></i>
                         </div>
-                        <h5>One-Click Add</h5>
-                        <p class="small text-muted">Batch operation</p>
-                        <p class="card-text">Click the Batch Add button to open the product selection window</p>
+                        <h5>1. 库存位置树</h5>
+                        <p class="card-text">按库存位置的父子树结构快速导航</p>
                     </div>
                 </div>
             </div>
@@ -102,11 +102,10 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-filter fa-lg"></i>
+                            <i class="fa fa-truck fa-lg"></i>
                         </div>
-                        <h5>Filter &amp; Group</h5>
-                        <p class="small text-muted">Product filtering</p>
-                        <p class="card-text">Filter and group products before adding them in batch</p>
+                        <h5>2. 调拨单导航</h5>
+                        <p class="card-text">支持调拨单、批次调拨、调拨类型视图</p>
                     </div>
                 </div>
             </div>
@@ -114,11 +113,43 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-cogs fa-lg"></i>
+                            <i class="fa fa-exchange fa-lg"></i>
                         </div>
-                        <h5>Universal Config</h5>
-                        <p class="small text-muted">Any one2many field</p>
-                        <p class="card-text">Enable batch adding for any one2many field via XML configuration</p>
+                        <h5>3. 移动和移动线</h5>
+                        <p class="card-text">支持库存移动和移动线视图的树状导航</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-barcode fa-lg"></i>
+                        </div>
+                        <h5>4. 批次和补货</h5>
+                        <p class="card-text">支持库存批次和补货规则视图</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-th-list fa-lg"></i>
+                        </div>
+                        <h5>5. 多视图支持</h5>
+                        <p class="card-text">支持列表、看板、透视和图表视图中显示搜索树</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-cog fa-lg"></i>
+                        </div>
+                        <h5>6. 易于定制</h5>
+                        <p class="card-text">通过 widget 配置参数即可定制树状导航行为</p>
                     </div>
                 </div>
             </div>
@@ -131,15 +162,15 @@
 <section class="oe_container container o_cc o_cc5 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>General Features</h2>
+            <h2>通用特性</h2>
         </div>
         <div class="col-lg-4 pb24">
             <div class="text-center">
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-globe fa-lg"></i>
                 </div>
-                <h5><br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
-                <p>Full translation support for global deployment. Native multi-company architecture with strict data isolation.</p>
+                <h5>多语言与多公司<br/></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -147,8 +178,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code-fork fa-lg"></i>
                 </div>
-                <h5><br/><small class="text-muted">Full Version Support</small></h5>
-                <p>Supports Odoo 19, 18, 17, 16, 15, 14, 13, 12, EE/CE/.SH, compatible with Enterprise, Community and online SaaS.</p>
+                <h5>全版本兼容<br/></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -156,8 +187,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code fa-lg"></i>
                 </div>
-                <h5><br/><small class="text-muted">Full Open Source</small></h5>
-                <p>Open source under LGPL-3, transparent and auditable code, supports customization.</p>
+                <h5>代码完全开源<br/></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
             </div>
         </div>
     </div>
@@ -168,36 +199,64 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>Screenshots</h2>
-            <p class="lead">Key features at a glance</p>
+            <h2>界面截图</h2>
+            <p class="lead">核心功能界面一览</p>
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-mouse-pointer text-o-color-1 me-2"></i>Step1. Click "Multi Add Items"</h3>
-            <img class="img-fluid rounded shadow" src="use1.jpg" alt="Click Multi Add Items">
+            <h3 class="pb16"><i class="fa fa-warehouse text-o-color-1 me-2"></i>库存位置使用</h3>
+            <img class="img-fluid rounded shadow" src="demo3.jpg" alt="Stock location">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-check-square text-o-color-1 me-2"></i>Step2. Select products</h3>
-            <img class="img-fluid rounded shadow" src="use2.jpg" alt="Select products">
+            <h3 class="pb16"><i class="fa fa-box text-o-color-1 me-2"></i>产品中使用</h3>
+            <img class="img-fluid rounded shadow" src="demo2.jpg" alt="Product">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-check text-o-color-1 me-2"></i>Step3. Click "Select" to add</h3>
-            <img class="img-fluid rounded shadow" src="use3.jpg" alt="Confirm add">
+            <h3 class="pb16"><i class="fa fa-tags text-o-color-1 me-2"></i>产品分类使用</h3>
+            <img class="img-fluid rounded shadow" src="demo1.jpg" alt="Product category">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-truck text-o-color-1 me-2"></i>One Click to add multi product to Stock Picking</h3>
-            <img class="img-fluid rounded shadow" src="stock1.gif" alt="Stock Picking multi add">
+            <h3 class="pb16"><i class="fa fa-users text-o-color-1 me-2"></i>HR 部门使用</h3>
+            <img class="img-fluid rounded shadow" src="demo4.jpg" alt="HR department">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-user text-o-color-1 me-2"></i>HR 员工使用</h3>
+            <img class="img-fluid rounded shadow" src="demo5.jpg" alt="HR employee">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-th-large text-o-color-1 me-2"></i>看板视图导航</h3>
+            <img class="img-fluid rounded shadow" src="demo11.jpg" alt="Kanban view navigator">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-list text-o-color-1 me-2"></i>列表视图导航</h3>
+            <img class="img-fluid rounded shadow" src="demo12.jpg" alt="List view navigator">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-cog text-o-color-1 me-2"></i>配置搜索树控件</h3>
+            <img class="img-fluid rounded shadow" src="setup1.jpg" alt="Widget setup">
         </div>
     </div>
 </section>
@@ -210,8 +269,8 @@
             <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(7,89,133,.1);color:#075985;">
                 <i class="fa fa-gift fa-lg"></i>
             </div>
-            <h2>Free Related Apps</h2>
-            <p class="lead">Similar batch add modules, free to download</p>
+            <h2>免费关联模块</h2>
+            <p class="lead">安装本模块后，以下关联模块可免费下载使用</p>
         </div>
     </div>
     <div class="row">
@@ -220,38 +279,49 @@
                 <div class="card-header text-white text-center py-3" style="background:linear-gradient(135deg,#0ea5e9,#0284c7);border-radius:12px 12px 0 0;">
                     <i class="fa fa-download me-2"></i>
                     <b>Free Download</b>
+                    <span class="ms-2 badge rounded-pill bg-light text-primary">20+ Apps</span>
                 </div>
                 <div class="card-body p-0">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
                             <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">Sale Order multi-add</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_sale_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                            <span class="flex-grow-1">超级搜索栏</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_web_superbar/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
                                 <i class="fa fa-download me-1"></i>Download
                             </a>
                         </li>
                         <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
                             <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">Purchase Order multi-add</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_purchase_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                            <span class="flex-grow-1">产品按分类导航</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_product_superbar/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
                                 <i class="fa fa-download me-1"></i>Download
                             </a>
                         </li>
                         <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
                             <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">MRP BOM multi-add</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_mrp_bom_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                            <span class="flex-grow-1">库存位置树控件</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_stock_ztree/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
                                 <i class="fa fa-download me-1"></i>Download
                             </a>
                         </li>
                         <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
                             <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">Account Invoice multi-add</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_account_invoice_product_multi_add/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                            <span class="flex-grow-1">销售订单导航</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_sale_superbar/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>Download
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span class="flex-grow-1">采购订单导航</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_purchase_superbar/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
                                 <i class="fa fa-download me-1"></i>Download
                             </a>
                         </li>
                     </ul>
+                </div>
+                <div class="card-footer text-center py-3 bg-transparent border-top-0">
+                    <i class="fa fa-lightbulb-o text-warning me-1"></i>
                 </div>
             </div>
         </div>
@@ -263,33 +333,37 @@
 <section class="oe_container container o_cc o_cc5 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>How It Works</h2>
+            <h2>使用流程</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <div class="row text-center">
                 <div class="col-md-3 col-6 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-plus-circle"></i>
+                        <i class="fa fa-download"></i>
                     </div>
-                    <p class="small text-muted mb-0">Open picking order</p>
+                    <p class="fw-bold mb-1">安装 zTree</p>
+                    <p class="small text-muted mb-0">Install zTree Widget</p>
                 </div>
                 <div class="col-md-3 col-6 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-mouse-pointer"></i>
+                        <i class="fa fa-cube"></i>
                     </div>
-                    <p class="small text-muted mb-0">Click Multi Add</p>
+                    <p class="fw-bold mb-1">安装 Superbar</p>
+                    <p class="small text-muted mb-0">Install app_web_superbar</p>
                 </div>
                 <div class="col-md-3 col-6 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-check-square"></i>
+                        <i class="fa fa-refresh"></i>
                     </div>
-                    <p class="small text-muted mb-0">Select products</p>
+                    <p class="fw-bold mb-1">重启 Odoo</p>
+                    <p class="small text-muted mb-0">Restart Odoo service</p>
                 </div>
                 <div class="col-md-3 col-6 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-check"></i>
+                        <i class="fa fa-search"></i>
                     </div>
-                    <p class="small text-muted mb-0">Confirm selection</p>
+                    <p class="fw-bold mb-1">开始使用</p>
+                    <p class="small text-muted mb-0">Start using superbar</p>
                 </div>
             </div>
         </div>
@@ -301,13 +375,25 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>Supported &amp; Dependent Modules</h2>
+            <h2>支持与依赖模块</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
                     <i class="fa fa-truck text-o-color-1 me-2"></i>
-                    stock
+                    库存模块
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-cubes text-o-color-1 me-2"></i>
+                    批次调拨
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-tree text-o-color-1 me-2"></i>
+                    zTree 树控件（需另外安装）
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-star text-o-color-1 me-2"></i>
+                    超级搜索栏（需另外安装）
                 </li>
             </ul>
         </div>
@@ -335,6 +421,10 @@
                 <p>
                     <i class="fa fa-globe me-2"></i>
                     Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-desktop me-2"></i>
+                    Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a>
                 </p>
                 <p>
                     <i class="fa fa-envelope me-2"></i>

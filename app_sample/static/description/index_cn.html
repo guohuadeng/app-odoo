@@ -13,15 +13,15 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Stock Superbar Pro",
-  "applicationCategory": "BusinessApplication",
+  "name": "Odoo 模块开发模板 - Odoo Module Sample with Widget",
+  "applicationCategory": "DeveloperTool",
   "operatingSystem": "Web",
   "offers": {
     "@type": "Offer",
-    "price": "0",
+    "price": "2",
     "priceCurrency": "EUR"
   },
-  "description": "Pro version of Stock Superbar with date range search and instant/lazy search mode for stock picking, batch, move and lot views.",
+  "description": "A full Odoo module development template with 170+ widget list, manifest, models, views, controllers, reports, actions and menus sample code.",
   "softwareVersion": "18.0",
   "programmingLanguage": "Python, JavaScript",
   "license": "LGPL-3",
@@ -31,33 +31,37 @@
     "url": "https://www.odooai.cn"
   },
   "featureList": [
-    "Instant and lazy search mode",
-    "Date range search for stock operations",
-    "Stock picking and batch navigator",
-    "Stock move and move line views",
-    "Parent children tree navigation",
-    "Multi-view support (list, kanban, pivot, graph)"
+    "Full sample module with all Odoo file types",
+    "Manifest with all field samples",
+    "Python models for new and inherited models",
+    "XML views with list, kanban, form, search",
+    "Controllers for website and API",
+    "Report design with SQL and graph/pivot",
+    "Action and menu samples",
+    "UI misc samples with alert and field setup",
+    "170+ widget list and usage guide",
+    "Online developer tutorials"
   ]
 }
 </script>
 
-<!-- begin header / hero -->
+<!-- begin header>
 <section class="oe_container container o_cc o_cc5 pt64 pb64">
     <div class="row align-items-center justify-content-center">
         <div class="col-lg-8 text-center">
             <div class="d-inline-flex align-items-center mb-3">
                 <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
-                <h2 class="ms-3 mb-0" style="font-weight:700;">Stock Superbar Pro</h2>
+                <h2 class="ms-3 mb-0" style="font-weight:700;">Odoo 模块开发模板/ Odoo Module Sample</h2>
             </div>
-            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Date range search with instant and lazy search modes</p>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">170+ Widget 清单与使用示例</p>
             <p class="lead">
-                Pro version with date range search, instant and lazy search modes
+                克隆此模板快速创建新的 Odoo 模块，包含完整的代码示例和开发规范<br/>
             </p>
             <div class="pt16">
                 <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Enterprise &amp; Community</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Company</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Language</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言</span>
             </div>
         </div>
     </div>
@@ -68,11 +72,11 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
-            <h2>Overview</h2>
-                        <p class="text-muted">
-                Stock Superbar Pro adds date range search and instant/lazy search modes on top of the standard version, supporting tree navigation across picking, batch, move and move line views.
+            <h2>功能概述</h2>
+            <p class="lead pt16">
+                一个完整的 Odoo 模块开发模板，包含 manifest、模型、视图、控制器、报表、动作、菜单等所有文件类型的示例代码，以及 170+ Widget 清单和常用用法指南。
             </p>
-        </div>
+                    </div>
     </div>
 </section>
 <!-- end overview -->
@@ -82,8 +86,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center pb32">
-                <h2>Key Highlights</h2>
-                <p class="lead">Pro advanced features</p>
+                <h2>核心亮点</h2>
+                <p class="lead">一站式 Odoo 开发模板</p>
             </div>
         </div>
         <div class="row">
@@ -91,11 +95,10 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-calendar fa-lg"></i>
+                            <i class="fa fa-cube fa-lg"></i>
                         </div>
-                        <h5>Date Range Search</h5>
-                        <p class="small text-muted">Date filtering</p>
-                        <p class="card-text">Search stock operations by date range</p>
+                        <h5>1. 完整示例模块</h5>
+                        <p class="card-text">包含完整的 Odoo 模块代码、视图和数据示例，遵循 Odoo 规范</p>
                     </div>
                 </div>
             </div>
@@ -103,11 +106,10 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-bolt fa-lg"></i>
+                            <i class="fa fa-file-code-o fa-lg"></i>
                         </div>
-                        <h5>Instant Search</h5>
-                        <p class="small text-muted">One-click search</p>
-                        <p class="card-text">Instant mode searches immediately on click for fast response</p>
+                        <h5>Manifest File</h5>
+                        <p class="card-text">包含所有字段的清单示例，安装 XML 和 CSV 文件</p>
                     </div>
                 </div>
             </div>
@@ -115,11 +117,10 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-database fa-lg"></i>
+                            <i class="fa fa-code fa-lg"></i>
                         </div>
-                        <h5>Lazy Search</h5>
-                        <p class="small text-muted">Big data performance</p>
-                        <p class="card-text">Lazy mode searches after filters are set, ideal for large data volumes</p>
+                        <h5>3. 模型示例</h5>
+                        <p class="card-text">包含新模型和继承模型的 Python 示例文件</p>
                     </div>
                 </div>
             </div>
@@ -127,11 +128,10 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-truck fa-lg"></i>
+                            <i class="fa fa-th-large fa-lg"></i>
                         </div>
-                        <h5>Picking Navigator</h5>
-                        <p class="small text-muted">Stock picking views</p>
-                        <p class="card-text">Tree navigation for picking and batch picking views</p>
+                        <h5>4. 视图示例</h5>
+                        <p class="card-text">包含列表、看板、表单和搜索视图的 XML 示例</p>
                     </div>
                 </div>
             </div>
@@ -139,11 +139,10 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-exchange fa-lg"></i>
+                            <i class="fa fa-globe fa-lg"></i>
                         </div>
-                        <h5>Move Line Views</h5>
-                        <p class="small text-muted">Stock move and move line</p>
-                        <p class="card-text">Tree search for stock move and move line views</p>
+                        <h5>5. 控制器示例</h5>
+                        <p class="card-text">网站数据发布和 API 接口开发示例，含 Portal 继承</p>
                     </div>
                 </div>
             </div>
@@ -151,11 +150,32 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-cog fa-lg"></i>
+                            <i class="fa fa-bar-chart fa-lg"></i>
                         </div>
-                        <h5>Easy Customize</h5>
-                        <p class="small text-muted">XML configuration</p>
-                        <p class="card-text">Use in any module with simple XML configuration</p>
+                        <h5>6. 报表示例</h5>
+                        <p class="card-text">报表设计示例，含 SQL 定义和图表透视视图</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-puzzle-piece fa-lg"></i>
+                        </div>
+                        <h5>Widget Guide</h5>
+                        <p class="card-text">170+ Widget 使用清单和常用 Widget 用法指南</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-book fa-lg"></i>
+                        </div>
+                        <h5>8. 开发教程</h5>
+                        <p class="card-text">快速访问在线中英文 Odoo 开发教程，国内快速访问</p>
                     </div>
                 </div>
             </div>
@@ -168,15 +188,15 @@
 <section class="oe_container container o_cc o_cc5 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>General Features</h2>
+            <h2>通用特性</h2>
         </div>
         <div class="col-lg-4 pb24">
             <div class="text-center">
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-globe fa-lg"></i>
                 </div>
-                <h5><br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
-                <p>Full translation support for global deployment. Native multi-company architecture with strict data isolation.</p>
+                <h5>多语言与多公司<br/></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔隔离。</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -184,8 +204,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code-fork fa-lg"></i>
                 </div>
-                <h5><br/><small class="text-muted">Full Version Support</small></h5>
-                <p>Supports Odoo 19, 18, 17, 16, 15, 14, 13, 12, EE/CE/.SH, compatible with Enterprise, Community and online SaaS.</p>
+                <h5>全版本兼容<br/></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -193,8 +213,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code fa-lg"></i>
                 </div>
-                <h5><br/><small class="text-muted">Full Open Source</small></h5>
-                <p>Open source under LGPL-3, transparent and auditable code, supports customization.</p>
+                <h5>代码完全开源<br/></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定定制。</p>
             </div>
         </div>
     </div>
@@ -205,140 +225,132 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>Screenshots</h2>
-            <p class="lead">Key features at a glance</p>
+            <h2>界面截图</h2>
+            <p class="lead">模板内容一览</p>
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-warehouse text-o-color-1 me-2"></i>Stock location tree</h3>
-            <img class="img-fluid rounded shadow" src="demo3.jpg" alt="Stock location tree">
+            <h3 class="pb16"><i class="fa fa-cube text-o-color-1 me-2"></i>完整示例模块</h3>
+            <img class="img-fluid rounded shadow" src="demo1.jpg" alt="Full Sample Module">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-tags text-o-color-1 me-2"></i>Product category</h3>
-            <img class="img-fluid rounded shadow" src="demo1.jpg" alt="Product category">
+            <h3 class="pb16"><i class="fa fa-file-code-o text-o-color-1 me-2"></i>Manifest 示例文件</h3>
+            <img class="img-fluid rounded shadow" src="demo2.jpg" alt="Manifest file">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-th-large text-o-color-1 me-2"></i>Kanban view navigator</h3>
-            <img class="img-fluid rounded shadow" src="demo11.jpg" alt="Kanban view">
+            <h3 class="pb16"><i class="fa fa-code text-o-color-1 me-2"></i>Python 模型示例</h3>
+            <img class="img-fluid rounded shadow" src="demo3.jpg" alt="Python models">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-list text-o-color-1 me-2"></i>List view navigator</h3>
-            <img class="img-fluid rounded shadow" src="demo12.jpg" alt="List view">
+            <h3 class="pb16"><i class="fa fa-list text-o-color-1 me-2"></i>列表视图示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_list.jpg" alt="List view">
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-cog text-o-color-1 me-2"></i>Widget setup</h3>
-            <img class="img-fluid rounded shadow" src="setup1.jpg" alt="Widget setup">
+            <h3 class="pb16"><i class="fa fa-th-large text-o-color-1 me-2"></i>看板视图示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_kanban.jpg" alt="Kanban view">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-edit text-o-color-1 me-2"></i>表单视图示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_form.jpg" alt="Form view">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-search text-o-color-1 me-2"></i>搜索视图示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_search.jpg" alt="Search view">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-globe text-o-color-1 me-2"></i>控制器示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_controler.jpg" alt="Controllers">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-bar-chart text-o-color-1 me-2"></i>报表设计示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_report.jpg" alt="Report design">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-puzzle-piece text-o-color-1 me-2"></i>Widget 清单</h3>
+            <img class="img-fluid rounded shadow" src="demo_widget_list.jpg" alt="Widget list">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-wrench text-o-color-1 me-2"></i>Widget 用法示例</h3>
+            <img class="img-fluid rounded shadow" src="demo_widget_use.jpg" alt="Widget usage">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-book text-o-color-1 me-2"></i>开发教程</h3>
+            <img class="img-fluid rounded shadow" src="demo10.jpg" alt="Developer tutorials">
         </div>
     </div>
 </section>
 <!-- end screenshots -->
 
-<!-- begin free related apps -->
+<!-- begin how it works -->
 <section class="oe_container container o_cc o_cc2 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(7,89,133,.1);color:#075985;">
-                <i class="fa fa-gift fa-lg"></i>
-            </div>
-            <h2>Free Related Apps</h2>
-            <p class="lead">Install this module to download the related apps below for free</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-            <div class="card border-0 shadow-sm" style="border-radius:12px;">
-                <div class="card-header text-white text-center py-3" style="background:linear-gradient(135deg,#0ea5e9,#0284c7);border-radius:12px 12px 0 0;">
-                    <i class="fa fa-download me-2"></i>
-                    <b>Free Download</b>
-                    <span class="ms-2 badge rounded-pill bg-light text-primary">20+ Apps</span>
-                </div>
-                <div class="card-body p-0">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
-                            <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">Advance Search Superbar</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_web_superbar/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
-                                <i class="fa fa-download me-1"></i>Download
-                            </a>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
-                            <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">Stock Location zTree</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_stock_ztree/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
-                                <i class="fa fa-download me-1"></i>Download
-                            </a>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
-                            <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">Sale order navigate</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_sale_superbar/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
-                                <i class="fa fa-download me-1"></i>Download
-                            </a>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
-                            <i class="fa fa-check-circle text-primary me-3"></i>
-                            <span class="flex-grow-1">Purchase order navigate</span>
-                            <a href="http://www.odoo.com/apps/modules/18.0/app_purchase_superbar/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
-                                <i class="fa fa-download me-1"></i>Download
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="card-footer text-center py-3 bg-transparent border-top-0">
-                    <i class="fa fa-lightbulb-o text-warning me-1"></i>
-                    <small class="text-muted">Easy to customize, you can use it anywhere in Odoo</small>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end free related apps -->
-
-<!-- begin how it works -->
-<section class="oe_container container o_cc o_cc5 pt64 pb64">
-    <div class="row">
-        <div class="col-lg-12 text-center pb32">
-            <h2>How It Works</h2>
+            <h2>使用流程</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <div class="row text-center">
                 <div class="col-md-3 col-6 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-cube"></i>
+                        <i class="fa fa-download"></i>
                     </div>
-                    <p class="small text-muted mb-0">Install app_web_superbar</p>
+                    <p class="fw-bold mb-1">安装模板</p>
+                    <p class="small text-muted mb-0">Install sample module</p>
                 </div>
                 <div class="col-md-3 col-6 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-refresh"></i>
+                        <i class="fa fa-copy"></i>
                     </div>
-                    <p class="small text-muted mb-0">Restart Odoo service</p>
+                    <p class="fw-bold mb-1">克隆重命名</p>
+                    <p class="small text-muted mb-0">Clone and rename</p>
                 </div>
                 <div class="col-md-3 col-6 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-calendar"></i>
+                        <i class="fa fa-pencil"></i>
                     </div>
-                    <p class="small text-muted mb-0">Set date range</p>
+                    <p class="fw-bold mb-1">修改代码</p>
+                    <p class="small text-muted mb-0">Customize your code</p>
                 </div>
                 <div class="col-md-3 col-6 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-search"></i>
+                        <i class="fa fa-rocket"></i>
                     </div>
-                    <p class="small text-muted mb-0">Start searching</p>
+                    <p class="fw-bold mb-1">发布使用</p>
+                    <p class="small text-muted mb-0">Deploy and use</p>
                 </div>
             </div>
         </div>
@@ -347,16 +359,20 @@
 <!-- end how it works -->
 
 <!-- begin supported modules -->
-<section class="oe_container container o_cc o_cc1 pt64 pb64">
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>Supported &amp; Dependent Modules</h2>
+            <h2>支持与依赖模块</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <i class="fa fa-truck text-o-color-1 me-2"></i>
-                    app_stock_superbar
+                    <i class="fa fa-cog text-o-color-1 me-2"></i>
+                    公共模块
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-calculator text-o-color-1 me-2"></i>
+                    会计模块
                 </li>
             </ul>
         </div>
@@ -375,7 +391,7 @@
 <!-- end banner -->
 
 <!-- begin footer -->
-<section class="oe_container container o_cc o_cc5 pt64 pb64">
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center">
             <h2>odooai.cn</h2>
@@ -383,15 +399,15 @@
             <div class="pt16">
                 <p>
                     <i class="fa fa-globe me-2"></i>
-                    Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a>
+                    Website: <a href="https://www.odooai.cn" target="_blank">www.odooai.cn</a>
                 </p>
                 <p>
                     <i class="fa fa-desktop me-2"></i>
-                    Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a>
+                    Demo: <a href="https://demo.odooapp.cn" target="_blank">demo.odooapp.cn</a>
                 </p>
                 <p>
                     <i class="fa fa-envelope me-2"></i>
-                    Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a>
+                    Support: <a href="mailto:odoo@china.com">odoo@china.com</a>
                 </p>
             </div>
             <div class="pt16">
