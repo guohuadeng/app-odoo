@@ -11,16 +11,16 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "MRP Bom Product Multi Batch Add",
+  "name": "MRP 生产单层级图",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
-  "description": "One click to batch add multiple products to MRP BOM with filter and group support for Odoo manufacturing.",
+  "description": "Odoo 多层级 MRP 制造单层级结构图，支持 N+1、N+2 级下属可视化。",
   "softwareVersion": "18.0",
   "programmingLanguage": "Python, JavaScript",
   "license": "LGPL-3",
   "author": { "@type": "Organization", "name": "odooAi.cn", "url": "https://www.odooai.cn" },
-  "featureList": ["One click batch add products to BOM", "Product filter and group", "Multi-select support", "Quick BOM component management"]
+  "featureList": ["制造单层级图","多级 BOM 可视化","N+1 N+2 级下属","图片和描述支持","子项计数显示"]
 }
 </script>
 
@@ -29,15 +29,15 @@
         <div class="col-lg-8 text-center">
             <div class="d-inline-flex align-items-center mb-3">
                 <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
-                <h2 class="ms-3 mb-0" style="font-weight:700;">MRP Bom Product Multi Batch Add</h2>
+                <h2 class="ms-3 mb-0" style="font-weight:700;">MRP 生产单层级图</h2>
             </div>
-            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">One click batch add products to BOM</p>
-            <p class="lead">Batch add multiple products to MRP BOM with filter and group<br/>Cut the line-by-line component entry</p>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">制造单多层级结构图</p>
+            <p class="lead">可视化展示多级 BOM 和制造单层级关系<br/>一图看清整条制造链</p>
             <div class="pt16">
                 <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Enterprise &amp; Community</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Company</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Language</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言</span>
             </div>
         </div>
     </div>
@@ -46,9 +46,9 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
-            <h2>Overview</h2>
-            <p class="lead pt16">Batch add multiple products to a manufacturing BOM in one click. Products can be filtered and grouped before adding.</p>
-            <p class="text-muted">Works with mrp.bom.line, extensible to other one2many fields via XML config.</p>
+            <h2>功能概述</h2>
+            <p class="lead pt16">为 MRP 制造单提供层级图组件，支持多级 BOM 展开和 N+1/N+2 级下属可视化展示。</p>
+            <p class="text-muted">层级图组件支持图片、描述和子项计数字段。</p>
         </div>
     </div>
 </section>
@@ -57,26 +57,35 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center pb32">
-                <h2>Key Highlights</h2>
-                <p class="lead">Efficient BOM Management</p>
+                <h2>核心亮点 / Key Highlights</h2>
+                <p class="lead">制造单层级可视化</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6 pb24">
+            <div class="col-lg-4 pb24">
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
-                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;"><i class="fa fa-plus-circle fa-lg"></i></div>
-                        <h5>1. One Click Batch Add</h5>
-                        <p class="card-text">Add multiple products to the manufacturing BOM in one click</p>
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;"><i class="fa fa-sitemap fa-lg"></i></div>
+                        <h5>1. MO 层级图</h5>
+                        <p class="card-text">制造单层级图，直观展示多级BOM关系</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 pb24">
+            <div class="col-lg-4 pb24">
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
-                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;"><i class="fa fa-filter fa-lg"></i></div>
-                        <h5>2. Filter &amp; Group</h5>
-                        <p class="card-text">Filter and group products, then batch add them</p>
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;"><i class="fa fa-level-down fa-lg"></i></div>
+                        <h5>2. 多级展开</h5>
+                        <p class="card-text">支持N+1、N+2级直接下属展示</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;"><i class="fa fa-cogs fa-lg"></i></div>
+                        <h5>3. 层级组件</h5>
+                        <p class="card-text">层级图组件，支持图片、描述和子项计数字段</p>
                     </div>
                 </div>
             </div>
@@ -86,23 +95,23 @@
 
 <section class="oe_container container o_cc o_cc5 pt64 pb64">
     <div class="row">
-        <div class="col-lg-12 text-center pb32"><h2>General Features</h2></div>
+        <div class="col-lg-12 text-center pb32"><h2>通用特性</h2></div>
         <div class="col-lg-4 pb24">
             <div class="text-center">
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;"><i class="fa fa-globe fa-lg"></i></div>
-                <h5>Multi-Language &amp; Multi-Company<br/><small class="text-muted">Built for Global Teams</small></h5>
+                <h5>多语言与多公司<br/><small class="text-muted">适配全球化部署</small></h5>
             </div>
         </div>
         <div class="col-lg-4 pb24">
             <div class="text-center">
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;"><i class="fa fa-code-fork fa-lg"></i></div>
-                <h5>Full Version Support<br/><small class="text-muted">Odoo 12 to 19</small></h5>
+                <h5>全版本兼容<br/><small class="text-muted">Odoo 12 至 19</small></h5>
             </div>
         </div>
         <div class="col-lg-4 pb24">
             <div class="text-center">
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;"><i class="fa fa-code fa-lg"></i></div>
-                <h5>Full Open Source<br/><small class="text-muted">LGPL-3 Licensed</small></h5>
+                <h5>代码完全开源<br/><small class="text-muted">LGPL-3 协议</small></h5>
             </div>
         </div>
     </div>
@@ -110,23 +119,11 @@
 
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
-        <div class="col-lg-12 text-center pb32"><h2>Screenshots</h2></div>
-    </div>
-    <div class="row pb48">
-        <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>MRP BOM Multi Add</h3>
-            <img class="img-fluid rounded shadow" src="mrp1.gif" alt="MRP BOM Multi Add">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container container o_cc o_cc1 pt64 pb64">
-    <div class="row">
-        <div class="col-lg-12 text-center pb32"><h2>Supported &amp; Dependent Modules</h2></div>
+        <div class="col-lg-12 text-center pb32"><h2>支持与依赖模块</h2></div>
         <div class="col-lg-8 offset-lg-2">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
-                    <i class="fa fa-industry text-o-color-1 me-2"></i>mrp (Manufacturing)
+                    <i class="fa fa-industry text-o-color-1 me-2"></i>mrp / 制造
                 </li>
             </ul>
         </div>
@@ -141,11 +138,11 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <h2>odooai.cn</h2>
-            <p class="lead" style="opacity:0.7;">Professional Odoo Solutions: Development, Implementation, Consulting &amp; Training</p>
+            <p class="lead" style="opacity:0.7;">专业 Odoo 服务伙伴，开发实施咨询培训全套解决方案</p>
             <div class="pt16">
-                <p><i class="fa fa-globe me-2"></i>Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p>
-                <p><i class="fa fa-desktop me-2"></i>Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p>
-                <p><i class="fa fa-envelope me-2"></i>Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a></p>
+                <p><i class="fa fa-globe me-2"></i>网站：<a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p>
+                <p><i class="fa fa-desktop me-2"></i>演示：<a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p>
+                <p><i class="fa fa-envelope me-2"></i>支持：<a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a></p>
             </div>
             <div class="pt16"><img src="qr.png" alt="QR Code" style="width:120px;"></div>
         </div>
