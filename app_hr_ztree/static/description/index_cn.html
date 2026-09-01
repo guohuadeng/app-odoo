@@ -12,7 +12,7 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Employee Navigator by Department",
+  "name": "HR 部门树形组件",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "offers": {
@@ -20,7 +20,7 @@
     "price": "0",
     "priceCurrency": "CNY"
   },
-  "description": "Browse employees by department tree with Superbar advance search sidebar and organization chart for Odoo HR module.",
+  "description": "Odoo zTree 父子树形选择控件，适用于 HR 部门员工、产品分类、库存位置等场景。",
   "softwareVersion": "18.0",
   "programmingLanguage": "Python, JavaScript",
   "license": "LGPL-3",
@@ -30,12 +30,12 @@
     "url": "https://www.odooai.cn"
   },
   "featureList": [
-    "Department tree navigation for employees",
-    "Organization chart tree view",
-    "Advance search sidebar with multiple field types",
-    "List, kanban, pivot and graph view support",
-    "Search more window navigation",
-    "Easy customize with searchpanel params"
+    "HR 部门与员工树形导航",
+    "父子树形选择器控件",
+    "产品分类树支持",
+    "库存位置树支持",
+    "基于控件的复用设计",
+    "易于定制"
   ]
 }
 </script>
@@ -46,18 +46,18 @@
         <div class="col-lg-8 text-center">
             <div class="d-inline-flex align-items-center mb-3">
                 <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
-                <h2 class="ms-3 mb-0" style="font-weight:700;">Employee Navigator by Department</h2>
+                <h2 class="ms-3 mb-0" style="font-weight:700;">HR 部门树形组件</h2>
             </div>
-            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Superbar advance search with organization chart</p>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">父子树形选择器，多场景适用</p>
             <p class="lead">
-                Browse employees by department tree with real parent children hierarchy<br/>
-                HR organization chart and advance search sidebar included
+                HR 部门员工树形导航，适用于产品分类、库存位置等<br/>
+                一个 widget 属性即可启用，Odoo 任意界面可用
             </p>
             <div class="pt16">
                 <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Enterprise &amp; Community</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Company</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Language</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言</span>
             </div>
         </div>
     </div>
@@ -68,25 +68,59 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
-            <h2>Overview</h2>
+            <h2>功能概述</h2>
             <p class="lead pt16">
-                Adds a Superbar advance search sidebar to the Odoo HR module. Browse employees by department tree, with organization chart navigation.
+                基于zTree的父子树形选择组件，适用于HR部门、产品分类、库存位置等多种场景，可在Odoo任何地方使用。
             </p>
             <p class="text-muted">
-                Works in list, kanban, pivot and graph views, plus search-more popups.
+                一个 widget 属性即可启用，XML 参数灵活配置。
             </p>
         </div>
     </div>
 </section>
 <!-- end overview -->
 
+<!-- begin Feature List -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>完整功能列表</h2>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>1. 自定义父子树形结构</b><br/>
+                    <small class="text-muted">轻松构建自定义父子树形结构</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>2. 产品分类树形选择</b><br/>
+                    <small class="text-muted">产品分类中免费使用</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>3. 库存位置树形选择</b><br/>
+                    <small class="text-muted">库存位置中免费使用</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>4. HR部门和员工树形选择</b><br/>
+                    <small class="text-muted">HR 部门、员工中免费使用</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>5. 通用组件，可在Odoo任何地方使用</b><br/>
+                    <small class="text-muted">控件式设计，Odoo 任意界面可用</small>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end Feature List -->
+
 <!-- begin key highlights -->
 <section class="oe_container container o_cc o_cc2 pt64 pb64">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center pb32">
-                <h2>Key Highlights</h2>
-                <p class="lead">Superbar Advance Search for the HR Module</p>
+                <h2>核心亮点</h2>
+                <p class="lead">zTree 父子树形组件，灵活复用</p>
             </div>
         </div>
         <div class="row">
@@ -96,9 +130,9 @@
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
                             <i class="fa fa-sitemap fa-lg"></i>
                         </div>
-                        <h5>1. Department Tree</h5>
-                        <p class="small text-muted">Parent children hierarchy</p>
-                        <p class="card-text">Browse employees by department tree with real parent-children hierarchy</p>
+                        <h5>1. 父子树形导航</h5>
+                        <p class="small text-muted">Real hierarchy tree</p>
+                        <p class="card-text">真实父子层级关系的树形选择器，直观展示数据层级</p>
                     </div>
                 </div>
             </div>
@@ -106,11 +140,11 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-search fa-lg"></i>
+                            <i class="fa fa-puzzle-piece fa-lg"></i>
                         </div>
-                        <h5>2. Advance Search Sidebar</h5>
-                        <p class="small text-muted">m2o, m2m, date, boolean, selection, number</p>
-                        <p class="card-text">Advanced sidebar search across many field types to locate records fast</p>
+                        <h5>2. 通用组件</h5>
+                        <p class="small text-muted">Reusable anywhere</p>
+                        <p class="card-text">基于组件设计，可在Odoo任何视图中复用</p>
                     </div>
                 </div>
             </div>
@@ -118,23 +152,11 @@
                 <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
                     <div class="card-body text-center p-4">
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-th-large fa-lg"></i>
+                            <i class="fa fa-cogs fa-lg"></i>
                         </div>
-                        <h5>3. Multi-View Support</h5>
-                        <p class="small text-muted">List, Kanban, Pivot, Graph</p>
-                        <p class="card-text">Search sidebar works in list, kanban, pivot and graph views</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 pb24">
-                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
-                    <div class="card-body text-center p-4">
-                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
-                            <i class="fa fa-building-o fa-lg"></i>
-                        </div>
-                        <h5>4. Organization Chart</h5>
-                        <p class="small text-muted">HR hierarchy tree</p>
-                        <p class="card-text">Show HR department hierarchy and employee structure at a glance</p>
+                        <h5>3. 灵活配置</h5>
+                        <p class="small text-muted">widget_select param</p>
+                        <p class="card-text">支持ztree_parent_key、expend_level、limit、order等参数配置</p>
                     </div>
                 </div>
             </div>
@@ -147,15 +169,15 @@
 <section class="oe_container container o_cc o_cc5 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>General Features</h2>
+            <h2>通用特性</h2>
         </div>
         <div class="col-lg-4 pb24">
             <div class="text-center">
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-globe fa-lg"></i>
                 </div>
-                <h5>Multi-Language &amp; Multi-Company<br/><small class="text-muted">Built for Global Teams</small></h5>
-                <p>Full translation support for global deployments. Native multi-company architecture with strict data isolation.</p>
+                <h5>多语言与多公司<br/><small class="text-muted">适配全球化部署</small></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -163,8 +185,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code-fork fa-lg"></i>
                 </div>
-                <h5>Full Version Support<br/><small class="text-muted">Odoo 12 to 19</small></h5>
-                <p>Works with Odoo 19, 18, 17, 16, 15, 14, 13, 12, EE/CE/.SH, compatible with Enterprise, Community and Odoo Online SaaS.</p>
+                <h5>全版本兼容<br/><small class="text-muted">Odoo 12 至 19</small></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -172,8 +194,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="fa fa-code fa-lg"></i>
                 </div>
-                <h5>Full Open Source<br/><small class="text-muted">LGPL-3 Licensed</small></h5>
-                <p>Released under LGPL-3. Transparent, auditable code, open for further development and customization.</p>
+                <h5>代码完全开源<br/><small class="text-muted">LGPL-3 协议</small></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
             </div>
         </div>
     </div>
@@ -184,15 +206,43 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>Screenshots</h2>
-            <p class="lead">Core features at a glance</p>
+            <h2>界面截图</h2>
+            <p class="lead">核心功能界面一览</p>
         </div>
     </div>
 
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Use in HR Employee</h3>
-            <img class="img-fluid rounded shadow" src="hr2.gif" alt="HR Employee Navigation">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>HR 部门树形</h3>
+            <img class="img-fluid rounded shadow" src="demo4.jpg" alt="HR Department">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>HR 员工树形</h3>
+            <img class="img-fluid rounded shadow" src="demo5.jpg" alt="HR Employee">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>产品分类树形</h3>
+            <img class="img-fluid rounded shadow" src="demo2.jpg" alt="Product">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>产品分类</h3>
+            <img class="img-fluid rounded shadow" src="demo1.jpg" alt="Product Category">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>库存位置</h3>
+            <img class="img-fluid rounded shadow" src="demo3.jpg" alt="Stock Location">
         </div>
     </div>
 </section>
@@ -202,37 +252,30 @@
 <section class="oe_container container o_cc o_cc2 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>How It Works</h2>
+            <h2>使用流程</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <div class="row text-center">
-                <div class="col-md-3 pb16">
+                <div class="col-md-4 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
                         <i class="fa fa-download"></i>
                     </div>
-                    <p class="fw-bold mb-1">Install Module</p>
-                    <p class="small text-muted mb-0">Install and update</p>
+                    <p class="fw-bold mb-1">安装模块</p>
+                    <p class="small text-muted mb-0">安装即用</p>
                 </div>
-                <div class="col-md-3 pb16">
+                <div class="col-md-4 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-users"></i>
+                        <i class="fa fa-code"></i>
                     </div>
-                    <p class="fw-bold mb-1">Open Employee List</p>
-                    <p class="small text-muted mb-0">Sidebar appears</p>
+                    <p class="fw-bold mb-1">添加widget参数</p>
+                    <p class="small text-muted mb-0">加 widget='ztree_select'</p>
                 </div>
-                <div class="col-md-3 pb16">
+                <div class="col-md-4 pb16">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-sitemap"></i>
+                        <i class="fa fa-check"></i>
                     </div>
-                    <p class="fw-bold mb-1">Department Tree</p>
-                    <p class="small text-muted mb-0">Browse the tree</p>
-                </div>
-                <div class="col-md-3 pb16">
-                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
-                        <i class="fa fa-filter"></i>
-                    </div>
-                    <p class="fw-bold mb-1">Advance Search</p>
-                    <p class="small text-muted mb-0">Filter by field</p>
+                    <p class="fw-bold mb-1">树形选择生效</p>
+                    <p class="small text-muted mb-0">树中直接选择</p>
                 </div>
             </div>
         </div>
@@ -244,13 +287,13 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>Supported &amp; Dependent Modules</h2>
+            <h2>支持与依赖模块</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
                     <i class="fa fa-users text-o-color-1 me-2"></i>
-                    hr (Human Resources)
+                    hr / 人力资源管理
                 </li>
             </ul>
         </div>
@@ -262,7 +305,7 @@
 <section class="oe_container container pt32 pb32">
     <div class="row">
         <div class="col-lg-12">
-            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+            <img class="img-fluid rounded" src="banner.gif" alt="Banner" style="width:100%;display:block;">
         </div>
     </div>
 </section>
@@ -273,11 +316,11 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <h2>odooai.cn</h2>
-            <p class="lead" style="opacity:0.7;">Professional Odoo Solutions: Development, Implementation, Consulting &amp; Training</p>
+            <p class="lead" style="opacity:0.7;">专业 Odoo 服务伙伴，开发实施咨询培训全套解决方案</p>
             <div class="pt16">
-                <p><i class="fa fa-globe me-2"></i>Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p>
-                <p><i class="fa fa-desktop me-2"></i>Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p>
-                <p><i class="fa fa-envelope me-2"></i>Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a></p>
+                <p><i class="fa fa-globe me-2"></i>网站：<a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p>
+                <p><i class="fa fa-desktop me-2"></i>演示：<a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p>
+                <p><i class="fa fa-envelope me-2"></i>支持：<a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a></p>
             </div>
             <div class="pt16">
                 <img src="qr.png" alt="QR Code" style="width:120px;">
