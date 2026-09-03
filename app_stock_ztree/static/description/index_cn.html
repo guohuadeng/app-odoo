@@ -1,0 +1,405 @@
+<!--
+# -*- coding: utf-8 -*-
+##############################################################################
+# Copyright (C) 2009~2026 odooAi.cn
+# 此 index.html 遵循 Odoo 官方模块描述规范。
+# 样式：Bootstrap 5 + Odoo Website Snippet + FontAwesome
+# 布局参考：website/static/src/snippets/ & web_editor/static/scss/
+# GEO: 含 JSON-LD Structured Data (SoftwareApplication)
+##############################################################################
+-->
+<html>
+<head><meta charset="utf-8"/></head>
+
+<!-- JSON-LD Structured Data for Generative Engine Optimization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Stock Location zTree - 库存位置树控件",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "zTree widget for stock location parent children tree selector in many2one field. Support list and kanban view tree navigation.",
+  "softwareVersion": "18.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "Parent children tree selector in many2one field",
+    "Advance search in list and kanban view",
+    "Support stock location, product category and department",
+    "Customizable widget parameters",
+    "Easy to use widget_select configuration",
+    "Multi-language and multi-company support",
+    "Full open source under LGPL-3"
+  ]
+}
+</script>
+
+<!-- begin header>
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">库存位置树控件</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Stock location parent children tree selector in many2one field</p>
+            <p class="lead">
+                在 many2one 字段中显示库存位置的父子树结构，支持列表和看板视图中的树状导航<br/>
+            </p>
+            <div class="pt16">
+                <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end header -->
+
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述</h2>
+            <p class="lead pt16">
+            </p>
+                    </div>
+    </div>
+</section>
+<!-- end overview -->
+
+<!-- begin Feature List -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>完整功能列表</h2>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>易于自定义父子树结构</b><br/>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>产品分类树控件</b><br/>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>库存位置树控件</b><br/>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>HR 部门员工树控件</b><br/>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>Odoo 全模块通用</b><br/>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end Feature List -->
+
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center pb32">
+                <h2>核心亮点</h2>
+                <p class="lead">many2one 字段父子树控件</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-sitemap fa-lg"></i>
+                        </div>
+                        <h5>1. 父子树结构</h5>
+                        <p class="card-text">在 many2one 字段中显示库存位置的父子树结构</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-th-list fa-lg"></i>
+                        </div>
+                        <h5>2. 多视图支持</h5>
+                        <p class="card-text">支持列表和看板视图中的树状导航</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-cog fa-lg"></i>
+                        </div>
+                        <h5>3. 易于配置</h5>
+                        <p class="card-text">可自定义展开层级、记录限制、排序方式</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-code fa-lg"></i>
+                        </div>
+                        <h5>4. 完全开源</h5>
+                        <p class="card-text">基于 LGPL-3 协议开源，支持二次开发</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end key highlights -->
+
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性</h2>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-globe fa-lg"></i>
+                </div>
+                <h5>多语言与多公司<br/></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code-fork fa-lg"></i>
+                </div>
+                <h5>全版本兼容<br/></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code fa-lg"></i>
+                </div>
+                <h5>代码完全开源<br/></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end general features -->
+
+<!-- begin screenshots -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>界面截图</h2>
+            <p class="lead">核心功能界面一览</p>
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-sitemap text-o-color-1 me-2"></i>库存位置树控件</h3>
+            <img class="img-fluid rounded shadow" src="demo3.jpg" alt="Stock location tree">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-th-list text-o-color-1 me-2"></i>产品分类树</h3>
+            <img class="img-fluid rounded shadow" src="demo1.jpg" alt="Product category">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-cube text-o-color-1 me-2"></i>产品中使用</h3>
+            <img class="img-fluid rounded shadow" src="demo2.jpg" alt="Use in product">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-th-large text-o-color-1 me-2"></i>看板视图导航</h3>
+            <img class="img-fluid rounded shadow" src="demo11.jpg" alt="Kanban view navigation">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-wrench text-o-color-1 me-2"></i>控件配置</h3>
+            <img class="img-fluid rounded shadow" src="setup1.jpg" alt="Widget setup">
+        </div>
+    </div>
+</section>
+<!-- end screenshots -->
+
+<!-- begin free related apps -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(7,89,133,.1);color:#075985;">
+                <i class="fa fa-gift fa-lg"></i>
+            </div>
+            <h2>免费关联模块</h2>
+            <p class="lead">获取相关演示模块</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card border-0 shadow-sm" style="border-radius:12px;">
+                <div class="card-header text-white text-center py-3" style="background:linear-gradient(135deg,#0ea5e9,#0284c7);border-radius:12px 12px 0 0;">
+                    <i class="fa fa-download me-2"></i>
+                    <b>Free Download</b>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span class="flex-grow-1">zTree 树控件</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_web_widget_ztree/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>Download
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span class="flex-grow-1">产品及分类</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_product_ztree/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>Download
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span class="flex-grow-1">库存及位置</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_stock_ztree/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>Download
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(14,165,233,.06)'" onmouseout="this.style.backgroundColor=''">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span class="flex-grow-1">HR 部门及员工</span>
+                            <a href="http://www.odoo.com/apps/modules/18.0/app_hr_ztree/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                                <i class="fa fa-download me-1"></i>Download
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end free related apps -->
+
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <div class="row text-center">
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">安装模块</p>
+                    <p class="small text-muted mb-0">Install zTree widget</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-cog"></i>
+                    </div>
+                    <p class="fw-bold mb-1">配置参数</p>
+                    <p class="small text-muted mb-0">Set widget params</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-sitemap"></i>
+                    </div>
+                    <p class="fw-bold mb-1">使用树控件</p>
+                    <p class="small text-muted mb-0">Use tree selector</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end how it works -->
+
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-cubes text-o-color-1 me-2"></i>
+                    库存模块
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-tree text-o-color-1 me-2"></i>
+                    zTree 树控件（需另外安装）
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">Professional Odoo Solutions</p>
+            <div class="pt16">
+                <p>
+                    <i class="fa fa-globe me-2"></i>
+                    Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-desktop me-2"></i>
+                    Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-envelope me-2"></i>
+                    Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a>
+                </p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
+
+</html>
