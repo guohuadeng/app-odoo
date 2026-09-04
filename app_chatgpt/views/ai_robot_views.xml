@@ -158,7 +158,7 @@
             id="menu_ai_robot"
             name="Ai Robot"
             parent="base.menu_users"
-            sequence="2"
+            sequence="5"
             action="action_ai_robot"
             groups="base.group_system"/>
 
