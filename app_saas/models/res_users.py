@@ -11,6 +11,9 @@ except:
 
 from odoo import api, fields, models, SUPERUSER_ID, _
 from odoo.addons.base.models.res_users import KEY_CRYPT_CONTEXT, INDEX_SIZE
+from odoo.addons.auth_signup.models.res_users import SignupError
+
+from ast import literal_eval
 import requests
 
 import logging
@@ -26,6 +29,34 @@ class OauthBindError(Exception):
 class ResUsers(models.Model):
     _inherit = 'res.users'
 
+    def _create_user_from_template(self, values):
+        # 处理可指定 user template
+        oauth_provider_id = values.get('oauth_provider_id', 0)
+        if oauth_provider_id:
+            provider = self.env['auth.oauth.provider'].sudo().browse(int(oauth_provider_id))
+            if provider and provider.user_template_id:
+                template_user_id = literal_eval(str(provider.user_template_id.id))
+                template_user = self.browse(template_user_id)
+                if not template_user.exists():
+                    raise ValueError(_('Signup: invalid template user'))
+
+                if not values.get('login'):
+                    raise ValueError(_('Signup: no login given for new user'))
+                if not values.get('partner_id') and not values.get('name'):
+                    raise ValueError(_('Signup: no name or partner given for new user'))
+
+                # create a copy of the template user (attached to a specific partner_id if given)
+                values['active'] = True
+                try:
+                    with self.env.cr.savepoint():
+                        return template_user.with_context(no_reset_password=True).copy(values)
+                except Exception as e:
+                    # copy may failed if asked login is not available.
+                    raise SignupError(str(e))
+        res = super(ResUsers, self)._create_user_from_template(values)
+        self._cr.commit()
+        return res
+    
     @api.model
     def get_token_from_code(self, provider, params):
         # 通过 code 取 token
