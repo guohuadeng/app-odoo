@@ -17,7 +17,7 @@
 
 {
     'name': "产品分类导航 / Product Browse by Category Navigator",
-    'version': '18.0.25.04.02',
+    'version': '18.0.26.09.09',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

@@ -10,7 +10,7 @@
                 <searchpanel view_types="list,kanban,pivot,graph,search">
                     <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
                     <field name="categ_id" text="name" enable_counters="1" limit="1000"/>
-                    <field name="type"/>
+                    <field name="type" select="multi"/>
 	                <field name="product_tag_ids" select="multi"/>
                 </searchpanel>
             </xpath>
