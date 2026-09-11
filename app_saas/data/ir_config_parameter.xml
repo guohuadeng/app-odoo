@@ -6,9 +6,9 @@
         <function model="ir.config_parameter" name="set_param"
                   eval="('portal.allow_api_keys', 'True')"/>
 
-        <record id="error_report_url" model="ir.config_parameter" forcecreate="1">
+        <!-- <record id="error_report_url" model="ir.config_parameter" forcecreate="1">
             <field name="key">app_saas.error_report_url</field>
             <field name="value">https://www.odooai.cn/service/error-report</field>
-        </record>
+        </record> -->
     </data>
 </odoo>
