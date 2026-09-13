@@ -27,13 +27,21 @@ class Module(models.Model):
             else:
                 module.description_html_cn = False
             if module_path and path:
-                # 注意： b 不能在 mode中才能使用 utf-8
-                with tools.file_open(path, 'r') as desc_file:
-                    doc = desc_file.read()
+                try:
+                    # 注意： b 不能在 mode中才能使用 utf-8
+                    with tools.file_open(path, 'r') as desc_file:
+                        doc = desc_file.read()
+                    # 头行为 XML 声明时去除，lxml 拒绝解析带 encoding 声明的 unicode 字符串
+                    doc = doc.lstrip('\ufeff \t\r\n')
+                    if doc.startswith('<?xml'):
+                        doc = doc.split('?>', 1)[1] if '?>' in doc else ''
                     html = lxml.html.document_fromstring(doc)
                     for element, attribute, link, pos in html.iterlinks():
                         if element.get('src') and not '//' in element.get('src') and not 'static/' in element.get('src'):
                             element.set('src', "/%s/static/description/%s" % (module.name, element.get('src')))
                     module.description_html_cn = tools.html_sanitize(lxml.html.tostring(html))
+                except Exception:
+                    _logger.exception("Failed to parse Chinese description for module %s", module.name)
+                    module.description_html_cn = False
             else:
                 module.description_html_cn = False
