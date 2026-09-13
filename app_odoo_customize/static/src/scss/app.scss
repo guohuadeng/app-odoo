@@ -45,10 +45,11 @@
     .o_main_navbar {
       @media (max-width: 768px) {
         align-items: flex-end;
-        .o_navbar_apps_menu .dropdown-toggle, .o_nav_entry, .dropdown-toggle:not(.o-dropdown-toggle-custo), .o_menu_toggle {
-          align-items: baseline;
-          font-size: 1.5rem;
-        }
+        // 字号放大停用（2026-09-14）：底部导航不再放大字号
+        //.o_navbar_apps_menu .dropdown-toggle, .o_nav_entry, .dropdown-toggle:not(.o-dropdown-toggle-custo), .o_menu_toggle {
+        //  align-items: baseline;
+        //  font-size: 1.5rem;
+        //}
         .o_menu_toggle  {
           margin-top: 10px;
         }
@@ -111,7 +112,7 @@
       flex-direction: column-reverse!important;
     }
     .oi:before, .fa:before, .dropdown-toggle  {
-      font-size: 2em;
+      // font-size: 2em;
       line-height: var(--o-navbar-height);
     }
   }
