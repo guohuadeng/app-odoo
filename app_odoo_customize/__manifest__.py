@@ -23,7 +23,7 @@
 
 {
     'name': 'Hide Powered by Odoo and Boost with 60+ Tweak Pack All in One / 60+项Odoo优化提速OEM去标大全',
-    'version': '18.0.26.07.17',
+    'version': '18.0.26.09.14',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
