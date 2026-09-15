@@ -12,3 +12,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: app_base_superbar
+#: model:ir.ui.view,arch_db:app_base_superbar.app_ir_logging_search_view
+msgid "CRITICAL"
+msgstr "严重"
+
+#. module: app_base_superbar
+#: model:ir.ui.view,arch_db:app_base_superbar.app_ir_logging_search_view
+msgid "ERROR"
+msgstr "错误"
+
+#. module: app_base_superbar
+#: model:ir.ui.view,arch_db:app_base_superbar.app_ir_logging_search_view
+msgid "WARNING"
+msgstr "警告"
+
+#. module: app_base_superbar
+#: model:ir.ui.view,arch_db:app_base_superbar.app_ir_logging_search_view
+msgid "Last 7 Days"
+msgstr "近7天"
+
+#. module: app_base_superbar
+#: model:ir.ui.view,arch_db:app_base_superbar.app_ir_logging_search_view
+msgid "Last 14 Days"
+msgstr "近14天"
+
+#. module: app_base_superbar
+#: model:ir.ui.view,arch_db:app_base_superbar.app_ir_logging_search_view
+msgid "Last 30 Days"
+msgstr "近30天"
+

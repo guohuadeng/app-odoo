@@ -17,7 +17,7 @@
 
 {
     'name': "基础管理快速导航,Easy Admin Navigator with Superbar",
-    'version': '18.0.25.04.13',
+    'version': '18.0.26.09.15',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -54,6 +54,7 @@
         'views/ir_actions_server_views.xml',
         'views/ir_attachment_views.xml',
         'views/ir_default_views.xml',
+        'views/ir_logging_views.xml',
         'views/ir_model_access_views.xml',
         'views/ir_model_constraint_views.xml',
         'views/ir_model_fields_views.xml',

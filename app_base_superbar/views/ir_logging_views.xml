@@ -1,0 +1,31 @@
+<odoo>
+    <record id="app_ir_logging_search_view" model="ir.ui.view">
+        <field name="name">app.ir.logging.search</field>
+        <field name="model">ir.logging</field>
+        <field name="inherit_id" ref="base.ir_logging_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='message']" position="after">
+                <separator/>
+                <filter string="CRITICAL" name="filter_critical"
+                        domain="[('level', 'ilike', 'critical')]"/>
+                <filter string="ERROR" name="filter_error"
+                        domain="[('level', 'ilike', 'error')]"/>
+                <filter string="WARNING" name="filter_warning"
+                        domain="[('level', 'ilike', 'warning')]"/>
+                <separator/>
+                <filter string="Last 7 Days" name="filter_last_7_days"
+                        domain="[('create_date', '&gt;', datetime.datetime.now() - datetime.timedelta(days=7))]"/>
+                <filter string="Last 14 Days" name="filter_last_14_days"
+                        domain="[('create_date', '&gt;', datetime.datetime.now() - datetime.timedelta(days=14))]"/>
+                <filter string="Last 30 Days" name="filter_last_30_days"
+                        domain="[('create_date', '&gt;', datetime.datetime.now() - datetime.timedelta(days=30))]"/>
+                <!--                    todo: 注意，在16中，没有 week 了，从month开始，默认就是 this_month-->
+                <filter name="filter_create_date" domain="[]" date="create_date" default_period="month"/>
+            </xpath>
+        </field>
+    </record>
+    <function model="ir.actions.act_window" name="write">
+        <value eval="[ref('base.ir_logging_all_act')]"/>
+        <value eval="{'context': {'search_default_filter_last_7_days':1, 'search_default_filter_critical':1, 'search_default_filter_error':1}}"/>
+    </function>
+</odoo>
