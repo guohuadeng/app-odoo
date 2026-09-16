@@ -17,10 +17,11 @@
 		<field name='model'>ir.module.category</field>
 		<field name='priority'>16</field>
 		<field name='arch' type='xml'>
-			<list create="0" editable="bottom" multi_edit="1">
+			<list create="0" editable="bottom" multi_edit="1" open_form_view="True">
 				<field name='sequence'/>
 				<field name='name'/>
 				<field name='parent_id'/>
+				<field name='module_ids' optional="show"/>
 			</list>
 		</field>
 	</record>
