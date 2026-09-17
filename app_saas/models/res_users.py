@@ -161,6 +161,8 @@ class ResUsers(models.Model):
                     }
                     odoo_user.write(vals)
                     _logger.info('========= _auth_oauth_signin res.users write：%s' % vals)
+                    # 同步通行证头像到本库用户
+                    self._oauth_sync_avatar(odoo_user, validation)
                     # 增加处理写mcp key
                     self._oauth_ensure_mcp_key(odoo_user, validation, access_token)
                     self._cr.commit()
@@ -169,18 +171,44 @@ class ResUsers(models.Model):
         # 增加处理写mcp key（用户已绑定过 oauth 走此分支；
         # 按 validation.user_id 找回用户，避免原代码此处 odoo_user 未定义）
         odoo_user = self.sudo().search([('login', '=', validation.get('user_id'))], limit=1)
+        # 同步通行证头像到本库用户
+        self._oauth_sync_avatar(odoo_user, validation)
         self._oauth_ensure_mcp_key(odoo_user, validation, access_token)
         return res
+
+    def _oauth_sync_avatar(self, odoo_user, validation):
+        # OAuth 登录时同步通行证头像到本库用户。
+        # headimgurl 支持 base64（passport 下发 avatar_128）或 url 两种格式；
+        # 值与当前头像一致时跳过写入，避免每次登录重复写库
+        headimgurl = validation.get('headimgurl')
+        if not odoo_user or not headimgurl:
+            return
+        try:
+            if headimgurl.startswith('http'):
+                image = self.with_user(SUPERUSER_ID)._get_image_from_url(headimgurl)
+            else:
+                image = headimgurl
+            if image:
+                current = odoo_user.sudo().image_1920
+                new_val = image if isinstance(image, bytes) else image.encode()
+                if current != new_val:
+                    odoo_user.sudo().write({'image_1920': image})
+        except Exception as e:
+            _logger.warning('===== _oauth_sync_avatar error: %s' % str(e))
 
     @api.model
     def _generate_signup_values(self, provider, validation, params):
         # 此处生成 创建 odoo user 的初始值，增加字段如头像
         res = super()._generate_signup_values(provider, validation, params)
-        # 后置增加字段，包括 headimgurl
+        # 后置增加字段，包括 headimgurl（base64 或 url）
         if validation.get('mobile'):
             res['mobile'] = validation.get('mobile')
         if validation.get('headimgurl'):
-            res['image_1920'] = self.with_user(SUPERUSER_ID)._get_image_from_url(validation.get('headimgurl'))
+            headimgurl = validation.get('headimgurl')
+            if headimgurl.startswith('http'):
+                res['image_1920'] = self.with_user(SUPERUSER_ID)._get_image_from_url(headimgurl)
+            else:
+                res['image_1920'] = headimgurl
         return res
 
     # def _rpc_api_keys_only(self):
