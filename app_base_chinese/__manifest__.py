@@ -18,7 +18,7 @@
 
 {
     'name': "odoo中国版中文本土化套件,Odoo Chinese Localization Enhance All in One",
-    'version': '18.0.26.09.14',
+    'version': '18.0.26.09.18',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
