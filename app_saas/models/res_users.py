@@ -131,17 +131,18 @@ class ResUsers(models.Model):
         key_id = self.env.cr.fetchone()[0]
         _logger.info('===== _oauth_ensure_mcp_key created #%s for user %s'
                      % (key_id, odoo_user.login))
-        # app_mcp 安装时（user_key 列存在）同步明文 key，供 MCP 配置生成使用
-        # self.env.cr.execute("""
-        #     SELECT EXISTS (
-        #         SELECT 1 FROM pg_attribute
-        #         WHERE attname = 'user_key'
-        #         AND attrelid = (SELECT oid FROM pg_class WHERE relname = 'res_users_apikeys')
-        #     );
-        # """)
-        # if self.env.cr.fetchone()[0]:
-        #     self.env.cr.execute(
-        #         "UPDATE res_users_apikeys SET user_key = %s WHERE id = %s", [key, key_id])
+        # app_mcp 安装时（user_key 列存在）同步明文 key，供 MCP 配置生成使用；
+        # app_mcp 未安装时该列不存在，跳过
+        self.env.cr.execute("""
+            SELECT EXISTS (
+                SELECT 1 FROM pg_attribute
+                WHERE attname = 'user_key'
+                AND attrelid = (SELECT oid FROM pg_class WHERE relname = 'res_users_apikeys')
+            );
+        """)
+        if self.env.cr.fetchone()[0]:
+            self.env.cr.execute(
+                "UPDATE res_users_apikeys SET user_key = %s WHERE id = %s", [key, key_id])
 
     def _auth_oauth_signin(self, provider, validation, params):
         # 用户绑定的额外处理，如果有同 login 用户则直接绑定
