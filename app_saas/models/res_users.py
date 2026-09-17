@@ -179,21 +179,25 @@ class ResUsers(models.Model):
 
     def _oauth_sync_avatar(self, odoo_user, validation):
         # OAuth 登录时同步通行证头像到本库用户。
-        # headimgurl 支持 base64（passport 下发 avatar_128）或 url 两种格式；
+        # headimg_data：passport 下发的 data:image/...;base64 头像数据，直接写值；
+        # headimgurl：仍按 url 处理（远程取图）。
         # 值与当前头像一致时跳过写入，避免每次登录重复写库
+        if not odoo_user:
+            return
+        headimg_data = validation.get('headimg_data')
         headimgurl = validation.get('headimgurl')
-        if not odoo_user or not headimgurl:
+        image = False
+        if headimg_data and headimg_data.startswith('data:'):
+            image = headimg_data.split(',', 1)[-1]
+        elif headimgurl and headimgurl.startswith('http'):
+            image = self.with_user(SUPERUSER_ID)._get_image_from_url(headimgurl)
+        if not image:
             return
         try:
-            if headimgurl.startswith('http'):
-                image = self.with_user(SUPERUSER_ID)._get_image_from_url(headimgurl)
-            else:
-                image = headimgurl
-            if image:
-                current = odoo_user.sudo().image_1920
-                new_val = image if isinstance(image, bytes) else image.encode()
-                if current != new_val:
-                    odoo_user.sudo().write({'image_1920': image})
+            current = odoo_user.sudo().image_1920
+            new_val = image if isinstance(image, bytes) else image.encode()
+            if current != new_val:
+                odoo_user.sudo().write({'image_1920': image})
         except Exception as e:
             _logger.warning('===== _oauth_sync_avatar error: %s' % str(e))
 
@@ -201,15 +205,15 @@ class ResUsers(models.Model):
     def _generate_signup_values(self, provider, validation, params):
         # 此处生成 创建 odoo user 的初始值，增加字段如头像
         res = super()._generate_signup_values(provider, validation, params)
-        # 后置增加字段，包括 headimgurl（base64 或 url）
+        # 后置增加字段：headimg_data 直接写值，headimgurl 按 url 取图
         if validation.get('mobile'):
             res['mobile'] = validation.get('mobile')
-        if validation.get('headimgurl'):
-            headimgurl = validation.get('headimgurl')
-            if headimgurl.startswith('http'):
-                res['image_1920'] = self.with_user(SUPERUSER_ID)._get_image_from_url(headimgurl)
-            else:
-                res['image_1920'] = headimgurl
+        headimg_data = validation.get('headimg_data')
+        if headimg_data and headimg_data.startswith('data:'):
+            res['image_1920'] = headimg_data.split(',', 1)[-1]
+        elif validation.get('headimgurl'):
+            res['image_1920'] = self.with_user(SUPERUSER_ID)._get_image_from_url(
+                validation.get('headimgurl'))
         return res
 
     # def _rpc_api_keys_only(self):
