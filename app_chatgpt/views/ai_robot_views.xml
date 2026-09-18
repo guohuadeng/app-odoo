@@ -82,7 +82,7 @@
                     <group>
                         <group>
                             <field name="id" invisible="1"/>
-                            <field name="openapi_api_key" password="True" required="True"/>
+                            <field name="openapi_api_key" options="{'key_musk': 1, 'copy_clipboard': 1}"/>
                             <field name="temperature"/>
                             <field name="top_p"/>
                             <field name="frequency_penalty"/>
