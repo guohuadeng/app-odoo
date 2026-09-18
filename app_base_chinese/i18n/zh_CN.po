@@ -47,9 +47,19 @@ msgid "Currency"
 msgstr "币种"
 
 #. module: app_base_chinese
+#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_base_chinese_module_module_form_view
+msgid "Chinese Description"
+msgstr "中文描述"
+
+#. module: app_base_chinese
 #: model:ir.model.fields,field_description:app_base_chinese.field_ir_module_module__description_html_cn
 msgid "Description HTML CN"
 msgstr "中文描述"
+
+#. module: app_base_chinese
+#: model_terms:ir.ui.view,arch_db:app_base_chinese.app_base_chinese_module_module_form_view
+msgid "Description"
+msgstr "描述"
 
 #. module: app_base_chinese
 #: model:ir.model.fields,help:app_base_chinese.field_res_country__sequence

@@ -5,8 +5,15 @@
         <field name="model">ir.module.module</field>
         <field name="inherit_id" ref="base.module_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='description_html']" position="before">
-                <field name="description_html_cn" class="oe_styling_v8" invisible="not description_html_cn"/>
+            <xpath expr="//page[@name='installed_features']" position="after">
+                <page string="Description" name="description_en" invisible="not description_html">
+                </page>
+                <page string="CN Description" name="description_cn" invisible="not description_html_cn ">
+                    <field name="description_html_cn" class="oe_styling_v8" invisible="not description_html_cn"/>
+                </page>
+            </xpath>
+            <xpath expr="//page[@name='description_en']" position="inside">
+                <field name="description_html" position="move"/>
             </xpath>
         </field>
     </record>

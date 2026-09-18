@@ -39,7 +39,8 @@ class Module(models.Model):
                     for element, attribute, link, pos in html.iterlinks():
                         if element.get('src') and not '//' in element.get('src') and not 'static/' in element.get('src'):
                             element.set('src', "/%s/static/description/%s" % (module.name, element.get('src')))
-                    module.description_html_cn = tools.html_sanitize(lxml.html.tostring(html))
+                    # encoding='unicode' 返回 str，bytes 会导致 html_sanitize 静默失败
+                    module.description_html_cn = tools.html_sanitize(lxml.html.tostring(html, encoding='unicode'))
                 except Exception:
                     _logger.exception("Failed to parse Chinese description for module %s", module.name)
                     module.description_html_cn = False
