@@ -23,7 +23,7 @@
 
 {
     'name': 'Hide Powered by Odoo and Boost with 60+ Tweak Pack All in One / 60+项Odoo优化提速OEM去标大全',
-    'version': '18.0.26.09.15',
+    'version': '18.0.26.09.18',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
@@ -84,6 +84,8 @@
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
             'app_odoo_customize/static/src/js/chat_window_drag.js',
+            'app_odoo_customize/static/src/js/chat_window_open_discuss.js',
+            'app_odoo_customize/static/src/xml/chat_window_open_discuss.xml',
             'app_odoo_customize/static/src/js/documentation_link.js',
             'app_odoo_customize/static/src/webclient/*.js',
             'app_odoo_customize/static/src/webclient/user_menu.xml',

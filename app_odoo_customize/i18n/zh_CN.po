@@ -1095,3 +1095,9 @@ msgstr "以下模型清理失败，已跳过：%s"
 #: code:addons/app_odoo_customize/models/res_config_settings.py:0
 msgid "Partial Cleanup Failed"
 msgstr "部分清理失败"
+
+#. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/xml/chat_window_open_discuss.xml:0
+msgid "Open in Discuss"
+msgstr "在讨论打开"

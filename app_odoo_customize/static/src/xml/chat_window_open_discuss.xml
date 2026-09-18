@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <!-- "Open in Discuss" (fa-expand) button on the ChatWindow header.
+         Native quick actions are rendered from
+         partitionedActions.quick.slice(0, ui.isSmall ? 2 : 4).reverse()
+         so visual order ends with: ... | fold (fa-minus) | close (oi-close).
+         The expand button stays inside the loop, right after the fold
+         iteration, giving: ... | fold | expand | close.
+         The extra `action_index === quickSlice.findIndex(...)` guard ensures
+         the button is rendered only once even if fold-chat-window ever
+         appears more than once in the slice.
+         Behavior mirrors the native `expand-discuss` thread action
+         (mail/static/src/discuss/core/web/thread_actions.js). -->
+    <t t-inherit="mail.ChatWindow" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o-mail-ChatWindow-quickActions')]/t" position="replace">
+            <t t-set="quickSlice" t-value="partitionedActions.quick.slice(0, ui.isSmall ? 2 : 4).reverse()"/>
+            <t t-foreach="quickSlice" t-as="action" t-key="action.id">
+                <t t-call="mail.ChatWindow.quickAction">
+                    <t t-if="action_last" t-set="itemClass" t-value="ui.isSmall ? 'mx-2' : ''"/>
+                </t>
+                <button
+                    class="o-mail-ChatWindow-command btn d-flex opacity-100-hover align-items-center p-0 o-quick"
+                    style="aspect-ratio: 1;"
+                    t-if="action.id === 'fold-chat-window' and action_index === quickSlice.findIndex(a => a.id === 'fold-chat-window') and thread and thread.model === 'discuss.channel' and props.chatWindow.isOpen and !ui.isSmall"
+                    t-att-disabled="state.actionsDisabled"
+                    title="Open in Discuss"
+                    t-on-click.stop="() => this.openInDiscuss()"
+                >
+                    <i class="fa fa-lg fa-expand"/>
+                </button>
+            </t>
+        </xpath>
+    </t>
+
+</templates>
