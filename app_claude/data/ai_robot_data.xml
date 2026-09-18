@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <record id="robot_claude_sonnet_4_5" model="ai.robot">
+        <field name="name">Claude Sonnet 4.5</field>
+        <field name="provider">claude</field>
+        <field name="ai_model">claude-sonnet-4-5</field>
+        <field name="set_ai_model">claude-sonnet-4-5</field>
+	    <field name="api_version" eval="False"/>
+        <field name="endpoint">https://api.anthropic.com/v1/messages</field>
+        <field name="sequence">12</field>
+        <field name="image_avatar" type="base64" file="app_claude/static/src/img/claude.png"/>
+    </record>
+    <record id="robot_claude_opus_4_1" model="ai.robot">
+        <field name="name">Claude Opus 4.1</field>
+        <field name="provider">claude</field>
+        <field name="ai_model">claude-opus-4-1</field>
+        <field name="set_ai_model">claude-opus-4-1</field>
+	    <field name="api_version" eval="False"/>
+        <field name="endpoint">https://api.anthropic.com/v1/messages</field>
+        <field name="sequence">13</field>
+        <field name="image_avatar" type="base64" file="app_claude/static/src/img/claude.png"/>
+    </record>
+    <record id="robot_claude_3_5_haiku" model="ai.robot">
+        <field name="name">Claude 3.5 Haiku</field>
+        <field name="provider">claude</field>
+        <field name="ai_model">claude-3-5-haiku-latest</field>
+        <field name="set_ai_model">claude-3-5-haiku-latest</field>
+	    <field name="api_version" eval="False"/>
+        <field name="endpoint">https://api.anthropic.com/v1/messages</field>
+        <field name="sequence">14</field>
+        <field name="image_avatar" type="base64" file="app_claude/static/src/img/claude.png"/>
+    </record>
+
+</odoo>
