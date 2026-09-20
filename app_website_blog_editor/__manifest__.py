@@ -5,7 +5,7 @@
 
 {
     'name': '网站博文源码编辑器 / Website Blog &amp; Page Source Code Editor',
-    'version': '18.0.26.06.14',
+    'version': '18.0.26.09.21',
     'author': 'odooai.cn',
     'category': 'Website',
     'website': 'https://www.odooai.cn',
