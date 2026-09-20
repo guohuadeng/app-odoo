@@ -28,17 +28,13 @@ class DbBackup(models.Model):
     _name = 'db.backup'
     _description = 'Backup configuration record'
 
-    def _get_db_name(self):
-        dbName = self._cr.dbname
-        return dbName
-
     # Columns for local server configuration
     host = fields.Char('Host', required=True, default='localhost')
     port = fields.Char('Port', required=True, default=8069)
     name = fields.Char('Database', required=True, help='Database you want to schedule backups for',
-                       default=_get_db_name)
+                       default=lambda self: self._get_db_name())
     folder = fields.Char('Backup Directory', help='Absolute path for storing the backups', required=True,
-                         default='/usr/lib/python3/dist-packages/odoo/backups')
+                        default=lambda self: self._get_folder())
     backup_type = fields.Selection([('zip', 'Zip'), ('dump', 'Dump')], 'Backup Type', required=True, default='zip')
     autoremove = fields.Boolean('Auto. Remove Backups',
                                 help='If you check this option you can choose to automaticly remove the backup '
@@ -76,6 +72,17 @@ class DbBackup(models.Model):
                                   help='Fill in the e-mail where you want to be notified that the backup failed on '
                                        'the FTP.')
     backup_details_ids = fields.One2many('db.backup.details', 'db_backup_id', 'Backup Details')
+
+    def _get_db_name(self):
+        dbName = self._cr.dbname
+        return dbName
+    
+    def _get_folder(self):
+        if os.path.exists(odoo.tools.config['data_dir']):
+            folder = os.path.join(odoo.tools.config['data_dir'], 'backups')
+        else:
+            folder = ''
+        return folder
 
     def test_sftp_connection(self, context=None):
         self.ensure_one()
