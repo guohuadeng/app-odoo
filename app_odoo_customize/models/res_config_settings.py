@@ -73,7 +73,7 @@ class ResConfigSettings(models.TransientModel):
         if not self._app_check_sys_op():
             raise UserError(_('Not allow.'))
         config_parameter = self.env['ir.config_parameter'].sudo()
-        app_enterprise_url = config_parameter.get_param('app_enterprise_url', 'https://www.odooai.cn')
+        app_enterprise_url = config_parameter.get_str('app_enterprise_url', 'https://www.odooai.cn')
         modules = self.env['ir.module.module'].search([('license', 'like', 'OEEL%'), ('website', '!=', False)])
         if modules:
             sql = "UPDATE ir_module_module SET website = '%s' WHERE id IN %s" % (app_enterprise_url, tuple(modules.ids))
@@ -822,7 +822,7 @@ class ResConfigSettings(models.TransientModel):
         return True
 
     def action_set_app_doc_root_to_my(self):
-        base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        base_url = self.env['ir.config_parameter'].sudo().get_str('web.base.url')
         self.app_doc_root_url = base_url
 
     def action_neutralize_database(self):

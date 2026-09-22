@@ -1,0 +1,4 @@
+id,name,model_id,group_id/id,operation,domain
+access_ir_config_parameter_system,ir_config_parameter_system,ir.config_parameter,base.group_user,r,
+access_ir_module_addons_path_user,ir_module_addons_path_user,ir.module.addons.path,base.group_system,crud,
+access_clear_data_wizard,clear.data.wizard,clear.data.wizard,base.group_system,crud,

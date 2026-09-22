@@ -16,7 +16,7 @@ from odoo import models, fields, api, _
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
 from odoo.http import request
 from odoo.exceptions import UserError
-from odoo.osv import expression
+from odoo.orm.domains import Domain
 from ..lib.user_agents import parse
 
 _logger = logging.getLogger(__name__)
@@ -262,7 +262,7 @@ class Base(models.AbstractModel):
         if ref_value is None:
             raise UserError(_('创建或更新时，必须提供关键字段信息: %s') % ref)
 
-        search_domain = expression.AND([domain, [(ref, '=', ref_value)]])
+        search_domain = Domain.AND([domain, [(ref, '=', ref_value)]])
         record = self.search(search_domain, limit=1)
 
         if record:
@@ -325,7 +325,7 @@ def get_image_from_url(url):
         pass
     else:
         # 处理相对路径
-        web_base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url', '')
+        web_base_url = request.env['ir.config_parameter'].sudo().get_str('web.base.url', '')
         url = web_base_url + url
     try:
         response = requests.get(url, timeout=5)

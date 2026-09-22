@@ -15,7 +15,7 @@ class WebEnvironmentRibbonBackend(models.AbstractModel):
 
     @api.model
     def _prepare_ribbon_name(self):
-        name_tmpl = self.env["ir.config_parameter"].sudo().get_param("app_ribbon_name") or False
+        name_tmpl = self.env["ir.config_parameter"].sudo().get_str("app_ribbon_name") or False
         vals = self._prepare_ribbon_format_vals()
         return name_tmpl and name_tmpl.format(**vals) or name_tmpl
 
@@ -29,8 +29,8 @@ class WebEnvironmentRibbonBackend(models.AbstractModel):
         name = self._prepare_ribbon_name()
         return {
             "name": name,
-            "color": ir_config_model.sudo().get_param("app_ribbon_color"),
-            "background_color": ir_config_model.sudo().get_param(
+            "color": ir_config_model.sudo().get_str("app_ribbon_color"),
+            "background_color": ir_config_model.sudo().get_str(
                 "app_ribbon_background_color"
             ),
         }

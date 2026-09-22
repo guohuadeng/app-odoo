@@ -39,7 +39,7 @@
 
 {
     'name': "欧度智能基础功能及面板,odooAi Common Util and Tools",
-    'version': '20.0.26.08.05',
+    'version': '20.1.26.09.23',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -85,6 +85,8 @@
         'mail',
         'base_setup',
         'web',
+        # todo: 当前为了 fix web_tour bug 处理，后续官方 20 修正后可行
+        'web_tour',
     ],
     'data': [
         'data/ir_config_parameter_data.xml',
@@ -99,6 +101,13 @@
     'qweb': [
         'static/src/xml/*.xml',
     ],
+    'assets': {
+        # 非安全上下文下 navigator.clipboard 不存在，提前补齐避免 web_tour clipboard 模块加载报错
+        'web_tour.helpers': [
+            ('before', 'web_tour/static/src/tour_helpers/tour_helpers_clipboard.js',
+             'app_common/static/src/js/clipboard_polyfill.js'),
+        ],
+    },
     'demo': [],
     # 'pre_init_hook': 'pre_init_hook',
     # 'post_init_hook': 'post_init_hook',

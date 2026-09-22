@@ -14,7 +14,7 @@ class AppHome(Home):
 
         if kw.get('debug', False):
             config_parameter = request.env['ir.config_parameter'].sudo()
-            app_debug_only_admin = config_parameter.get_param('app_debug_only_admin')
+            app_debug_only_admin = config_parameter.get_str('app_debug_only_admin')
             if request.session.uid and request.env.user.browse(request.session.uid)._is_admin():
                 pass
             else:

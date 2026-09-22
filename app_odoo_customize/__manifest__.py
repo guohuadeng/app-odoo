@@ -23,7 +23,7 @@
 
 {
     'name': 'Odoo20 Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Remove Data All in One-优化提速60+项大全',
-    'version': '20.0.26.07.17',
+    'version': '20.1.26.07.17',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
@@ -50,7 +50,7 @@
     ],
     'data': [
         'security/res_groups.xml',
-        'security/ir.model.access.csv',
+        'security/ir.access.csv',
         'views/app_odoo_customize_views.xml',
         'views/res_config_settings_views.xml',
         'wizard/clear_data_wizard_views.xml',
@@ -84,7 +84,6 @@
             'app_odoo_customize/static/src/js/user_menu.js',
             'app_odoo_customize/static/src/js/ribbon.js',
             'app_odoo_customize/static/src/js/dialog.js',
-            'app_odoo_customize/static/src/js/navbar.js',
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
             'app_odoo_customize/static/src/js/chat_window_drag.js',

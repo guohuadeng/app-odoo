@@ -2,16 +2,17 @@
 
 import { WebClient } from "@web/webclient/webclient";
 import { patch } from "@web/core/utils/patch";
+import { useService } from "@web/core/utils/hooks";
 import { session } from "@web/session";
 
 patch(WebClient.prototype, {
     setup() {
         // 处理 navbar 全局可配置位置
-        var self = this;
         super.setup();
+        const ui = useService("ui");
         this.state.navbar_pos_pc = session.app_navbar_pos_pc || 'top';
         this.state.navbar_pos_mobile = session.app_navbar_pos_mobile || 'top';
-        if (self.env.isSmall)
+        if (ui.isSmall)
             this.state.navbar_pos = this.state.navbar_pos_mobile;
         else
             this.state.navbar_pos = this.state.navbar_pos_pc;
