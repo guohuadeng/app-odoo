@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="app_odoo_customize.XmlIdDebugItem">
+        <DropdownItem closingMode="'none'">
+            <div class="o_debug_xmlid_item d-flex align-items-center justify-content-between" style="min-width: 220px;">
+                <span t-if="state.loading" class="text-muted" style="padding-left: 12px;">
+                    XML ID: ...
+                </span>
+                <span t-elif="state.xmlid" class="text-truncate" style="padding-left: 12px;">
+                    XML ID: <t t-esc="state.xmlid"/>
+                </span>
+                <span t-else="" class="text-muted" style="padding-left: 12px;">
+                    XML ID: -
+                </span>
+                <button t-if="state.xmlid and !state.loading"
+                        class="o_debug_xmlid_copy btn btn-sm btn-link py-0 px-2 flex-shrink-0"
+                        title="Copy XML ID"
+                        t-on-click.stop.prevent="copyXmlId">
+                    <i class="fa fa-copy"/>
+                </button>
+            </div>
+        </DropdownItem>
+    </t>
+
+</templates>
