@@ -196,6 +196,7 @@
             <rng:optional><rng:attribute name="domain_filter"/></rng:optional>
             <rng:optional><rng:attribute name="class"/></rng:optional>
             <rng:optional><rng:attribute name="string"/></rng:optional>
+            <rng:optional><rng:attribute name="help"/></rng:optional>
             <rng:optional><rng:attribute name="completion"/></rng:optional>
             <rng:optional><rng:attribute name="width"/></rng:optional>
             <rng:optional><rng:attribute name="type"/></rng:optional>
@@ -329,6 +330,7 @@
             <rng:optional><rng:attribute name="disabled"/></rng:optional>
             <rng:optional><rng:attribute name="name" /></rng:optional>
             <rng:optional><rng:attribute name="icon" /></rng:optional>
+            <rng:optional><rng:attribute name="icon_class" /></rng:optional>
             <rng:optional><rng:attribute name="string" /></rng:optional>
             <rng:optional><rng:attribute name="type" /></rng:optional>
             <rng:optional><rng:attribute name="special" /></rng:optional>
@@ -338,6 +340,7 @@
             <rng:optional><rng:attribute name="readonly"/></rng:optional>
             <rng:optional><rng:attribute name="context"/></rng:optional>
             <rng:optional><rng:attribute name="confirm"/></rng:optional>
+            <rng:optional><rng:attribute name="confirm-title"/></rng:optional>
             <rng:optional><rng:attribute name="confirm-label"/></rng:optional>
             <rng:optional><rng:attribute name="cancel-label"/></rng:optional>
             <rng:optional><rng:attribute name="help"/></rng:optional>
@@ -370,11 +373,9 @@
         <rng:element name="filter">
             <rng:ref name="overload"/>
             <rng:ref name="access_rights"/>
-            <rng:attribute name="name"/>
             <rng:optional><rng:attribute name="icon"/></rng:optional>
             <rng:optional><rng:attribute name="invisible"/></rng:optional>
             <rng:optional><rng:attribute name="separator" /></rng:optional>
-            <rng:optional><rng:attribute name="string" /></rng:optional>
             <rng:optional><rng:attribute name="type" /></rng:optional>
             <rng:optional><rng:attribute name="align" /></rng:optional>
             <rng:optional><rng:attribute name="colspan"/></rng:optional>
@@ -383,22 +384,42 @@
             <rng:optional><rng:attribute name="help"/></rng:optional>
             <rng:optional><rng:attribute name="domain"/></rng:optional>
             <rng:optional><rng:attribute name="date"/></rng:optional>
+            <rng:optional><rng:attribute name="end_date"/></rng:optional>
+            <!-- TODO: remove with an upgrade script, kept to not crash customisations. -->
             <rng:optional><rng:attribute name="start_month"/></rng:optional>
             <rng:optional><rng:attribute name="end_month"/></rng:optional>
             <rng:optional><rng:attribute name="start_year"/></rng:optional>
             <rng:optional><rng:attribute name="end_year"/></rng:optional>
             <rng:optional><rng:attribute name="default_period"/></rng:optional>
-            <rng:zeroOrMore>
-                <rng:choice>
-                    <rng:ref name="field" />
-                    <rng:ref name="xpath" />
-                    <rng:ref name="separator"/>
-                    <rng:ref name="button"/>
-                    <rng:ref name="filter"/>
-                    <rng:ref name="html"/>
-                    <rng:element name="newline"><rng:empty/></rng:element>
-                </rng:choice>
-            </rng:zeroOrMore>
+            <rng:choice>
+                <!-- Standard Filter with a mandatory 'name' attribute -->
+                <rng:group>
+                    <rng:attribute name="name"/>
+                    <rng:optional><rng:attribute name="string" /></rng:optional>
+                    <rng:zeroOrMore>
+                        <rng:choice>
+                            <rng:ref name="field" />
+                            <rng:ref name="xpath" />
+                            <rng:ref name="separator"/>
+                            <rng:ref name="button"/>
+                            <rng:ref name="filter"/>
+                            <rng:ref name="html"/>
+                            <rng:element name="newline"><rng:empty/></rng:element>
+                        </rng:choice>
+                    </rng:zeroOrMore>
+                </rng:group>
+                <!-- Parent and inner filters with mandatory 'string' attribute -->
+                <!-- Supported in Search View -->
+                <rng:group>
+                    <rng:attribute name="string"/>
+                    <rng:choice>
+                        <rng:ref name="field" />
+                        <rng:oneOrMore>
+                            <rng:ref name="filter"/>
+                        </rng:oneOrMore>
+                    </rng:choice>
+                </rng:group>
+            </rng:choice>
 
         </rng:element>
     </rng:define>
@@ -429,6 +450,8 @@
             <rng:attribute name="name"/>
             <rng:optional><rng:attribute name="options"/></rng:optional>
             <rng:optional><rng:attribute name="width"/></rng:optional>
+            <rng:optional><rng:attribute name="column_invisible"/></rng:optional>
+            <rng:optional><rng:attribute name="invisible"/></rng:optional>
         </rng:element>
     </rng:define>
 

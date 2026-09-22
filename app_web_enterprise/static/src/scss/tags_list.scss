@@ -1,0 +1,18 @@
+// 覆盖 web_enterprise/static/src/core/tags_list/tags_list.scss
+// 本地企业版源码引用了 Odoo 20.1 核心已删除的 $o-colors-border 变量（仅在 dark 变量文件中定义），
+// 导致 web.assets_backend 编译报错 "Undefined variable: $o-colors-border"。
+// 此处采用与 Odoo 20.1 核心 web 模块 tags_list.scss 一致的写法。
+// 必须放本模块：replace 目标需在 web_enterprise 加入 bundle 之后才存在。
+.o_tag {
+    @for $size from 1 through length($o-colors) {
+        &.o_tag_color_#{$size - 1} {
+            $-bg: adjust-color(nth($o-colors, $size), $lightness: 25%, $saturation: 15%);
+            $-color: adjust-color(nth($o-colors, $size), $lightness: -40%, $saturation: -15%);
+
+            &, &::after {
+                @include o-print-color($-bg, background-color, bg-opacity);
+                @include o-print-color($-color, color, text-opacity);
+            }
+        }
+    }
+}

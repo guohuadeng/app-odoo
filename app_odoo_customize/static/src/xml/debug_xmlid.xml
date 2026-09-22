@@ -8,7 +8,7 @@
                     XML ID: ...
                 </span>
                 <span t-elif="state.xmlid" class="text-truncate" style="padding-left: 12px;">
-                    XML ID: <t t-esc="state.xmlid"/>
+                    XML ID: <t t-out="state.xmlid"/>
                 </span>
                 <span t-else="" class="text-muted" style="padding-left: 12px;">
                     XML ID: -

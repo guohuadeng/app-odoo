@@ -58,7 +58,9 @@ class IrModuleModule(models.Model):
         # 再重载
         modules._update_translations(filter_lang=lang, overwrite=True)
 
-        self.env.registry.clear_cache('default', 'templates')
+        # Odoo 20: Registry.clear_cache 移除，改为 transaction.invalidate_ormcache 按缓存名逐个清理
+        self.env.transaction.invalidate_ormcache('default')
+        self.env.transaction.invalidate_ormcache('templates')
 
         return {
             'type': 'ir.actions.client',

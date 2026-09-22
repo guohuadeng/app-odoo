@@ -1,0 +1,24 @@
+//自定义的navbar
+.o_web_client {
+  .o_main_navbar {
+    --NavBar-entry-color: #{$o-navbar-entry-color};
+    --NavBar-entry-color--hover: #{$o-navbar-entry-color--hover};
+    --NavBar-entry-color--active: #{$o-navbar-entry-color--active};
+
+    --NavBar-entry-borderColor-active: #{$o-navbar-entry-bg--active};
+
+    --NavBar-entry-backgroundColor: transparent;
+    --NavBar-entry-backgroundColor--hover: #{$o-navbar-entry-bg--hover};
+    --NavBar-entry-backgroundColor--active: #{$o-navbar-entry-bg--active};
+    --NavBar-entry-backgroundColor--focus: #{$o-navbar-entry-bg--hover};
+    background: linear-gradient(45deg, #{$o-brand-odoo}, #{$o-action});
+    .o_menu_toggle  {
+      color: var(--NavBar-entry-color, #e7e9ed);
+    }
+    .o_menu_systray.o_website_systray {
+      .o-website-btn-custo-secondary  {
+        --btn-bg: $o-navbar-entry-bg--active;
+      }
+    }
+  }
+}

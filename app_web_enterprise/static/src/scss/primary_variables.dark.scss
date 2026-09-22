@@ -1,0 +1,8 @@
+$o-enterprise-color: #00463e !default;
+
+$o-brand-odoo: $o-enterprise-color !default;
+
+// = Fine-tune contextual text colors.
+$o-theme-text-colors: (
+    "primary": #02c7b5,
+) !default;

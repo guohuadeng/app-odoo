@@ -43,16 +43,16 @@
        <div class="oe_tooltip_string" if="title" role="tooltip">
 <!--           <button type="button" name="copy-menu-id" title="Copy menu XMLID"-->
 <!--                   class="ml-4 btn btn-sm btn-primary fa fa-copy"/>-->
-           <t t-esc="title"/>
+           <t t-out="title"/>
        </div>
        <ul class="oe_tooltip_technical" role="tooltip">
            <li t-if="xmlid">
                <span class="oe_tooltip_technical_title">XMLID: </span>
-               <t t-esc="xmlid"/>
+               <t t-out="xmlid"/>
            </li>
            <li t-if="typeof sequence === 'number'">
                <span class="oe_tooltip_technical_title">Sequence:</span>
-               <t t-esc="sequence"/>
+               <t t-out="sequence"/>
            </li>
        </ul>
    </t>

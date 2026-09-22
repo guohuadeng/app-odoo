@@ -38,6 +38,7 @@
             <rng:optional><rng:attribute name="class"/></rng:optional>
             <!-- Allows to take a custom View widget for handling -->
             <rng:optional><rng:attribute name="js_class"/></rng:optional>
+            <rng:optional><rng:attribute name="dialog_size"/></rng:optional>
             <rng:optional><rng:attribute name="default_order"/></rng:optional>
             <rng:optional><rng:attribute name="default_group_by"/></rng:optional>
             <rng:optional><rng:attribute name="decoration-bf"/></rng:optional>
@@ -96,6 +97,15 @@
                     <rng:ref name="control"/>
                     <rng:ref name="field"/>
                     <rng:ref name="widget"/>
+                    <rng:element name="column">
+                        <rng:optional><rng:attribute name="name"/></rng:optional>
+                        <rng:optional><rng:attribute name="string"/></rng:optional>
+                        <rng:optional><rng:attribute name="column_invisible"/></rng:optional>
+                        <rng:optional><rng:attribute name="width"/></rng:optional>
+                        <rng:oneOrMore>
+                            <rng:ref name="field"/>
+                        </rng:oneOrMore>
+                    </rng:element>
                     <rng:ref name="separator"/>
                     <rng:ref name="list"/>
                     <rng:ref name="groupby"/>

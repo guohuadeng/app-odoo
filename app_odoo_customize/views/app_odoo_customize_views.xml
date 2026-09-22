@@ -3,7 +3,7 @@
     <!--    处理 title 及 theme-color-->
     <template id="app_layout" inherit_id="web.layout" name="app Web layout">
         <xpath expr="//title" position="replace">
-            <title t-esc="title or 'odooAi'"/>
+            <title t-out="title or 'odooAi'"/>
         </xpath>
     </template>
     <!--    end-->
