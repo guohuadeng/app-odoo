@@ -78,7 +78,6 @@
             'app_web_enterprise/static/src/scss/app_style_website.scss',
         ],
     },
-    'images': ['static/description/app_web_enterprise_03.jpg'],
     'post_load': None,
     'post_init_hook': None,
     'installable': True,

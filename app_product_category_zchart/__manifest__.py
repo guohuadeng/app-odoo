@@ -4,7 +4,6 @@
 # author: 欧度智能，https://www.odooai.cn
 # email: 300883@qq.com
 # resource of odooai
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 # Odoo12在线用户手册（长期更新）
 # https://www.odooai.cn/documentation/user/12.0/en/index.html
