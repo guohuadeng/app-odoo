@@ -256,15 +256,42 @@ class Base(models.AbstractModel):
         return deep_merge(a, b)
 
     @api.model
-    def CoW(self, vals, ref='name', domain=None):
+    def _app_cow_key_fields(self, ref, ref_list):
+        """归一化 CoW 的关键字段列表
+
+        :param ref: 单个关键字段名，ref_list 为空时使用
+        :param ref_list: 关键字段列表，可为 'name,company_id' 逗号分隔字符串或字段名 list
+        :return: 关键字段名 list，如 ['name', 'company_id']
+        """
+        if isinstance(ref_list, str):
+            ref_list = ref_list.split(',')
+        if not ref_list:
+            return [ref]
+        return [key.strip() for key in ref_list if isinstance(key, str) and key.strip()]
+
+    @api.model
+    def CoW(self, vals, ref='name', domain=None, ref_list=None):
+        """按关键字段查找记录，命中则 write，否则 create（Copy on Write）
+
+        :param vals: 写入/创建的字段值字典，关键字段取值必须包含在其中
+        :param ref: 单个关键字段名，用于判定重复值，默认 'name'；传入 ref_list 时忽略
+        :param domain: 额外的查找条件 list，与关键字段条件取 AND 交集，默认 []
+        :param ref_list: 关键字段列表，可为 'name,company_id' 逗号分隔字符串或字段名 list；
+            有值时替代 ref，逐字段叠加 domain 做重复值匹配
+        :return: 命中的已写入记录或新建记录（单个 record）
+        """
         if domain is None:
             domain = []
-        ref_value = vals.get(ref)
-        if ref_value is None:
-            raise UserError(_('创建或更新时，必须提供关键字段信息: %s') % ref)
+        key_fields = self._app_cow_key_fields(ref, ref_list)
+        # 逐个关键字段拼等值条件，vals 中缺少该字段时无法判定重复，直接报错
+        key_domain = []
+        for key in key_fields:
+            key_value = vals.get(key)
+            if key_value is None:
+                raise UserError(_('创建或更新时，必须提供关键字段信息: %s') % key)
+            key_domain.append((key, '=', key_value))
 
-        search_domain = expression.AND([domain, [(ref, '=', ref_value)]])
-        record = self.search(search_domain, limit=1)
+        record = self.search(expression.AND([domain, key_domain]), limit=1)
 
         if record:
             record.write(vals)
@@ -274,13 +301,22 @@ class Base(models.AbstractModel):
         return record
 
     @api.model
-    def CoW_list(self, vals_list, ref='name', domain=None):
+    def CoW_list(self, vals_list, ref='name', domain=None, ref_list=None):
+        """批量 CoW，逐条调用 CoW 方法
+
+        :param vals_list: 字段值字典列表，每项对应一条 write/create 数据
+        :param ref: 单个关键字段名，用于判定重复值，默认 'name'；传入 ref_list 时忽略
+        :param domain: 额外的查找条件 list，与关键字段条件取 AND 交集，默认 []
+        :param ref_list: 关键字段列表，可为 'name,company_id' 逗号分隔字符串或字段名 list；
+            有值时替代 ref，逐字段叠加 domain 做重复值匹配
+        :return: 所有命中或新建记录的并集（recordset）
+        """
         if domain is None:
             domain = []
 
         records = self.env[self._name]
         for vals in vals_list:
-            record = self.CoW(vals, ref=ref, domain=domain)
+            record = self.CoW(vals, ref=ref, domain=domain, ref_list=ref_list)
             records |= record
 
         return records
