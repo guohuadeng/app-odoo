@@ -17,7 +17,6 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 10,
-    'license': 'LGPL-3',
     'price': 0.00,
     'currency': 'EUR',
     'images': ['static/description/banner.png'],
@@ -70,8 +69,6 @@ English Features:
         'data/discuss_channel_data.xml',
         'views/ai_robot_views.xml',
     ],
-    'assets': {
-    },
     'installable': True,
     'application': True,
     'auto_install': False,
