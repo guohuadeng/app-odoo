@@ -178,7 +178,7 @@ class AccountAccount(models.Model):
                 'fadeout': 'fast',
                 'message': _('Update parent account chart done.<br/>【%s】 records updated.' % done),
                 'img_url': '/web/image/%s/%s/image_1024' % (self.env.user._name,
-                                                            self.env.user.id) if self.env.user.image_1024 else '/web/static/src/img/smile.svg',
+                                                            self.env.user.id) if self.env.user.image_1024 else '/web/static/img/smile.svg',
                 'type': 'rainbow_man',
             }
         }
