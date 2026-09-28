@@ -26,7 +26,7 @@
 
 {
     'name': "SaaS云服务客户端 / odooapp.cn SaaS Client - Ai Passport",
-    'version': '18.0.26.09.18',
+    'version': '18.0.26.09.28',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -65,6 +65,7 @@
         'data/auth_oauth_provider_data.xml',
         'data/ir_config_parameter.xml',
         'views/auth_oauth_provider_views.xml',
+        'views/web_login_templates.xml',
         'views/res_config_settings_views.xml',
         'views/res_users_views.xml',
         'wizard/error_submit_wizard_views.xml',

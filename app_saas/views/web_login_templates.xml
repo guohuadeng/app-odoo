@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 登录页 /web/login 调整：OAuth 登录块排在"以超级用户登录"之前 -->
+    <template id="login_oauth_on_top" inherit_id="web.login" name="app_saas Login: OAuth on top">
+        <!-- "以超级用户登录"按钮移到 OAuth 块之后 -->
+        <xpath expr="//div[hasclass('o_login_auth')]" position="after">
+            <t t-if="debug" position="move"/>
+        </xpath>
+        <!-- 登录页标记变量：让 OAuth 分隔符"- 或 -"显示在按钮下方而非上方 -->
+        <xpath expr="//div[hasclass('oe_login_buttons')]" position="before">
+            <t t-set="oauth_separator_below" t-value="True"/>
+        </xpath>
+    </template>
+
+    <!-- OAuth 提供商块：分隔符"- 或 -"支持通过 oauth_separator_below 变量切换到块下方 -->
+    <template id="providers_separator_below" inherit_id="auth_oauth.providers" name="app_saas OAuth Providers separator position">
+        <xpath expr="//em" position="replace">
+            <em t-if="not oauth_separator_below"
+                t-attf-class="d-block text-center text-muted small my-#{len(providers) if len(providers) &lt; 3 else 3}">- or -</em>
+        </xpath>
+        <xpath expr="//div[hasclass('o_auth_oauth_providers')]" position="after">
+            <em t-if="oauth_separator_below"
+                t-attf-class="d-block text-center text-muted small my-#{len(providers) if len(providers) &lt; 3 else 3}">- or -</em>
+        </xpath>
+    </template>
+</odoo>
