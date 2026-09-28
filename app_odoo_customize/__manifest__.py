@@ -23,7 +23,7 @@
 
 {
     'name': 'Hide Powered by Odoo and Boost with 60+ Tweak Pack All in One / 60+项Odoo优化提速OEM去标大全',
-    'version': '18.0.26.09.18',
+    'version': '18.0.26.09.28',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
@@ -76,14 +76,12 @@
             'app_odoo_customize/static/src/scss/app.scss',
             'app_odoo_customize/static/src/scss/ribbon.scss',
             'app_odoo_customize/static/src/scss/dialog.scss',
-            'app_odoo_customize/static/src/scss/chat_window_drag.scss',
             'app_odoo_customize/static/src/js/user_menu.js',
             'app_odoo_customize/static/src/js/ribbon.js',
             'app_odoo_customize/static/src/js/dialog.js',
             'app_odoo_customize/static/src/js/navbar.js',
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
             'app_odoo_customize/static/src/js/base_import_list_renderer.js',
-            'app_odoo_customize/static/src/js/chat_window_drag.js',
             'app_odoo_customize/static/src/js/chat_window_open_discuss.js',
             'app_odoo_customize/static/src/xml/chat_window_open_discuss.xml',
             'app_odoo_customize/static/src/js/documentation_link.js',
@@ -154,7 +152,7 @@
 55. Multi-language Support. Multi-Company Support.
 56. Support Odoo 18, 17, 16, 15, 14, 13, 12, Enterprise and Community and odoo.sh Edition.
 57. Full Open Source.
-58. ChatWindow draggable and resizable with min width/height.
+58. ChatWindow draggable and resizable moved to app_im_livechat (backend chat windows).
 59. Show record XML ID in debug menu with one-click copy to clipboard.
 60. Redirect native Odoo documentation help links (e.g. Check why) to configurable app_doc_root_url domain.
 
@@ -215,7 +213,7 @@
 55. 多语言支持，多公司支持
 56. Odoo 18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
 57. 代码完全开源
-58. 聊天窗口可拖拽和调整大小（最小宽/高限制）
+58. 聊天窗口拖拽缩放功能已迁移至 app_im_livechat（后端聊天窗）
 59. 开发者菜单中显示当前记录的 XML ID，支持一键复制到剪贴板
 60. 将原生Odoo文档帮助链接（如 Check why）重定向至可配置的 app_doc_root_url 域名
     """,
