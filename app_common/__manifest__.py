@@ -39,7 +39,7 @@
 
 {
     'name': "欧度智能基础功能及面板,odooAi Common Util and Tools",
-    'version': '20.1.26.09.23',
+    'version': '20.0.26.09.23',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

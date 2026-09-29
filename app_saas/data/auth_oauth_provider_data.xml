@@ -24,7 +24,7 @@
         <function model="auth.oauth.provider" name="write">
             <value eval="[ref('app_saas.provider_app_saas')]"/>
             <value model="ir.config_parameter" eval="{
-                'client_id': obj().env['ir.config_parameter'].get_param('database.uuid'),
+                'client_id': obj().env['ir.config_parameter'].get_str('database.uuid'),
             }"/>
         </function>
     </data>

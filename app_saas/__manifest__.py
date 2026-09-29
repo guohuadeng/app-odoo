@@ -61,7 +61,7 @@
         # 'website',
     ],
     'data': [
-        'security/ir.model.access.csv',
+        'security/ir.access.csv',
         'data/auth_oauth_provider_data.xml',
         'data/ir_config_parameter.xml',
         'views/auth_oauth_provider_views.xml',

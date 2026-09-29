@@ -69,14 +69,14 @@ class ErrorSubmitWizard(models.TransientModel):
 
         defaults['odoo_version'] = release.version
         # if 'dbuuid' in fields_list:
-        dbuuid = self.env['ir.config_parameter'].sudo().get_param('database.uuid', '')
+        dbuuid = self.env['ir.config_parameter'].sudo().get_str('database.uuid', '')
         defaults['dbuuid'] = dbuuid
 
         # if 'submit_login' in fields_list:
         defaults['submit_login'] = self.env.user.login
 
         if 'error_report_url' in fields_list:
-            error_report_url = self.env['ir.config_parameter'].sudo().get_param(
+            error_report_url = self.env['ir.config_parameter'].sudo().get_str(
                 'app_saas.error_report_url',
                 'https://www.odooapp.cn/api/v1/error-report'
             )

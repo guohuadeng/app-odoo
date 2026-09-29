@@ -13,5 +13,5 @@ class IrConfigParameter(models.Model):
             oauth_app_saas = self.env.ref('app_saas.provider_app_saas')
             if not oauth_app_saas:
                 return
-            dbuuid = self.sudo().get_param('database.uuid')
+            dbuuid = self.sudo().get_str('database.uuid')
             oauth_app_saas.write({'client_id': dbuuid})

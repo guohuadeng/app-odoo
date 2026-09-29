@@ -1,0 +1,7 @@
+id,name,model_id,group_id/id,operation,domain
+access_gpt_robt_user,access_gpt_robt_user,ai.robot,base.group_user,r,
+access_gpt_robt_manager,access_gpt_robt_manager,ai.robot,base.group_erp_manager,crud,
+access_res_partner_ai_use_user,access_res_partner_ai_use_user,res.partner.ai.use,base.group_user,r,
+access_res_partner_ai_use_manager,access_res_partner_ai_use_manager,res.partner.ai.use,base.group_erp_manager,crud,
+res_partner_ai_use_personal_rule,Personal AI Use,res.partner.ai.use,base.group_user,crud,"[('name','=',user.partner_id.id)]"
+res_partner_ai_use_see_all,All AI Use,res.partner.ai.use,base.group_erp_manager,crud,

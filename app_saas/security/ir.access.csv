@@ -1,0 +1,2 @@
+id,name,model_id,group_id/id,operation,domain
+error_submit_wizard_user,error.submit.wizard.user,error.submit.wizard,base.group_user,crud,

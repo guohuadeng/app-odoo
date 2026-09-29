@@ -20,7 +20,7 @@ from markupsafe import Markup
 # from transformers import TextDavinciTokenizer, TextDavinciModel
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import UserError
-from odoo.osv import expression
+from odoo.fields import Domain
 from odoo.addons.app_common.models.base import get_ua_type
 
 import logging
@@ -157,9 +157,9 @@ class Channel(models.Model):
 
         if self.channel_type in ['group', 'channel']:
             # 群聊增加时间限制，当前找所有人，不限制 author_id
-            domain = expression.AND([domain, [('date', '>=', afterTime)]])
+            domain = Domain.AND([domain, [('date', '>=', afterTime)]])
         else:
-            domain = expression.AND([domain, [('author_id', '=', answer_id.id)]])
+            domain = Domain.AND([domain, [('author_id', '=', answer_id.id)]])
         if chat_count == 0:
             ai_msg_list = []
         else:
@@ -320,14 +320,14 @@ class Channel(models.Model):
         if self.env.context.get('app_ai_sync_config') and self.env.context.get('app_ai_sync_config') in ['sync', 'async']:
             sync_config = self.env.context.get('app_ai_sync_config')
         else:
-            sync_config = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openai_sync_config')
+            sync_config = self.env['ir.config_parameter'].sudo().get_str('app_chatgpt.openai_sync_config')
 
         if self.env.context.get('app_ai_chat_padding_time'):
             padding_time = int(self.env.context.get('app_ai_chat_padding_time'))
         else:
-            padding_time = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.ai_chat_padding_time'))
+            padding_time = int(self.env['ir.config_parameter'].sudo().get_str('app_chatgpt.ai_chat_padding_time'))
 
-        # api_key = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_api_key')
+        # api_key = self.env['ir.config_parameter'].sudo().get_str('app_chatgpt.openapi_api_key')
         # ai处理，不要自问自答
         if ai and answer_id != message.author_id:
             api_key = ai.openapi_api_key
@@ -336,7 +336,7 @@ class Channel(models.Model):
                 return rdata
 
             try:
-                openapi_context_timeout = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_context_timeout')) or 60
+                openapi_context_timeout = int(self.env['ir.config_parameter'].sudo().get_str('app_chatgpt.openapi_context_timeout')) or 60
             except:
                 openapi_context_timeout = 60
             openai.api_key = api_key

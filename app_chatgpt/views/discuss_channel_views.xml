@@ -134,7 +134,7 @@
             <field name="model">discuss.channel</field>
             <field name="inherit_id" ref="mail.discuss_channel_view_search"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='name']" position="after">
+                <xpath expr="//field[@name='display_name']" position="after">
                     <field name="channel_type"/>
                     <group expand="0" string="Group By">
                         <filter string="Channel Type" name="groupby_channel_type" domain="[]" context="{'group_by': 'channel_type'}"/>

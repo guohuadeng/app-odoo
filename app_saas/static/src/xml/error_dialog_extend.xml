@@ -9,7 +9,7 @@
                     title="Report this error to OdooAi.cn for support Via Ai Passport">
                 <i t-if="isSubmitting" class="fa fa-spinner fa-spin me-1"/>
                 <i t-else="" class="fa fa-paper-plane me-1"/>
-                <t t-esc="submitButtonText"/>
+                <t t-out="submitButtonText"/>
                 Apply Support
             </button>
         </xpath>
