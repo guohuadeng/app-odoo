@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Odoo20: OAuth 登录块已从 web.login 移入独立模板 web.login_oauth（auth_btns 机制），
+         o_login_auth div 位于 web.login_oauth 内，不再直接出现在 web.login 的 arch 中。
+         登录页 /web/login 调整：OAuth 登录块排在"以超级用户登录"之前 -->
+    <template id="login_oauth_on_top" inherit_id="web.login" name="app_saas Login: OAuth on top">
+        <!-- "以超级用户登录"按钮（web.login 中唯一的 <t t-if="debug">）移到 OAuth 块调用之后 -->
+        <xpath expr="//t[@t-call='web.login_oauth']" position="after">
+            <t t-if="debug" position="move"/>
+        </xpath>
+        <!-- 登录页标记变量：让 OAuth 分隔符"- 或 -"显示在按钮下方而非上方 -->
+        <xpath expr="//div[hasclass('oe_login_buttons')]" position="before">
+            <t t-set="oauth_separator_below" t-value="True"/>
+        </xpath>
+    </template>
+
+    <!-- Odoo20: auth_oauth.providers 模板已改为继承 web.login_oauth，仅向 auth_btns 注入，
+         旧的 o_auth_oauth_providers class 与 em 分隔符结构移入 web.login_oauth。
+         OAuth 提供商块：分隔符"- 或 -"支持通过 oauth_separator_below 变量切换到块下方 -->
+    <template id="providers_separator_below" inherit_id="web.login_oauth" name="app_saas OAuth Providers separator position">
+        <xpath expr="//em" position="replace">
+            <em t-if="not oauth_separator_below"
+                t-attf-class="d-block text-center text-muted small my-#{len(providers) if len(providers) &lt; 3 else 3}">- or -</em>
+        </xpath>
+        <xpath expr="//div[hasclass('list-group')]" position="after">
+            <em t-if="oauth_separator_below"
+                t-attf-class="d-block text-center text-muted small my-#{len(providers) if len(providers) &lt; 3 else 3}">- or -</em>
+        </xpath>
+    </template>
+</odoo>

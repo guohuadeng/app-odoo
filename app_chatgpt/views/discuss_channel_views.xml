@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <!--list 原生处理-->
+        <record id="ai_discuss_channel_view_tree" model="ir.ui.view">
+            <field name="model">discuss.channel</field>
+            <field name="name">ai.discuss.channel.tree</field>
+            <field name="inherit_id" ref="mail.discuss_channel_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="sequence" widget="handle"/>
+                    <field name="id" optional="show" groups="base.group_no_one"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="ai_partner_id" optional="show"/>
+                    <field name="description" optional="show"/>
+                    <field name="is_private" optional="show"/>
+                    <field name="set_max_tokens" optional="hide"/>
+                </xpath>
+                <xpath expr="//list" position="inside">
+                    <field name="group_public_id" optional="hide" groups="base.group_no_one"/>
+                </xpath>
+            </field>
+        </record>
+        <!--       form,原生继承以便管理-->
+        <record id="ai_discuss_channel_view_form" model="ir.ui.view">
+            <field name="name">ai.discuss.channel.form</field>
+            <field name="model">discuss.channel</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="mail.discuss_channel_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='privacy']" position="before">
+                    <page name="page_user" string="Ai Config(Default value is prefer)">
+                        <group>
+                            <group name="role_set" string="Ai Parameter">
+                                <field name="channel_type" readonly="1"/>
+                                <field name="ai_partner_id" widget="many2one_avatar"
+                                       options="{'no_open': True, 'no_create': True}"/>
+                                <field name="ext_ai_partner_id" widget="many2one_avatar"
+                                       options="{'no_open': True, 'no_create': True}"/>
+                                <field name="is_ai_conversation" widget="boolean_toggle"/>
+                                <field name="ai_sys_content" invisible="not is_ai_conversation"
+                                       widget="text" rowCount="4" colspan="2"/>
+                                <field name="ext_ai_sys_content" invisible="not is_ai_conversation"
+                                       widget="text" rowCount="4" colspan="2"/>
+                            </group>
+                            <group  name="param_set" string="Ai Character Set">
+                                <div class="o_td_label">
+                                    <label for="set_max_tokens"/>
+                                </div>
+                                <field name="set_max_tokens" nolabel="1" required="1"/>
+                                <div class="o_td_label">
+                                    <label for="set_chat_count"/>
+                                </div>
+                                <field name="set_chat_count" nolabel="1" required="1"/>
+                                <div class="o_td_label">
+                                    <label for="set_temperature"/>
+                                </div>
+                                <field name="set_temperature" nolabel="1" required="1"/>
+                                <div class="o_td_label">
+                                    <label for="set_top_p"/>
+                                </div>
+                                <field name="set_top_p" nolabel="1" required="1"/>
+                                <div class="o_td_label">
+                                    <label for="set_frequency_penalty"/>
+                                </div>
+                                <field name="set_frequency_penalty" nolabel="1" required="1"/>
+                                <div class="o_td_label">
+                                    <label for="set_presence_penalty"/>
+                                </div>
+                                <field name="set_presence_penalty" nolabel="1" required="1"/>
+                                <field name="is_private" readonly="0"/>
+                                <field name="create_uid" readonly="1" options="{'no_open': True, 'no_create': True}"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='group_public_id']/.." position="after">
+                    <group string="Ai Response Config">
+                        <field name="chat_count"/>
+
+                        <p class="ml16 my-n1 mb16" colspan="2">0-3, After setting, the last n conversations will be sent to AI to help it respond better</p>
+                        <field name="max_tokens"/>
+                        <p class="ml16 my-n1 mb16" colspan="2">Maximum response tokens, controls return content length</p>
+                        <field name="temperature"/>
+                        <p class="ml16 my-n1 mb16" colspan="2">0-1, the larger the value, the more imaginative, the smaller the value, the more conservative</p>
+                        <field name="frequency_penalty"/>
+                        <p class="ml16 my-n1 mb16" colspan="2">0-1, the larger the value, the less common words are used</p>
+                        <field name="presence_penalty"/>
+                        <p class="ml16 my-n1 mb16" colspan="2">0-1, the larger the value, the less repetitive words</p>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!--kanban,原生的处理-->
+        <record id="ai_discuss_channel_view_kanban" model="ir.ui.view">
+            <field name="model">discuss.channel</field>
+            <field name="inherit_id" ref="mail.discuss_channel_view_kanban"/>
+            <field name="mode">extension</field>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban//field[1]" position="before">
+                    <field name="sequence"/>
+                    <field name="is_private"/>
+                    <field name="ai_partner_id"/>
+                    <field name="ext_ai_partner_id"/>
+                    <field name="is_ai_conversation"/>
+                </xpath>
+                <xpath expr="//templates//field[@name='description']" position="after">
+                    <div class="d-flex mt4">
+                        Main Ai:
+                        <field name="ai_partner_id" widget="many2one_avatar" class="col-8 ml4 ml-auto"
+                           options="{'no_open': True, 'no_create': True}"/>
+                    </div>
+                    <div class="d-flex mt4">
+                        Ai Conversation:
+                        <field name="is_ai_conversation" widget="boolean_toggle" class="col-8 ml4 ml-auto"/>
+                    </div>
+                    <div class="btn-group mt4" role="group" name="op">
+                        <button class="btn btn-warning float-end mr4" type="edit" id="channel_edit">
+                            Settings
+                        </button>
+                    </div>
+                </xpath>
+                <xpath expr="//div[@name='op']" position="inside">
+                    <xpath expr="//templates//button[@name='channel_join']" position="move"/>
+                    <xpath expr="//templates//button[@name='action_unfollow']" position="move"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--search 原生处理-->
+        <record id="ai_discuss_channel_view_search" model="ir.ui.view">
+            <field name="model">discuss.channel</field>
+            <field name="inherit_id" ref="mail.discuss_channel_view_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="channel_type"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Channel Type" name="groupby_channel_type" domain="[]" context="{'group_by': 'channel_type'}"/>
+                    </group>
+                </xpath>
+                <xpath expr="//filter[@name='filter_archived']" position="before">
+                    <filter string="Ai Channel" name="is_ai" domain="[('ai_partner_id', '!=', False)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

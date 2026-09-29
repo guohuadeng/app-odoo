@@ -1,0 +1,324 @@
+<!--
+# -*- coding: utf-8 -*-
+##############################################################################
+# Copyright (C) 2009~2026 odooAi.cn
+##############################################################################
+-->
+<html>
+<head><meta charset="utf-8"/></head>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "app_chatgpt - AI 服务中心聚合全网 AI",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
+  "description": "Odoo AI 中心，集成 ChatGPT-4o、DeepSeek、阿里通义千问、百度、Azure OpenAI。多机器人对话、评价训练、黑白名单、同步/异步模式。",
+  "softwareVersion": "18.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": { "@type": "Organization", "name": "odooAi.cn", "url": "https://www.odooai.cn" },
+  "featureList": ["ChatGPT-4o GPT-4 GPT-3.5 集成","DeepSeek AI 连接器","阿里通义千问支持","百度 AI 支持","Azure OpenAI 服务","多 AI 机器人管理","机器人绑定用户对话","白名单与黑名单控制","AI 响应评价与训练","同步与异步响应模式","敏感词过滤","多语言与多公司支持","完全开源"]
+}
+</script>
+
+<!-- begin header -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">AI 服务中心聚合全网 AI</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Odoo AI 中心，一站式集成多种 AI</p>
+            <p class="lead">
+                集成ChatGPT-4o、DeepSeek、阿里通义千问、百度文心等多种AI，通过Odoo IM对话<br/>
+                多机器人管理、用户绑定、黑白名单、评价训练、同步/异步模式
+            </p>
+            <div class="pt16">
+                <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end header -->
+
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述</h2>
+            <p class="lead pt16">
+                本模块是 Odoo AI 服务中心，支持集成多种 AI 模型（ChatGPT-4o、GPT-4、GPT-3.5、DeepSeek、阿里通义千问、百度文心、Azure OpenAI）。通过 Odoo 讨论频道直接与 AI 机器人对话，支持多机器人管理、用户绑定、黑白名单、评价训练、同步/异步模式、敏感词过滤。
+            </p>
+            <p class="text-muted">
+                在任意讨论频道向 AI 提问，让 AI 助手融入日常 ERP 工作。
+            </p>
+        </div>
+    </div>
+</section>
+<!-- end overview -->
+
+<!-- begin feature list -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>完整功能列表</h2>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>1. 多ChatGPT OpenAI机器人连接器，支持对话与训练</b><br/>
+                    <small class="text-muted">多 ChatGPT OpenAI 机器人连接器，支持对话与训练</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>2. 多AI支持：ChatGPT-4o、GPT-4 32k、GPT-3.5 Turbo、Azure AI、阿里通义千问、百度文心、DeepSeek</b><br/>
+                    <small class="text-muted">多 AI 支持：ChatGPT-4o、GPT-4 32k、GPT-3.5 Turbo、Azure、阿里通义千问、百度、DeepSeek</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>3. 绑定AI机器人到用户，支持私聊或群聊频道</b><br/>
+                    <small class="text-muted">绑定 AI 机器人到用户私聊，或 AI 频道群聊</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>4. AI访问黑白名单控制</b><br/>
+                    <small class="text-muted">AI 访问黑白名单控制</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>5. 为新用户设置体验对话时间</b><br/>
+                    <small class="text-muted">为新用户设置体验对话时间</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>6. 轻松启动和停止AI机器人</b><br/>
+                    <small class="text-muted">轻松启动和停止 AI 机器人</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>7. 评价AI回复质量持续优化训练</b><br/>
+                    <small class="text-muted">评价 AI 回复，持续优化训练</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>8. 连接Microsoft Azure OpenAI服务</b><br/>
+                    <small class="text-muted">连接 Microsoft Azure OpenAI 服务</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>9. 支持同步或异步AI响应模式</b><br/>
+                    <small class="text-muted">同步或异步 AI 响应模式</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>10. 敏感词过滤</b><br/>
+                    <small class="text-muted">敏感词过滤</small>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end feature list -->
+
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center pb32">
+                <h2>核心亮点</h2>
+                <p class="lead">一站式 AI 中心，聚合全网 AI</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-comments fa-lg"></i>
+                        </div>
+                        <h5>1. 多 AI 集成</h5>
+                        <p class="small text-muted">ChatGPT、DeepSeek、通义千问</p>
+                        <p class="card-text">一个平台集成多种AI模型</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-robot fa-lg"></i>
+                        </div>
+                        <h5>2. 多机器人管理</h5>
+                        <p class="small text-muted">用户绑定与群聊</p>
+                        <p class="card-text">绑定用户私聊或频道群聊</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-graduation-cap fa-lg"></i>
+                        </div>
+                        <h5>3. 评价训练</h5>
+                        <p class="small text-muted">持续优化 AI 回复</p>
+                        <p class="card-text">评价AI回复持续优化</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end key highlights -->
+
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性</h2>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-globe fa-lg"></i>
+                </div>
+                <h5>多语言与多公司<br/><small class="text-muted">适配全球化部署</small></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code-fork fa-lg"></i>
+                </div>
+                <h5>全版本兼容<br/><small class="text-muted">Odoo 12 至 19</small></h5>
+                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code fa-lg"></i>
+                </div>
+                <h5>代码完全开源<br/><small class="text-muted">LGPL-3 协议</small></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end general features -->
+
+<!-- begin screenshots -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>界面截图</h2>
+        </div>
+    </div>
+    <div class="row pb48"><div class="col-lg-10 offset-lg-1"><h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>AI 服务中心</h3><img class="img-fluid rounded shadow" src="demo01.jpg" alt="AI Center Dashboard"></div></div>
+    <div class="row pb48"><div class="col-lg-10 offset-lg-1"><h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>设置 AI 机器人 API</h3><img class="img-fluid rounded shadow" src="demo1.jpg" alt="Setup AI Robot"></div></div>
+    <div class="row pb48"><div class="col-lg-10 offset-lg-1"><h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>多模型选择</h3><img class="img-fluid rounded shadow" src="demo2.jpg" alt="Multi Model"></div></div>
+    <div class="row pb48"><div class="col-lg-10 offset-lg-1"><h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>温度设置</h3><img class="img-fluid rounded shadow" src="demo3.jpg" alt="Temperature"></div></div>
+    <div class="row pb48"><div class="col-lg-10 offset-lg-1"><h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>绑定机器人到用户</h3><img class="img-fluid rounded shadow" src="demo4.jpg" alt="Bind Robot"></div></div>
+    <div class="row pb48"><div class="col-lg-10 offset-lg-1"><h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>AI 机器人池</h3><img class="img-fluid rounded shadow" src="demo5.jpg" alt="AI Pool"></div></div>
+    <div class="row pb48"><div class="col-lg-10 offset-lg-1"><h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>黑名单与体验时间</h3><img class="img-fluid rounded shadow" src="demo6.jpg" alt="Blacklist"></div></div>
+    <div class="row pb48"><div class="col-lg-10 offset-lg-1"><h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>与 AI 机器人对话</h3><img class="img-fluid rounded shadow" src="demo7.jpg" alt="Chat with Robot"></div></div>
+    <div class="row pb48"><div class="col-lg-10 offset-lg-1"><h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>与多个机器人对话</h3><img class="img-fluid rounded shadow" src="demo8.jpg" alt="Multi Robot Chat"></div></div>
+    <div class="row pb48"><div class="col-lg-10 offset-lg-1"><h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>评价 AI 回复</h3><img class="img-fluid rounded shadow" src="demo71.jpg" alt="Evaluation"></div></div>
+    <div class="row pb48"><div class="col-lg-10 offset-lg-1"><h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Azure OpenAI 服务</h3><img class="img-fluid rounded shadow" src="demo81.jpg" alt="Azure OpenAI"></div></div>
+    <div class="row pb48"><div class="col-lg-10 offset-lg-1"><h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>同步与异步模式</h3><img class="img-fluid rounded shadow" src="demo91.jpg" alt="Sync Async Mode"></div></div>
+</section>
+<!-- end screenshots -->
+
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <div class="row text-center">
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">安装依赖</p>
+                    <p class="small text-muted mb-0">pip install openai</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-key"></i>
+                    </div>
+                    <p class="fw-bold mb-1">配置 API</p>
+                    <p class="small text-muted mb-0">填入 API Key</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-user-plus"></i>
+                    </div>
+                    <p class="fw-bold mb-1">绑定用户</p>
+                    <p class="small text-muted mb-0">绑定到 Odoo 用户</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-comments"></i>
+                    </div>
+                    <p class="fw-bold mb-1">开始对话</p>
+                    <p class="small text-muted mb-0">在 Odoo 中直接对话</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end how it works -->
+
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-cube text-o-color-1 me-2"></i>
+                    app_odoo_customize / Odoo自定义基础
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-cube text-o-color-1 me-2"></i>
+                    mail / 邮件
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">专业 Odoo 服务伙伴，开发实施咨询培训全套解决方案</p>
+            <div class="pt16">
+                <p><i class="fa fa-globe me-2"></i>网站：<a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p>
+                <p><i class="fa fa-desktop me-2"></i>演示：<a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p>
+                <p><i class="fa fa-envelope me-2"></i>支持：<a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a></p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
+
+</html>

@@ -1,0 +1,499 @@
+# -*- coding: utf-8 -*-
+
+##############################################################################
+#    Copyright (C) 2009-TODAY odooai.cn Ltd.(广州欧度智能科技有限公司) https://www.odooai.cn
+#    Author: Ivan Deng，ivan@odooai.cn   300883@qq.com
+#    You can modify it under the terms of the GNU LESSER
+#    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
+#    See <http://www.gnu.org/licenses/>.
+#
+#    It is forbidden to publish, distribute, sublicense, or sell copies
+#    of the Software or modified copies of the Software.
+
+#    Create on 2024-10-06
+##############################################################################
+
+import openai
+import requests, json
+import datetime
+from markupsafe import Markup
+# from transformers import TextDavinciTokenizer, TextDavinciModel
+from odoo import api, fields, models, tools, _
+from odoo.exceptions import UserError
+from odoo.osv import expression
+from odoo.addons.app_common.models.base import get_ua_type
+
+import logging
+_logger = logging.getLogger(__name__)
+
+
+class Channel(models.Model):
+    _inherit = 'discuss.channel'  
+    _order = 'sequence,id desc'
+
+
+    sequence = fields.Integer('Sequence', default=99, 
+                              help='Determine the display order')
+    is_private = fields.Boolean(string='Private', default=False, 
+                                help='Check to set Private, Can only use by user, not Public')
+    # 因为 channel_member_ids 不好处理，在此增加此字段
+    # 主Ai
+    ai_partner_id = fields.Many2one(comodel_name='res.partner', string='Main Ai', required=False,
+                                    domain=[('gpt_id', '!=', None), ('is_chat_private', '=', True)],
+                                    # default=lambda self: self._app_get_m2o_default('ai_partner_id'),
+                                    help='Main Ai is the robot help you default.')
+    ext_ai_partner_id = fields.Many2one(comodel_name='res.partner', string='Secondary Ai',
+                                        domain=[('gpt_id', '!=', None), ('is_chat_private', '=', True)])
+    description = fields.Text('Ai Character', 
+                              help='Ai would help you act as the Character set.')
+    set_max_tokens = fields.Selection([
+        ('300', 'Short'),
+        ('600', 'Standard'),
+        ('1000', 'Medium'),
+        ('2000', 'Long'),
+        ('3000', 'Overlength'),
+        ('32000', '32K'),
+    ], string='Max Response', default='1000', 
+        help='The larger the value, the more content returned, and the higher the cost') # 越大返回内容越多،计费也越多
+    set_chat_count = fields.Selection([
+        ('none', 'Ai Auto'),
+        ('1', '1 Standard'),
+        ('3', '3 Strong Association'),
+        ('5', '5 Super Association'),
+    ], string='History Count', default='1', 
+        help='0-5, After setting, the last n conversations will be sent to Ai, which helps him better answer, but too large will also increase costs')
+    set_temperature = fields.Selection([
+        ('2', 'Highly random'),
+        ('1.5', 'More creative'),
+        ('1', 'Default'),
+        ('0.6', 'Balanced-conservative'),
+        ('0.1', 'Most deterministic'),
+    ], string='Set Temperature', default='1', 
+        help='0-2, The larger the value, the more imaginative, the smaller the more conservative') # 越大越富有想像力，越小则越保守
+    set_top_p = fields.Selection([
+        ('0.9', 'More Random'),
+        ('0.6', 'Balanced'),
+        ('0.4', 'Focused'),
+        ('0.1', 'Conservative'),
+    ], string='Top Probabilities', default='0.6', 
+        help='0-1, Higher values consider more possibilities for diverse output')
+    # 避免使用常用词
+    set_frequency_penalty = fields.Selection([
+        ('2', 'Pedantic - Obscure and Difficult'),
+        ('1.5', 'Academic - More Advanced Words'),
+        ('1', 'Standard'),
+        ('0.1', 'Fewer Common Words'),
+        ('-1', 'Simple and Understandable'),
+        ('-2', 'Plain Language'),
+    ], string='Frequency Penalty', default='1', 
+        help='-2~2, Higher values use fewer common words')
+    set_presence_penalty = fields.Selection([
+        ('2', 'Compulsive Diversity'),
+        ('1.5', 'Novelization'),
+        ('1', 'Standard'),
+        ('0.1', 'Allow Regular Repetition'),
+        ('-1', 'Allow More Repetition'),
+        ('-2', 'Emphasize More Repetition'),
+    ], string='Presence penalty', default='1', 
+        help='-2~2, Higher values use fewer repeated words')
+
+    # todo: 这里用 compute?
+
+    max_tokens = fields.Integer('Max Response Tokens', default=600, 
+                                help='The larger the value, the more content returned, and the higher the cost')
+    chat_count = fields.Integer(string='Context Count', default=0,
+                                help='0~3, After setting, the last n conversations will be sent to Ai, which helps him better answer')
+    temperature = fields.Float(string='Creativity Value', default=1,
+                               help='0~2, The larger the value, the more imaginative, the smaller the more conservative')
+    top_p = fields.Float(string='Coherence Value', default=0.6,
+                         help='0~1, The larger the value, the more imaginative, the smaller the more conservative')
+    frequency_penalty = fields.Float('Avoid Common Words Value', default=1,
+                                     help='-2~2, Higher values use fewer common words')
+    presence_penalty = fields.Float('Avoid Repeated Words Value', default=1,
+                                    help='-2~2, Higher values use fewer repeated words')
+    is_current_channel = fields.Boolean('Is Current User Default Channel', compute='_compute_is_current_channel',
+                                        help='Whether this is the current user\'s default WeChat conversation channel')
+
+    # begin 处理Ai对话
+    is_ai_conversation = fields.Boolean('Ai Conversation', default=False,
+                                        help='Set active to make conversation between 2+ Ai Employee. You Just say first word, then Ai robots Auto Chat.')
+    # 主Ai角色设定
+    ai_sys_content = fields.Char('Main Robot Role', change_default=True,
+                                 help='The Role the First Ai robot play for. This is for Ai Conversation.')
+    # 辅助Ai角色设定
+    ext_ai_sys_content = fields.Char('Extend Robot Role', change_default=True,
+                                     help='The Role the Second Ai robot play for. This is for Ai Conversation.')
+
+    # end 处理Ai对话
+
+    def name_get(self):
+        result = []
+        for c in self:
+            if c.channel_type == 'channel' and c.is_private:
+                pre = _('[Private]')
+            else:
+                pre = ''
+            result.append((c.id, "%s%s" % (pre, c.name or '')))
+        return result
+
+    def get_openai_context(self, channel_id, author_id, answer_id, minutes=60, chat_count=0):
+        # 上下文处理，要处理群的方式，以及独聊的方式
+        # azure新api 处理
+        context_history = []
+        afterTime = fields.Datetime.now() - datetime.timedelta(minutes=minutes)
+        message_model = self.env['mail.message'].sudo()
+        # 处理消息： 取最新问题 + 上 chat_count=1次的交互，将之前的交互按时间顺序拼接。
+        # 注意： ai 每一次回复都有 parent_id 来处理连续性
+        # 私聊处理
+
+        # todo: 更好的处理方式
+        domain = [('res_id', '=', channel_id),
+                  ('model', '=', 'discuss.channel'),
+                  ('message_type', '!=', 'user_notification'),
+                  ('parent_id', '!=', False),
+                  ('is_ai', '=', True),
+                  ('body', '!=', '<p>%s</p>' % _('Response Timeout, please speak again.')),
+                  ('body', '!=', _('Warning: The content you sent contains sensitive words, please modify the content before sending it to me.'))]
+
+        if self.channel_type in ['group', 'channel']:
+            # 群聊增加时间限制，当前找所有人，不限制 author_id
+            domain = expression.AND([domain, [('date', '>=', afterTime)]])
+        else:
+            domain = expression.AND([domain, [('author_id', '=', answer_id.id)]])
+        if chat_count == 0:
+            ai_msg_list = []
+        else:
+            ai_msg_list = message_model.with_context(tz='UTC').search(domain, order="id desc", limit=chat_count)
+        for ai_msg in ai_msg_list:
+            # 判断这个 ai_msg 是不是ai发，有才 insert。 判断 user_msg 是不是 user发的，有才 insert
+            user_msg = ai_msg.parent_id.sudo()
+            if ai_msg.author_id.sudo().gpt_id and answer_id.sudo().gpt_id and ai_msg.author_id.sudo().gpt_id == answer_id.sudo().gpt_id:
+                ai_content = str(ai_msg.body).replace("<p>", "").replace("</p>", "").replace("<p>", "")
+                context_history.insert(0, {
+                    'role': 'assistant',
+                    'content': ai_content,
+                })
+            if not user_msg.author_id.gpt_id:
+                user_content = user_msg.body.replace("<p>", "").replace("</p>", "").replace('@%s' % answer_id.name, '').lstrip()
+                context_history.insert(0, {
+                    'role': 'user',
+                    'content': user_content,
+                })
+        return context_history
+
+    def get_ai_config(self, ai):
+        # 勾子，用于取ai 配置
+        return {}
+
+    def get_ai_response(self, ai, messages, channel, user_id, message):
+        author_id = message.create_uid.partner_id
+        answer_id = user_id.partner_id
+        # todo: 只有个人配置的群聊才给配置
+        param = self.get_ai_config(ai)
+        res, usage, is_ai = ai.get_ai(messages, author_id, answer_id, param)
+        if res:
+            if get_ua_type() != 'wxweb':
+                # 处理当微信语音返回时，是直接回文本信息，不需要转换回车
+                res = res.replace('\n', '<br/>')
+                res = Markup(res)
+            new_msg = channel.with_user(user_id).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment', parent_id=message.id)
+            if usage:
+                if ai.provider == 'ali':
+                    prompt_tokens = usage['input_tokens']
+                    completion_tokens = usage['output_tokens']
+                    total_tokens = usage['input_tokens'] + usage['output_tokens']
+                else:
+                    prompt_tokens = usage['prompt_tokens']
+                    completion_tokens = usage['completion_tokens']
+                    total_tokens = usage['total_tokens']
+                new_msg.write({
+                    'human_prompt_tokens': prompt_tokens,
+                    'ai_completion_tokens': completion_tokens,
+                    'cost_tokens': total_tokens,
+                })
+
+    def _notify_thread(self, message, **kwargs):
+        # Odoo20: _notify_thread 不再接受 msg_vals（参数白名单校验会直接报错），
+        # 此处从 message 记录重建 msg_vals，保持原有处理逻辑不变
+        msg_vals = {
+            'author_id': message.author_id.id,
+            'model': message.model,
+            'res_id': message.res_id,
+            'partner_ids': message.partner_ids.ids,
+            'body': message.body,
+        }
+        rdata = super(Channel, self)._notify_thread(message, **kwargs)
+        answer_id = self.env['res.partner']
+        user_id = self.env['res.users']
+        author_id = msg_vals.get('author_id')
+        ai = self.env['ai.robot'].sudo()
+        channel = self.env['discuss.channel']
+        channel_type = self.channel_type
+        messages = []
+        add_sys_content = ''
+
+        # 不处理 一般notify，但处理欢迎
+        if '<div class="o_mail_notification' in message.body and message.body != _('<div class="o_mail_notification">joined the channel</div>'):
+            return rdata
+        if 'o_odoobot_command' in message.body:
+            return rdata
+
+        # begin: 找ai，增加 ai二人转功能。 chat类型不用管， 使用其中一个ai登录即可。 author_id 是 res.partner 模型
+        if channel_type == 'chat':
+            channel_partner_ids = self.channel_partner_ids
+            answer_id = channel_partner_ids - message.author_id
+            user_id = answer_id.mapped('user_ids').sudo().filtered(lambda r: r.gpt_id)[:1]
+            if user_id and answer_id.gpt_id:
+                gpt_policy = user_id.gpt_policy
+                gpt_wl_partners = user_id.gpt_wl_partners
+                is_allow = message.author_id.id in gpt_wl_partners.ids
+                if gpt_policy == 'all' or (gpt_policy == 'limit' and is_allow):
+                    ai = answer_id.sudo().gpt_id
+
+        elif channel_type in ['group', 'channel']:
+            # partner_ids = @ ids
+            partner_ids = list(msg_vals.get('partner_ids'))
+            if hasattr(self, 'ai_partner_id') and self.ai_partner_id:
+                if self.is_ai_conversation and self.ext_ai_partner_id:
+                    # 二人转模式时，处理回答ai，以及叠加角色的设定
+                    if author_id == self.ai_partner_id.id:
+                        partner_ids = [self.ext_ai_partner_id.id]
+                        add_sys_content = self.ext_ai_sys_content
+                    else:
+                        partner_ids = [self.ai_partner_id.id]
+                        add_sys_content = self.ai_sys_content
+                elif self.ai_partner_id.id in partner_ids:
+                    # 其它，普通Ai群。当有主id时，使用主id
+                    partner_ids = [self.ai_partner_id.id]
+            if partner_ids:
+                # 常规群聊 @
+                partners = self.env['res.partner'].search([('id', 'in', partner_ids)]) - message.author_id
+                # user_id = user, who has binded gpt robot
+                user_id = partners.mapped('user_ids').sudo().filtered(lambda r: r.gpt_id)[:1]
+            elif message.body == _('<div class="o_mail_notification">joined the channel</div>'):
+                # 欢迎的情况
+                partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id)[:1]
+                user_id = partners.mapped('user_ids')[:1]
+            elif self.member_count == 2:
+                # 处理独聊频道
+                partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id and r != message.author_id)[:1]
+                user_id = partners.mapped('user_ids')[:1]
+            elif not message.author_id.gpt_id:
+                # 没有@时，默认第一个robot
+                # robot = self.env.ref('app_chatgpt.chatgpt_robot')
+                # 临时用azure
+                if hasattr(self, 'ai_partner_id') and self.ai_partner_id:
+                    # 当有主id时，使用主id
+                    user_id = self.ai_partner_id.mapped('user_ids')[:1]
+                else:
+                    # 使用群里的第一个robot
+                    partners = self.channel_partner_ids.sudo().filtered(lambda r: r.gpt_id)[:1]
+                    user_id = partners.mapped('user_ids')[:1]
+            if user_id:
+                ai = user_id.sudo().gpt_id
+            #     此处理不判断，将此处逻辑迁移至 get_ai_pre， 非ai回复的直接内容注意设置为 is_ai=false
+            #     gpt_policy = user_id.gpt_policy
+            #     gpt_wl_partners = user_id.gpt_wl_partners
+            #     is_allow = message.author_id.id in gpt_wl_partners.ids
+            #     answer_id = user_id.partner_id
+            #     if gpt_policy == 'all' or (gpt_policy == 'limit' and is_allow):
+            #         ai = user_id.sudo().gpt_id
+            #     elif user_id.gpt_id and not is_allow:
+            #         # 暂时有限用户的Ai
+            #         raise UserError(_('此Ai暂时未开放，请联系管理员。'))
+        # end: 找ai，增加 ai二人转功能
+
+        if hasattr(ai, 'is_translator') and ai.is_translator and ai.ai_model == 'translator':
+            return rdata
+        chatgpt_channel_id = self.env.ref('app_chatgpt.channel_chatgpt')
+
+        if message.body == _('<div class="o_mail_notification">joined the channel</div>'):
+            msg = _("Please warmly welcome our new partner %s and send him the best wishes.") % message.author_id.name
+        else:
+            # 不能用 preview， 如果用 : 提示词则 preview信息丢失
+            plaintext_ct = tools.mail.html_to_inner_content(message.body)
+            msg = plaintext_ct.replace('@%s' % answer_id.name, '').lstrip()
+
+        if not msg:
+            return rdata
+
+        if self.env.context.get('app_ai_sync_config') and self.env.context.get('app_ai_sync_config') in ['sync', 'async']:
+            sync_config = self.env.context.get('app_ai_sync_config')
+        else:
+            sync_config = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openai_sync_config')
+
+        if self.env.context.get('app_ai_chat_padding_time'):
+            padding_time = int(self.env.context.get('app_ai_chat_padding_time'))
+        else:
+            padding_time = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.ai_chat_padding_time'))
+
+        # api_key = self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_api_key')
+        # ai处理，不要自问自答
+        if ai and answer_id != message.author_id:
+            api_key = ai.openapi_api_key
+            if not api_key:
+                _logger.warning(_("ChatGPT Robot【%s】have not set open api key.") % ai.name)
+                return rdata
+
+            try:
+                openapi_context_timeout = int(self.env['ir.config_parameter'].sudo().get_param('app_chatgpt.openapi_context_timeout')) or 60
+            except:
+                openapi_context_timeout = 60
+            openai.api_key = api_key
+            # 非4版本，取0次。其它取3 次历史
+            if '4' in ai.ai_model or '4' in ai.name:
+                chat_count = 1
+            else:
+                chat_count = self.chat_count or 3
+
+            if author_id != answer_id.id and self.channel_type == 'chat':
+                # 私聊
+                _logger.info(f'私聊:author_id:{author_id},partner_chatgpt.id:{answer_id.id}')
+                channel = self.env[msg_vals.get('model')].browse(msg_vals.get('res_id'))
+            elif author_id != answer_id.id and msg_vals.get('model', '') == 'discuss.channel' and msg_vals.get('res_id', 0) == chatgpt_channel_id.id:
+                # todo: 公开的群聊，当前只开1个，后续更多
+                _logger.info(f'频道群聊:author_id:{author_id},partner_chatgpt.id:{answer_id.id}')
+                channel = chatgpt_channel_id
+            elif author_id != answer_id.id and msg_vals.get('model', '') == 'discuss.channel' and self.channel_type in ['group', 'channel']:
+                # 高级用户自建的话题
+                channel = self.env[msg_vals.get('model')].browse(msg_vals.get('res_id'))
+                if hasattr(channel, 'is_private') and channel.description:
+                    messages.append({"role": "system", "content": channel.description})
+
+            try:
+                # 处理提示词
+                sys_content = '%s%s' % (channel.description if channel.description else "", add_sys_content if add_sys_content else "")
+                if len(sys_content):
+                    messages.append({"role": "system", "content": sys_content})
+                c_history = self.get_openai_context(channel.id, author_id, answer_id, openapi_context_timeout, chat_count)
+                if c_history:
+                    messages += c_history
+                if message.attachment_ids:
+                    attachment = message.attachment_ids[:1].sudo()
+                    file_info = ai.get_msg_file_content(message)
+                    if file_info and file_info.get('type') == 'image':
+                        # Images: keep the original behaviour unchanged
+                        messages.append({
+                            "role": "user",
+                            "content": [
+                                {
+                                    "type": "image_url",
+                                    "image_url": {
+                                        "url": file_info['url'],
+                                    },
+                                },
+                                {
+                                    "type": "text",
+                                    "text": msg
+                                }
+                            ]
+                        })
+                    elif file_info and file_info.get('type') == 'text':
+                        # Extracted PDF text or plain-text file
+                        messages.append({
+                            "role": "user",
+                            "content": "%s\n\n[Attached file: %s]\n%s" % (
+                                msg, attachment.name or 'file', file_info['content'],
+                            ),
+                        })
+                    elif file_info and file_info.get('type') == 'file':
+                        # Binary we cannot read as text (scanned PDF, docx, ...):
+                        # send it as an OpenAI / OpenRouter file input.
+                        messages.append({
+                            "role": "user",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": msg,
+                                },
+                                {
+                                    "type": "file",
+                                    "file": {
+                                        "filename": file_info['filename'],
+                                        "file_data": file_info['data_uri'],
+                                    },
+                                },
+                            ],
+                        })
+                    else:
+                        messages.append({"role": "user", "content": msg})
+                else:
+                    messages.append({"role": "user", "content": msg})
+                msg_len = sum(len(str(m)) for m in messages)
+                # 接口最大接收 8430 Token
+                # if msg_len * 2 > ai.max_send_char:
+                #     messages = []
+                #     if hasattr(channel, 'is_private') and channel.description:
+                #         messages.append({"role": "system", "content": channel.description})
+                #     messages.append({"role": "user", "content": msg})
+                # msg_len = sum(len(str(m)) for m in messages)
+                # if msg_len * 2 > ai.max_send_char:
+                #     new_msg = channel.with_user(user_id).message_post(body=_('您所发送的提示词已超长。'), message_type='comment',
+                #                                                         subtype_xmlid='mail.mt_comment',
+                #                                                         parent_id=message.id)
+
+                    # if msg_len * 2 >= 8000:
+                    # messages = [{"role": "user", "content": msg}]
+                _logger.warning("AI send messages to %s: %s", ai.name, messages)
+                if sync_config == 'sync':
+                    self.get_ai_response(ai, messages, channel, user_id, message)
+                else:
+                    if hasattr(self, 'with_delay'):
+                        self.with_delay(priority=30, eta=padding_time).get_ai_response(ai, messages, channel, user_id, message)
+                    else:
+                        self.get_ai_response(ai, messages, channel, user_id, message)
+            except Exception as e:
+                raise UserError(e)
+
+        return rdata
+
+    def _message_post_after_hook(self, message):
+        # Odoo20: 签名去掉 msg_vals
+        if message.author_id.gpt_id:
+            if message.body not in [_('Response Timeout, please speak again.'), _('Warning: The content you sent contains sensitive words, please modify the content before sending it to me.'),
+                                    _('This AI is temporarily unavailable, please contact the administrator.'), _('The prompt you sent is too long.')]:
+                message.is_ai = True
+        return super(Channel, self)._message_post_after_hook(message)
+
+    @api.model
+    def _get_my_last_cid(self):
+        # 获取当前用户最后一次进入的channel，返回该channel的id
+        # todo: 优化，每次聊天进入时就 write
+        user = self.env.user
+        msgs = self.env['mail.message'].sudo().search([
+            ('model', '=', 'discuss.channel'),
+            ('author_id', '=', user.partner_id.id),
+        ], limit=3, order='id desc')
+        c_id = 0
+        c = self
+        for m in msgs:
+            c = self.browse(m.res_id)
+            if c.is_member:
+                c_id = c.id
+                break
+        if not c_id:
+            c = self.env.ref('app_chatgpt.channel_chatgpt', raise_if_not_found=False)
+            c_id = c.id or False
+        if c and not c.is_member:
+            # Odoo20: add_members 改名为 _add_members，且为关键字参数
+            c.sudo()._add_members(partners=user.partner_id)
+        return c_id
+
+    @api.onchange('ai_partner_id')
+    def _onchange_ai_partner_id(self):
+        if self.ai_partner_id and self.ai_partner_id.image_1920:
+            self.image_128 = self.ai_partner_id.avatar_128
+        if self.ai_partner_id and not self.ai_sys_content:
+            if self.ai_partner_id.gpt_id:
+                self.ai_sys_content = self.ai_partner_id.gpt_id.sys_content
+
+    @api.onchange('ext_ai_partner_id')
+    def _onchange_ext_ai_partner_id(self):
+        if self.ext_ai_partner_id and not self.ext_ai_sys_content:
+            if self.ext_ai_partner_id.gpt_id:
+                self.ai_sys_content = self.ext_ai_partner_id.gpt_id.sys_content
+
+    @api.onchange('set_chat_count')
+    def _onchange_set_chat_count(self):
+        if self.set_chat_count:
+            self.chat_count = int(self.set_chat_count) if self.set_chat_count != 'none' else 0
