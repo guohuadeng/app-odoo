@@ -323,9 +323,15 @@ class Channel(models.Model):
             sync_config = self.env['ir.config_parameter'].sudo().get_str('app_chatgpt.openai_sync_config')
 
         if self.env.context.get('app_ai_chat_padding_time'):
-            padding_time = int(self.env.context.get('app_ai_chat_padding_time'))
+            try:
+                padding_time = int(self.env.context.get('app_ai_chat_padding_time'))
+            except (ValueError, TypeError):
+                padding_time = 0
         else:
-            padding_time = int(self.env['ir.config_parameter'].sudo().get_str('app_chatgpt.ai_chat_padding_time'))
+            try:
+                padding_time = int(self.env['ir.config_parameter'].sudo().get_str('app_chatgpt.ai_chat_padding_time')) or 0
+            except (ValueError, TypeError):
+                padding_time = 0
 
         # api_key = self.env['ir.config_parameter'].sudo().get_str('app_chatgpt.openapi_api_key')
         # ai处理，不要自问自答
