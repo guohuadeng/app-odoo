@@ -32,7 +32,7 @@ msgstr ""
 #. module: app_saas
 #: model:auth.oauth.provider,body:app_saas.provider_app_saas
 msgid "Ai Passport of odooapp.cn"
-msgstr "Ai通行证-Odoo中文应用商店"
+msgstr "Ai通行证-Odoo中文市场"
 
 #. module: app_saas
 #. odoo-javascript
