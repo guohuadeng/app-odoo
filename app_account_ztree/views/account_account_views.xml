@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- list -->
+    <!-- Odoo 20: 核心列表 view_account_list 已含 parent_id（optional="hide"），
+         且 js_class="account_hierarchy_list" 依赖 orderBy 为空时按 parent_path 层级缩进，
+         故不再插入重复字段、不再设置 default_order（核心 _order="code_path, ..." 已按层级编码排序） -->
+        <record id="app_view_account_list" model="ir.ui.view">
+            <field name="name">app.account.account.list.view</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_list"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    <!-- form -->
+    <!-- Odoo 20: 核心表单 view_account_form 已含 parent_id，改为直接附加 ztree widget -->
+        <record id="app_view_account_form" model="ir.ui.view">
+            <field name="name">app.account.account.form</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <attribute name="widget">ztree_select</attribute>
+                    <attribute name="options">{'ztree_name_field': 'display_name'}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
