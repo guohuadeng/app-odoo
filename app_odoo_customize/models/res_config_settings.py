@@ -287,20 +287,6 @@ class ResConfigSettings(models.TransientModel):
         ]
         return self._remove_app_data(to_removes, seqs, 'remove_expense')
 
-    def remove_expense(self):
-        to_removes = [
-            # 清除
-            'hr.expense.pc.use.plan',
-            'hr.expense',
-            'hr.expense.sheet',
-            'hr.payslip',
-            'hr.payslip.run',
-        ]
-        seqs = [
-            'hr.expense',
-        ]
-        return self._remove_app_data(to_removes, seqs, 'remove_expense')
-
     def remove_mrp(self):
         to_removes = [
             # 清除生产单据
@@ -384,7 +370,6 @@ class ResConfigSettings(models.TransientModel):
             # 'account.analytic.account',
             'account.partial.reconcile',
             'account.move.line',
-            'hr.expense.sheet',
             'account.move',
             'account.billing',
         ]
