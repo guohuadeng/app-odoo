@@ -33,7 +33,8 @@ class AiRobot(models.Model):
                 path = os.path.join(module_path, 'static', 'src', 'img', '%s.png' % self.provider)
                 if os.path.isfile(path):
                     with open(path, 'rb') as image_file:
-                        self.image_avatar = base64.b64encode(image_file.read())
+                        # Odoo20 的 Binary/Image 字段不接受裸 bytes，写 base64 字符串
+                        self.image_avatar = base64.b64encode(image_file.read()).decode('ascii')
         return super()._onchange_provider()
 
     def get_deepseek(self, data, author_id, answer_id, param={}):

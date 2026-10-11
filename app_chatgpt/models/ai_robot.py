@@ -506,7 +506,8 @@ GPT-3	A set of models that can understand and generate natural language
                 path = os.path.join(module_path, 'static', 'description', 'src', '%s.png' % self.provider)
                 if os.path.isfile(path):
                     with open(path, 'rb') as image_file:
-                        self.image_avatar = base64.b64encode(image_file.read())
+                        # Odoo20 的 Binary/Image 字段不接受裸 bytes，写 base64 字符串
+                        self.image_avatar = base64.b64encode(image_file.read()).decode('ascii')
 
     @api.onchange('set_ai_model')
     def _onchange_set_ai_model(self):
