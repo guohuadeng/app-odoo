@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="discuss.channel" id="channel_deepseek">
+            <field name="name">Deepseek Group Chat</field>
+<!--            <field name="description">你的职责是帮我们解决各行业你是各行业的专家，专门解决大家的行业疑难问题。</field>-->
+            <field name="image_128" type="base64" file="app_deepseek/static/src/img/deepseek.png"/>
+            <field name="ai_partner_id" ref="app_deepseek.partner_deepseek_chat"/>
+        </record>
+
+        <record model="mail.message" id="module_install_notification">
+            <field name="model">discuss.channel</field>
+            <field name="res_id" ref="app_deepseek.channel_deepseek"/>
+            <field name="message_type">email</field>
+            <field name="subtype_id" ref="mail.mt_comment"/>
+            <field name="subject">Welcome to Deepseek Ai Group Chat</field>
+            <field name="body"><![CDATA[<p>Welcome to Deepseek Ai Group Chat.</p>
+            <p>Please ask me any question.</p>]]></field>
+        </record>
+
+        <record model="discuss.channel" id="app_deepseek.channel_deepseek">
+            <field name="group_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- <record id="app_ai_robot_deepseek_form_view" model="ir.ui.view">
+        <field name="name">app.ai.robot.deepseek.form</field>
+        <field name="model">ai.robot</field>
+        <field name="inherit_id" ref="app_chatgpt.ai_robot_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='get_ai_list_model']" position="attributes">
+                <attribute name="attrs">{'invisible': 0}</attribute>
+            </xpath>
+        </field>
+    </record> -->
+</odoo>

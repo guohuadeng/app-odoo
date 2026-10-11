@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <record id="robot_deepseek_chat" model="ai.robot">
+        <field name="name">DeepSeek Chat</field>
+        <field name="provider">deepseek</field>
+        <field name="ai_model">deepseek-chat</field>
+        <field name="set_ai_model">deepseek-chat</field>
+	    <field name="api_version" eval="False"/>
+        <field name="endpoint">https://api.deepseek.com</field>
+        <field name="sequence">11</field>
+        <field name="image_avatar" type="base64" file="app_deepseek/static/src/img/deepseek.png"/>
+    </record>
+
+</odoo>
