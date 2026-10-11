@@ -1,0 +1,45 @@
+# Translation of Odoo Server.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-08 14:28+0000\n"
+"PO-Revision-Date: 2018-01-08 14:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_base_superbar
+#: model:ir.ui.view,arch_db:app_base_superbar.app_ir_logging_search_view
+msgid "CRITICAL"
+msgstr "严重"
+
+#. module: app_base_superbar
+#: model:ir.ui.view,arch_db:app_base_superbar.app_ir_logging_search_view
+msgid "ERROR"
+msgstr "错误"
+
+#. module: app_base_superbar
+#: model:ir.ui.view,arch_db:app_base_superbar.app_ir_logging_search_view
+msgid "WARNING"
+msgstr "警告"
+
+#. module: app_base_superbar
+#: model:ir.ui.view,arch_db:app_base_superbar.app_ir_logging_search_view
+msgid "Last 7 Days"
+msgstr "近7天"
+
+#. module: app_base_superbar
+#: model:ir.ui.view,arch_db:app_base_superbar.app_ir_logging_search_view
+msgid "Last 14 Days"
+msgstr "近14天"
+
+#. module: app_base_superbar
+#: model:ir.ui.view,arch_db:app_base_superbar.app_ir_logging_search_view
+msgid "Last 30 Days"
+msgstr "近30天"
+

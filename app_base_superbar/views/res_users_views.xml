@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+    <record id="app_view_users_search" model="ir.ui.view">
+        <field name="name">app.base.users.search</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel>
+                    <field name="company_ids" select="multi" enable_counters="1" groups="base.group_multi_company"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,18 @@
+// scss sample, 样例navbar在下方的特殊处理
+.o_web_client {
+  //userMenu
+  .o_burger_menu  {
+    width: 80%;
+    .o_burger_menu_topbar {
+      height: var(--o-navbar-height);
+    }
+    &.flex-column  {
+      flex-direction: column-reverse!important;
+    }
+    .oi:before, .fa:before, .dropdown-toggle  {
+      font-size: 2em;
+      line-height: var(--o-navbar-height);
+    }
+  }
+}
+

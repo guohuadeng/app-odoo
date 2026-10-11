@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+    <record id="app_ir_default_search_view" model="ir.ui.view">
+        <field name="name">app.ir.default.search</field>
+        <field name="model">ir.default</field>
+        <field name="inherit_id" ref="base.ir_default_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search">
+                <searchpanel>
+                    <field name="company_id"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>
