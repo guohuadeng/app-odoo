@@ -1,0 +1,24 @@
+<odoo>
+  <data>
+        <!-- 改收款相关操作显示 -->
+        <record id="app_view_order_form" model="ir.ui.view">
+            <field name="name">app.sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+<!--                全款操作-->
+                <xpath expr="//header//button[@name='%(sale.action_view_sale_advance_payment_inv)d'][1]" position="attributes">
+                    <attribute name="string">Make Collections</attribute>
+                </xpath>
+<!--                尾款操作-->
+                <xpath expr="//header//button[@name='%(sale.action_view_sale_advance_payment_inv)d'][1]" position="attributes">
+                    <attribute name="string">Make Collections</attribute>
+                </xpath>
+<!--                查看收据列表-->
+                <xpath expr="//div[hasclass('oe_button_box')]//field[@name='invoice_count']" position="attributes">
+                    <attribute name="string">Invoices/FaPiao</attribute>
+                </xpath>
+            </field>
+        </record>
+  </data>
+</odoo>

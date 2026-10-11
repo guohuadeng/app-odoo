@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="sale.view_sale_advance_payment_inv" model="ir.ui.view">
+            <field name="name">FaPiao / Invoice Orders</field>
+        </record>
+
+        <record id="app_view_sale_advance_payment_inv" model="ir.ui.view">
+            <field name="name">app.account.move.form</field>
+            <field name="model">sale.advance.payment.inv</field>
+            <field name="inherit_id" ref="sale.view_sale_advance_payment_inv"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="string">FaPiao / Invoice Orders</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sale.action_view_sale_advance_payment_inv" model="ir.actions.act_window">
+            <field name="name">Create FaPiao / Invoice</field>
+        </record>
+</odoo>

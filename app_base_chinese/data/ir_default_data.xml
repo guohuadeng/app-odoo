@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- 各种默认值 -->
+        <!--设置客户默认国家为中国-->
+         <function model="ir.default" name="set"
+            eval="('res.partner', 'country_id', obj().env.ref('base.cn').id)"/>
+        <!--设置默认时区为中国，注意select 类型要加 ""-->
+         <function model="ir.default" name="set"
+            eval="('res.partner', 'tz', 'Etc/GMT-8')"/>
+        <!--设置配送默认包含为中国-->
+         <function model="ir.default" name="set"
+            eval="('delivery.carrier', 'country_ids', [(6, 0, [obj().env.ref('base.cn').id])])"/>
+        <!--设置产品默认是可库存产品-->
+         <function model="ir.default" name="set"
+            eval="('product.template', 'type', 'consu')"/>
+        <!--设置翻译导出默认中文-->
+         <function model="ir.default" name="set"
+            eval="('base.language.export', 'lang', 'zh_CN')"/>
+        <!--设置翻译导出默认po-->
+         <function model="ir.default" name="set"
+            eval="('base.language.export', 'format', 'po')"/>
+    </data>
+</odoo>

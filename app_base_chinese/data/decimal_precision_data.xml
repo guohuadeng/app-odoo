@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+		<!-- v20 断点：这条精度记录从 product  addon 迁到 uom addon
+		     （v18 product/data/product_data.xml:35 -> v20 uom/data/uom_data.xml:5），
+		     且 usage 名由 Product Unit of Measure 改成 Product Unit，
+		     原生默认就是 2 位；uom.uom.rounding 字段在 v20 已删除 -->
+		 <record id="product.decimal_discount" model="decimal.precision">
+			<field name="digits">0</field>
+		</record>
+		 <record id="uom.decimal_product_uom" model="decimal.precision">
+			<field name="digits">2</field>
+		</record>
+		 <record id="account.decimal_payment" model="decimal.precision">
+			<field name="digits">3</field>
+		</record>
+	</data>
+</odoo>

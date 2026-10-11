@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- v20 断点：原生内部用户模板记录 base.default_user 已被删除，新用户默认权限改由
+             res.groups 容器 base.default_user_group 承载（base/models/res_users.py:197、
+             res_groups.py:434-451），v20 已不存在「可以改 lang/tz/name 的模板用户」。
+             本模块的中文与东八区默认值已由 data/ir_default_data.xml 设在 res.partner 上，
+             而 v20 的 res.users.tz 就是 related='partner_id.tz'（res_users.py:249）⇒ 效果等价。 -->
+        <function model="res.users" name="write" context="{'lang': 'zh_CN', 'active_test': False}">
+            <value eval="[ref('base.template_portal_user_id')]"/>
+            <value model="res.users" eval="{
+            'lang': 'zh_CN',
+            'tz': 'Etc/GMT-8',
+            'name': '默认门户用户模板',
+            }"/>
+        </function>
+<!--        游客-->
+        <function model="res.users" name="write" context="{'lang': 'zh_CN', 'active_test': False}">
+            <value eval="[ref('base.public_user')]"/>
+            <value model="res.users" eval="{
+            'lang': 'zh_CN',
+            'tz': 'Etc/GMT-8',
+            }"/>
+        </function>
+    </data>
+</odoo>
