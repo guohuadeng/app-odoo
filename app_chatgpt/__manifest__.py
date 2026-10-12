@@ -10,7 +10,7 @@
 
 {
     'name': "AI服务中心聚合全网AI,ChatGPT DeepSeek Ali Qwen AiGC Center",
-    'version': '20.0.26.09.29',
+    'version': '20.0.26.10.12',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
     'maintainer': 'odooai.cn',

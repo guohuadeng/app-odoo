@@ -4,13 +4,13 @@
         <xpath expr="//div[hasclass('o-mail-Message-body')]" position="inside">
             <t>
                 <div name="bottom_operation" class="position-relative mt-8">
-                    <div t-if="message.human_prompt_tokens &gt; 0 or message.ai_completion_tokens &gt;0"
+                    <div t-if="this.message.human_prompt_tokens &gt; 0 or this.message.ai_completion_tokens &gt; 0"
                          class="o_Message_token text-muted" style="float:left;display:inline;font-size: 13px;">
                         <br/>
                         ------------------
                         <br/>
                         <span title="Tokens consumed by question/reply">
-                            <t t-out="message.human_prompt_tokens"/> / <t t-out="message.ai_completion_tokens"/>
+                            <t t-out="this.message.human_prompt_tokens"/> / <t t-out="this.message.ai_completion_tokens"/>
                         </span>
                     </div>
                 </div>
