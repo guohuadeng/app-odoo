@@ -1,0 +1,5 @@
+<templates>
+<!-- v20 purchase 列表已重构：purchase.PurchaseListView 模板删除，改为 purchase.ListRenderer（t-inherit account.FileUploadListRenderer），
+原生已把 PurchaseDashBoard 放到列表顶部（//div[hasclass('o_list_renderer')] 之前）。
+本模块 v18 把 DashBoard 移到 table[1] 之前的定制在 v20 已由原生实现，无需再扩展。 -->
+</templates>
