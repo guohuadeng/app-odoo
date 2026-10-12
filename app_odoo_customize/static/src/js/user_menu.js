@@ -211,10 +211,10 @@ function odooAccountItem(env) {
     };
 }
 
-function refresh_current() {
+function refresh_current(env) {
     //移动端，主要为了小程序
     "use strict";
-    const ui = useService("ui");
+    const ui = env.services.ui;
     return {
         type: "item",
         id: "refresh_current",

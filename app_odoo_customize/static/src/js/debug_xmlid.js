@@ -4,7 +4,7 @@ import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
-import { Component, onWillStart, useState } from "@odoo/owl";
+import { Component, onWillStart, signal, useProps, t } from "@odoo/owl";
 
 const debugRegistry = registry.category("debug");
 
@@ -15,18 +15,16 @@ const debugRegistry = registry.category("debug");
 class XmlIdDebugItem extends Component {
     static template = "app_odoo_customize.XmlIdDebugItem";
     static components = { DropdownItem };
-    static props = {
-        resModel: { type: String },
-        resId: { type: Number },
-    };
+    props = useProps({
+        resModel: t.string(),
+        resId: t.number(),
+    });
 
     setup() {
         this.orm = useService("orm");
         this.notification = useService("notification");
-        this.state = useState({
-            xmlid: "",
-            loading: true,
-        });
+        this.xmlid = signal("");
+        this.loading = signal(true);
         onWillStart(() => this.loadXmlId());
     }
 
@@ -39,26 +37,26 @@ class XmlIdDebugItem extends Component {
             );
             const metadata = result[0];
             if (metadata) {
-                this.state.xmlid = metadata.xmlid || "";
+                this.xmlid.set(metadata.xmlid || "");
             }
         } catch (e) {
-            this.state.xmlid = "";
+            this.xmlid.set("");
         }
-        this.state.loading = false;
+        this.loading.set(false);
     }
 
     async copyXmlId(ev) {
         ev.stopPropagation();
         ev.preventDefault();
-        if (!this.state.xmlid) {
+        if (!this.xmlid()) {
             return;
         }
         try {
-            await navigator.clipboard.writeText(this.state.xmlid);
+            await navigator.clipboard.writeText(this.xmlid());
         } catch (e) {
             // Fallback for non-secure contexts
             const textArea = document.createElement("textarea");
-            textArea.value = this.state.xmlid;
+            textArea.value = this.xmlid();
             textArea.style.position = "fixed";
             textArea.style.opacity = "0";
             document.body.appendChild(textArea);
@@ -67,7 +65,7 @@ class XmlIdDebugItem extends Component {
             document.body.removeChild(textArea);
         }
         this.notification.add(
-            _t("XML ID copied: %(xmlid)s", { xmlid: this.state.xmlid }),
+            _t("XML ID copied: %(xmlid)s", { xmlid: this.xmlid() }),
             { type: "info" }
         );
     }

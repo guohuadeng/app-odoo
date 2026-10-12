@@ -23,7 +23,7 @@ class IrModelFields(models.Model):
 
     # 调整可按 field name查询
     @api.model
-    def name_search(self, name, args=None, operator='ilike', limit=100):
+    def name_search(self, name, domain=None, operator='ilike', limit=100):
         """
         name search that supports searching by tag code
         """
@@ -31,4 +31,4 @@ class IrModelFields(models.Model):
             domain = ['|', ('name', operator, name), ('field_description', operator, name)]
             res = self.search_fetch(domain, ['display_name'], limit=limit)
             return [(rec.id, rec.display_name) for rec in res]
-        return super().name_search(name, args, operator, limit)
+        return super().name_search(name, domain, operator, limit)

@@ -9,10 +9,10 @@
                 <div class="oe_button_box" name="button_box">
                     <button name="%(base.action_model_fields)d"
                             context="{'search_default_model_id': id, 'default_model_id': id}"
-                            type="action" class="oe_stat_button" icon="fa-list" string="Fields List"/>
+                            type="action" class="oe_stat_button" icon="oi_view-kanban" string="Fields List"/>
                     <button name="%(base.action_ui_view)d"
                             context="{'search_default_model': model}"
-                            type="action" class="oe_stat_button" icon="fa-list" string="Views List"/>
+                            type="action" class="oe_stat_button" icon="oi_view-kanban" string="Views List"/>
                 </div>
             </xpath>
         </field>
