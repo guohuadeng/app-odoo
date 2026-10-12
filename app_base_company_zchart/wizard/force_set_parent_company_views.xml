@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="force_set_parent_company_form" model="ir.ui.view">
+        <field name="name">force.set.parent.company.form</field>
+        <field name="model">force.set.parent.company</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="company_id" />
+                    <field name="target_parent_company_id" />
+                </group>
+                <footer>
+                    <button name="action_confirm" string="Confirm"  type="object" class="btn-primary" />
+                    <button name="cancel" string="Cancel" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_force_set_parent_company" model="ir.actions.act_window">
+        <field name="name">Force Set Parent Company</field>
+        <field name="res_model">force.set.parent.company</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

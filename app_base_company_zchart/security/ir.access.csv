@@ -1,0 +1,2 @@
+id,name,model_id,group_id:id,operation,domain
+access_force_set_parent_company_user,force.set.parent.company.user,force.set.parent.company,base.group_system,crud,
