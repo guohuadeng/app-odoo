@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <!-- stock -->
+    <record id="app_view_location_form" model="ir.ui.view">
+        <field name="name">app.stock.location.form</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='location_id']" position="attributes">
+                <!-- Add your fields or attributes here -->
+                <attribute name="widget">ztree_select</attribute>
+                <attribute name="options">{'ztree_parent_key': 'location_id','ztree_expend_level': '1', 'ztree_name_field': 'name'}</attribute>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>
