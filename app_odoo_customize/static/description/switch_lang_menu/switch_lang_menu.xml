@@ -4,7 +4,7 @@
 <t t-name="web.SwitchLangMenu" owl="1">
     <Dropdown class="'o_switch_Lang_menu d-none d-md-block'" position="'bottom-end'">
         <t t-set-slot="toggler">
-            <i class="fa fa-building d-lg-none"/>
+            <i class="oi d-lg-none" data-icon="business"/>
             <span class="oe_topbar_name d-none d-lg-block" t-out="currentLang.name"/>
         </t>
         <t t-foreach="Object.values(LangService.availableCompanies).sort((c1, c2) => c1.sequence - c2.sequence)" t-as="Lang" t-key="Lang.id">
@@ -32,7 +32,7 @@
                 t-on-click.stop="() => this.setLang(Lang.id)">
 
                 <span class="btn btn-light border-0 p-2">
-                    <i class="fa fa-fw py-2" t-att-class="isLangSelected ? 'fa-check-square text-primary' : 'fa-square-o'"/>
+                    <i class="oi oi-fw py-2" t-att-data-icon="isLangSelected ? 'check_box' : 'check_box_outline_blank'" t-att-class="isLangSelected ? 'text-primary' : ''"/>
                 </span>
             </div>
 

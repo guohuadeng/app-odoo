@@ -5,7 +5,7 @@
 <!--&lt;!&ndash;   todo: 以下主要是测试，改这个主图标为 O &ndash;&gt;-->
 <!--    <xpath expr="//a[hasclass('o_menu_toggle')]" position="replace">-->
 <!--        <a href="#" class="o_menu_toggle" t-att-class="{'hasImage': currentApp &amp;&amp; currentApp.webIconData}" accesskey="h" t-ref="menuApps" t-on-click.prevent="() => this.hm.toggle()">-->
-<!--            <i class="o_menu_toggle_icon text-primary fa fa-2x fa-opera" style="padding-right:8px;" role="img"/>-->
+<!--            <i class="oi oi-2x o_menu_toggle_icon text-primary" data-icon="oi_opera" style="padding-right:8px;" role="img"/>-->
 <!--            <img-->
 <!--                t-if="currentApp &amp;&amp; currentApp.webIconData"-->
 <!--                t-att-src="currentApp.webIconData"-->

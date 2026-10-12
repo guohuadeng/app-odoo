@@ -7,8 +7,8 @@
                     t-on-click="onSubmitError"
                     t-att-disabled="isSubmitting"
                     title="Report this error to OdooAi.cn for support Via Ai Passport">
-                <i t-if="isSubmitting" class="fa fa-spinner fa-spin me-1"/>
-                <i t-else="" class="fa fa-paper-plane me-1"/>
+                <i t-if="isSubmitting" class="oi oi-spin me-1" data-icon="progress_activity"/>
+                <i t-else="" class="oi me-1" data-icon="send"/>
                 <t t-out="submitButtonText"/>
                 Apply Support
             </button>

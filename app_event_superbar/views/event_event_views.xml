@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <xpath expr="//search" position="inside">
                 <searchpanel view_types="list,kanban,pivot,graph,calendar">
-                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="company_id" groups="base.group_multi_company" icon="business"/>
                     <field name="stage_id" enable_counters="1" select="multi"/>
                 </searchpanel>
             </xpath>

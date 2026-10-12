@@ -42,7 +42,7 @@
    <t t-name="Menu.tooltip">
        <div class="oe_tooltip_string" if="title" role="tooltip">
 <!--           <button type="button" name="copy-menu-id" title="Copy menu XMLID"-->
-<!--                   class="ml-4 btn btn-sm btn-primary fa fa-copy"/>-->
+<!--                   class="oi ml-4 btn btn-sm btn-primary" data-icon="content_copy"/>-->
            <t t-out="title"/>
        </div>
        <ul class="oe_tooltip_technical" role="tooltip">

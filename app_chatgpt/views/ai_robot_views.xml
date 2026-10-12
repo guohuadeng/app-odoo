@@ -67,7 +67,7 @@
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button class="oe_stat_button" name="%(base.action_res_users)d" icon="fa-users" type="action"
+                        <button class="oe_stat_button" name="%(base.action_res_users)d" icon="group" type="action"
                                 context="{'search_default_gpt_id': id}">
                             <field name="partner_count" widget="statinfo"/>
                         </button>

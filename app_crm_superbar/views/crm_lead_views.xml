@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <searchpanel view_types="list,kanban">
-                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="company_id" groups="base.group_multi_company" icon="business"/>
                     <field name="team_id"/>
                     <field name="stage_id"/>
                     <!--<field name="tag_ids"/>-->
@@ -22,7 +22,7 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <searchpanel view_types="list,kanban">
-                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="company_id" groups="base.group_multi_company" icon="business"/>
                     <field name="team_id"/>
                     <field name="campaign_id"/>
                     <field name="medium_id"/>
@@ -39,7 +39,7 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <searchpanel view_types="list,kanban,pivot,graph">
-                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="company_id" groups="base.group_multi_company" icon="business"/>
                     <field name="team_id"/>
                     <field name="campaign_id"/>
                     <field name="medium_id"/>

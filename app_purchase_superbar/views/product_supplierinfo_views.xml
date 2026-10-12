@@ -9,7 +9,7 @@
         <field name="arch" type="xml">
             <xpath expr="//search">
                 <searchpanel  view_types="list,kanban,search">
-                    <field name="company_id" groups="base.group_multi_company" icon="fa-building"/>
+                    <field name="company_id" groups="base.group_multi_company" icon="business"/>
                     <field name="partner_id" select="multi"/>
                     <field name="product_id" select="multi" context="{'display_default_code': 0}"
                            invisible="not context.get('spu_view_product_supplierinfo', False)"/>

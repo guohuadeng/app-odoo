@@ -36,7 +36,7 @@
                                 string="Submit"
                                 type="object"
                                 class="btn-primary oe_highlight"
-                                icon="fa-paper-plane"/>
+                                icon="send"/>
                         <button string="Cancel"
                                 class="btn-secondary"
                                 special="cancel"/>
