@@ -55,6 +55,17 @@ English Features:
     'depends': [
         'web',
         'mail',
+        # 关于 mail.tracking.value 的自定义搜索视图（2026-10-13 复核结论）：
+        # v20 该模型没被删除，而是搬到独立社区 addon mail_tracking（自带
+        # 「Tracking Values」菜单 + list/form 视图 + 动作 action_view_mail_tracking_value，
+        # 但**没有 search 视图**）。尝试恢复本模块那份 primary 搜索视图时可复现：
+        # 装载期报 null value in column "visibility" of relation "ir_ui_view"
+        # （website 给 ir.ui.view 加的 NOT NULL 字段，
+        # addons/website/models/ir_ui_view.py:29 Selection(default='public', required=True)），
+        # 去掉 searchpanel 也一样；把 website 加进下面的 depends 就装载通过。
+        # ⇒ 代价是一个 mail/discuss 类模块要背上 website 依赖，属产品决策，暂不恢复；
+        #   需要恢复时：git 里取 views/mail_tracking_value_views.xml 放回 data 末位 +
+        #   depends 补 'mail_tracking'（模型）与 'website'（visibility 约束）
     ],
     'images': ['static/description/banner.png'],
     'data': [
@@ -62,7 +73,10 @@ English Features:
         'views/mail_followers_views.xml',
         'views/mail_mail_views.xml',
         'views/mail_message_views.xml',
-        # v20：mail.tracking.value 模型已删除，mail_tracking_value_views.xml 移除
+        # v20：mail.tracking.value 未删除（搬到社区 addon mail_tracking），但本模块那份
+        # primary 搜索视图恢复后会撞 website 给 ir.ui.view 加的 NOT NULL visibility
+        # ⇒ 需要 depends 同时补 mail_tracking + website 才能装，属产品决策，暂不恢复。
+        #   完整复核结论与恢复步骤见 __manifest__.py 的 depends 注释与升级报告。
     ],
     'demo': [
     ],
