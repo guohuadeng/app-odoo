@@ -39,7 +39,7 @@
 
 {
     'name': "欧度智能基础功能及面板,odooAi Common Util and Tools",
-    'version': '20.0.26.09.23',
+    'version': '20.0.26.10.13',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -61,9 +61,12 @@
     8. Boost for less no-use mail.
     9. Customize .rng file.
     10. Misc utilities like get distance between two points.
-    11. Multi-language Support. Multi-Company Support.
-    12. Support Odoo 20,19,18,17,16,15,14,13, Enterprise and Community and odoo.sh Edition.
-    13. Full Open Source.
+    11. Patch res_user_group_ids widget: on the user access rights form, a privilege (scope)
+        with a single group renders as an independent non-exclusive checkbox, while a
+        privilege with multiple groups keeps the native mutually-exclusive dropdown.
+    12. Multi-language Support. Multi-Company Support.
+    13. Support Odoo 20,19,18,17,16,15,14,13, Enterprise and Community and odoo.sh Edition.
+    14. Full Open Source.
 
     Setup: server_wide_modules = web,app_common
 
@@ -77,9 +80,11 @@
     8. 减少无用邮件提升性能
     9. 自定义.rng文件
     10. 通用工具如计算两点距离等
-    11. 多语言支持，多公司支持
-    12. Odoo 20,19,18,17,16,15,14,13, 企业版，社区版，在线SaaS.sh版，等全版本支持
-    13. 代码完全开源
+    11. 用户访问权限部件增强：权限范围仅含一个权限组时显示为
+        独立复选框（多项可共存、互不排斥），含多个权限组时保持原生互斥下拉选择。
+    12. 多语言支持，多公司支持
+    13. Odoo 20,19,18,17,16,15,14,13, 企业版，社区版，在线SaaS.sh版，等全版本支持
+    14. 代码完全开源
     ''',
     'depends': [
         'mail',
@@ -98,10 +103,10 @@
         'views/ir_cron_views.xml',
         # 'report/.xml',
     ],
-    'qweb': [
-        'static/src/xml/*.xml',
-    ],
     'assets': {
+        'web.assets_backend': [
+            'app_common/static/src/js/res_user_group_ids_field.js',
+        ],
         # 非安全上下文下 navigator.clipboard 不存在，提前补齐避免 web_tour clipboard 模块加载报错
         'web_tour.helpers': [
             ('before', 'web_tour/static/src/tour_helpers/tour_helpers_clipboard.js',
