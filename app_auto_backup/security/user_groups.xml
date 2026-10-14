@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_management">
+            <field name="name">Auto backup access</field>
+            <field name="description">User access level for this module</field>
+            <field name="sequence">3</field>
+        </record>
+
+        <!-- v20：res.groups 已删除 category_id 字段，分组归类改由新模型
+             res.groups.privilege（Scope）承载，category_id 挂在 privilege 上
+             （base/models/res_groups_privilege.py:9-14：name/category_id/sequence/group_ids；
+             res.groups.privilege_id 见 base/models/res_groups.py:44，_order 也改成
+             'privilege_id, sequence, name, id'）。privilege 记录必须先于分组定义，
+             官方范式见 account/security/account_security.xml:39、
+             base/security/base_groups.xml:11-20。
+             本模块自建 ir.module.category（v20 仍存在，base/models/ir_module.py:80）
+             作为 privilege 的父类别，避免借用其它模块的 category。 -->
+        <record model="res.groups.privilege" id="privilege_auto_backup">
+            <field name="name">Auto backup</field>
+            <field name="description">User access level for this module</field>
+            <field name="category_id" ref="app_auto_backup.module_management"/>
+            <field name="sequence">3</field>
+        </record>
+
+        <record id="group_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="privilege_id" ref="app_auto_backup.privilege_auto_backup"/>
+        </record>
+        <!-- group_system 系统用户自动拥有备份管理员 -->
+        <record id="base.group_system" model="res.groups">
+            <field name="implied_ids" eval="[(4, ref('app_auto_backup.group_manager'))]"/>
+        </record>
+    </data>
+</odoo>

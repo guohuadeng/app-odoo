@@ -1,0 +1,4 @@
+id,name,model_id,group_id/id,operation,domain
+access_db_backup_no_one,db_backup admin access,db.backup,base.group_no_one,crud,
+access_db_backup_manager,db_backup manager access,db.backup,app_auto_backup.group_manager,crud,
+access_db_backup_details_manager,db_backup_details manager access,db.backup.details,app_auto_backup.group_manager,crud,
