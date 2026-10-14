@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="app_view_order_product_search_pro" model="ir.ui.view">
+            <field name="name">app.pro.sale.report.search</field>
+            <field name="model">sale.report</field>
+            <field name="inherit_id" ref="app_sale_superbar.app_view_order_product_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//searchpanel//field[1]" position="before">
+                    <field name="date"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
