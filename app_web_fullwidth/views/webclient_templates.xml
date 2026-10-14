@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- v20 断点：v18 的 web.webclient_bootstrap 模板是
+         <t t-set="head_web"> ... <t t-set="head" t-value="head_web + (head or '')" media="screen"/>
+         两段式（v18 web/views/webclient_templates.xml:275 / :308）；
+         v20 合并成了单个 <t t-set="head">（web/views/webclient_templates.xml:278-310），
+         head_web 这个变量已不存在 ⇒ 原 xpath 命中 0、安装期 ParseError。
+         改锚到 t-set="head" 上，用 position="inside" 在其内容末尾追加本模块的脚本。 -->
+    <template id="webclient_bootstrap" inherit_id="web.webclient_bootstrap">
+        <xpath expr="//t[@t-set='head']" position="inside">
+            <script type="text/javascript">
+                odoo.web_chatter_position = "<t
+                    t-out="request.env.user.chatter_position"
+                />";
+            </script>
+        </xpath>
+    </template>
+</odoo>
