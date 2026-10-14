@@ -1,0 +1,459 @@
+<!--
+# -*- coding: utf-8 -*-
+##############################################################################
+# Copyright (C) 2009~2026 odooAi.cn
+# 此 index.html 遵循 Odoo 官方模块描述规范。
+# 样式：Bootstrap 5 + Odoo Website Snippet + FontAwesome
+# GEO: 含 JSON-LD Structured Data (SoftwareApplication)
+##############################################################################
+-->
+<html>
+<head><meta charset="utf-8"/></head>
+
+<!-- JSON-LD Structured Data for Generative Engine Optimization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "app_odoo_doc - Odoo User & Developer Documentation",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  },
+  "description": "Comprehensive Odoo user and developer documentation accessible in-app with one click. Features local branding with company logo, configurable documentation server URL, and covers all Odoo modules including MRP, Sales, Purchase, Stock, and Accounting. Multi-language and multi-company support.",
+  "softwareVersion": "18.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "User Documentation and Developer documentation of Odoo",
+    "1-Click access to help of current topic, operation, and action via systray icon",
+    "Documentation with your company name and logo, fully localizable",
+    "MRP, Sale, Purchase, Stock, Account documentation all in one",
+    "Configurable documentation root URL for self-hosted or remote docs",
+    "Module kanban dropdown menu with Help on Topic action",
+    "Multi-language Support and Multi-Company Support",
+    "Full Open Source under LGPL-3"
+  ]
+}
+</script>
+
+<!-- begin header / hero -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">odoo用户手册开发手册大全 / odoo User Doc &amp; Developer Doc</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Odoo应用内用户手册与开发手册一键访问 / 1-Click Access to Odoo Documentation In-App</p>
+            <p class="lead">
+                一键访问当前操作主题的Odoo用户文档与开发文档，支持自有公司Logo和名称，可配置文档服务器地址，涵盖生产、销售、采购、库存、财务等全部模块文档。<br/>
+                Access comprehensive Odoo user and developer documentation with one click. Features local branding, configurable doc server URL, and covers all Odoo modules.
+            </p>
+            <div class="pt16">
+                <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版 / Enterprise &amp; Community</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司 / Multi-Company</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言 / Multi-Language</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end header -->
+
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述 / Overview</h2>
+            <p class="lead pt16">
+                Odoo应用内用户手册与开发手册大全，一键访问当前操作的帮助文档。支持自有公司Logo和名称，可配置文档服务器地址，涵盖生产、销售、采购、库存、财务等全部模块文档。系统托盘图标提供即时帮助入口，模块看板下拉菜单提供"查看当前帮助"操作。
+            </p>
+            <p class="text-muted">
+                Comprehensive Odoo user and developer documentation accessible in-app with one click. Features local branding with company logo, configurable documentation server URL, and covers all Odoo modules including MRP, Sales, Purchase, Stock, and Accounting. The systray icon provides instant help access, and the module kanban dropdown offers a "Help on Topic" action.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- end overview -->
+
+<!-- begin feature list -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>完整功能列表 / Complete Feature List</h2>
+            <p class="lead">保留原始功能描述 / Preserved original feature descriptions</p>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>1. Odoo用户文档和开发人员文档</b><br/>
+                    <small class="text-muted">User Documentation and Developer documentation of Odoo</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>2. 一键点击即可访问当前主题、当前操作、当前菜单的帮助</b><br/>
+                    <small class="text-muted">1 Click to access help of current topic, current operation, current action</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>3. 附有您公司名称和Logo的文档</b><br/>
+                    <small class="text-muted">Documentation with your company name and logo</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>4. 集生产制造、销售、采购、库存、财务文档于一体</b><br/>
+                    <small class="text-muted">Mrp doc, Sale doc, purchase doc, stock doc, account doc all in one</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>11. 多语言支持，多公司支持</b><br/>
+                    <small class="text-muted">Multi-language Support. Multi-Company Support.</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>12. 支持Odoo 18,17,16,15,14,13,12，企业版、社区版及odoo.sh版</b><br/>
+                    <small class="text-muted">Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition</small>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>13. 代码完全开源</b><br/>
+                    <small class="text-muted">Full Open Source</small>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end feature list -->
+
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center pb32">
+                <h2>核心亮点 / Key Highlights</h2>
+                <p class="lead">一键访问Odoo文档，自有品牌，全模块覆盖 / 1-Click Odoo Docs Access with Local Branding</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-book fa-lg"></i>
+                        </div>
+                        <h5>1. 用户与开发文档 / User &amp; Developer Docs</h5>
+                        <p class="small text-muted">Odoo Documentation</p>
+                        <p class="card-text">提供Odoo用户手册与开发人员文档，涵盖所有核心模块，随时查阅。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-magic fa-lg"></i>
+                        </div>
+                        <h5>2. 一键当前主题帮助 / 1-Click Context Help</h5>
+                        <p class="small text-muted">Instant Topic Help</p>
+                        <p class="card-text">系统托盘图标一键访问当前操作主题、当前菜单的帮助文档，即时解决问题。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-id-card-o fa-lg"></i>
+                        </div>
+                        <h5>3. 自有品牌文档 / Local Branding</h5>
+                        <p class="small text-muted">Company Logo &amp; Name</p>
+                        <p class="card-text">文档页面显示您的公司名称和Logo，完全可本地化，打造专属品牌体验。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-cubes fa-lg"></i>
+                        </div>
+                        <h5>4. 全模块文档合一 / All-in-One Docs</h5>
+                        <p class="small text-muted">MRP, Sale, Purchase, Stock, Account</p>
+                        <p class="card-text">集生产制造、销售、采购、库存、财务等全部模块文档于一体，一站式查阅。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-link fa-lg"></i>
+                        </div>
+                        <h5>5. 可配置文档服务器 / Configurable Doc URL</h5>
+                        <p class="small text-muted">Self-hosted or Remote</p>
+                        <p class="card-text">可配置文档主域名，在自有服务器托管文档或使用odooai.cn远程文档，灵活部署。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-list-alt fa-lg"></i>
+                        </div>
+                        <h5>6. 模块看板帮助入口 / Kanban Help Action</h5>
+                        <p class="small text-muted">Quick Access from Module List</p>
+                        <p class="card-text">模块看板下拉菜单提供"查看当前帮助"操作，从应用列表直接访问对应文档。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end key highlights -->
+
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性 / General Features</h2>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-globe fa-lg"></i>
+                </div>
+                <h5>多语言与多公司<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code-fork fa-lg"></i>
+                </div>
+                <h5>全版本兼容<br/><small class="text-muted">Full Version Support</small></h5>
+                <p>支持 Odoo 19,18,17,16,15,14,13,12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-code fa-lg"></i>
+                </div>
+                <h5>代码完全开源<br/><small class="text-muted">Full Open Source</small></h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end general features -->
+
+<!-- begin screenshots -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>界面截图 / Screenshots</h2>
+            <p class="lead">核心功能界面一览</p>
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>odoo用户/开发文档演示 / odoo User &amp; Developer Doc Demo</h3>
+            <img class="img-fluid rounded shadow" src="app_odoo_doc.gif" alt="odoo User Developer Doc Demo">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>本地4990+Odoo帮助文档快速访问 / 4990+ Odoo Help Docs in Local, Quick Access</h3>
+            <img class="img-fluid rounded shadow" src="demo14.png" alt="4990 Odoo Help Docs in Local">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>一键访问当前主题帮助 / 1-Click Access to Current Topic Help</h3>
+            <img class="img-fluid rounded shadow" src="demo12.png" alt="1-Click Access to Current Topic Help">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>轻松设置每个应用的帮助 / Easy Set Help of Every App</h3>
+            <img class="img-fluid rounded shadow" src="sethelp3.png" alt="Easy Set Help of Every App">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>查看和编辑帮助路径 / View and Edit Help Path</h3>
+            <img class="img-fluid rounded shadow" src="sethelp4.png" alt="View and Edit Help Path">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>自有公司名称和Logo的文档 / Documentation with Your Company Name and Logo</h3>
+            <img class="img-fluid rounded shadow" src="demo13.png" alt="Documentation with Your Company Name and Logo">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>多语言支持 / Multi-language Support</h3>
+            <img class="img-fluid rounded shadow" src="demo19.png" alt="Multi-language Support">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>使用方法：配置文档服务器 / How to Use: Configure Doc Server</h3>
+            <img class="img-fluid rounded shadow" src="demo20.png" alt="How to Use Configure Doc Server">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Demo1</h3>
+            <img class="img-fluid rounded shadow" src="demo1.png" alt="Demo1">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Demo2</h3>
+            <img class="img-fluid rounded shadow" src="demo2.png" alt="Demo2">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Demo3</h3>
+            <img class="img-fluid rounded shadow" src="demo3.png" alt="Demo3">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Demo11</h3>
+            <img class="img-fluid rounded shadow" src="demo11.png" alt="Demo11">
+        </div>
+    </div>
+
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Banner1</h3>
+            <img class="img-fluid rounded shadow" src="banner1.png" alt="Banner1">
+        </div>
+    </div>
+</section>
+<!-- end screenshots -->
+
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程 / How It Works</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <div class="row text-center">
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">安装模块</p>
+                    <p class="small text-muted mb-0">Install Module</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-cogs"></i>
+                    </div>
+                    <p class="fw-bold mb-1">配置文档地址</p>
+                    <p class="small text-muted mb-0">Configure Doc URL</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-mouse-pointer"></i>
+                    </div>
+                    <p class="fw-bold mb-1">点击文档图标</p>
+                    <p class="small text-muted mb-0">Click Doc Icon</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-book"></i>
+                    </div>
+                    <p class="fw-bold mb-1">查看当前帮助</p>
+                    <p class="small text-muted mb-0">View Current Help</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end how it works -->
+
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-globe text-o-color-1 me-2"></i>
+                    web / Odoo核心Web框架
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-paint-brush text-o-color-1 me-2"></i>
+                    app_odoo_customize / Odoo应用定制基础
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">专业Odoo服务伙伴-开发实施咨询培训全套解决方案 / Professional Odoo Solutions</p>
+            <div class="pt16">
+                <p>
+                    <i class="fa fa-globe me-2"></i>
+                    Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-desktop me-2"></i>
+                    Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a>
+                </p>
+                <p>
+                    <i class="fa fa-envelope me-2"></i>
+                    Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a>
+                </p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
+
+</html>

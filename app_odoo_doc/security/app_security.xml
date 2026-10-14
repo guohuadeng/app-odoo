@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        本模块仅继承 ir.module.module 和 res.config.settings，
+        无自定义模型，无需额外权限配置。
+    -->
+</odoo>

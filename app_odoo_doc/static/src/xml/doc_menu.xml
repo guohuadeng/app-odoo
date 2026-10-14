@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="app_odoo_doc.DocMenu">
+        <div>
+            <!-- v20 OWL3：表达式必须 this. 前缀；图标 FontAwesome 已清零，改 oi + data-icon
+                 依据 web/static/src/webclient/user_menu/user_menu.xml:12（<i class="oi oi-sm me-1" data-icon="database"/>）
+                 data-icon="article" 取自 v20 web 模板在用的图标名 -->
+            <button class="o_nav_entry" title="帮助文档 / Help Doc" t-on-click="this.actionOpenDoc">
+                <i class="oi me-1" data-icon="article" role="img" aria-label="Help Doc"/>
+            </button>
+        </div>
+    </t>
+</templates>

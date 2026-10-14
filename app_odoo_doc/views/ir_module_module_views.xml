@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Modules list -->
+	<record id="app_module_tree" model="ir.ui.view">
+		<field name="name">app.ir.module.module.list</field>
+		<field name="model">ir.module.module</field>
+		<field name="inherit_id" ref="base.module_tree"/>
+		<field name="arch" type="xml">
+			<field name="website" position="before">
+				<field name="base_url_doc" optional="show"/>
+			</field>
+		</field>
+	</record>
+	<!-- Modules search-->
+	<record id="app_view_module_filter" model="ir.ui.view">
+		<field name="name">app.ir.module.module.list.select</field>
+		<field name="model">ir.module.module</field>
+		<field name="inherit_id" ref="base.view_module_filter"/>
+		<field name="arch" type="xml">
+			<field name="name" position="after">
+				<field name="base_url_doc"/>
+			</field>
+		</field>
+	</record>
+<!--	form，让其可 edit-->
+	<record id="app_module_form" model="ir.ui.view">
+		<field name="name">app.ir.module.module.form</field>
+		<field name="model">ir.module.module</field>
+		<field name="inherit_id" ref="base.module_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//form" position="attributes">
+				<attribute name="edit">1</attribute>
+			</xpath>
+			<field name="category_id" position="after">
+				<field name="base_url_doc" readonly="0"/>
+			</field>
+		</field>
+	</record>
+
+	<record id="app_module_view_kanban" model="ir.ui.view">
+		<field name="name">ir.module.module.kanban.inherit.base</field>
+		<field name="model">ir.module.module</field>
+		<field name="inherit_id" ref="base.module_view_kanban"/>
+		<field name="arch" type="xml">
+			<field name="application" position="after">
+				<field name="base_url_doc"/>
+			</field>
+			<!--显示查看帮助-->
+			<xpath expr="//t[@t-name='menu']" position="inside">
+				<a name="module_go_doc" type="object" role="menuitem" class="dropdown-item">
+					Help on Topic
+				</a>
+			</xpath>
+		</field>
+	</record>
+</odoo>
