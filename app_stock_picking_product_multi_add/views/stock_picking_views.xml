@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="app_view_picking_form" model="ir.ui.view">
+            <field name="name">app.stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <!-- v20: stock.picking 的行内字段由 move_ids_without_package 改名为 move_ids
+                     （v20 addons/stock/models/stock_picking.py:97；v18 为 :615，v20 全域已无 move_ids_without_package）。
+                     v20 原生 stock.view_picking_form（addons/stock/views/stock_picking_views.xml:340-342）
+                     已在 <list> 内自带一个 <control>（含 <create string="Add a Product" hotkey="shift+p"/>），
+                     故不再新插第二个 <control>，也不再重复插 v18 那个 "Add a line" create（避免与原生 Add a Product 冗余并列），
+                     改为 position="inside" 往原生 control 里追加本模块的批量添加按钮。
+                     <control>/<create name|context|string> 在 v20 仍受支持：web/static/src/views/list/list_arch_parser.js:208-223、
+                     base/models/ir_ui_view.py:1926（<list> 允许 control 标签）。 -->
+                <xpath expr="//page[@name='operations']/field[@name='move_ids']/list/control" position="inside">
+                    <create name="multi_add_line" string="Multi add line" context="{
+                        'pro_multi_add': True,
+                        'pro_res_model': 'product.product',
+                        'pro_res_field': 'product_id',
+                        }"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
