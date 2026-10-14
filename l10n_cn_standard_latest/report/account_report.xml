@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <record id="account_voucher_cn" model="ir.actions.report">
+            <field name="name">Voucher</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">l10n_cn_standard_latest.report_voucher</field>
+            <!--
+              v20 断点 1：ir.actions.report.report_file 字段已删除
+              （v20 base/models/ir_actions_report.py 只剩 binding_type:45 /
+               report_type:49 / report_name:58 / print_report_name:63），
+              写上去直接 ValueError: Invalid field 'report_file'。
+            -->
+            <field name="print_report_name">'Voucher_%s' % (object.name)</field>
+            <field name="binding_view_types">form</field>
+            <!--
+              v20 断点 2：model_<name> 这种「自动生成」的 ir.model xmlid 已不存在，
+              改成带模块前缀的 account.model_account_move
+              （与本文件上一条里的 account.model_account_account 同一写法）。
+            -->
+            <field name="binding_model_id" ref="account.model_account_move"/>
+        </record>
+    </data>
+</odoo>

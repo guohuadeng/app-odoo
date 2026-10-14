@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--
+          v20 断点 1：web.external_layout_boxed 这个模板在 v20 已删除
+          （v20 web/views/report_templates.xml 里 external_layout_boxed 零命中；
+           v18 它是「带边框的报表版式」，v20 官方去掉了这个版式）。
+          => 继承目标改用 v20 仍存在的 web.external_layout_standard。
+
+          v20 断点 2：去掉 primary="True"。
+          v18 的 external_layout_boxed 只有本模块在用，primary=True 影响面可控；
+          而 web.external_layout_standard 是全系统所有报表的默认版式，
+          若继续挂 primary=True，等于替所有报表改版式 —— 这是回归风险。
+          本模块的 report_voucher_document 用的是
+          <t t-call="l10n_cn_standard_latest.external_layout_boxed">，
+          按 xmlid 调 t-call 会拿到「父视图 arch + 本视图改动」的合并结果，
+          不依赖 primary 标记，所以去掉即可。
+
+          v20 断点 3：logo 所在容器的结构变了。
+          v18 external_layout_boxed 里是 <div class="row mb8"><div class="col-4">，
+          所以原来整段替换成 <div class="col-3"> 是合法的；
+          v20 external_layout_standard 里是
+          <table class="table-borderless w-100"><tr><td class="align-top pe-3">，
+          往 <tr> 里塞 <div class="col-3"> 是无效 HTML。
+          故不再替换父容器，只对 <img> 本身加 style="max-height: 45px;"
+          —— 达到「凭证报表 logo 缩小」的原意，且不动 v20 的表格结构。
+        -->
+        <template id="external_layout_boxed" inherit_id="web.external_layout_standard">
+            <xpath expr="//img[hasclass('o_company_logo_big')]" position="attributes">
+                <attribute name="style">max-height: 45px;</attribute>
+            </xpath>
+        </template>
+
+        <template id="report_voucher_document">
+            <t t-set="o" t-value="o.with_context(lang=lang)" />
+            <t t-set="company" t-value="o.company_id"/>
+            <t t-call="l10n_cn_standard_latest.external_layout_boxed">
+                <div class="page">
+
+                    <div align="center">
+                        <h2>
+                            <span>Accounting Voucher</span>
+                        </h2>
+                    </div>
+
+                    <div id="company" class="row col-auto">
+                        <span t-field="o.company_id.name"/>
+                    </div>
+                    <div id="informations" class="row">
+                        <!-- offset intentionally for period -->
+                        <div class="col-3 offset-3" name="date">
+                            <strong>Date:</strong>
+                            <span t-field="o.date"/>
+                        </div>
+                        <div class="col-4" t-if="o.name" name="name">
+                            <strong>Reference:</strong>
+                            <span t-field="o.name"/>
+                        </div>
+                        <div class="col-2">
+                            <strong>Number of attachments:</strong>
+                            <span t-esc="o._count_attachments()"/>
+                        </div>
+                    </div>
+
+                    <table class="table table-sm o_main_table table-striped" name="entry_line_table">
+                        <thead>
+                            <tr>
+                                <t t-set="colspan" t-value="4"/>
+                                <th name="th_description" class="text-center"><span>Balance</span></th>
+                                <th name="th_account" class="text-center"><span>Account</span></th>
+                                <th name="th_debit" class="text-center"><span>Debit</span></th>
+                                <th name="th_credit" class="text-center"><span>Credit</span></th>
+                            </tr>
+                        </thead>
+                        <tbody class="invoice_tbody">
+                            <t t-set="total_debit" t-value="0"/>
+                            <t t-set="total_credit" t-value="0"/>
+
+                            <t t-foreach="o.line_ids" t-as="line">
+                                <t t-set="total_debit" t-value="total_debit + line.debit"/>
+                                <t t-set="total_credit" t-value="total_credit + line.credit"/>
+                                <tr>
+                                    <t name="account_move_line">
+                                        <td name="description">
+                                            <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                                        </td>
+                                        <td name="account">
+                                            <span t-field="line.account_id.display_name" t-options="{'widget': 'text'}"/>
+                                        </td>
+                                        <td name="debit">
+                                            <span t-if="line.debit != 0" t-field="line.debit"/>
+                                        </td>
+                                        <td name="credit">
+                                            <span t-if="line.credit != 0" t-field="line.credit"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </t>
+                            <t>
+                                <td name="total" colspan="2">
+                                    <span>Total:</span>
+                                    <span t-esc="o._convert_to_amount_in_word(total_debit)" />
+                                </td>
+                                <td name="total_debit">
+                                    <span t-esc="total_debit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                                <td name="total_credit">
+                                    <span t-esc="total_credit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <div id="staff" class="row" style="color:black">
+                        <div class="col-4">
+                            <strong>Validator:</strong>
+                        </div>
+                        <div class="col-4">
+                            <strong>Poster:</strong>
+                        </div>
+                        <div class="col-4">
+                            <strong>Salesperson:</strong>
+                            <span t-esc="o.invoice_user_id.name"/>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_voucher">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="l10n_cn_standard_latest.report_voucher_document" t-lang="lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

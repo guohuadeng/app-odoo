@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  本文件自 v18 起就不在 manifest 的 data 列表里（data 只加载
+  data/account_account_tag_data.xml、views/account_account_views.xml、
+  report/account_report.xml、report/report_voucher.xml），故保持未装载。
+
+  若将来要启用，注意第二段用了旧字段名与旧 command 写法：
+    <field name="groups_id" eval="[(4, ref('account.group_account_user'))]"/>
+  v20 已把 res.groups 的 groups_id 改名为 group_ids，并且去掉了 (4, ids) 这个
+  command 的旧写法（见排程1 记录里 app_mrp_pro / app_bom_framework 的同一断点），
+  启用时要改成第一段那种写法：
+    <field name="group_ids" eval="[Command.link(ref('account.group_account_user'))]"/>
+  第一段的 implied_ids + Command.link(...) 本身在 v20 就是对的，不用改。
+-->
+<odoo>
+    <data noupdate="0">
+        <!--1 超管默认有全部财务权限-->
+        <record id="base.group_erp_manager" model="res.groups">
+            <field name="implied_ids" eval="[Command.link(ref('account.group_account_user'))]"/>
+        </record>
+        <record id="base.user_admin" model="res.groups">
+            <field name="groups_id" eval="[(4, ref('account.group_account_user'))]"/>
+        </record>
+    </data>
+</odoo>
