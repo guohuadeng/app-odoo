@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+# ⚠ v20 死文件：__manifest__.py 'data' 从未引用本文件（v18 起即如此），保持不装载。
+#   且内容本身已失效：
+#     1) model_id:id 列 + perm_read/write/create/unlink 四个 perm 列 —— v20 权限模型已并入 ir.access，
+#        新格式为 id,name,model_id,group_id/id,operation,domain（model_id 写技术名、operation 写 c/r/u/d）
+#     2) 引用的模型 app_product_variant_pro.model_product_attribute_value_group 属别的模块，
+#        本模块并不依赖 app_product_variant_pro
+#   启用前需先按上述格式重写，并确认依赖模块已安装。
+access_product_attribute_value_group_user,product_attribute_value_group.user,app_product_variant_pro.model_product_attribute_value_group,base.group_user,1,0,0,0
+access_product_attribute_value_group_manager,product_attribute_value_group.manager,app_product_variant_pro.model_product_attribute_value_group,base.group_erp_manager,1,1,1,1

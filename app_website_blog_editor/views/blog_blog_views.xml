@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_view_blog_blog_list" model="ir.ui.view">
+        <field name="name">app.blog.blog.list</field>
+        <field name="model">blog.blog</field>
+        <field name="inherit_id" ref="website_blog.view_blog_blog_list"/>
+        <field name="arch" type="xml">
+            <!-- v20 断点：原生 blog.blog 列表首列已是 <field name="sequence" widget="handle"/>
+                 （website_blog/website_blog_views.xml:10），v18 那版没有。
+                 原来的 //field[1] position=before 会再插一条 sequence 句柄 → 列表出现重复拖拽列。
+                 改为只补 id 列（sequence 由原生提供）。 -->
+            <xpath expr="//field[@name='sequence']" position="after">
+                <field name="id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="app_view_blog_blog_form" model="ir.ui.view">
+        <field name="name">app.blog.blog.form</field>
+        <field name="model">blog.blog</field>
+        <field name="inherit_id" ref="website_blog.view_blog_blog_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//group" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_blog_post" type="object" class="oe_stat_button">
+                        <field name="blog_post_count" widget="statinfo"/>
+                    </button>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
+
