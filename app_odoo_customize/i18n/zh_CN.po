@@ -766,7 +766,7 @@ msgstr "简称"
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__group_show_author_in_apps
 #: model:res.groups,name:app_odoo_customize.group_show_author_in_apps
 msgid "Show Author in Apps Dashboard"
-msgstr "显示应用的作者-在安装面板中"
+msgstr "显示应用作者"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_ribbon_name
@@ -786,7 +786,7 @@ msgstr "显示文档"
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_show_enterprise
 msgid "Show Enterprise Tag"
-msgstr "显示升级企业版标签提醒"
+msgstr "显示升级企业版标签"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_show_account

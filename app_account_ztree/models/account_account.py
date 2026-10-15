@@ -135,6 +135,26 @@ class AccountAccount(models.Model):
 
         return res
 
+    def unlink(self):
+        """删除时级联处理子科目：把子孙并入删除集，从最深层往上逐层删除。
+
+        每层只删"已无待删子科目"的叶子记录，保证父科目删除时子科目
+        已先被删掉，绕开 _unlink_except_has_children 的子科目阻断；
+        科目若有凭证/日记账引用，仍由核心 unlink 的原有校验拦截。
+        """
+        # child_of 覆盖所有子孙科目，一并纳入删除范围
+        all_recs = self | self.search([('id', 'child_of', self.ids)])
+        remaining = all_recs
+        while remaining:
+            # 当前层：不存在仍待删除子科目的记录（叶子层）
+            leaves = remaining.filtered(lambda r: not (r.child_ids & remaining))
+            if not leaves:
+                # 理论上不可达（remaining 非空则必有叶子），防御死循环
+                break
+            super(AccountAccount, leaves).unlink()
+            remaining -= leaves
+        return True
+
     @api.ondelete(at_uninstall=False)
     def _unlink_except_has_children(self):
         """Prevent deletion of accounts that have child accounts."""

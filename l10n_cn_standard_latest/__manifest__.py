@@ -6,7 +6,7 @@
 # Copyright (C) 2018-now  欧度智能 https://www.odooai.cn
 
 {
-    'name': '2025最新中国会计科目表 / Latest Chinese Accounting Chart',
+    'name': '2027最新中国会计科目表 / Latest Chinese Accounting Chart',
     'version': '20.0.26.09.11',
     'author': 'odooai.cn',
     'category': 'Accounting/Localizations/Account Charts',
@@ -14,7 +14,7 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 12,
-    'summary': '2025最新中国会计科目表，营改增后会计科目调整，多级科目支持 / Latest Chinese accounting chart with multi-level account support',
+    'summary': '2027最新中国会计科目表，营改增后会计科目调整，多级科目支持 / Latest Chinese accounting chart with multi-level account support',
     'description': """
 1. 2025 latest Chinese accounting chart of accounts with post-VAT reform adjustments.
 2. Updated to latest tax rates. Set menu to "Accounting".
