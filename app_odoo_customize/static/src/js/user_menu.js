@@ -22,34 +22,7 @@ patch(UserMenu.prototype, {
         self.app_show_lang = session.app_show_lang;
         self.app_lang_list = session.app_lang_list;
         self.user_lang = session.bundle_params.lang;
-        //todo: 演习 shortCutsItem 中的用法，当前是直接 xml 写了展现
 
-        //修正 bug，在移动端不会关闭本身
-        //o_burger_menu position-fixed top-0 bottom-0 start-100 d-flex flex-column flex-nowrap burgerslide burgerslide-enter-active
-        function preferencesItem(env) {
-            return {
-                type: "item",
-                id: "settings",
-                description: _t("Preferences"),
-                callback: async function () {
-                    const actionDescription = await env.services.orm.call("res.users", "action_get");
-                    actionDescription.res_id = user.userId;
-                    try {
-                        let m = document.getElementsByClassName("o_sidebar_close");
-                        if (m) {
-                            m[0].click({ root: document.body });
-                        }
-                    } catch (e) {
-                        ;
-                    }
-                    env.services.action.doAction(actionDescription);
-                    //修正 bug，在移动端不会关闭本身
-                },
-                sequence: 50,
-            };
-        }
-
-        userMenuRegistry.add("profile", preferencesItem, {'force': true, 'menu': this});
         userMenuRegistry.add("refresh_current", refresh_current, {'force': true});
 
         if (session.app_show_lang) {
