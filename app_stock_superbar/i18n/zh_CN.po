@@ -1,0 +1,31 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* app_stock_superbar
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20241220\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-05 14:04+0000\n"
+"PO-Revision-Date: 2025-03-05 14:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app_stock_superbar
+#: model_terms:ir.ui.view,arch_db:app_stock_superbar.warehouse_orderpoint_search_superbar
+msgid "Category"
+msgstr "品类"
+
+#. module: app_stock_superbar
+#: model_terms:ir.ui.view,arch_db:app_stock_superbar.warehouse_orderpoint_search_superbar
+msgid "Locations"
+msgstr "区位"
+
+#. module: app_stock_superbar
+#: model_terms:ir.ui.view,arch_db:app_stock_superbar.warehouse_orderpoint_search_superbar
+msgid "Trigger"
+msgstr "触发模式"
