@@ -11,7 +11,7 @@
     --NavBar-entry-backgroundColor--hover: #{$o-navbar-entry-bg--hover};
     --NavBar-entry-backgroundColor--active: #{$o-navbar-entry-bg--active};
     --NavBar-entry-backgroundColor--focus: #{$o-navbar-entry-bg--hover};
-    background: linear-gradient(45deg, #{$o-brand-odoo}, #{$o-action});
+    background: linear-gradient(45deg, #{$o-action}, #{$o-brand-odoo});
     .o_menu_toggle  {
       color: var(--NavBar-entry-color, #e7e9ed);
     }
