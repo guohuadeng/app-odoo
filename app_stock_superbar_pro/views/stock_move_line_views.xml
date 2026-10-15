@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        search-->
+        <record id="app_stock_move_line_view_search" model="ir.ui.view">
+            <field name="name">app.stock.move.line.search</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.stock_move_line_view_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//searchpanel//field[@name='company_id']" position="before">
+                    <field name="date"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

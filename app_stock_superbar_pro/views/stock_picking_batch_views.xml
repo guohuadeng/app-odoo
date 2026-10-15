@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+      <!-- stock -->
+      <!-- v20: 独立模块 stock_picking_batch 已删除，stock.picking.batch 的模型与视图并入 stock，
+           故继承锚点由 stock_picking_batch.stock_picking_batch_filter 重指为 stock.stock_picking_batch_filter -->
+    <record id="app_stock_picking_batch_filter" model="ir.ui.view">
+        <field name="name">stock.picking.batch.search.superbar</field>
+        <field name="model">stock.picking.batch</field>
+        <field name="inherit_id" ref="stock.stock_picking_batch_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//searchpanel//field[@name='company_id']" position="before">
+                <field name="scheduled_date"/>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>
