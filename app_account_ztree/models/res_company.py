@@ -12,7 +12,7 @@ from odoo.addons.account.models.account_move import MAX_HASH_VERSION
 
 
 class ResCompany(models.Model):
-    _inherit = ['res.company']
+    _inherit = 'res.company'
 
     coa_delimiter = fields.Char(string='COA Delimiter', readonly=False, default='.',
                                 help='Delimiter after parent account in Chart of Accounts')

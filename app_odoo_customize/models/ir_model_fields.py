@@ -13,7 +13,7 @@ class IrModelFields(models.Model):
     # 调整显示 field name，要覆盖原模型的
     def name_get(self):
         res = []
-        if self._context.get('show_field_description_only', False) == True:
+        if self.env.context.get('show_field_description_only', False) == True:
             for field in self:
                 res.append((field.id, field.field_description))
         else:

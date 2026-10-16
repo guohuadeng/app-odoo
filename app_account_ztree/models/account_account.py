@@ -7,7 +7,7 @@ from odoo.exceptions import UserError
 class AccountAccount(models.Model):
     # Odoo 20: account.account 核心已原生含 parent_id/parent_path/_parent_store，
     # 此处不再重复定义 parent_id/parent_path，仅补充 child_ids 与按编码自动定级逻辑。
-    _inherit = ['account.account']
+    _inherit = 'account.account'
     _parent_name = "parent_id"
     _parent_store = True
 
@@ -17,7 +17,7 @@ class AccountAccount(models.Model):
     # account_type = fields.fields.Selection(selection_add=[
     #     ('view', 'View Only'),
     # ])
-    
+
     # ----------------------------------------------------------
     # Helper
     # ----------------------------------------------------------

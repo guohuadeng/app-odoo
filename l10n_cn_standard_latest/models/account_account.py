@@ -26,7 +26,7 @@ from odoo.exceptions import UserError, ValidationError
 _logger = logging.getLogger(__name__)
 
 class AccountAccount(models.Model):
-    _inherit = ['account.account']
+    _inherit = 'account.account'
     # 相关方法处理移至 app_account_ztree
 
     def _get_account_code_from_csv(self, xml_id):

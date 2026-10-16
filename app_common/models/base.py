@@ -76,8 +76,8 @@ class Base(models.AbstractModel):
     @api.model
     def _app_get_m2o_default(self, fieldname, domain=[]):
         if hasattr(self, fieldname) and self._fields[fieldname].type == 'many2one':
-            if self._context.get(fieldname) or self._context.get('default_%s' % fieldname):
-                return self._context.get(fieldname) or self._context.get('default_%s' % fieldname)
+            if self.env.context.get(fieldname) or self.env.context.get('default_%s' % fieldname):
+                return self.env.context.get(fieldname) or self.env.context.get('default_%s' % fieldname)
             else:
                 if not domain:
                     domain = self._fields[fieldname].domain or []
@@ -87,7 +87,7 @@ class Base(models.AbstractModel):
                     rec = self.env[self._fields[fieldname].comodel_name].search([], limit=1)
                 return rec.id if rec else False
         return False
-    
+
     @api.model
     def _app_dt2local(self, dt_value, return_format=False):
         """
@@ -110,18 +110,18 @@ class Base(models.AbstractModel):
 
         # 用户时区，默认中国
         local_tz = pytz.timezone(self.env.user.tz or 'Etc/GMT-8')
-        
+
         # 如果输入是字符串，先解析为datetime对象, 假设输入是标准的数据库时间格式
         if isinstance(dt_value, str):
             dt_value = datetime.strptime(dt_value, return_format)
-            
+
         # 设置原始时区为UTC（PostgreSQL数据库通常存储UTC时间）
         if dt_value.tzinfo is None:
             dt_value = pytz.utc.localize(dt_value)
-        
+
         local_dt = dt_value.astimezone(local_tz)
         return local_dt.strftime(return_format)
-    
+
     @api.model
     def _app_dt2utc(self, dt_value, return_format=False):
         """
@@ -144,15 +144,15 @@ class Base(models.AbstractModel):
 
         # 用户时区，默认中国
         local_tz = pytz.timezone(self.env.user.tz or 'Etc/GMT-8')
-        
+
         # 如果输入是字符串，先解析为datetime对象, 假设输入是标准的数据库时间格式, 时区为默认用户时区
         if isinstance(dt_value, str):
             dt_value = datetime.strptime(dt_value, return_format)
-            
+
         # 设置原始时区为用户时区（PostgreSQL数据库通常存储UTC时间）
         if dt_value.tzinfo is None:
             dt_value = local_tz.localize(dt_value)
-        
+
         utc_dt = dt_value.replace(tzinfo=pytz.timezone('UTC'))
         return utc_dt.strftime(return_format)
 
@@ -220,7 +220,7 @@ class Base(models.AbstractModel):
                 return False
         else:
             return False
-        
+
     @api.model
     def _get_video_url2attachment(self, url):
         if not self._app_check_sys_op():
@@ -243,11 +243,11 @@ class Base(models.AbstractModel):
                 return False
         else:
             return False
-    
+
     @api.model
     def get_ua_type(self):
         return get_ua_type()
-    
+
     @api.model
     def deep_merge(self, a, b):
         # todo: 此处只处理2级，后续如需更深级别可以使用第三方库
@@ -283,7 +283,7 @@ class Base(models.AbstractModel):
             records |= record
 
         return records
-    
+
     def _app_sanitize_filename(self, filename):
         """将字符串转换为安全的文件名，去掉非法字符并避免乱码
 
@@ -292,30 +292,30 @@ class Base(models.AbstractModel):
         """
         if not filename:
             return 'unnamed'
-        
+
         # 1. Unicode标准化，将字符转换为NFKC形式（兼容性分解后再组合）
         sanitized = unicodedata.normalize('NFKC', filename)
-        
+
         # 2. 替换常见的非法文件名字符为下划线或连字符
         # Windows和Unix系统不允许的字符: < > : " / \ | ? *
         # 同时替换空格、制表符等为连字符
         sanitized = re.sub(r'[<>:"/\\|?*]', '_', sanitized)
         sanitized = re.sub(r'[\s\t]+', '-', sanitized)
-        
+
         # 3. 移除控制字符和其他不可打印字符（保留中文、英文、数字、常见符号）
         sanitized = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', sanitized)
-        
+
         # 4. 移除开头和结尾的空格、点号、连字符、下划线
         sanitized = sanitized.strip(' ._-')
-        
+
         # 5. 如果文件名为空，返回默认名称
         if not sanitized:
             return 'unnamed'
-        
+
         # 6. 限制文件名长度（Windows最大255字符，留一些空间给扩展名和前缀）
         if len(sanitized) > 200:
             sanitized = sanitized[:200]
-        
+
         return sanitized
 
 def get_image_from_url(url):
@@ -365,7 +365,7 @@ def get_image_base642attachment(data):
         return jpeg_base64, file_name
     except Exception as e:
         return None, None
-    
+
 def get_video_url2attachment(url):
     if not url:
         return None

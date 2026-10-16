@@ -16,7 +16,7 @@ class ResPartner(models.Model):
     def _get_name(self):
         name = super(ResPartner, self)._get_name()
         partner = self
-        if self._context.get('show_address'):
+        if self.env.context.get('show_address'):
             if partner.mobile and partner.phone:
                 name = name + "\n" + partner.mobile + "," + partner.phone
             elif partner.mobile:
