@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="app_hr_expense_superbar.DashboardListRenderer" t-inherit="hr_expense.DashboardListRenderer" t-inherit-mode="primary">
+        <!-- Remove ExpenseDashboard from before o_list_renderer (it was a sibling, causing horizontal layout with searchpanel) -->
+        <xpath expr="//ExpenseDashboard" position="replace"/>
+        <!-- Insert ExpenseDashboard inside o_list_renderer, before the table (so it stays vertically stacked) -->
+        <xpath expr="//div[hasclass('o_list_renderer')]/table" position="before">
+            <ExpenseDashboard/>
+        </xpath>
+        <!-- Add o_renderer_with_searchpanel class to reuse existing CSS rules for flex layout with searchpanel -->
+        <xpath expr="//div[hasclass('o_list_renderer')]" position="attributes">
+            <attribute name="class" add="o_renderer_with_searchpanel" separator=" "/>
+        </xpath>
+    </t>
+</templates>
