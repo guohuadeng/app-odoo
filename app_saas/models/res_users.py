@@ -9,7 +9,7 @@ try:
 except:
     from urllib import request as urllib2
 
-from odoo import api, fields, models, SUPERUSER_ID, _
+from odoo import api, fields, models, release, SUPERUSER_ID, _
 import requests
 
 import logging
@@ -40,6 +40,11 @@ class ResUsers(models.Model):
             params.update({
                 'client_secret': oauth_provider.client_secret or '',
             })
+        # 向 Ai 通行证（data 里的 provider）上报本实例的详细 Odoo 版本号 v（如 19.0+e-20260203），
+        # 通行证端据此回填 oauth2.client 的 version / full_version
+        provider_app_saas = self.env.ref('app_saas.provider_app_saas')
+        if oauth_provider.id == provider_app_saas.id:
+            params.update({'v': release.version})
         response = requests.get(oauth_provider.code_endpoint, params=params, timeout=30)
         if response.ok:
             ret = response.json()
