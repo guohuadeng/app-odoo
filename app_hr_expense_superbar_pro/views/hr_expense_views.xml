@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_hr_expense_view_search" model="ir.ui.view">
+        <field name="name">app.hr.expense.search</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_search"/>
+        <field name="arch" type="xml">
+            <!-- v20 原生 hr_expense.hr_expense_view_search（hr_expense/views/hr_expense_views.xml:493）里没有 searchpanel，
+                 带 panel 的那条是 mode=primary 的独立视图 hr_expense_view_search_with_panel（:604），不会把 panel 合进基础 arch。
+                 这里的 //searchpanel 命中的是前置模块 app_hr_expense_superbar（排程3 #8）注入的那个 panel；
+                 两条继承同挂一个 inherit_id，Odoo 按 (priority, id) 顺序应用，#8 先装 → id 更小 → 先应用，故锚点可解析。 -->
+            <xpath expr="//searchpanel" position="inside">
+                <field name="date"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
