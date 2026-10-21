@@ -28,7 +28,7 @@
 10. Multi-Company Support.
 11. Full Version Support for Odoo 19,18,17,16,15,14,13,12, Enterprise and Community Edition.
 12. Full Open Source under LGPL-3 license.
-1. 2027 最新中国会计科目表，处理营改增后会计科目调整，更新至最新税率。
+1. 2027 最新中国会计科目表，处理营改增后会计科目调整，处理五险一金及数字资产等新规后会计科目。更新至最新税率。
 2. 将菜单设置为"财务"。
 3. 补充分类及标签信息。
 4. 更新税项信息，增加中国常用增值税率设定。

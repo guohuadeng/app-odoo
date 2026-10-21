@@ -22,7 +22,7 @@
 # description:
 
 {
-    'name': 'Odoo20 Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Remove Data All in One-优化提速60+项大全',
+    'name': 'Odoo20 Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Remove Data All in One-优化提速65+项大全',
     'version': '20.0.26.10.21',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
@@ -167,7 +167,7 @@
     57. Full Open Source.
     58. Show record XML ID in debug menu with one-click copy to clipboard.
     59. Redirect native Odoo documentation help links (e.g. Check why) to configurable app_doc_root_url domain.
-    60. Show or hide the Odoo Studio icon in the top menu; keeps working on Community, and hides the install-Studio promo when Studio is not installed.
+    60. Show or hide the Odoo Studio icon in the top menu; works with or without web_studio installed, and needs no web_enterprise dependency.
     61. Add "Hide Now" button to hide the site-wide test ribbon with one click.
     62. Manage addons paths: list every addons path with module count, open the apps of a path, and refresh module-path mapping on module update.
     63. Add "Odoo Chinese Apps" module type and filter in Apps Dashboard, click to open module info instead of the Odoo store.
@@ -240,7 +240,7 @@
     57. 代码完全开源.
     58. 开发者菜单中显示当前记录的 XML ID，支持一键复制到剪贴板.
     59. 将原生Odoo文档帮助链接（如 Check why）重定向至可配置的 app_doc_root_url 域名.
-    60. 可显示/隐藏顶部菜单的 Odoo Studio 图标；社区版可安全使用，未安装 Studio 时不显示安装促销角标.
+    60. 可显示/隐藏顶部菜单的 Odoo Studio 图标；无论是否安装 web_studio 均可使用，且不依赖 web_enterprise.
     61. 测试标签增加“一键隐藏”按钮，一键隐藏全站测试标签.
     62. 插件路径管理：列出所有插件路径及模块数量，可打开该路径下的应用，模块更新时自动刷新模块与路径的对应关系.
     63. 应用面板增加“Odoo中文应用”模块类型与筛选，点击直接打开模块信息页，而不是跳转 Odoo 商店.

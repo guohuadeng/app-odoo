@@ -1,0 +1,19 @@
+Create a professional app banner image (1000x500 pixels, PNG) for an Odoo ERP module.
+
+**Overall design — title + feature cards, graphics-rich:**
+- Main visual concept: 现代等距视角的会计场景——画面中右侧是一本摊开的深翡翠绿会计总账，书页上呈现发光的科目层级树（父科目 1001，向下分支 1002.01、1002.02，以光线连接），旁边有一枚红色方形传统图章和一枚带金色货币符号的硬币图标。左上角极靠边位置是一条飘扬的红色丝带装饰，作为民族风格点缀。六张圆角功能卡围绕账本悬浮，由细光线连接。整体气质：可信、权威、专业财务。
+- Style: modern flat vector illustration with subtle 3D depth, clean professional SaaS style, soft gradients, crisp edges, harmonious composition.
+- Main color palette: #09554C deep jade green dominant with #00796B gradient depth; accent gold #FFC107 and China red #B71C1C used sparingly (flag ribbon, seal, year highlight); off-white background #F7F5EF. Balanced and professional, not garish.
+
+**Text (render exactly — every character must be spelled correctly):**
+- Main title（大字、加粗）: 2027 中国会计科目表 —— “2027” 用绿色 #09554C，其余文字用深红 #B71C1C。
+- One short subtitle line under the title (small, muted gray): 企业会计准则 · 多级科目
+- Feature cards — 六张白色圆角卡片，每张含一个绿色小图标徽记和精确短标签: “2027准则”、“多级科目”、“增值税率”、“税金模板”、“多公司”、“多语言”
+
+**Layout:**
+- 红色丝带装饰位于最左上角（约画布宽度 9%），标题区块紧邻其右侧；标题与副标题占据左上象限。
+- 六张功能卡沿账本右侧与下方分两排松散排布，尺寸均衡、互不重叠，所有标签完整清晰可读。
+- Keep the bottom-right corner area visually quiet (no key content, no text) — a small brand logo will be overlaid there in post-processing.
+- No paragraphs, no long sentences; short card labels only.
+
+**Critical:** 所有文字元素（标题、副标题以及全部六张功能卡标签）必须清晰完整、逐字正确渲染，不得出现多余文字。最终 PNG 文件必须小于 300KB。

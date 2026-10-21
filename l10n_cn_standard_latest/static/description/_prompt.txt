@@ -1,0 +1,19 @@
+Create a professional app banner image (1000x500 pixels, PNG) for an Odoo ERP module.
+
+**Overall design — title + feature cards, graphics-rich:**
+- Main visual concept: A modern isometric accounting scene — a large open Chinese accounting ledger book in deep jade green at center-right, its pages showing a glowing hierarchical chart-of-accounts tree (parent account 1001 with child branches 1002.01 and 1002.02 connected by luminous lines), a translucent red Chinese seal stamp and a golden yuan coin nearby. A small stylized waving Chinese flag ribbon sits in the extreme top-left corner as a patriotic accent. Six rounded feature chips float around the ledger, connected by thin light lines. The mood is trustworthy, official and financial.
+- Style: modern flat vector illustration with subtle 3D depth, clean professional SaaS style, soft gradients, crisp edges, harmonious composition.
+- Main color palette: #09554C deep jade green as dominant tone with #00796B for gradient depth; accent gold #FFC107 and China red #B71C1C used sparingly (flag ribbon, seal, year highlight); off-white background #F7F5EF. Balanced and professional, not garish.
+
+**Text (render exactly — every word must be spelled correctly):**
+- Main title (large, bold): 2027 Chinese Chart of Accounts — render "2027" in green #09554C and the rest of the title in deep red #B71C1C.
+- One short subtitle line under the title (small, muted gray): Standards Ready · Multi-Level
+- Feature cards — six white rounded-rectangle chips with soft shadow, each with a small green icon emblem on the left and its short label on the right. Exact labels, one per card: "2027 Standards", "Multi-Level", "VAT Rates", "Tax Setup", "Multi-Company", "Multi-Language".
+
+**Layout:**
+- Chinese flag ribbon at the extreme top-left corner (about 9% width), title block immediately to its right; title and subtitle occupy the upper-left quadrant.
+- Feature cards arranged in two loose rows along the right side and bottom of the ledger, balanced chip sizes, none overlapping, all labels fully visible and legible.
+- Keep the bottom-right corner area visually quiet (no key content, no text) — a small brand logo will be overlaid there in post-processing.
+- No paragraphs, no long sentences; short card labels only.
+
+**Critical:** Every text element (title, subtitle and ALL six feature-card labels) MUST be rendered clearly and completely, with exact spelling. Avoid any extra text. The final PNG file MUST be under 300KB.
