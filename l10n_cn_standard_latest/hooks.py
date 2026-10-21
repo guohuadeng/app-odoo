@@ -21,6 +21,10 @@ import logging
 
 _logger = logging.getLogger(__name__)
 
+# 安装后检出 l10n_cn 冲突时写入的系统参数键，前端读取后清除，只提示一次
+L10N_CN_CONFLICT_WARNING_PARAM = 'l10n_cn_standard_latest.l10n_cn_conflict_warning'
+
+
 def pre_init_hook(env):
     """
     数据初始化，只在安装时执行，更新时不执行
@@ -42,6 +46,7 @@ def post_init_hook(env):
         _logger.info('post_init_hook: no CNY companies found, skipping chart template loading')
 
     _load_account_tag_data(env)
+    _check_l10n_cn_conflict(env)
 
     # cr.execute("UPDATE account_account_template set group_id = "
     #            "(select id from account_group where account_group.code_prefix_start=trim(substring(account_account_template.code from 1 for 1)) limit 1);")
@@ -59,6 +64,21 @@ def post_init_hook(env):
     #         res.write({'group_id': g.id})
     #     env.cr.commit()
     pass
+
+
+def _check_l10n_cn_conflict(env):
+    """
+    安装后检查系统是否已安装官方 l10n_cn 模块。
+    l10n_cn 与本模块同时存在时会出现重复的发票字段，这里只写入待提示标记，
+    由前端在下次加载后台时弹出不会自动消失的警告。
+    """
+    l10n_cn = env['ir.module.module'].search(
+        [('name', '=', 'l10n_cn'), ('state', '=', 'installed')], limit=1)
+    if not l10n_cn:
+        _logger.info('post_init_hook: l10n_cn not installed, no conflict warning needed')
+        return
+    env['ir.config_parameter'].sudo().set_bool(L10N_CN_CONFLICT_WARNING_PARAM, True)
+    _logger.warning('post_init_hook: l10n_cn is installed, conflict warning scheduled')
 
 
 def _load_account_tag_data(env):

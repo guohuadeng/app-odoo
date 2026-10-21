@@ -39,21 +39,9 @@
 
     .o_main_navbar {
       @media (max-width: 768px) {
-        --o-navbar-height: 46px;
-        padding: 0 var(--o-navbar-height);
-        .o_navbar_apps_menu .dropdown-toggle, .o_nav_entry, .dropdown-toggle:not(.o-dropdown-toggle-custo), .o_menu_toggle {
-          align-items: baseline;
-          font-size: 1.5rem;
-        }
-        .o_menu_toggle  {
-          margin-top: 10px;
-        }
         .o_burger_menu_avatar.o_image_24_cover  {
           width: 36px;
           height: 36px;
-        }
-        .o-mail-DiscussSystray-class  {
-          margin-bottom: 10px;
         }
       }
       //
@@ -92,6 +80,11 @@
   }
 
   //userMenu
+  @media (max-width: 768px) {
+    .o_app_menu_sidebar {
+        flex-direction: column-reverse!important;
+    }
+  }
   .o_burger_menu  {
     width: 80%;
     .o_burger_menu_topbar {
@@ -99,10 +92,6 @@
     }
     &.flex-column  {
       flex-direction: column-reverse!important;
-    }
-    .oi:before, .dropdown-toggle  {
-      font-size: 2em;
-      line-height: var(--o-navbar-height);
     }
   }
 }

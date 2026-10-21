@@ -238,3 +238,15 @@ msgstr ""
 #: model:account.account.tag,name:l10n_cn_standard_latest.tag29
 msgid "银行和证券共用"
 msgstr ""
+
+#. module: l10n_cn_standard_latest
+#. odoo-python
+#: code:addons/l10n_cn_standard_latest/models/l10n_cn_conflict_warning.py:0
+msgid "Module Conflict Warning"
+msgstr "模块冲突警告"
+
+#. module: l10n_cn_standard_latest
+#. odoo-python
+#: code:addons/l10n_cn_standard_latest/models/l10n_cn_conflict_warning.py:0
+msgid "The \"l10n_cn\" module is installed and may conflict with \"l10n_cn_standard_latest\": invoice fields may be duplicated. It is recommended to uninstall \"l10n_cn\"."
+msgstr "检测到已安装 \"l10n_cn\" 模块，可能与 \"l10n_cn_standard_latest\" 产生冲突：发票字段会重复出现。建议卸载 \"l10n_cn\" 模块。"

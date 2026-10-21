@@ -36,7 +36,10 @@ class ResConfigSettings(models.TransientModel):
                                         config_parameter='app_show_poweredby')
     group_show_author_in_apps = fields.Boolean(string="Show Author in Apps Dashboard", implied_group='app_odoo_customize.group_show_author_in_apps',
                                                help="Uncheck to Hide Author and Website in Apps Dashboard")
+    # 兼容旧版：保留字段避免外部引用报错，设置界面已不再显示
     module_odoo_referral = fields.Boolean('Show Odoo Referral', help="Uncheck to remove the Odoo Referral")
+    app_show_studio = fields.Boolean('Show Studio Badge', help="Uncheck to hide the Odoo Studio icon in the top menu",
+                                     config_parameter='app_show_studio')
 
     app_documentation_url = fields.Char('Documentation Url', config_parameter='app_documentation_url')
     app_documentation_dev_url = fields.Char('Developer Documentation Url', config_parameter='app_documentation_dev_url')
@@ -824,6 +827,10 @@ class ResConfigSettings(models.TransientModel):
     def action_set_app_doc_root_to_my(self):
         base_url = self.env['ir.config_parameter'].sudo().get_str('web.base.url')
         self.app_doc_root_url = base_url
+
+    def action_hide_ribbon(self):
+        # 一键隐藏：把全站测试标签名称置为 0，保存设置后即不显示
+        self.app_ribbon_name = '0'
 
     def action_neutralize_database(self):
         if not self._app_check_sys_op():

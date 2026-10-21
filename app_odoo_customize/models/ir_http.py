@@ -26,6 +26,9 @@ class IrHttp(models.AbstractModel):
         result['app_show_support'] = config_parameter.get_str('app_show_support')
         result['app_show_account'] = config_parameter.get_str('app_show_account')
         result['app_show_poweredby'] = config_parameter.get_str('app_show_poweredby')
+        # Studio 角标：是否显示，以及 web_studio 是否已安装（本模块不依赖企业版）
+        result['app_show_studio'] = config_parameter.get_bool('app_show_studio', False)
+        result['app_studio_installed'] = self.env['ir.module.module']._get('web_studio').state == 'installed'
         # 增加多语言
         result['app_lang_list'] = self.env['res.lang'].search_read([], ['id', 'code', 'name', 'flag_image_url'])
         result['is_erp_manager'] = self.env.user.has_group('base.group_erp_manager')

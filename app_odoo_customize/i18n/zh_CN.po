@@ -515,6 +515,11 @@ msgid "Help of topic domain"
 msgstr "支持文档根域名"
 
 #. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Hide Now"
+msgstr "一键隐藏"
+
+#. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__id
 msgid "ID"
 msgstr "Id"
@@ -824,6 +829,11 @@ msgid "Show Share Dashboard"
 msgstr "显示分享Odoo"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_show_studio
+msgid "Show Studio Badge"
+msgstr "显示Studio角标"
+
+#. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_show_support
 msgid "Show Support"
 msgstr "显示支持"
@@ -932,6 +942,11 @@ msgstr "不选中则会隐藏升级到企业版标签"
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_show_share
 msgid "Uncheck to hide the Odoo Share Dashboard"
 msgstr "不选中则会隐藏odoo分享"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_show_studio
+msgid "Uncheck to hide the Odoo Studio icon in the top menu"
+msgstr "不勾选则不显示顶部菜单的 Odoo Studio 图标"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_show_poweredby

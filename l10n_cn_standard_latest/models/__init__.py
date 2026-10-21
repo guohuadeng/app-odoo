@@ -7,3 +7,4 @@ from . import account_journal
 from . import res_currency
 from . import account_move
 from . import res_company
+from . import l10n_cn_conflict_warning

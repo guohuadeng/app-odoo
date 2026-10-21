@@ -23,7 +23,7 @@
 
 {
     'name': 'Odoo20 Tweak OEM Development Enhance.Boost,Customize,Ai Employee,UI,Security,Remove Data All in One-优化提速60+项大全',
-    'version': '20.0.26.10.20',
+    'version': '20.0.26.10.21',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
@@ -138,36 +138,41 @@
     28. Easy Menu manager.
     29. Apps version compare. Add Install version in App list. Add Local updatable filter in app list.
     30. 1 key export app translate file like .po file.
-    31. Show or hide odoo Referral in the top menu.
-    32. Fix odoo bug of complete name bug of product category and stock location..
-    33. Add Demo Ribbon Setting.
-    34. Add Remove all quality data.
-    35. Fixed for odoo 14.
-    36. Add refresh translate for multi module.
-    37. Easy noupdate manage for External Identifiers(xml_id)
-    38. Add Draggable and sizeable Dialog enable.
-    39. Only erp manager can see debug menu..
-    40. Fix support for enterprise version.
-    41. Fix odoo bug, when click Preferences menu not hide in mobile.
-    42. Mobile Enhance. Add menu navbar setup for top or bottom. navigator footer support.
-    43. Check to only Debug / Debug Assets for Odoo Admin. Deny debug from url for other user.
-    44. Check to stop subscribe and follow. This to make odoo speed up.
-    45. Add addons path info to module.
-    46. Add Help documentation anywhere.  easy get help for any odoo operation or action.
-    47. Add ai robot app integration. Use Ai as your employee.
-    48. Add configurable Test Label, Demo Ribbon on top menu.
-    49. Add SaaS client switch for online Translate sync(18 only).
-    50. Quick Menu manager. de-active / active menu.
-    51. Show menu xml_id in debug asset mode.  easy for menu and action development.
-    52. Quick View Fields list and View List of every model.
-    53. Quick management and view of [Application Access Category].
-    54. ChatWindow Draggable and Resizable with Min W/H Constraints (Bottom-Left & Bottom-Right).
-    55. Quick set database to test Neutralize DB, or restore to Production.
-    56. Multi-language Support. Multi-Company Support.
-    57. Support Odoo 20, 19, 18, 17, 16, 15, 14, 13, 12, Enterprise and Community and odoo.sh Edition.
-    58. Full Open Source.
-    59. Show record XML ID in debug menu with one-click copy to clipboard.
-    60. Redirect native Odoo documentation help links (e.g. Check why) to configurable app_doc_root_url domain.
+    31. Fix odoo bug of complete name bug of product category and stock location..
+    32. Add Demo Ribbon Setting.
+    33. Add Remove all quality data.
+    34. Fixed for odoo 14.
+    35. Add refresh translate for multi module.
+    36. Easy noupdate manage for External Identifiers(xml_id)
+    37. Add Draggable and sizeable Dialog enable.
+    38. Only erp manager can see debug menu..
+    39. Fix support for enterprise version.
+    40. Fix odoo bug, when click Preferences menu not hide in mobile.
+    41. Mobile Enhance. Add menu navbar setup for top or bottom. navigator footer support.
+    42. Check to only Debug / Debug Assets for Odoo Admin. Deny debug from url for other user.
+    43. Check to stop subscribe and follow. This to make odoo speed up.
+    44. Add addons path info to module.
+    45. Add Help documentation anywhere.  easy get help for any odoo operation or action.
+    46. Add ai robot app integration. Use Ai as your employee.
+    47. Add configurable Test Label, Demo Ribbon on top menu.
+    48. Add SaaS client switch for online Translate sync(18 only).
+    49. Quick Menu manager. de-active / active menu.
+    50. Show menu xml_id in debug asset mode.  easy for menu and action development.
+    51. Quick View Fields list and View List of every model.
+    52. Quick management and view of [Application Access Category].
+    53. ChatWindow Draggable and Resizable with Min W/H Constraints (Bottom-Left & Bottom-Right).
+    54. Quick set database to test Neutralize DB, or restore to Production.
+    55. Multi-language Support. Multi-Company Support.
+    56. Support Odoo 20, 19, 18, 17, 16, 15, 14, 13, 12, Enterprise and Community and odoo.sh Edition.
+    57. Full Open Source.
+    58. Show record XML ID in debug menu with one-click copy to clipboard.
+    59. Redirect native Odoo documentation help links (e.g. Check why) to configurable app_doc_root_url domain.
+    60. Show or hide the Odoo Studio icon in the top menu; keeps working on Community, and hides the install-Studio promo when Studio is not installed.
+    61. Add "Hide Now" button to hide the site-wide test ribbon with one click.
+    62. Manage addons paths: list every addons path with module count, open the apps of a path, and refresh module-path mapping on module update.
+    63. Add "Odoo Chinese Apps" module type and filter in Apps Dashboard, click to open module info instead of the Odoo store.
+    64. Enhanced access-denied diagnostics in debug mode: failing records, rules and multi-company switching hint.
+    65. Auto refresh the current language .po before upgrading a module, so translations always take effect.
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -206,35 +211,40 @@
     28. 快速管理顶级菜单
     29. App版本比较，快速查看可本地更新的模块
     30. 一键导出翻译文件 po
-    31. 显示或去除 odoo 推荐
-    32. 增加修复品类及区位名的操作
-    33. 增加 Demo 的显示设置
-    34. 增加清除质检数据
-    35. 优化至odoo14适用
-    36. 可为多个模块强制更新翻译
-    37. noupdate字段的快速管理，主要针对 xml_id
-    38. 对话框可拖拽，可缩放，自动大屏优化
-    39. 只有系统管理员可以操作快速debug
-    40. 增强对企业版的支持
-    41. 修正odoo原生移动端菜单bug，点击个人设置时，原菜单不隐藏等
-    42. 可设置导航栏在上方还是下方，分开桌面与移动端.
-    43. 可设置只允许管理员进入开发者模式，不可在url中直接debut=1来调试
-    44. 可配置停用自动用户订阅功能，这会提速odoo，减少资源消耗
-    45. 为应用模块增加模块路径信息
-    46. 增加快速帮助文档，可以在任意操作中获取相关的 odoo 帮助.
-    47. 增加Ai模块相关信息，可以快速访问ai模块，使用ai员工.
-    48. 增加可配置的系统调试标签，用于系统测试期提示.
-    49. 增加 SaaS 客户端开头，可让用户安装在线翻译同步模块及在线更新(仅odoo18).
-    50. 快速菜单管理，快速禁用/启用菜单.
-    51. 在开发者Assets模式中，快速查看菜单Menu 的 xml_id.
-    52. 快速管理查看模型的字段和视图列表.
-    53. 快速管理查看应用权限分类管理.
-    54. 聊天窗口可拖拽和调整大小，含最小宽/高限制（左下角和右下角双角缩放）.
-    55. 快速设定全数据库为测试实例(Neutralize)，或恢复为生产实例.
-    56. 多语言支持，多公司支持.
-    57. Odoo 20,19,18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持.
-    58. 代码完全开源.
-    59. 开发者菜单中显示当前记录的 XML ID，支持一键复制到剪贴板.
-    60. 将原生Odoo文档帮助链接（如 Check why）重定向至可配置的 app_doc_root_url 域名.
+    31. 增加修复品类及区位名的操作
+    32. 增加 Demo 的显示设置
+    33. 增加清除质检数据
+    34. 优化至odoo14适用
+    35. 可为多个模块强制更新翻译
+    36. noupdate字段的快速管理，主要针对 xml_id
+    37. 对话框可拖拽，可缩放，自动大屏优化
+    38. 只有系统管理员可以操作快速debug
+    39. 增强对企业版的支持
+    40. 修正odoo原生移动端菜单bug，点击个人设置时，原菜单不隐藏等
+    41. 可设置导航栏在上方还是下方，分开桌面与移动端.
+    42. 可设置只允许管理员进入开发者模式，不可在url中直接debut=1来调试
+    43. 可配置停用自动用户订阅功能，这会提速odoo，减少资源消耗
+    44. 为应用模块增加模块路径信息
+    45. 增加快速帮助文档，可以在任意操作中获取相关的 odoo 帮助.
+    46. 增加Ai模块相关信息，可以快速访问ai模块，使用ai员工.
+    47. 增加可配置的系统调试标签，用于系统测试期提示.
+    48. 增加 SaaS 客户端开头，可让用户安装在线翻译同步模块及在线更新(仅odoo18).
+    49. 快速菜单管理，快速禁用/启用菜单.
+    50. 在开发者Assets模式中，快速查看菜单Menu 的 xml_id.
+    51. 快速管理查看模型的字段和视图列表.
+    52. 快速管理查看应用权限分类管理.
+    53. 聊天窗口可拖拽和调整大小，含最小宽/高限制（左下角和右下角双角缩放）.
+    54. 快速设定全数据库为测试实例(Neutralize)，或恢复为生产实例.
+    55. 多语言支持，多公司支持.
+    56. Odoo 20,19,18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持.
+    57. 代码完全开源.
+    58. 开发者菜单中显示当前记录的 XML ID，支持一键复制到剪贴板.
+    59. 将原生Odoo文档帮助链接（如 Check why）重定向至可配置的 app_doc_root_url 域名.
+    60. 可显示/隐藏顶部菜单的 Odoo Studio 图标；社区版可安全使用，未安装 Studio 时不显示安装促销角标.
+    61. 测试标签增加“一键隐藏”按钮，一键隐藏全站测试标签.
+    62. 插件路径管理：列出所有插件路径及模块数量，可打开该路径下的应用，模块更新时自动刷新模块与路径的对应关系.
+    63. 应用面板增加“Odoo中文应用”模块类型与筛选，点击直接打开模块信息页，而不是跳转 Odoo 商店.
+    64. 开发者模式下增强访问权限错误提示：显示失败记录、相关规则及多公司切换建议.
+    65. 升级模块前自动刷新当前语言的 .po 翻译，确保翻译生效.
     """,
 }

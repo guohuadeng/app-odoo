@@ -11,6 +11,7 @@
         <function model="ir.config_parameter" name="set_bool" eval="('app_show_enterprise', False)"/>
         <function model="ir.config_parameter" name="set_bool" eval="('app_show_share', False)"/>
         <function model="ir.config_parameter" name="set_bool" eval="('app_show_poweredby', False)"/>
+        <function model="ir.config_parameter" name="set_bool" eval="('app_show_studio', False)"/>
         <function model="ir.config_parameter" name="set_str" eval="('app_documentation_url', 'https://www.odooai.cn/r/yh19')"/>
         <function model="ir.config_parameter" name="set_str" eval="('app_documentation_dev_url', 'https://www.odooai.cn/r/kf19')"/>
         <function model="ir.config_parameter" name="set_str" eval="('app_support_url', 'https://www.odooai.cn/trial')"/>

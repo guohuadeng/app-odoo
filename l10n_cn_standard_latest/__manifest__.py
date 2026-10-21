@@ -7,7 +7,7 @@
 
 {
     'name': '2027最新中国会计科目表 / Latest Chinese Accounting Chart',
-    'version': '20.0.26.10.20',
+    'version': '20.0.26.10.21',
     'author': 'odooai.cn',
     'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.odooai.cn',
@@ -52,6 +52,11 @@
         'report/account_report.xml',
         'report/report_voucher.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'l10n_cn_standard_latest/static/src/js/l10n_cn_conflict_warning.js',
+        ],
+    },
     'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': True,

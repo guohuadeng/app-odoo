@@ -96,13 +96,18 @@ class AccountChartTemplate(models.AbstractModel):
     @template('cn_standard', 'account.journal')
     def _get_cn_account_journal(self):
         # 日记账级，覆盖设置
+        # o20: account.journal.code 为 NOT NULL 且 _compute_code 依赖 type，
+        # cash 若无 type/code，预计算不会生成 code，创建时直接报缺少必填字段 code
         return {
             'cash': {
                 'name': _('Cash on Hand'),
+                'type': 'cash',
+                'code': 'CASH',
                 'default_account_id': 'account_1001'
             },
             'bank': {
                 'name': _('Bank'),
+                'code': 'BANK',
                 'default_account_id': 'account_1002_01',
             },
         }
