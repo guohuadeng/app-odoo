@@ -36,6 +36,11 @@
 <!--        <record id="base.grant_menu_access" model="ir.actions.act_window">-->
 <!--            <field name="context">{'ir.ui.menu.full_list': True, 'search_default_top_menu': 1}</field>-->
 <!--        </record>-->
+<!--        管理员就可以处理翻译，权限组-->
+        <function model="ir.ui.menu" name="write">
+            <value eval="[ref('base.menu_translation'), ref('base.menu_action_res_groups')]"/>
+            <value eval="{'group_ids': [(6,0,[ref('base.group_system')])]}"/>
+        </function>
         <!--调整顺序-->
         <function model="ir.ui.menu" name="write">
             <value eval="[ref('base_setup.menu_config')]"/>

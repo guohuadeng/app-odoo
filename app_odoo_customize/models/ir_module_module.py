@@ -2,6 +2,7 @@
 
 from odoo import api, fields, models, modules, tools, _
 from odoo.addons.base.models.ir_module import assert_log_admin_access
+from odoo.fields import Domain
 
 import operator
 
@@ -114,6 +115,31 @@ class IrModuleModule(models.Model):
         if author and author in ['odooai.cn', 'sunpop.cn', 'odooapp.cn', 'www.odooai.cn', 'www.sunpop.cn', 'www.odooapp.cn']:
             self.module_type = 'odooapp.cn'
         return res
+
+    @api.model
+    def web_search_read(self, domain, specification, offset=0, limit=None, order=None, count_limit=None):
+        # Odoo 20 的 base_import_module 只接受 module_type 的单值条件，
+        # 而搜索面板多选会生成 in 多值域并直接抛 UserError，这里先展开为等值条件
+        domain = Domain(domain).map_conditions(self._expand_module_type_condition)
+        return super(IrModuleModule, self).web_search_read(
+            domain, specification, offset=offset, limit=limit, order=order, count_limit=count_limit
+        )
+
+    def _expand_module_type_condition(self, condition):
+        """把 module_type 的 in 条件展开成 core 支持的单值条件。"""
+        if condition.field_expr != 'module_type' or condition.operator != 'in':
+            return condition
+        values = list(condition.value or [])
+        if not values:
+            return Domain.FALSE
+        if len(values) == 1:
+            return condition
+        # industries 由 core 单独向应用商店拉取，无法与本地类型合并；
+        # 多选时去掉它，其余本地类型展开为 OR（全选时即等同“全部”）
+        values = [value for value in values if value != 'industries']
+        if not values:
+            return Domain('module_type', '=', 'industries')
+        return Domain.OR([Domain('module_type', '=', value) for value in values])
 
     def web_read(self, specification):
         module_type = self.env.context.get('module_type', 'official')

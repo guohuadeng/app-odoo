@@ -25,7 +25,7 @@ class AccountChartTemplate(models.AbstractModel):
         # coa会计科目级，覆盖设置
         # 中国：小企业默认不给开 盎格鲁撒克逊会计，不开权责。  大企业关闭盎格鲁撒克逊会计（=不自动在销售出库时结转成本），用存货成本账+月结时结转出库成本处理
         return {
-            'name': _('2025中国企业会计科目表-odoo18'),
+            'name': _('2027中国企业会计科目表-odoo20'),
             'code_digits': 4,
             # 不做存货账：关闭，小企业让其关闭开启，实际因为不开存货成本账，开启也无用.
             'anglo_saxon_accounting': False,

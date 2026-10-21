@@ -7,7 +7,7 @@
 
 {
     'name': '2027最新中国会计科目表 / Latest Chinese Accounting Chart',
-    'version': '20.0.26.09.11',
+    'version': '20.0.26.10.20',
     'author': 'odooai.cn',
     'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.odooai.cn',
@@ -16,7 +16,7 @@
     'sequence': 12,
     'summary': '2027最新中国会计科目表，营改增后会计科目调整，多级科目支持 / Latest Chinese accounting chart with multi-level account support',
     'description': """
-1. 2025 latest Chinese accounting chart of accounts with post-VAT reform adjustments.
+1. 2027 latest Chinese accounting chart of accounts with post-VAT reform adjustments.
 2. Updated to latest tax rates. Set menu to "Accounting".
 3. Supplement classification and tag information.
 4. Updated tax items with common Chinese VAT rate settings.
@@ -28,7 +28,7 @@
 10. Multi-Company Support.
 11. Full Version Support for Odoo 19,18,17,16,15,14,13,12, Enterprise and Community Edition.
 12. Full Open Source under LGPL-3 license.
-1. 2025 最新中国会计科目表，处理营改增后会计科目调整，更新至最新税率。
+1. 2027 最新中国会计科目表，处理营改增后会计科目调整，更新至最新税率。
 2. 将菜单设置为"财务"。
 3. 补充分类及标签信息。
 4. 更新税项信息，增加中国常用增值税率设定。
