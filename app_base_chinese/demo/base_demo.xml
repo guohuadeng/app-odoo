@@ -7,7 +7,6 @@
             <field name="company_id" ref="main_company"/>
             <field name="customer" eval="False"/>
             <field name="email">demo@yourcompany.example.com</field>
-            <field name="company_name">YourCompany</field>
             <field name="street">Avenue des Dessus-de-Lives, 2</field>
             <field name="city">Namur (Loyers)</field>
             <field name="zip">5101</field>
@@ -22,7 +21,6 @@
 
         <record id="main_partner" model="res.partner">
             <field name="name">YourCompany</field>
-            <field name="company_name">YourCompany</field>
             <field name="street">1725 Slough Ave.</field>
             <field name="city">Scranton</field>
             <field name="zip">18540</field>
@@ -50,7 +48,6 @@
         </record>
 
         <record model="res.partner" id="base.partner_root">
-            <field name="company_name">YourCompany</field>
             <field name="street">215 Vine St</field>
             <field name="city">Scranton</field>
             <field name="zip">18503</field>
@@ -72,7 +69,6 @@
             <field name="city">Vivegnis</field>
             <field name="zip">4683</field>
             <field name="country_id" ref="base.be"/>
-            <field name="company_name">YourCompany</field>
             <field name="street">Rue Cesar de Paepe, 43</field>
         </record>
         <record id="demo_user0" model="res.users" context="{'no_reset_password': True}">
