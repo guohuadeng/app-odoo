@@ -29,7 +29,7 @@
 
 {
     'name': "Hr Expense Superbar Pro",
-    'version': '20.0.26.05.20',
+    'version': '20.0.26.10.23',
     'author': 'odooai.cn',
     'category': 'Human Resources',
     'website': 'https://www.odooai.cn',
@@ -50,13 +50,12 @@
     'currency': 'EUR',
     'depends': [
         'app_hr_expense_superbar',
+        'app_hr_expense_pro',  # v20：表头模型/搜索视图由该模块恢复
     ],
     'images': ['static/description/hr2.gif'],
     'data': [
         'views/hr_expense_views.xml',
-        # views/hr_expense_sheet_views.xml 已删除：v20 整个 hr.expense.sheet 模型不存在
-        # （odoo/addons/hr_expense/models/ 下无 hr_expense_sheet.py），accounting_date 字段亦零命中。
-        # 与前置模块 app_hr_expense_superbar（排程3 #8）的处置一致。
+        'views/hr_expense_sheet_views.xml',
     ],
     'assets': {
         'web.assets_backend': [
