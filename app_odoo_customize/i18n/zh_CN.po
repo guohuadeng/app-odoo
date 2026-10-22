@@ -59,6 +59,13 @@ msgid ""
 msgstr "请谨慎操作！这将停止所有订阅通知。同时，基于订阅的权限将受到影响，比如项目，销售订单门户。"
 
 #. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid ""
+"It also disables the websocket bus: no real-time push, no Discuss live "
+"updates and no online presence detection, until users refresh the page."
+msgstr "同时停用 websocket 推送：不再有实时通知、Discuss 实时更新和在线状态检测，用户刷新页面后生效。"
+
+#. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.clear_data_wizard_form
 msgid ""
 "If you choose to clear only the current company's data, cross-company data "
@@ -231,8 +238,11 @@ msgstr "取消"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_stop_subscribe
-msgid "Check to stop subscribe and follow. This to make odoo speed up."
-msgstr "选中以停止订阅关注。这是为了让odoo加速。"
+msgid ""
+"Check to stop subscribe and follow, and disable the websocket bus (real-time "
+"push and presence detection). This makes odoo speed up, especially on "
+"Windows with workers=0."
+msgstr "选中以停止订阅关注，并停用 websocket 实时推送与在线状态检测。这可让 odoo 提速，在 workers=0 的 Windows 环境下尤其明显。"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
