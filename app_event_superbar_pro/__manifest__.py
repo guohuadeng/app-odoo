@@ -16,7 +16,7 @@
 
 {
     'name': "活动高级搜索 / Event Advance Search Browse by Stage and Date",
-    'version': '20.0.24.12.04',
+    'version': '20.0.26.10.25',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -54,10 +54,11 @@ English Features:
     'price': 0.00,
     'currency': 'EUR',
     'depends': [
-        'event',
+        'app_event_superbar',
     ],
     'images': ['static/description/banner.png'],
     'data': [
+        'views/event_event_views.xml',
     ],
     'demo': [
     ],

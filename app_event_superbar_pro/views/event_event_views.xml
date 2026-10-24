@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Search：v20 的 searchpanel 由 app_event_superbar 基座注入，
+         这里继承基座视图继续加字段（与其它 *_superbar_pro 模块一致）。 -->
+    <record id="app_event_event_search_superbar_pro" model="ir.ui.view">
+        <field name="name">app.event.event.search.superbar.pro</field>
+        <field name="model">event.event</field>
+        <field name="inherit_id" ref="app_event_superbar.app_event_event_search_superbar"/>
+        <field name="arch" type="xml">
+            <xpath expr="//searchpanel" position="inside">
+                <field name="date_begin"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
