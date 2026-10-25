@@ -1,0 +1,2340 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Odoo AiERP · 深度行业定制 · 动画宣传片</title>
+<script>
+/* 首屏前确定布局模式，避免桌面舞台在手机上闪一下 */
+(function(){
+  var force = !!window.__forceMobile || /(?:[?&])m=1(?:&|$)/.test(location.search);
+  window.__isMobile = force || matchMedia('(max-width: 768px)').matches;
+  document.documentElement.classList.toggle('m', window.__isMobile);
+})();
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='26' fill='white' stroke='%2300796B' stroke-width='7'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='27' font-weight='700' text-anchor='middle' fill='%2300796B'%3EAi%3C/text%3E%3C/svg%3E">
+<style>
+/* ================= 基础与品牌变量 ================= */
+:root{
+  --bg0:#020a09; --bg1:#061714;
+  --panel:#0a1d1a; --panel2:#0e2621;
+  --line:#1a413a; --line2:#2a5c52;
+  --brand:#00796B; --brand2:#00a38f;
+  --mint:#3fd8c0; --glow:#6ff2dc;
+  --txt:#eafff9; --txt2:#9cc4bb; --txt3:#5f857c;
+  --ok:#38d39f; --warn:#ffb454;
+  --tbh:44px;
+  --font:"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#010806;font-family:var(--font);color:var(--txt);overflow:hidden;user-select:none;-webkit-font-smoothing:antialiased}
+.num{font-variant-numeric:tabular-nums}
+
+/* ================= 舞台 ================= */
+#viewport{position:fixed;inset:0;top:var(--tbh,44px);background:radial-gradient(1200px 700px at 50% 30%,#0a231e 0%,#04120f 45%,#010806 100%)}
+#stage{position:absolute;left:50%;top:50%;width:1600px;height:900px;/* 设计稿 1600×900，渲染上限 1138×640，见 fit() 的 cap */transform:translate(-50%,-50%) scale(var(--s,1));background:radial-gradient(1000px 640px at 50% 42%,#0b241f 0%,#051511 52%,#020a09 100%);overflow:hidden}
+.bg{position:absolute;inset:0;pointer-events:none}
+.bg .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(63,216,192,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(63,216,192,.055) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(920px 640px at 50% 45%,#000 30%,transparent 100%);mask-image:radial-gradient(920px 640px at 50% 45%,#000 30%,transparent 100%)}
+.bg .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5}
+.orb.o1{width:560px;height:560px;background:#0b5c4d;left:-140px;top:-180px}
+.orb.o2{width:660px;height:660px;background:#0a4a55;right:-220px;bottom:-260px}
+.bg .vig{position:absolute;inset:0;background:radial-gradient(1200px 800px at 50% 50%,transparent 55%,rgba(1,8,6,.82) 100%)}
+
+/* ================= 场景通用 ================= */
+/* 用 display 管理场景归属，避免 WAAPI 子元素在重复跳转后残留继承的 visibility:hidden。 */
+.scene{position:absolute;inset:0;display:none}
+.scene.on{display:block}
+.title{position:absolute;left:0;right:0;text-align:center;font-size:46px;font-weight:700;letter-spacing:6px;text-shadow:0 0 30px rgba(63,216,192,.3)}
+.sub{position:absolute;left:0;right:0;text-align:center;font-size:25px;color:var(--txt2);letter-spacing:3px}
+.cap{position:absolute;left:0;right:0;bottom:108px;text-align:center;font-size:25px;color:var(--txt2);letter-spacing:4px;opacity:0;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+#s1Cap{bottom:auto;top:498px}
+svg.layer{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+
+/* ================= S1 需求简述 ================= */
+.s1-word{position:absolute;left:800px;top:380px;transform:translate(-50%,-50%);font-size:100px;font-weight:800;letter-spacing:2px;white-space:nowrap;opacity:1}
+.s1-word .w-ai{background:linear-gradient(120deg,#6ff2dc,#00a38f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.s1-word .w-erp{color:#fff}
+.s1-sub{position:absolute;left:800px;top:460px;transform:translate(-50%,-50%);font-size:25px;color:var(--txt2);letter-spacing:8px;white-space:nowrap;opacity:1}
+.doc{position:absolute;width:138px;height:158px;margin:-79px 0 0 -69px;background:#f5fbf8;border-radius:10px;color:#20423c;box-shadow:0 14px 40px rgba(0,0,0,.45);padding:14px;opacity:1}
+.doc b{display:block;font-size:20px;color:#0c2f29;margin-bottom:10px;letter-spacing:1px}
+.doc i{display:block;height:7px;border-radius:4px;background:#d9e8e3;margin:9px 0}
+.doc i:nth-child(3){width:84%}
+.doc i:nth-child(4){width:62%}
+.doc .tag{position:absolute;right:10px;bottom:10px;font-size:12.5px;padding:2px 9px;border-radius:20px;color:#fff;letter-spacing:.5px}
+.t-a{background:var(--brand)} .t-b{background:#b07a2a} .t-c{background:#2a6b8f} .t-d{background:#2f7d5c}
+
+/* S1 问答聊天窗：先敲字问答 + 拖拽上传，再散出业务单据 */
+.s1-chat{position:absolute;left:800px;top:450px;transform:translate(-50%,-50%);width:1520px;height:820px;display:flex;flex-direction:column;background:linear-gradient(180deg,rgba(8,26,22,.96),rgba(5,17,14,.96));border:1px solid rgba(63,216,192,.28);border-radius:24px;box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.04);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);overflow:hidden;opacity:0;z-index:3}
+.s1-chat-head{display:flex;align-items:center;gap:14px;padding:20px 36px;font-size:26px;font-weight:600;letter-spacing:3px;color:#9fe8d6;border-bottom:1px solid rgba(63,216,192,.16);flex:none}
+.s1-chat-head .dot{width:14px;height:14px;border-radius:50%;background:#5ff2d9;box-shadow:0 0 12px rgba(111,242,220,.9);flex:none}
+.s1-chat-head em{margin-left:auto;font-style:normal;font-size:20px;color:var(--txt3);letter-spacing:2px}
+.s1-chat-body{display:flex;flex-direction:column;gap:30px;padding:40px 48px 28px;flex:1;min-height:0}
+.s1-msg{max-width:88%;padding:22px 38px;border-radius:24px;font-size:44px;line-height:1.45;letter-spacing:1px;opacity:0;white-space:normal}
+.s1-msg.ai{align-self:flex-end;background:rgba(63,216,192,.12);border:1px solid rgba(63,216,192,.22);color:#dffbf3;border-top-right-radius:6px}
+.s1-msg.me{align-self:flex-start;background:linear-gradient(135deg,#5ff2d9,#2ec9ad);color:#03211b;font-weight:600;border-top-left-radius:6px}
+.s1-txt.typing::after{content:"▍";margin-left:2px;opacity:.75;animation:caretBlink .75s steps(2,start) infinite}
+@keyframes caretBlink{to{visibility:hidden}}
+.s1-msg.up{align-self:stretch;max-width:100%;background:transparent;border:none;padding:0}
+.s1-drop{display:flex;align-items:center;justify-content:center;gap:16px;min-height:132px;border:2px dashed rgba(111,242,220,.45);border-radius:20px;background:rgba(63,216,192,.05);position:relative;transition:border-color .3s,background .3s}
+.s1-drop.got{border-style:solid;border-color:rgba(111,242,220,.6);background:rgba(63,216,192,.1)}
+.s1-drop-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:14px;font-size:30px;letter-spacing:4px;color:#8fd8c8;white-space:nowrap;transition:opacity .3s}
+.s1-drop-hint svg{width:38px;height:38px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.s1-file{position:relative;z-index:1;display:flex;align-items:center;gap:20px;padding:18px 30px;background:#f5fbf8;color:#20423c;border-radius:16px;box-shadow:0 10px 26px rgba(0,0,0,.4);opacity:0;min-width:640px;max-width:88%}
+.s1-file svg{width:40px;height:40px;fill:none;stroke:#2f7d5c;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.s1-fname{font-size:30px;font-weight:600;letter-spacing:1px;white-space:nowrap}
+.s1-fbar{flex:1;height:12px;border-radius:6px;background:#d9e8e3;overflow:hidden;min-width:180px}
+.s1-fbar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#2ec9ad,#5ff2d9);transform:scaleX(0);transform-origin:left}
+.s1-fpct{font-style:normal;font-size:24px;font-variant-numeric:tabular-nums;color:#2f7d5c;min-width:64px;text-align:right}
+.s1-input{display:flex;align-items:center;gap:24px;margin:0 48px 36px;padding:22px 34px;border:1.5px solid rgba(63,216,192,.3);border-radius:18px;background:rgba(63,216,192,.06);font-size:40px;color:#dffbf3;letter-spacing:1px;opacity:0;flex:none}
+.s1-input-txt{flex:1;min-height:52px;white-space:nowrap;overflow:hidden}
+.s1-send{font-style:normal;flex:none;font-size:28px;font-weight:600;letter-spacing:4px;padding:10px 30px;border-radius:999px;background:linear-gradient(135deg,#5ff2d9,#2ec9ad);color:#03211b}
+
+/* ================= S2 行业扫描 ================= */
+.icard{position:absolute;top:340px;width:212px;height:268px;border-radius:16px;background:linear-gradient(180deg,#0d2320,#0a1a17);border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.35);opacity:0}
+.icard .ill{height:152px;display:flex;align-items:center;justify-content:center;color:#7fd8c8}
+.icard .ill svg{width:128px;height:104px}
+.icard .name{text-align:center;font-size:25px;font-weight:600;letter-spacing:3px}
+.icard .st{position:absolute;left:0;right:0;bottom:28px;height:1.4em;line-height:1.4;text-align:center;font-size:18px}
+.icard .st span{position:absolute;left:0;right:0;top:0;opacity:0;letter-spacing:1px}
+.st-scan{color:var(--mint)} .st-lock{color:var(--ok);font-weight:700} .st-out{color:var(--txt3)}
+.icard.locked{border-color:rgba(111,242,220,.85);box-shadow:0 0 34px rgba(63,216,192,.4),0 10px 30px rgba(0,0,0,.35)}
+.icard.locked .ill{color:#8ff0dc}
+.lock-badge{position:absolute;top:-14px;right:-14px;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#5ff2d9,#2ec9ad);color:#03211b;font-weight:800;font-size:24px;display:flex;align-items:center;justify-content:center;opacity:0;box-shadow:0 6px 18px rgba(63,216,192,.5)}
+.beam{position:absolute;top:324px;left:60px;height:300px;width:74px;margin-left:-37px;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(63,216,192,.34) 30%,rgba(132,246,226,.82) 50%,rgba(63,216,192,.34) 70%,transparent);mix-blend-mode:screen;filter:blur(1.5px);opacity:0}
+.beam::after{content:"";position:absolute;left:50%;top:4px;bottom:4px;width:4px;margin-left:-2px;background:#dffdf5;box-shadow:0 0 18px 6px rgba(111,242,220,.95)}
+
+/* ================= S3 精密制造 ================= */
+.scrim{position:absolute;inset:0;background:radial-gradient(780px 540px at 50% 52%,rgba(2,10,9,.25) 0%,rgba(2,10,9,.74) 100%);opacity:0}
+.s3-title{position:absolute;left:800px;top:430px;transform:translate(-50%,-50%);font-size:122px;font-weight:800;letter-spacing:10px;color:#eafff9;text-shadow:0 0 46px rgba(63,216,192,.55),0 0 14px rgba(63,216,192,.35);opacity:0;white-space:nowrap}
+.s3-sub{position:absolute;left:800px;top:772px;transform:translate(-50%,-50%);font-size:27px;color:#cfe9e2;letter-spacing:4px;opacity:0;white-space:nowrap;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+
+/* ================= S4/S5 拆解与流程链 ================= */
+.pt{color:#7fd8c8}
+.pf{fill:#0f2c26;stroke:currentColor;stroke-width:3;stroke-linejoin:round}
+.ph{fill:#07150f;stroke:currentColor;stroke-width:2.5;opacity:.85}
+.pd{fill:#07150f;stroke:currentColor;stroke-width:1.8;opacity:.7}
+.pb{fill:#0e2b26;stroke:currentColor;stroke-width:2}
+.pl{stroke:currentColor;stroke-width:2;fill:none;opacity:.6}
+.pedestal{fill:rgba(63,216,192,.08)}
+.s4-tag{position:absolute;left:60px;top:56px;display:flex;align-items:center;gap:12px;padding:12px 20px;border:1px solid rgba(63,216,192,.5);border-radius:12px;background:rgba(10,29,26,.85);font-size:25px;letter-spacing:3px;opacity:0}
+.s4-tag .dot{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint)}
+.chip{position:absolute;width:100px;height:60px;margin:-30px 0 0 -50px;display:flex;align-items:center;justify-content:center;font-size:29px;font-weight:700;letter-spacing:2px;color:#dffbf3;background:linear-gradient(180deg,#10302a,#0b1f1b);border:1.5px solid rgba(63,216,192,.55);border-radius:12px;box-shadow:0 0 22px rgba(63,216,192,.16),inset 0 0 18px rgba(63,216,192,.07);opacity:0}
+#sc5 .chip{width:210px;height:80px;margin:-40px 0 0 -105px;gap:8px;padding:0 12px;border-radius:16px;font-size:34px}
+#sc5 .chip .ci{width:24px;height:24px}
+.chip .ci{width:20px;height:20px;flex:none;fill:#6ff2dc;filter:drop-shadow(0 0 6px rgba(111,242,220,.45))}
+#s5Arrows .fl{fill:none;stroke:#6ff2dc;stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:0;filter:drop-shadow(0 0 6px rgba(111,242,220,.55))}
+#s5Arrows .fa{fill:#6ff2dc;opacity:0;filter:drop-shadow(0 0 6px rgba(111,242,220,.55))}
+.pulse{position:absolute;left:309px;top:659px;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle,#eafff9 0%,#6ff2dc 45%,rgba(111,242,220,0) 72%);filter:drop-shadow(0 0 10px rgba(111,242,220,.9));opacity:0}
+#s5Cap{bottom:auto;top:86px;font-size:30px;letter-spacing:5px;color:#cfe9e2}
+
+/* ================= S6 市场匹配 ================= */
+.map-panel{position:absolute;left:200px;top:168px;width:1200px;height:600px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(10,29,26,.92),rgba(6,20,17,.94));overflow:hidden;opacity:0}
+.mp-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(63,216,192,.13) 1.5px,transparent 1.5px);background-size:34px 34px;-webkit-mask-image:radial-gradient(700px 420px at 50% 50%,#000 40%,transparent 100%);mask-image:radial-gradient(700px 420px at 50% 50%,#000 40%,transparent 100%)}
+.map-svg{position:absolute;inset:0;width:100%;height:100%}
+.blob{fill:rgba(63,216,192,.07);stroke:rgba(63,216,192,.42);stroke-width:2.5;stroke-dasharray:6 7}
+.grat{fill:none;stroke:rgba(63,216,192,.10);stroke-width:2;stroke-dasharray:3 10}
+.cn-dot{fill:#6ff2dc;transform-box:fill-box;transform-origin:center;filter:drop-shadow(0 0 8px rgba(111,242,220,.9))}
+.m-beam{position:absolute;top:16px;bottom:16px;left:20px;width:90px;margin-left:-45px;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(63,216,192,.16) 35%,rgba(111,242,220,.4) 50%,rgba(63,216,192,.16) 65%,transparent);mix-blend-mode:screen;opacity:0}
+.mlab{position:absolute;font-size:27px;font-weight:600;letter-spacing:5px;color:#cfe9e2;transform:translate(-50%,-50%);text-shadow:0 2px 10px rgba(0,0,0,.6);opacity:0;white-space:nowrap}
+.mtag{position:absolute;display:flex;align-items:center;gap:9px;padding:10px 18px;border-radius:24px;font-size:20px;letter-spacing:1px;background:rgba(8,25,21,.94);border:1px solid rgba(63,216,192,.55);color:#dffbf3;box-shadow:0 0 22px rgba(63,216,192,.22);opacity:0;white-space:nowrap}
+.mtag .cur{color:#6ff2dc;font-weight:700}
+.mtag.m-out{border-color:rgba(122,143,138,.5);color:#7d968f;box-shadow:none;background:rgba(10,20,18,.9)}
+#s6Cap{bottom:88px}
+
+/* ================= S7 邮件交付 ================= */
+.desk{position:absolute;inset:0}
+.gw{position:absolute;border:1px solid rgba(63,216,192,.10);border-radius:16px;background:rgba(10,29,26,.35);opacity:0}
+.gw .rows{position:absolute;inset:14px;background-image:repeating-linear-gradient(180deg,rgba(63,216,192,.06) 0 2px,transparent 2px 26px)}
+.gw1{left:120px;top:120px;width:760px;height:540px}
+.gw2{left:920px;top:560px;width:540px;height:250px}
+.gbar{position:absolute;left:0;right:0;bottom:0;height:44px;background:rgba(4,14,12,.85);border-top:1px solid rgba(63,216,192,.12);opacity:0}
+.gbar i{position:absolute;top:14px;width:18px;height:18px;border-radius:6px;background:rgba(63,216,192,.16)}
+/* S7 方案交付：新消息提醒 → 点击 → 方案卡片放大居中 */
+.s7-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2}
+.s7toast{position:absolute;left:100px;top:64px;width:450px;display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:16px;background:linear-gradient(180deg,rgba(16,48,42,.98),rgba(9,28,24,.98));border:1px solid rgba(111,242,220,.4);box-shadow:0 24px 64px rgba(0,0,0,.55),0 0 30px rgba(63,216,192,.14);opacity:0;z-index:4}
+.s7toast .st-ico{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#00796B,#00a38f);display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 8px 24px rgba(0,163,143,.3)}
+.s7toast .st-ico svg{width:24px;height:24px}
+.s7toast .st-main{min-width:0;flex:1}
+.s7toast .st-top{display:flex;align-items:baseline;gap:10px}
+.s7toast .st-top b{font-size:20px;letter-spacing:1px;color:#eafff9}
+.s7toast .st-top span{font-size:13px;color:var(--txt3);letter-spacing:.5px;margin-left:auto}
+.s7toast .st-txt{margin-top:6px;font-size:16px;color:#bfe4da;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.s7toast .st-src{margin-top:5px;font-size:13px;color:var(--txt3);letter-spacing:.5px}
+.s7toast .st-dot{position:absolute;right:-4px;top:-4px;width:11px;height:11px;border-radius:50%;background:#3fd8c0;border:2px solid #08201b;box-shadow:0 0 12px rgba(111,242,220,.9)}
+.mail{position:relative;width:1080px;border-radius:24px;background:linear-gradient(180deg,#0f2622,#0b1d1a);border:1px solid var(--line2);box-shadow:0 34px 90px rgba(0,0,0,.62),0 0 50px rgba(63,216,192,.1);padding:38px 46px;opacity:0}
+.mail-head{display:flex;gap:18px;align-items:center;border-bottom:1px solid rgba(63,216,192,.14);padding-bottom:18px}
+.mail-ico{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#00796B,#00a38f);display:flex;align-items:center;justify-content:center;flex:none}
+.mail-ico svg{width:28px;height:28px}
+.mail-head b{font-size:28px;letter-spacing:1px}
+.mail-head span{display:block;font-size:17px;color:var(--txt3);margin-top:5px}
+.mail-subj{margin-top:24px;font-size:46px;font-weight:700;letter-spacing:1px;color:#eafff9}
+.mail-body{margin-top:18px;font-size:23px;line-height:1.9;color:var(--txt2)}
+.mail-body b{color:#dffbf3}
+.dl-btn{margin-top:28px;display:inline-flex;align-items:center;gap:12px;padding:18px 30px;font-size:26px;font-weight:600;letter-spacing:1px;color:#052019;background:linear-gradient(135deg,#5ff2d9,#2ec9ad);border:none;border-radius:14px;cursor:pointer;box-shadow:0 10px 30px rgba(63,216,192,.35);font-family:var(--font)}
+.dl-btn svg{width:24px;height:24px}
+.dl-btn.done{background:linear-gradient(135deg,#2a5c52,#1e443d);color:#cfe9e2;box-shadow:none}
+.dl-bar{margin-top:18px;height:10px;border-radius:6px;background:rgba(63,216,192,.12);overflow:hidden}
+.dl-bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#00a38f,#6ff2dc);transform:scaleX(0);transform-origin:left center}
+.dl-state{margin-top:12px;font-size:19px;color:var(--txt3);letter-spacing:1px}
+.cursor{position:absolute;left:1424px;top:772px;width:36px;height:36px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.55));z-index:5}
+
+/* ================= S8 运营收尾 ================= */
+.cockpit{position:absolute;left:120px;top:80px;width:1360px;height:740px;border-radius:20px;background:linear-gradient(180deg,#0c211d,#081714);border:1px solid var(--line2);box-shadow:0 40px 120px rgba(0,0,0,.6);overflow:hidden;opacity:0}
+.ck-top{height:62px;display:flex;align-items:center;gap:12px;padding:0 22px;border-bottom:1px solid rgba(63,216,192,.12)}
+.ck-top .mark{width:28px;height:28px}
+.ck-top b{font-size:22px;letter-spacing:2px;font-weight:600}
+.ck-run{font-size:15px;font-weight:600;letter-spacing:1px;color:#6ff2dc;margin-left:6px}
+.ck-dots{margin-left:auto;display:flex;gap:8px}
+.ck-dots i{width:10px;height:10px;border-radius:50%;background:rgba(234,255,249,.16)}
+.ck-side{position:absolute;left:0;top:62px;bottom:0;width:86px;border-right:1px solid rgba(63,216,192,.10);display:flex;flex-direction:column;padding-top:12px}
+.nav{display:flex;flex-direction:column;align-items:center;gap:5px;padding:9px 0;font-size:13.5px;color:var(--txt2);letter-spacing:1px}
+.nav svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nav.on{color:#6ff2dc}
+.kpi{position:absolute;width:296px;height:112px;border-radius:14px;background:linear-gradient(180deg,rgba(20,48,43,.72),rgba(12,32,28,.72));border:1px solid rgba(63,216,192,.16);padding:16px 20px;opacity:0}
+.k-lab{font-size:17px;color:var(--txt2);letter-spacing:1px}
+.k-val{font-size:38px;font-weight:800;margin-top:8px;letter-spacing:.5px;line-height:1}
+.k-val small{font-size:20px;font-weight:600;color:var(--txt2);margin:0 4px}
+.k-delta{position:absolute;right:16px;top:16px;font-size:14.5px;color:#38d39f;background:rgba(56,211,159,.12);padding:3px 9px;border-radius:10px}
+.ck-chart,.ck-list{position:absolute;border-radius:14px;background:rgba(12,32,28,.55);border:1px solid rgba(63,216,192,.14);overflow:hidden;opacity:0}
+.ck-chart{left:100px;top:222px;width:790px;height:470px}
+.ck-list{left:906px;top:222px;width:438px;height:470px}
+.panel-t{font-size:20px;font-weight:600;letter-spacing:3px;padding:16px 20px 12px;color:#dffbf3;border-bottom:1px solid rgba(63,216,192,.10)}
+.ck-chart svg{display:block;width:100%;height:calc(100% - 46px)}
+.grid-line{stroke:rgba(63,216,192,.10);stroke-width:1;stroke-dasharray:4 8}
+.axis-lab{fill:var(--txt3);font-size:15px;font-family:var(--font)}
+#linePath{stroke:#6ff2dc;stroke-width:3.5;fill:none;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+#areaPath{fill:url(#gA);opacity:0}
+.row{display:flex;align-items:center;gap:10px;padding:14px 20px;font-size:18px;color:var(--txt2);border-bottom:1px dashed rgba(63,216,192,.08);opacity:0}
+.row .rdot{width:10px;height:10px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px rgba(111,242,220,.7);flex:none}
+.chipst{margin-left:auto;font-size:14.5px;padding:3px 11px;border-radius:10px;flex:none}
+.s-run{color:#6ff2dc;background:rgba(111,242,220,.12)}
+.s-qc{color:#ffcf8a;background:rgba(255,180,84,.12)}
+.s-done{color:#8de8b8;background:rgba(56,211,159,.12)}
+.s-plan{color:#9cc4bb;background:rgba(156,196,187,.10)}
+.s-ship{color:#8fd0ff;background:rgba(120,190,255,.12)}
+.fpanel{position:absolute;width:420px;height:238px;border-radius:16px;background:linear-gradient(180deg,rgba(15,42,37,.96),rgba(10,29,25,.96));border:1px solid rgba(63,216,192,.4);box-shadow:0 26px 70px rgba(0,0,0,.55),0 0 30px rgba(63,216,192,.10);overflow:hidden;opacity:0}
+.p1{left:140px;top:540px} .p2{left:590px;top:568px} .p3{left:1040px;top:546px}
+.fp-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid rgba(63,216,192,.14);font-size:20px;font-weight:600;letter-spacing:2px}
+.fp-head svg{width:20px;height:20px;stroke:var(--mint);fill:none;stroke-width:2;flex:none}
+.fp-head .x{margin-left:auto;color:var(--txt3);font-size:17px;letter-spacing:0}
+.fp-row{display:flex;align-items:center;gap:12px;padding:11px 18px;font-size:17px;color:var(--txt2);opacity:0}
+.g-lab{width:104px;flex:none}
+.gtrack{position:relative;width:150px;height:10px;border-radius:6px;background:rgba(63,216,192,.10);flex:none}
+.gbar{position:absolute;top:0;bottom:0;border-radius:6px;background:linear-gradient(90deg,#00a38f,#6ff2dc);transform:scaleX(0);transform-origin:left center}
+.g-w{margin-left:auto;font-size:14.5px;color:var(--txt3);font-weight:400}
+.ck{width:20px;height:20px;border-radius:50%;background:rgba(56,211,159,.14);display:flex;align-items:center;justify-content:center;color:#38d39f;font-size:12px;flex:none;transform:scale(0)}
+.fin{position:absolute;inset:0;opacity:0}
+.fin-dim{position:absolute;inset:0;background:radial-gradient(900px 620px at 50% 50%,rgba(2,8,7,.9),rgba(2,8,7,.98));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.fin-box{position:absolute;left:0;right:0;top:320px;text-align:center}
+.fin-head{display:flex;align-items:center;justify-content:center;gap:24px}
+.fin-mark{width:96px;height:96px;filter:drop-shadow(0 16px 44px rgba(0,0,0,.55))}
+.fin-title{font-size:48px;font-weight:800;letter-spacing:2px;color:#eafff9;white-space:nowrap}
+.fin-title .w-ai{background:linear-gradient(120deg,#6ff2dc,#00a38f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fin-sub{font-size:30px;color:#bfe4da;letter-spacing:6px;margin-top:24px}
+.fin-tiny{font-size:16.5px;color:var(--txt3);letter-spacing:3px;margin-top:16px}
+.fin-cta{display:inline-flex;align-items:center;justify-content:center;margin-top:24px;height:58px;padding:0 42px;border-radius:999px;background:linear-gradient(135deg,#5ff2d9,#2ec9ad);color:#03211b;font-size:21px;font-weight:700;letter-spacing:3px;text-decoration:none;box-shadow:0 14px 40px rgba(63,216,192,.3);opacity:0;pointer-events:none;will-change:transform,opacity}
+.fin-cta:hover{transform:translateY(-2px)}
+
+/* ================= 顶部阶段进度条 ================= */
+#topbar{position:fixed;left:0;right:0;top:0;height:var(--tbh,44px);z-index:45;display:flex;flex-direction:column;
+  background:rgba(3,18,15,.9);border-bottom:1px solid rgba(63,216,192,.14);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tb-row{display:flex;align-items:center;justify-content:center;gap:10px;height:calc(var(--tbh,44px) - 3px);padding:0 14px;min-width:0}
+.tb-brand{display:flex;align-items:center;gap:7px;flex:none;font-size:13.5px;font-weight:700;letter-spacing:1px;color:#c9f5ea;border:0;background:none;padding:0;font-family:var(--font);line-height:1;cursor:pointer}
+.tb-brand:hover{color:#eafff9}
+.tb-brand:hover span{color:#8fe0cf}
+.tb-brand svg{width:20px;height:20px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4))}
+.tb-brand span{font-size:11.5px;font-weight:400;letter-spacing:1px;color:var(--txt3)}
+.tb-steps{display:flex;align-items:center;gap:1px;flex:0 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:2px 0}
+.tb-steps::-webkit-scrollbar{display:none}
+.tb-step{display:flex;align-items:center;gap:5px;flex:none;padding:4px 9px;border-radius:999px;border:1px solid transparent;
+  background:transparent;color:var(--txt3);font-size:12.5px;letter-spacing:.4px;font-family:var(--font);cursor:pointer;
+  white-space:nowrap;transition:color .2s,background .2s}
+.tb-step .n{font-size:10px;opacity:.85;font-variant-numeric:tabular-nums}
+.tb-step:hover{color:#c9f5ea;background:rgba(63,216,192,.07)}
+.tb-step.done{color:#6ff2dc}
+.tb-step.done .n{opacity:1}
+.tb-step.on{background:linear-gradient(135deg,#5ff2d9,#2ec9ad);color:#03211b;font-weight:700;border-color:transparent}
+.tb-step .short{display:none}
+.tb-now{flex:none;font-size:12px;letter-spacing:1px;color:var(--txt2);font-variant-numeric:tabular-nums;white-space:nowrap;padding-left:4px}
+.tb-line{height:3px;background:rgba(63,216,192,.1);overflow:hidden}
+.tb-line i{display:block;height:100%;width:0;background:linear-gradient(90deg,#00a38f,#6ff2dc);transition:width .2s linear,margin-left .2s linear}
+.tb-ctrl{display:flex;align-items:center;gap:6px;flex:none;padding-left:6px}
+.tb-time{font-size:11.5px;color:var(--txt3);font-variant-numeric:tabular-nums;letter-spacing:.5px;white-space:nowrap}
+.tb-btn{width:26px;height:26px;border-radius:8px;border:1px solid rgba(63,216,192,.22);background:rgba(63,216,192,.07);color:#cfe9e2;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;padding:0}
+.tb-btn:hover{background:rgba(63,216,192,.18)}
+.tb-btn svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#btnPlay svg{fill:currentColor;stroke:none}
+
+/* ================= 开场遮罩 ================= */
+#overlay{position:fixed;inset:0;z-index:40;display:flex;align-items:center;justify-content:center;background:radial-gradient(1100px 700px at 50% 40%,#0b2b25 0%,#04120f 55%,#010806 100%);transition:opacity .6s}
+#overlay.gone{opacity:0;pointer-events:none}
+#overlay.ov-reset .ov-kicker,
+#overlay.ov-reset .ov-flow li,
+#overlay.ov-reset .ov-pills{animation:none!important;opacity:0;transform:none}
+.ov-in{text-align:center;width:100%;max-width:1000px;padding:0 30px}
+.ov-head{display:flex;align-items:center;justify-content:center;gap:24px}
+.ov-mark{width:96px;height:96px;filter:drop-shadow(0 18px 50px rgba(0,0,0,.5))}
+.ov-in h1{font-size:48px;font-weight:800;letter-spacing:2px;margin:0}
+.ov-in h1 .w-ai{background:linear-gradient(120deg,#6ff2dc,#00a38f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ov-kicker{font-size:13.5px;color:var(--mint);letter-spacing:3px;margin-top:22px;opacity:0;animation:ovStep .6s cubic-bezier(.22,1,.36,1) .05s both}
+.ov-flow{list-style:none;display:flex;justify-content:center;gap:10px;margin-top:14px;padding:0}
+.ov-flow li{position:relative;flex:1 1 0;max-width:220px;display:flex;align-items:flex-start;gap:10px;padding:12px 13px;border:1px solid rgba(63,216,192,.26);border-radius:12px;background:linear-gradient(165deg,rgba(63,216,192,.09),rgba(63,216,192,.02));text-align:left;opacity:0;animation:ovStep .55s cubic-bezier(.22,1,.36,1) both}
+.ov-flow li:nth-child(1){animation-delay:.15s}
+.ov-flow li:nth-child(2){animation-delay:1.15s}
+.ov-flow li:nth-child(3){animation-delay:2.15s}
+.ov-flow li:nth-child(4){animation-delay:3.15s}
+@keyframes ovStep{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+.ov-flow li:not(:last-child)::after{content:"";position:absolute;right:-9px;top:50%;width:6px;height:6px;border-top:1.5px solid rgba(111,242,220,.55);border-right:1.5px solid rgba(111,242,220,.55);transform:translateY(-50%) rotate(45deg)}
+.ov-flow .n{width:24px;height:24px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#5ff2d9,#2ec9ad);color:#03211b;font-size:13px;font-weight:800;box-shadow:0 4px 12px rgba(63,216,192,.25)}
+.ov-flow b{display:block;font-size:15px;font-weight:700;color:#dffbf3;letter-spacing:.5px;line-height:1.45}
+.ov-flow em{display:block;font-style:normal;font-size:12.5px;color:var(--txt3);margin-top:3px;line-height:1.5;letter-spacing:.3px}
+.ov-pills{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:26px;opacity:0;animation:ovStep .6s cubic-bezier(.22,1,.36,1) 3.8s both}
+.ov-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border:1px solid rgba(63,216,192,.32);border-radius:999px;background:linear-gradient(135deg,rgba(63,216,192,.11),rgba(63,216,192,.025));font-size:17px;color:#d8f5ed;letter-spacing:1px;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.ov-pill i{width:6px;height:6px;border-radius:50%;background:#5ff2d9;box-shadow:0 0 9px rgba(111,242,220,.85);flex:none}
+@media(prefers-reduced-motion:reduce){
+  .ov-kicker,.ov-flow li,.ov-pills{animation:none;opacity:1;transform:none}
+}
+.ov-cta{display:flex;align-items:center;justify-content:center;gap:22px;margin-top:34px}
+.ov-count{position:relative;width:54px;height:54px;flex:0 0 auto}
+.ov-count svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ov-count .oc-bg{fill:none;stroke:rgba(63,216,192,.16);stroke-width:3}
+.ov-count .oc-fg{fill:none;stroke:#3fd8c0;stroke-width:3;stroke-linecap:round;stroke-dasharray:106.81;stroke-dashoffset:0}
+.ov-count b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#a8f0dd}
+#btnStart{padding:18px 66px;font-size:24px;font-weight:700;letter-spacing:8px;border:none;border-radius:999px;background:linear-gradient(135deg,#5ff2d9,#2ec9ad);color:#03211b;cursor:pointer;box-shadow:0 16px 50px rgba(63,216,192,.35);font-family:var(--font)}
+#btnStart:hover{transform:translateY(-2px)}
+.ov-hint{font-size:15px;color:var(--txt3);margin-top:24px;letter-spacing:1px}
+.ov-tip{font-size:14px;color:#41605a;margin-top:10px;letter-spacing:1px}
+
+/* =====================================================================
+   移动端竖屏布局（480 × 1040）
+   设计原则：一屏一个意图；标题在上、主体居中、字幕在控制栏上方
+   ===================================================================== */
+
+html.m{--tbh:42px}
+html.m #topbar{background:rgba(3,18,15,.92)}
+html.m .tb-row{padding:0 8px;gap:5px}
+html.m .tb-brand{display:flex;font-size:0;gap:0;padding:0}
+html.m .tb-brand span{display:none}
+html.m .tb-brand-name{display:none}
+html.m .tb-brand svg{width:18px;height:18px}
+html.m .tb-step{padding:4px 5px;font-size:11.5px;gap:0}
+html.m .tb-step .n{display:none}
+html.m .tb-step .full{display:none}
+html.m .tb-step .short{display:inline}
+html.m .tb-now{display:none;font-size:10.5px;min-width:40px;text-align:right;padding-left:0}
+html.m .tb-ctrl{gap:3px;padding-left:2px}
+html.m .tb-time{display:none}
+html.m .tb-btn{width:24px;height:24px;border-radius:7px}
+html.m .tb-btn svg{width:12px;height:12px}
+@media(max-width:360px){html.m .tb-now{display:none}}
+@media(max-width:1100px){.tb-brand span{display:none}.tb-time{display:none}}
+
+html.m #stage{width:480px;height:1040px;background:radial-gradient(420px 760px at 50% 34%,#0b241f 0%,#051511 58%,#020a09 100%)}
+html.m .bg .grid{background-size:40px 40px;-webkit-mask-image:radial-gradient(300px 760px at 50% 42%,#000 32%,transparent 100%);mask-image:radial-gradient(300px 760px at 50% 42%,#000 32%,transparent 100%)}
+html.m .orb.o1{width:340px;height:340px;left:-140px;top:-60px}
+html.m .orb.o2{width:400px;height:400px;right:-180px;bottom:-80px}
+html.m .title{font-size:30px;letter-spacing:3px}
+html.m .sub{font-size:15.5px;letter-spacing:1px;line-height:1.6;padding:0 22px}
+html.m .cap{font-size:18px;letter-spacing:1.5px;bottom:118px;padding:0 20px;white-space:normal;line-height:1.5}
+
+/* S1 需求简述：8 张业务单据上下两排，上行左→右、下行右→左，绕中心形成顺时针 */
+html.m .s1-word{left:240px;top:462px;font-size:64px}
+html.m .s1-sub{left:240px;top:520px;font-size:15px;letter-spacing:4px}
+html.m .doc{width:104px;height:124px;margin:-62px 0 0 -52px;padding:10px;border-radius:8px}
+html.m .doc b{font-size:16px;margin-bottom:5px;letter-spacing:0}
+html.m .doc i{height:5px;margin:6px 0}
+html.m .doc .tag{font-size:10.5px;padding:1px 6px;right:6px;bottom:6px}
+html.m #d1{left:72px!important;top:120px!important}
+html.m #d2{left:184px!important;top:120px!important}
+html.m #d7{left:296px!important;top:120px!important}
+html.m #d3{left:408px!important;top:120px!important}
+html.m #d6{left:72px!important;top:800px!important}
+html.m #d5{left:184px!important;top:800px!important}
+html.m #d8{left:296px!important;top:800px!important}
+html.m #d4{left:408px!important;top:800px!important}
+html.m #s1Cap{bottom:auto;top:636px;font-size:18px}
+html.m .s1-chat{left:240px;top:344px;width:464px;height:648px;border-radius:16px}
+html.m .s1-chat-head{padding:12px 16px;font-size:17px;letter-spacing:1px;gap:8px}
+html.m .s1-chat-head .dot{width:8px;height:8px}
+html.m .s1-chat-head em{font-size:12.5px}
+html.m .s1-chat-body{padding:16px 14px 12px;gap:14px}
+html.m .s1-msg{font-size:19.5px;padding:11px 14px;border-radius:14px}
+html.m .s1-drop{min-height:74px;border-radius:12px}
+html.m .s1-drop-hint{font-size:16px;gap:8px}
+html.m .s1-drop-hint svg{width:20px;height:20px}
+html.m .s1-file{min-width:0;width:100%;padding:10px 12px;gap:10px;border-radius:10px}
+html.m .s1-file svg{width:22px;height:22px}
+html.m .s1-fname{font-size:16px}
+html.m .s1-fbar{min-width:60px;height:7px}
+html.m .s1-fpct{font-size:13px;min-width:34px}
+html.m .s1-input{margin:0 14px 14px;padding:12px 16px;font-size:18px;border-radius:12px;gap:12px}
+html.m .s1-input-txt{min-height:24px}
+html.m .s1-send{font-size:14px;padding:6px 16px;letter-spacing:2px}
+
+/* S2 行业分析：2 × 3 卡片，扫描带自上而下 */
+html.m #s2Title{top:64px!important}
+html.m #s2Sub{top:112px!important}
+html.m .icard{width:210px;height:190px;border-radius:14px}
+html.m .icard .ill{height:108px}
+html.m .icard .ill svg{width:94px;height:78px}
+html.m .icard .name{font-size:19px;letter-spacing:2px}
+html.m .icard .st{bottom:20px;font-size:14.5px}
+html.m .lock-badge{width:38px;height:38px;font-size:19px;top:-12px;right:-12px}
+html.m #s2c1{left:20px!important;top:170px!important}
+html.m #s2c2{left:250px!important;top:170px!important}
+html.m #s2c3{left:20px!important;top:390px!important}
+html.m #s2c4{left:250px!important;top:390px!important}
+html.m #s2c5{left:20px!important;top:610px!important}
+html.m #s2c6{left:250px!important;top:610px!important}
+html.m #s2Beam{left:20px;right:20px;top:166px;width:auto;height:42px;margin-left:0;
+  background:linear-gradient(180deg,transparent,rgba(63,216,192,.34) 30%,rgba(132,246,226,.82) 50%,rgba(63,216,192,.34) 70%,transparent)}
+html.m #s2Beam::after{left:4px;right:4px;top:50%;bottom:auto;width:auto;height:3px;margin:-1.5px 0 0;
+  box-shadow:0 0 18px 6px rgba(111,242,220,.95)}
+
+/* S3 精密制造：大字 + 下半屏零件簇 */
+html.m .s3-title{left:240px;top:300px;font-size:60px;letter-spacing:4px}
+html.m .s3-sub{left:240px;top:390px;font-size:14.5px;letter-spacing:1px;padding:0 18px;white-space:normal;text-align:center;width:100%}
+
+/* S4 业务拆解：左侧零件、右侧流程词条 */
+html.m .s4-tag{left:20px;top:44px;font-size:17px;padding:9px 15px;letter-spacing:1.5px}
+html.m .s4-tag .dot{width:7px;height:7px}
+html.m #s4c1{left:390px!important;top:190px!important}
+html.m #s4c2{left:390px!important;top:290px!important}
+html.m #s4c3{left:390px!important;top:390px!important}
+html.m #s4c4{left:390px!important;top:490px!important}
+html.m #s4c5{left:390px!important;top:590px!important}
+html.m #s4c6{left:390px!important;top:690px!important}
+
+/* S5 流程成链：手机居中竖排，能量自上而下 */
+html.m .chip{height:56px}
+html.m #sc5 .chip{width:260px;height:78px;margin:-39px 0 0 -130px;font-size:32px;gap:9px;padding:0 16px}
+html.m #sc5 .chip .ci{width:24px;height:24px}
+html.m .chip .ci{width:18px;height:18px}
+html.m #s5Cap{top:56px;bottom:auto;font-size:22px;letter-spacing:2px}
+html.m #s5c1{left:150px!important;top:300px!important}
+html.m #s5c2{left:330px!important;top:262px!important}
+html.m #s5c3{left:160px!important;top:430px!important}
+html.m #s5c4{left:340px!important;top:472px!important}
+html.m #s5c5{left:150px!important;top:606px!important}
+html.m #s5c6{left:330px!important;top:684px!important}
+html.m #s5Pulse{left:229px;top:209px}
+
+/* S6 市场匹配：上方地图、下方市场信息卡 */
+html.m #s6Title{top:58px!important}
+html.m #s6Sub{top:106px!important}
+html.m .map-panel{left:20px;top:150px;width:440px;height:620px;border-radius:16px}
+html.m .map-svg{height:300px;bottom:auto}
+html.m .mp-dots{background-size:26px 26px;-webkit-mask-image:radial-gradient(240px 180px at 50% 22%,#000 40%,transparent 100%);mask-image:radial-gradient(240px 180px at 50% 22%,#000 40%,transparent 100%)}
+html.m .mlab{display:none}
+html.m .m-beam{left:14px;right:14px;top:0;bottom:auto;width:auto;height:56px;margin-left:0;
+  background:linear-gradient(180deg,transparent,rgba(63,216,192,.16) 35%,rgba(111,242,220,.4) 50%,rgba(63,216,192,.16) 65%,transparent)}
+html.m .mtag{width:384px;left:28px!important;white-space:normal;font-size:15.5px;padding:12px 15px;line-height:1.5;border-radius:12px;gap:6px}
+html.m #s6Tag1{top:352px!important}
+html.m #s6Tag2{top:428px!important}
+html.m #s6Tag3{top:504px!important}
+html.m #s6Out{left:290px!important;top:262px!important;width:auto;white-space:nowrap;font-size:14px;padding:7px 14px}
+html.m #s6Cap{bottom:118px}
+
+/* S7 方案交付：邮件面板占满宽度 */
+html.m .gw1{left:20px;top:210px;width:440px;height:620px}
+html.m .gw2{display:none}
+html.m .s7toast{left:20px;top:96px;width:440px;padding:14px 16px;gap:12px;border-radius:14px}
+html.m .s7toast .st-ico{width:40px;height:40px;border-radius:10px}
+html.m .s7toast .st-ico svg{width:21px;height:21px}
+html.m .s7toast .st-top b{font-size:17px}
+html.m .s7toast .st-top span{font-size:11.5px}
+html.m .s7toast .st-txt{font-size:14px}
+html.m .s7toast .st-src{font-size:11.5px}
+html.m .mail{width:440px;padding:20px 20px 22px;border-radius:16px}
+html.m .mail-ico{width:42px;height:42px}
+html.m .mail-head b{font-size:19px}
+html.m .mail-head span{font-size:13px}
+html.m .mail-subj{margin-top:16px;font-size:26px;line-height:1.4}
+html.m .mail-body{font-size:15.5px;line-height:1.8}
+html.m .dl-btn{margin-top:18px;width:100%;justify-content:center;padding:14px 18px;font-size:18px}
+html.m .dl-state{font-size:14px}
+html.m .cursor{left:400px;top:820px;width:30px;height:30px}
+html.m #s7Cap{bottom:148px}
+
+/* S8 运营：KPI 2×2，图表与列表纵向排列，三份清单原地覆盖弹出 */
+html.m .cockpit{left:10px;top:20px;width:460px;height:760px;border-radius:16px}
+html.m .ck-top{height:48px;padding:0 14px;gap:8px}
+html.m .ck-top .mark{width:22px;height:22px}
+html.m .ck-top b{font-size:15px;letter-spacing:.5px}
+html.m .ck-run{font-size:11.5px;margin-left:4px}
+html.m .ck-side{display:none}
+html.m .ck-dots i{width:7px;height:7px}
+html.m .kpi{width:208px;height:88px;padding:12px 14px;border-radius:12px}
+html.m .k-lab{font-size:13.5px}
+html.m .k-val{font-size:28px;margin-top:6px}
+html.m .k-val small{font-size:15px;margin:0 2px}
+html.m .k-delta{right:10px;top:10px;font-size:12px;padding:2px 7px}
+html.m #s8k1{left:16px!important;top:66px!important}
+html.m #s8k2{left:236px!important;top:66px!important}
+html.m #s8k3{left:16px!important;top:162px!important}
+html.m #s8k4{left:236px!important;top:162px!important}
+html.m .ck-chart{left:16px;top:264px;width:428px;height:248px}
+html.m .ck-list{left:16px;top:526px;width:428px;height:214px}
+html.m .panel-t{font-size:16px;letter-spacing:1.5px;padding:12px 14px 9px}
+html.m .ck-chart svg{height:calc(100% - 40px)}
+html.m .axis-lab{font-size:24px}
+html.m .row{font-size:13.5px;padding:8px 12px;gap:7px}
+html.m .row .rdot{width:7px;height:7px}
+html.m .chipst{font-size:12px;padding:2px 7px}
+html.m .fpanel{left:20px;width:440px;height:246px;border-radius:14px}
+html.m .p1,html.m .p2,html.m .p3{top:524px}
+html.m .fp-head{font-size:17px;padding:11px 14px;letter-spacing:1px}
+html.m .fp-row{font-size:14.5px;padding:8px 14px;gap:9px}
+html.m .g-lab{width:88px}
+html.m .gtrack{width:140px}
+html.m .g-w{font-size:12.5px}
+html.m .fin-dim{-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+html.m .fin-box{top:380px;padding:0 24px}
+html.m .fin-head{gap:14px}
+html.m .fin-mark{width:64px;height:64px}
+html.m .fin-title{font-size:28px;letter-spacing:0}
+html.m .fin-sub{font-size:19px;letter-spacing:2px;margin-top:16px;line-height:1.6}
+html.m .fin-tiny{font-size:12.5px;letter-spacing:1.5px;margin-top:14px;line-height:1.6}
+html.m .fin-cta{margin-top:22px;height:60px;padding:0 30px;font-size:20px;letter-spacing:1.5px}
+
+/* 移动端：底部控制栏已移除，操作统一收进顶部 topbar */
+
+/* 封面：竖屏单列，按钮够大 */
+html.m .ov-in{padding:0 22px;max-width:460px}
+html.m .ov-head{gap:14px}
+html.m .ov-mark{width:64px;height:64px}
+html.m .ov-in h1{font-size:28px;letter-spacing:0;white-space:nowrap}
+html.m .ov-kicker{font-size:12px;letter-spacing:2px;margin-top:16px}
+html.m .ov-flow{flex-direction:column;gap:8px;margin-top:14px;width:100%;max-width:340px;margin-left:auto;margin-right:auto}
+html.m .ov-flow li{max-width:none;flex:none;padding:9px 12px;gap:9px}
+html.m .ov-flow li:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-7px;transform:translateX(-50%) rotate(135deg)}
+html.m .ov-flow .n{width:22px;height:22px;font-size:12px}
+html.m .ov-flow b{font-size:14px}
+html.m .ov-flow em{font-size:12px;margin-top:2px}
+html.m .ov-pills{margin-top:16px;gap:6px}
+html.m .ov-pill{font-size:12.5px;padding:6px 11px;gap:5px;letter-spacing:.5px}
+html.m .ov-pill i{width:5px;height:5px}
+html.m .ov-cta{gap:14px;margin-top:26px}
+html.m .ov-count{width:46px;height:46px}
+html.m .ov-count b{font-size:17px}
+html.m #btnStart{padding:14px 26px;font-size:19px;letter-spacing:4px;flex:1;max-width:230px}
+html.m .ov-hint{font-size:13px;margin-top:16px;line-height:1.6}
+html.m .ov-tip{font-size:12px;line-height:1.7;margin-top:8px}
+/* 矮屏手机（如 360 × 640）：封面整体收一档，保证 4 步与按钮同屏 */
+@media(max-height:720px){
+  html.m .ov-in{padding:0 16px}
+  html.m .ov-head{gap:10px}
+  html.m .ov-mark{width:52px;height:52px}
+  html.m .ov-in h1{font-size:24px}
+  html.m .ov-kicker{font-size:10.5px;margin-top:10px}
+  html.m .ov-flow{gap:6px;margin-top:10px}
+  html.m .ov-flow li{padding:7px 10px}
+  html.m .ov-flow .n{width:20px;height:20px;font-size:11px}
+  html.m .ov-flow b{font-size:13px}
+  html.m .ov-flow em{font-size:11px}
+  html.m .ov-pills{margin-top:10px;gap:5px}
+  html.m .ov-pill{font-size:11.5px;padding:5px 9px;gap:4px}
+  html.m .ov-pill i{width:4px;height:4px}
+  html.m .fin-head{gap:10px}
+  html.m .fin-mark{width:52px;height:52px}
+  html.m .fin-title{font-size:24px}
+  html.m .ov-cta{gap:12px;margin-top:16px}
+  html.m .ov-count{width:40px;height:40px}
+  html.m .ov-count b{font-size:15px}
+  html.m #btnStart{padding:12px 22px;font-size:17px;letter-spacing:3px}
+  html.m .ov-hint{font-size:11.5px;margin-top:10px}
+  html.m .ov-tip{font-size:10.5px;margin-top:6px}
+}
+
+/* ================= v1.6 全息工程舞台 ================= */
+#stage{border:1px solid rgba(111,242,220,.16);border-radius:24px;box-shadow:0 40px 110px #0009,0 0 90px #00796b18;isolation:isolate}
+.bg .grid{background-size:56px 56px;opacity:.75}
+.bg::after{content:"";position:absolute;left:-20%;right:-20%;height:400px;bottom:-210px;background-image:linear-gradient(#3fd8c025 1px,transparent 1px),linear-gradient(90deg,#3fd8c025 1px,transparent 1px);background-size:64px 64px;transform:perspective(500px) rotateX(58deg);mask-image:linear-gradient(transparent,#0008)}
+.stage-fx{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.fx-ring{position:absolute;left:50%;top:50%;width:940px;height:940px;margin:-470px;border:1px solid #6ff2dc20;border-radius:50%;opacity:0;box-shadow:inset 0 0 65px #00796b12,0 0 65px #00796b10}
+.fx-ring::before,.fx-ring::after{content:"";position:absolute;border-radius:50%;inset:25px;border:1px dashed #6ff2dc25}
+.fx-ring::after{inset:92px;border:1px solid #6ff2dc12}
+.fx-sweep{position:absolute;inset:-30%;background:linear-gradient(110deg,transparent 44%,#6ff2dc12 49%,#9cfff321 50%,transparent 55%);opacity:0}
+.fx-motes{position:absolute;inset:0}
+.fx-motes i{position:absolute;width:3px;height:3px;border-radius:50%;background:#acffef;box-shadow:0 0 14px #6ff2dc;opacity:.3}
+.stage-hud{position:absolute;left:32px;right:32px;bottom:20px;display:flex;align-items:center;gap:12px;color:#75a399;font:12px var(--font);letter-spacing:2px;pointer-events:none;z-index:12}
+.hud-dot{width:5px;height:5px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint)}
+.hud-index{color:#b1e7dc;font-variant-numeric:tabular-nums}
+.hud-meter{width:88px;height:3px;background:#3fd8c019;overflow:hidden;border-radius:3px}
+.hud-meter i{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--brand),var(--glow));transform:scaleX(0);transform-origin:left}
+.hud-right{margin-left:auto;font-size:10px;color:#648c82;letter-spacing:3px}
+.scene.on{isolation:isolate}
+.title{font-weight:750;letter-spacing:5px;text-shadow:0 2px 18px #0008,0 0 36px #3fd8c033}
+.icard,.mail,.cockpit,.fpanel,.s1-chat{border-color:#6ff2dc38;background-image:linear-gradient(145deg,#163b33e8,#071c18f5 65%);box-shadow:0 22px 60px #0006,inset 0 1px #d6fff01a,inset 0 -1px #3fd8c00c}
+.fpanel{background:linear-gradient(145deg,#163b33,#071c18)}
+.icard::before,.mail::before,.fpanel::before{content:"";position:absolute;left:12%;right:12%;top:-1px;height:1px;background:linear-gradient(90deg,transparent,#9affdf99,transparent)}
+.icard .ill svg{filter:drop-shadow(0 8px 12px #0008)}
+.icard.locked{background-image:linear-gradient(145deg,#155547,#08271f);border-color:#94ffde;box-shadow:0 0 0 4px #3fd8c010,0 0 48px #3fd8c02b,inset 0 1px #eafff966}
+.icard.locked .ill{filter:drop-shadow(0 0 12px #3fd8c04d)}
+.chip{background:linear-gradient(145deg,#1c493e,#08241e);border-color:#72e8c987;box-shadow:0 12px 28px #0005,inset 0 1px #dcfff028,0 0 22px #3fd8c018}
+#sc5 .chip{white-space:nowrap;letter-spacing:1px}
+#sc5 .chip::after{content:"";position:absolute;left:18px;right:18px;bottom:8px;height:2px;background:linear-gradient(90deg,transparent,#6ff2dc55,transparent)}
+.s3-title{background:linear-gradient(165deg,#fff 20%,#dcfff4 46%,#63d4bd 85%);background-clip:text;-webkit-background-clip:text;color:transparent;text-shadow:0 0 60px #3fd8c035}
+.pedestal{fill:#3fd8c014;stroke:#6ff2dc66;stroke-width:2;stroke-dasharray:8 12;filter:drop-shadow(0 0 16px #3fd8c070)}
+#s3Parts .pt,#s4Parts .pt{filter:drop-shadow(0 8px 12px #0009)}
+.map-panel{background:radial-gradient(ellipse at 80% 30%,#10473b66,transparent 60%),linear-gradient(145deg,#0d2823,#071814);border-color:#6ff2dc40}
+.mtag{border-radius:12px;box-shadow:0 10px 24px #0005,inset 3px 0 #6ff2dc80}
+.s1-word{filter:drop-shadow(0 0 32px #3fd8c04d)}
+.doc{border:1px solid #d4fff5;box-shadow:0 18px 36px #0006,0 0 20px #3fd8c022;background:linear-gradient(135deg,#fff,#dceee6)}
+.kpi{border-color:#6ff2dc30;background:linear-gradient(130deg,#1b453bcc,#0a221ccc)}
+.kpi::after{content:"";position:absolute;left:20px;right:20px;bottom:0;height:1px;background:linear-gradient(90deg,#6ff2dc80,transparent)}
+#linePath{filter:drop-shadow(0 0 5px #6ff2dc88)}
+/* 同名 gbar 原来同时用于桌面栏和甘特条，必须分域，避免清单继承透明与 44px 高度。 */
+#sc7 .desk>.gbar{top:auto;height:44px;transform:none;background:rgba(4,14,12,.85);border-radius:0;border-top:1px solid #3fd8c022}
+.gtrack>.gbar{top:0;bottom:0;right:auto;height:100%;opacity:1;border:0;border-radius:6px;box-shadow:0 0 9px #6ff2dc44}
+.fin-dim{background:radial-gradient(900px 620px at 50% 50%,rgba(2,8,7,.985),rgba(2,8,7,.997))}
+.fin-box{z-index:1}
+.fin-dim::after{content:"";position:absolute;width:750px;height:750px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid #6ff2dc20;box-shadow:0 0 0 32px #3fd8c006,0 0 0 80px #3fd8c003;background:radial-gradient(#00796b1f,transparent 65%)}
+#topbar{box-shadow:0 8px 30px #0004;background:linear-gradient(90deg,#04120fee,#0d2a22ee,#04120fee)}
+.tb-step{position:relative;overflow:hidden;transition:color .2s,background .2s,box-shadow .2s}
+.tb-step.on{background:linear-gradient(120deg,#aaffdf,#4cdab8);box-shadow:0 0 16px #3fd8c02e}
+.tb-step.on::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:#00796b99;transform:scaleX(var(--chapter-progress,0));transform-origin:left}
+button:focus-visible,a:focus-visible{outline:2px solid #c6ffed;outline-offset:4px}
+#overlay{padding-top:var(--tbh);overflow:hidden;isolation:isolate;transition:opacity .28s}
+.cover-orbit{position:absolute;left:50%;top:50%;width:min(88vw,940px);aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid #6ff2dc1c;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,#00796b16,transparent 66%);box-shadow:0 0 90px #00796b12,inset 0 0 90px #00796b08}
+.cover-orbit::before,.cover-orbit::after{content:"";position:absolute;inset:24px;border:1px dashed #6ff2dc1e;border-radius:50%}
+.cover-orbit::after{inset:70px;border:1px solid #6ff2dc12}
+.ov-eyebrow{display:flex;justify-content:center;align-items:center;gap:10px;color:#82b5a8;font-size:11px;letter-spacing:4px;margin-bottom:24px}
+.ov-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint)}
+.ov-in h1{text-shadow:0 0 55px #6ff2dc20}
+.ov-kicker{font-size:15px;color:#a1d8c9;letter-spacing:2px;margin-top:22px}
+.ov-flow{gap:12px;margin-top:25px}
+.ov-flow li{min-height:92px;padding:17px 13px;border-color:#6ff2dc35;background:linear-gradient(145deg,#1b493d66,#0a1e1766);box-shadow:0 12px 30px #0003,inset 0 1px #d6fff014}
+.ov-flow li::before{content:"";position:absolute;top:-1px;left:15px;width:28px;height:2px;background:#7ceac899;border-radius:2px}
+.ov-flow em{color:#8ab7a8}
+.ov-pill{background:#103b2d66;border-color:#6ff2dc28}
+#btnStart,.fin-cta{border:1px solid #caffdf80;box-shadow:0 12px 34px #3fd8c02e,inset 0 1px #eafff9aa;transition:transform .2s,box-shadow .2s}
+#btnStart:hover,.fin-cta:hover{box-shadow:0 12px 44px #3fd8c059}
+.ov-tip{color:#719b90}
+#stage.is-paused .typing::after{animation-play-state:paused}
+html.m #stage{border-radius:16px}
+html.m .fx-ring{width:760px;height:760px;margin:-380px}
+html.m .stage-hud{left:20px;right:20px;bottom:28px;font-size:12px;gap:8px;letter-spacing:1px}
+html.m .hud-right{display:none}
+html.m .hud-meter{margin-left:auto;width:90px}
+html.m .cover-orbit{width:700px}
+html.m .ov-eyebrow{font-size:9px;letter-spacing:3px;margin-bottom:18px}
+html.m .ov-flow li{min-height:0}
+html.m .fin-dim::after{width:560px;height:560px}
+html.m #sc5 .chip{letter-spacing:1px}
+@media(max-height:720px){html.m .ov-eyebrow{margin-bottom:10px;font-size:8px}}
+@media(prefers-reduced-motion:reduce){#overlay,.tb-step,.tb-line i{transition:none}.s1-txt.typing::after{animation:none}.fx-motes{display:none}}
+</style>
+</head>
+<body>
+<!-- ============ 隐藏矢量符号库 ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <!-- 品牌徽章：官方 LOGO avatar_odooai.png（base64 内联，保持单文件零外链） -->
+  <symbol id="sym-mark" viewBox="0 0 100 100">
+    <image x="0" y="0" width="100" height="100" href="data:image/png;base64,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"/>
+  </symbol>
+  <!-- 邮件 / 下载 -->
+  <symbol id="sym-mail" viewBox="0 0 24 24">
+    <rect x="2.5" y="5" width="19" height="14" rx="3" fill="none" stroke="#eafff9" stroke-width="1.8"/>
+    <path d="M4 7.5 12 13.5 20 7.5" fill="none" stroke="#eafff9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="sym-dl" viewBox="0 0 24 24">
+    <path d="M12 4v10m0 0 4-4m-4 4-4-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M5 19h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+  </symbol>
+  <!-- Font Awesome Free 6.5.2（CC BY 4.0）：S5 流程节点图标 -->
+  <symbol id="fa-quote" viewBox="0 0 384 512">
+    <path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM64 80c0-8.8 7.2-16 16-16h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16zm128 72c8.8 0 16 7.2 16 16v17.3c8.5 1.2 16.7 3.1 24.1 5.1c8.5 2.3 13.6 11 11.3 19.6s-11 13.6-19.6 11.3c-11.1-3-22-5.2-32.1-5.3c-8.4-.1-17.4 1.8-23.6 5.5c-5.7 3.4-8.1 7.3-8.1 12.8c0 3.7 1.3 6.5 7.3 10.1c6.9 4.1 16.6 7.1 29.2 10.9l.5 .1 0 0 0 0c11.3 3.4 25.3 7.6 36.3 14.6c12.1 7.6 22.4 19.7 22.7 38.2c.3 19.3-9.6 33.3-22.9 41.6c-7.7 4.8-16.4 7.6-25.1 9.1V440c0 8.8-7.2 16-16 16s-16-7.2-16-16V422.2c-11.2-2.1-21.7-5.7-30.9-8.9l0 0 0 0c-2.1-.7-4.2-1.4-6.2-2.1c-8.4-2.8-12.9-11.9-10.1-20.2s11.9-12.9 20.2-10.1c2.5 .8 4.8 1.6 7.1 2.4l0 0 0 0 0 0c13.6 4.6 24.6 8.4 36.3 8.7c9.1 .3 17.9-1.7 23.7-5.3c5.1-3.2 7.9-7.3 7.8-14c-.1-4.6-1.8-7.8-7.7-11.6c-6.8-4.3-16.5-7.4-29-11.2l-1.6-.5 0 0c-11-3.3-24.3-7.3-34.8-13.7c-12-7.2-22.6-18.9-22.7-37.3c-.1-19.4 10.8-32.8 23.8-40.5c7.5-4.4 15.8-7.2 24.1-8.7V232c0-8.8 7.2-16 16-16z"/>
+  </symbol>
+  <symbol id="fa-gears" viewBox="0 0 640 512">
+    <path d="M308.5 135.3c7.1-6.3 9.9-16.2 6.2-25c-2.3-5.3-4.8-10.5-7.6-15.5L304 89.4c-3-5-6.3-9.9-9.8-14.6c-5.7-7.6-15.7-10.1-24.7-7.1l-28.2 9.3c-10.7-8.8-23-16-36.2-20.9L199 27.1c-1.9-9.3-9.1-16.7-18.5-17.8C173.9 8.4 167.2 8 160.4 8h-.7c-6.8 0-13.5 .4-20.1 1.2c-9.4 1.1-16.6 8.6-18.5 17.8L115 56.1c-13.3 5-25.5 12.1-36.2 20.9L50.5 67.8c-9-3-19-.5-24.7 7.1c-3.5 4.7-6.8 9.6-9.9 14.6l-3 5.3c-2.8 5-5.3 10.2-7.6 15.6c-3.7 8.7-.9 18.6 6.2 25l22.2 19.8C32.6 161.9 32 168.9 32 176s.6 14.1 1.7 20.9L11.5 216.7c-7.1 6.3-9.9 16.2-6.2 25c2.3 5.3 4.8 10.5 7.6 15.6l3 5.2c3 5.1 6.3 9.9 9.9 14.6c5.7 7.6 15.7 10.1 24.7 7.1l28.2-9.3c10.7 8.8 23 16 36.2 20.9l6.1 29.1c1.9 9.3 9.1 16.7 18.5 17.8c6.7 .8 13.5 1.2 20.4 1.2s13.7-.4 20.4-1.2c9.4-1.1 16.6-8.6 18.5-17.8l6.1-29.1c13.3-5 25.5-12.1 36.2-20.9l28.2 9.3c9 3 19 .5 24.7-7.1c3.5-4.7 6.8-9.5 9.8-14.6l3.1-5.4c2.8-5 5.3-10.2 7.6-15.5c3.7-8.7 .9-18.6-6.2-25l-22.2-19.8c1.1-6.8 1.7-13.8 1.7-20.9s-.6-14.1-1.7-20.9l22.2-19.8zM112 176a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM504.7 500.5c6.3 7.1 16.2 9.9 25 6.2c5.3-2.3 10.5-4.8 15.5-7.6l5.4-3.1c5-3 9.9-6.3 14.6-9.8c7.6-5.7 10.1-15.7 7.1-24.7l-9.3-28.2c8.8-10.7 16-23 20.9-36.2l29.1-6.1c9.3-1.9 16.7-9.1 17.8-18.5c.8-6.7 1.2-13.5 1.2-20.4s-.4-13.7-1.2-20.4c-1.1-9.4-8.6-16.6-17.8-18.5L583.9 307c-5-13.3-12.1-25.5-20.9-36.2l9.3-28.2c3-9 .5-19-7.1-24.7c-4.7-3.5-9.6-6.8-14.6-9.9l-5.3-3c-5-2.8-10.2-5.3-15.6-7.6c-8.7-3.7-18.6-.9-25 6.2l-19.8 22.2c-6.8-1.1-13.8-1.7-20.9-1.7s-14.1 .6-20.9 1.7l-19.8-22.2c-6.3-7.1-16.2-9.9-25-6.2c-5.3 2.3-10.5 4.8-15.6 7.6l-5.2 3c-5.1 3-9.9 6.3-14.6 9.9c-7.6 5.7-10.1 15.7-7.1 24.7l9.3 28.2c-8.8 10.7-16 23-20.9 36.2L315.1 313c-9.3 1.9-16.7 9.1-17.8 18.5c-.8 6.7-1.2 13.5-1.2 20.4s.4 13.7 1.2 20.4c1.1 9.4 8.6 16.6 17.8 18.5l29.1 6.1c5 13.3 12.1 25.5 20.9 36.2l-9.3 28.2c-3 9-.5 19 7.1 24.7c4.7 3.5 9.5 6.8 14.6 9.8l5.4 3.1c5 2.8 10.2 5.3 15.5 7.6c8.7 3.7 18.6 .9 25-6.2l19.8-22.2c6.8 1.1 13.8 1.7 20.9 1.7s14.1-.6 20.9-1.7l19.8 22.2zM464 304a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+  </symbol>
+  <symbol id="fa-calendar" viewBox="0 0 448 512">
+    <path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H336zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H208zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H336c-8.8 0-16 7.2-16 16z"/>
+  </symbol>
+  <symbol id="fa-industry" viewBox="0 0 576 512">
+    <path d="M64 32C46.3 32 32 46.3 32 64V304v48 80c0 26.5 21.5 48 48 48H496c26.5 0 48-21.5 48-48V304 152.2c0-18.2-19.4-29.7-35.4-21.1L352 215.4V152.2c0-18.2-19.4-29.7-35.4-21.1L160 215.4V64c0-17.7-14.3-32-32-32H64z"/>
+  </symbol>
+  <symbol id="fa-qc" viewBox="0 0 384 512">
+    <path d="M192 0c-41.8 0-77.4 26.7-90.5 64H64C28.7 64 0 92.7 0 128V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H282.5C269.4 26.7 233.8 0 192 0zm0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM305 273L177 401c-9.4 9.4-24.6 9.4-33.9 0L79 337c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L271 239c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>
+  </symbol>
+  <symbol id="fa-coins" viewBox="0 0 512 512">
+    <path d="M512 80c0 18-14.3 34.6-38.4 48c-29.1 16.1-72.5 27.5-122.3 30.9c-3.7-1.8-7.4-3.5-11.3-5C300.6 137.4 248.2 128 192 128c-8.3 0-16.4 .2-24.5 .6l-1.1-.6C142.3 114.6 128 98 128 80c0-44.2 86-80 192-80S512 35.8 512 80zM160.7 161.1c10.2-.7 20.7-1.1 31.3-1.1c62.2 0 117.4 12.3 152.5 31.4C369.3 204.9 384 221.7 384 240c0 4-.7 7.9-2.1 11.7c-4.6 13.2-17 25.3-35 35.5c0 0 0 0 0 0c-.1 .1-.3 .1-.4 .2l0 0 0 0c-.3 .2-.6 .3-.9 .5c-35 19.4-90.8 32-153.6 32c-59.6 0-112.9-11.3-148.2-29.1c-1.9-.9-3.7-1.9-5.5-2.9C14.3 274.6 0 258 0 240c0-34.8 53.4-64.5 128-75.4c10.5-1.5 21.4-2.7 32.7-3.5zM416 240c0-21.9-10.6-39.9-24.1-53.4c28.3-4.4 54.2-11.4 76.2-20.5c16.3-6.8 31.5-15.2 43.9-25.5V176c0 19.3-16.5 37.1-43.8 50.9c-14.6 7.4-32.4 13.7-52.4 18.5c.1-1.8 .2-3.5 .2-5.3zm-32 96c0 18-14.3 34.6-38.4 48c-1.8 1-3.6 1.9-5.5 2.9C304.9 404.7 251.6 416 192 416c-62.8 0-118.6-12.6-153.6-32C14.3 370.6 0 354 0 336V300.6c12.5 10.3 27.6 18.7 43.9 25.5C83.4 342.6 135.8 352 192 352s108.6-9.4 148.1-25.9c7.8-3.2 15.3-6.9 22.4-10.9c6.1-3.4 11.8-7.2 17.2-11.2c1.5-1.1 2.9-2.3 4.3-3.4V304v5.7V336zm32 0V304 278.1c19-4.2 36.5-9.5 52.1-16c16.3-6.8 31.5-15.2 43.9-25.5V272c0 10.5-5 21-14.9 30.9c-16.3 16.3-45 29.7-81.3 38.4c.1-1.7 .2-3.5 .2-5.3zM192 448c56.2 0 108.6-9.4 148.1-25.9c16.3-6.8 31.5-15.2 43.9-25.5V432c0 44.2-86 80-192 80S0 476.2 0 432V396.6c12.5 10.3 27.6 18.7 43.9 25.5C83.4 438.6 135.8 448 192 448z"/>
+  </symbol>
+  <symbol id="fa-calc" viewBox="0 0 384 512">
+    <path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zm16 64H304c8.8 0 16 7.2 16 16V184c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V80c0-8.8 7.2-16 16-16zm16 56v48H160V120H96zm96 0v48h48V120h-48zm96 0v48h48V120h-48zM80 248c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V248zm112 0c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16h-48c-8.8 0-16-7.2-16-16V248zm112 0c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16h-48c-8.8 0-16-7.2-16-16V248zM96 352c-8.8 0-16 7.2-16 16v48c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16V368c0-8.8-7.2-16-16-16H96zm112 0c-8.8 0-16 7.2-16 16v48c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16V368c0-8.8-7.2-16-16-16h-48zm112 0c-8.8 0-16 7.2-16 16v48c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16V368c0-8.8-7.2-16-16-16h-48z"/>
+  </symbol>
+  <!-- 机加工零件（供舞台大图与拆解场景复用，描边跟随 currentColor） -->
+  <g id="def-gear">
+    <path class="pf" d="M60 2 L78 8 L77 14 L58 15 L51 32 L63 46 L59 51 L43 42 L28 53 L32 71 L26 74 L16 58 L-2 60 L-8 78 L-14 77 L-15 58 L-32 51 L-46 63 L-51 59 L-42 43 L-53 28 L-71 32 L-74 26 L-58 16 L-60 -2 L-78 -8 L-77 -14 L-58 -15 L-51 -32 L-63 -46 L-59 -51 L-43 -42 L-28 -53 L-32 -71 L-26 -74 L-16 -58 L2 -60 L8 -78 L14 -77 L15 -58 L32 -51 L46 -63 L51 -59 L42 -43 L53 -28 L71 -32 L74 -26 L58 -16 Z"/>
+    <circle class="ph" r="26"/>
+    <circle class="pd" r="9"/>
+  </g>
+  <g id="def-gearS">
+    <path class="pf" d="M34 7 L44 13 L43 17 L31 15 L24 26 L28 36 L25 39 L16 31 L4 35 L2 46 L-3 46 L-5 35 L-17 31 L-26 38 L-29 35 L-24 25 L-32 15 L-43 16 L-45 11 L-34 6 L-34 -7 L-44 -13 L-43 -17 L-31 -15 L-24 -26 L-28 -36 L-25 -39 L-16 -31 L-4 -35 L-2 -46 L3 -46 L5 -35 L17 -31 L26 -38 L29 -35 L24 -25 L32 -15 L43 -16 L45 -11 L34 -6 Z"/>
+    <circle class="ph" r="15"/>
+    <circle class="pd" r="6"/>
+  </g>
+  <g id="def-shaft">
+    <rect class="pf" x="-140" y="-9" width="46" height="18" rx="6"/>
+    <rect class="pf" x="94" y="-9" width="46" height="18" rx="6"/>
+    <rect class="pf" x="-96" y="-22" width="192" height="44" rx="10"/>
+    <line class="pl" x1="-62" y1="-22" x2="-62" y2="22"/>
+    <line class="pl" x1="62" y1="-22" x2="62" y2="22"/>
+    <line class="pl" x1="-20" y1="-7" x2="20" y2="-7"/>
+    <line class="pl" x1="-20" y1="1" x2="20" y2="1"/>
+    <line class="pl" x1="-20" y1="9" x2="20" y2="9"/>
+  </g>
+  <g id="def-flange">
+    <circle class="pf" r="66"/>
+    <circle class="ph" r="20"/>
+    <circle class="pd" cx="0" cy="-46" r="8"/>
+    <circle class="pd" cx="40" cy="-23" r="8"/>
+    <circle class="pd" cx="40" cy="23" r="8"/>
+    <circle class="pd" cx="0" cy="46" r="8"/>
+    <circle class="pd" cx="-40" cy="23" r="8"/>
+    <circle class="pd" cx="-40" cy="-23" r="8"/>
+  </g>
+  <g id="def-housing">
+    <rect class="pf" x="-100" y="-75" width="200" height="150" rx="18"/>
+    <circle class="ph" r="34"/>
+    <circle class="pd" r="13"/>
+    <circle class="pd" cx="-80" cy="-55" r="6"/>
+    <circle class="pd" cx="80" cy="-55" r="6"/>
+    <circle class="pd" cx="-80" cy="55" r="6"/>
+    <circle class="pd" cx="80" cy="55" r="6"/>
+    <rect class="pd" x="-34" y="52" width="68" height="14" rx="7"/>
+  </g>
+  <g id="def-ring">
+    <circle class="pf" r="58"/>
+    <circle class="ph" r="42"/>
+    <circle class="pd" r="24"/>
+    <circle class="pb" cx="33" cy="0" r="6"/>
+    <circle class="pb" cx="23.3" cy="23.3" r="6"/>
+    <circle class="pb" cx="0" cy="33" r="6"/>
+    <circle class="pb" cx="-23.3" cy="23.3" r="6"/>
+    <circle class="pb" cx="-33" cy="0" r="6"/>
+    <circle class="pb" cx="-23.3" cy="-23.3" r="6"/>
+    <circle class="pb" cx="0" cy="-33" r="6"/>
+    <circle class="pb" cx="23.3" cy="-23.3" r="6"/>
+  </g>
+  <g id="def-bolt">
+    <path class="pf" d="M22 -34 L11 -15 L-11 -15 L-22 -34 L-11 -53 L11 -53 Z"/>
+    <rect class="pf" x="-7" y="-16" width="14" height="62" rx="5"/>
+    <line class="pl" x1="-7" y1="-2" x2="7" y2="-2"/>
+    <line class="pl" x1="-7" y1="10" x2="7" y2="10"/>
+    <line class="pl" x1="-7" y1="22" x2="7" y2="22"/>
+    <line class="pl" x1="-7" y1="34" x2="7" y2="34"/>
+  </g>
+  <!-- 行业图标 -->
+  <symbol id="sym-machining" viewBox="0 0 120 100">
+    <use href="#def-gear" transform="translate(48,50) scale(.44)"/>
+    <use href="#def-gearS" transform="translate(88,70) scale(.62)"/>
+    <line x1="12" y1="84" x2="58" y2="84" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
+  </symbol>
+  <symbol id="sym-pcb" viewBox="0 0 120 100">
+    <rect x="14" y="16" width="92" height="68" rx="9" fill="#0f2c26" stroke="currentColor" stroke-width="3"/>
+    <rect x="46" y="34" width="30" height="30" rx="4" fill="#07150f" stroke="currentColor" stroke-width="2.6"/>
+    <line x1="40" y1="42" x2="46" y2="42" stroke="currentColor" stroke-width="2.4"/>
+    <line x1="40" y1="49" x2="46" y2="49" stroke="currentColor" stroke-width="2.4"/>
+    <line x1="40" y1="56" x2="46" y2="56" stroke="currentColor" stroke-width="2.4"/>
+    <line x1="76" y1="42" x2="82" y2="42" stroke="currentColor" stroke-width="2.4"/>
+    <line x1="76" y1="49" x2="82" y2="49" stroke="currentColor" stroke-width="2.4"/>
+    <line x1="76" y1="56" x2="82" y2="56" stroke="currentColor" stroke-width="2.4"/>
+    <path d="M20 32 h16 v10" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".8"/>
+    <path d="M84 68 h18 v-12" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".8"/>
+    <circle cx="24" cy="74" r="3.5" fill="currentColor"/>
+    <circle cx="96" cy="28" r="3.5" fill="currentColor"/>
+  </symbol>
+  <symbol id="sym-mold" viewBox="0 0 120 100">
+    <rect x="18" y="16" width="84" height="26" rx="7" fill="#0f2c26" stroke="currentColor" stroke-width="3"/>
+    <rect x="18" y="58" width="84" height="26" rx="7" fill="#0f2c26" stroke="currentColor" stroke-width="3"/>
+    <rect x="52" y="42" width="16" height="16" rx="4" fill="#07150f" stroke="currentColor" stroke-width="2.4"/>
+    <path d="M60 6 v6" stroke="currentColor" stroke-width="2.6" fill="none"/>
+    <path d="M54 12 l6 8 6-8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="sym-sheet" viewBox="0 0 120 100">
+    <polyline points="16,66 42,66 52,46 84,46 94,66 104,66" fill="#0f2c26" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="12" y1="34" x2="108" y2="34" stroke="currentColor" stroke-width="2.2" stroke-dasharray="5 6" opacity=".7"/>
+    <path d="M60 12 v10" stroke="currentColor" stroke-width="2.6" fill="none"/>
+    <path d="M53 18 l7 9 7-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="sym-brake" viewBox="0 0 120 100">
+    <circle cx="56" cy="52" r="34" fill="#0f2c26" stroke="currentColor" stroke-width="3"/>
+    <circle cx="56" cy="52" r="11" fill="#07150f" stroke="currentColor" stroke-width="2.4"/>
+    <circle cx="77" cy="52" r="5" fill="#07150f" stroke="currentColor" stroke-width="2"/>
+    <circle cx="66.5" cy="70.2" r="5" fill="#07150f" stroke="currentColor" stroke-width="2"/>
+    <circle cx="45.5" cy="70.2" r="5" fill="#07150f" stroke="currentColor" stroke-width="2"/>
+    <circle cx="35" cy="52" r="5" fill="#07150f" stroke="currentColor" stroke-width="2"/>
+    <circle cx="45.5" cy="33.8" r="5" fill="#07150f" stroke="currentColor" stroke-width="2"/>
+    <circle cx="66.5" cy="33.8" r="5" fill="#07150f" stroke="currentColor" stroke-width="2"/>
+    <rect x="88" y="34" width="15" height="36" rx="7" fill="#0f2c26" stroke="currentColor" stroke-width="2.6"/>
+  </symbol>
+  <symbol id="sym-med" viewBox="0 0 120 100">
+    <rect x="20" y="20" width="80" height="52" rx="9" fill="#0f2c26" stroke="currentColor" stroke-width="3"/>
+    <polyline points="30,46 42,46 48,34 56,58 62,42 72,42 78,46 90,46" fill="none" stroke="#6ff2dc" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+    <line x1="60" y1="72" x2="60" y2="86" stroke="currentColor" stroke-width="2.6"/>
+    <line x1="44" y1="86" x2="76" y2="86" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+  </symbol>
+</defs>
+</svg>
+
+<!-- ============ 顶部阶段进度条 ============ -->
+<div id="topbar">
+  <div class="tb-row">
+    <button type="button" class="tb-brand" id="tbHome" title="返回封面 · 重新倒计时">
+      <svg viewBox="0 0 100 100"><use href="#sym-mark"/></svg>
+      <b class="tb-brand-name">AiERP</b>
+    </button>
+    <div class="tb-steps" id="tbSteps"></div>
+    <div class="tb-now" id="tbNow">准备播放</div>
+    <div class="tb-ctrl">
+      <div class="tb-time" id="chTime">0:00 / 0:00</div>
+      <button type="button" class="tb-btn" id="btnPlay" title="暂停 / 播放 (空格)">
+        <svg id="icPlay" viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M8 5.2v13.6L19 12z"/></svg>
+        <svg id="icPause" viewBox="0 0 24 24" style="fill:currentColor;stroke:none;display:none"><rect x="7" y="5" width="3.4" height="14" rx="1.2"/><rect x="13.6" y="5" width="3.4" height="14" rx="1.2"/></svg>
+      </button>
+      <button type="button" class="tb-btn" id="btnMute" title="静音 (M)">
+        <svg id="icVol" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 19V5L7.5 9.5z"/><path d="M15.5 9a4.5 4.5 0 0 1 0 6"/><path d="M18 6.5a8 8 0 0 1 0 11"/></svg>
+        <svg id="icMute" viewBox="0 0 24 24" style="display:none"><path d="M4 9.5v5h3.5L12 19V5L7.5 9.5z"/><path d="M15.5 9.5 21 15M21 9.5 15.5 15"/></svg>
+      </button>
+      <button type="button" class="tb-btn" id="btnFull" title="全屏 (F)">
+        <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="tb-line"><i id="tbBar"></i></div>
+</div>
+
+<div id="viewport">
+<div id="stage">
+  <div class="bg">
+    <div class="grid"></div>
+    <div class="orb o1" id="orb1"></div>
+    <div class="orb o2" id="orb2"></div>
+    <div class="vig"></div>
+  </div>
+  <div class="stage-fx" aria-hidden="true">
+    <div class="fx-ring" id="fxRing"></div>
+    <div class="fx-sweep" id="fxSweep"></div>
+    <div class="fx-motes" id="fxMotes"></div>
+  </div>
+  <div class="stage-hud" aria-hidden="true">
+    <span class="hud-dot"></span><span class="hud-index" id="hudIndex">01 / 06</span>
+    <span id="hudName">需求简述</span><span class="hud-meter"><i id="hudMeter"></i></span>
+    <span class="hud-right">AiERP / INTELLIGENT CUSTOMIZATION</span>
+  </div>
+
+  <!-- ============ S1 需求简述 ============ -->
+  <section id="sc1" class="scene">
+    <div class="s1-word" id="s1Word"><span class="w-ai">Ai</span><span class="w-erp">ERP</span></div>
+    <div class="s1-sub" id="s1Sub">上传 Logo 与业务单据 · 向 AI 描述需求</div>
+    <div class="doc" id="d1" style="left:800px;top:205px"><b>销售订单</b><i></i><i></i><span class="tag t-a">SO</span></div>
+    <div class="doc" id="d2" style="left:1151px;top:247px"><b>采购订单</b><i></i><i></i><span class="tag t-b">PO</span></div>
+    <div class="doc" id="d7" style="left:1420px;top:445px"><b>BOM 清单</b><i></i><i></i><span class="tag t-a">BOM</span></div>
+    <div class="doc" id="d3" style="left:1151px;top:643px"><b>生产工单</b><i></i><i></i><span class="tag t-c">MO</span></div>
+    <div class="doc" id="d4" style="left:800px;top:685px"><b>质检报告</b><i></i><i></i><span class="tag t-d">QC</span></div>
+    <div class="doc" id="d8" style="left:449px;top:643px"><b>出货单</b><i></i><i></i><span class="tag t-d">SH</span></div>
+    <div class="doc" id="d5" style="left:180px;top:445px"><b>库存报表</b><i></i><i></i><span class="tag t-c">INV</span></div>
+    <div class="doc" id="d6" style="left:449px;top:247px"><b>财务凭证</b><i></i><i></i><span class="tag t-b">FIN</span></div>
+    <div class="s1-chat" id="s1Chat" aria-hidden="true">
+      <div class="s1-chat-head"><span class="dot"></span>AiERP 定制顾问<em>在线</em></div>
+      <div class="s1-chat-body">
+        <div class="s1-msg ai" id="s1M1"><span class="s1-txt">您好，我是 AiERP 定制顾问</span></div>
+        <div class="s1-msg me" id="s1M2"><span class="s1-txt">我是广州欧度智能制造公司，我们要升级ERP管理</span></div>
+        <div class="s1-msg up" id="s1M3">
+          <div class="s1-drop" id="s1Drop">
+            <span class="s1-drop-hint" id="s1Hint"><svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>拖入样例报表</span>
+            <span class="s1-file" id="s1File">
+              <svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>
+              <span class="s1-fname">样例报表.xlsx</span>
+              <span class="s1-fbar"><i id="s1FBar"></i></span>
+              <em class="s1-fpct" id="s1FPct">0%</em>
+            </span>
+          </div>
+        </div>
+        <div class="s1-msg ai" id="s1M4"><span class="s1-txt">已收到 8 份单据，开始分析…</span></div>
+      </div>
+      <div class="s1-input" id="s1Input"><span class="s1-input-txt" id="s1T2"></span><em class="s1-send" id="s1Send">发 送</em></div>
+    </div>
+    <p class="cap" id="s1Cap">一句话 + 一份样例报表，AI 读懂你的业务</p>
+  </section>
+
+  <!-- ============ S2 行业分析 ============ -->
+  <section id="sc2" class="scene">
+    <h2 class="title" id="s2Title" style="top:96px">AI 分析行业特征</h2>
+    <p class="sub" id="s2Sub" style="top:158px">多行业逐一分析 · 精准锁定你的行业</p>
+    <div class="icard" id="s2c1" style="left:99px">
+      <div class="ill"><svg viewBox="0 0 120 100"><use href="#sym-machining"/></svg></div>
+      <div class="name">精密机加工</div>
+      <div class="st"><span class="st-scan">扫描中…</span><span class="st-lock">✓ 已锁定</span><span class="st-out">— 已排除</span></div>
+      <span class="lock-badge">✓</span>
+    </div>
+    <div class="icard" id="s2c2" style="left:337px">
+      <div class="ill"><svg viewBox="0 0 120 100"><use href="#sym-pcb"/></svg></div>
+      <div class="name">电子组装</div>
+      <div class="st"><span class="st-scan">扫描中…</span><span class="st-lock">✓ 已锁定</span><span class="st-out">— 已排除</span></div>
+      <span class="lock-badge">✓</span>
+    </div>
+    <div class="icard" id="s2c3" style="left:575px">
+      <div class="ill"><svg viewBox="0 0 120 100"><use href="#sym-mold"/></svg></div>
+      <div class="name">注塑模具</div>
+      <div class="st"><span class="st-scan">扫描中…</span><span class="st-lock">✓ 已锁定</span><span class="st-out">— 已排除</span></div>
+      <span class="lock-badge">✓</span>
+    </div>
+    <div class="icard" id="s2c4" style="left:813px">
+      <div class="ill"><svg viewBox="0 0 120 100"><use href="#sym-sheet"/></svg></div>
+      <div class="name">钣金冲压</div>
+      <div class="st"><span class="st-scan">扫描中…</span><span class="st-lock">✓ 已锁定</span><span class="st-out">— 已排除</span></div>
+      <span class="lock-badge">✓</span>
+    </div>
+    <div class="icard" id="s2c5" style="left:1051px">
+      <div class="ill"><svg viewBox="0 0 120 100"><use href="#sym-brake"/></svg></div>
+      <div class="name">汽车零部件</div>
+      <div class="st"><span class="st-scan">扫描中…</span><span class="st-lock">✓ 已锁定</span><span class="st-out">— 已排除</span></div>
+      <span class="lock-badge">✓</span>
+    </div>
+    <div class="icard" id="s2c6" style="left:1289px">
+      <div class="ill"><svg viewBox="0 0 120 100"><use href="#sym-med"/></svg></div>
+      <div class="name">医疗器械</div>
+      <div class="st"><span class="st-scan">扫描中…</span><span class="st-lock">✓ 已锁定</span><span class="st-out">— 已排除</span></div>
+      <span class="lock-badge">✓</span>
+    </div>
+    <div class="beam" id="s2Beam"></div>
+  </section>
+
+  <!-- ============ S3 精密制造 ============ -->
+  <section id="sc3" class="scene">
+    <div class="scrim" id="s3Scrim"></div>
+    <svg class="layer" id="s3Svg" viewBox="0 0 1600 900">
+      <ellipse class="pedestal" id="s3Ped" cx="800" cy="648" rx="330" ry="44"/>
+      <g id="s3Parts">
+        <g class="pt" data-p="housing"><use href="#def-housing"/></g>
+        <g class="pt" data-p="flange"><use href="#def-flange"/></g>
+        <g class="pt" data-p="gear"><use href="#def-gear"/></g>
+        <g class="pt" data-p="shaft"><use href="#def-shaft"/></g>
+        <g class="pt" data-p="ring"><use href="#def-ring"/></g>
+        <g class="pt" data-p="bolt"><use href="#def-bolt"/></g>
+      </g>
+    </svg>
+    <div class="s3-title" id="s3Title">精密机加工</div>
+    <div class="s3-sub" id="s3Sub">典型产品：精密零部件 · 齿轮 · 轴 · 壳体</div>
+  </section>
+  <!-- ============ S4 业务拆解 ============ -->
+  <section id="sc4" class="scene">
+    <div class="s4-tag" id="s4Tag"><span class="dot"></span>精密机加工 · 业务流程</div>
+    <svg class="layer" id="s4Svg" viewBox="0 0 1600 900">
+      <g id="s4Parts">
+        <g class="pt" data-p="housing"><use href="#def-housing"/></g>
+        <g class="pt" data-p="flange"><use href="#def-flange"/></g>
+        <g class="pt" data-p="gear"><use href="#def-gear"/></g>
+        <g class="pt" data-p="shaft"><use href="#def-shaft"/></g>
+        <g class="pt" data-p="ring"><use href="#def-ring"/></g>
+        <g class="pt" data-p="bolt"><use href="#def-bolt"/></g>
+      </g>
+    </svg>
+    <div class="chip" id="s4c1" style="left:656px;top:300px">报价</div>
+    <div class="chip" id="s4c2" style="left:965px;top:250px">工艺</div>
+    <div class="chip" id="s4c3" style="left:1232px;top:300px">排程</div>
+    <div class="chip" id="s4c4" style="left:1268px;top:620px">加工</div>
+    <div class="chip" id="s4c5" style="left:924px;top:665px">质检</div>
+    <div class="chip" id="s4c6" style="left:586px;top:620px">结算</div>
+    <p class="cap" id="s4Cap">业务结构拆解 · 环节一一对应</p>
+  </section>
+
+  <!-- ============ S5 流程成链 ============ -->
+  <section id="sc5" class="scene">
+    <svg class="layer" id="s5Svg" viewBox="0 0 1600 900">
+      <g id="s5Arrows"></g>
+      <g id="s5Parts">
+        <g class="pt" data-p="housing"><use href="#def-housing"/></g>
+        <g class="pt" data-p="flange"><use href="#def-flange"/></g>
+        <g class="pt" data-p="gear"><use href="#def-gear"/></g>
+        <g class="pt" data-p="shaft"><use href="#def-shaft"/></g>
+        <g class="pt" data-p="ring"><use href="#def-ring"/></g>
+        <g class="pt" data-p="bolt"><use href="#def-bolt"/></g>
+      </g>
+    </svg>
+    <div class="chip" id="s5c1" style="left:656px;top:300px"><svg class="ci" viewBox="0 0 384 512"><use href="#fa-quote"/></svg><span>报价</span></div>
+    <div class="chip" id="s5c2" style="left:965px;top:250px"><svg class="ci" viewBox="0 0 640 512"><use href="#fa-gears"/></svg><span>工艺</span></div>
+    <div class="chip" id="s5c3" style="left:1232px;top:300px"><svg class="ci" viewBox="0 0 576 512"><use href="#fa-industry"/></svg><span>排程加工</span></div>
+    <div class="chip" id="s5c4" style="left:1268px;top:620px"><svg class="ci" viewBox="0 0 384 512"><use href="#fa-qc"/></svg><span>装箱质检</span></div>
+    <div class="chip" id="s5c5" style="left:924px;top:665px"><svg class="ci" viewBox="0 0 512 512"><use href="#fa-coins"/></svg><span>出货结算</span></div>
+    <div class="chip" id="s5c6" style="left:586px;top:620px"><svg class="ci" viewBox="0 0 384 512"><use href="#fa-calc"/></svg><span>成本核算</span></div>
+    <div class="pulse" id="s5Pulse"></div>
+    <p class="cap" id="s5Cap">从报价到出货结算、成本核算…</p>
+  </section>
+
+  <!-- ============ S6 市场匹配 ============ -->
+  <section id="sc6" class="scene">
+    <h2 class="title" id="s6Title" style="top:70px">AI 匹配经营市场</h2>
+    <p class="sub" id="s6Sub" style="top:128px">全球分区扫描 · 剔除无关市场</p>
+    <div class="map-panel" id="s6Panel">
+      <div class="mp-dots"></div>
+      <svg class="map-svg" viewBox="0 0 1200 600">
+        <path class="grat" d="M0 160 Q600 100 1200 160"/>
+        <path class="grat" d="M0 320 Q600 250 1200 320"/>
+        <path class="grat" d="M0 470 Q600 410 1200 470"/>
+        <path class="blob" id="s6bNa" d="M150 240 C130 170 180 105 270 95 C360 85 450 115 470 175 C485 225 430 265 350 275 C270 285 185 285 150 240 Z"/>
+        <path class="blob" id="s6bSa" d="M395 330 C430 300 500 315 525 365 C548 410 530 480 490 525 C455 565 400 560 380 505 C360 450 368 372 395 330 Z"/>
+        <path class="blob" id="s6bEu" d="M590 175 C620 135 710 130 745 165 C775 195 762 245 715 262 C670 275 615 258 598 222 C592 208 588 190 590 175 Z"/>
+        <path class="blob" id="s6bAs" d="M790 260 C850 200 990 195 1060 250 C1120 297 1115 380 1050 430 C985 480 860 470 805 410 C760 362 750 300 790 260 Z"/>
+        <circle class="cn-dot" id="s6cn" cx="890" cy="322" r="9"/>
+        <circle id="s6cn2" cx="890" cy="322" r="18" fill="none" stroke="rgba(111,242,220,.5)" stroke-width="1.5" stroke-dasharray="4 6" style="transform-box:fill-box;transform-origin:center"/>
+      </svg>
+      <div class="m-beam" id="s6Beam"></div>
+      <div class="mlab" id="s6lNa" style="left:308px;top:64px">美国</div>
+      <div class="mlab" id="s6lSa" style="left:430px;top:548px">拉美</div>
+      <div class="mlab" id="s6lEu" style="left:668px;top:96px">欧洲</div>
+      <div class="mlab" id="s6lAs" style="left:1152px;top:300px">国内</div>
+      <div class="mtag m-out" id="s6Out" style="left:452px;top:412px">暂不涉及</div>
+      <div class="mtag" id="s6Tag1" style="left:890px;top:506px"><span>国内</span><span class="cur">CNY</span><span>· 金税电子发票</span></div>
+      <div class="mtag" id="s6Tag2" style="left:308px;top:322px"><span>美国</span><span class="cur">USD</span><span>· 州销售税合规</span></div>
+      <div class="mtag" id="s6Tag3" style="left:668px;top:308px"><span>欧洲</span><span class="cur">EUR</span><span>· VAT / OSS 申报</span></div>
+    </div>
+    <p class="cap" id="s6Cap">AI 匹配经营市场 · 适配区域财税合规体系</p>
+  </section>
+  <!-- ============ S7 方案交付（邮件） ============ -->
+  <section id="sc7" class="scene">
+    <div class="desk">
+      <div class="gw gw1"><div class="rows"></div></div>
+      <div class="gw gw2"><div class="rows"></div></div>
+      <div class="gbar"><i style="left:60px"></i><i style="left:92px"></i><i style="left:124px"></i><i style="right:40px"></i></div>
+    </div>
+    <div class="s7-wrap">
+      <div class="mail" id="s7Mail">
+        <div class="mail-head">
+          <div class="mail-ico"><svg viewBox="0 0 24 24"><use href="#sym-mail"/></svg></div>
+          <div><b>AiERP 智能定制中心</b><span>sales@odooai.cn · 刚刚</span></div>
+        </div>
+        <div class="mail-subj">【专属定制ERP方案已生成】</div>
+        <div class="mail-body">
+          <p>行业：<b>精密机加工</b>　目标市场：<b>国内 / 美国 / 欧洲</b></p>
+          <p>方案包含：实施计划 · 分层培训清单 · 投入明细</p>
+        </div>
+        <button class="dl-btn" id="s7Btn"><svg viewBox="0 0 24 24"><use href="#sym-dl"/></svg><span id="s7BtnTxt">下载完整定制方案（PDF）</span></button>
+        <div class="dl-bar"><i id="s7Bar"></i></div>
+        <div class="dl-state" id="s7State">方案已就绪，点击下载一键获取</div>
+      </div>
+    </div>
+    <div class="s7toast" id="s7Toast">
+      <div class="st-ico"><svg viewBox="0 0 24 24"><use href="#sym-mail"/></svg></div>
+      <div class="st-main">
+        <div class="st-top"><b>您有新的消息</b><span>刚刚</span></div>
+        <div class="st-txt">专属定制 ERP 方案已生成，点击查看</div>
+        <div class="st-src">AiERP 智能定制中心</div>
+      </div>
+      <span class="st-dot"></span>
+    </div>
+    <svg class="cursor" id="s7Cursor" viewBox="0 0 24 24">
+      <path d="M18.84 15.87l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z" fill="#ffffff" stroke="#083c33" stroke-width="1.2" stroke-linejoin="round"/>
+    </svg>
+    <p class="cap" id="s7Cap">方案已生成 · 一键获取完整定制方案</p>
+  </section>
+
+  <!-- ============ S8 运营收尾 ============ -->
+  <section id="sc8" class="scene">
+    <div class="cockpit" id="s8Cockpit">
+      <div class="ck-top">
+        <svg class="mark" viewBox="0 0 100 100"><use href="#sym-mark"/></svg>
+        <b>AiERP · 精密机加工定制版<span class="ck-run">-全程陪跑</span></b>
+        <div class="ck-dots"><i></i><i></i><i></i></div>
+      </div>
+      <div class="ck-side">
+        <div class="nav"><svg viewBox="0 0 24 24"><path d="M8 3h8l4 4v14H8z"/><path d="M11 11h6M11 15h6"/></svg>销售</div>
+        <div class="nav"><svg viewBox="0 0 24 24"><circle cx="9" cy="19" r="1.6"/><circle cx="17" cy="19" r="1.6"/><path d="M4 5h2l2.2 10h9.6L20 8H7"/></svg>采购</div>
+        <div class="nav on"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>生产</div>
+        <div class="nav"><svg viewBox="0 0 24 24"><path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/></svg>库存</div>
+        <div class="nav"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="7" rx="7" ry="3"/><path d="M5 7v5c0 1.7 3.1 3 7 3s7-1.3 7-3V7"/><path d="M5 12v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/></svg>财务</div>
+        <div class="nav"><svg viewBox="0 0 24 24"><path d="M4 20V6M4 20h16"/><path d="M8 16v-5M12 16V8M16 16v-3"/></svg>报表</div>
+      </div>
+      <div class="kpi" id="s8k1" style="left:100px;top:88px"><div class="k-lab">本月订单</div><div class="k-val"><span class="num" data-to="128" data-dec="0">0</span><small>单</small></div><span class="k-delta">+12.4%</span></div>
+      <div class="kpi" id="s8k2" style="left:412px;top:88px"><div class="k-lab">在制工单</div><div class="k-val"><span class="num" data-to="36" data-dec="0">0</span><small>个</small></div><span class="k-delta">+8.0%</span></div>
+      <div class="kpi" id="s8k3" style="left:724px;top:88px"><div class="k-lab">质检合格率</div><div class="k-val"><span class="num" data-to="98.6" data-dec="1">0</span><small>%</small></div><span class="k-delta">+0.6%</span></div>
+      <div class="kpi" id="s8k4" style="left:1036px;top:88px"><div class="k-lab">应收金额</div><div class="k-val"><small>¥</small><span class="num" data-to="2.4" data-dec="1">0</span><small>M</small></div><span class="k-delta">+5.2%</span></div>
+      <div class="ck-chart" id="s8Chart">
+        <div class="panel-t">产能与交付趋势</div>
+        <svg viewBox="0 0 790 424">
+          <defs><linearGradient id="gA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3fd8c0" stop-opacity=".30"/><stop offset="1" stop-color="#3fd8c0" stop-opacity="0"/></linearGradient></defs>
+          <line class="grid-line" x1="30" y1="100" x2="760" y2="100"/>
+          <line class="grid-line" x1="30" y1="190" x2="760" y2="190"/>
+          <line class="grid-line" x1="30" y1="280" x2="760" y2="280"/>
+          <path id="areaPath" d="M40 320 L141 286 L243 300 L344 252 L446 212 L547 228 L649 172 L750 124 L750 360 L40 360 Z"/>
+          <path id="linePath" pathLength="1" d="M40 320 L141 286 L243 300 L344 252 L446 212 L547 228 L649 172 L750 124"/>
+          <text class="axis-lab" x="40" y="396" text-anchor="middle">1月</text>
+          <text class="axis-lab" x="141" y="396" text-anchor="middle">2月</text>
+          <text class="axis-lab" x="243" y="396" text-anchor="middle">3月</text>
+          <text class="axis-lab" x="344" y="396" text-anchor="middle">4月</text>
+          <text class="axis-lab" x="446" y="396" text-anchor="middle">5月</text>
+          <text class="axis-lab" x="547" y="396" text-anchor="middle">6月</text>
+          <text class="axis-lab" x="649" y="396" text-anchor="middle">7月</text>
+          <text class="axis-lab" x="750" y="396" text-anchor="middle">8月</text>
+        </svg>
+      </div>
+      <div class="ck-list" id="s8List">
+        <div class="panel-t">今日排产看板</div>
+        <div class="row"><span class="rdot"></span>SO-2418 · 齿轮箱总成<span class="chipst s-run">加工中</span></div>
+        <div class="row"><span class="rdot"></span>MO-0873 · 法兰盘批次<span class="chipst s-qc">质检中</span></div>
+        <div class="row"><span class="rdot"></span>QC-1120 · 轴类抽检<span class="chipst s-done">已完工</span></div>
+        <div class="row"><span class="rdot"></span>PL-0342 · 排产确认<span class="chipst s-plan">排产中</span></div>
+        <div class="row"><span class="rdot"></span>SH-0066 · 出货装运<span class="chipst s-ship">待发运</span></div>
+      </div>
+    </div>
+    <div class="fpanel p1" id="s8P1">
+      <div class="fp-head"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>项目落地实施计划<span class="x">×</span></div>
+      <div class="fp-row"><span class="g-lab">蓝图设计</span><span class="gtrack"><i class="gbar" style="left:0;width:48px"></i></span><span class="g-w">W1–W2</span></div>
+      <div class="fp-row"><span class="g-lab">系统配置</span><span class="gtrack"><i class="gbar" style="left:34px;width:80px"></i></span><span class="g-w">W3–W5</span></div>
+      <div class="fp-row"><span class="g-lab">试运行上线</span><span class="gtrack"><i class="gbar" style="left:88px;width:62px"></i></span><span class="g-w">W6–W8</span></div>
+    </div>
+    <div class="fpanel p2" id="s8P2">
+      <div class="fp-head"><svg viewBox="0 0 24 24"><path d="M12 4L2 9l10 5 10-5z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>分层人员培训清单<span class="x">×</span></div>
+      <div class="fp-row"><span class="ck">✓</span>管理层 · 运营总览</div>
+      <div class="fp-row"><span class="ck">✓</span>关键用户 · 业务全流程</div>
+      <div class="fp-row"><span class="ck">✓</span>一线操作 · 单据与报表</div>
+    </div>
+    <div class="fpanel p3" id="s8P3">
+      <div class="fp-head"><svg viewBox="0 0 24 24"><path d="M4 20v-6h6v6zM14 20V4h6v16z"/></svg>资源投入明细<span class="x">×</span></div>
+      <div class="fp-row"><span class="ck">✓</span>软硬件 · 服务器 / 终端 / 条码设备</div>
+      <div class="fp-row"><span class="ck">✓</span>人力 · 实施顾问 / 内部接口人</div>
+      <div class="fp-row"><span class="ck">✓</span>其他 · 网络 / 打印 / 培训场地</div>
+    </div>
+    <div class="fin" id="s8Fin">
+      <div class="fin-dim"></div>
+      <div class="fin-box">
+        <div class="fin-head">
+          <svg class="fin-mark" viewBox="0 0 100 100"><use href="#sym-mark"/></svg>
+          <div class="fin-title"><span class="w-ai">Ai</span>ERP · 深度行业定制</div>
+        </div>
+        <div class="fin-sub">蓝图 · 定制 · 培训 · 运营，全链路落地交付</div>
+        <div class="fin-tiny">Odoo AiERP · 深度行业定制 · odooai.cn</div>
+        <a class="fin-cta" id="finCta" href="https://work.weixin.qq.com/kfid/kfc86d9c4584acb9f9b" target="_blank" rel="noopener">联系Odoo专家支持</a>
+      </div>
+    </div>
+  </section>
+<!--@@BODY-3-DONE@@-->
+</div>
+</div>
+
+<!-- ============ 开场遮罩 ============ -->
+<div id="overlay">
+  <div class="cover-orbit" aria-hidden="true"></div>
+  <div class="ov-in">
+    <div class="ov-eyebrow">AiERP / 智能定制引擎</div>
+    <div class="ov-head">
+      <svg class="ov-mark" viewBox="0 0 100 100"><use href="#sym-mark"/></svg>
+      <h1><span class="w-ai">Ai</span>ERP · 深度行业定制</h1>
+    </div>
+    <p class="ov-kicker">一句话 + 一套报表，Ai生成全定制ERP方案</p>
+    <ol class="ov-flow">
+      <li><span class="n">1</span><div><b>老板一句话</b><em>上传公司名和 Logo</em></div></li>
+      <li><span class="n">2</span><div><b>上传业务报表</b><em>销售 / 采购 / 库存 / 财务</em></div></li>
+      <li><span class="n">3</span><div><b>智能行业分析</b><em>拆解业务流程</em></div></li>
+      <li><span class="n">4</span><div><b>生成专属方案</b><em>一键落地</em></div></li>
+    </ol>
+    <div class="ov-pills" role="list" aria-label="AiERP 定制优势">
+      <span class="ov-pill" role="listitem"><i aria-hidden="true"></i>零门槛适配</span>
+      <span class="ov-pill" role="listitem"><i aria-hidden="true"></i>私有化定制</span>
+      <span class="ov-pill" role="listitem"><i aria-hidden="true"></i>Ai越用越懂</span>
+    </div>
+    <div class="ov-cta">
+      <div class="ov-count"><svg viewBox="0 0 40 40"><circle class="oc-bg" cx="20" cy="20" r="17"/><circle class="oc-fg" id="ovRing" cx="20" cy="20" r="17"/></svg><b id="ovNum">8</b></div>
+      <button id="btnStart">开始播放</button>
+    </div>
+    <div class="ov-hint">6 秒后自动播放 · 建议开启声音</div>
+    <div class="ov-tip">空格 暂停/继续 · ←/→ 切换章节 · R 重播本段 · M 静音 · F 全屏</div>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   Odoo AiERP 宣传片 · 单文件播放引擎
+   动画：Web Animations API（可暂停 / 可跳转）；音频：WebAudio 全合成
+   ===================================================================== */
+(function(){
+'use strict';
+const $  = (s)=>document.querySelector(s);
+const $$ = (s)=>Array.prototype.slice.call(document.querySelectorAll(s));
+const stage=$('#stage');
+const fmtT=(ms)=>{const t=Math.max(0,ms)|0,m=(t/60000)|0,s=((t%60000)/1000)|0;return m+':'+String(s).padStart(2,'0');};
+
+/* ---------- 桌面 / 竖屏双布局 ---------- */
+const MQ=matchMedia('(max-width: 768px)');
+const FORCE_M=!!window.__forceMobile || /(?:[?&])m=1(?:&|$)/.test(location.search);
+let M=FORCE_M||MQ.matches;
+const SW=()=>M?480:1600, SH=()=>M?1040:900;
+
+/* ---------- 舞台缩放 ---------- */
+function fit(){
+  const th=M?42:44;
+  /* 桌面设计稿 1600×900，最大渲染 1138×640（等比 0.71125）：整体竖向紧凑，元素随比例缩小 */
+  const cap=M?1:0.71125;
+  const s=Math.min(cap, innerWidth/SW(), Math.max(240, innerHeight-th)/SH());
+  document.documentElement.style.setProperty('--s', s);
+}
+addEventListener('resize',fit); fit();
+
+/* =====================================================================
+   音频引擎（全部实时合成，无外部资源）
+   ===================================================================== */
+const AUDIO=(function(){
+  const S={ctx:null,ok:false,muted:false};
+  let master=null,sfxBus=null,delayNode=null,noiseBuf=null;
+  const bgm={bus:null,run:false,step:0,next:0,timer:0};
+  function init(){
+    if(S.ctx) return;
+    const AC=window.AudioContext||window.webkitAudioContext; if(!AC) return;
+    const c=S.ctx=new AC();
+    const comp=c.createDynamicsCompressor();
+    comp.threshold.value=-16; comp.knee.value=22; comp.ratio.value=3.2; comp.attack.value=.004; comp.release.value=.25;
+    comp.connect(c.destination);
+    master=c.createGain(); master.gain.value=S.muted?0:.95; master.connect(comp);
+    sfxBus=c.createGain(); sfxBus.gain.value=.95; sfxBus.connect(master);
+    bgm.bus=c.createGain(); bgm.bus.gain.value=0; bgm.bus.connect(master);
+    delayNode=c.createDelay(1.0); delayNode.delayTime.value=.27;
+    const fb=c.createGain(); fb.gain.value=.32; delayNode.connect(fb); fb.connect(delayNode);
+    const wet=c.createGain(); wet.gain.value=.5; delayNode.connect(wet); wet.connect(master);
+    noiseBuf=c.createBuffer(1,c.sampleRate*2,c.sampleRate);
+    const d=noiseBuf.getChannelData(0); for(let i=0;i<d.length;i++) d[i]=Math.random()*2-1;
+    S.ok=true;
+  }
+  function route(c,g,o){
+    let last=g;
+    if(o.lp||o.hp){ const f=c.createBiquadFilter(); f.type=o.lp?'lowpass':'highpass'; f.frequency.value=o.lp||o.hp; f.Q.value=o.q||.7; last.connect(f); last=f; }
+    if(o.pan!=null&&c.createStereoPanner){ const p=c.createStereoPanner(); p.pan.value=o.pan; last.connect(p); last=p; }
+    last.connect(sfxBus);
+    const rv=o.rv!=null?o.rv:.12;
+    if(rv>0){ const s=c.createGain(); s.gain.value=rv; last.connect(s); s.connect(delayNode); }
+  }
+  function tone(t,f,o){
+    o=o||{}; if(!S.ok) return; const c=S.ctx;
+    const osc=c.createOscillator(); osc.type=o.type||'sine';
+    const g=c.createGain(); osc.connect(g); route(c,g,o);
+    const dur=o.dur||.3, a=o.a!=null?o.a:Math.min(.012,dur*.25), peak=o.g!=null?o.g:.15;
+    osc.frequency.setValueAtTime(Math.max(1,f),t);
+    if(o.f2) osc.frequency.exponentialRampToValueAtTime(Math.max(1,o.f2), t+(o.sweep||dur));
+    g.gain.setValueAtTime(.0001,t); g.gain.exponentialRampToValueAtTime(Math.max(.0002,peak),t+a);
+    g.gain.exponentialRampToValueAtTime(.0001, t+Math.max(a+.02,dur));
+    osc.start(t); osc.stop(t+dur+.06);
+  }
+  function noise(t,o){
+    o=o||{}; if(!S.ok) return; const c=S.ctx;
+    const src=c.createBufferSource(); src.buffer=noiseBuf;
+    const bp=c.createBiquadFilter(); bp.type=o.type||'bandpass';
+    bp.frequency.setValueAtTime(Math.max(20,o.f||1200),t);
+    if(o.f2) bp.frequency.exponentialRampToValueAtTime(Math.max(20,o.f2), t+(o.sweep||o.dur||.4));
+    bp.Q.value=o.q!=null?o.q:1;
+    const g=c.createGain(); src.connect(bp); bp.connect(g); route(c,g,o);
+    const dur=o.dur||.4, a=o.a!=null?o.a:Math.min(.02,dur*.3), peak=o.g!=null?o.g:.12;
+    g.gain.setValueAtTime(.0001,t); g.gain.exponentialRampToValueAtTime(Math.max(.0002,peak),t+a);
+    g.gain.exponentialRampToValueAtTime(.0001, t+Math.max(a+.02,dur));
+    src.start(t); src.stop(t+dur+.06);
+  }
+  /* --- BGM：112BPM 电子律动，Am–F–C–G 四小节循环 --- */
+  const BPM=112, S16=60/BPM/4;
+  const CH=[[220,261.63,329.63],[174.61,220,261.63],[261.63,329.63,392],[196,246.94,293.66]];
+  const ROOTS=[55,43.65,65.41,49];
+  function kick(t,g){ tone(t,150,{f2:44,dur:.3,g:g,sweep:.08,a:.002}); noise(t,{type:'lowpass',f:900,dur:.03,g:.1}); }
+  function clap(t){ noise(t,{f:1900,dur:.13,g:.14,q:1.4,rv:.22}); }
+  function hat(t){ noise(t,{type:'highpass',f:8200,dur:.05,g:.055,rv:.2,pan:.18}); }
+  function bass(t,f,dur,g){ tone(t,f,{type:'sawtooth',dur:dur,g:g,lp:420,q:.9,rv:.05}); }
+  function pad(t,ch,dur){
+    for(let i=0;i<ch.length;i++){
+      const f=ch[i];
+      tone(t+i*.012,f,{type:'triangle',dur:dur,g:.045,a:.55,rv:.4,pan:(i-1)*.25});
+      tone(t+i*.012,f*1.005,{type:'sine',dur:dur,g:.03,a:.6,rv:.4,pan:(1-i)*.25});
+    }
+  }
+  function arp(t,f){ tone(t,f,{type:'square',dur:.11,g:.045,lp:2400,q:1.1,rv:.45,pan:(Math.random()*2-1)*.3}); }
+  function step16(n,t){
+    const bar=(n>>4)&3, s=n&15, ch=CH[bar], root=ROOTS[bar];
+    if(s%4===0) kick(t, s===0?.4:.32);
+    if(s%16===6) kick(t,.16);
+    if(s%16===4||s%16===12) clap(t);
+    if(s%2===1) hat(t);
+    if(s%2===0) bass(t,root,.2,.13);
+    if(s===0) pad(t,ch,2.2);
+    if(s%2===1||s%8===2){ const idx=(n*5)%3; arp(t, ch[idx]*((n%16<8)?2:4)*.5); }
+  }
+  function startBGM(){
+    if(!S.ok||bgm.run) return;
+    bgm.run=true; bgm.step=0; bgm.next=S.ctx.currentTime+.1;
+    const g=bgm.bus.gain; g.cancelScheduledValues(S.ctx.currentTime);
+    g.setValueAtTime(g.value,S.ctx.currentTime); g.linearRampToValueAtTime(.5, S.ctx.currentTime+1.4);
+    bgm.timer=setInterval(()=>{
+      if(!bgm.run||!S.ctx) return; const c=S.ctx;
+      while(bgm.next < c.currentTime+.35){ step16(bgm.step,bgm.next); bgm.step++; bgm.next+=S16; }
+    },110);
+  }
+  function stopBGM(fade){
+    if(!S.ok||!bgm.run) return;
+    bgm.run=false;
+    const t=S.ctx.currentTime, g=bgm.bus.gain;
+    g.cancelScheduledValues(t); g.setValueAtTime(g.value,t); g.linearRampToValueAtTime(0, t+(fade||1.2));
+    clearInterval(bgm.timer);
+  }
+  return {
+    init, tone, noise,
+    get ok(){return S.ok;},
+    get muted(){return S.muted;},
+    bgmRun(){return bgm.run;},
+    now(){ return S.ok?S.ctx.currentTime:0; },
+    resume(){ if(S.ok&&S.ctx.state!=='running') S.ctx.resume(); },
+    suspend(){ if(S.ok&&S.ctx.state==='running') S.ctx.suspend(); },
+    toggleMute(){ S.muted=!S.muted; if(S.ok){ const t=S.ctx.currentTime; master.gain.cancelScheduledValues(t); master.gain.setValueAtTime(master.gain.value,t); master.gain.linearRampToValueAtTime(S.muted?0:.95,t+.15);} return S.muted; },
+    startBGM, stopBGM
+  };
+})();
+
+/* ---------- 音效库 ---------- */
+const SFX={
+  rise(){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.tone(t,420,{f2:1180,type:'triangle',dur:.55,g:.09,rv:.35}); AUDIO.noise(t,{type:'highpass',f:2400,dur:.5,g:.05,a:.04}); },
+  whoosh(){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.noise(t,{f:800,f2:2600,dur:.5,g:.22,sweep:.5,rv:.3}); AUDIO.tone(t,260,{f2:760,dur:.4,g:.05}); },
+  tick(i){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.tone(t,1900+(i||0)*90,{type:'square',dur:.045,g:.08,lp:4200,rv:.15}); },
+  pop(){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.tone(t,300,{f2:560,dur:.09,g:.13}); },
+  sweep(){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.tone(t,240,{f2:1500,dur:.85,g:.10,sweep:.85,rv:.35}); AUDIO.noise(t,{type:'highpass',f:1400,dur:.8,g:.055,a:.1,f2:5200,sweep:.8}); },
+  lock(){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.tone(t,740,{f2:1200,dur:.16,g:.16,rv:.3}); AUDIO.tone(t+.12,1480,{dur:.3,g:.14,rv:.4}); AUDIO.tone(t+.24,2960,{dur:.22,g:.06,rv:.5}); },
+  reject(){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.tone(t,380,{f2:240,type:'triangle',dur:.22,g:.12,lp:1200}); AUDIO.tone(t+.13,300,{f2:190,type:'triangle',dur:.26,g:.1,lp:1000}); },
+  boom(){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.tone(t,96,{f2:36,dur:.95,g:.45,sweep:.3}); AUDIO.noise(t,{type:'lowpass',f:320,dur:.85,g:.2,rv:.2}); },
+  shatter(){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.noise(t,{f:2600,dur:.16,g:.16,q:1.2,rv:.3}); AUDIO.tone(t+.03,900,{f2:340,dur:.2,g:.1,type:'triangle'}); },
+  link(i){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.tone(t,520+(i||0)*74,{f2:880+(i||0)*90,dur:.1,g:.09,rv:.3}); },
+  flow(){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.tone(t,300,{f2:1400,dur:1.05,g:.1,sweep:1.05,type:'sawtooth',lp:2600,q:1.2,rv:.4}); AUDIO.noise(t,{f:900,f2:3200,dur:1.0,g:.08,sweep:1.0}); },
+  ding(){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.tone(t,1568,{dur:1.15,g:.2,rv:.45}); AUDIO.tone(t+.005,2349.3,{dur:.8,g:.09,rv:.5}); AUDIO.tone(t+.01,3136,{dur:.55,g:.045,rv:.55}); },
+  click(){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.noise(t,{type:'highpass',f:2600,dur:.035,g:.2}); AUDIO.tone(t,1900,{dur:.03,g:.08}); },
+  check(){ if(!AUDIO.ok)return; const t=AUDIO.now(); AUDIO.tone(t,988,{dur:.12,g:.14,rv:.3}); AUDIO.tone(t+.11,1318.5,{dur:.34,g:.16,rv:.4}); },
+  chord(){ if(!AUDIO.ok)return; const t=AUDIO.now();
+    [55,110,164.81,220,329.63,440].forEach((f,i)=>AUDIO.tone(t+i*.05,f,{type:i<2?'sine':'triangle',dur:3.1,g:i<2?.15:.085,a:.26,rv:.5,pan:(i%2?1:-1)*.2}));
+    AUDIO.tone(t+.5,1318.5,{dur:2.3,g:.05,a:.35,rv:.6});
+    AUDIO.noise(t,{type:'lowpass',f:260,f2:2200,dur:2.3,g:.06,a:.95,sweep:2.3,rv:.4});
+  }
+};
+
+/* =====================================================================
+   动画引擎
+   ===================================================================== */
+const SCENES=[];              // 由下方场景块填充
+let curAnims=[];              // 当前场景动画，由唯一的逻辑时钟采样
+let cues=[], ticks=[];
+let cur=-1, elapsed=0, playing=false, lastT=performance.now();
+let cueAt=0, animProps=new WeakMap();
+const floatAnims=[];          // 跨场景装饰动画，暂停时同步冻结
+const engineErrors=[];
+const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function reportError(where,error){
+  const message=where+': '+(error.message||String(error));
+  engineErrors.push(message);
+  console.error(message);
+}
+function an(sel,kf,o={}){
+  const els=(typeof sel==='string')?$$(sel):(sel instanceof Element?[sel]:sel);
+  const props=new Set(kf.flatMap(frame=>Object.keys(frame)).filter(key=>!['offset','easing','composite'].includes(key)));
+  const res=[];
+  for(const el of els){
+    if(!el) continue;
+    const used=animProps.get(el)||new Set();
+    /* 后续同属性动画只向前填充，不能在延迟期盖住此前的入场/移动。 */
+    const overlaps=[...props].some(key=>used.has(key));
+    const a=el.animate(kf,{
+      duration:REDUCE?1:(o.d??600), delay:o.delay??0,
+      easing:o.ease||'cubic-bezier(.22,1,.36,1)',
+      fill:overlaps?'forwards':'both', iterations:REDUCE?1:(o.iter??1), direction:o.dir||'normal'
+    });
+    a.pause();
+    a.sceneAt=cueAt;
+    a.currentTime=Math.max(0,elapsed-cueAt);
+    props.forEach(key=>used.add(key));
+    animProps.set(el,used);
+    curAnims.push(a); res.push(a);
+  }
+  return res;
+}
+function cue(t,fn){ cues.push({t:t,fn:fn,used:false}); }
+function cueS(t,fn){ cue(t,(quiet)=>{ if(!quiet&&fn) fn(); }); }
+function tick(fn){ ticks.push(fn); }
+function runCues(quiet){
+  /* 注册顺序不等于时间顺序；快进也必须按场景时间执行，含回调新增的事件。 */
+  let due;
+  while((due=cues.filter(c=>!c.used&&c.t<=elapsed).sort((a,b)=>a.t-b.t)[0])){
+    due.used=true;
+    cueAt=due.t;
+    try{ due.fn(quiet); }catch(error){ reportError('场景 '+cur+' 时间点 '+due.t,error); }
+    finally{ cueAt=0; }
+  }
+}
+function runTicks(time){
+  for(const fn of ticks){ try{fn(time);}catch(error){reportError('场景 '+cur+' 数值更新',error);} }
+}
+function renderAt(time,quiet=false){
+  elapsed=Math.max(0,Math.min(time,SCENES[cur].dur));
+  runCues(quiet);
+  runTicks(elapsed);
+  /* 不调用 finish()/play()：无限动画也可定位，已结束动画不会被恢复操作重启。 */
+  for(const a of curAnims) a.currentTime=Math.max(0,elapsed-a.sceneAt);
+}
+function pauseAllAnims(){
+  for(const a of floatAnims) a.pause();
+  stage.classList.add('is-paused');
+}
+function resumeAllAnims(){
+  if(!REDUCE) for(const a of floatAnims) a.play();
+  stage.classList.remove('is-paused');
+}
+function clearScene(){
+  for(const a of curAnims) a.cancel();
+  curAnims=[]; cues=[]; ticks=[]; cueAt=0; animProps=new WeakMap();
+}
+
+/* KPI 数字滚动（挂到每帧 tick，跳转时同样落到终值） */
+function countUp(el,delay,dur){
+  if(!el) return;
+  const to=parseFloat(el.dataset.to||'0'), dec=parseInt(el.dataset.dec||'0',10);
+  tick((e)=>{
+    const p=Math.min(1,Math.max(0,(e-delay)/dur));
+    const v=to*(1-Math.pow(1-p,3));
+    el.textContent=v.toFixed(dec);
+  });
+}
+/* 元素当前布局中心（相对舞台，未含 transform 位移） */
+function centerOf(el){
+  const r=el.getBoundingClientRect(), st=stage.getBoundingClientRect();
+  const sc=st.width/SW();
+  return { x:(r.left+r.width/2-st.left)/sc, y:(r.top+r.height/2-st.top)/sc };
+}
+
+/* ---------- 场景切换 ---------- */
+function resetDyn(){
+  $$('.icard').forEach(el=>el.classList.remove('locked'));
+  $('#s1Drop').classList.remove('got');
+  $('#s1T2').textContent='';
+  $$('.s1-txt').forEach(el=>el.classList.remove('typing'));
+  $('#s1FBar').style.transform='scaleX(0)';
+  $('#s1FPct').textContent='0%';
+  $('#s7Btn').classList.remove('done');
+  $('#s7BtnTxt').textContent='下载完整定制方案（PDF）';
+  $('#s7State').textContent='方案已就绪，点击下载一键获取';
+  $('#s7Bar').style.transform='';
+  $('#finCta').style.pointerEvents='none';
+  $$('.num').forEach(el=>{ el.textContent='0'; });
+}
+function enter(k,instant=false,at=0,quiet=instant||at>0){
+  if(!Number.isInteger(k)||k<0||k>=SCENES.length) return;
+  clearScene();
+  resetDyn();
+  $$('.scene').forEach((el,i)=>{
+    el.classList.toggle('on',i===k);
+    el.setAttribute('aria-hidden',String(i!==k));
+    el.inert=i!==k;
+  });
+  cur=k; elapsed=0; lastT=performance.now();
+  const sc=SCENES[k];
+  try{ sc.build(); buildSceneFx(); }catch(error){ reportError('构建 '+sc.id,error); }
+  renderAt(instant?sc.dur:at,quiet);
+  if(!playing) pauseAllAnims();
+  syncChrome();
+}
+function seekScene(k,time){
+  if(!Number.isInteger(k)||!SCENES[k]||!Number.isFinite(time)) return;
+  ovStop(); $('#overlay').classList.add('gone'); $('#overlay').inert=true;
+  playing=false; pauseAllAnims(); AUDIO.suspend(); setPlayIcon();
+  enter(k,false,time,true);
+}
+
+/* ---------- 顶部阶段进度条（6 个章节，内部 8 个分镜） ---------- */
+const GROUPS=[
+  {name:'需求简述', short:'需求', ids:['sc1']},
+  {name:'行业分析', short:'分析', ids:['sc2','sc3']},
+  {name:'流程分析', short:'流程', ids:['sc4','sc5']},
+  {name:'市场匹配', short:'匹配', ids:['sc6']},
+  {name:'方案交付', short:'交付', ids:['sc7']},
+  {name:'落地运营', short:'运营', ids:['sc8']}
+];
+function groupOfScene(k){
+  const s=SCENES[k]; if(!s) return -1;
+  return GROUPS.findIndex(g=>g.ids.includes(s.id));
+}
+function groupStart(gi){
+  const g=GROUPS[gi]; if(!g) return 0;
+  const k=SCENES.findIndex(s=>s.id===g.ids[0]);
+  return k<0?0:k;
+}
+let tbBuilt=false, tbLastGroup=-2, tbBarKey='';
+function buildTopbar(){
+  const box=$('#tbSteps'); if(!box) return;
+  box.innerHTML='';
+  GROUPS.forEach((g,gi)=>{
+    const d=document.createElement('button');
+    d.type='button';
+    d.className='tb-step';
+    d.dataset.i=gi;
+    d.innerHTML='<span class="n">'+String(gi+1).padStart(2,'0')+'</span>'+
+      '<span class="full">'+g.name+'</span>'+
+      '<span class="short">'+g.short+'</span>';
+    d.addEventListener('click',()=>{ enterMobileFullscreen(); openAt(groupStart(gi)); });
+    box.appendChild(d);
+  });
+  tbBuilt=true;
+}
+function syncTop(){
+  if(!tbBuilt) buildTopbar();
+  const gi=cur<0?-1:groupOfScene(cur);
+  const steps=$$('.tb-step');
+  steps.forEach((el,i)=>{
+    el.classList.toggle('on', i===gi);
+    el.classList.toggle('done', i<gi);
+    if(i===gi) el.setAttribute('aria-current','step'); else el.removeAttribute('aria-current');
+  });
+  if(gi>=0){
+    const first=groupStart(gi);
+    const groupScenes=SCENES.filter(s=>GROUPS[gi].ids.includes(s.id));
+    const duration=groupScenes.reduce((sum,s)=>sum+s.dur,0);
+    const before=SCENES.slice(first,cur).reduce((sum,s)=>sum+s.dur,0);
+    const progress=Math.min(1,(before+elapsed)/duration);
+    steps[gi].style.setProperty('--chapter-progress',progress.toFixed(4));
+    $('#hudIndex').textContent=String(gi+1).padStart(2,'0')+' / 06';
+    $('#hudName').textContent=SCENES[cur].name;
+    $('#hudMeter').style.transform='scaleX('+progress+')';
+  }
+  const now=$('#tbNow');
+  if(now) now.textContent=(gi>=0&&GROUPS[gi])
+    ? String(gi+1).padStart(2,'0')+' / '+String(GROUPS.length).padStart(2,'0')
+    : '准备播放';
+  /* 只在章节或尺寸变化时测量，避免逐帧强制重排。 */
+  const bar=$('#tbBar');
+  const key=gi+'|'+innerWidth+'|'+(M?1:0);
+  if(bar && key!==tbBarKey){
+    tbBarKey=key;
+    if(gi<0 || !steps[gi]){
+      bar.style.marginLeft='0px'; bar.style.width='0px';
+    }else{
+      const line=bar.parentElement;
+      const lr=line?line.getBoundingClientRect():null;
+      const first=steps[0]?steps[0].getBoundingClientRect():null;
+      const active=steps[gi].getBoundingClientRect();
+      if(lr && first){
+        /* 进度条从第一个步骤左缘起，延伸到当前步骤右缘，不按时间百分比 */
+        const start=Math.max(0,Math.min(lr.width,first.left-lr.left));
+        const end=Math.max(start,Math.min(lr.width,active.right-lr.left));
+        bar.style.marginLeft=start.toFixed(2)+'px';
+        bar.style.width=(end-start).toFixed(2)+'px';
+      }
+    }
+  }
+  if(gi!==tbLastGroup){
+    tbLastGroup=gi;
+    const box=$('#tbSteps'), a=steps[gi];
+    if(box&&a){ try{ box.scrollTo({left:Math.max(0,a.offsetLeft-box.clientWidth/2+a.offsetWidth/2),behavior:'smooth'}); }catch(e){} }
+  }
+}
+function totalDur(){ return SCENES.reduce((a,s)=>a+s.dur,0); }
+function syncChrome(){
+  if(!SCENES.length) return;
+  let off=0; for(let i=0;i<cur;i++) off+=SCENES[i].dur;
+  const tot=totalDur(), done=off+Math.min(elapsed,SCENES[cur]?SCENES[cur].dur:0);
+  const tm=$('#chTime'); if(tm) tm.textContent=fmtT(done)+' / '+fmtT(tot);
+  syncTop();
+}
+function setPlayIcon(){
+  const p=$('#icPlay'), q=$('#icPause');
+  if(p) p.style.display=playing?'none':'';
+  if(q) q.style.display=playing?'':'none';
+  const b=$('#btnPlay'); if(b) b.title=playing?'暂停 (空格)':'播放 (空格)';
+}
+
+/* ---------- 播放控制 ---------- */
+function loop(now){
+  requestAnimationFrame(loop);
+  const dt=Math.max(0,Math.min(64,now-lastT)); lastT=now;
+  if(playing && cur>=0 && cur<SCENES.length){
+    renderAt(elapsed+dt);
+    if(elapsed>=SCENES[cur].dur){
+      if(cur<SCENES.length-1) enter(cur+1);
+      else{ playing=false; pauseAllAnims(); setPlayIcon(); AUDIO.stopBGM(1.6); }
+    }
+    syncChrome();
+  }
+}
+function startShow(){ openAt(0); }
+/* 所有进入途径共用一个入口，先设置播放态再构建目标场景。 */
+function openAt(k){
+  if(!Number.isInteger(k)||!SCENES[k]) return;
+  ovStop();
+  const ov=$('#overlay'); ov.classList.add('gone'); ov.inert=true;
+  AUDIO.init(); AUDIO.resume(); AUDIO.startBGM();
+  playing=true; setPlayIcon();
+  enter(k); resumeAllAnims();
+}
+/* 点顶部品牌：回到封面，并整段重新倒计时 */
+function backToCover(){
+  if(!SCENES.length) return;
+  ovStop();
+  playing=false; setPlayIcon();
+  clearScene(); pauseAllAnims();
+  cur=-1; elapsed=0; tbLastGroup=-2; tbBarKey='';
+  $$('.scene').forEach(el=>{ el.classList.remove('on'); el.inert=true; el.setAttribute('aria-hidden','true'); });
+  resetDyn();
+  const ov=$('#overlay'); if(ov){
+    ov.inert=false;
+    ov.classList.remove('gone');
+    /* 强制重播封面四步：先冻结 CSS 动画，重排后再恢复，延迟从头计时 */
+    ov.classList.add('ov-reset');
+    void ov.offsetWidth;
+    ov.classList.remove('ov-reset');
+  }
+  AUDIO.stopBGM(.4);
+  if(ovRing) ovRing.style.strokeDashoffset='0';
+  if(ovNum) ovNum.textContent=String(OV_WAIT);
+  syncChrome();
+  ovBegin();
+}
+function togglePlay(){
+  if(cur<0){ startShow(); return; }
+  if(!playing){
+    if(elapsed>=SCENES[cur].dur && cur===SCENES.length-1){ openAt(0); return; }
+    playing=true; lastT=performance.now(); resumeAllAnims(); AUDIO.resume(); if(!AUDIO.bgmRun()&&SCENES.length) AUDIO.startBGM();
+    setPlayIcon();
+  }else{
+    playing=false; pauseAllAnims(); AUDIO.suspend(); setPlayIcon();
+  }
+}
+function replayScene(){ if(cur>=0) openAt(cur); }
+function step(d){
+  if(!SCENES.length) return;
+  openAt(Math.max(0,Math.min(SCENES.length-1,cur+d)));
+  SFX.click();
+}
+
+/* ---------- 封面倒计时（默认 6 秒后自动开播；任意手势顺带解锁音频） ---------- */
+const OV_WAIT=6;
+let ovTimer=null, ovEnd=0;
+const ovRing=$('#ovRing'), ovNum=$('#ovNum'), OV_LEN=2*Math.PI*17;
+function ovStop(){ if(ovTimer){ clearInterval(ovTimer); ovTimer=null; } }
+function ovBegin(){
+  if(!ovRing||!ovNum||!$('#overlay')) return;
+  ovEnd=performance.now()+OV_WAIT*1000;
+  ovTimer=setInterval(()=>{
+    const left=Math.max(0,ovEnd-performance.now());
+    ovNum.textContent=String(Math.max(1,Math.ceil(left/1000)));
+    ovRing.style.strokeDashoffset=String(OV_LEN*(1-left/(OV_WAIT*1000)));
+    if(left<=0){ ovStop(); startShow(); }
+  },100);
+}
+ovBegin();
+/* 首次手势解锁音频（保证倒计时自动开播也有声音） */
+const ovUnlock=()=>{ AUDIO.init(); AUDIO.resume(); removeEventListener('pointerdown',ovUnlock); removeEventListener('keydown',ovUnlock); };
+addEventListener('pointerdown',ovUnlock); addEventListener('keydown',ovUnlock);
+
+/* 移动端点击播放时自动全屏（桌面不处理；自动倒计时开播无法获得手势，不强制） */
+function enterMobileFullscreen(){
+  if(!M || document.fullscreenElement) return;
+  try{
+    if(document.documentElement.requestFullscreen){
+      const r=document.documentElement.requestFullscreen();
+      if(r&&r.catch) r.catch(()=>{});
+    }else if(document.documentElement.webkitRequestFullscreen){
+      document.documentElement.webkitRequestFullscreen();
+    }
+  }catch(e){}
+}
+
+/* ---------- 绑定 ---------- */
+$('#btnStart').addEventListener('click',()=>{ enterMobileFullscreen(); startShow(); });
+$('#tbHome').addEventListener('click',backToCover);
+$('#btnPlay').addEventListener('click',()=>{ if(!playing) enterMobileFullscreen(); togglePlay(); });
+$('#btnMute').addEventListener('click',()=>{
+  const m=AUDIO.toggleMute();
+  $('#icVol').style.display=m?'none':'';
+  $('#icMute').style.display=m?'':'none';
+});
+$('#btnFull').addEventListener('click',()=>{
+  if(document.fullscreenElement){ document.exitFullscreen(); }
+  else if(document.documentElement.requestFullscreen){ document.documentElement.requestFullscreen(); }
+});
+addEventListener('keydown',(e)=>{
+  if(e.code==='Space'){ e.preventDefault(); togglePlay(); }
+  else if(e.code==='ArrowRight'){ e.preventDefault(); step(1); }
+  else if(e.code==='ArrowLeft'){ e.preventDefault(); step(-1); }
+  else if(e.key==='r'||e.key==='R'){ replayScene(); }
+  else if(e.key==='m'||e.key==='M'){ $('#btnMute').click(); }
+  else if(e.key==='f'||e.key==='F'){ $('#btnFull').click(); }
+});
+addEventListener('fullscreenchange',()=>{ setTimeout(fit,60); });
+
+/* 竖屏左右滑动切换场景 */
+let swX=0, swY=0, swT=0;
+const vpEl=$('#viewport');
+vpEl.addEventListener('touchstart',(e)=>{
+  if(e.touches.length!==1) return;
+  swX=e.touches[0].clientX; swY=e.touches[0].clientY; swT=Date.now();
+},{passive:true});
+vpEl.addEventListener('touchend',(e)=>{
+  if(!e.changedTouches.length) return;
+  const dx=e.changedTouches[0].clientX-swX, dy=e.changedTouches[0].clientY-swY;
+  if(Date.now()-swT<650 && Math.abs(dx)>54 && Math.abs(dx)>Math.abs(dy)*1.35) step(dx<0?1:-1);
+},{passive:true});
+
+/* 背景光斑缓慢漂浮（跨场景持续） */
+floatAnims.push($('#orb1').animate(
+  [{transform:'translate(0,0) scale(1)'},{transform:'translate(46px,30px) scale(1.06)'}],
+  {duration:9200,iterations:Infinity,direction:'alternate',easing:'ease-in-out'}));
+floatAnims.push($('#orb2').animate(
+  [{transform:'translate(0,0) scale(1)'},{transform:'translate(-40px,-34px) scale(1.05)'}],
+  {duration:11300,iterations:Infinity,direction:'alternate',easing:'ease-in-out'}));
+
+/* =====================================================================
+   各场景时间线（后续块注入 SCENES.push + buildXxx）
+   ===================================================================== */
+/* ---------- 零件坐标常量（S3 聚拢 / S4 拆解 / S5 退出共用） ---------- */
+const PART_C_D={                     /* 台座上的零件簇 [x, y, rot, scale]（避开上方大字） */
+  housing:[860,570,0,.83], flange:[765,650,-8,.77], gear:[735,555,0,.76],
+  shaft:[885,518,-6,.81],  ring:[908,648,0,.72],    bolt:[700,605,18,.86]
+};
+const PART_T_D={                     /* 拆解目标位（与 S4 字样一一对应） */
+  gear:[500,300,42,1.28], shaft:[770,250,-12,1.05], flange:[1100,300,28,1.1],
+  housing:[1095,620,-6,1.15], ring:[790,680,120,1.1], bolt:[480,600,-35,1.3]
+};
+/* 竖屏版：零件整体收窄到 480 宽，S3 沉到下半屏，S4 收到左半屏 */
+const PART_C_M={
+  housing:[245,610,0,.62], flange:[180,690,-8,.58], gear:[150,590,0,.57],
+  shaft:[290,565,-6,.60],  ring:[305,690,0,.55],    bolt:[135,660,18,.64]
+};
+const PART_T_M={
+  gear:[120,260,0,.85], shaft:[240,190,-12,.72], flange:[270,330,28,.75],
+  housing:[140,420,-6,.80], ring:[230,530,120,.75], bolt:[100,600,-35,.90]
+};
+let PART_C=PART_C_D, PART_T=PART_T_D;
+const PT_ORDER=['gear','shaft','flange','housing','ring','bolt'];  /* 对应 s4c1..s4c6 / s5c1..s5c6 */
+
+/* ---------- 布局模式切换（文案/时序不变，只换坐标与视口） ---------- */
+function applyMode(){
+  document.documentElement.classList.toggle('m',M);
+  PART_C=M?PART_C_M:PART_C_D;
+  PART_T=M?PART_T_M:PART_T_D;
+  ['s3Svg','s4Svg','s5Svg'].forEach((id)=>{
+    const el=$('#'+id); if(el) el.setAttribute('viewBox', M?'0 0 480 1040':'0 0 1600 900');
+  });
+  const ped=$('#s3Ped');
+  if(ped){
+    const a=M?['240','790','150','26']:['800','648','330','44'];
+    ped.setAttribute('cx',a[0]); ped.setAttribute('cy',a[1]);
+    ped.setAttribute('rx',a[2]); ped.setAttribute('ry',a[3]);
+  }
+  fit();
+  /* 横竖屏重排只重建坐标，不得把暂停画面跳到终态或把播放进度归零。 */
+  if(cur>=0) enter(cur,false,elapsed,true);
+}
+if(!FORCE_M){
+  const onMQ=()=>{ if(MQ.matches!==M){ M=MQ.matches; applyMode(); } };
+  if(MQ.addEventListener) MQ.addEventListener('change',onMQ); else MQ.addListener(onMQ);
+  addEventListener('orientationchange',()=>setTimeout(onMQ,150));
+}
+
+/* 舞台装饰仍走场景时钟；不用 CSS 无限动画叠加第二套播放状态。 */
+function buildSceneFx(){
+  const ringOn=[2,3,4].includes(cur);
+  an('#fxRing',[
+    {opacity:0,transform:'scale(.93) rotate(-8deg)'},
+    {opacity:ringOn?.8:.22,transform:'scale(1) rotate(0deg)'}
+  ],{d:280});
+  if(!REDUCE){
+    an('#fxRing',[{transform:'rotate(0deg)'},{transform:'rotate(12deg)'}],{d:18000,delay:280,ease:'linear'});
+    an('#fxSweep',[{opacity:0,transform:'translateX(-55%)'},{opacity:.6,offset:.45},{opacity:0,transform:'translateX(55%)'}],{d:280,ease:'ease-out'});
+  }
+  const motes=$('#fxMotes');
+  if(!motes.children.length){
+    for(let i=0;i<18;i++){
+      const dot=document.createElement('i');
+      dot.style.left=(4+(i*37)%92)+'%'; dot.style.top=(8+(i*23)%84)+'%';
+      motes.appendChild(dot);
+    }
+  }
+  if(!REDUCE) [...motes.children].forEach((dot,i)=>an(dot,[
+    {opacity:.12,transform:'translateY(0)'},{opacity:.5,transform:'translateY(-18px)'}
+  ],{d:2300+i*110,iter:Infinity,dir:'alternate',ease:'ease-in-out'}));
+}
+
+/* =====================================================================
+   S1 需求简述（10800ms）
+   ===================================================================== */
+function buildS1(){
+  /* ---- 问答聊天窗：AI 右侧淡入 → 输入框敲字后上屏(左) → 拖入文件 → 上传进度 → 散出业务单据 ---- */
+  const chat=$('#s1Chat');
+  if(chat){ chat.style.opacity='0'; }
+  an('#s1Chat',[{opacity:0},{opacity:1}],{d:450,delay:250});
+  cueS(320,SFX.pop);
+  const ME1='我是广州欧度智能制造公司，我们要升级ERP管理';
+  const T1_0=450, T2_0=1500, POST_0=2850, T4_0=4950, CPS=52;  // AI入场 / 输入开始 / 上屏 / AI确认 / 每字毫秒
+  an('#s1M1',[{opacity:0},{opacity:1}],{d:300,delay:T1_0});
+  an('#s1Input',[{opacity:0},{opacity:1}],{d:300,delay:1350});
+  an('#s1M2',[{opacity:0},{opacity:1}],{d:320,delay:POST_0-70});
+  an('#s1M4',[{opacity:0},{opacity:1}],{d:300,delay:T4_0});
+  /* 输入框敲字挂 tick：暂停冻结、跳转落终值；上屏后清空输入框 */
+  function typeText(sel,text,t0,cps,clearAt){
+    const el=$(sel); if(!el) return;
+    tick((e)=>{
+      const total=text.length*cps;
+      const p=Math.min(1,Math.max(0,(e-t0)/total));
+      const s=(clearAt&&e>=clearAt)?'':text.slice(0,Math.round(p*text.length));
+      if(el.textContent!==s) el.textContent=s;
+      el.classList.toggle('typing',p>0&&p<1&&!(clearAt&&e>=clearAt));
+    });
+  }
+  typeText('#s1T2',ME1,T2_0,CPS,POST_0);
+  cueS(T1_0+300,()=>SFX.tick(0));
+  cueS(T2_0+300,()=>SFX.tick(1));
+  cueS(POST_0,SFX.pop);
+  /* 拖拽上传：虚线框 → 文件卡飞入落点 → 进度充满 */
+  an('#s1M3',[{opacity:0},{opacity:1}],{d:240,delay:3050});
+  cueS(3150,SFX.click);
+  an('#s1File',[{opacity:0},{opacity:1}],{d:420,delay:3300});
+  cue(3300,(q)=>{ an('#s1Hint',[{opacity:1},{opacity:0}],{d:300}); });
+  cue(3980,(q)=>{
+    if(!q) SFX.pop();
+    const d=$('#s1Drop'); if(d) d.classList.add('got');
+  });
+  tick((e)=>{
+    const p=Math.min(1,Math.max(0,(e-4050)/800));
+    const bar=$('#s1FBar'), pct=$('#s1FPct');
+    if(bar) bar.style.transform='scaleX('+p+')';
+    if(pct) pct.textContent=Math.round(p*100)+'%';
+  });
+  cueS(4950,SFX.ding);
+  /* 聊天窗退场，AiERP 字样与单据接棒 */
+  cue(5750,(q)=>{
+    if(!q) SFX.whoosh();
+    an('#s1Chat',[{opacity:1},{opacity:0}],{d:550});
+  });
+  cueS(460,SFX.rise);
+  an('#s1Word',[
+    {opacity:0,letterSpacing:'26px',transform:'translate(-50%,-50%) scale(1.1)'},
+    {opacity:1,letterSpacing:'2px',transform:'translate(-50%,-50%) scale(1)'}
+  ],{d:950,delay:6250,ease:'cubic-bezier(.2,.85,.25,1)'});
+  an('#s1Sub',[
+    {opacity:0,transform:'translate(-50%,-38%)'},
+    {opacity:1,transform:'translate(-50%,-50%)'}
+  ],{d:700,delay:7250});
+  cueS(7270,()=>SFX.tick(2));
+  /* 单据 / 报表围绕 AiERP 字样、按业务顺序顺时针飞入 */
+  $$('#sc1 .doc').forEach((el)=>{ el.style.opacity=''; });
+  $$('#sc1 .doc').forEach((el,i)=>{
+    const c=centerOf(el);
+    const cx=M?240:800, cy=M?360:445;
+    const dx=(cx-c.x)*1.06, dy=(cy-c.y)*1.06;
+    an(el,[
+      {opacity:0,transform:'translate('+dx+'px,'+dy+'px) scale(.34) rotate('+(i%2?-9:9)+'deg)'},
+      {opacity:1,transform:'translate('+(dx*.16)+'px,'+(dy*.16)+'px) scale(.93) rotate(0deg)',offset:.72},
+      {opacity:1,transform:'translate(0,0) scale(1) rotate(0deg)'}
+    ],{d:820,delay:7300+i*180,ease:'cubic-bezier(.24,1.04,.36,1)'});
+    cueS(7300+i*180+130,(i%2?SFX.whoosh:SFX.rise));
+    cueS(7300+i*180+640,()=>SFX.tick(i%4));
+    /* 落定后轻微漂浮 */
+    an(el,[{transform:'translate(0,0)'},{transform:'translate(0,'+(i%2?7:-7)+'px)'}],{d:2600,delay:8200+i*180,iter:Infinity,dir:'alternate',ease:'ease-in-out'});
+  });
+  cue(9450,(q)=>{
+    if(!q) SFX.pop();
+    an('#s1Cap',[{opacity:0,transform:'translateY(16px)'},{opacity:1,transform:'translateY(0)'}],{d:700});
+    /* 显隐由场景时间轴保证，不写内联 opacity 覆盖动画，重播才能完整复位。 */
+  });
+}
+
+/* =====================================================================
+   S2 行业分析（5600ms）：光束扫描 → 剔除无关行业 → 锁定精密机加工
+   ===================================================================== */
+const S2_HIT=[976,1365,1754,2142,2531,2920];   /* 光束途经每张卡的命中时刻 */
+function buildS2(){
+  an('#s2Title',[{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],{d:650});
+  an('#s2Sub',[{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'translateY(0)'}],{d:650,delay:150});
+  const cards=[$('#s2c1'),$('#s2c2'),$('#s2c3'),$('#s2c4'),$('#s2c5'),$('#s2c6')];
+  cards.forEach((el,i)=>{
+    an(el,[{opacity:0,transform:'translateY(34px) scale(.94)'},{opacity:1,transform:'translateY(0) scale(1)'}],{d:620,delay:150+i*120});
+  });
+  cueS(420,SFX.whoosh);
+  /* 扫描光带横扫 */
+  cue(800,(q)=>{
+    if(!q) SFX.sweep();
+    an('#s2Beam', M?[
+      {opacity:0,transform:'translateY(0)'},
+      {opacity:1,offset:.07},
+      {opacity:1,transform:'translateY(640px)',offset:.85},
+      {opacity:0,transform:'translateY(640px)'}
+    ]:[
+      {opacity:0,transform:'translateX(0)'},
+      {opacity:1,offset:.07},
+      {opacity:1,transform:'translateX(1470px)',offset:.85},
+      {opacity:0,transform:'translateX(1470px)'}
+    ],{d:2400,ease:'cubic-bezier(.4,.1,.6,.9)'});
+  });
+  /* 逐卡扫描命中 */
+  S2_HIT.forEach((t,i)=>{
+    cueS(t+110,()=>SFX.tick(i));
+    cue(t,(q)=>{
+      an(cards[i],[
+        {boxShadow:'0 10px 30px rgba(0,0,0,.35)'},
+        {boxShadow:'0 0 30px rgba(63,216,192,.55),0 10px 30px rgba(0,0,0,.35)'},
+        {boxShadow:'0 10px 30px rgba(0,0,0,.35)'}
+      ],{d:560,ease:'ease-in-out'});
+      an(cards[i].querySelector('.st-scan'),[{opacity:0},{opacity:1},{opacity:1,offset:.8},{opacity:0}],{d:900,ease:'linear'});
+    });
+  });
+  /* 剔除无关行业 */
+  [[3400,1],[3550,2],[3700,3],[3850,4],[4000,5]].forEach((rr)=>{
+    cue(rr[0],(q)=>{
+      if(!q) SFX.reject();
+      const card=cards[rr[1]];
+      an(card,[{opacity:1,filter:'grayscale(0)'},{opacity:.34,filter:'grayscale(.85) brightness(.8)'}],{d:520});
+      an(card.querySelector('.st-out'),[{opacity:0},{opacity:1}],{d:300});
+    });
+  });
+  /* 锁定精密机加工 */
+  cue(4300,(q)=>{
+    if(!q) SFX.lock();
+    const card=cards[0];
+    card.classList.add('locked');
+    an(card,[{transform:'scale(1)'},{transform:'scale(1.06)',offset:.5},{transform:'scale(1)'}],{d:700,ease:'ease-in-out'});
+    an(card.querySelector('.st-lock'),[{opacity:0},{opacity:1}],{d:360,delay:120});
+    an(card.querySelector('.lock-badge'),[
+      {opacity:0,transform:'scale(.4)'},
+      {opacity:1,transform:'scale(1.12)',offset:.7},
+      {opacity:1,transform:'scale(1)'}
+    ],{d:520,delay:160,ease:'cubic-bezier(.34,1.56,.64,1)'});
+  });
+}
+
+/* =====================================================================
+   S3 精密制造（3200ms）：零件聚拢台座 → 大字缓慢放大
+   ===================================================================== */
+function buildS3(){
+  cueS(60,SFX.rise);
+  $$('#s3Parts .pt').forEach((el,i)=>{
+    const p=PART_C[el.dataset.p];
+    const ang=Math.atan2(p[1]-470, (p[0]-800)||1);
+    const sx=p[0]+Math.cos(ang)*1150, sy=p[1]+Math.sin(ang)*1150;
+    an(el,[
+      {opacity:0,transform:'translate('+sx+'px,'+sy+'px) rotate('+(p[2]-60)+'deg) scale('+(p[3]*.6)+')'},
+      {opacity:1,transform:'translate('+p[0]+'px,'+p[1]+'px) rotate('+p[2]+'deg) scale('+p[3]+')'}
+    ],{d:760,delay:i*70,ease:'cubic-bezier(.2,.9,.3,1)'});
+  });
+  cue(250,(q)=>{
+    if(!q) SFX.boom();
+    an('#s3Scrim',[{opacity:0},{opacity:1}],{d:520});
+  });
+  cueS(450,SFX.sweep);
+  an('#s3Title',[
+    {opacity:0,transform:'translate(-50%,-50%) scale(.14)'},
+    {opacity:.85,transform:'translate(-50%,-50%) scale(.45)',offset:.4},
+    {opacity:1,transform:'translate(-50%,-50%) scale(1)'}
+  ],{d:2300,delay:450,ease:'cubic-bezier(.16,1,.3,1)'});
+  an('#s3Sub',[
+    {opacity:0,transform:'translate(-50%,-38%)'},
+    {opacity:1,transform:'translate(-50%,-50%)'}
+  ],{d:700,delay:1950});
+  cueS(1980,()=>SFX.tick(3));
+}
+
+SCENES.push({id:'sc1',name:'需求简述',dur:10800,build:buildS1});
+SCENES.push({id:'sc2',name:'行业分析',dur:5600,build:buildS2});
+SCENES.push({id:'sc3',name:'精密制造',dur:3200,build:buildS3});
+
+/* =====================================================================
+   S4 业务拆解（5000ms）：零件散开 → 每个部件同步出现字样
+   ===================================================================== */
+function buildS4(){
+  an('#s4Tag',[{opacity:0,transform:'translateX(-30px)'},{opacity:1,transform:'translateX(0)'}],{d:620,delay:100});
+  cueS(140,()=>SFX.tick(1));
+  cueS(500,SFX.boom);
+  const parts={}; $$('#s4Parts .pt').forEach((el)=>{ parts[el.dataset.p]=el; });
+  PT_ORDER.forEach((k,i)=>{
+    const p=PART_C[k], t=PART_T[k], el=parts[k];
+    if(!el) return;
+    const t0=500+i*160;
+    an(el,[
+      {transform:'translate('+p[0]+'px,'+p[1]+'px) rotate('+p[2]+'deg) scale('+p[3]+')'},
+      {transform:'translate('+t[0]+'px,'+t[1]+'px) rotate('+t[2]+'deg) scale('+t[3]+')'}
+    ],{d:900,delay:t0,ease:'cubic-bezier(.3,1,.4,1)'});
+    cueS(t0,SFX.shatter);
+    cueS(t0+820,()=>SFX.tick(i));
+    /* 对应字样同步放大出现 */
+    cue(t0+560,(q)=>{
+      an('#s4c'+(i+1),[
+        {opacity:0,transform:'scale(.5)'},
+        {opacity:1,transform:'scale(1.14)',offset:.72},
+        {opacity:1,transform:'scale(1)'}
+      ],{d:460,ease:'cubic-bezier(.34,1.56,.64,1)'});
+    });
+    cueS(t0+680,()=>SFX.pop());
+  });
+  cue(2600,(q)=>{
+    if(!q) SFX.pop();
+    an('#s4Cap',[{opacity:0,transform:'translateY(16px)'},{opacity:1,transform:'translateY(0)'}],{d:700});
+  });
+}
+
+/* =====================================================================
+   S5 流程成链（6000ms）：零件淡出 → 字样沿流程方向移动、分布、连接
+   ===================================================================== */
+function buildS5(){
+  /* 零件渐隐（先固定在 S4 的拆解位，再淡出） */
+  const parts={}; $$('#s5Parts .pt').forEach((el)=>{ parts[el.dataset.p]=el; });
+  PT_ORDER.forEach((k,i)=>{
+    const t=PART_T[k], el=parts[k];
+    if(!el) return;
+    const out=(k==='bolt'||k==='gear')?-1:1;
+    an(el,[
+      {opacity:1,transform:'translate('+t[0]+'px,'+t[1]+'px) rotate('+t[2]+'deg) scale('+t[3]+')'},
+      {opacity:0,transform:'translate('+(t[0]+out*(i%2?14:8))+'px,'+(t[1]+24)+'px) rotate('+t[2]+'deg) scale('+(t[3]*.9)+')'}
+    ],{d:820,delay:200+i*60,ease:'ease-in'});
+  });
+  cueS(240,SFX.whoosh);
+  /* 最终链位：桌面阶梯式从左下升至右上，手机居中自上而下 */
+  const CW=M?260:210, CH=M?78:80;
+  const SLOT=M
+    ? [[240,220],[240,330],[240,440],[240,550],[240,660],[240,770]]
+    : [[275,670],[513,594],[751,518],[989,442],[1227,366],[1465,290]];
+  for(let i=0;i<6;i++){
+    const el=$('#s5c'+(i+1));
+    if(!el) continue;
+    const c=centerOf(el);
+    const dx=SLOT[i][0]-c.x, dy=SLOT[i][1]-c.y;
+    const t0=300+i*140;
+    an(el,[
+      {opacity:0,transform:'translate(0,0) scale(.92)'},
+      {opacity:1,transform:'translate(0,0) scale(1)',offset:.12},
+      {transform:'translate('+(dx*.5)+'px,'+(dy*.5-34)+'px)',offset:.55},
+      {opacity:1,transform:'translate('+dx+'px,'+dy+'px) scale(1)'}
+    ],{d:560,delay:t0,ease:'cubic-bezier(.5,.05,.35,1)'});
+    cueS(t0,()=>SFX.tick(i));
+  }
+  /* 按当前模式重绘带箭头的链线（SVG 层，随场景重建） */
+  const arrowLayer=$('#s5Arrows');
+  if(arrowLayer){
+    arrowLayer.innerHTML='';
+    const NS='http://www.w3.org/2000/svg';
+    for(let i=0;i<5;i++){
+      const a=SLOT[i], b=SLOT[i+1];
+      let pts, ang;
+      if(M){
+        /* 手机：居中向下，直线箭头 */
+        const x=a[0], y1=a[1]+CH/2, y2=b[1]-CH/2;
+        pts=[[x,y1],[x,y2]];
+        ang=Math.PI/2;
+      }else{
+        /* 桌面：先向上、再向右的拐角线，箭头朝右 */
+        const x1=a[0]+CW/2, y1=a[1];
+        const x2=b[0]-CW/2, y2=b[1];
+        pts=[[x1,y1],[x1,y2],[x2,y2]];
+        ang=0;
+      }
+      const tip=pts[pts.length-1];
+      const ah=M?10:14, aw=ah*.58;
+      const bx=tip[0]-Math.cos(ang)*ah, by=tip[1]-Math.sin(ang)*ah;
+      pts[pts.length-1]=[bx,by];
+      const px=Math.cos(ang+Math.PI/2)*aw, py=Math.sin(ang+Math.PI/2)*aw;
+      const g=document.createElementNS(NS,'g');
+      g.setAttribute('id','s5L'+(i+1));
+      const line=document.createElementNS(NS,'path');
+      line.setAttribute('class','fl');
+      line.setAttribute('d','M'+pts.map((p)=>p[0].toFixed(2)+' '+p[1].toFixed(2)).join(' L'));
+      line.setAttribute('pathLength','1');
+      g.appendChild(line);
+      const head=document.createElementNS(NS,'polygon');
+      head.setAttribute('class','fa');
+      head.setAttribute('points',[tip[0],tip[1],bx+px,by+py,bx-px,by-py].map((v)=>v.toFixed(2)).join(' '));
+      g.appendChild(head);
+      arrowLayer.appendChild(g);
+    }
+  }
+  /* 流程连线依次点亮：描边生长 + 箭头淡入 */
+  for(let i=0;i<5;i++){
+    const t=1650+i*160;
+    cueS(t,()=>SFX.link(i));
+    cue(t,(q)=>{
+      an('#s5L'+(i+1)+' .fl',[
+        {strokeDashoffset:1,opacity:0},
+        {opacity:1,offset:.18},
+        {strokeDashoffset:0,opacity:1}
+      ],{d:360,ease:'cubic-bezier(.3,.9,.4,1)'});
+      an('#s5L'+(i+1)+' .fa',[{opacity:0},{opacity:1}],{d:180,delay:220,ease:'ease-out'});
+    });
+  }
+  cueS(1650,SFX.flow);
+  /* 能量脉冲沿链流动 */
+  const pulse=$('#s5Pulse');
+  if(pulse){
+    pulse.style.left=(SLOT[0][0]-11)+'px';
+    pulse.style.top=(SLOT[0][1]-11)+'px';
+  }
+  /* 光点沿实际阶梯/竖向连线行进，避免从节点中间斜穿过去。 */
+  const route=[SLOT[0]];
+  for(let i=0;i<5;i++){
+    const a=SLOT[i], b=SLOT[i+1];
+    if(!M) route.push([a[0]+CW/2,a[1]],[a[0]+CW/2,b[1]]);
+    route.push(b);
+  }
+  let length=0;
+  const distances=route.map((point,i)=>{
+    if(i) length+=Math.hypot(point[0]-route[i-1][0],point[1]-route[i-1][1]);
+    return length;
+  });
+  cue(2800,(quiet)=>{
+    if(!quiet) SFX.flow();
+    an('#s5Pulse',route.map((point,i)=>({
+      opacity:i===0||i===route.length-1?0:1,
+      transform:'translate('+(point[0]-SLOT[0][0])+'px,'+(point[1]-SLOT[0][1])+'px)',
+      offset:distances[i]/length
+    })),{d:1400,iter:2,ease:'linear'});
+  });
+  SLOT.forEach((point,i)=>cue(2800+i*240,()=>an('#s5c'+(i+1),[
+    {borderColor:'#72e8c987'},{borderColor:'#e0fff4',offset:.4},{borderColor:'#72e8c987'}
+  ],{d:280,ease:'ease-out'})));
+  cue(120,(q)=>{
+    if(!q) SFX.pop();
+    an('#s5Cap',[{opacity:0,transform:'translateY(-14px)'},{opacity:1,transform:'translateY(0)'}],{d:700});
+  });
+}
+
+SCENES.push({id:'sc4',name:'业务拆解',dur:5000,build:buildS4});
+SCENES.push({id:'sc5',name:'流程成链',dur:6000,build:buildS5});
+
+/* =====================================================================
+   S6 市场匹配（5900ms）：全球分区光束扫描 → 剔除拉美 → 锁定三大市场与财税标签
+   ===================================================================== */
+function buildS6(){
+  an('#s6Title',[{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],{d:650});
+  an('#s6Sub',[{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'translateY(0)'}],{d:650,delay:150});
+  an('#s6Panel',[{opacity:0,transform:'scale(.97)'},{opacity:1,transform:'scale(1)'}],{d:700});
+  const blobs=[$('#s6bNa'),$('#s6bSa'),$('#s6bEu'),$('#s6bAs')];
+  const labs=[$('#s6lNa'),$('#s6lSa'),$('#s6lEu'),$('#s6lAs')];
+  blobs.forEach((b,i)=>an(b,[{opacity:0},{opacity:1}],{d:600,delay:250+i*150}));
+  cueS(420,SFX.whoosh);
+  /* 地图光束流动扫描 */
+  cue(600,(q)=>{
+    if(!q) SFX.sweep();
+    an('#s6Beam', M?[
+      {opacity:0,transform:'translateY(0)'},
+      {opacity:1,offset:.06},
+      {opacity:1,transform:'translateY(260px)',offset:.86},
+      {opacity:0,transform:'translateY(260px)'}
+    ]:[
+      {opacity:0,transform:'translateX(0)'},
+      {opacity:1,offset:.06},
+      {opacity:1,transform:'translateX(1120px)',offset:.86},
+      {opacity:0,transform:'translateX(1120px)'}
+    ],{d:2300,ease:'cubic-bezier(.4,.1,.6,.9)'});
+  });
+  /* 光束途经区域：区域点亮 + 名称出现 */
+  [[1080,0],[1390,1],[1863,2],[2386,3]].forEach((H)=>{
+    const t=H[0], i=H[1];
+    cueS(t+90,()=>SFX.tick(i));
+    cue(t,(q)=>{
+      an(blobs[i],[{filter:'drop-shadow(0 0 0 rgba(111,242,220,0))'},{filter:'drop-shadow(0 0 14px rgba(111,242,220,.55))'},{filter:'drop-shadow(0 0 0 rgba(111,242,220,0))'}],{d:820,ease:'ease-in-out'});
+      an(labs[i],[
+        {opacity:0,transform:'translate(-50%,-50%) scale(.7)'},
+        {opacity:1,transform:'translate(-50%,-50%) scale(1.08)',offset:.7},
+        {opacity:1,transform:'translate(-50%,-50%) scale(1)'}
+      ],{d:420,ease:'cubic-bezier(.34,1.56,.64,1)'});
+    });
+  });
+  /* 国内节点信标脉冲 */
+  cue(2400,(q)=>{
+    an('#s6cn',[{transform:'scale(1)'},{transform:'scale(1.35)'}],{d:900,iter:Infinity,dir:'alternate',ease:'ease-in-out'});
+    an('#s6cn2',[{opacity:.9,transform:'scale(1)'},{opacity:0,transform:'scale(2.1)'}],{d:1600,iter:Infinity,ease:'ease-out'});
+  });
+  /* 剔除无关市场：拉美 */
+  cue(3300,(q)=>{
+    if(!q) SFX.reject();
+    an(blobs[1],[{opacity:1},{opacity:.3}],{d:520});
+    an(labs[1],[{opacity:1,transform:'translate(-50%,-50%) scale(1)',color:'#cfe9e2'},{opacity:.5,transform:'translate(-50%,-50%) scale(.94)',color:'#6d857f'}],{d:520});
+  });
+  cue(3500,(q)=>{
+    if(!q) SFX.pop();
+    an('#s6Out',[{opacity:0,transform:'scale(.8)'},{opacity:1,transform:'scale(1)'}],{d:420,ease:'cubic-bezier(.34,1.56,.64,1)'});
+  });
+  /* 高亮锁定目标市场 → 弹出币种 / 财税合规标签 */
+  [[3600,3,'#s6Tag1',3750],[3950,0,'#s6Tag2',4100],[4300,2,'#s6Tag3',4450]].forEach((L)=>{
+    cue(L[0],(q)=>{
+      if(!q) SFX.lock();
+      an(blobs[L[1]],[{filter:'drop-shadow(0 0 0 rgba(111,242,220,0))'},{filter:'drop-shadow(0 0 16px rgba(111,242,220,.65))'}],{d:620,ease:'ease-out'});
+      an(labs[L[1]],[{transform:'translate(-50%,-50%) scale(1)'},{transform:'translate(-50%,-50%) scale(1.16)',offset:.5},{transform:'translate(-50%,-50%) scale(1)'}],{d:600,ease:'ease-in-out'});
+    });
+    cue(L[3],(q)=>{
+      if(!q) SFX.pop();
+      an(L[2],[{opacity:0,transform:'scale(.82)'},{opacity:1,transform:'scale(1)'}],{d:420,ease:'cubic-bezier(.34,1.56,.64,1)'});
+    });
+  });
+  cue(5000,(q)=>{
+    if(!q) SFX.pop();
+    an('#s6Cap',[{opacity:0,transform:'translateY(16px)'},{opacity:1,transform:'translateY(0)'}],{d:700});
+  });
+}
+
+/* =====================================================================
+   S7 方案交付（4800ms）：新消息提醒 → 手形光标点击 → 方案卡片放大居中 → 下载
+   ===================================================================== */
+function buildS7(){
+  an('#sc7 .gw',[{opacity:0},{opacity:1}],{d:700});
+  an('#sc7 .gbar',[{opacity:0},{opacity:1}],{d:700,delay:150});
+  /* 量取终态坐标：邮件卡片在 s7-wrap 内已居中，量完再让它从消息条位置放大 */
+  const cur=$('#s7Cursor'), btn=$('#s7Btn'), toast=$('#s7Toast'), mail=$('#s7Mail');
+  const cc=centerOf(cur), tc=centerOf(toast), mc=centerOf(mail), bc=centerOf(btn);
+  const tw=toast.getBoundingClientRect().width, mw=mail.getBoundingClientRect().width;
+  const gs=M ? 0.84 : Math.min(1, tw/mw);
+  const gx=tc.x-mc.x, gy=tc.y-mc.y;
+  const tx=tc.x-cc.x+(M?150:180), ty=tc.y-cc.y+(M?26:34);
+  const bx=bc.x-cc.x+(M?132:104), by=bc.y-cc.y+(M?8:18);
+  /* 新消息提示条 */
+  cue(180,(q)=>{
+    an('#s7Toast',[
+      {opacity:0,transform:'translateY(-18px) scale(.96)'},
+      {opacity:1,transform:'translateY(0) scale(1)'}
+    ],{d:520,ease:'cubic-bezier(.3,1.2,.4,1)'});
+  });
+  cueS(360,SFX.ding);
+  /* 光标移向消息条 */
+  an(cur,[{opacity:0},{opacity:1}],{d:220,delay:420});
+  an(cur,[
+    {transform:'translate(0,0)'},
+    {transform:'translate('+(tx*.45)+'px,'+(ty*.45-54)+'px)',offset:.55},
+    {transform:'translate('+tx+'px,'+ty+'px)'}
+  ],{d:780,delay:480,ease:'cubic-bezier(.4,.55,.3,1)'});
+  cueS(760,()=>SFX.tick(4));
+  /* 点击消息：提示条收起，方案卡片从其位置放大到画面中央 */
+  cue(1350,(q)=>{
+    if(!q) SFX.click();
+    an('#s7Toast',[
+      {opacity:1,transform:'translateY(0) scale(1)'},
+      {opacity:0,transform:'translateY(-12px) scale(.96)'}
+    ],{d:120,ease:'ease-in'});
+    an('#s7Mail',[
+      {opacity:0,transform:'translate('+gx+'px,'+gy+'px) scale('+gs+')'},
+      {opacity:1,offset:.3},
+      {opacity:1,transform:'translate(0,0) scale(1)'}
+    ],{d:800,ease:'cubic-bezier(.2,.95,.25,1)'});
+  });
+  cueS(1350,()=>SFX.whoosh(420));
+  /* 卡片落定后，光标移向下载按钮 */
+  an(cur,[
+    {transform:'translate('+tx+'px,'+ty+'px)'},
+    {transform:'translate('+(tx+(bx-tx)*.45)+'px,'+(ty+(by-ty)*.45-62)+'px)',offset:.55},
+    {transform:'translate('+bx+'px,'+by+'px)'}
+  ],{d:700,delay:2150,ease:'cubic-bezier(.4,.55,.3,1)'});
+  cueS(2340,()=>SFX.tick(5));
+  /* 点击下载 */
+  cue(2900,(q)=>{
+    if(!q) SFX.click();
+    an(cur,[
+      {transform:'translate('+bx+'px,'+by+'px) scale(1)'},
+      {transform:'translate('+bx+'px,'+by+'px) scale(.78)',offset:.4},
+      {transform:'translate('+bx+'px,'+by+'px) scale(1)'}
+    ],{d:260});
+    const txt=$('#s7BtnTxt'); if(txt) txt.textContent='正在下载…';
+  });
+  cue(3050,(q)=>{
+    an('#s7Bar',[{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{d:1000,ease:'ease-in-out'});
+  });
+  cue(4050,(q)=>{
+    const b=$('#s7Btn'); if(b) b.classList.add('done');
+    const txt=$('#s7BtnTxt'); if(txt) txt.textContent='✓ 已下载 · 方案已保存';
+    const st=$('#s7State'); if(st) st.textContent='已保存至本地 · 可随时查阅完整方案';
+  });
+  cueS(4080,SFX.check);
+  cue(4250,(q)=>{
+    if(!q) SFX.pop();
+    an('#s7Cap',[{opacity:0,transform:'translateY(16px)'},{opacity:1,transform:'translateY(0)'}],{d:500});
+  });
+}
+
+/* =====================================================================
+   S8 落地运营（11200ms）：界面铺开 → 数据滚动 → 三份清单 → 品牌收尾
+   ===================================================================== */
+function buildS8(){
+  const finCta=$('#finCta');
+  if(finCta){ finCta.style.opacity='0'; finCta.style.pointerEvents='none'; finCta.style.transform='translateY(18px)'; }
+  cueS(0,SFX.boom);
+  cueS(80,SFX.rise);
+  an('#s8Cockpit',[{opacity:0,transform:'scale(.985) translateY(10px)'},{opacity:1,transform:'scale(1) translateY(0)'}],{d:700,ease:'cubic-bezier(.25,1,.4,1)'});
+  /* KPI 数字滚动 */
+  for(let i=0;i<4;i++){
+    const el=$('#s8k'+(i+1));
+    an(el,[{opacity:0,transform:'translateY(24px)'},{opacity:1,transform:'translateY(0)'}],{d:520,delay:300+i*120});
+    countUp(el.querySelector('.num'),500+i*150,900);
+    cueS(520+i*150,()=>SFX.tick(i));
+  }
+  /* 图表面板 */
+  an('#s8Chart',[{opacity:0,transform:'translateY(20px)'},{opacity:1,transform:'translateY(0)'}],{d:600,delay:650});
+  an('#s8List',[{opacity:0,transform:'translateY(20px)'},{opacity:1,transform:'translateY(0)'}],{d:600,delay:700});
+  cue(850,(q)=>{
+    if(!q) SFX.rise();
+    an('#linePath',[{strokeDashoffset:1},{strokeDashoffset:0}],{d:1500,ease:'ease-in-out'});
+  });
+  cue(1750,(q)=>{ an('#areaPath',[{opacity:0},{opacity:.55}],{d:900}); });
+  $$('#s8List .row').forEach((el,i)=>{
+    an(el,[{opacity:0,transform:'translateX(22px)'},{opacity:1,transform:'translateX(0)'}],{d:480,delay:800+i*90});
+    if(i%2===0) cueS(820+i*90,()=>SFX.tick(i));
+  });
+  /* 三份落地配套清单依次弹出 */
+  [[2600,'#s8P1'],[4500,'#s8P2'],[6400,'#s8P3']].forEach((P)=>{
+    cue(P[0],(q)=>{
+      if(!q) SFX.whoosh();
+      an(P[1],[{opacity:0,transform:'translateY(30px) scale(.94)'},{opacity:1,transform:'translateY(0) scale(1)'}],{d:520,ease:'cubic-bezier(.3,1.2,.4,1)'});
+      const rows=$$(P[1]+' .fp-row');
+      rows.forEach((el,i)=>an(el,[{opacity:0,transform:'translateX(18px)'},{opacity:1,transform:'translateX(0)'}],{d:380,delay:260+i*110}));
+      $$(P[1]+' .gbar').forEach((el,i)=>an(el,[{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{d:520,delay:620+i*120,ease:'cubic-bezier(.3,.9,.4,1)'}));
+      $$(P[1]+' .ck').forEach((el,i)=>an(el,[{transform:'scale(0)'},{transform:'scale(1.2)',offset:.7},{transform:'scale(1)'}],{d:380,delay:620+i*120,ease:'cubic-bezier(.34,1.56,.64,1)'}));
+      cueS(P[0]+300+rows.length*110,()=>SFX.pop());
+    });
+  });
+  /* 品牌收尾：定格 ERP 界面 + 品牌行（与封面首行同规格）+ 开源副题 */
+  cue(8200,(q)=>{
+    an('#s8Fin',[{opacity:0},{opacity:1}],{d:900});
+    an('.fin-mark',[{opacity:0,transform:'scale(.7)'},{opacity:1,transform:'scale(1)'}],{d:700,delay:300,ease:'cubic-bezier(.34,1.56,.64,1)'});
+    an('.fin-title',[{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'translateY(0)'}],{d:640,delay:400});
+    an('.fin-sub',[{opacity:0,transform:'translateY(16px)'},{opacity:1,transform:'translateY(0)'}],{d:700,delay:800});
+    an('.fin-tiny',[{opacity:0},{opacity:1}],{d:700,delay:1100});
+  });
+  /* 收尾 CTA：略闪呼吸，提示联系专家 */
+  cue(9800,(q)=>{
+    const cta=$('#finCta');
+    if(!cta) return;
+    cta.style.pointerEvents='auto';
+    an(cta,[{opacity:0,transform:'translateY(18px) scale(.96)'},{opacity:1,transform:'none'}],{d:700});
+    an(cta,[
+      {boxShadow:'0 14px 40px rgba(63,216,192,.28)'},
+      {boxShadow:'0 16px 56px rgba(63,216,192,.58)'},
+      {boxShadow:'0 14px 40px rgba(63,216,192,.28)'}
+    ],{d:1800,delay:700,iter:Infinity,ease:'ease-in-out'});
+  });
+  cueS(8270,()=>AUDIO.stopBGM(1.4));
+  cueS(8300,SFX.chord);
+  cueS(8650,SFX.ding);
+}
+
+SCENES.push({id:'sc6',name:'市场匹配',dur:5900,build:buildS6});
+SCENES.push({id:'sc7',name:'方案交付',dur:4800,build:buildS7});
+SCENES.push({id:'sc8',name:'落地运营',dur:11200,build:buildS8});
+
+/* ---------- 初始化 ---------- */
+applyMode();
+buildTopbar();
+syncChrome();
+$$('.scene').forEach(el=>{el.inert=true;el.setAttribute('aria-hidden','true');});
+if(REDUCE) pauseAllAnims();
+requestAnimationFrame(loop);
+window.__promo={
+  goto:(k,inst)=>{ enter(k,inst!==false); },
+  seek:seekScene,
+  play:()=>{ if(!playing) togglePlay(); },
+  pause:()=>{ if(playing) togglePlay(); },
+  next:()=>step(1), prev:()=>step(-1),
+  replay:replayScene, cover:backToCover,
+  start:startShow,
+  mode:()=>M?'mobile':'desktop',
+  state:()=>({cur:cur,elapsed:Math.round(elapsed),dur:SCENES[cur]?SCENES[cur].dur:0,total:totalDur(),playing:playing,mode:M?'mobile':'desktop'}),
+  list:()=>SCENES.map((s,i)=>i+':'+s.name+'('+s.dur+'ms)'),
+  diagnostics:()=>({errors:[...engineErrors],animations:curAnims.length,pendingCues:cues.filter(c=>!c.used).length}),
+  audio:AUDIO, sfx:SFX
+};
+})();
+</script>
+</body>
+</html>
