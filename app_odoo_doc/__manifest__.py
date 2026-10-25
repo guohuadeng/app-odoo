@@ -38,7 +38,7 @@
 
 {
     'name': "odoo用户手册开发手册大全,odoo User Doc & Developer Doc Anywhere",
-    'version': '18.0.26.08.05',
+    'version': '18.0.26.10.25',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
