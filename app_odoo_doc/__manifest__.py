@@ -37,7 +37,7 @@
 ##############################################################################
 
 {
-    'name': "odoo用户手册开发手册大全,odoo User Doc & Developer Doc Anywhere",
+    'name': "Odoo用户手册与开发手册,从入门到精通,odoo User Doc & Developer Doc Anywhere",
     'version': '20.0.26.10.25',
     'author': 'odooai.cn',
     'category': 'Base',
@@ -47,7 +47,7 @@
     'sequence': 18,
     'price': 0.00,
     'currency': 'EUR',
-    'images': ['static/description/app_odoo_doc.gif'],
+    'images': ['static/description/banner.png', 'static/description/app_odoo_doc.gif'],
     'depends': [
         'web',
         'app_odoo_customize',
