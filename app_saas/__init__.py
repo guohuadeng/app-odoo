@@ -2,8 +2,9 @@
 
 #  please comment follow for produce
 from . import models
-from . import report
-from . import controllers
+from . import wizard
+# from . import report
+# from . import controllers
 
 # hook form install and uninstall
 

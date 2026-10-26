@@ -3,7 +3,7 @@
 # Created on 2023-10-06
 # author: 欧度智能，https://www.odooai.cn
 # email: 300883@qq.com
-# Copyright (C) 2009~2024 odooAi.cn
+# Copyright (C) 2009~2026 odooAi.cn
 
 # Odoo16在线用户手册（长期更新）
 # https://www.odooai.cn/documentation/16.0/zh_CN/index.html
@@ -11,19 +11,19 @@
 # Odoo16在线开发者手册（长期更新）
 # https://www.odooai.cn/documentation/16.0/zh_CN/developer.html
 
-from odoo import api, SUPERUSER_ID, _
+# v13 hooks 签名为 (cr) / (cr, registry)，与 v16+ 的 (env) 不同
 
 
-def pre_init_hook(env):
+def pre_init_hook(cr):
     pass
     # cr.execute("")
 
 
-def post_init_hook(env):
+def post_init_hook(cr, registry):
     pass
     # cr.execute("")
 
 
-def uninstall_hook(env):
+def uninstall_hook(cr, registry):
     pass
     # cr.execute("")

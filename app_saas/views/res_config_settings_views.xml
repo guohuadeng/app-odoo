@@ -1,28 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-<!--        <record id="app_res_config_settings_view_form" model="ir.ui.view">-->
-<!--            <field name="name">res.config.settings.view.form.inherit.app_common</field>-->
-<!--            <field name="model">res.config.settings</field>-->
-<!--            <field name="inherit_id" ref="base.res_config_settings_view_form"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <xpath expr="//setting[@id='odooai_cloud_saas_ok']" position="after">-->
-<!--                    <setting string="SaaS Chinese PO" help="Checked to Sync Odoo Chinese from www.odooapp.cn" id="module_app_cn_po">-->
-<!--                        <field name="module_app_cn_po"/>-->
-<!--                        <div class="content-group mt16" invisible="not module_app_cn_po" id="msg_module_app_cn_po">-->
-<!--                            <div class="mt16 text-warning">-->
-<!--                                <strong>Save</strong> to Install Chinese PO App if downloaded.-->
-<!--                            </div>-->
-<!--                            <div class="text-warning">-->
-<!--                                Or get the app from-->
-<!--                                <a href="https://www.odooapp.cn/apps/modules/app_cn_po" class="o_doc_link ml8"-->
-<!--                                   target="_blank">https://www.odooapp.cn/apps/modules/app_cn_po-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </setting>-->
-<!--                </xpath>-->
-<!--            </field>-->
-<!--        </record>-->
+        <record id="app_res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.app_saas</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='integration']" position="after">
+                    <h2>SaaS Cloud Client</h2>
+                    <div class="col-xs-12 row o_settings_container" id="app_saas_integration">
+                        <div class="col-xs-12 col-md-10 o_setting_box" id="app_saas_db_token_box">
+                            <div class="o_setting_right_pane border-start-0">
+                                <span class="o_form_label">Cloud DB Token</span>
+                                <div class="text-muted">
+                                    The odooapp SaaS Token. You can get it after first time Login via Ai
+                                    Passport of odooapp.cn. Also you can set from
+                                    <a href="https://www.odooapp.cn/my/" class="o_doc_link ml8"
+                                       target="_blank">https://www.odooapp.cn/my/</a>
+                                </div>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label class="col-lg-2" for="app_saas_db_token"/>
+                                        <field name="app_saas_db_token" widget="CopyClipboardChar"
+                                               style="width: 60% !important;"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
     </data>
 </odoo>

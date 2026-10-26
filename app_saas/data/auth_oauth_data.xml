@@ -3,16 +3,23 @@
     <data noupdate="1">
         <record id="provider_app_saas" model="auth.oauth.provider">
             <field name="name">Ai Passport of odooapp.cn</field>
-            <field name="body">Ai通行证-Odoo中文应用商店</field>
+            <field name="body">Ai Passport of odooapp.cn</field>
             <field name="auth_endpoint">https://www.odooapp.cn/oauth/authorize</field>
             <field name="code_endpoint">https://www.odooapp.cn/oauth/token</field>
-            <field name="scope">odoo,profile</field>
+            <field name="scope">client,profile</field>
             <field name="validation_endpoint">https://www.odooapp.cn/oauth/profile</field>
             <field name="data_endpoint"></field>
-            <field name="user_template_id" ref=""/>
             <field name="css_class">fa fa-2x fa-fw fa-sign-in text-primary</field>
             <field name="enabled" eval="True"/>
+            <field name="sequence">1</field>
         </record>
+<!--        停用 odoo.com-->
+        <function model="auth.oauth.provider" name="write">
+            <value eval="[ref('auth_oauth.provider_openerp')]"/>
+            <value eval="{'enabled': False}"/>
+        </function>
+    </data>
+    <data noupdate="0">
         <!-- Use database uuid as client_id for OpenERP oauth provider -->
         <function model="auth.oauth.provider" name="write">
             <value eval="[ref('app_saas.provider_app_saas')]"/>

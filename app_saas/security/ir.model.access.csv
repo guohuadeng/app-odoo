@@ -1,3 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_model_new,access_model_new,model_model_new,base.group_user,1,1,1,1
-access_model_new_report,access_model_new_report,model_model_new_report,base.group_user,1,1,1,1
+error_submit_wizard_user,error.submit.wizard.user,app_saas.model_error_submit_wizard,base.group_user,1,1,1,1

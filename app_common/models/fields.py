@@ -28,7 +28,7 @@ class Selection(Field):
                     ):
                         _logger.debug("%s: selection=%r overrides existing selection; use selection_add instead", self, selection)
                     values = [kv[0] for kv in selection]
-                    labels = dict(selection)
+                    labels = {kv[0]: kv[1] for kv in selection if len(kv) >= 2}
                 else:
                     self.selection = selection
                     values = None
@@ -41,9 +41,9 @@ class Selection(Field):
                 assert values is not None, \
                     "%s: selection_add=%r on non-list selection %r" % (self, selection_add, self.selection)
                 values = merge_sequences(values, [kv[0] for kv in selection_add])
-                labels.update(kv for kv in selection_add if len(kv) == 2)
+                labels.update({kv[0]: kv[1] for kv in selection_add if len(kv) >= 2})
 
         if values is not None:
-            self.selection = [(value, labels[value]) for value in values]
+            self.selection = [(value, labels.get(value, value)) for value in values]
 
 oldSelection._setup_attrs = Selection._setup_attrs_app
