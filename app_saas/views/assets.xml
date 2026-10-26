@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- v13 没有 manifest assets 机制，资源需继承 web.assets_backend 声明 -->
+    <template id="assets_backend" name="app_saas backend assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/app_saas/static/src/js/error_dialog_extend.js"/>
+            <script type="text/javascript" src="/app_saas/static/src/js/error_submit_form_view.js"/>
+        </xpath>
+    </template>
+</odoo>
