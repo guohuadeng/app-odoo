@@ -20,7 +20,8 @@ patch(ErrorDialog.prototype, {
     async onSubmitError() {
         const issueUrl = browser.location ? browser.location.href : 'http://localhost';
         const errorTitle = this.props.name || "Error";
-        const errorData = this.traceback;
+        // Odoo 20 的 ErrorDialog 只在 props 上暴露 traceback，RPCErrorDialog 才额外写到 this.traceback
+        const errorData = this.traceback || this.props.traceback;
 
         this.action.doAction({
             type: 'ir.actions.act_window',

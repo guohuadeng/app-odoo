@@ -4,12 +4,12 @@
     <t t-inherit="web.ErrorDialog" t-inherit-mode="extension">
         <xpath expr="//button[@t-on-click='this.props.close']" position="after">
             <button class="btn btn-warning ms-2 o-submit-error-button"
-                    t-on-click="onSubmitError"
-                    t-att-disabled="isSubmitting"
+                    t-on-click="this.onSubmitError"
+                    t-att-disabled="this.isSubmitting"
                     title="Report this error to OdooAi.cn for support Via Ai Passport">
-                <i t-if="isSubmitting" class="oi oi-spin me-1" data-icon="progress_activity"/>
+                <i t-if="this.isSubmitting" class="oi oi-spin me-1" data-icon="progress_activity"/>
                 <i t-else="" class="oi me-1" data-icon="send"/>
-                <t t-out="submitButtonText"/>
+                <t t-out="this.submitButtonText"/>
                 Apply Support
             </button>
         </xpath>
