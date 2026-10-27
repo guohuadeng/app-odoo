@@ -16,7 +16,6 @@
 # description:
 
 from odoo import api, SUPERUSER_ID, _
-from odoo.exceptions import UserError
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -65,7 +64,7 @@ def post_init_hook(env):
             except Exception as e:
                 _logger.error('cn: pricelist write currency_id error.')
     except Exception as e:
-        raise UserError(e)
+        raise Warning(e)
 
 def uninstall_hook(env):
     """

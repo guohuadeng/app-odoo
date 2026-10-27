@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--        deepseek-->
+        <function model="account.journal" name="write" context="{'lang': 'zh_CN'}">
+            <value model="account.journal"
+                   eval="obj().search([('name', '=', 'Cash on Hand')]).ids"/>
+            <value model="account.journal" eval="{
+                'name': '现金账',
+            }"/>
+        </function>
+    </data>
+</odoo>
