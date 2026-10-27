@@ -2,7 +2,7 @@ id,base_url_doc
 base.module_sale,/documentation/19.0/applications/sales.html
 base.module_sale_management,/documentation/19.0/applications/sales.html
 base.module_website,/documentation/19.0/applications/websites/website.html
-base.module_website_sale,/documentation/19.0/applications/website.html
+base.module_website_sale,/documentation/19.0/applications/websites/ecommerce.html
 base.module_stock,/documentation/19.0/applications/inventory_and_mrp.html
 base.module_mrp,/documentation/19.0/applications/inventory_and_mrp.html
 base.module_purchase,/documentation/19.0/applications/inventory_and_mrp.html
