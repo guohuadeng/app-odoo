@@ -678,12 +678,12 @@ msgstr "更多强调重复"
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__endpoint
 msgid "End Point"
-msgstr "终端"
+msgstr "Api接口Url"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_ai_robot__engine
 msgid "Engine"
-msgstr ""
+msgstr "引擎"
 
 #. module: app_chatgpt
 #: model:ir.model.fields,field_description:app_chatgpt.field_discuss_channel__ext_ai_sys_content
