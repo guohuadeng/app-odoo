@@ -13,7 +13,11 @@ class BlogPost(models.Model):
     blog_id = fields.Many2one('blog.blog', ondelete='restrict')
 
     def write(self, vals):
-        website = request.env['website'].get_current_website()
+        # cron 等无 HTTP 请求上下文时 request 未绑定，跳过网站相关同步逻辑
+        try:
+            website = request.env['website'].get_current_website()
+        except RuntimeError:
+            return super(BlogPost, self).write(vals)
         if 'website_meta_og_img' in vals and not vals.get('cover_properties'):
             sync_blog_meta_background_img = self.env['ir.config_parameter'].sudo().get_param('app_website_blog_editor.sync_blog_meta_background_img')
             if sync_blog_meta_background_img:
