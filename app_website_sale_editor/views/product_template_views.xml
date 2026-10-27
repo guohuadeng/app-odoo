@@ -54,6 +54,9 @@
 	                    </group>
                     </page>
                 </xpath>
+                <xpath expr="//page[@name='shop_desc']//field[@name='website_meta_description']/.." position="after">
+                    <group name="product_template_images" position="move"/>
+                </xpath>
             </field>
         </record>
 
