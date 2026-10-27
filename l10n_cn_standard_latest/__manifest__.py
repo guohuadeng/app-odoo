@@ -7,14 +7,14 @@
 
 {
     'name': '2027最新中国会计科目表 / Latest Chinese Accounting Chart',
-    'version': '20.0.26.10.21',
+    'version': '20.0.26.10.28',
     'author': 'odooai.cn',
     'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.odooai.cn',
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 12,
-    'summary': '2027最新中国会计科目表，营改增后会计科目调整，多级科目支持 / Latest Chinese accounting chart with multi-level account support',
+    'summary': '2027最新中国会计科目表（含小规模纳税人），营改增后会计科目调整，多级科目支持 / Latest Chinese accounting chart (general and small-scale taxpayer) with multi-level account support',
     'description': """
 1. 2027 latest Chinese accounting chart of accounts with post-VAT reform adjustments.
 2. Updated to latest tax rates. Set menu to "Accounting".
@@ -23,6 +23,7 @@
 5. Support parent accounts with secondary account levels. Works with "app_web_widget_ztree" for tree navigation.
 6. Use Kingdee naming convention for multi-level accounts separated by dots. Customizable account codes.
 7. Must be installed in a clean environment without business data or existing accounts. Use "app_odoo_customize" to reset.
+7b. Two chart templates: cn_standard (general taxpayer) and cn_standard_smb (small-scale taxpayer, no input VAT deduction, 1%/3% levy rate).
 8. Including Chart of Accounts templates, Account templates, Tax templates.
 9. Multi-Language Support.
 10. Multi-Company Support.

@@ -54,6 +54,79 @@ class AccountChartTemplate(models.AbstractModel):
             'property_stock_account_production_cost_id': 'account_5001',
         }
 
+    @template('cn_standard_smb')
+    def _get_cn_standard_smb_template_data(self):
+        # 小规模纳税人：科目结构与一般纳税人一致，去掉进项抵扣相关明细，税项用征收率
+        # 科目表标识 code = cn_standard_smb（科目编码保持 4 位不变，模板记录 id 加 _smb 后缀）
+        return {
+            'name': _('2027中国企业会计科目表-小规模纳税人'),
+            'code_digits': 4,
+            'anglo_saxon_accounting': False,
+            'use_storno_accounting': False,
+            'cash_account_code_prefix': '1001',
+            'bank_account_code_prefix': '1002',
+            'transfer_account_code_prefix': '1003',
+            'property_account_receivable_id': 'account_1122_smb',
+            'property_account_payable_id': 'account_2202_smb',
+            'property_account_income_categ_id': 'account_6001_smb',
+            'property_account_expense_categ_id': 'account_6401_smb',
+            'property_account_downpayment_categ_id': 'account_2203_smb',
+            'property_account_prepay_categ_id': 'account_1123_smb',
+            # 小规模不抵扣进项，税额统一挂销项税额 / 未交增值税
+            'property_tax_receivable_account_id': 'account_2221_01_05_smb',
+            'property_tax_payable_account_id': 'account_2221_02_smb',
+            'property_stock_account_input_categ_id': 'account_1401_smb',
+            'property_stock_account_output_categ_id': 'account_1406_smb',
+            'property_stock_valuation_account_id': 'account_1405_01_smb',
+            'property_stock_account_production_cost_id': 'account_5001_smb',
+        }
+
+    @template('cn_standard_smb', 'res.company')
+    def _get_cn_standard_smb_res_company(self):
+        return {
+            self.env.company.id: {
+                'account_fiscal_country_id': 'base.cn',
+                'cash_account_code_prefix': '1001',
+                'bank_account_code_prefix': '1002',
+                'transfer_account_code_prefix': '1003',
+                'account_default_pos_receivable_account_id': 'account_1124_smb',
+                # 默认销项按现行小规模 1% 征收率（价内税），采购侧不抵扣
+                'account_sale_tax_id': 'l10n_cn_smb_sale_1_included',
+                'account_purchase_tax_id': 'l10n_cn_smb_purchase_0',
+                'income_currency_exchange_account_id': 'account_6061_01_smb',
+                'expense_currency_exchange_account_id': 'account_6061_02_smb',
+                'default_pos_receivable_account_id': 'account_1124_smb',
+                'account_journal_suspense_account_id': 'account_1002_07_smb',
+                'account_journal_payment_debit_account_id': 'account_1002_08_smb',
+                'account_journal_payment_credit_account_id': 'account_1002_09_smb',
+                'purchase_iap_account_id': 'account_2202_03_smb',
+                'account_journal_suspense_pc_account_id': 'account_1002_10_smb',
+                'expense_outstanding_account_id': 'account_1002_10_smb',
+                'deferred_expense_account_id': 'account_1801_smb',
+                'deferred_revenue_account_id': 'account_2401_smb',
+                'default_cash_difference_income_account_id': 'account_6603_smb',
+                'default_cash_difference_expense_account_id': 'account_6603_smb',
+                'account_journal_early_pay_discount_gain_account_id': 'account_6603_smb',
+                'account_journal_early_pay_discount_loss_account_id': 'account_6603_smb',
+            },
+        }
+
+    @template('cn_standard_smb', 'account.journal')
+    def _get_cn_standard_smb_account_journal(self):
+        return {
+            'cash': {
+                'name': _('Cash on Hand'),
+                'type': 'cash',
+                'code': 'CASH',
+                'default_account_id': 'account_1001_smb',
+            },
+            'bank': {
+                'name': _('Bank'),
+                'code': 'BANK',
+                'default_account_id': 'account_1002_01_smb',
+            },
+        }
+
     @template('cn_standard', 'res.company')
     def _get_cn_standard_res_company(self):
         # 公司级，覆盖设置
