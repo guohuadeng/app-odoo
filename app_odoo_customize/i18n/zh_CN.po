@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 19.0+e-20260208\n"
+"Project-Id-Version: Odoo Server 20.0+e-20261008\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-12 10:08+0000\n"
-"PO-Revision-Date: 2026-02-12 10:08+0000\n"
+"POT-Creation-Date: 2026-10-29 08:07+0000\n"
+"PO-Revision-Date: 2026-10-29 08:07+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -52,25 +52,165 @@ msgstr ""
 "当存在多公司问题时，您可能能够通过切换到公司：%s来访问记录。"
 
 #. module: app_odoo_customize
-#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+#: model:ir.module.module,summary:base.module_app_odoo_customize
 msgid ""
-"Be careful! This will stop all subscribe notifications. Also the document "
-"permission will be affected."
-msgstr "请谨慎操作！这将停止所有订阅通知。同时，基于订阅的权限将受到影响，比如项目，销售订单门户。"
+"\n"
+"    60+ Odoo Enhance in 1 click Tweak odoo. Change Odoo to your OEM brand.all in one odoo enhancement. for Customize,UI,Boost Security,Development.\n"
+"    ChatWindow drag and resize (bottom-left & bottom-right). Easy reset data, clear data, reset account chart, reset Demo data.\n"
+"    Show XML ID in debug menu. Neutralize/Production DB switch. Documentation link redirect.\n"
+"    For quick debug. Set brand,Language Switcher all in one.\n"
+"    "
+msgstr ""
 
 #. module: app_odoo_customize
-#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+#: model:ir.module.module,description:base.module_app_odoo_customize
 msgid ""
-"It also disables the websocket bus: no real-time push, no Discuss live "
-"updates and no online presence detection, until users refresh the page."
-msgstr "同时停用 websocket 推送：不再有实时通知、Discuss 实时更新和在线状态检测，用户刷新页面后生效。"
-
-#. module: app_odoo_customize
-#: model_terms:ir.ui.view,arch_db:app_odoo_customize.clear_data_wizard_form
-msgid ""
-"If you choose to clear only the current company's data, cross-company data "
-"will not be cleared."
-msgstr "如您选择仅删除本公司数据，跨公司数据将不会被删除。"
+"\n"
+"App Customize Odoo (Change Title,Language,Documentation,Quick Debug)\n"
+"============\n"
+"White label odoo. UI and Development Enhance.\n"
+"Support Odoo 20,19,18,17,16,15,14,13,12,11,10,9.\n"
+"You can config odoo, make it look like your own platform.\n"
+"============\n"
+"1. Deletes Odoo label in footer\n"
+"2. Replaces \"Odoo\" in Windows title\n"
+"3. Customize Documentation, Support, About links and title in usermenu\n"
+"4. Adds \"Developer mode\" link to the top right-hand User Menu.\n"
+"5. Adds Quick Language Switcher to the top right-hand User Menu.\n"
+"6. Adds Country flags  to the top right-hand User Menu.\n"
+"7. Adds English and Chinese user documentation access to the top right-hand User Menu.\n"
+"8. Adds developer documentation access to the top right-hand User Menu.\n"
+"9. Customize \"My odoo.com account\" button\n"
+"10. Standalone setting panel, easy to setup.\n"
+"11. Provide 236 country flags.\n"
+"12. Multi-language Support.\n"
+"13. Change Powered by Odoo in login screen.(Please change '../views/app_odoo_customize_view.xml' #15)\n"
+"14. Quick delete test data in Apps: Sales/POS/Purchase/MRP/Inventory/Accounting/Project/Message/Workflow etc.\n"
+"15. Reset All the Sequence to beginning of 1: SO/PO/MO/Invoice...\n"
+"16. Fix odoo reload module translation bug while enable english language\n"
+"17. Stop Odoo Auto Subscribe(Moved to app_odoo_boost)\n"
+"18. Show/Hide Author and Website in Apps Dashboard\n"
+"19. One Click to clear all data (Sometime pls click twice)\n"
+"20. Show quick upgrade in app dashboard, click to show module info not go to odoo.com\n"
+"21. Can clear and reset account chart. Be cautious\n"
+"22. Update online manual and developer document to odoo16\n"
+"23. Add reset or clear website blog data\n"
+"24. Customize Odoo Native Module(eg. Enterprise) Url\n"
+"25. Add remove expense data\n"
+"26. Add multi uninstall modules\n"
+"27. Add odoo boost modules link.\n"
+"28. Easy Menu manager.\n"
+"29. Apps version compare. Add Install version in App list. Add Local updatable filter in app list.\n"
+"30. 1 key export app translate file like .po file.\n"
+"31. Fix odoo bug of complete name bug of product category and stock location..\n"
+"32. Add Demo Ribbon Setting.\n"
+"33. Add Remove all quality data.\n"
+"34. Fixed for odoo 14.\n"
+"35. Add refresh translate for multi module.\n"
+"36. Easy noupdate manage for External Identifiers(xml_id)\n"
+"37. Add Draggable and sizeable Dialog enable.\n"
+"38. Only erp manager can see debug menu..\n"
+"39. Fix support for enterprise version.\n"
+"40. Fix odoo bug, when click Preferences menu not hide in mobile.\n"
+"41. Mobile Enhance. Add menu navbar setup for top or bottom. navigator footer support.\n"
+"42. Check to only Debug / Debug Assets for Odoo Admin. Deny debug from url for other user.\n"
+"43. Check to stop subscribe and follow, and disable the websocket bus (real-time push & presence detection). This to make odoo speed up.\n"
+"44. Add addons path info to module.\n"
+"45. Add Help documentation anywhere.  easy get help for any odoo operation or action.\n"
+"46. Add ai robot app integration. Use Ai as your employee.\n"
+"47. Add configurable Test Label, Demo Ribbon on top menu.\n"
+"48. Add SaaS client switch for online Translate sync(18 only).\n"
+"49. Quick Menu manager. de-active / active menu.\n"
+"50. Show menu xml_id in debug asset mode.  easy for menu and action development.\n"
+"51. Quick View Fields list and View List of every model.\n"
+"52. Quick management and view of [Application Access Category].\n"
+"53. ChatWindow Draggable and Resizable with Min W/H Constraints (Bottom-Left & Bottom-Right).\n"
+"54. Quick set database to test Neutralize DB, or restore to Production.\n"
+"55. Multi-language Support. Multi-Company Support.\n"
+"56. Support Odoo 20, 19, 18, 17, 16, 15, 14, 13, 12, Enterprise and Community and odoo.sh Edition.\n"
+"57. Full Open Source.\n"
+"58. Show record XML ID in debug menu with one-click copy to clipboard.\n"
+"59. Redirect native Odoo documentation help links (e.g. Check why) to configurable app_doc_root_url domain.\n"
+"60. Show or hide the Odoo Studio icon in the top menu; works with or without web_studio installed, and needs no web_enterprise dependency.\n"
+"61. Add \"Hide Now\" button to hide the site-wide test ribbon with one click.\n"
+"62. Manage addons paths: list every addons path with module count, open the apps of a path, and refresh module-path mapping on module update.\n"
+"63. Add \"Odoo Chinese Apps\" module type and filter in Apps Dashboard, click to open module info instead of the Odoo store.\n"
+"64. Enhanced access-denied diagnostics in debug mode: failing records, rules and multi-company switching hint.\n"
+"65. Auto refresh the current language .po before upgrading a module, so translations always take effect.\n"
+"\n"
+"This module can help to white label the Odoo.\n"
+"Also helpful for training and support for your odoo end-user.\n"
+"The user can get the help document just by one click.\n"
+"## 在符合odoo开源协议的前提下，自定义你的odoo系统\n"
+"可完全自行设置下列选项，将 odoo 整合进自有软件产品\n"
+"支持Odoo 20,19,18,17,16,15,14,13,12,11,10,9 版本，社区版企业版通用\n"
+"============\n"
+"1. 删除菜单导航页脚的 Odoo 标签\n"
+"2. 将弹出窗口中 \"Odoo\" 设置为自定义名称\n"
+"3. 自定义用户菜单中的 Documentation, Support, About 的链接\n"
+"4. 在用户菜单中增加快速切换开发模式\n"
+"5. 在用户菜单中增加快速切换多国语言\n"
+"6. 对语言菜单进行美化，设置国旗图标\n"
+"7. 在用户菜单中增加中/英文用户手册，可以不用翻墙加速了\n"
+"8. 在用户菜单中增加开发者手册，含python教程，jquery参考，Jinja2模板，PostgresSQL参考\n"
+"9. 在用户菜单中自定义\"My odoo.com account\"\n"
+"10. 单独设置面板，每个选项都可以自定义\n"
+"11. 提供236个国家/地区的国旗文件（部份需要自行设置文件名）\n"
+"12. 多语言版本\n"
+"13. 自定义登陆界面中的 Powered by Odoo\n"
+"14. 快速删除测试数据，支持模块包括：销售/POS门店/采购/生产/库存/会计/项目/消息与工作流等.\n"
+"15. 将各类单据的序号重置，从1开始，包括：SO/PO/MO/Invoice 等\n"
+"16. 修复odoo启用英文后模块不显示中文的Bug\n"
+"17. 可停用odoo自动订阅功能，避免“同样对象关注2次”bug，同时提升性能\n"
+"18. 显示/隐藏应用的作者和网站-在应用安装面板中\n"
+"19. 一键清除所有数据（视当前数据情况，有时需点击2次）\n"
+"20. 在应用面板显示快速升级按键，点击时不会导航至 odoo.com\n"
+"21. 清除并重置会计科目表\n"
+"22. 全新升级将odoo12用户及开发手册导航至国内网站，或者自己定义的网站\n"
+"23. 增加清除网站数据功能\n"
+"24. 自定义 odoo 原生模块跳转的url(比如企业版模块)\n"
+"25. 增加删除费用报销数据功能\n"
+"26. 增加批量卸载模块功能\n"
+"27. 增加odoo加速功能\n"
+"28. 快速管理顶级菜单\n"
+"29. App版本比较，快速查看可本地更新的模块\n"
+"30. 一键导出翻译文件 po\n"
+"31. 增加修复品类及区位名的操作\n"
+"32. 增加 Demo 的显示设置\n"
+"33. 增加清除质检数据\n"
+"34. 优化至odoo14适用\n"
+"35. 可为多个模块强制更新翻译\n"
+"36. noupdate字段的快速管理，主要针对 xml_id\n"
+"37. 对话框可拖拽，可缩放，自动大屏优化\n"
+"38. 只有系统管理员可以操作快速debug\n"
+"39. 增强对企业版的支持\n"
+"40. 修正odoo原生移动端菜单bug，点击个人设置时，原菜单不隐藏等\n"
+"41. 可设置导航栏在上方还是下方，分开桌面与移动端.\n"
+"42. 可设置只允许管理员进入开发者模式，不可在url中直接debut=1来调试\n"
+"43. 可配置停用自动用户订阅功能，同时停用 websocket 实时推送与在线状态检测，这会提速odoo，减少资源消耗\n"
+"44. 为应用模块增加模块路径信息\n"
+"45. 增加快速帮助文档，可以在任意操作中获取相关的 odoo 帮助.\n"
+"46. 增加Ai模块相关信息，可以快速访问ai模块，使用ai员工.\n"
+"47. 增加可配置的系统调试标签，用于系统测试期提示.\n"
+"48. 增加 SaaS 客户端开头，可让用户安装在线翻译同步模块及在线更新(仅odoo18).\n"
+"49. 快速菜单管理，快速禁用/启用菜单.\n"
+"50. 在开发者Assets模式中，快速查看菜单Menu 的 xml_id.\n"
+"51. 快速管理查看模型的字段和视图列表.\n"
+"52. 快速管理查看应用权限分类管理.\n"
+"53. 聊天窗口可拖拽和调整大小，含最小宽/高限制（左下角和右下角双角缩放）.\n"
+"54. 快速设定全数据库为测试实例(Neutralize)，或恢复为生产实例.\n"
+"55. 多语言支持，多公司支持.\n"
+"56. Odoo 20,19,18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持.\n"
+"57. 代码完全开源.\n"
+"58. 开发者菜单中显示当前记录的 XML ID，支持一键复制到剪贴板.\n"
+"59. 将原生Odoo文档帮助链接（如 Check why）重定向至可配置的 app_doc_root_url 域名.\n"
+"60. 可显示/隐藏顶部菜单的 Odoo Studio 图标；无论是否安装 web_studio 均可使用，且不依赖 web_enterprise.\n"
+"61. 测试标签增加“一键隐藏”按钮，一键隐藏全站测试标签.\n"
+"62. 插件路径管理：列出所有插件路径及模块数量，可打开该路径下的应用，模块更新时自动刷新模块与路径的对应关系.\n"
+"63. 应用面板增加“Odoo中文应用”模块类型与筛选，点击直接打开模块信息页，而不是跳转 Odoo 商店.\n"
+"64. 开发者模式下增强访问权限错误提示：显示失败记录、相关规则及多公司切换建议.\n"
+"65. 升级模块前自动刷新当前语言的 .po 翻译，确保翻译生效.\n"
+msgstr ""
 
 #. module: app_odoo_customize
 #. odoo-python
@@ -161,6 +301,12 @@ msgstr "<span class=\"o_stat_text\"> 模块 </span>"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid ""
+"<span>Replace odoo.com help links (e.g. Check why) to this domain</span>"
+msgstr ""
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "<span>Set to False to hide</span>"
 msgstr "<span>设置为 False 或 0 则不显示</span>"
 
@@ -211,6 +357,13 @@ msgid "Application Access Category"
 msgstr "应用权限分类"
 
 #. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid ""
+"Be careful! This will stop all subscribe notifications. Also the document "
+"permission will be affected."
+msgstr "请谨慎操作！这将停止所有订阅通知。同时，基于订阅的权限将受到影响，比如项目，销售订单门户。"
+
+#. module: app_odoo_customize
 #. odoo-python
 #: code:addons/app_odoo_customize/models/ir_rule.py:0
 msgid ""
@@ -225,6 +378,13 @@ msgid "Bottom"
 msgstr "底部"
 
 #. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/user_menu.js:0
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.clear_data_wizard_form
+msgid "Cancel"
+msgstr "取消"
+
+#. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_debug_only_admin
 msgid ""
 "Check to only Debug / Debug Assets for Odoo Admin. Deny debug from url for "
@@ -232,17 +392,14 @@ msgid ""
 msgstr "勾选后仅Odoo管理员可操作开发者模式。 拒绝其他用户从URL进入调试模式。"
 
 #. module: app_odoo_customize
-#: model_terms:ir.ui.view,arch_db:app_odoo_customize.clear_data_wizard_form
-msgid "Cancel"
-msgstr "取消"
-
-#. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_stop_subscribe
 msgid ""
-"Check to stop subscribe and follow, and disable the websocket bus (real-time "
-"push and presence detection). This makes odoo speed up, especially on "
+"Check to stop subscribe and follow, and disable the websocket bus (real-time"
+" push and presence detection). This makes odoo speed up, especially on "
 "Windows with workers=0."
-msgstr "选中以停止订阅关注，并停用 websocket 实时推送与在线状态检测。这可让 odoo 提速，在 workers=0 的 Windows 环境下尤其明显。"
+msgstr ""
+"选中以停止订阅关注，并停用 websocket 实时推送与在线状态检测。这可让 odoo 提速，在 workers=0 的 Windows "
+"环境下尤其明显。"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
@@ -250,8 +407,6 @@ msgid "Clean and reset Account Chart"
 msgstr "清除会计科目，便于重置"
 
 #. module: app_odoo_customize
-#. odoo-python
-#: code:addons/app_odoo_customize/models/res_config_settings.py:0
 #: model:ir.actions.act_window,name:app_odoo_customize.action_clear_data_wizard
 msgid "Clear Confirmation"
 msgstr "确认清除？"
@@ -277,6 +432,29 @@ msgid "Config Settings"
 msgstr "设置"
 
 #. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/user_menu.js:0
+msgid "Confirm"
+msgstr "确定"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.clear_data_wizard_form
+msgid "Confirm Clear"
+msgstr "确认清除"
+
+#. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/user_menu.js:0
+msgid "Confirm Navigation"
+msgstr "跳转确认"
+
+#. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/xml/debug_xmlid.xml:0
+msgid "Copy XML ID"
+msgstr "复制 XML ID"
+
+#. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.replace_copyright_name
 msgid ""
 "Copyright &amp;copy;\n"
@@ -286,22 +464,13 @@ msgstr ""
 "\t            <span class=\"copyright_name_before\" contenteditable=\"true\">2010-2026 </span>"
 
 #. module: app_odoo_customize
-#: model_terms:ir.ui.view,arch_db:app_odoo_customize.clear_data_wizard_form
-msgid "Confirm Clear"
-msgstr "确认清除"
-
-#. module: app_odoo_customize
-#. odoo-javascript
-#: code:addons/app_odoo_customize/static/src/xml/debug_xmlid.xml:0
-msgid "Copy XML ID"
-msgstr "复制 XML ID"
-
-#. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_clear_data_wizard__create_uid
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__create_uid
 msgid "Created by"
 msgstr "创建者"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_clear_data_wizard__create_date
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__create_date
 msgid "Created on"
 msgstr "创建于"
@@ -322,6 +491,11 @@ msgid "Data Cleaning (Be careful to do that!)"
 msgstr "数据清理（请谨慎操作！）"
 
 #. module: app_odoo_customize
+#: model:ir.model,name:app_odoo_customize.model_clear_data_wizard
+msgid "Data Clear Scope Wizard"
+msgstr "清除数据范围向导"
+
+#. module: app_odoo_customize
 #. odoo-python
 #: code:addons/app_odoo_customize/models/ir_rule.py:0
 msgid ""
@@ -329,11 +503,6 @@ msgid ""
 "\n"
 "Sorry, %(user)s doesn't have '%(operation)s' access to:"
 msgstr ""
-
-#. module: app_odoo_customize
-#: model:ir.model,name:app_odoo_customize.model_clear_data_wizard
-msgid "Data Clear Scope Wizard"
-msgstr "清除数据范围向导"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__app_debug_only_admin
@@ -438,7 +607,16 @@ msgid "Developer Documentation Url"
 msgstr "开发者手册链接"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_base_language_install__display_name
+#: model:ir.model.fields,field_description:app_odoo_customize.field_base_module_update__display_name
+#: model:ir.model.fields,field_description:app_odoo_customize.field_clear_data_wizard__display_name
+#: model:ir.model.fields,field_description:app_odoo_customize.field_ir_http__display_name
+#: model:ir.model.fields,field_description:app_odoo_customize.field_ir_model_fields__display_name
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__display_name
+#: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_module__display_name
+#: model:ir.model.fields,field_description:app_odoo_customize.field_mail_thread__display_name
+#: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:app_odoo_customize.field_web_environment_ribbon_backend__display_name
 msgid "Display Name"
 msgstr "显示名称"
 
@@ -489,7 +667,7 @@ msgstr "设为测试归档库失败。请检查服务器日志。"
 
 #. module: app_odoo_customize
 #: model:ir.model,name:app_odoo_customize.model_ir_model_fields
-msgid "Fields"
+msgid "Field"
 msgstr "字段"
 
 #. module: app_odoo_customize
@@ -499,15 +677,8 @@ msgstr "字段列表"
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__module_app_odoo_doc
-#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
 msgid "Get Help Documentation on current odoo operation or topic."
 msgstr "获取有关当前 odoo 操作或主题的帮助文档。"
-
-#. module: app_odoo_customize
-#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid ""
-"Get Help Documentation on current odoo operation or topic. Click to get"
-msgstr "获取有关odoo当前操作或主题的帮助文档。点击获取"
 
 #. module: app_odoo_customize
 #: model:ir.model,name:app_odoo_customize.model_ir_http
@@ -530,9 +701,25 @@ msgid "Hide Now"
 msgstr "一键隐藏"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_base_language_install__id
+#: model:ir.model.fields,field_description:app_odoo_customize.field_base_module_update__id
+#: model:ir.model.fields,field_description:app_odoo_customize.field_clear_data_wizard__id
+#: model:ir.model.fields,field_description:app_odoo_customize.field_ir_http__id
+#: model:ir.model.fields,field_description:app_odoo_customize.field_ir_model_fields__id
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__id
+#: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_module__id
+#: model:ir.model.fields,field_description:app_odoo_customize.field_mail_thread__id
+#: model:ir.model.fields,field_description:app_odoo_customize.field_res_config_settings__id
+#: model:ir.model.fields,field_description:app_odoo_customize.field_web_environment_ribbon_backend__id
 msgid "ID"
 msgstr "Id"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.clear_data_wizard_form
+msgid ""
+"If you choose to clear only the current company's data, cross-company data "
+"will not be cleared."
+msgstr "如您选择仅删除本公司数据，跨公司数据将不会被删除。"
 
 #. module: app_odoo_customize
 #. odoo-python
@@ -548,11 +735,20 @@ msgid "Install Language"
 msgstr "安装语言"
 
 #. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid ""
+"It also disables the websocket bus: no real-time push, no Discuss live "
+"updates and no online presence detection, until users refresh the page."
+msgstr "同时停用 websocket 推送：不再有实时通知、Discuss 实时更新和在线状态检测，用户刷新页面后生效。"
+
+#. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_clear_data_wizard__write_uid
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__write_uid
 msgid "Last Updated by"
 msgstr "最后更新者"
 
 #. module: app_odoo_customize
+#: model:ir.model.fields,field_description:app_odoo_customize.field_clear_data_wizard__write_date
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__write_date
 msgid "Last Updated on"
 msgstr "最后更新于"
@@ -648,15 +844,15 @@ msgid "Neutralize Database"
 msgstr "设为测试归档库"
 
 #. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.app_view_model_data_search
+msgid "No Updatable"
+msgstr "无需更新"
+
+#. module: app_odoo_customize
 #. odoo-python
 #: code:addons/app_odoo_customize/wizard/clear_data_wizard.py:0
 msgid "No clear method specified."
 msgstr "未指定清除方法。"
-
-#. module: app_odoo_customize
-#: model_terms:ir.ui.view,arch_db:app_odoo_customize.app_view_model_data_search
-msgid "No Updatable"
-msgstr "无需更新"
 
 #. module: app_odoo_customize
 #: model_terms:ir.actions.act_window,help:app_odoo_customize.action_ir_module_category_list
@@ -676,15 +872,17 @@ msgid "Not allow."
 msgstr "禁止"
 
 #. module: app_odoo_customize
-#: model:ir.actions.act_window,name:app_odoo_customize.action_app_theme_config
-msgid "OEM and Boost"
-msgstr "odoo OEM定制与增强"
-
-#. module: app_odoo_customize
 #. odoo-javascript
 #: code:addons/app_odoo_customize/static/src/xml/res_config_edition.xml:0
 msgid "Odoo"
 msgstr "Odoo欧度"
+
+#. module: app_odoo_customize
+#: model:ir.module.module,shortdesc:base.module_app_odoo_customize
+msgid ""
+"Odoo20 Tweak OEM Development Enhance.Boost,Customize,Ai "
+"Employee,UI,Security,Remove Data All in One-优化提速65+项大全"
+msgstr ""
 
 #. module: app_odoo_customize
 #: model:ir.actions.act_window,name:app_odoo_customize.action_module_odooapp
@@ -715,11 +913,6 @@ msgstr "路径"
 #: model:ir.model.fields,field_description:app_odoo_customize.field_ir_module_addons_path__path_temp
 msgid "Path Temp"
 msgstr "路径Temp"
-
-#. module: app_odoo_customize
-#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
-msgid "Please confirm to delete the select data?"
-msgstr "您确认要删除指定数据？"
 
 #. module: app_odoo_customize
 #: model_terms:ir.ui.view,arch_db:app_odoo_customize.replace_login
@@ -766,6 +959,11 @@ msgstr "安全与提速"
 #: code:addons/app_odoo_customize/static/src/xml/debug_templates.xml:0
 msgid "Sequence:"
 msgstr "序号:"
+
+#. module: app_odoo_customize
+#: model_terms:ir.ui.view,arch_db:app_odoo_customize.view_app_theme_config_settings
+msgid "Set to current URL"
+msgstr ""
 
 #. module: app_odoo_customize
 #: model:ir.model.fields,help:app_odoo_customize.field_res_config_settings__app_system_name
@@ -1056,9 +1254,35 @@ msgstr "已复制 XML ID: %(xmlid)s"
 
 #. module: app_odoo_customize
 #. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/xml/debug_xmlid.xml:0
+msgid "XML ID:"
+msgstr ""
+
+#. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/xml/debug_xmlid.xml:0
+msgid "XML ID: -"
+msgstr ""
+
+#. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/xml/debug_xmlid.xml:0
+msgid "XML ID: ..."
+msgstr ""
+
+#. module: app_odoo_customize
+#. odoo-javascript
 #: code:addons/app_odoo_customize/static/src/xml/debug_templates.xml:0
 msgid "XMLID:"
 msgstr "XmlId"
+
+#. module: app_odoo_customize
+#. odoo-javascript
+#: code:addons/app_odoo_customize/static/src/js/user_menu.js:0
+msgid ""
+"You are about to leave the current system and go to the OdooAI Service "
+"Center. Do you want to continue?"
+msgstr "即将离开当前系统，跳转到OdooAi服务中心，是否继续？"
 
 #. module: app_odoo_customize
 #. odoo-python
@@ -1099,16 +1323,3 @@ msgstr "删除"
 #: code:addons/app_odoo_customize/models/ir_rule.py:0
 msgid "write"
 msgstr "写入"
-
-
-#. module: app_odoo_customize
-#. odoo-javascript
-#: code:addons/app_odoo_customize/static/src/js/chat_window_drag.js:0
-msgid "Press to drag the dialog window"
-msgstr "按住以拖动对话框窗口"
-
-#. module: app_odoo_customize
-#. odoo-javascript
-#: code:addons/app_odoo_customize/static/src/js/chat_window_drag.js:0
-msgid "Drag to resize the dialog window"
-msgstr "拖动以调整对话框窗口大小"

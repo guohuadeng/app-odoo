@@ -2,6 +2,7 @@
 /* jshint esversion: 6 */
 
 import { _t } from "@web/core/l10n/translation";
+import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { UserMenu } from "@web/webclient/user_menu/user_menu";
 import { router } from "@web/core/browser/router";
 import { patch } from "@web/core/utils/patch";
@@ -171,13 +172,23 @@ function odooAccountItem(env) {
     "use strict";
     const app_account_title = session.app_account_title;
     const app_account_url = session.app_account_url;
+    const dialog = env.services.dialog;
     return {
         type: "item",
         id: "account",
         description: _t(app_account_title),
         href: app_account_url,
         callback: () => {
-            top.location.href = app_account_url;
+            dialog.add(ConfirmationDialog, {
+                title: _t("Confirm Navigation"),
+                body: _t("You are about to leave the current system and go to the OdooAI Service Center. Do you want to continue?"),
+                confirmLabel: _t("Confirm"),
+                cancelLabel: _t("Cancel"),
+                confirm: () => {
+                    top.location.href = app_account_url;
+                },
+            });
+            // top.location.href = app_account_url;
             // browser.open(app_account_url, "_blank");
         },
         sequence: 60,
