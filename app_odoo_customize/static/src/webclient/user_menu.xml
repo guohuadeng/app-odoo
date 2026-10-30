@@ -26,8 +26,8 @@
                         <span class="image-container">
                             <img class="flag"  t-att-src="lang.flag_image_url"/>
                         </span>
-                        <span class="ms-1" t-out="lang.name"/>
-                        <span class="oi ms-1" data-icon="check" t-if="this.user_lang == lang.code"></span>
+                        <span class="ms-1 my-1" t-out="lang.name"/>
+                        <span class="oi ms-1 my-1" data-icon="check" t-if="this.user_lang == lang.code"></span>
                     </DropdownItem>
                 </t>
             </t>

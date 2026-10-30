@@ -832,7 +832,11 @@ class ResConfigSettings(models.TransientModel):
 
     def action_hide_ribbon(self):
         # 一键隐藏：把全站测试标签名称置为 0，保存设置后即不显示
+
+        config_parameter = self.env['ir.config_parameter'].sudo()
         self.app_ribbon_name = '0'
+        self.write({'app_ribbon_name': '0'})
+        config_parameter.set_str('app_ribbon_name', '0')
 
     def action_neutralize_database(self):
         if not self._app_check_sys_op():

@@ -12,7 +12,7 @@ class IrHttp(models.AbstractModel):
 
     def session_info(self):
         result = super(IrHttp, self).session_info()
-        config_parameter = request.env['ir.config_parameter'].sudo()
+        config_parameter = self.env['ir.config_parameter'].sudo()
         result['app_system_name'] = config_parameter.get_str('app_system_name', 'odooAi')
         result['app_documentation_url'] = config_parameter.get_str('app_documentation_url')
         result['app_documentation_dev_url'] = config_parameter.get_str('app_documentation_dev_url')

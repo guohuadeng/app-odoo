@@ -101,7 +101,7 @@
                             <label for="app_ribbon_name"/>
                             <div>
                                 <field name="app_ribbon_name" class="oe_inline"/>
-                                <button string="Hide Now" type="object" name="action_hide_ribbon" class="ml8"/>
+                                <button string="Hide Now" type="object" name="action_hide_ribbon" class="ml8 oe_highlight"/>
                                 <div>
                                     <span>Set to False to hide</span>
                                 </div>

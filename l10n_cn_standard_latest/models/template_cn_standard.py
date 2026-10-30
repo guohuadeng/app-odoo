@@ -180,6 +180,7 @@ class AccountChartTemplate(models.AbstractModel):
             },
             'bank': {
                 'name': _('Bank'),
+                'type': 'bank',
                 'code': 'BANK',
                 'default_account_id': 'account_1002_01',
             },
