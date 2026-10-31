@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- 修正销售看板仪表盘与搜索面板的错位：
+         v20 原生 sale.KanbanRenderer 把 Dashboard 插在 div.o_kanban_renderer 之前，
+         加上 searchpanel 后 o_content 变成 flex / grid 布局，Dashboard 会作为独立格子被子项挤压。
+         这里把 Dashboard 移入看板渲染器内部，配合 sale_dashboard.scss 让它独占一整行。 -->
+    <t t-name="app_sale_superbar.KanbanRenderer" t-inherit="sale.KanbanRenderer" t-inherit-mode="extension">
+        <xpath expr="//Dashboard" position="replace"/>
+        <xpath expr="//div[hasclass('o_kanban_renderer')]/*[1]" position="before">
+            <Dashboard/>
+        </xpath>
+    </t>
+</templates>

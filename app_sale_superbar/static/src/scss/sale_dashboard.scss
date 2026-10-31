@@ -1,0 +1,13 @@
+// 销售看板仪表盘布局修正
+// 仪表盘已由 sale_kanbanview.xml 移入 o_kanban_renderer 内部，这里让它独占一整行，
+// 记录卡片从下一行开始排列（o_kanban_ungrouped 是 flex-wrap 布局）。
+.o_kanban_view .o_kanban_renderer > .o_website_sale_dashboard {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+// 分组看板是单行不换列的列布局，整行仪表盘会挤占列宽，故在分组状态下隐藏
+// （各列头本身已带分组数量统计）。
+.o_kanban_view .o_kanban_renderer.o_kanban_grouped > .o_website_sale_dashboard {
+    display: none;
+}

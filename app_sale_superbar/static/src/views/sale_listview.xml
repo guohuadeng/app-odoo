@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- 修正销售列表仪表盘与搜索面板的错位：
+         v20 原生 sale.ListRenderer 把 Dashboard 插在 div.o_list_renderer 之前，
+         本模块给列表加上 searchpanel 后，o_content 变成 flex 容器，
+         Dashboard 会被当成与列表并排的 flex 子项，挤压列表并错位。
+         参考 app_purchase_superbar 的处理：把 Dashboard 移入列表渲染器内部、表格之前，
+         使 o_content 只保留 searchpanel + 渲染器两个子项。 -->
+    <t t-name="app_sale_superbar.ListRenderer" t-inherit="sale.ListRenderer" t-inherit-mode="extension">
+        <xpath expr="//Dashboard" position="replace"/>
+        <xpath expr="//div[hasclass('o_list_renderer')]/table[1]" position="before">
+            <Dashboard/>
+        </xpath>
+    </t>
+</templates>

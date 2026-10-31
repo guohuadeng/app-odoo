@@ -17,7 +17,7 @@
 
 {
     'name': '销售订单超级搜索栏 / App Sale Order Browse by Partner and Channel',
-    'version': '20.0.26.08.30',
+    'version': '20.0.26.10.31',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -53,6 +53,12 @@
         'views/sale_order_views.xml',
         'report/sale_report_views.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'app_sale_superbar/static/src/views/*.xml',
+            'app_sale_superbar/static/src/scss/sale_dashboard.scss',
+        ],
+    },
     'demo': [
     ],
     'test': [
