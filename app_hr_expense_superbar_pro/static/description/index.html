@@ -1,313 +1,364 @@
-<section class="oe_container">
-    <div class="oe_row oe_spaced" style="max-width: 95%;">
-        <h2 class="oe_slogan" style="color:#875A7B;">HR employee navigate by department is ready.</h2>
-    </div>
-</section>
-<section class="oe_container">
-    <div class="oe_row">
-        <div class="row">
-            <img class="oe_demo oe_screenshot" src="hr2.gif">
-        </div>
-        <h2 class="text-center text-warning">!This moduld Do Need extra paid Apps
-        <a href="http://www.odoo.com/apps/modules/13.0/app_web_superbar/" target="_blank">
-        <i class="fa fa-download text-warning"></i>Click to download.
-        </a> </h2>
-        <h3 class="oe_slogan">Advance Search, Advance Filter with Parent Children Tree.</h3>
-        <h3 class="oe_slogan">Easy to navigator and browse any data. Support list, kanban, pivot, graph view. </h3>
-        <h2 class="text-center">Online demo <i class="fa fa-user text-primary"></i>  user/password: demo/demo
-                        <a href="http://demo.odooapp.cn/web?#action=263&model=sale.order&view_type=list&menu_id=141" target="_blank">
-                        <i class="fa fa-arrow-right text-warning"></i>Click to get demo.
-                        </a> </h2>
-        <div class="oe_span12 oe_spaced">
-            <div class="alert alert-info" style="padding:8px;font-weight: 300; font-size: 20px;">
-                <i class="fa fa-hand-o-right"></i><b> Key features: </b>
-                <ul class="list-unstyled">
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Easy to show parent children tree for tree, kanban, pivot, graph view.(Note that there would be little different in UI between odoo12,11,10)
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Product navigate by category or type is ready.
-                        <a href="http://www.odoo.com/apps/modules/13.0/app_product_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Pos navigate by category or store is ready.
-                        <a href="http://www.odoo.com/apps/modules/13.0/app_pos_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Account chart navigate by type is ready.
-                        <a href="http://www.odoo.com/apps/modules/13.0/app_account_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Contacts navigate by company is ready.
-                        <a href="http://www.odoo.com/apps/modules/13.0/app_contacts_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Sale order navigate by partner and channel is ready.
-                        <a href="http://www.odoo.com/apps/modules/13.0/app_sale_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        Purchase order navigate by partner is ready.
-                        <a href="http://www.odoo.com/apps/modules/13.0/app_purchase_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i> HR employee navigate by department is ready. <a
-                            href="http://www.odoo.com/apps/modules/13.0/app_hr_superbar/" target="_blank"> <i class="fa fa-download text-warning"></i>Click to
-                        download. </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        HR employee navigate by department is ready.
-                        <a href="http://www.odoo.com/apps/modules/13.0/app_hr_superbar/" target="_blank">
-                        <i class="fa fa-download text-warning"></i>Click to download.
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa fa-check-square-o text-primary"></i>
-                        It is so easy to customize, you can use it in anywhere in odoo(Extra pay for support).
-                    </li>
-                </ul>
+<!--
+# -*- coding: utf-8 -*-
+##############################################################################
+# Copyright (C) 2009~2026 odooAi.cn
+# This module description follows the Odoo addons description convention.
+# Style: Bootstrap 5 + Odoo Website Snippet + FontAwesome
+# GEO: JSON-LD Structured Data (SoftwareApplication)
+##############################################################################
+-->
+<html>
+<head><meta charset="utf-8"/></head>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "app_hr_expense_superbar_pro - HR Expense Superbar Pro",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  },
+  "description": "The Pro edition builds on app_hr_expense_pro (Expense Enhance), so expense reports carry department and analytic account fields and can be grouped by organization or project. The tree navigator works in list, kanban, pivot and graph views with multi-select, child-node control and multi-field search, fitting companies that account costs by cost center.",
+  "softwareVersion": "20.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "Browse expense reports by department hierarchy",
+    "Group and filter expenses by analytic account",
+    "Depends on Expense Enhance for department and analytic fields",
+    "Works in list, kanban, pivot and graph views",
+    "Ctrl/Cmd multi-select and child node inclusion",
+    "Multi-field search and filtering",
+    "Move the tree sidebar to the left or right"
+  ]
+}
+</script>
+<!-- begin header -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">HR Expense Superbar Pro</h2>
             </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Browse expense reports by department and analytic account on top of Expense Enhance</p>
+            <p class="lead">Together with Expense Enhance, bring department and analytic fields into expense reports, then review them with tree navigation.</p>
+            <div class="pt16"><span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 20</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">Enterprise &amp; Community</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Company</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Language</span></div>
         </div>
     </div>
 </section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in HR employee.</h4>
-        <div class="oe_demo oe_screenshot">
-            <img src="hr2.gif">
+<!-- end header -->
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>Overview</h2>
+            <p class="lead pt16">The Pro edition builds on app_hr_expense_pro (Expense Enhance), so expense reports carry department and analytic account fields and can be grouped by organization or project. The tree navigator works in list, kanban, pivot and graph views with multi-select, child-node control and multi-field search, fitting companies that account costs by cost center.</p>
         </div>
     </div>
 </section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h2>&nbsp;</h2>
-        <h2 class="bg-warning text-center pt8 pb8">So Easy to navigator and search any data.</h2>
-        <h4 class="oe_slogan">Product by category or type in kanban view</h4>
-        <div class="oe_demo oe_screenshot">
-            <img oe_demo oe_screenshot src="https://apps.odoocdn.com/apps/assets/13.0/app_web_superbar/superbar.gif"/>
+<!-- end overview -->
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>Key Highlights</h2>
+            <p class="lead">Browse expense reports by department and analytic account on top of Expense Enhance</p>
         </div>
     </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Free to Use in product category.</h4>
-        <div class="oe_demo oe_screenshot">
-            <img src="product1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Free to Use in POS point of sale.</h4>
-        <div class="oe_demo oe_screenshot">
-            <img src="pos1.jpg">
-        </div>
-        <h4 class="oe_slogan">POS product and order.</h4>
-        <div class="oe_demo oe_screenshot">
-            <img src="pos2.jpg">
-        </div>
-        <h4 class="oe_slogan">POS report.</h4>
-        <div class="oe_demo oe_screenshot">
-            <img src="pos3.jpg">
-        </div>
-    </div>
-</section>
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in Account.</h4>
-        <div class="oe_demo oe_screenshot">
-            <img src="account1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in Sale.</h4>
-        <div class="oe_demo oe_screenshot">
-            <img src="sale1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in purchase.</h4>
-        <div class="oe_demo oe_screenshot">
-            <img src="purchase1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">Use in contacts.</h4>
-        <div class="oe_demo oe_screenshot">
-            <img src="contacts1.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h2>&nbsp;</h2>
-        <h2 class="bg-warning text-center pt8 pb8">How to use! This app do need extra module. The price already included</h2>
-        <div class="row">
-            <h4 class="oe_slogan oe_spaced">1. Buy and Install zTree widget.
-                <a href="http://www.odoo.com/apps/modules/13.0/app_web_widget_ztree/" target="_blank">
-                    <i class="fa fa-download text-warning"></i>Click to download.
-                </a>
-            </h4>
-        </div>
-        <div class="row">
-            <h4 class="oe_slogan oe_spaced">2. Buy and Install <a href="http://www.odoo.com/apps/modules/13.0/app_web_superbar/" target="_blank">app_web_superbar. </a> <span class="text-warning">Important! Reboot odoo after installed.</span>
-            </h4>
-        </div>
-        <div class="row">
-            <h4 class="oe_slogan oe_spaced">3. Easy use of superbar</h4>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Show superbar in list view.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot">
-                    <img src="use7.jpg">
+    <div class="row">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-sitemap fa-lg"></i>
+                        </div>
+                        <h5>1. Department Tree</h5>
+                        <p class="card-text">Browse expense reports by department hierarchy</p>
+                    </div>
                 </div>
             </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Show superbar in kanban view.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot">
-                    <img src="use8.jpg">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-bullseye fa-lg"></i>
+                        </div>
+                        <h5>2. Analytic Tree</h5>
+                        <p class="card-text">Group and filter expenses by analytic account</p>
+                    </div>
                 </div>
             </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Show superbar in pivot view.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot">
-                    <img src="use9.jpg">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-plus-square fa-lg"></i>
+                        </div>
+                        <h5>3. Expense Enhance</h5>
+                        <p class="card-text">Depends on Expense Enhance for department and analytic fields</p>
+                    </div>
                 </div>
             </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Show superbar in graph view.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot">
-                    <img src="usea.jpg">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-th-large fa-lg"></i>
+                        </div>
+                        <h5>4. Multi-View</h5>
+                        <p class="card-text">Works in list, kanban, pivot and graph views</p>
+                    </div>
                 </div>
             </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Click switch to show or hide superbar.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot">
-                    <img src="use1.jpg">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-check-square-o fa-lg"></i>
+                        </div>
+                        <h5>5. Multi-Select</h5>
+                        <p class="card-text">Ctrl/Cmd multi-select and child node inclusion</p>
+                    </div>
                 </div>
             </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Click checkbox to set whether to show child nodes data.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot">
-                    <img src="use2.jpg">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-columns fa-lg"></i>
+                        </div>
+                        <h5>6. Sidebar Position</h5>
+                        <p class="card-text">Multi-field search and filtering</p>
+                    </div>
                 </div>
             </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Press Ctrl(Windows) / Cmd(Mac) to Select Multi Nodes</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot">
-                    <img src="use3.jpg">
+    </div>
+</section>
+<!-- end key highlights -->
+<!-- begin feature list -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>Complete Feature List</h2>
+            <p class="lead">Every capability included in this module</p>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>1. Browse expense reports by department hierarchy</b>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>2. Group and filter expenses by analytic account</b>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>3. Depends on Expense Enhance for department and analytic fields</b>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>4. Works in list, kanban, pivot and graph views</b>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>5. Ctrl/Cmd multi-select and child node inclusion</b>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>6. Multi-field search and filtering</b>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>7. Move the tree sidebar to the left or right</b>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end feature list -->
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>General Features</h2>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
                 </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Set multi field to search or filter</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot">
-                    <img src="use4.jpg">
-                </div>
-            </div>
-            <div class="oe_span12 oe_spaced">
-                <h4 class="oe_slogan">Set super bar position, left or right.</h4>
-            </div>
-            <div class="row">
-                <div class="oe_demo oe_screenshot">
-                    <img src="use5.jpg">
-                </div>
+                <h5>Multi-Language &amp; Multi-Company</h5>
+                <p>Full multi-language translation and global deployment. Native multi-company with strict data isolation.</p>
             </div>
         </div>
-        <div class="row">
-            <h4 class="oe_slogan oe_spaced">4. If you want to customize, Use follow param to setup widget(Extra pay for support):</h4>
-            <div class="row">
-                <div class="oe_demo oe_screenshot">
-                    <img src="superbar_use.gif">
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
                 </div>
-                <ul class="oe_spaced" style="padding:8px;font-weight: 300; font-size: 20px;">
-                    <li>In search view xml, Write the &lt;superbar&gt; tag,</li>
-                    <li>position: [left, right]</li>
-                    <li>view_mode: [kanban,tree, pivot, graph view.]</li>
-                    <li>parent_key: key field name of parent child relation. leave blank would auto set.</li>
-                    <li>level: how many level to expend the tree for initialize. Default is 2</li>
-                    <li>limit: how many record to show ztree. Default is 16</li>
-                    <li>order: the field name to order by</li>
-                    <li>domain: set the domain for data, eg: [[('is_company', '=', 1)]]</li>
-                </ul>
+                <h5>Full Version Support</h5>
+                <p>Supports Odoo 20, 19, 18, 17, 16, 15, 14, 13, 12, Enterprise, Community and online SaaS.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
+                </div>
+                <h5>Full Open Source</h5>
+                <p>Open source under LGPL-3, transparent and auditable, ready for customization.</p>
             </div>
         </div>
     </div>
 </section>
-
-<section class="oe_container oe_dark">
-    <div class="oe_row oe_spaced text-center">
-        <div class="row">
-            <h2 class="oe_slogan">Technical Help & Support</h2>
+<!-- end general features -->
+<!-- begin screenshots -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>Screenshots</h2>
+            <p class="lead">Key screens of the module</p>
         </div>
-        <div class="col-md-12 pad0">
-            <div class="oe_mt16">
-                <p><h4>
-                For any type of technical help & support requests, Feel free to contact us</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:odoo@china.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> odoo@china.com</a>
-                <p><h4>
-                Via QQ: 300883 (App user would not get QQ or any other IM support. Only for odoo project customize.)</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:300883@qq.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> 300883@qq.com</a>
-            </div>
-            <div class="oe_mt16">
-                <h4>
-                Visit our website for more support.</h4>
-<h4>https://www.odooai.cn</h4>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Use in HR Employee</h3>
+            <img class="img-fluid rounded shadow" src="hr1.jpg" alt="Use in HR Employee">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Department and Employee Tree</h3>
+            <img class="img-fluid rounded shadow" src="hr2.gif" alt="Department and Employee Tree">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Expand and Collapse</h3>
+            <img class="img-fluid rounded shadow" src="superbar_use.gif" alt="Expand and Collapse">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Tree in List View</h3>
+            <img class="img-fluid rounded shadow" src="use7.jpg" alt="Tree in List View">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Tree in Kanban View</h3>
+            <img class="img-fluid rounded shadow" src="use8.jpg" alt="Tree in Kanban View">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Tree in Pivot View</h3>
+            <img class="img-fluid rounded shadow" src="use9.jpg" alt="Tree in Pivot View">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Tree in Graph View</h3>
+            <img class="img-fluid rounded shadow" src="usea.jpg" alt="Tree in Graph View">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i>Multi-Field Search</h3>
+            <img class="img-fluid rounded shadow" src="use4.jpg" alt="Multi-Field Search">
+        </div>
+    </div>
+</section>
+<!-- end screenshots -->
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>How It Works</h2>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <div class="row text-center">
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">Install Expense Enhance</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-cube"></i>
+                    </div>
+                    <p class="fw-bold mb-1">Install Pro Module</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-sitemap"></i>
+                    </div>
+                    <p class="fw-bold mb-1">Expand the Tree</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-eye"></i>
+                    </div>
+                    <p class="fw-bold mb-1">Review Expenses</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<!-- end how it works -->
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-book text-o-color-1 me-2"></i>
+                    app_hr_expense_superbar
+                </li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-book text-o-color-1 me-2"></i>
+                    app_hr_expense_pro
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
 
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">Professional Odoo Solutions: Implementation, Consulting and Training</p>
+            <div class="pt16">
+                <p><i class="fa fa-globe me-2"></i>Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p>
+                <p><i class="fa fa-desktop me-2"></i>Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p>
+                <p><i class="fa fa-envelope me-2"></i>Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a></p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
+
+</html>

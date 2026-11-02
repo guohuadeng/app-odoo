@@ -1,0 +1,21 @@
+Create a professional app banner image for an Odoo ERP module.
+
+**Spec:** wide horizontal banner, target aspect ratio 2:1 - the image will be cropped to exactly 1000x500 px, PNG, under 300KB. Keep ALL text and key visuals inside the central 92% height (outer 4% top/bottom may be cropped).
+
+**Overall design - title + feature cards, graphics-rich:**
+- Main visual concept: 清晰的组织架构树，部门节点与员工头像卡片，其中一条分支展开，旁边有放大镜与筛选标签。主视觉周围环绕下述功能点卡片，图形与文字共同叙事。
+- Style: modern flat vector illustration, clean professional SaaS style, subtle gradients and depth, harmonious composition.
+- Main color palette: #09554C as dominant tone with #00796B for gradient depth; accent color #F2C14E used sparingly for highlights. Balanced and professional, not garish.
+
+**Text (render exactly - every character must be spelled correctly):**
+- Main title (large, bold, high-contrast, well-placed with breathing room): HR 部门树形组件
+- One short subtitle line (small, muted, under the title): 部门与员工父子层级选择器
+- Feature cards - each card is a rounded chip containing a bold logo emblem plus its short label text (exact labels, one card each): 部门树、员工树、列表看板、任意模型、快速搜索
+  品牌/厂商类功能点：用该品牌标志性视觉元素绘制风格化 logo 徽记，旁边渲染精确的品牌名称文字。
+
+**Layout:**
+- Title block top-left; feature cards arranged in a row or loose arc around the main visual, balanced sizes, none overlapping, all cards fully visible.
+- Keep the bottom-right corner area visually quiet (no key content, no text) - a small brand logo will be overlaid there in post-processing.
+- No paragraphs, no long sentences; short card labels only.
+
+**Critical:** Every text element (title, subtitle and ALL feature-card labels) MUST be rendered clearly and completely, with exact spelling. Do NOT draw any watermark, logo badge, corner tag, or border - they are added by post-processing. The final PNG file MUST be under 300KB.

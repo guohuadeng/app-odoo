@@ -1,96 +1,283 @@
-<section class="oe_container">
-    <div class="oe_row oe_spaced" >
-        <div class="row">
-            <h2 class="oe_slogan">应用中文基础包，为中国用户定制  </h2>
-            <h3 class="oe_slogan">设置全部中文默认值，如默认国家、时区、货币、合作伙伴等 </h3>
-            <div class="oe_row">
-                <h3>Lastest update: v13.20.04.11</h3>
-                <div class="row">
-                    <img class="oe_demo oe_screenshot" src="banner.jpg">
-                </div>
-                <div class="oe_span12 oe_spaced">
-                    <div class="alert alert-info" style="padding:8px;font-weight: 300; font-size: 20px;">
-                        <i class="fa fa-hand-o-right"></i><b> 主要特性： </b>
-                        <ul class="list-unstyled">
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                中文功能增强。
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                设置默认国家、省州、时区、货币。
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                合作伙伴地址设为中国格式。
-                            </li>
-                            <li>
-                                <i class="fa fa-check-square-o text-primary"></i>
-                                修复分类显示不为中文的问题。
-                            </li>
-                        </ul>
+<!--
+# -*- coding: utf-8 -*-
+##############################################################################
+# Copyright (C) 2009~2026 odooAi.cn
+# This module description follows the Odoo addons description convention.
+# Style: Bootstrap 5 + Odoo Website Snippet + FontAwesome
+# GEO: JSON-LD Structured Data (SoftwareApplication)
+##############################################################################
+-->
+<html>
+<head><meta charset="utf-8"/></head>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "app_mixin_name_en - 产品英文名 Mixin",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  },
+  "description": "本模块提供可复用的抽象 Mixin（mixin.name.en），为继承它的模型增加 name_en_US 字段。写入英文名时，会以 en_US 上下文同步到可翻译的 name 字段；用户语言为英文时显示英文名，中文界面仍显示中文名。产品模板（SPU）已内置实现，适合出口报价、报关与国际网站展示。安装前需在系统中启用英文语言包。",
+  "softwareVersion": "20.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "抽象 Mixin，为任意模型增加英文名字段",
+    "写入英文名时自动同步到 en_US 翻译",
+    "中英文名称并存，按用户语言显示",
+    "产品模板（SPU）开箱即用",
+    "安装前校验英文语言包是否启用"
+  ]
+}
+</script>
+<!-- begin header -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">产品英文名 Mixin</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">用一个 Mixin 为产品自动维护英文名称</p>
+            <p class="lead">给产品增加标准英文名字段，按用户语言自动取值，中文名与英文名并存不冲突。</p>
+            <div class="pt16"><span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 20</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言</span></div>
+        </div>
+    </div>
+</section>
+<!-- end header -->
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述</h2>
+            <p class="lead pt16">本模块提供可复用的抽象 Mixin（mixin.name.en），为继承它的模型增加 name_en_US 字段。写入英文名时，会以 en_US 上下文同步到可翻译的 name 字段；用户语言为英文时显示英文名，中文界面仍显示中文名。产品模板（SPU）已内置实现，适合出口报价、报关与国际网站展示。安装前需在系统中启用英文语言包。</p>
+        </div>
+    </div>
+</section>
+<!-- end overview -->
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>核心亮点</h2>
+            <p class="lead">用一个 Mixin 为产品自动维护英文名称</p>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-recycle fa-lg"></i>
+                        </div>
+                        <h5>1. Mixin 复用</h5>
+                        <p class="card-text">任何模型继承即可获得英文字段</p>
                     </div>
                 </div>
-                <div class="row">
-                    <img class="oe_demo oe_screenshot" src="cnreadme.jpg">
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-language fa-lg"></i>
+                        </div>
+                        <h5>2. 英文名字段</h5>
+                        <p class="card-text">为产品维护标准英文名称</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-exchange fa-lg"></i>
+                        </div>
+                        <h5>3. 语言自动切换</h5>
+                        <p class="card-text">按用户语言显示中英文名称</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-database fa-lg"></i>
+                        </div>
+                        <h5>4. 无需改表结构</h5>
+                        <p class="card-text">基于翻译字段同步，不增加冗余表</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-check-circle fa-lg"></i>
+                        </div>
+                        <h5>5. 安装前检查</h5>
+                        <p class="card-text">未启用英文语言时阻止安装</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<!-- end key highlights -->
+<!-- begin feature list -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>完整功能列表</h2>
+            <p class="lead">本模块包含的全部功能</p>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>1. 抽象 Mixin，为任意模型增加英文名字段</b>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>2. 写入英文名时自动同步到 en_US 翻译</b>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>3. 中英文名称并存，按用户语言显示</b>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>4. 产品模板（SPU）开箱即用</b>
+                </li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <b>5. 安装前校验英文语言包是否启用</b>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end feature list -->
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性</h2>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
+                </div>
+                <h5>多语言与多公司</h5>
+                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
+                </div>
+                <h5>全版本兼容</h5>
+                <p>支持 Odoo 20, 19, 18, 17, 16, 15, 14, 13, 12，企业版、社区版与在线 SaaS。</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
+                </div>
+                <h5>代码完全开源</h5>
+                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end general features -->
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程</h2>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <div class="row text-center">
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-language"></i>
+                    </div>
+                    <p class="fw-bold mb-1">启用英文语言</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">安装模块</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-pencil"></i>
+                    </div>
+                    <p class="fw-bold mb-1">填写英文名</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <p class="fw-bold mb-1">切换语言验证</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">设置默认国家、省州、时区、货币。</h4>
-        <div class="oe_demo oe_screenshot">
-            <img src="demo1.jpg">
+<!-- end how it works -->
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块</h2>
         </div>
-        <div class="oe_demo oe_screenshot">
-            <img src="demo2.jpg">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h4 class="oe_slogan">修复分类显示不为中文的问题。</h4>
-        <div class="oe_demo oe_screenshot">
-            <img src="demo3.jpg">
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
+                    <i class="fa fa-book text-o-color-1 me-2"></i>
+                    product / 产品
+                </li>
+            </ul>
         </div>
     </div>
 </section>
-
-<section class="oe_container oe_dark">
-    <div class="oe_row oe_spaced text-center">
-        <div class="row">
-            <h2 class="oe_slogan">技术帮助与支持</h2>
+<!-- end supported modules -->
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
         </div>
-        <div class="col-md-12 pad0">
-            <div class="oe_mt16">
-                <p><h4>
-                如需任何技术帮助与支持，欢迎联系我们</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:odoo@china.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> odoo@china.com</a>
-                <p><h4>
-                QQ：300883（应用用户不提供 QQ 或其他即时通讯支持，仅限 Odoo 项目定制）</h4></p>
-                <a style="background: #002e5a  none repeat scroll 0% 0%; color: rgb(255, 255, 255);position: relative; overflow: hidden;"
-                   class="btn btn-warning btn-lg" rel="nofollow" href="mailto:300883@qq.com"><span
-                        style="height: 354px; width: 354px; top: -147.433px; left: -6.93335px;" class="o_ripple"></span>
-                    <i class="fa fa-envelope"></i> 300883@qq.com</a>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">专业 Odoo 服务伙伴，开发实施咨询培训全套解决方案</p>
+            <div class="pt16">
+                <p><i class="fa fa-globe me-2"></i>Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p>
+                <p><i class="fa fa-desktop me-2"></i>Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p>
+                <p><i class="fa fa-envelope me-2"></i>Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a></p>
             </div>
-            <div class="oe_mt16">
-                <h4>
-                访问我们的网站获取更多支持。</h4>
-<h4>https://www.odooai.cn</h4>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
             </div>
         </div>
     </div>
-    <div class="oe_row oe_spaced text-center">
-        <h2>更多强力插件，让你的 Odoo 更易用、更易定制：
-            <a class="btn btn-primary mb16" href="http://www.odoo.com/apps/modules/browse?author=odooai.cn">odooai.cn Odoo 插件</a>
-        </h2>
-    </div>
 </section>
+<!-- end footer -->
 
+</html>
