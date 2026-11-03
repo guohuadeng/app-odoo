@@ -38,7 +38,7 @@
 
 {
     'name': "Odoo用户手册与开发手册,从入门到精通,odoo User Doc & Developer Doc Anywhere",
-    'version': '20.0.26.10.25',
+    'version': '20.0.26.11.03',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',

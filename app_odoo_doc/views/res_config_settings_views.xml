@@ -7,11 +7,16 @@
             <field name="priority">20</field>
             <field name="inherit_id" ref="base.res_config_settings_view_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//label[@for='module_app_odoo_doc']/.." position="inside">
-                    <div>
-                        <field name="app_doc_root_url" class="oe_inline mt8"/>
-<!--                        <button string="Set to My Odoo" type="object" name="action_set_app_doc_root_to_my" class="ml4 oe_highlight"/>-->
-                        <button string="Set to odooAi" type="object" name="action_set_app_doc_root_to_odooai" class="ml4 oe_highlight"/>
+                <!-- 自成一格：插进 app_odoo_customize 的 Extra Feature 区块 -->
+                <xpath expr="//div[@name='app_modules']" position="inside">
+                    <div class="col-lg-6 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="app_doc_root_url"/>
+                            <div>
+                                <field name="app_doc_root_url" class="oe_inline mt8"/>
+                                <button string="Set to odooAi" type="object" name="action_set_app_doc_root_to_odooai" class="ml4 oe_highlight" title="Set the documentation root domain to https://www.odooai.cn"/>
+                            </div>
+                        </div>
                     </div>
                 </xpath>
             </field>
