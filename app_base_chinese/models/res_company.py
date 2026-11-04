@@ -69,12 +69,12 @@ class ResCompany(models.Model):
             # 修正高级路线的中文名称：stock.route.name 是可翻译字段，
             # 用 zh_CN 上下文写入只覆盖中文翻译，英文原名保持不变。
             route_names = {
-                'Deliver in 1 step (ship)': '1步发货(出库)',
-                'Deliver in 2 steps (pick + ship)': '2步出货(拣货>发货)',
-                'Deliver in 3 steps (pick + pack + ship)': '3步出货(拣货>包装>发货)',
+                'Deliver in 1 step (ship)': '一步发货(出库)',
+                'Deliver in 2 steps (pick + ship)': '二步出货(拣货>发货)',
+                'Deliver in 3 steps (pick + pack + ship)': '三步出货(拣货>包装>发货)',
                 'Receive in 1 step (stock)': '一步收货(入库)',
-                'Receive in 2 steps (input + stock)': '2步收货(收货>库存)',
-                'Receive in 3 steps (input + quality + stock)': '3步收货(收货>质检>入库)',
+                'Receive in 2 steps (input + stock)': '二步收货(收货>库存)',
+                'Receive in 3 steps (input + quality + stock)': '三步收货(收货>质检>入库)',
             }
             Route = self.env['stock.route'].with_context(active_test=False)
             for en_name, cn_name in route_names.items():
@@ -83,9 +83,9 @@ class ResCompany(models.Model):
                 routes = Route.with_context(lang='en_US').search([('name', 'ilike', en_name)])
                 for route in routes:
                     zh_name = route.with_context(lang='zh_CN').name or ''
-                    if en_name not in zh_name:
-                        continue
-                    new_name = zh_name.replace(en_name, cn_name)
+                    # 保留“仓库名: ”前缀，后段统一重建为目标中文名（幂等，重复执行不再变化）
+                    prefix = zh_name.rsplit(': ', 1)[0] if ': ' in zh_name else ''
+                    new_name = '%s: %s' % (prefix, cn_name) if prefix else cn_name
                     if new_name != zh_name:
                         route.with_context(lang='zh_CN').write({'name': new_name})
 
