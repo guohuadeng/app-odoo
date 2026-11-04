@@ -1,16 +1,11 @@
 .o-overlay-container .dropdown-menu,
 .o_user_menu_mobile .dropdown-item {
-  .lang-container span  {
-    line-height: 1.1em;
-  }
-  .image-container {
-    width: 36px;
-    img.flag {
-      height: auto;
-      width: 100%;
-      margin: 2px;
-      object-fit: scale-down;
-    }
+  .lang-container .o_lang_flag {
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    border-radius: 2px;
+    object-fit: cover;
   }
 }
 

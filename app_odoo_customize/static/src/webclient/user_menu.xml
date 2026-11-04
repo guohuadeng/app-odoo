@@ -4,12 +4,10 @@
         <xpath expr="//t[@t-key='element_index']" position="before">
             <t t-if="this.app_show_lang">
                 <t t-foreach="this.app_lang_list" t-as="lang" t-key="lang.id">
-                    <DropdownItem class="'d-flex lang-container'"
+                    <DropdownItem class="'d-flex align-items-center lang-container'"
                                   onSelected="() => this.setLang(lang.code)">
-                        <span class="image-container">
-                            <img class="flag"  t-att-src="lang.flag_image_url"/>
-                        </span>
-                        <span class="ms-1" t-out="lang.name"/>
+                        <img class="o_lang_flag" t-att-src="lang.flag_image_url" t-att-alt="lang.name"/>
+                        <span class="ms-2" t-out="lang.name"/>
                         <span class="oi ms-1" data-icon="check" t-if="this.user_lang == lang.code"></span>
                     </DropdownItem>
                 </t>
@@ -21,12 +19,10 @@
         <xpath expr="//t[@t-key='element_index']" position="before">
             <t t-if="this.app_show_lang">
                 <t t-foreach="this.app_lang_list" t-as="lang" t-key="lang.id">
-                    <DropdownItem class="'d-flex lang-container py-3 fs-4'"
+                    <DropdownItem class="'d-flex align-items-center lang-container py-3 fs-4'"
                                   onSelected="() => this.setLang(lang.code)">
-                        <span class="image-container">
-                            <img class="flag"  t-att-src="lang.flag_image_url"/>
-                        </span>
-                        <span class="ms-1 my-1" t-out="lang.name"/>
+                        <img class="o_lang_flag" t-att-src="lang.flag_image_url" t-att-alt="lang.name"/>
+                        <span class="ms-2 my-1" t-out="lang.name"/>
                         <span class="oi ms-1 my-1" data-icon="check" t-if="this.user_lang == lang.code"></span>
                     </DropdownItem>
                 </t>
