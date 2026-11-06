@@ -33,6 +33,45 @@
                             </div>
                         </div>
                     </setting>
+                    <setting string="Cloud Tunnel" id="set_app_saas_cloud_tunnel" invisible="not app_saas_ok"
+                             help="Outbound tunnel to the cloud hub. The tunnel agent connects from this server to the cloud, no inbound port required.">
+                        <div class="d-flex flex-column gap-2 w-100">
+                            <div class="form-check">
+                                <field name="is_cloud_tunnel_enabled"/>
+                                <label for="is_cloud_tunnel_enabled" class="form-check-label">Enable Cloud Tunnel</label>
+                            </div>
+                            <div class="row g-2">
+                                <label for="cloud_tunnel_url" class="col-lg-2 col-form-label">Cloud URL</label>
+                                <div class="col-lg-6">
+                                    <field name="cloud_tunnel_url" placeholder="https://www.odooapp.cn"/>
+                                </div>
+                            </div>
+                            <div class="row g-2">
+                                <label for="cloud_tunnel_key" class="col-lg-2 col-form-label">Tunnel Key</label>
+                                <div class="col-lg-6">
+                                    <field name="cloud_tunnel_key" widget="CopyClipboardChar" readonly="1"/>
+                                </div>
+                            </div>
+                            <div class="row g-2">
+                                <label for="cloud_tunnel_status" class="col-lg-2 col-form-label">Status</label>
+                                <div class="col-lg-6">
+                                    <field name="cloud_tunnel_status" readonly="1"/>
+                                </div>
+                            </div>
+                            <div class="row g-2">
+                                <label for="cloud_tunnel_last_seen" class="col-lg-2 col-form-label">Last Seen</label>
+                                <div class="col-lg-6">
+                                    <field name="cloud_tunnel_last_seen" readonly="1"/>
+                                </div>
+                            </div>
+                            <div class="row g-2" invisible="not cloud_tunnel_last_error">
+                                <label for="cloud_tunnel_last_error" class="col-lg-2 col-form-label">Last Error</label>
+                                <div class="col-lg-10">
+                                    <field name="cloud_tunnel_last_error" readonly="1" nolabel="1"/>
+                                </div>
+                            </div>
+                        </div>
+                    </setting>
                 </xpath>
             </field>
         </record>
