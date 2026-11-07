@@ -896,3 +896,21 @@ class ResConfigSettings(models.TransientModel):
 
     # def action_set_all_to_app_doc_root_url(self):
     #     if self.app_doc_root_url:
+
+    # ------------------------------------------------------------------
+    # v20 兼容：binary 字段空内容回写防护
+    # Odoo 20 的 Binary.convert_to_cache 收到 {'filename': ..., 'content': 空}
+    # 字典时（附件实体文件丢失后，设置页 onchange 回填的就是这种值），
+    # 会在 None 上取 .filename 抛 AttributeError，导致整页设置保存 500。
+    # 这里把没有有效 content 的 binary 回写视为「未修改」直接丢弃。
+    # ------------------------------------------------------------------
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            for fname, value in list(vals.items()):
+                field = self._fields.get(fname)
+                if (field is not None and field.type == 'binary'
+                        and isinstance(value, dict) and not value.get('content')):
+                    vals.pop(fname)
+        return super().create(vals_list)
+
