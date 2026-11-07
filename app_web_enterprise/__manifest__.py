@@ -1,6 +1,6 @@
 {
     'name': 'Odoo 企业版界面增强 / Enterprise UI Enhance Pack',
-    'version': '18.0.26.08.29',
+    'version': '18.0.26.11.08',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -74,6 +74,10 @@
             'app_web_enterprise/static/src/scss/app_style_website_editor.scss',
         ],
         'web.assets_frontend': [
+            # 前台企业色跟随站点主色 primary：插入到 web 的前台变量覆盖之后，
+            # 此时 $primary 已由 website / web_editor 算出
+            ('after', 'web/static/src/scss/bootstrap_overridden_frontend.scss',
+                'app_web_enterprise/static/src/scss/frontend_variables.scss'),
             ('before', 'web_enterprise/static/src/webclient/home_menu/home_menu.variables.scss', 'app_web_enterprise/static/src/scss/home_menu.variables.scss'),
             'app_web_enterprise/static/src/scss/app_style_website.scss',
         ],
