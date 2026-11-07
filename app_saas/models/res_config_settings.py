@@ -24,7 +24,7 @@ class ResConfigSettings(models.TransientModel):
     is_cloud_tunnel_enabled = fields.Boolean(
         string='Enable Cloud Tunnel',
         config_parameter='app_saas.is_cloud_tunnel_enabled',
-        default=False,
+        default=True,
         help='Enable the outbound cloud tunnel. When off, the tunnel agent disconnects and the bridge refuses new keys.',
     )
     cloud_tunnel_url = fields.Char(
