@@ -20,3 +20,16 @@
   }
 
 }
+
+// 左上角快捷导航：企业色已在前台映射为站点 primary（见 frontend_variables.scss），
+// 图标改用 primary 的对比色，浅色主色下也能看清。
+// 选择器重复父类提升特异性，覆盖 website.ui.scss 里的白字规则。
+.o_frontend_to_backend_nav.o_frontend_to_backend_nav {
+    .o_frontend_to_backend_icon path {
+        fill: color-contrast($primary);
+    }
+
+    .o_frontend_to_backend_apps_btn {
+        color: color-contrast($primary);
+    }
+}

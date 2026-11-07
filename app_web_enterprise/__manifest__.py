@@ -1,6 +1,6 @@
 {
     'name': 'Odoo 企业版界面增强 / Enterprise UI Enhance Pack',
-    'version': '20.0.26.10.15',
+    'version': '20.0.26.11.08',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -19,7 +19,7 @@
 8. Optimize one2many list empty row strategy: compact layout with only 1 filler row when no data.
 9. Multi-Language Support.
 10. Multi-Company Support.
-11. Full Version Support for Odoo 19,18,17,16,15,14,13,12, Enterprise and Community Edition.
+11. Full Version Support for Odoo 20,19,18,17,16,15,14,13,12, Enterprise and Community Edition.
 12. Full Open Source under LGPL-3 license.
 13. Fix Odoo core Popover TypeError: Cannot read properties of undefined (reading 'contains'), caused by stale pointerdown listener after Popover target destruction.
 1. Odoo 企业版界面增强套件，使用更舒适护眼的绿色作为主色。
@@ -32,7 +32,7 @@
 8. 优化 One2Many 列表空行填充策略：仅无数据时补充 1 个空行，有数据时不补充，界面更紧凑。
 9. 多语言支持。
 10. 多公司支持。
-11. 全版本支持 Odoo 19,18,17,16,15,14,13,12，兼容企业版和社区版。
+11. 全版本支持 Odoo 20,19,18,17,16,15,14,13,12，兼容企业版和社区版。
 12. 代码完全开源，基于 LGPL-3 协议。
 13. 修复 Odoo 原生 Popover TypeError: Cannot read properties of undefined (reading 'contains')，因 Popover target 销毁后 window pointerdown 监听器未及时清理导致。
     """,
@@ -78,6 +78,10 @@
             'app_web_enterprise/static/src/scss/app_style_website_editor.scss',
         ],
         'web.assets_frontend': [
+            # 前台企业色跟随站点主色 primary：插入到 web 的前台变量覆盖之后，
+            # 此时 $primary 已由 website / html_editor 算出
+            ('after', 'web/static/src/scss/bootstrap_overridden_frontend.scss',
+                'app_web_enterprise/static/src/scss/frontend_variables.scss'),
             ('before', 'web_enterprise/static/src/webclient/home_menu/home_menu.variables.scss', 'app_web_enterprise/static/src/scss/home_menu.variables.scss'),
             'app_web_enterprise/static/src/scss/app_style_website.scss',
         ],

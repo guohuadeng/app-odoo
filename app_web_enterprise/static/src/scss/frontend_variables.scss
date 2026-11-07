@@ -1,0 +1,14 @@
+// ============================================================
+// app_web_enterprise：前台（网站 / 门户）企业色映射
+// 后台皮肤把 $o-enterprise-color 固定为品牌绿（primary_variables.scss），
+// 该文件同时被前台变量链带上，导致网站左上角快捷导航、导览指针、
+// 购物空页面按钮等前台构件一直是品牌绿，与站点调色板主色脱节。
+// 这里在前台变量链末尾把它映射为 primary（网站调色板 o-color-1），
+// 与 .btn-primary 保持一致。注意：
+//   1) 必须无条件赋值：该变量此前已有定义，!default 不会生效；
+//   2) 插入位置在 web 的 bootstrap_overridden_frontend.scss 之后，
+//      此时 $primary 已由 website / html_editor 的变量文件算出；
+//   3) 未装 website 时 o-color-1 本身即取 $o-enterprise-color（品牌绿），
+//      映射为等价操作，登录页 / 门户的品牌配色不受影响。
+// ============================================================
+$o-enterprise-color: $primary;
