@@ -1,16 +1,15 @@
-.o-overlay-container .dropdown-menu,
-.o_user_menu_mobile .dropdown-item {
-  .lang-container span  {
-    line-height: 1.1em;
-  }
-  .image-container {
-    width: 36px;
-    img.flag {
-      height: auto;
-      width: 100%;
-      margin: 2px;
-      object-fit: scale-down;
-    }
+// 用户菜单语言切换：旗帜高度对齐菜单行高（随字号缩放），避免原始大图把菜单撑爆
+// 不限定外层容器，保证桌面下拉菜单与移动端 burger 菜单（含自定义移动壳）都能生效
+.lang-container {
+  align-items: center;
+
+  .o_lang_flag {
+    width: auto;
+    height: 1.2em;
+    max-width: 2.4em;
+    flex-shrink: 0;
+    border-radius: 2px;
+    object-fit: contain;
   }
 }
 
