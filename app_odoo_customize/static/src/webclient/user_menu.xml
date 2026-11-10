@@ -6,7 +6,7 @@
                 <t t-foreach="this.app_lang_list" t-as="lang" t-key="lang.id">
                     <DropdownItem class="'d-flex align-items-center lang-container'"
                                   onSelected="() => this.setLang(lang.code)">
-                        <img class="o_lang_flag" t-att-src="lang.flag_image_url" t-att-alt="lang.name"/>
+                        <img class="o_lang_flag" style="height: 1.5em; max-height: 1.5em; width: auto; max-width: 2.6em; object-fit: contain; flex-shrink: 0;" t-att-src="lang.flag_image_url" t-att-alt="lang.name"/>
                         <span class="ms-2" t-out="lang.name"/>
                         <span class="oi ms-1" data-icon="check" t-if="this.user_lang == lang.code"></span>
                     </DropdownItem>
@@ -19,9 +19,9 @@
         <xpath expr="//t[@t-key='element_index']" position="before">
             <t t-if="this.app_show_lang">
                 <t t-foreach="this.app_lang_list" t-as="lang" t-key="lang.id">
-                    <DropdownItem class="'d-block text-body py-2 lang-container'"
+                    <DropdownItem class="'d-flex align-items-center lang-container text-body py-2'"
                                   onSelected="() => this.setLang(lang.code)">
-                        <img class="o_lang_flag" t-att-src="lang.flag_image_url" t-att-alt="lang.name"/>
+                        <img class="o_lang_flag" style="height: 1.5em; max-height: 1.5em; width: auto; max-width: 2.6em; object-fit: contain; flex-shrink: 0;" t-att-src="lang.flag_image_url" t-att-alt="lang.name"/>
                         <span class="ms-2 my-1" t-out="lang.name"/>
                         <span class="oi ms-1 my-1" data-icon="check" t-if="this.user_lang == lang.code"></span>
                     </DropdownItem>
