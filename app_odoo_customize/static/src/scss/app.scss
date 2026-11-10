@@ -1,16 +1,19 @@
-// 用户菜单语言切换：旗帜高度对齐菜单行高（随字号缩放），避免原始大图把菜单撑爆
-// 不限定外层容器，保证桌面下拉菜单与移动端 burger 菜单（含自定义移动壳）都能生效
+// 用户菜单语言切换：旗帜高度对齐菜单行高（1.5em ≈ 默认 line-height，随字号缩放），
+// 避免原始大图把菜单撑爆。旗帜规则直接挂在 .o_lang_flag 上（不依赖 .lang-container
+// 是否传到 DOM），保证桌面下拉菜单与移动端 burger 菜单（含自定义移动壳、
+// 旧版缓存 CSS）都能生效；模板里另有 style 行内兜底，双保险。
 .lang-container {
   align-items: center;
+}
 
-  .o_lang_flag {
-    width: auto;
-    height: 1.2em;
-    max-width: 2.4em;
-    flex-shrink: 0;
-    border-radius: 2px;
-    object-fit: contain;
-  }
+.o_lang_flag {
+  height: 1.5em !important;
+  max-height: 1.5em !important;
+  width: auto !important;
+  max-width: 2.6em !important;
+  flex-shrink: 0;
+  border-radius: 2px;
+  object-fit: contain;
 }
 
 .oe_form_configuration  {

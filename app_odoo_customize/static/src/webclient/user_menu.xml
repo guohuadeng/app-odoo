@@ -6,7 +6,7 @@
                 <t t-foreach="app_lang_list" t-as="lang" t-key="lang.id">
                     <DropdownItem attrs="{ 'data-lang': lang.id, 'data-code': lang.code }" class="'d-flex align-items-center lang-container'"
                                   onSelected="() => this.setLang(lang.code)">
-                        <img class="o_lang_flag" t-att-src="lang.flag_image_url" t-att-alt="lang.name"/>
+                        <img class="o_lang_flag" style="height: 1.5em; max-height: 1.5em; width: auto; max-width: 2.6em; object-fit: contain; flex-shrink: 0;" t-att-src="lang.flag_image_url" t-att-alt="lang.name"/>
                         <span class="ms-2" t-out="lang.name"/>
                         <span class="fa fa-check ms-1" t-if="user_lang == lang.code"></span>
                     </DropdownItem>
