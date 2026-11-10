@@ -1,13 +1,20 @@
 <?xml version="1.0"?>
 <odoo>
     <data noupdate="0">
+        <!-- 一组一 privilege：两个平级功能开关各自独立 scope，渲染为复选框，允许同用户同时开启 -->
+        <record id="privilege_show_author_in_apps" model="res.groups.privilege">
+            <field name="name">Show Author in Apps Dashboard</field>
+        </record>
         <record id="group_show_author_in_apps" model="res.groups">
             <field name="name">Show Author in Apps Dashboard</field>
-            <field name="privilege_id" ref="app_common.res_groups_privilege_ui"/>
+            <field name="privilege_id" ref="privilege_show_author_in_apps"/>
+        </record>
+        <record id="privilege_show_quick_upgrade" model="res.groups.privilege">
+            <field name="name">Show Quick Upgrade in Apps Dashboard</field>
         </record>
         <record id="group_show_quick_upgrade" model="res.groups">
             <field name="name">Show Quick Upgrade in Apps Dashboard</field>
-            <field name="privilege_id" ref="app_common.res_groups_privilege_ui"/>
+            <field name="privilege_id" ref="privilege_show_quick_upgrade"/>
         </record>
         <!--系统设置默认值-->
         <!--1 默认显示快速升级-->
