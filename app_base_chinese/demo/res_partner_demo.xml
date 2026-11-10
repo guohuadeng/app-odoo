@@ -3,8 +3,8 @@
     <data noupdate="1">
 <!--	    todo: 只处理主partern，后续处理其它-->
         <record id="base.main_partner" model="res.partner">
-            <field name="email">info@odooai.cn</field>
-            <field name="website">www.odooai.cn</field>
+            <field name="email">info@@yourcompany.example.com</field>
+            <field name="website">www.@yourcompany.example.com</field>
         </record>
     </data>
 </odoo>
