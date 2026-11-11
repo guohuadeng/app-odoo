@@ -173,10 +173,11 @@ class Base(models.AbstractModel):
         if image and file_name:
             try:
                 attachment = self.env['ir.attachment'].sudo()
+                # Odoo 20 已移除 ir.attachment.datas（写 datas 会被静默忽略），
+                # 辅助函数返回的是 base64，解码后写 raw 才能落到 filestore。
                 res = {
-                    'datas': image,
+                    'raw': base64.b64decode(image),
                     'name': file_name,
-                    'website_id': False,
                     'res_model': self._name,
                     'res_id': self.id,
                     'public': True,
@@ -206,9 +207,8 @@ class Base(models.AbstractModel):
         if image and file_name:
             try:
                 attachment = self.env['ir.attachment'].create({
-                    'datas': image,
+                    'raw': base64.b64decode(image),
                     'name': file_name,
-                    'website_id': False,
                     'res_model': self._name,
                     'res_id': self.id,
                     'public': True,
@@ -229,9 +229,8 @@ class Base(models.AbstractModel):
         if video and file_name:
             try:
                 attachment = self.env['ir.attachment'].create({
-                    'datas': video,
+                    'raw': base64.b64decode(video),
                     'name': file_name,
-                    'website_id': False,
                     'res_model': self._name,
                     'res_id': self.id,
                     'public': True,
