@@ -170,20 +170,23 @@ GPT-3	A set of models that can understand and generate natural language
             return False
         attachment = message.attachment_ids[:1].sudo()
         mimetype = attachment.mimetype or ''
-        datas = attachment.datas
-        if not datas:
-            return False
-
         try:
-            decoded = base64.b64decode(datas)
+            raw = attachment.raw
         except Exception:
             return False
+        if not raw:
+            return False
+        decoded = raw.content if hasattr(raw, 'content') else bytes(raw)
+        if not decoded:
+            return False
+        # Odoo 20 附件没有 datas：内容读 raw，data URI 再自行 base64
+        datas = base64.b64encode(decoded).decode('ascii')
 
         # --- Images: keep the original behaviour unchanged ---
         if mimetype.startswith('image/'):
             return {
                 'type': 'image',
-                'url': "data:%s;base64,%s" % (mimetype, datas.decode('ascii')),
+                'url': "data:%s;base64,%s" % (mimetype, datas),
             }
 
         # --- Plain text-like files ---
@@ -204,7 +207,7 @@ GPT-3	A set of models that can understand and generate natural language
                 'type': 'file',
                 'filename': attachment.name or 'file.pdf',
                 'mimetype': mimetype,
-                'data_uri': "data:%s;base64,%s" % (mimetype, datas.decode('ascii')),
+                'data_uri': "data:%s;base64,%s" % (mimetype, datas),
             }
 
         # --- Other binary (docx/xlsx/...): file input ---
@@ -212,7 +215,7 @@ GPT-3	A set of models that can understand and generate natural language
             'type': 'file',
             'filename': attachment.name or 'file',
             'mimetype': mimetype,
-            'data_uri': "data:%s;base64,%s" % (mimetype, datas.decode('ascii')),
+            'data_uri': "data:%s;base64,%s" % (mimetype, datas),
         }
 
     @api.model
