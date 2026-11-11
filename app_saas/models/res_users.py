@@ -1,17 +1,12 @@
 # -*- coding: utf-8 -*-
 
-try:
-    import urlparse
-except:
-    from urllib.parse import urlparse
-try:
-    import urllib2
-except:
-    from urllib import request as urllib2
+import threading
 
 from odoo import api, fields, models, release, SUPERUSER_ID, _
 from odoo.addons.base.models.res_users import KEY_CRYPT_CONTEXT, INDEX_SIZE
 from odoo.addons.auth_signup.models.res_users import SignupError
+from odoo.addons.auth_oauth.models.res_users import parse_auth
+from odoo.exceptions import AccessDenied
 
 from ast import literal_eval
 import requests
@@ -19,6 +14,28 @@ import requests
 import logging
 
 _logger = logging.getLogger(__name__)
+
+# OAuth 端到端请求共用连接池：跨机 HTTPS 新建连接实测 90~110ms，复用后约 30ms。
+# Session 非严格线程安全，按线程各自持有；连接池在 worker 生命周期内复用。
+_OAUTH_TIMEOUT = (5, 30)
+_oauth_local = threading.local()
+
+
+def _oauth_session():
+    session = getattr(_oauth_local, 'session', None)
+    if session is None:
+        session = requests.Session()
+        adapter = requests.adapters.HTTPAdapter(
+            pool_connections=4, pool_maxsize=8, max_retries=0)
+        session.mount('https://', adapter)
+        session.mount('http://', adapter)
+        _oauth_local.session = session
+    return session
+
+
+def _oauth_get(url, **kwargs):
+    kwargs.setdefault('timeout', _OAUTH_TIMEOUT)
+    return _oauth_session().get(url, **kwargs)
 
 
 class OauthBindError(Exception):
@@ -77,7 +94,7 @@ class ResUsers(models.Model):
         provider_app_saas = self.env.ref('app_saas.provider_app_saas')
         if oauth_provider.id == provider_app_saas.id:
             params.update({'v': release.version})
-        response = requests.get(oauth_provider.code_endpoint, params=params, timeout=30)
+        response = _oauth_get(oauth_provider.code_endpoint, params=params)
         if response.ok:
             ret = response.json()
             # 客户机首次连接时，取到的 server 端 key 写入 provider 的 client_secret
@@ -98,14 +115,58 @@ class ResUsers(models.Model):
         oauth_provider = self.env['auth.oauth.provider'].sudo().browse(provider)
         # 额外code 处理
         kw = params
+        profile = None
         if oauth_provider.code_endpoint and code and not access_token:
             ret = self.sudo().get_token_from_code(provider, params)
+            # 服务端新版会在换 token 时一并下发 profile，省掉一次 /oauth/profile 请求；
+            # 旧服务端没有该字段时保持原验证流程
+            profile = ret.pop('profile', None)
             kw.update(ret)
             kw.pop('code', False)
 
         self = self.with_context(auth_extra=kw)
+        if profile:
+            self = self.with_context(auth_oauth_profile=profile)
         res = super(ResUsers, self).auth_oauth(provider, kw)
         return res
+
+    @api.model
+    def _auth_oauth_rpc(self, endpoint, access_token):
+        # 覆盖 core 的 requests.get：复用连接池并设置连接/读取超时
+        # v20 的 ir.config_parameter 移除了 get_param，改用 get_bool
+        icp = self.env['ir.config_parameter'].sudo()
+        if hasattr(icp, 'get_bool'):
+            use_header = icp.get_bool('auth_oauth.authorization_header')
+        else:
+            use_header = icp.get_param('auth_oauth.authorization_header')
+        if use_header:
+            response = _oauth_get(endpoint, headers={'Authorization': 'Bearer %s' % access_token})
+        else:
+            response = _oauth_get(endpoint, params={'access_token': access_token})
+
+        if response.ok:
+            return response.json()
+
+        auth_challenge = parse_auth(response.headers.get("WWW-Authenticate"))
+        if auth_challenge and auth_challenge.type == 'bearer' and 'error' in auth_challenge:
+            return dict(auth_challenge)
+
+        return {'error': 'invalid_request'}
+
+    @api.model
+    def _auth_oauth_validate(self, provider, access_token):
+        profile = self.env.context.get('auth_oauth_profile')
+        if profile:
+            # 与 core 一致：统一 subject 键位并写入 user_id
+            profile = dict(profile)
+            subject = next(filter(None, [
+                profile.pop(key, None) for key in ('sub', 'id', 'user_id')
+            ]), None)
+            if not subject:
+                raise AccessDenied(_('Missing subject identity'))
+            profile['user_id'] = subject
+            return profile
+        return super(ResUsers, self)._auth_oauth_validate(provider, access_token)
 
     def _oauth_ensure_mcp_key(self, odoo_user, validation, access_token):
         """OAuth 登录时同步创建用户 MCP Key（对接 Work Buddy、Claude Code 等智能体）。
@@ -166,7 +227,8 @@ class ResUsers(models.Model):
                         'oauth_uid': oauth_uid,
                     }
                     odoo_user.write(vals)
-                    _logger.info('========= _auth_oauth_signin res.users write：%s' % vals)
+                    _logger.debug('_auth_oauth_signin bind user=%s provider=%s',
+                                  odoo_user.id, provider)
                     # 同步通行证头像到本库用户
                     self._oauth_sync_avatar(odoo_user, validation)
                     # 增加处理写mcp key
