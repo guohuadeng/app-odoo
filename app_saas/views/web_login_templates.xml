@@ -12,6 +12,36 @@
         </xpath>
     </template>
 
+    <!-- 登录页 /web/login：OAuth 登录块放在 <form> 之外。
+         v18 的 web.user_switch 在存在多个历史登录用户时会隐藏整个 form（加 d-none），
+         o_login_auth 原先挂在 form 内的 oe_login_buttons 下，会随表单一起隐藏，
+         导致「选择用户」界面看不到社交登录列表。
+         移到 form 之后，「选择用户」与密码表单两种界面都显示 OAuth 登录入口。 -->
+    <template id="login_oauth_outside_form" inherit_id="web.login" name="app_saas Login: OAuth outside form">
+        <xpath expr="//form[contains(@t-attf-class, 'oe_login_form')]" position="after">
+            <div class="o_login_auth" position="move"/>
+        </xpath>
+    </template>
+
+    <!-- 登录/注册/重置密码页：OAuth 登录块补顶部间距（与上方登录按钮或「选择用户」列表拉开） -->
+    <template id="login_oauth_div_padding" inherit_id="web.login" name="app_saas Login: OAuth block padding">
+        <xpath expr="//div[hasclass('o_login_auth')]" position="attributes">
+            <attribute name="class" add="pt-4" separator=" "/>
+        </xpath>
+    </template>
+
+    <template id="signup_oauth_div_padding" inherit_id="auth_signup.signup" name="app_saas Signup: OAuth block padding">
+        <xpath expr="//div[hasclass('o_login_auth')]" position="attributes">
+            <attribute name="class" add="pt-4" separator=" "/>
+        </xpath>
+    </template>
+
+    <template id="reset_password_oauth_div_padding" inherit_id="auth_signup.reset_password" name="app_saas Reset Password: OAuth block padding">
+        <xpath expr="//div[hasclass('o_login_auth')]" position="attributes">
+            <attribute name="class" add="pt-4" separator=" "/>
+        </xpath>
+    </template>
+
     <!-- OAuth 提供商块：分隔符"- 或 -"支持通过 oauth_separator_below 变量切换到块下方 -->
     <template id="providers_separator_below" inherit_id="auth_oauth.providers" name="app_saas OAuth Providers separator position">
         <xpath expr="//em" position="replace">
