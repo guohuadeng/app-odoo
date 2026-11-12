@@ -14,6 +14,24 @@
         </xpath>
     </template>
 
+    <!-- 登录页 /web/login：OAuth 登录块放在 <form> 之外。
+         v20 的 web.user_switch 在存在多个历史登录用户时会隐藏整个 form（加 d-none），
+         OAuth 块原先挂在 form 内的 oe_login_buttons 下，会随表单一起隐藏，
+         导致「选择用户」界面看不到社交登录列表。
+         移到 form 之后，「选择用户」与密码表单两种界面都显示 OAuth 登录入口。 -->
+    <template id="login_oauth_outside_form" inherit_id="web.login" name="app_saas Login: OAuth outside form">
+        <xpath expr="//div[@id='oe_structure_login_bottom']" position="before">
+            <t t-call="web.login_oauth" position="move"/>
+        </xpath>
+    </template>
+
+    <!-- 登录/注册/重置密码页：OAuth 登录块补顶部间距（与上方登录按钮或「选择用户」列表拉开） -->
+    <template id="login_oauth_div_padding" inherit_id="web.login_oauth" name="app_saas Login: OAuth block padding">
+        <xpath expr="//div[hasclass('o_login_auth')]" position="attributes">
+            <attribute name="class" add="pt-4" separator=" "/>
+        </xpath>
+    </template>
+
     <!-- Odoo20: auth_oauth.providers 模板已改为继承 web.login_oauth，仅向 auth_btns 注入，
          旧的 o_auth_oauth_providers class 与 em 分隔符结构移入 web.login_oauth。
          OAuth 提供商块：分隔符"- 或 -"支持通过 oauth_separator_below 变量切换到块下方 -->
