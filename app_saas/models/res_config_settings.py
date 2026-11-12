@@ -2,7 +2,7 @@
 
 import logging
 
-from odoo import api, fields, models, _
+from odoo import fields, models, _
 from odoo.exceptions import UserError, ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -36,7 +36,7 @@ class ResConfigSettings(models.TransientModel):
     cloud_tunnel_key = fields.Char(
         string='Cloud Tunnel Key',
         compute='_compute_cloud_tunnel_key',
-        help='Routing key of this instance on the cloud hub. Defaults to the database UUID and matches oauth2.client.client_id on the cloud side.',
+        help='Routing key of this instance on the cloud hub. Always the database UUID (oauth2.client.client_id on the cloud side).',
     )
     cloud_tunnel_status = fields.Selection(
         selection=[
@@ -60,13 +60,12 @@ class ResConfigSettings(models.TransientModel):
         help='Most recent error reported by the tunnel agent.',
     )
 
-    @api.depends('is_cloud_tunnel_enabled')
     def _compute_cloud_tunnel_key(self):
-        """路由键：优先取显式配置，缺省回退 database.uuid（与云端 client_id 一致）。"""
+        """路由键固定为 database.uuid（与云端 oauth2.client.client_id 一致），不再读自定义参数。"""
         icp = self.env['ir.config_parameter'].sudo()
-        key = icp.get_str('app_saas.cloud_tunnel_key')
+        key = icp.get_str('database.uuid')
         for rec in self:
-            rec.cloud_tunnel_key = key or icp.get_str('database.uuid')
+            rec.cloud_tunnel_key = key
 
     def _compute_cloud_tunnel_state(self):
         """运行状态只读展示，值由 app_saas_tunnel 写入参数。"""

@@ -44,7 +44,7 @@ class IrConfigParameter(models.Model):
         """克隆/初始化数据库时，清空继承自原库的实例级凭据与身份。
 
         - app_saas_db_token：实例令牌（与 oauth provider 的 client_secret 同一值）
-        - app_saas.cloud_tunnel_key：隧道路由键，清空后回退到新库的 database.uuid
+        - app_saas.cloud_tunnel_key：历史路由键参数（已废弃，路由固定用 database.uuid）
         - app_saas.cloud_tunnel_status/last_seen/last_error：agent 回报的陈旧状态展示
 
         都按“有值才清”处理，避免在新库上留下空参数行或多余写库。

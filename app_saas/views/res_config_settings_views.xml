@@ -23,7 +23,9 @@
                         </div>
                     </setting>
                     <setting string="Cloud DB Token" id="set_app_saas_db_token" invisible="not app_saas_ok">
-                        <field name="app_saas_db_token" widget="CopyClipboardChar" style="width:100%!important"/>
+                        <field name="app_saas_db_token" widget="Char"
+                               options="{'copy_clipboard': 1, 'key_musk': 1}"
+                               style="width:100%!important"/>
                         <div class="content-group">
                             <div class="text-warning">
                                 The odooapp SaaS Token. You can get it after first time Login via Ai Passport of odooapp.cn. Also you can set from
@@ -44,12 +46,6 @@
                                 <label for="cloud_tunnel_url" class="col-lg-2 col-form-label">Cloud URL</label>
                                 <div class="col-lg-6">
                                     <field name="cloud_tunnel_url" placeholder="https://www.odooapp.cn"/>
-                                </div>
-                            </div>
-                            <div class="row g-2">
-                                <label for="cloud_tunnel_key" class="col-lg-2 col-form-label">Tunnel Key</label>
-                                <div class="col-lg-6">
-                                    <field name="cloud_tunnel_key" widget="CopyClipboardChar" readonly="1"/>
                                 </div>
                             </div>
                             <div class="row g-2">
