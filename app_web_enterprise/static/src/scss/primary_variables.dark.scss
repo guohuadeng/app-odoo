@@ -3,6 +3,15 @@ $o-enterprise-color: #00463e !default;
 $o-brand-odoo: $o-enterprise-color !default;
 
 // = Fine-tune contextual text colors.
-$o-theme-text-colors: (
+// 必须给全 5 个键：本文件先于 web_enterprise/primary_variables.dark.scss 编译，
+// 只给 primary 会让企业版的 !default 全量 map 失效；随后
+// $o-btns-bs-outline-override 取 danger 得到 null，深色包编译报
+// "argument `$color1` of `mix()` must be a color"。
+$o-theme-text-colors: () !default;
+$o-theme-text-colors: map-merge((
     "primary": #02c7b5,
-) !default;
+    "success": #30C06E,
+    "info": #71ADEA,
+    "warning": #D89D54,
+    "danger": #ff5757,
+), $o-theme-text-colors);

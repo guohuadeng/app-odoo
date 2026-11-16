@@ -12,30 +12,36 @@
 				<attribute name="optional">show</attribute>
 			</xpath>
 			<xpath expr="//field[@name='website_indexed']" position="attributes">
-				<attribute name="optional">show</attribute>
+				<attribute name="optional">hide</attribute>
 			</xpath>
 			<xpath expr="//field[@name='website_url']" position="attributes">
 				<attribute name="optional">show</attribute>
 			</xpath>
 			<xpath expr="//field[@name='is_in_menu']" position="attributes">
-				<attribute name="optional">show</attribute>
+				<attribute name="optional">hide</attribute>
 			</xpath>
 			<!-- v20：原生列表已把 is_published 换成 website_published（见 website/website_pages_views.xml:124） -->
 			<xpath expr="//field[@name='website_published']" position="attributes">
 				<attribute name="optional">show</attribute>
 			</xpath>
 			<xpath expr="//field[@name='is_seo_optimized']" position="attributes">
-				<attribute name="optional">show</attribute>
+				<attribute name="optional">hide</attribute>
 			</xpath>
 			<xpath expr="//field[@name='website_id']" position="attributes">
 				<attribute name="optional">show</attribute>
+			</xpath>
+			<xpath expr="//field[@name='parent_id']" position="attributes">
+				<attribute name="optional">hide</attribute>
+			</xpath>
+			<xpath expr="//field[@name='publish_on']" position="attributes">
+				<attribute name="optional">hide</attribute>
 			</xpath>
 			<xpath expr="//field[@name='website_published']" position="before">
                 <field name="is_force_all" widget="boolean_toggle" optional="show"/>
             </xpath>
 			<xpath expr="//field[@name='website_url']" position="after">
                 <field name="seo_name" column_invisible="1"/>
-                <field name="website_meta_keywords" optional="show"/>
+                <field name="website_meta_keywords" optional="hide"/>
                 <field name="website_meta_title" optional="hide"/>
                 <field name="website_meta_description" optional="hide"/>
 			</xpath>
