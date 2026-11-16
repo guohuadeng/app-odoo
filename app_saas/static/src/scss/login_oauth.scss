@@ -1,0 +1,15 @@
+// 登录页 OAuth 登录块已由 views/web_login_templates.xml 移到 <form> 之外。
+// social_login 等模块把 .oe_website_login_container 设为 flex 行布局，
+// 小屏时 OAuth 块会被挤到登录表单/选择用户列表的右侧并排显示。
+// 这里让小屏下容器换行，OAuth 块独占一行排在下方，与表单同宽居中。
+@media (max-width: 768px) {
+    .oe_website_login_container {
+        flex-wrap: wrap;
+
+        > .o_login_auth {
+            flex: 1 0 100%;
+            max-width: 90%;
+            margin: 0 auto 20px;
+        }
+    }
+}
