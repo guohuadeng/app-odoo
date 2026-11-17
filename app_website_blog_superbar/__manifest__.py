@@ -5,7 +5,7 @@
 
 {
     'name': '网站博文超级搜索栏 / Website Blog Search Enhance Superbar',
-    'version': '20.0.24.11.12',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Website',
     'website': 'https://www.odooai.cn',

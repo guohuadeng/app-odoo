@@ -8,7 +8,7 @@
 
 {
     'name': '谷歌Gemini AI支持,Google Gemini (Bard) AI for Odoo',
-    'version': '20.0.26.10.21',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
     'maintainer': 'odooai.cn',

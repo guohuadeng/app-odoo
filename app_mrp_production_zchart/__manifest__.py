@@ -22,7 +22,7 @@
 
 {
     'name': "MRP生产单层级图 / MRP Production zChart Hierarchy",
-    'version': '20.0.25.08.26',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',

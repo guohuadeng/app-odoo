@@ -16,7 +16,7 @@
 
 {
     'name': "活动高级搜索导航,Event Advance Search Superbar",
-    'version': '20.0.25.06.10',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

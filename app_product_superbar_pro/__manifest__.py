@@ -16,7 +16,7 @@
 
 {
     'name': "产品分类导航Pro版 / Product Browse by Category Navigator Pro",
-    'version': '20.0.25.04.19',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

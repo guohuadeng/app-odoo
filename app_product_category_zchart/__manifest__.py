@@ -22,7 +22,7 @@
 
 {
     'name': "产品目录层级图 / Category zChart Hierarchy",
-    'version': '20.0.25.02.27',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

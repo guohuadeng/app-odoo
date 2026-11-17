@@ -17,7 +17,7 @@
 
 {
     'name': "采购订单高级搜索Pro / Purchase Order Navigator Pro",
-    'version': '20.0.24.12.04',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

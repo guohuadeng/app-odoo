@@ -17,7 +17,7 @@
 
 {
     'name': '销售订单高级超级搜索栏 / Advance Sale Order Navigator by Partner and Channel',
-    'version': '20.0.24.12.04',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

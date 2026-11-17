@@ -16,7 +16,7 @@
 
 {
     'name': "活动高级搜索 / Event Advance Search Browse by Stage and Date",
-    'version': '20.0.26.10.25',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
