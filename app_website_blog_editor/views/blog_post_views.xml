@@ -11,16 +11,25 @@
 			<xpath expr="//field[@name='name']" position="attributes">
 				<attribute name="optional">show</attribute>
 			</xpath>
+			<xpath expr="//field[@name='author_id']" position="attributes">
+				<attribute name="optional">hide</attribute>
+			</xpath>
+            <xpath expr="//field[@name='website_id']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
 			<xpath expr="//field[@name='website_url']" position="attributes">
 				<attribute name="optional">hide</attribute>
 			</xpath>
 			<xpath expr="//field[@name='is_seo_optimized']" position="attributes">
-				<attribute name="optional">show</attribute>
+				<attribute name="optional">hide</attribute>
 			</xpath>
 			<!-- v20：原生列表已把 is_published 换成 website_published（见 website_blog/website_blog_views.xml:135），
 			     锚点随之改；原 xpath 在 v20 会命中 0 个节点导致安装期 ParseError -->
 			<xpath expr="//field[@name='website_published']" position="attributes">
 				<attribute name="optional">show</attribute>
+			</xpath>
+			<xpath expr="//field[@name='publish_on']" position="attributes">
+				<attribute name="optional">hide</attribute>
 			</xpath>
 			<xpath expr="//field[@name='website_url']" position="after">
                 <field name="seo_name" optional="show"/>
