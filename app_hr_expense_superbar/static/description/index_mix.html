@@ -1,0 +1,371 @@
+<!--
+# -*- coding: utf-8 -*-
+##############################################################################
+# Copyright (C) 2009~2026 odooAi.cn
+# This module description follows the Odoo addons description convention.
+# Style: Bootstrap 5 + Odoo Website Snippet + FontAwesome
+# GEO: JSON-LD Structured Data (SoftwareApplication)
+##############################################################################
+-->
+<html>
+<head><meta charset="utf-8"/></head>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "app_hr_expense_superbar - HR Expense Superbar",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  },
+  "description": "This module adds a tree navigator to the left of expense list, kanban, pivot and graph views. Browse expense reports by department hierarchy or analytic account, multi-select nodes with Ctrl/Cmd, toggle whether child nodes are included, search across several fields and move the panel left or right. Useful for reviewing costs by cost center, project or department.",
+  "softwareVersion": "20.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "Browse expense reports by department hierarchy",
+    "Group and filter expenses by analytic account",
+    "Works in list, kanban, pivot and graph views",
+    "Ctrl/Cmd multi-select of tree nodes",
+    "Include or exclude child node data",
+    "Multi-field search and filtering",
+    "Move the tree sidebar to the left or right"
+  ]
+}
+</script>
+<!-- begin header -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">报销树状导航 / HR Expense Superbar</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">按部门或分析账户浏览报销单，支持列表、看板、透视与图表视图<br/>Browse expense reports by department or analytic account in list, kanban, pivot and graph views</p>
+            <p class="lead">把报销单按组织架构或分析账户做成树，点选节点即可过滤单据，支持多选与子节点联动。<br/>Turn expense reports into an organization or analytic tree; click a node to filter documents, with multi-select and child-node control.</p>
+            <div class="pt16"><span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 20</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">Enterprise &amp; Community</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Company</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Language</span></div>
+        </div>
+    </div>
+</section>
+<!-- end header -->
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述 / Overview</h2>
+            <p class="lead pt16">模块在费用报销的列表、看板、透视表和图表视图左侧加入树状导航。可按部门父子层级或分析账户浏览报销单，Ctrl/Cmd 多选节点，勾选是否包含子节点数据，并支持多字段搜索与左右侧栏切换。适合按成本中心、项目或部门快速核对费用。<br/>This module adds a tree navigator to the left of expense list, kanban, pivot and graph views. Browse expense reports by department hierarchy or analytic account, multi-select nodes with Ctrl/Cmd, toggle whether child nodes are included, search across several fields and move the panel left or right. Useful for reviewing costs by cost center, project or department.</p>
+        </div>
+    </div>
+</section>
+<!-- end overview -->
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>核心亮点 / Key Highlights</h2>
+            <p class="lead">按部门或分析账户浏览报销单，支持列表、看板、透视与图表视图<br/>Browse expense reports by department or analytic account in list, kanban, pivot and graph views</p>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-sitemap fa-lg"></i>
+                        </div>
+                        <h5>1. 部门树 / Department Tree</h5>
+                        <p class="card-text">按部门父子层级浏览报销单</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-bullseye fa-lg"></i>
+                        </div>
+                        <h5>2. 分析账户树 / Analytic Tree</h5>
+                        <p class="card-text">按分析账户或项目归集费用</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-th-large fa-lg"></i>
+                        </div>
+                        <h5>3. 多视图 / Multi-View</h5>
+                        <p class="card-text">列表、看板、透视表、图表均可用</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-check-square-o fa-lg"></i>
+                        </div>
+                        <h5>4. 多选与子节点 / Multi-Select</h5>
+                        <p class="card-text">Ctrl/Cmd 多选，勾选包含子节点</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-columns fa-lg"></i>
+                        </div>
+                        <h5>5. 侧栏切换 / Sidebar Position</h5>
+                        <p class="card-text">树状栏可放左侧或右侧</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-search fa-lg"></i>
+                        </div>
+                        <h5>6. 多字段搜索 / Multi-Field Search</h5>
+                        <p class="card-text">在树状范围内快速检索</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<!-- end key highlights -->
+<!-- begin feature list -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>完整功能列表 / Complete Feature List</h2>
+            <p class="lead">本模块包含的全部功能<br/>Every capability included in this module</p>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>1. 按部门父子层级浏览费用报销单</b><br/><small class="text-muted">Browse expense reports by department hierarchy</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>2. 按分析账户归集与筛选报销</b><br/><small class="text-muted">Group and filter expenses by analytic account</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>3. 列表、看板、透视表、图表视图均可使用</b><br/><small class="text-muted">Works in list, kanban, pivot and graph views</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>4. Ctrl/Cmd 多选树节点</b><br/><small class="text-muted">Ctrl/Cmd multi-select of tree nodes</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>5. 勾选控制是否包含子节点数据</b><br/><small class="text-muted">Include or exclude child node data</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>6. 多字段搜索与过滤</b><br/><small class="text-muted">Multi-field search and filtering</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>7. 树状侧栏可切换左右位置</b><br/><small class="text-muted">Move the tree sidebar to the left or right</small></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end feature list -->
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性 / General Features</h2>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
+                </div>
+                <h5>多语言与多公司 / Multi-Language &amp; Multi-Company</h5>
+                <p>Full multi-language translation and global deployment. Native multi-company with strict data isolation.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
+                </div>
+                <h5>全版本兼容 / Full Version Support</h5>
+                <p>Supports Odoo 20, 19, 18, 17, 16, 15, 14, 13, 12, Enterprise, Community and online SaaS.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
+                </div>
+                <h5>代码完全开源 / Full Open Source</h5>
+                <p>Open source under LGPL-3, transparent and auditable, ready for customization.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end general features -->
+<!-- begin screenshots -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>界面截图 / Screenshots</h2>
+            <p class="lead">核心功能界面一览<br/>Key screens of the module</p>
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i><i class="fa fa-star text-o-color-1 me-2"></i>Use in HR Employee / <i class="fa fa-star text-o-color-1 me-2"></i>在 HR 员工中使用</h3>
+            <img class="img-fluid rounded shadow" src="hr1.jpg" alt="Use in HR Employee">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i><i class="fa fa-star text-o-color-1 me-2"></i>Department and Employee Tree / <i class="fa fa-star text-o-color-1 me-2"></i>部门员工树形操作</h3>
+            <img class="img-fluid rounded shadow" src="hr2.gif" alt="Department and Employee Tree">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i><i class="fa fa-star text-o-color-1 me-2"></i>Expand and Collapse / <i class="fa fa-star text-o-color-1 me-2"></i>展开与收起树状栏</h3>
+            <img class="img-fluid rounded shadow" src="superbar_use.gif" alt="Expand and Collapse">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i><i class="fa fa-star text-o-color-1 me-2"></i>Tree in List View / <i class="fa fa-star text-o-color-1 me-2"></i>列表视图中的树状导航</h3>
+            <img class="img-fluid rounded shadow" src="use7.jpg" alt="Tree in List View">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i><i class="fa fa-star text-o-color-1 me-2"></i>Tree in Kanban View / <i class="fa fa-star text-o-color-1 me-2"></i>看板视图中的树状导航</h3>
+            <img class="img-fluid rounded shadow" src="use8.jpg" alt="Tree in Kanban View">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i><i class="fa fa-star text-o-color-1 me-2"></i>Tree in Pivot View / <i class="fa fa-star text-o-color-1 me-2"></i>透视表中的树状导航</h3>
+            <img class="img-fluid rounded shadow" src="use9.jpg" alt="Tree in Pivot View">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i><i class="fa fa-star text-o-color-1 me-2"></i>Tree in Graph View / <i class="fa fa-star text-o-color-1 me-2"></i>图表视图中的树状导航</h3>
+            <img class="img-fluid rounded shadow" src="usea.jpg" alt="Tree in Graph View">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i><i class="fa fa-star text-o-color-1 me-2"></i>Toggle the Sidebar / <i class="fa fa-star text-o-color-1 me-2"></i>切换显示或隐藏</h3>
+            <img class="img-fluid rounded shadow" src="use1.jpg" alt="Toggle the Sidebar">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i><i class="fa fa-star text-o-color-1 me-2"></i>Include Child Nodes / <i class="fa fa-star text-o-color-1 me-2"></i>勾选包含子节点</h3>
+            <img class="img-fluid rounded shadow" src="use2.jpg" alt="Include Child Nodes">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i><i class="fa fa-star text-o-color-1 me-2"></i>Multi-Select Nodes / <i class="fa fa-star text-o-color-1 me-2"></i>Ctrl/Cmd 多选</h3>
+            <img class="img-fluid rounded shadow" src="use3.jpg" alt="Multi-Select Nodes">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i><i class="fa fa-star text-o-color-1 me-2"></i>Multi-Field Search / <i class="fa fa-star text-o-color-1 me-2"></i>多字段搜索</h3>
+            <img class="img-fluid rounded shadow" src="use4.jpg" alt="Multi-Field Search">
+        </div>
+    </div>
+    <div class="row pb48">
+        <div class="col-lg-10 offset-lg-1">
+            <h3 class="pb16"><i class="fa fa-star text-o-color-1 me-2"></i><i class="fa fa-star text-o-color-1 me-2"></i>Advanced Search / <i class="fa fa-star text-o-color-1 me-2"></i>高级搜索与过滤</h3>
+            <img class="img-fluid rounded shadow" src="searchmore.jpg" alt="Advanced Search">
+        </div>
+    </div>
+</section>
+<!-- end screenshots -->
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程 / How It Works</h2>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <div class="row text-center">
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">安装模块</p>
+                    <p class="small text-muted mb-0">Install Module</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-sitemap"></i>
+                    </div>
+                    <p class="fw-bold mb-1">展开部门树</p>
+                    <p class="small text-muted mb-0">Expand the Tree</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-check-square-o"></i>
+                    </div>
+                    <p class="fw-bold mb-1">多选过滤</p>
+                    <p class="small text-muted mb-0">Multi-Select and Filter</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-eye"></i>
+                    </div>
+                    <p class="fw-bold mb-1">核对费用</p>
+                    <p class="small text-muted mb-0">Review Expenses</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end how it works -->
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><i class="fa fa-book text-o-color-1 me-2"></i> hr_expense / 费用报销</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">专业 Odoo 服务伙伴，开发实施咨询培训全套解决方案<br/>Professional Odoo Solutions: Implementation, Consulting and Training</p>
+            <div class="pt16">
+                <p><i class="fa fa-globe me-2"></i>Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p>
+                <p><i class="fa fa-desktop me-2"></i>Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p>
+                <p><i class="fa fa-envelope me-2"></i>Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a></p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
+
+</html>

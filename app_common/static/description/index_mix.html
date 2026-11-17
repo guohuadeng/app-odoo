@@ -1,0 +1,300 @@
+<!--
+# -*- coding: utf-8 -*-
+##############################################################################
+# Copyright (C) 2009~2026 odooAi.cn
+# This module description follows the Odoo addons description convention.
+# Style: Bootstrap 5 + Odoo Website Snippet + FontAwesome
+# GEO: JSON-LD Structured Data (SoftwareApplication)
+##############################################################################
+-->
+<html>
+<head><meta charset="utf-8"/></head>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "app_common - odooAi Common Util and Tools",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  },
+  "description": "The shared foundation for odooai.cn apps. It provides fast Excel import, Many2One default helpers, UTC-to-local conversion, browser user-agent lookup, image and media to attachment, cron job logging, reducing useless mail, custom .rng files and small helpers such as distance between two points. It also improves the user access-rights form: a privilege with a single group renders as an independent checkbox, while a privilege with multiple groups keeps the native mutually exclusive dropdown. Load it through server_wide_modules.",
+  "softwareVersion": "20.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "Quick import data from Excel with .py code",
+    "Quick Many2One default value helper",
+    "Filter for useless fields",
+    "UTC to local timezone conversion",
+    "Get the browser user-agent",
+    "Image to local, image URL to local, media to attachment",
+    "Cron job logging and management",
+    "Reduce useless mail and improve performance",
+    "Customize .rng files",
+    "Misc utilities such as distance between two points",
+    "Access-rights widget: single-group privileges render as independent checkboxes"
+  ]
+}
+</script>
+<!-- begin header -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">欧度智能基础功能及面板 / odooAi Common Util and Tools</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">odooai.cn 应用的核心基础模块，提供通用工具函数与后台面板<br/>Core module for odooai.cn apps with common utilities and panels</p>
+            <p class="lead">把重复的工具代码收敛到一个基础模块：数据导入、时区转换、媒体本地化、定时任务与权限组件增强。<br/>One base module for recurring utilities: data import, timezone conversion, media localization, cron logging and access-rights widget tweaks.</p>
+            <div class="pt16"><span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 20</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">Enterprise &amp; Community</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Company</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Language</span></div>
+        </div>
+    </div>
+</section>
+<!-- end header -->
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述 / Overview</h2>
+            <p class="lead pt16">本模块是 odooai.cn 系列应用的公共底座，提供 Excel 快速导入、Many2One 默认值、UTC 本地时区转换、浏览器 User-Agent 获取、图片与媒体转附件、定时任务日志、无用邮件抑制、.rng 文件自定义以及两点距离等常用工具。还增强了用户权限表单：权限范围仅含一个权限组时显示为独立复选框，多个权限组时保持原生互斥下拉。建议通过 server_wide_modules 加载。<br/>The shared foundation for odooai.cn apps. It provides fast Excel import, Many2One default helpers, UTC-to-local conversion, browser user-agent lookup, image and media to attachment, cron job logging, reducing useless mail, custom .rng files and small helpers such as distance between two points. It also improves the user access-rights form: a privilege with a single group renders as an independent checkbox, while a privilege with multiple groups keeps the native mutually exclusive dropdown. Load it through server_wide_modules.</p>
+        </div>
+    </div>
+</section>
+<!-- end overview -->
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>核心亮点 / Key Highlights</h2>
+            <p class="lead">odooai.cn 应用的核心基础模块，提供通用工具函数与后台面板<br/>Core module for odooai.cn apps with common utilities and panels</p>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-file-excel-o fa-lg"></i>
+                        </div>
+                        <h5>1. 数据导入 / Excel Import</h5>
+                        <p class="card-text">用 .py 代码快速从 Excel 批量导入</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-cog fa-lg"></i>
+                        </div>
+                        <h5>2. M2O 默认值 / M2O Defaults</h5>
+                        <p class="card-text">Many2One 默认值快捷设置</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-clock-o fa-lg"></i>
+                        </div>
+                        <h5>3. 时区转换 / UTC Convert</h5>
+                        <p class="card-text">UTC 与本地时区互转</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-picture-o fa-lg"></i>
+                        </div>
+                        <h5>4. 媒体本地化 / Media to Attachment</h5>
+                        <p class="card-text">图片与 URL 转成本地附件</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-tasks fa-lg"></i>
+                        </div>
+                        <h5>5. 定时任务日志 / Cron Logs</h5>
+                        <p class="card-text">统一管理并记录定时任务执行</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-users fa-lg"></i>
+                        </div>
+                        <h5>6. 权限组件 / Access Widget</h5>
+                        <p class="card-text">单组权限显示为独立复选框</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<!-- end key highlights -->
+<!-- begin feature list -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>完整功能列表 / Complete Feature List</h2>
+            <p class="lead">本模块包含的全部功能<br/>Every capability included in this module</p>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>1. 通过 .py 代码快速从 Excel 导入数据</b><br/><small class="text-muted">Quick import data from Excel with .py code</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>2. Many2One 默认值快捷设置</b><br/><small class="text-muted">Quick Many2One default value helper</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>3. 无用字段过滤器</b><br/><small class="text-muted">Filter for useless fields</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>4. UTC 与本地时区转换</b><br/><small class="text-muted">UTC to local timezone conversion</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>5. 获取浏览器 User-Agent</b><br/><small class="text-muted">Get the browser user-agent</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>6. 图片转本地、图片 URL 转本地、媒体转附件</b><br/><small class="text-muted">Image to local, image URL to local, media to attachment</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>7. 日志定时任务管理</b><br/><small class="text-muted">Cron job logging and management</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>8. 减少无用邮件，提升系统性能</b><br/><small class="text-muted">Reduce useless mail and improve performance</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>9. 自定义 .rng 文件</b><br/><small class="text-muted">Customize .rng files</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>10. 通用工具如计算两点距离</b><br/><small class="text-muted">Misc utilities such as distance between two points</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>11. 用户访问权限部件增强：单组权限显示为独立复选框</b><br/><small class="text-muted">Access-rights widget: single-group privileges render as independent checkboxes</small></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end feature list -->
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性 / General Features</h2>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
+                </div>
+                <h5>多语言与多公司 / Multi-Language &amp; Multi-Company</h5>
+                <p>Full multi-language translation and global deployment. Native multi-company with strict data isolation.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
+                </div>
+                <h5>全版本兼容 / Full Version Support</h5>
+                <p>Supports Odoo 20, 19, 18, 17, 16, 15, 14, 13, 12, Enterprise, Community and online SaaS.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
+                </div>
+                <h5>代码完全开源 / Full Open Source</h5>
+                <p>Open source under LGPL-3, transparent and auditable, ready for customization.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end general features -->
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程 / How It Works</h2>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <div class="row text-center">
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">安装依赖库</p>
+                    <p class="small text-muted mb-0">Install Python Libraries</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-cube"></i>
+                    </div>
+                    <p class="fw-bold mb-1">安装模块</p>
+                    <p class="small text-muted mb-0">Install the Module</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-cogs"></i>
+                    </div>
+                    <p class="fw-bold mb-1">设置 server_wide_modules</p>
+                    <p class="small text-muted mb-0">Set server_wide_modules</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <p class="fw-bold mb-1">调用工具函数</p>
+                    <p class="small text-muted mb-0">Use the Utilities</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end how it works -->
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><i class="fa fa-book text-o-color-1 me-2"></i> mail / 邮件与 Discuss</li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><i class="fa fa-book text-o-color-1 me-2"></i> base_setup / 基础设置</li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><i class="fa fa-book text-o-color-1 me-2"></i> web / Web 框架</li>
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><i class="fa fa-book text-o-color-1 me-2"></i> web_tour / 新手引导</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">专业 Odoo 服务伙伴，开发实施咨询培训全套解决方案<br/>Professional Odoo Solutions: Implementation, Consulting and Training</p>
+            <div class="pt16">
+                <p><i class="fa fa-globe me-2"></i>Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p>
+                <p><i class="fa fa-desktop me-2"></i>Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p>
+                <p><i class="fa fa-envelope me-2"></i>Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a></p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
+
+</html>

@@ -2,7 +2,7 @@
 
 {
     'name': "Product english name with Mixin，产品增加英文名字段-以Mixin方式的统一处理",
-    'version': '20.0.26.05.13',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',

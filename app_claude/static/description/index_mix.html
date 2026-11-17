@@ -1,0 +1,295 @@
+<!--
+# -*- coding: utf-8 -*-
+##############################################################################
+# Copyright (C) 2009~2026 odooAi.cn
+# This module description follows the Odoo addons description convention.
+# Style: Bootstrap 5 + Odoo Website Snippet + FontAwesome
+# GEO: JSON-LD Structured Data (SoftwareApplication)
+##############################################################################
+-->
+<html>
+<head><meta charset="utf-8"/></head>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "app_claude - Claude AI for Odoo AI Center",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  },
+  "description": "This module connects Anthropic Claude to the odooAi AI Center and reuses its robots, Discuss channels and training framework. It supports Opus 4.1, Sonnet 4.5, Haiku and other model generations, with native Anthropic Messages API integration, system prompts and image messages. Administrators bind the Claude API to users, configure white/black lists and sensitive-word filters, choose synchronous or asynchronous responses, and start or stop the service at any time.",
+  "softwareVersion": "20.0",
+  "programmingLanguage": "Python, JavaScript",
+  "license": "LGPL-3",
+  "author": {
+    "@type": "Organization",
+    "name": "odooAi.cn",
+    "url": "https://www.odooai.cn"
+  },
+  "featureList": [
+    "Chat with Claude AI in Odoo for natural responses",
+    "Multiple Claude robot connectors with chat and training",
+    "Support Opus 4.1, Sonnet 4.5, Haiku and more models",
+    "Native Anthropic Messages API with system prompt and vision messages",
+    "Bind the Claude API to a user for private or group channel chat",
+    "White and black list management for AI access",
+    "Start and stop the Claude service easily",
+    "Evaluate robot responses and improve them through training",
+    "Synchronous or asynchronous AI responses",
+    "Configurable sensitive word filter"
+  ]
+}
+</script>
+<!-- begin header -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+            <div class="d-inline-flex align-items-center mb-3">
+                <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
+                <h2 class="ms-3 mb-0" style="font-weight:700;">Claude AI 集成 / Claude AI for Odoo AI Center</h2>
+            </div>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">把 Anthropic Claude 接入 Odoo AI 中心，构建 AI 员工与聊天频道<br/>Connect Anthropic Claude to the Odoo AI Center for AI employees and chat channels</p>
+            <p class="lead">在 Odoo 中直接使用 Claude 系列模型：私聊、群组频道、机器人训练与权限控制一站完成。<br/>Use Claude models inside Odoo: private chat, group channels, robot training and access control in one place.</p>
+            <div class="pt16"><span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 20</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">Enterprise &amp; Community</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Company</span><span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Language</span></div>
+        </div>
+    </div>
+</section>
+<!-- end header -->
+<!-- begin overview -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>功能概述 / Overview</h2>
+            <p class="lead pt16">本模块把 Anthropic Claude 接入 odooAi AI 中心，复用 AI 机器人、Discuss 聊天频道与训练框架。支持 Opus 4.1、Sonnet 4.5、Haiku 等多代模型，提供 Anthropic Messages API 原生对接、系统提示词与图片消息。管理员可以把 Claude API 绑定到指定用户，配置白名单、黑名单与敏感词过滤，选择同步或异步响应，并随时启停服务。<br/>This module connects Anthropic Claude to the odooAi AI Center and reuses its robots, Discuss channels and training framework. It supports Opus 4.1, Sonnet 4.5, Haiku and other model generations, with native Anthropic Messages API integration, system prompts and image messages. Administrators bind the Claude API to users, configure white/black lists and sensitive-word filters, choose synchronous or asynchronous responses, and start or stop the service at any time.</p>
+        </div>
+    </div>
+</section>
+<!-- end overview -->
+<!-- begin key highlights -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>核心亮点 / Key Highlights</h2>
+            <p class="lead">把 Anthropic Claude 接入 Odoo AI 中心，构建 AI 员工与聊天频道<br/>Connect Anthropic Claude to the Odoo AI Center for AI employees and chat channels</p>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-comments fa-lg"></i>
+                        </div>
+                        <h5>1. 对话与频道 / Private Chat &amp; Channels</h5>
+                        <p class="card-text">用户可私聊机器人，也可在群组频道中调用 Claude</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-cubes fa-lg"></i>
+                        </div>
+                        <h5>2. 多代模型 / Opus / Sonnet / Haiku</h5>
+                        <p class="card-text">覆盖 Opus 4.1、Sonnet 4.5、Haiku 等模型，按场景选择</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-plug fa-lg"></i>
+                        </div>
+                        <h5>3. 原生 Messages API / Anthropic Messages API</h5>
+                        <p class="card-text">系统提示词、图片消息与多轮对话完整支持</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-shield fa-lg"></i>
+                        </div>
+                        <h5>4. 权限与风控 / White / Black List</h5>
+                        <p class="card-text">白黑名单、敏感词过滤，按用户绑定 API</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-graduation-cap fa-lg"></i>
+                        </div>
+                        <h5>5. 训练与评估 / Train and Evaluate</h5>
+                        <p class="card-text">评估机器人回复质量，持续优化提示词与答案</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 pb24">
+                <div class="card h-100 border-0 shadow-sm" style="cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 .5rem 1rem rgba(0,0,0,.15)';this.style.backgroundColor='rgba(0,0,0,.03)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.backgroundColor=''">
+                    <div class="card-body text-center p-4">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
+                            <i class="fa fa-exchange fa-lg"></i>
+                        </div>
+                        <h5>6. 同步或异步 / Sync or Async</h5>
+                        <p class="card-text">按场景选择同步等待或异步回调，兼顾体验与并发</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<!-- end key highlights -->
+<!-- begin feature list -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>完整功能列表 / Complete Feature List</h2>
+            <p class="lead">本模块包含的全部功能<br/>Every capability included in this module</p>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>1. 在 Odoo 中与 Claude 对话，生成自然流畅的回复</b><br/><small class="text-muted">Chat with Claude AI in Odoo for natural responses</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>2. 多 Claude 机器人连接器，支持聊天与训练</b><br/><small class="text-muted">Multiple Claude robot connectors with chat and training</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>3. 覆盖 Opus 4.1、Sonnet 4.5、Haiku 等多代模型</b><br/><small class="text-muted">Support Opus 4.1, Sonnet 4.5, Haiku and more models</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>4. 原生 Anthropic Messages API，支持系统提示词与图片消息</b><br/><small class="text-muted">Native Anthropic Messages API with system prompt and vision messages</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>5. 把 Claude API 绑定到用户，支持私聊或群组频道</b><br/><small class="text-muted">Bind the Claude API to a user for private or group channel chat</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>6. AI 访问白名单与黑名单管理</b><br/><small class="text-muted">White and black list management for AI access</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>7. 一键启动或停止 Claude 服务</b><br/><small class="text-muted">Start and stop the Claude service easily</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>8. 评估机器人回复，通过训练持续改进</b><br/><small class="text-muted">Evaluate robot responses and improve them through training</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>9. 同步或异步获取 AI 回复</b><br/><small class="text-muted">Synchronous or asynchronous AI responses</small></li>
+                <li class="list-group-item bg-transparent" style="transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><b>10. 敏感词过滤设置</b><br/><small class="text-muted">Configurable sensitive word filter</small></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end feature list -->
+<!-- begin general features -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>通用特性 / General Features</h2>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
+                </div>
+                <h5>多语言与多公司 / Multi-Language &amp; Multi-Company</h5>
+                <p>Full multi-language translation and global deployment. Native multi-company with strict data isolation.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
+                </div>
+                <h5>全版本兼容 / Full Version Support</h5>
+                <p>Supports Odoo 20, 19, 18, 17, 16, 15, 14, 13, 12, Enterprise, Community and online SaaS.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 pb24">
+            <div class="text-center">
+                <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
+                    <i class="fa fa-check fa-lg"></i>
+                </div>
+                <h5>代码完全开源 / Full Open Source</h5>
+                <p>Open source under LGPL-3, transparent and auditable, ready for customization.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end general features -->
+<!-- begin how it works -->
+<section class="oe_container container o_cc o_cc2 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>使用流程 / How It Works</h2>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <div class="row text-center">
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-download"></i>
+                    </div>
+                    <p class="fw-bold mb-1">安装 AI 中心</p>
+                    <p class="small text-muted mb-0">Install AI Center</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-key"></i>
+                    </div>
+                    <p class="fw-bold mb-1">配置 API Key</p>
+                    <p class="small text-muted mb-0">Configure Anthropic Key</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-robot"></i>
+                    </div>
+                    <p class="fw-bold mb-1">绑定机器人</p>
+                    <p class="small text-muted mb-0">Bind Robot and Users</p>
+                </div>
+                <div class="col pb16">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-2" style="width:48px;height:48px;">
+                        <i class="fa fa-comments"></i>
+                    </div>
+                    <p class="fw-bold mb-1">开始对话</p>
+                    <p class="small text-muted mb-0">Chat in Discuss</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end how it works -->
+<!-- begin supported modules -->
+<section class="oe_container container o_cc o_cc1 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center pb32">
+            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''"><i class="fa fa-book text-o-color-1 me-2"></i> app_chatgpt / AI 机器人中心</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end supported modules -->
+<!-- begin banner -->
+<section class="oe_container container pt32 pb32">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid rounded" src="banner.png" alt="Banner" style="width:100%;display:block;">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- begin footer -->
+<section class="oe_container container o_cc o_cc5 pt64 pb64">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>odooai.cn</h2>
+            <p class="lead" style="opacity:0.7;">专业 Odoo 服务伙伴，开发实施咨询培训全套解决方案<br/>Professional Odoo Solutions: Implementation, Consulting and Training</p>
+            <div class="pt16">
+                <p><i class="fa fa-globe me-2"></i>Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p>
+                <p><i class="fa fa-desktop me-2"></i>Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p>
+                <p><i class="fa fa-envelope me-2"></i>Support: <a href="mailto:odoo@china.com" class="text-light">odoo@china.com</a></p>
+            </div>
+            <div class="pt16">
+                <img src="qr.png" alt="QR Code" style="width:120px;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end footer -->
+
+</html>
