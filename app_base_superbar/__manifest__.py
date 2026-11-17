@@ -17,7 +17,7 @@
 
 {
     'name': "基础管理快速导航,Easy Admin Navigator with Superbar",
-    'version': '20.0.26.09.15',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

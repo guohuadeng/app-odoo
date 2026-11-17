@@ -10,7 +10,7 @@
 
 {
     'name': '库存位置树控件 / Stock Location zTree Parent Children Tree',
-    'version': '20.0.24.12.09',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

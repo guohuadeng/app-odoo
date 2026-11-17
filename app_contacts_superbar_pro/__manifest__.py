@@ -17,7 +17,7 @@
 
 {
     'name': '通讯录联系人超级导航专业版 / Contacts Superbar Pro',
-    'version': '20.0.24.12.04',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

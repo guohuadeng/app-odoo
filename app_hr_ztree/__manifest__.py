@@ -29,7 +29,7 @@
 
 {
     'name': "HR部门树形组件 / HR Department zTree Widget",
-    'version': '20.0.24.12.09',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

@@ -17,7 +17,7 @@
 
 {
     'name': "HR员工部门导航 / Employee Navigator by Department",
-    'version': '20.0.24.11.12',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Human Resources',
     'website': 'https://www.odooai.cn',

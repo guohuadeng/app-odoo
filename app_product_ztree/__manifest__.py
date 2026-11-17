@@ -17,7 +17,7 @@
 
 {
     'name': "产品分类树形组件 / Product Category zTree Widget",
-    'version': '20.0.24.12.09',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

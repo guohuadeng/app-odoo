@@ -17,7 +17,7 @@
 
 {
     'name': '库存调拨单批量添加产品 / Stock Picking Order Product Multi Batch Add',
-    'version': '20.0.24.12.03',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Inventory/Inventory',
     'website': 'https://www.odooai.cn',

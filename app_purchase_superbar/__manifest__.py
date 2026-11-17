@@ -16,7 +16,7 @@
 
 {
     'name': "采购超级搜索导航 / Purchase Superbar Navigator",
-    'version': '20.0.26.08.19',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

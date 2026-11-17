@@ -17,7 +17,7 @@
 
 {
     'name': "邮件高级搜索 / Mail Quick Navigator",
-    'version': '20.0.24.11.12',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

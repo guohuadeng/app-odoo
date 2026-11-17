@@ -17,7 +17,7 @@
 
 {
     'name': '库存超级搜索栏 / Stock Superbar zTree Navigator',
-    'version': '20.0.25.09.08',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Inventory/Inventory',
     'website': 'https://www.odooai.cn',

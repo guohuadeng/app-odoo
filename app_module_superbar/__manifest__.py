@@ -28,7 +28,7 @@
 
 {
     'name': "应用模块导航 / Apps Navigator by Category",
-    'version': '20.0.24.11.12',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

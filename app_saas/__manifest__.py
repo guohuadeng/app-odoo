@@ -26,7 +26,7 @@
 
 {
     'name': "SaaS云服务客户端 / odooapp.cn SaaS Client - Ai Passport",
-    'version': '20.0.26.11.14',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',

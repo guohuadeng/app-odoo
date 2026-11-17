@@ -29,7 +29,7 @@
 
 {
     'name': "MRP Bom批量添加产品 / MRP Bom Product Multi Batch Add",
-    'version': '20.0.25.09.16',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',

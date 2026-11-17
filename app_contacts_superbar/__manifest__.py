@@ -17,7 +17,7 @@
 
 {
     'name': '通讯录联系人超级导航 / Contacts Partner Superbar',
-    'version': '20.0.26.10.15',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',

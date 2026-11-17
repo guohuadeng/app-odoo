@@ -16,7 +16,7 @@
 
 {
     'name': "POS销售单导航 / POS Order Navigator by Store",
-    'version': '20.0.25.06.10',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Point of Sale',
     'website': 'https://www.odooai.cn',
