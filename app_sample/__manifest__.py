@@ -24,7 +24,7 @@
 
 {
     'name': 'Odoo 模块开发模板 / Odoo Module Sample with Widget',
-    'version': '20.0.24.12.26',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',

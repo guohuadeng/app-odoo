@@ -7,7 +7,7 @@
 
 {
     'name': '2027最新中国会计科目表 / Latest Chinese Accounting Chart',
-    'version': '20.0.26.10.28',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Accounting/Localizations/Account Charts',
     'website': 'https://www.odooai.cn',

@@ -5,7 +5,7 @@
 
 {
     'name': '电商产品源码编辑器 / Website Product SEO &amp; Source Code Editor',
-    'version': '20.0.26.10.14',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'category': 'Website',
     'website': 'https://www.odooai.cn',

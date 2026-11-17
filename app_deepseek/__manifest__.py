@@ -8,7 +8,7 @@
 
 {
     'name': '深度求索AI集成 / Deepseek AI for Odoo AI Center',
-    'version': '20.0.26.10.12',
+    'version': '20.0.26.11.18',
     'author': 'odooai.cn',
     'company': 'odooai.cn',
     'maintainer': 'odooai.cn',

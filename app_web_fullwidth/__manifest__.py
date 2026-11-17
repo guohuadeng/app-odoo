@@ -1,6 +1,6 @@
 {
     'name': '表单全宽度满屏 / Web Form Fullwidth &amp; Chatter Position',
-    'version': '20.0.25.04.05',
+    'version': '20.0.26.11.18',
     'category': 'Extra tools',
     'author': 'odooai.cn',
     'website': 'https://www.odooai.cn',

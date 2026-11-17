@@ -8,20 +8,7 @@
 <head><meta charset="utf-8"/></head>
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "app_base_company_zchart - Group Company Multi Level Chart Hierarchy",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
-  "description": "Visualize group company hierarchy with multi-level zChart widget. Interactive parent-children tree for company structure.",
-  "softwareVersion": "18.0",
-  "programmingLanguage": "Python, JavaScript",
-  "license": "LGPL-3",
-  "author": { "@type": "Organization", "name": "odooAi.cn", "url": "https://www.odooai.cn" },
-  "featureList": ["Multi-level company hierarchy chart","zChart widget visualization","Interactive parent-children tree","Force set parent company wizard","Multi-language and Multi-company support","Full Open Source"]
-}
+{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "app_base_company_zchart - Group Company Multi Level Chart Hierarchy", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}, "description": "Visualize group company hierarchy with multi-level zChart widget. Interactive parent-children tree for company structure.", "softwareVersion": "20.0", "programmingLanguage": "Python, JavaScript", "license": "LGPL-3", "author": {"@type": "Organization", "name": "odooAi.cn", "url": "https://www.odooai.cn"}, "featureList": ["Multi-level company hierarchy chart", "zChart widget visualization", "Interactive parent-children tree", "Force set parent company wizard", "Multi-language and Multi-company support", "Full Open Source"]}
 </script>
 
 <!-- begin header -->
@@ -30,18 +17,15 @@
         <div class="col-lg-8 text-center">
             <div class="d-inline-flex align-items-center mb-3">
                 <img src="icon.png" style="width:48px;height:48px;border-radius:10px;" alt="App Icon">
-                <h2 class="ms-3 mb-0" style="font-weight:700;">集团公司多层级结构图 / Group Company Multi Level Chart Hierarchy</h2>
+                <h2 class="ms-3 mb-0" style="font-weight:700;">Group Company Multi Level Chart Hierarchy</h2>
             </div>
-            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">可视化展示集团公司的多层级树状结构 / Visualize Group Company Hierarchy with Interactive Chart</p>
-            <p class="lead">
-                基于zChart widget为集团公司提供多层级父子树状结构图，直观展示公司层级关系<br/>
-                Multi-level parent-children hierarchy chart with zChart widget for company structure visualization
-            </p>
+            <p class="pb8" style="opacity:0.7;font-size:1.1rem;">Visualize Group Company Hierarchy with Interactive Chart</p>
+            <p class="lead">Multi-level parent-children hierarchy chart with zChart widget for company structure visualization</p>
             <div class="pt16">
-                <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 18</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">企业版与社区版 / Enterprise &amp; Community</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多公司 / Multi-Company</span>
-                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">多语言 / Multi-Language</span>
+                <span class="btn btn-sm btn-primary rounded-pill ms-2">Odoo 20</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Enterprise &amp; Community</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Company</span>
+                <span class="btn btn-sm btn-outline-light rounded-pill ms-2">Multi-Language</span>
             </div>
         </div>
     </div>
@@ -52,10 +36,8 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
-            <h2>功能概述 / Overview</h2>
-            <p class="lead pt16">
-                本模块为 Odoo 集团公司提供多层级树状结构图（zChart）。通过交互式父子树可视化展示公司层级关系，支持批量设置上级公司向导。
-            </p>
+            <h2>Overview</h2>
+            <p class="lead pt16">Shows the group company structure as a multi-level tree with the zChart widget. Parent-child relations are displayed interactively, and a wizard sets the parent company for many companies at once.</p>
             <p class="text-muted">
                 This module provides a multi-level hierarchy chart (zChart) for group companies. Visualize company structure with interactive parent-children tree, and batch set parent company via wizard.
             </p>
@@ -69,8 +51,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center pb32">
-                <h2>核心亮点 / Key Highlights</h2>
-                <p class="lead">直观的集团公司结构可视化 / Intuitive Company Structure Visualization</p>
+                <h2>Key Highlights</h2>
+                <p class="lead">Intuitive Company Structure Visualization</p>
             </div>
         </div>
         <div class="row">
@@ -80,9 +62,9 @@
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
                             <i class="oi oi-lg" data-icon="account_tree"></i>
                         </div>
-                        <h5>1. 多层级结构图 / Multi-Level Hierarchy Chart</h5>
+                        <h5>1. Multi-Level Hierarchy Chart</h5>
                         <p class="small text-muted">zChart Widget</p>
-                        <p class="card-text">交互式父子树展示公司层级关系</p>
+                        <p class="card-text">Interactive parent-child tree of the company hierarchy</p>
                     </div>
                 </div>
             </div>
@@ -92,9 +74,9 @@
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-o-color-1 text-white mb-3" style="width:56px;height:56px;">
                             <i class="oi oi-lg" data-icon="wand_stars"></i>
                         </div>
-                        <h5>2. 批量设置上级公司 / Batch Set Parent Company</h5>
+                        <h5>2. Batch Set Parent Company</h5>
                         <p class="small text-muted">Wizard Tool</p>
-                        <p class="card-text">通过向导批量设置公司的上级关系</p>
+                        <p class="card-text">Wizard to set the parent company for many companies at once</p>
                     </div>
                 </div>
             </div>
@@ -107,15 +89,15 @@
 <section class="oe_container container o_cc o_cc5 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>通用特性 / General Features</h2>
+            <h2>General Features</h2>
         </div>
         <div class="col-lg-4 pb24">
             <div class="text-center">
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="oi oi-lg" data-icon="public"></i>
                 </div>
-                <h5>多语言与多公司<br/><small class="text-muted">Multi-Language &amp; Multi-Company</small></h5>
-                <p>完整的多语言翻译支持，适配全球化企业部署。原生多公司架构，数据严格隔离。</p>
+                <h5>Multi-Language &amp; Multi-Company</h5>
+                <p>Full multi-language translation support for global deployments. Native multi-company architecture with strict data separation.</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -123,8 +105,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="oi oi-lg" data-icon="account_tree"></i>
                 </div>
-                <h5>全版本兼容<br/><small class="text-muted">Full Version Support</small></h5>
-                <p>支持 Odoo 19, 18, 17, 16, 15, 14, 13, 12，EE/CE/.SH，兼容企业版、社区版及在线 SaaS。</p>
+                <h5>Full Version Support</h5>
+                <p>Supports Odoo 20, 19, 18, 17, 16, 15, 14, 13, 12, Enterprise, Community and odoo.sh.</p>
             </div>
         </div>
         <div class="col-lg-4 pb24">
@@ -132,8 +114,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:56px;height:56px;background:rgba(255,255,255,0.15);color:#fff;">
                     <i class="oi oi-lg" data-icon="code"></i>
                 </div>
-                <h5>代码完全开源<br/><small class="text-muted">Full Open Source</small></h5>
-                <p>基于 LGPL-3 协议开源，代码透明可审计，支持二次开发与定制。</p>
+                <h5>Full Open Source</h5>
+                <p>Released under LGPL-3. The source code is open, auditable and ready for further customization.</p>
             </div>
         </div>
     </div>
@@ -144,18 +126,18 @@
 <section class="oe_container container o_cc o_cc1 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>界面截图 / Screenshots</h2>
+            <h2>Screenshots</h2>
         </div>
     </div>
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="oi text-o-color-1 me-2" data-icon="star"></i>Group Company Hierarchy Chart / 集团公司层级结构图</h3>
+            <h3 class="pb16"><i class="oi text-o-color-1 me-2" data-icon="star"></i>Group Company Hierarchy Chart</h3>
             <img class="img-fluid rounded shadow" src="demo1.jpg" alt="Company Hierarchy Chart">
         </div>
     </div>
     <div class="row pb48">
         <div class="col-lg-10 offset-lg-1">
-            <h3 class="pb16"><i class="oi text-o-color-1 me-2" data-icon="star"></i>Company Structure Overview / 公司结构概览</h3>
+            <h3 class="pb16"><i class="oi text-o-color-1 me-2" data-icon="star"></i>Company Structure Overview</h3>
             <img class="img-fluid rounded shadow" src="banner1.png" alt="Company Structure">
         </div>
     </div>
@@ -166,14 +148,13 @@
 <section class="oe_container container o_cc o_cc2 pt64 pb64">
     <div class="row">
         <div class="col-lg-12 text-center pb32">
-            <h2>支持与依赖模块 / Supported &amp; Dependent Modules</h2>
+            <h2>Supported &amp; Dependent Modules</h2>
         </div>
         <div class="col-lg-8 offset-lg-2">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item bg-transparent" style="cursor:pointer;transition:background-color .2s" onmouseover="this.style.backgroundColor='rgba(0,0,0,.05)'" onmouseout="this.style.backgroundColor=''">
                     <i class="oi text-o-color-1 me-2" data-icon="inventory_2"></i>
-                    app_common / 公共基础模块
-                </li>
+                     app_common </li>
             </ul>
         </div>
     </div>
@@ -195,7 +176,7 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <h2>odooai.cn</h2>
-            <p class="lead" style="opacity:0.7;">专业Odoo服务伙伴-开发实施咨询培训全套解决方案 / Professional Odoo Solutions</p>
+            <p class="lead" style="opacity:0.7;">Professional Odoo Solutions: Development, Implementation, Consulting &amp; Training</p>
             <div class="pt16">
                 <p><i class="oi me-2" data-icon="public"></i>Website: <a href="https://www.odooai.cn" target="_blank" class="text-light">www.odooai.cn</a></p>
                 <p><i class="oi me-2" data-icon="desktop_windows"></i>Demo: <a href="https://demo.odooapp.cn" target="_blank" class="text-light">demo.odooapp.cn</a></p>
