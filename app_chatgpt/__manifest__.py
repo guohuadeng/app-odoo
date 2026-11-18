@@ -19,6 +19,8 @@
     'live_test_url': 'https://demo.odooapp.cn',
     'license': 'LGPL-3',
     'sequence': 10,
+    'price': 0.00,
+    'currency': 'EUR',
     'images': ['static/description/banner.gif', 'static/description/banner.png'],
     'summary': "Odoo AI中心，集成ChatGPT4、DeepSeek、阿里通义千问、百度文心等多种AI。Multi AI integration with ChatGPT4, DeepSeek, Ali Qwen, Baidu in Odoo AI Center.",
     'description': '''
