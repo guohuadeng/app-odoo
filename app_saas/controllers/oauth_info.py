@@ -22,7 +22,7 @@ class AppSaasOAuthInfo(http.Controller):
             'provider_name': provider.name if provider else '',
         }
 
-    @http.route('/app_saas/oauth_info', type='json', auth='public', csrf=False)
+    @http.route('/app_saas/oauth_info', type='jsonrpc', auth='public', csrf=False)
     def oauth_info(self, **kwargs):
         provider = request.env.ref('app_saas.provider_app_saas', raise_if_not_found=False)
         provider = provider.sudo() if provider else provider
