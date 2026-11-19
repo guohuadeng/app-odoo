@@ -24,7 +24,7 @@
                     </setting>
                     <setting string="Cloud DB Token" id="set_app_saas_db_token" invisible="not app_saas_ok">
                         <field name="app_saas_db_token" widget="Char"
-                               options="{'copy_clipboard': 1, 'key_musk': 1}"
+                               options="{'copy_clipboard': 1, 'key_mask': 1}"
                                style="width:100%!important"/>
                         <div class="content-group">
                             <div class="text-warning">

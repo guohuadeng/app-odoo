@@ -5,6 +5,9 @@
         <field name="model">auth.oauth.provider</field>
         <field name="inherit_id" ref="auth_oauth.view_oauth_provider_tree"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='client_id']" position="attributes">
+                <attribute name="options">{'copy_clipboard': 1, 'key_mask': 1}</attribute>
+            </xpath>
             <xpath expr="//field[@name='client_id']" position="after">
                 <field name="user_template_id" optional="hide"/>
             </xpath>
