@@ -1,15 +1,19 @@
-// 登录页 OAuth 登录块已由 views/web_login_templates.xml 移到 <form> 之外。
+// 登录页 OAuth 登录块已由 views/web_login_templates.xml 移到 <form> 之外，
+// 并包在带 oe_login_form class 的 div（o_saas_login_oauth）里，
+// 与登录表单/「选择用户」列表共用同一套宽度规则，保证上下同宽居中。
 // social_login 等模块把 .oe_website_login_container 设为 flex 行布局，
-// 小屏时 OAuth 块会被挤到登录表单/选择用户列表的右侧并排显示。
-// 这里让小屏下容器换行，OAuth 块独占一行排在下方，与表单同宽居中。
+// 小屏时让容器换行，OAuth 块独占一行排在下方。
+.oe_website_login_container > .oe_login_form.o_saas_login_oauth {
+    // 块内已有 pt-4 内边距，顶部不再叠加外边距，与上方列表间距保持紧凑
+    margin-top: 0;
+}
+
 @media (max-width: 768px) {
     .oe_website_login_container {
         flex-wrap: wrap;
 
-        > .o_login_auth {
+        > .o_saas_login_oauth {
             flex: 1 0 100%;
-            max-width: 90%;
-            margin: 0 auto 20px;
         }
     }
 }

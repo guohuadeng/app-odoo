@@ -18,9 +18,17 @@
          v20 的 web.user_switch 在存在多个历史登录用户时会隐藏整个 form（加 d-none），
          OAuth 块原先挂在 form 内的 oe_login_buttons 下，会随表单一起隐藏，
          导致「选择用户」界面看不到社交登录列表。
-         移到 form 之后，「选择用户」与密码表单两种界面都显示 OAuth 登录入口。 -->
+         移到 form 之后，「选择用户」与密码表单两种界面都显示 OAuth 登录入口。
+         外层容器带 oe_login_form class，与登录表单/「选择用户」列表共用同一套宽度规则
+         （website 300px 上限、social_login flex、app_login_mobile 小屏 90%），保证上下同宽。
+         注意：position="move" 只对定位节点（before/inside/replace）的直接子节点生效，
+         不能把 t-call 直接嵌在新 div 里（原调用不会被移除，页面会渲染两份 OAuth 列表），
+         因此分两条 xpath：先插入空容器，再把 form 内的调用 move 进容器。 -->
     <template id="login_oauth_outside_form" inherit_id="web.login" name="app_saas Login: OAuth outside form">
         <xpath expr="//div[@id='oe_structure_login_bottom']" position="before">
+            <div class="oe_login_form o_saas_login_oauth" id="o_saas_login_oauth_wrap"/>
+        </xpath>
+        <xpath expr="//div[@id='o_saas_login_oauth_wrap']" position="inside">
             <t t-call="web.login_oauth" position="move"/>
         </xpath>
     </template>
